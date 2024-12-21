@@ -1,0 +1,645 @@
+Resuming from checkpoint: amazon-save/models/checkpoint-epoch1.pth
+Tokenizing documents and phrases using bert-base-uncased tokenizer, please wait...
+TopicExpan(
+  (doc_encoder): BertDocEncoder(
+    (model): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0-11): 12 x BertLayer(
+            (attention): BertAttention(
+              (self): BertSdpaSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (activation): Tanh()
+      )
+    )
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+  )
+  (phrase_decoder): TransformerPhraseDecoder(
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (output_embeddings): Linear(in_features=768, out_features=30522, bias=False)
+    (model): TransformerDecoder(
+      (layers): ModuleList(
+        (0): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (multihead_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (linear1): Linear(in_features=768, out_features=2048, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (linear2): Linear(in_features=2048, out_features=768, bias=True)
+          (norm1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (norm3): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (dropout3): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+  )
+  (topic_encoder): GCNTopicEncoder(
+    (downward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=300, out=300, normalization=right, activation=None)
+    )
+    (upward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=300, out=300, normalization=right, activation=None)
+    )
+    (sideward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=300, out=300, normalization=right, activation=None)
+    )
+  )
+  (interaction): BilinearInteraction()
+  (linear_combiner): Linear(in_features=1068, out_features=768, bias=True)
+)
+Trainable parameters: 142394216
+Loading checkpoint: amazon-save/models/checkpoint-epoch1.pth ...
+Checkpoint loaded. Resume training from epoch 2
+Train Epoch: 2 [0/72707 (0%)] Loss: 424.125977 [10.833618 + 413.292358]
+Train Epoch: 2 [14528/72707 (20%)] Loss: 381.335114 [23.084190 + 358.250916]
+Train Epoch: 2 [29056/72707 (40%)] Loss: 355.532867 [13.471313 + 342.061554]
+Train Epoch: 2 [43584/72707 (60%)] Loss: 273.656006 [9.076435 + 264.579559]
+Train Epoch: 2 [58112/72707 (80%)] Loss: 282.978851 [11.831175 + 271.147675]
+Start validation epoch: 2
+Validation Epoch: 2 [0/4499 (0%)] Loss: 321.155823
+    epoch          : 2
+    elapsed time   : 1464.2317280769348
+    loss           : 312.80553823090787
+    sim_loss       : 13.51550513570853
+    gen_loss       : 299.2900331848646
+    val_loss       : 295.17356773044753
+    val_sim_loss   : 15.402497747670049
+    val_gen_loss   : 279.7710708949877
+    val_perplexity : 17.700082778930664
+    val_accuracy   : 0.028532608695652172
+Saving checkpoint: amazon-save/models/checkpoint-epoch2.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 3 [0/72707 (0%)] Loss: 278.651398 [17.994686 + 260.656708]
+Train Epoch: 3 [14528/72707 (20%)] Loss: 330.079987 [15.547140 + 314.532837]
+Train Epoch: 3 [29056/72707 (40%)] Loss: 216.976974 [10.943348 + 206.033630]
+Train Epoch: 3 [43584/72707 (60%)] Loss: 213.337234 [12.693289 + 200.643951]
+Train Epoch: 3 [58112/72707 (80%)] Loss: 272.480560 [13.642666 + 258.837891]
+Start validation epoch: 3
+Validation Epoch: 3 [0/4499 (0%)] Loss: 204.186554
+    epoch          : 3
+    elapsed time   : 1460.714742898941
+    loss           : 259.4102354878504
+    sim_loss       : 14.475754683376499
+    gen_loss       : 244.9344807641987
+    val_loss       : 255.99415356179944
+    val_sim_loss   : 14.560378846914872
+    val_gen_loss   : 241.43377552861753
+    val_perplexity : 15.2778959274292
+    val_accuracy   : 0.04483695652173913
+Saving checkpoint: amazon-save/models/checkpoint-epoch3.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 4 [0/72707 (0%)] Loss: 207.170532 [13.803019 + 193.367508]
+Train Epoch: 4 [14528/72707 (20%)] Loss: 233.911209 [11.800161 + 222.111053]
+Train Epoch: 4 [29056/72707 (40%)] Loss: 201.909378 [11.360082 + 190.549301]
+Train Epoch: 4 [43584/72707 (60%)] Loss: 197.278564 [14.557289 + 182.721283]
+Train Epoch: 4 [58112/72707 (80%)] Loss: 199.606293 [11.963252 + 187.643036]
+Start validation epoch: 4
+Validation Epoch: 4 [0/4499 (0%)] Loss: 200.268768
+    epoch          : 4
+    elapsed time   : 1462.3830478191376
+    loss           : 213.18316209822342
+    sim_loss       : 13.2951327077175
+    gen_loss       : 199.88802946098752
+    val_loss       : 219.7655377595321
+    val_sim_loss   : 12.764908904614655
+    val_gen_loss   : 207.00062909333602
+    val_perplexity : 13.063648223876953
+    val_accuracy   : 0.09180900621118013
+Saving checkpoint: amazon-save/models/checkpoint-epoch4.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 5 [0/72707 (0%)] Loss: 167.845642 [10.403953 + 157.441696]
+Train Epoch: 5 [14528/72707 (20%)] Loss: 149.366959 [13.094337 + 136.272629]
+Train Epoch: 5 [29056/72707 (40%)] Loss: 172.899963 [13.603073 + 159.296890]
+Train Epoch: 5 [43584/72707 (60%)] Loss: 186.970795 [11.576410 + 175.394379]
+Train Epoch: 5 [58112/72707 (80%)] Loss: 147.278137 [14.569966 + 132.708176]
+Start validation epoch: 5
+Validation Epoch: 5 [0/4499 (0%)] Loss: 188.214905
+    epoch          : 5
+    elapsed time   : 1461.102291584015
+    loss           : 178.16894297229896
+    sim_loss       : 13.191950955001957
+    gen_loss       : 164.97699201337548
+    val_loss       : 191.99685934315556
+    val_sim_loss   : 13.096475031064903
+    val_gen_loss   : 178.90038399074388
+    val_perplexity : 11.295564651489258
+    val_accuracy   : 0.1420807453416149
+Saving checkpoint: amazon-save/models/checkpoint-epoch5.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 6 [0/72707 (0%)] Loss: 184.243271 [15.199611 + 169.043655]
+Train Epoch: 6 [14528/72707 (20%)] Loss: 141.883408 [11.465573 + 130.417831]
+Train Epoch: 6 [29056/72707 (40%)] Loss: 147.930084 [11.055548 + 136.874542]
+Train Epoch: 6 [43584/72707 (60%)] Loss: 122.966324 [13.036428 + 109.929893]
+Train Epoch: 6 [58112/72707 (80%)] Loss: 143.303574 [11.584662 + 131.718918]
+Start validation epoch: 6
+Validation Epoch: 6 [0/4499 (0%)] Loss: 224.699280
+    epoch          : 6
+    elapsed time   : 1461.0613791942596
+    loss           : 148.7036021500329
+    sim_loss       : 12.649062572677657
+    gen_loss       : 136.0545395568997
+    val_loss       : 175.23459840857464
+    val_sim_loss   : 13.80819462693256
+    val_gen_loss   : 161.42640420664912
+    val_perplexity : 10.265934944152832
+    val_accuracy   : 0.18788819875776397
+Saving checkpoint: amazon-save/models/checkpoint-epoch6.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 7 [0/72707 (0%)] Loss: 127.925652 [11.060081 + 116.865570]
+Train Epoch: 7 [14528/72707 (20%)] Loss: 147.288254 [10.631648 + 136.656601]
+Train Epoch: 7 [29056/72707 (40%)] Loss: 99.284760 [6.828803 + 92.455956]
+Train Epoch: 7 [43584/72707 (60%)] Loss: 127.966248 [8.935045 + 119.031204]
+Train Epoch: 7 [58112/72707 (80%)] Loss: 89.176086 [9.669970 + 79.506119]
+Start validation epoch: 7
+Validation Epoch: 7 [0/4499 (0%)] Loss: 172.612640
+    epoch          : 7
+    elapsed time   : 1460.877599954605
+    loss           : 125.03544191138748
+    sim_loss       : 12.415143560160264
+    gen_loss       : 112.62029826733821
+    val_loss       : 154.68317844556725
+    val_sim_loss   : 12.893000830774723
+    val_gen_loss   : 141.7901782989502
+    val_perplexity : 8.929158210754395
+    val_accuracy   : 0.23175465838509318
+Saving checkpoint: amazon-save/models/checkpoint-epoch7.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 8 [0/72707 (0%)] Loss: 84.613014 [10.081472 + 74.531540]
+Train Epoch: 8 [14528/72707 (20%)] Loss: 110.463165 [14.956923 + 95.506241]
+Train Epoch: 8 [29056/72707 (40%)] Loss: 132.124115 [12.527218 + 119.596893]
+Train Epoch: 8 [43584/72707 (60%)] Loss: 94.738174 [14.661892 + 80.076279]
+Train Epoch: 8 [58112/72707 (80%)] Loss: 97.522453 [10.831465 + 86.690987]
+Start validation epoch: 8
+Validation Epoch: 8 [0/4499 (0%)] Loss: 119.541992
+    epoch          : 8
+    elapsed time   : 1461.3399415016174
+    loss           : 106.10832261498649
+    sim_loss       : 12.286782406096618
+    gen_loss       : 93.82154015674409
+    val_loss       : 138.0351275568423
+    val_sim_loss   : 13.199278214703435
+    val_gen_loss   : 124.83584976196289
+    val_perplexity : 7.859904766082764
+    val_accuracy   : 0.2981366459627329
+Saving checkpoint: amazon-save/models/checkpoint-epoch8.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 9 [0/72707 (0%)] Loss: 103.177483 [11.776448 + 91.401031]
+Train Epoch: 9 [14528/72707 (20%)] Loss: 84.138306 [12.625721 + 71.512581]
+Train Epoch: 9 [29056/72707 (40%)] Loss: 91.476044 [11.839399 + 79.636642]
+Train Epoch: 9 [43584/72707 (60%)] Loss: 101.746353 [17.876369 + 83.869980]
+Train Epoch: 9 [58112/72707 (80%)] Loss: 78.477898 [15.556636 + 62.921261]
+Start validation epoch: 9
+Validation Epoch: 9 [0/4499 (0%)] Loss: 55.975498
+    epoch          : 9
+    elapsed time   : 1461.7559530735016
+    loss           : 91.27738048861254
+    sim_loss       : 12.1547824340705
+    gen_loss       : 79.1225980558139
+    val_loss       : 129.13871134882388
+    val_sim_loss   : 13.075188673060874
+    val_gen_loss   : 116.06352221447489
+    val_perplexity : 7.292606830596924
+    val_accuracy   : 0.3385093167701863
+Saving checkpoint: amazon-save/models/checkpoint-epoch9.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 10 [0/72707 (0%)] Loss: 84.938004 [9.335819 + 75.602180]
+Train Epoch: 10 [14528/72707 (20%)] Loss: 75.809265 [12.602547 + 63.206715]
+Train Epoch: 10 [29056/72707 (40%)] Loss: 73.199608 [12.748251 + 60.451355]
+Train Epoch: 10 [43584/72707 (60%)] Loss: 89.046486 [6.116332 + 82.930153]
+Train Epoch: 10 [58112/72707 (80%)] Loss: 71.749557 [14.499415 + 57.250141]
+Start validation epoch: 10
+Validation Epoch: 10 [0/4499 (0%)] Loss: 224.183853
+    epoch          : 10
+    elapsed time   : 1461.5117900371552
+    loss           : 79.11410131494743
+    sim_loss       : 11.963818564166438
+    gen_loss       : 67.15028273664493
+    val_loss       : 121.70274800839631
+    val_sim_loss   : 12.84221197211224
+    val_gen_loss   : 108.86053640946098
+    val_perplexity : 6.963761329650879
+    val_accuracy   : 0.3947981366459627
+Saving checkpoint: amazon-save/models/checkpoint-epoch10.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 11 [0/72707 (0%)] Loss: 81.988602 [11.719297 + 70.269302]
+Train Epoch: 11 [14528/72707 (20%)] Loss: 65.866821 [14.484139 + 51.382683]
+Train Epoch: 11 [29056/72707 (40%)] Loss: 71.674042 [13.098224 + 58.575821]
+Train Epoch: 11 [43584/72707 (60%)] Loss: 67.686813 [14.526878 + 53.159939]
+Train Epoch: 11 [58112/72707 (80%)] Loss: 71.041870 [11.528633 + 59.513233]
+Start validation epoch: 11
+Validation Epoch: 11 [0/4499 (0%)] Loss: 54.554638
+    epoch          : 11
+    elapsed time   : 1460.909301519394
+    loss           : 69.3990203554722
+    sim_loss       : 11.913094404724657
+    gen_loss       : 57.485925935167394
+    val_loss       : 114.09349818851636
+    val_sim_loss   : 12.483396265817726
+    val_gen_loss   : 101.6101012022599
+    val_perplexity : 6.3957672119140625
+    val_accuracy   : 0.4549689440993788
+Saving checkpoint: amazon-save/models/checkpoint-epoch11.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 12 [0/72707 (0%)] Loss: 36.327995 [10.612413 + 25.715580]
+Train Epoch: 12 [14528/72707 (20%)] Loss: 52.739910 [10.171547 + 42.568363]
+Train Epoch: 12 [29056/72707 (40%)] Loss: 55.262932 [8.737706 + 46.525227]
+Train Epoch: 12 [43584/72707 (60%)] Loss: 73.493172 [20.090633 + 53.402538]
+Train Epoch: 12 [58112/72707 (80%)] Loss: 72.795952 [13.853046 + 58.942905]
+Start validation epoch: 12
+Validation Epoch: 12 [0/4499 (0%)] Loss: 51.567066
+    epoch          : 12
+    elapsed time   : 1460.694507598877
+    loss           : 61.93484922842758
+    sim_loss       : 11.86098991142005
+    gen_loss       : 50.07385933560831
+    val_loss       : 111.49721294900645
+    val_sim_loss   : 13.089032313098079
+    val_gen_loss   : 98.40818139781122
+    val_perplexity : 6.182845592498779
+    val_accuracy   : 0.5025232919254659
+Saving checkpoint: amazon-save/models/checkpoint-epoch12.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 13 [0/72707 (0%)] Loss: 51.907990 [10.596361 + 41.311630]
+Train Epoch: 13 [14528/72707 (20%)] Loss: 50.300312 [14.207196 + 36.093117]
+Train Epoch: 13 [29056/72707 (40%)] Loss: 60.202110 [11.582075 + 48.620037]
+Train Epoch: 13 [43584/72707 (60%)] Loss: 32.402779 [10.448640 + 21.954138]
+Train Epoch: 13 [58112/72707 (80%)] Loss: 65.556580 [8.888981 + 56.667595]
+Start validation epoch: 13
+Validation Epoch: 13 [0/4499 (0%)] Loss: 57.235092
+    epoch          : 13
+    elapsed time   : 1460.477558374405
+    loss           : 57.023964535318285
+    sim_loss       : 11.921182830695656
+    gen_loss       : 45.102781688353566
+    val_loss       : 110.11907585807468
+    val_sim_loss   : 12.80458945295085
+    val_gen_loss   : 97.31448621335237
+    val_perplexity : 6.17882776260376
+    val_accuracy   : 0.5011645962732919
+Saving checkpoint: amazon-save/models/checkpoint-epoch13.pth ...
+Train Epoch: 14 [0/72707 (0%)] Loss: 51.019527 [17.487469 + 33.532059]
+Train Epoch: 14 [14528/72707 (20%)] Loss: 53.908569 [10.255718 + 43.652851]
+Train Epoch: 14 [29056/72707 (40%)] Loss: 48.094269 [10.516890 + 37.577381]
+Train Epoch: 14 [43584/72707 (60%)] Loss: 58.728130 [13.119802 + 45.608330]
+Train Epoch: 14 [58112/72707 (80%)] Loss: 47.589767 [11.825104 + 35.764664]
+Start validation epoch: 14
+Validation Epoch: 14 [0/4499 (0%)] Loss: 101.062874
+    epoch          : 14
+    elapsed time   : 1460.2456951141357
+    loss           : 52.23206205170906
+    sim_loss       : 11.737183573961946
+    gen_loss       : 40.49487848635858
+    val_loss       : 109.2156400265901
+    val_sim_loss   : 13.064903601356175
+    val_gen_loss   : 96.15073643559995
+    val_perplexity : 6.117699146270752
+    val_accuracy   : 0.5395962732919255
+Saving checkpoint: amazon-save/models/checkpoint-epoch14.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 15 [0/72707 (0%)] Loss: 40.135368 [13.084631 + 27.050735]
+Train Epoch: 15 [14528/72707 (20%)] Loss: 26.218903 [11.085619 + 15.133283]
+Train Epoch: 15 [29056/72707 (40%)] Loss: 47.914814 [14.032028 + 33.882786]
+Train Epoch: 15 [43584/72707 (60%)] Loss: 36.430676 [8.627264 + 27.803411]
+Train Epoch: 15 [58112/72707 (80%)] Loss: 38.072155 [8.160566 + 29.911589]
+Start validation epoch: 15
+Validation Epoch: 15 [0/4499 (0%)] Loss: 76.776794
+    epoch          : 15
+    elapsed time   : 1460.5410406589508
+    loss           : 49.16952064456503
+    sim_loss       : 11.811573092527828
+    gen_loss       : 37.35794753417833
+    val_loss       : 107.80387480362602
+    val_sim_loss   : 13.024402359257573
+    val_gen_loss   : 94.77947145959605
+    val_perplexity : 6.110952854156494
+    val_accuracy   : 0.5708462732919255
+Saving checkpoint: amazon-save/models/checkpoint-epoch15.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 16 [0/72707 (0%)] Loss: 35.374458 [16.844255 + 18.530201]
+Train Epoch: 16 [14528/72707 (20%)] Loss: 35.365494 [16.827900 + 18.537592]
+Train Epoch: 16 [29056/72707 (40%)] Loss: 32.529560 [13.768491 + 18.761070]
+Train Epoch: 16 [43584/72707 (60%)] Loss: 55.770245 [14.232055 + 41.538189]
+Train Epoch: 16 [58112/72707 (80%)] Loss: 88.019226 [23.984938 + 64.034286]
+Start validation epoch: 16
+Validation Epoch: 16 [0/4499 (0%)] Loss: 93.746384
+    epoch          : 16
+    elapsed time   : 1460.601235628128
+    loss           : 46.0874316611272
+    sim_loss       : 11.71125293106576
+    gen_loss       : 34.37617876519625
+    val_loss       : 105.46080655636995
+    val_sim_loss   : 12.540596557700116
+    val_gen_loss   : 92.92020945963652
+    val_perplexity : 5.838489055633545
+    val_accuracy   : 0.6112189440993788
+Saving checkpoint: amazon-save/models/checkpoint-epoch16.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 17 [0/72707 (0%)] Loss: 39.519859 [13.917336 + 25.602522]
+Train Epoch: 17 [14528/72707 (20%)] Loss: 28.501762 [9.852076 + 18.649687]
+Train Epoch: 17 [29056/72707 (40%)] Loss: 31.303421 [11.025209 + 20.278212]
+Train Epoch: 17 [43584/72707 (60%)] Loss: 31.107718 [7.296164 + 23.811554]
+Train Epoch: 17 [58112/72707 (80%)] Loss: 41.304134 [5.935855 + 35.368279]
+Start validation epoch: 17
+Validation Epoch: 17 [0/4499 (0%)] Loss: 69.961578
+    epoch          : 17
+    elapsed time   : 1460.9545102119446
+    loss           : 42.695343781111106
+    sim_loss       : 11.649023086130684
+    gen_loss       : 31.04632070547317
+    val_loss       : 103.47957710597827
+    val_sim_loss   : 11.918377194715584
+    val_gen_loss   : 91.56120001751444
+    val_perplexity : 5.786978244781494
+    val_accuracy   : 0.6319875776397516
+Saving checkpoint: amazon-save/models/checkpoint-epoch17.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 18 [0/72707 (0%)] Loss: 24.931625 [14.115350 + 10.816277]
+Train Epoch: 18 [14528/72707 (20%)] Loss: 49.611389 [10.962198 + 38.649189]
+Train Epoch: 18 [29056/72707 (40%)] Loss: 38.218513 [7.899895 + 30.318617]
+Train Epoch: 18 [43584/72707 (60%)] Loss: 58.086777 [16.301226 + 41.785553]
+Train Epoch: 18 [58112/72707 (80%)] Loss: 47.001366 [8.735283 + 38.266083]
+Start validation epoch: 18
+Validation Epoch: 18 [0/4499 (0%)] Loss: 105.800949
+    epoch          : 18
+    elapsed time   : 1460.9079790115356
+    loss           : 40.66935454667688
+    sim_loss       : 11.589519561728151
+    gen_loss       : 29.079835003337532
+    val_loss       : 104.05836238031802
+    val_sim_loss   : 12.060423819915108
+    val_gen_loss   : 91.99793906833814
+    val_perplexity : 5.908271789550781
+    val_accuracy   : 0.6116071428571429
+Saving checkpoint: amazon-save/models/checkpoint-epoch18.pth ...
+Train Epoch: 19 [0/72707 (0%)] Loss: 24.047714 [3.931178 + 20.116537]
+Train Epoch: 19 [14528/72707 (20%)] Loss: 30.458448 [11.358866 + 19.099583]
+Train Epoch: 19 [29056/72707 (40%)] Loss: 34.903614 [10.536261 + 24.367353]
+Train Epoch: 19 [43584/72707 (60%)] Loss: 52.875038 [8.603354 + 44.271683]
+Train Epoch: 19 [58112/72707 (80%)] Loss: 33.790424 [11.664170 + 22.126253]
+Start validation epoch: 19
+Validation Epoch: 19 [0/4499 (0%)] Loss: 119.390701
+    epoch          : 19
+    elapsed time   : 1460.9406445026398
+    loss           : 39.1737426124856
+    sim_loss       : 11.53333137352802
+    gen_loss       : 27.640411256339505
+    val_loss       : 104.02405798953512
+    val_sim_loss   : 12.008434559987938
+    val_gen_loss   : 92.01562387528627
+    val_perplexity : 5.75767707824707
+    val_accuracy   : 0.6385869565217391
+Saving checkpoint: amazon-save/models/checkpoint-epoch19.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 20 [0/72707 (0%)] Loss: 35.063461 [10.409964 + 24.653500]
+Train Epoch: 20 [14528/72707 (20%)] Loss: 34.233002 [9.737759 + 24.495243]
+Train Epoch: 20 [29056/72707 (40%)] Loss: 34.576210 [12.608026 + 21.968185]
+Train Epoch: 20 [43584/72707 (60%)] Loss: 50.651440 [11.812885 + 38.838554]
+Train Epoch: 20 [58112/72707 (80%)] Loss: 31.912262 [7.796029 + 24.116234]
+Start validation epoch: 20
+Validation Epoch: 20 [0/4499 (0%)] Loss: 205.923920
+    epoch          : 20
+    elapsed time   : 1461.9050552845001
+    loss           : 37.73562471207896
+    sim_loss       : 11.562061174415593
+    gen_loss       : 26.173563541955858
+    val_loss       : 104.3529288250467
+    val_sim_loss   : 12.328825710908227
+    val_gen_loss   : 92.02410363114399
+    val_perplexity : 5.786646366119385
+    val_accuracy   : 0.6554736024844721
+Saving checkpoint: amazon-save/models/checkpoint-epoch20.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 21 [0/72707 (0%)] Loss: 24.854992 [13.837660 + 11.017331]
+Train Epoch: 21 [14528/72707 (20%)] Loss: 28.070047 [13.617537 + 14.452511]
+Train Epoch: 21 [29056/72707 (40%)] Loss: 39.640030 [11.029856 + 28.610174]
+Train Epoch: 21 [43584/72707 (60%)] Loss: 28.479925 [13.024191 + 15.455734]
+Train Epoch: 21 [58112/72707 (80%)] Loss: 50.227058 [15.318407 + 34.908653]
+Start validation epoch: 21
+Validation Epoch: 21 [0/4499 (0%)] Loss: 136.412277
+    epoch          : 21
+    elapsed time   : 1462.361291885376
+    loss           : 36.70957261908184
+    sim_loss       : 11.524610057569234
+    gen_loss       : 25.184962535598697
+    val_loss       : 105.51807687593544
+    val_sim_loss   : 13.515172427115234
+    val_gen_loss   : 92.00290445141171
+    val_perplexity : 5.755026340484619
+    val_accuracy   : 0.65722049689441
+Saving checkpoint: amazon-save/models/checkpoint-epoch21.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 22 [0/72707 (0%)] Loss: 22.811321 [9.570971 + 13.240351]
+Train Epoch: 22 [14528/72707 (20%)] Loss: 38.075783 [18.361731 + 19.714054]
+Train Epoch: 22 [29056/72707 (40%)] Loss: 44.490986 [9.574295 + 34.916691]
+Train Epoch: 22 [43584/72707 (60%)] Loss: 22.533527 [12.394114 + 10.139414]
+Train Epoch: 22 [58112/72707 (80%)] Loss: 48.498131 [17.053799 + 31.444334]
+Start validation epoch: 22
+Validation Epoch: 22 [0/4499 (0%)] Loss: 163.123901
+    epoch          : 22
+    elapsed time   : 1459.9967987537384
+    loss           : 34.81353732060528
+    sim_loss       : 11.415601515192327
+    gen_loss       : 23.39793580742671
+    val_loss       : 104.59063627408898
+    val_sim_loss   : 12.233068880827531
+    val_gen_loss   : 92.35756738807844
+    val_perplexity : 5.828704833984375
+    val_accuracy   : 0.6669254658385093
+Saving checkpoint: amazon-save/models/checkpoint-epoch22.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 23 [0/72707 (0%)] Loss: 18.792686 [12.321832 + 6.470855]
+Train Epoch: 23 [14528/72707 (20%)] Loss: 29.905451 [11.178940 + 18.726511]
+Train Epoch: 23 [29056/72707 (40%)] Loss: 35.332970 [12.803085 + 22.529882]
+Train Epoch: 23 [43584/72707 (60%)] Loss: 33.266052 [10.755496 + 22.510557]
+Train Epoch: 23 [58112/72707 (80%)] Loss: 26.243797 [8.881576 + 17.362223]
+Start validation epoch: 23
+Validation Epoch: 23 [0/4499 (0%)] Loss: 165.785706
+    epoch          : 23
+    elapsed time   : 1459.9011256694794
+    loss           : 34.64194252364342
+    sim_loss       : 11.503993240455225
+    gen_loss       : 23.13794929675458
+    val_loss       : 104.28598059778628
+    val_sim_loss   : 12.289458461429762
+    val_gen_loss   : 91.99652226074882
+    val_perplexity : 5.81366491317749
+    val_accuracy   : 0.6744953416149069
+Saving checkpoint: amazon-save/models/checkpoint-epoch23.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 24 [0/72707 (0%)] Loss: 31.953983 [12.090133 + 19.863850]
+Train Epoch: 24 [14528/72707 (20%)] Loss: 45.030323 [12.945739 + 32.084583]
+Train Epoch: 24 [29056/72707 (40%)] Loss: 27.177458 [11.749212 + 15.428246]
+Train Epoch: 24 [43584/72707 (60%)] Loss: 42.887913 [14.617391 + 28.270521]
+Train Epoch: 24 [58112/72707 (80%)] Loss: 32.849102 [6.054807 + 26.794296]
+Start validation epoch: 24
+Validation Epoch: 24 [0/4499 (0%)] Loss: 120.643364
+    epoch          : 24
+    elapsed time   : 1459.0514295101166
+    loss           : 33.89630573308317
+    sim_loss       : 11.42931750618794
+    gen_loss       : 22.466988234658803
+    val_loss       : 104.77233928182851
+    val_sim_loss   : 12.57524785788163
+    val_gen_loss   : 92.19709112333214
+    val_perplexity : 5.8406805992126465
+    val_accuracy   : 0.6673136645962733
+Saving checkpoint: amazon-save/models/checkpoint-epoch24.pth ...
+Train Epoch: 25 [0/72707 (0%)] Loss: 25.356400 [7.723287 + 17.633112]
+Train Epoch: 25 [14528/72707 (20%)] Loss: 28.913412 [13.120317 + 15.793095]
+Train Epoch: 25 [29056/72707 (40%)] Loss: 28.858660 [7.711420 + 21.147240]
+Train Epoch: 25 [43584/72707 (60%)] Loss: 61.568794 [10.249724 + 51.319069]
+Train Epoch: 25 [58112/72707 (80%)] Loss: 30.216782 [12.606739 + 17.610043]
+Start validation epoch: 25
+Validation Epoch: 25 [0/4499 (0%)] Loss: 55.123646
+    epoch          : 25
+    elapsed time   : 1458.9641342163086
+    loss           : 33.36677128252757
+    sim_loss       : 11.393449525139973
+    gen_loss       : 21.973321771112964
+    val_loss       : 105.36292324895444
+    val_sim_loss   : 12.511219532593437
+    val_gen_loss   : 92.85170424502829
+    val_perplexity : 5.840928554534912
+    val_accuracy   : 0.6690605590062112
+Saving checkpoint: amazon-save/models/checkpoint-epoch25.pth ...
+Train Epoch: 26 [0/72707 (0%)] Loss: 40.954906 [7.194095 + 33.760811]
+Train Epoch: 26 [14528/72707 (20%)] Loss: 30.619799 [11.872454 + 18.747345]
+Train Epoch: 26 [29056/72707 (40%)] Loss: 39.919430 [8.584292 + 31.335136]
+Train Epoch: 26 [43584/72707 (60%)] Loss: 32.474258 [12.599845 + 19.874413]
+Train Epoch: 26 [58112/72707 (80%)] Loss: 23.654022 [8.018513 + 15.635509]
+Start validation epoch: 26
+Validation Epoch: 26 [0/4499 (0%)] Loss: 165.856094
+    epoch          : 26
+    elapsed time   : 1460.0765068531036
+    loss           : 33.20647541102528
+    sim_loss       : 11.408744642983399
+    gen_loss       : 21.79773075068148
+    val_loss       : 107.15556302277938
+    val_sim_loss   : 12.234409373739492
+    val_gen_loss   : 94.92115391855654
+    val_perplexity : 6.025983810424805
+    val_accuracy   : 0.6678959627329192
+Saving checkpoint: amazon-save/models/checkpoint-epoch26.pth ...
+Train Epoch: 27 [0/72707 (0%)] Loss: 21.151844 [7.286563 + 13.865280]
+Train Epoch: 27 [14528/72707 (20%)] Loss: 34.647968 [13.965539 + 20.682430]
+Train Epoch: 27 [29056/72707 (40%)] Loss: 34.058201 [12.106444 + 21.951756]
+Train Epoch: 27 [43584/72707 (60%)] Loss: 33.183128 [10.483263 + 22.699863]
+Train Epoch: 27 [58112/72707 (80%)] Loss: 41.325851 [17.000797 + 24.325052]
+Start validation epoch: 27
+Validation Epoch: 27 [0/4499 (0%)] Loss: 151.679916
+    epoch          : 27
+    elapsed time   : 1460.6747918128967
+    loss           : 32.070429661295684
+    sim_loss       : 11.34219868828599
+    gen_loss       : 20.728230975844856
+    val_loss       : 111.79190544460131
+    val_sim_loss   : 13.513367595879927
+    val_gen_loss   : 98.27853756365569
+    val_perplexity : 6.146403789520264
+    val_accuracy   : 0.6368400621118012
+Saving checkpoint: amazon-save/models/checkpoint-epoch27.pth ...
+Train Epoch: 28 [0/72707 (0%)] Loss: 39.166550 [17.923683 + 21.242867]
+Train Epoch: 28 [14528/72707 (20%)] Loss: 18.457586 [13.070446 + 5.387141]
+Train Epoch: 28 [29056/72707 (40%)] Loss: 39.446442 [18.629101 + 20.817339]
+Train Epoch: 28 [43584/72707 (60%)] Loss: 28.297485 [13.729317 + 14.568168]
+Train Epoch: 28 [58112/72707 (80%)] Loss: 33.899834 [12.424475 + 21.475359]
+Start validation epoch: 28
+Validation Epoch: 28 [0/4499 (0%)] Loss: 151.037704
+    epoch          : 28
+    elapsed time   : 1465.133364200592
+    loss           : 33.54328903936762
+    sim_loss       : 11.55584832001167
+    gen_loss       : 21.987440726523346
+    val_loss       : 105.9347904039466
+    val_sim_loss   : 12.293289754701698
+    val_gen_loss   : 93.6415008151013
+    val_perplexity : 5.897516250610352
+    val_accuracy   : 0.6809006211180124
+Saving checkpoint: amazon-save/models/checkpoint-epoch28.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 29 [0/72707 (0%)] Loss: 21.631458 [7.577541 + 14.053917]
+Train Epoch: 29 [14528/72707 (20%)] Loss: 15.445470 [6.489089 + 8.956381]
+Train Epoch: 29 [29056/72707 (40%)] Loss: 46.250488 [11.454876 + 34.795612]
+Train Epoch: 29 [43584/72707 (60%)] Loss: 33.383625 [11.558396 + 21.825228]
+Train Epoch: 29 [58112/72707 (80%)] Loss: 29.752338 [14.768434 + 14.983904]
+Start validation epoch: 29
+Validation Epoch: 29 [0/4499 (0%)] Loss: 93.934021
+    epoch          : 29
+    elapsed time   : 1459.6211204528809
+    loss           : 31.40206990429602
+    sim_loss       : 11.354243695033766
+    gen_loss       : 20.047826226432207
+    val_loss       : 107.18798301530921
+    val_sim_loss   : 12.53732356817826
+    val_gen_loss   : 94.65065943676493
+    val_perplexity : 6.029732704162598
+    val_accuracy   : 0.6853649068322981
+Saving checkpoint: amazon-save/models/checkpoint-epoch29.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 30 [0/72707 (0%)] Loss: 27.902687 [17.433769 + 10.468917]
+Train Epoch: 30 [14528/72707 (20%)] Loss: 37.048222 [12.790546 + 24.257675]
+Train Epoch: 30 [29056/72707 (40%)] Loss: 38.649261 [8.515352 + 30.133911]
+Train Epoch: 30 [43584/72707 (60%)] Loss: 27.234406 [8.859070 + 18.375336]
+Train Epoch: 30 [58112/72707 (80%)] Loss: 33.830601 [12.991844 + 20.838757]
+Start validation epoch: 30
+Validation Epoch: 30 [0/4499 (0%)] Loss: 147.448715
+    epoch          : 30
+    elapsed time   : 1459.986876964569
+    loss           : 31.478972329646115
+    sim_loss       : 11.370382765686017
+    gen_loss       : 20.108589563509653
+    val_loss       : 110.69679127568784
+    val_sim_loss   : 12.061405752016151
+    val_gen_loss   : 98.63538509866466
+    val_perplexity : 6.246308326721191
+    val_accuracy   : 0.6673136645962733
+Saving checkpoint: amazon-save/models/checkpoint-epoch30.pth ...

@@ -1,0 +1,6 @@
+*.zip
+*.tar.gz
+amazon-save/
+myenv/
+glove/
+dbpedia/
