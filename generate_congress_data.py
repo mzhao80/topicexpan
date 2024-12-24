@@ -40,13 +40,18 @@ def process_speech(speech):
     speech = re.sub(r'[^\w\s]', ' ', speech)
     return speech
 
-def extract_key_phrases(speech, n=5):
-    # Simple extraction of most frequent word combinations
+def extract_key_phrases(speech, n=10):
+    # Extract individual words as phrases
     words = speech.split()
     phrases = []
+    for word in words:
+        if len(word) > 3:  # Only consider meaningful words
+            phrases.append(word)
+    # Also add some bigrams
     for i in range(len(words)-1):
-        if len(words[i]) > 3 and len(words[i+1]) > 3:  # Only consider meaningful words
+        if len(words[i]) > 3 and len(words[i+1]) > 3:
             phrases.append(f"{words[i]} {words[i+1]}")
+    # Remove duplicates and limit to n phrases
     return list(set(phrases))[:n]
 
 def main():
@@ -76,7 +81,7 @@ def main():
     # Process speeches
     print("Processing speeches...")
     speeches = []
-    doc2phrases = []
+    doc2phrases = {}  # Changed from list to dict
     
     with open("congress/speeches_114.txt", "r", encoding='iso-8859-1') as f:
         for i, line in enumerate(f):
@@ -84,15 +89,21 @@ def main():
             speech = process_speech(speech_text)
             speeches.append(speech)
             phrases = extract_key_phrases(speech)
-            doc2phrases.append(f"{i}\t{'\t'.join(phrases)}")
+            doc2phrases[str(i)] = phrases  # Store as dict with string keys
     
     # Write corpus and doc2phrases
     with open("congress/corpus.txt", "w") as f:
-        for i, speech in enumerate(speeches):
-            f.write(f"{i}\t{speech}\n")
+        # Write without blank line at start
+        f.write(f"0\t{speeches[0]}")  # First line without newline
+        for i, speech in enumerate(speeches[1:], 1):  # Start from second item
+            f.write(f"\n{i}\t{speech}")
     
     with open("congress/doc2phrases.txt", "w") as f:
-        f.write("\n".join(doc2phrases))
+        # Write without blank line at start
+        first_id = next(iter(doc2phrases))
+        f.write(f"{first_id}\t{'\t'.join(doc2phrases[first_id])}")  # First line without newline
+        for doc_id, phrases in list(doc2phrases.items())[1:]:  # Start from second item
+            f.write(f"\n{doc_id}\t{'\t'.join(phrases)}")
     
     # Generate topic triples
     print("Generating topic triples...")
