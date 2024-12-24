@@ -42,17 +42,28 @@ def process_speech(speech):
 
 def extract_key_phrases(speech, n=10):
     # Extract individual words as phrases
-    words = speech.split()
-    phrases = []
-    for word in words:
-        if len(word) > 3:  # Only consider meaningful words
-            phrases.append(word)
-    # Also add some bigrams
+    words = [w.lower() for w in speech.split() if len(w) > 3]  # Only consider meaningful words
+    if not words:  # If no meaningful words found, use "unknown" as fallback
+        return ["unknown"]
+        
+    # Get unique words as phrases
+    word_phrases = list(set(words))
+    
+    # Add bigrams
+    bigram_phrases = []
     for i in range(len(words)-1):
-        if len(words[i]) > 3 and len(words[i+1]) > 3:
-            phrases.append(f"{words[i]} {words[i+1]}")
-    # Remove duplicates and limit to n phrases
-    return list(set(phrases))[:n]
+        bigram_phrases.append(f"{words[i]} {words[i+1]}")
+    
+    # Combine and deduplicate phrases
+    all_phrases = word_phrases + bigram_phrases
+    unique_phrases = list(set(all_phrases))
+    
+    # Ensure we always return at least one phrase
+    if not unique_phrases:
+        return ["unknown"]
+    
+    # Return up to n phrases
+    return unique_phrases[:n]
 
 def main():
     # Load GloVe embeddings
