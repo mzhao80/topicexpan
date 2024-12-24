@@ -76,7 +76,8 @@ def main():
     
     with open("congress/speeches_114.txt", "r", encoding='iso-8859-1') as f:
         for i, line in enumerate(f):
-            speech = process_speech(line.strip())
+            speech_id, speech_text = line.strip().split('|', 1)  # Split on first occurrence of |
+            speech = process_speech(speech_text)
             speeches.append(speech)
             phrases = extract_key_phrases(speech)
             doc2phrases.append(f"{i}\t{'\t'.join(phrases)}")
