@@ -74,7 +74,7 @@ def main():
     speeches = []
     doc2phrases = []
     
-    with open("congress/speeches_114.txt", "r") as f:
+    with open("congress/speeches_114.txt", "r", encoding='iso-8859-1') as f:
         for i, line in enumerate(f):
             speech = process_speech(line.strip())
             speeches.append(speech)
