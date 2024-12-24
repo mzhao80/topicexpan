@@ -84,7 +84,8 @@ def main():
     
     # Write corpus and doc2phrases
     with open("congress/corpus.txt", "w") as f:
-        f.write("\n".join(speeches))
+        for i, speech in enumerate(speeches):
+            f.write(f"{i}\t{speech}\n")
     
     with open("congress/doc2phrases.txt", "w") as f:
         f.write("\n".join(doc2phrases))
