@@ -64,7 +64,11 @@ def main():
     # Generate topic embeddings
     print("Generating topic embeddings...")
     with open("congress/topic_feats.txt", "w") as f:
-        f.write(f"{len(topics)} 300\n")  # Header
+        f.write(f"{len(topics) + 1} 300\n")  # Header: +1 for unknown topic
+        # Write unknown topic embedding (zeros)
+        unknown_embedding = np.zeros(300)
+        f.write(f"{len(topics)} " + " ".join(map(str, unknown_embedding)) + "\n")
+        # Write regular topic embeddings
         for idx in range(len(topics)):
             embedding = get_topic_embedding(topics[idx], glove_model)
             f.write(f"{idx} " + " ".join(map(str, embedding)) + "\n")
