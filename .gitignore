@@ -1,4 +1,5 @@
 *.zip
+!congress/speeches*.zip
 *.tar.gz
 amazon-save/
 myenv/
