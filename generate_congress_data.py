@@ -106,15 +106,17 @@ def main():
     # Calculate document-topic similarities
     similarities = cosine_similarity(speech_vectors, topic_vectors)
     
-    # Generate triples (doc_id, topic_id, weight)
+    # Generate triples (doc_id, topic_id, phrase_idx)
     triples = []
     for doc_id in range(len(speeches)):
         # Get top 3 most relevant topics for each document
         top_topics = np.argsort(similarities[doc_id])[-3:]
+        doc_phrases = extract_key_phrases(speeches[doc_id])
         for topic_id in top_topics:
             weight = similarities[doc_id][topic_id]
             if weight > 0.1:  # Only include significant associations
-                triples.append(f"{doc_id}\t{topic_id}\t{weight:.3f}")
+                # Use the first phrase as the evidence (index 0)
+                triples.append(f"{doc_id}\t{topic_id}\t0")
     
     with open("congress/topic_triples.txt", "w") as f:
         f.write("\n".join(triples))
