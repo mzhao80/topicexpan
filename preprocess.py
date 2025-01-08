@@ -100,52 +100,51 @@ def load_glove_vectors(glove_path):
 def create_topic_hierarchy():
     # List of all policy areas
     policy_areas = [
-        "politics",  # Add politics as first topic
-        "agriculture and food",
+        "politics",
+        "agriculture_and_food",
         "animals",
-        "armed forces and national security",
-        "arts culture religion",
-        "civil rights and liberties minority issues",
-        "commerce",
-        "crime and law enforcement",
-        "economics and public finance",
+        "armed_forces_and_national_security",
+        "arts_culture_religion",
+        "civil_rights_and_liberties_minority_issues_commerce",
+        "crime_and_law_enforcement",
+        "economics_and_public_finance",
         "education",
-        "emergency management",
+        "emergency_management",
         "energy",
-        "environmental protection",
+        "environmental_protection",
         "families",
-        "finance and financial sector",
-        "foreign trade and international finance",
-        "geographic areas entities and committees",
-        "government operations and politics",
+        "finance_and_financial_sector",
+        "foreign_trade_and_international_finance",
+        "geographic_areas_entities_and_committees",
+        "government_operations_and_politics",
         "health",
-        "housing and community development",
+        "housing_and_community_development",
         "immigration",
-        "international affairs",
-        "labor and employment",
+        "international_affairs",
+        "labor_and_employment",
         "law",
-        "native americans",
-        "private legislation",
-        "public lands and natural resources",
-        "science technology communications",
-        "social sciences and history",
-        "social welfare",
-        "sports and recreation",
+        "native_americans",
+        "private_legislation",
+        "public_lands_and_natural_resources",
+        "science_technology_communications",
+        "social_sciences_and_history",
+        "social_welfare",
+        "sports_and_recreation",
         "taxation",
-        "transportation and public works",
-        "water resources development"
+        "transportation_and_public_works",
+        "water_resources_development",
     ]
     
-    # Create hierarchy
+    # Create hierarchy using indices
     hierarchy = {
-        'root': {'children': ['politics'], 'terms': []},
-        'politics': {'parent': 'root', 'children': policy_areas[1:], 'terms': []}  # Skip politics itself
+        'root': {'children': ['0'], 'terms': []},  # 0 is politics
+        '0': {'parent': 'root', 'children': [str(i) for i in range(1, len(policy_areas))], 'terms': []}  # Skip politics
     }
     
-    # Add each policy area to hierarchy
-    for area in policy_areas[1:]:  # Skip politics
-        hierarchy[area] = {
-            'parent': 'politics',
+    # Add each policy area to hierarchy using indices
+    for i in range(1, len(policy_areas)):  # Skip politics
+        hierarchy[str(i)] = {
+            'parent': '0',  # Parent is politics (index 0)
             'children': [],
             'terms': []
         }
@@ -271,10 +270,10 @@ def main():
     # Save topic_hier.txt
     with open('congress/topic_hier.txt', 'w', encoding='utf-8') as f:
         # Write root -> politics relationship
-        f.write(f"root\tpolitics\n")
+        f.write(f"root\t0\n")
         # Write politics -> policy areas relationships
-        for area in hierarchy['politics']['children']:
-            f.write(f"politics\t{area}\n")
+        for area in hierarchy['0']['children']:
+            f.write(f"0\t{area}\n")
     
     # Load GloVe vectors
     print("Loading GloVe embeddings...")
