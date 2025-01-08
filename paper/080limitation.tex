@@ -1,0 +1,4 @@
+Despite the remarkable performance of \proposed on our tested corpus, there is still room to improve regarding how to better handle topics, documents, and phrases, for effective mining of topic knowledge.
+First, \proposed uses only the topic names (i.e., center terms) as the base node features in the topic relation graph, which makes our topic encoder difficult to capture the collective meaning of each topic from its set of topic-related phrases.
+Second, the confidence of each generated phrase considers only the topic relevance of its source document, instead of all the documents in which this phrase appears.
+Finally, the clustering process does not leverage the contextualized textual features computed by our BERT-based document encoder, which makes it hard to consolidate the context of the phrase within its source document.

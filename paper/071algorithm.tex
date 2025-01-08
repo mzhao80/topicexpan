@@ -1,0 +1,51 @@
+\begin{algorithm}
+\small
+    \DontPrintSemicolon
+    \SetKwProg{Fn}{Function}{:}{}
+    \SetKwComment{Comment}{$\triangleright$\ }{} 
+	%\Comment*[r]{write comment here}
+	
+	\KwIn{Initial topic taxonomy $\taxo=(\cateset, \edgeset)$ and Text~corpus $\docuset$} 
+	\KwOut{Expanded taxonomy $\taxo'$}
+	
+	\vspace{5pt}
+	{\color{blue}{\tcp{Step 1: Learning the topic taxonomy}}}
+	$\mathcal{X}\leftarrow$ \textsc{CollectTriples}$(\taxo, \docuset)$ \;
+	$\mathcal{G} \leftarrow$ \textsc{ConstructGraph}$(\taxo)$\; 
+    \While{not converged}{
+    \For{$(\topic{j}, \doc{i}, \phrase{k}) \in \mathcal{X}$}{
+        Obtain the model outputs for the inputs $(\mathcal{G}, \topic{j}, \doc{i})$ \;
+        %$\topicdocs{c}^* \leftarrow$ \leftarrow RetrieveRelevantDocs($\topicterms{c}, \topicdocs{c};\docuset$)\;
+        Compute $\mathcal{L}_{sim}$ by Equation~\eqref{eq:simloss} \;
+        Compute $\mathcal{L}_{gen}$ by Equation~\eqref{eq:genloss} \;
+        $\mathcal{L} \leftarrow \mathcal{L}_{sim}+\mathcal{L}_{gen}$ \;
+        $\Theta \leftarrow \Theta - \eta\cdot {\partial\mathcal{L}}/{\partial\Theta}$ \;
+        }
+    }
+
+    \vspace{5pt}
+    {\color{blue}{\tcp{Step 2: Expanding the topic taxonomy}}}
+    $\taxo' \leftarrow \taxo$ \;
+    {\color{blue}{\tcp{For each valid position (the~child~position of each topic)}}}
+    \For{$\topic{j}\in\cateset$}{
+    $\taxo^*, \topicphs{}^* \leftarrow \taxo, \emptyset$ \;
+    $\topic{j}^*\leftarrow$ \textsc{MakeVirtualNode}$(\topic{j})$ \;
+    $\taxo^*$\textsc{.InsertNode}$(\topic{j}, \{\topic{j}^*\})$ \;
+    $\mathcal{G}^* \leftarrow$ \textsc{ConstructGraph}$(\taxo^*)$ \; 
+        \For{$\doc{i}\in\docuset$}{
+        Obtain the model outputs for the inputs $(\mathcal{G}^*, \topic{j}^*, \doc{i})$ \;
+        $\hat{s} \leftarrow \exp(\cvec{j}^{*\top}\bm{M}\dvec{i})$\;
+        $\hat{p} \leftarrow [\hat{v}_{1},\ldots,\hat{v}_{T}], \hat{v}_{t}\sim P(\token{t}|\hat{v}_{<t},\doc{i},\vtopic{j})$\;
+        
+        $\topicphs{}^*$.\textsc{Append}$((\hat{s}, \hat{p}))$\;  
+        }
+        $\topicphs{}^*\leftarrow$ \textsc{FilterByNormalizedScore}$(\topicphs{}^*, \tau)$ \;
+        $\topic{j1}^{*}, \ldots, \topic{jK}^{*} \leftarrow$ \textsc{ClusterPhrases}$(\topicphs{}^*)$ \;
+        $\taxo'$.\textsc{InsertNode}$(\topic{j}, \{\topic{j1}^{*}, \ldots, \topic{jK}^{*}\})$ \;
+    }
+
+    \Return $\taxo'$
+    
+\caption{The process of \proposed.}
+\label{alg:overview}
+\end{algorithm}

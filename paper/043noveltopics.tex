@@ -1,0 +1,93 @@
+
+% \begin{table}[t]
+% \caption{Novel topics newly-inserted at the target position. Redundant topics (\ding{34}) and incorrect topics ($\otimes$) are additionally annotated. Only the center terms (i.e., topic names) are presented in alphabetical order.}
+% \centering
+% \resizebox{\linewidth}{!}{%
+% \begin{tabular}{ccS}
+%     \toprule
+%     \multirow{10}{*}{\rotatebox[origin=c]{90}{\textbf{\amazon}}}
+%     & {\textbf{Position}}
+%     & \reduce{\textbf{Root $\rightarrow$ grocery gourmet food $\rightarrow$ beverages $\rightarrow$ ?}}
+%     \\\cmidrule(lr){2-2}\cmidrule(lr){3-3}
+    
+%     & {\textbf{Sibling topics}}
+%     & \reduce{\textbf{tea, coffee, hot cocoa, water, sports drinks}}
+%     \\\cmidrule(lr){2-2}\cmidrule(lr){3-3}
+    
+%     & \corel 
+%     & \reduce{apple cider, bottles ($\otimes$), drinking ($\otimes$), fruit juice, matcha (\ding{34})} \\
+    
+%     & \taxocom 
+%     & \reduce{decaf chai (\ding{34}), espresso (\ding{34}), fizzy, juice, lipton (\ding{34}), mouthwash ($\otimes$)} \\
+    
+%     & \proposedab
+%     & \reduce{breakfast tea (\ding{34}), coconut water, fruit juice, natural cocoa (\ding{34}), vanilla coffee (\ding{34})} \\
+    
+%     & \proposedfull
+%     & \reduce{coconut water, cream soda, decaf tea (\ding{34}), diet smoothie, redline energy drink} \\\midrule
+    
+%     \multirow{10.5}{*}{\rotatebox[origin=c]{90}{\textbf{\dbpedia}}}
+%     & {\textbf{Position}}
+%     & \reduce{\textbf{Root $\rightarrow$ agent $\rightarrow$ sports team $\rightarrow$ ?}}
+%     \\\cmidrule(lr){2-2}\cmidrule(lr){3-3}
+    
+%     & {\textbf{Sibling topics}}
+%     & \reduce{\textbf{basketball team, cycling team, football team}} \\\cmidrule(lr){2-2}\cmidrule(lr){3-3}
+    
+%     & \corel 
+%     & \reduce{baseball ($\otimes$), domestic competition ($\otimes$), football club (\ding{34}), national ice hockey team, soccer ($\otimes$)} \\
+    
+%     & \taxocom 
+%     & \reduce{hockey ($\otimes$), junior football team (\ding{34}), national team, regular season ($\otimes$), rugby club} \\
+    
+%     & \proposedab
+%     & \reduce{american football team (\ding{34}), cricket team, cycling team (\ding{34}), professional basketball team (\ding{34}), rugby union team} \\
+    
+%     & \proposedfull
+%     & \reduce{beach handball team, cricket team, football club (\ding{34}), ice hockey team, rugby union team} \\
+%     \bottomrule
+% \end{tabular}
+% }
+% \label{tbl:noveltopics}
+% \end{table}
+
+
+\begin{table*}[t]
+\caption{Novel topics identified at each target position. The center term (i.e., topic name) of each identified topic is presented. Correct topics ($\Circle$), incorrect topics ($\otimes$), and redundant topics (\ding{34}) are annotated.}
+\setlength{\tabcolsep}{4pt}
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{cSW}
+    \toprule
+    & {\textbf{\amazon}} &  {\textbf{\dbpedia}} \\ \midrule
+    
+    \reduce{\textbf{Position}}
+    & \reduce{\textbf{Root $\rightarrow$ grocery gourmet food $\rightarrow$ beverages $\rightarrow$ ?}} 
+    & \reduce{\textbf{Root $\rightarrow$ agent $\rightarrow$ sports team $\rightarrow$ ?}}
+    \\\cmidrule(lr){1-1}\cmidrule(lr){2-2}\cmidrule(lr){3-3}
+    
+    \reduce{\textbf{Sibling topics}}
+    & \reduce{\textbf{tea, coffee, hot cocoa, water, sports drinks}} 
+    & \reduce{\textbf{basketball team, cycling team, football team}}
+    \\\cmidrule(lr){1-1}\cmidrule(lr){2-2}\cmidrule(lr){3-3}
+    
+    \reduce{\corel} 
+    & \reduce{apple cider ($\Circle$), bottles ($\otimes$), drinking ($\otimes$), fruit juice ($\Circle$), matcha (\ding{34})} 
+    & \reduce{baseball ($\otimes$), domestic competition ($\otimes$), football club (\ding{34}), national~ice~hockey~team ($\Circle$), soccer ($\otimes$)} \\
+    
+    \reduce{\taxocom} 
+    & \reduce{decaf chai (\ding{34}), espresso (\ding{34}), fizzy ($\Circle$), juice ($\Circle$), lipton~(\ding{34}), mouthwash ($\otimes$)} 
+    & \reduce{hockey ($\otimes$), junior football team (\ding{34}), national team ($\Circle$), regular~season~($\otimes$), rugby~club ($\Circle$)} \\
+    
+    \reduce{\proposedab}
+    & \reduce{breakfast tea (\ding{34}), coconut water ($\Circle$), fruit juice ($\Circle$), natural~cocoa (\ding{34}), vanilla coffee (\ding{34})} 
+    & \reduce{american~football~team (\ding{34}), cricket~team ($\Circle$), cycling~team (\ding{34}), professional~basketball~team (\ding{34}), rugby~union~team ($\Circle$)} \\
+    
+    \reduce{\proposedfull}
+    & \reduce{coconut water ($\Circle$), cream soda ($\Circle$), decaf tea (\ding{34}), diet~smoothie ($\Circle$), redline energy drink ($\Circle$)} 
+    & \reduce{beach~handball~team ($\Circle$), cricket~team ($\Circle$), football club (\ding{34}), ice~hockey~team ($\Circle$), rugby~union~team ($\Circle$)} \\
+    \bottomrule
+\end{tabular}
+}
+\label{tbl:noveltopics}
+\end{table*}

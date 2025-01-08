@@ -1,0 +1,27 @@
+\begin{table}[t]
+\caption{Performance for topic phrase generation.}
+\centering
+\resizebox{0.99\linewidth}{!}{%
+\begin{tabular}{lrrrr}
+    \toprule
+    \multirow{2.5}{*}{\textbf{Methods}} & \multicolumn{2}{c}{\textbf{\amazon}} & \multicolumn{2}{c}{\textbf{\dbpedia}} \\\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+    & \textbf{PPL} $\downarrow$ & \textbf{ACC} $\uparrow$ & \textbf{PPL} $\downarrow$ & \textbf{ACC} $\uparrow$ \\\midrule
+    \rowcolor{Gray}
+    \proposed & \textbf{5.2553} & \textbf{0.6958}  & \textbf{3.1108} & \textbf{0.7768} \\
+    {\small \ \ (Encoder) BERT$\rightarrow$Bi-GRU} & 5.7844 & 0.6884 & 3.5322 & 0.7645 \\
+    {\small \ \ (Decoder) Transformer$\rightarrow$GRU} & 6.6649 & 0.6754 & 5.3690 & 0.6798 \\
+    {\small \ \ w/o Topic-attentive context} & 7.0907 & 0.6643 & 7.1679 & 0.6553\\
+    {\small \ \ w/o Hierarchical topic relation} & 6.5345 & 0.6772 & 3.9802 & 0.7423 \\
+    {\small \ \ w/o Sideward topic relation} & 5.8705 & 0.6807 & 3.6985 & 0.7506 \\
+    \midrule
+    
+    \multicolumn{2}{l}{{\footnotesize \textrank~\cite{mihalcea2004textrank}}\hfill -} & 0.3023 & \multicolumn{1}{c}{$~~~$-} & 0.1628 \\
+    \multicolumn{2}{l}{{\footnotesize \topicrank~\cite{bougouin2013topicrank}}\hfill $~~~~$-} & 0.2099 & \multicolumn{1}{c}{$~~~$-} & 0.1092 \\
+    {\small \topickg~\cite{wang2019topic}} & 13.1298 & 0.2770 & 11.5663 & 0.3238 \\
+    {\small \bertkg~\cite{liu2020keyphrase}} & 11.0229 & 0.4165 & 9.4723 & 0.4734 \\
+    {\small \berttkg~\cite{zhou2021topic}} & 10.9746 & 0.4308 & 8.3607 & 0.4894 \\
+    \bottomrule
+\end{tabular}
+}
+\label{tbl:genperf}
+\end{table}

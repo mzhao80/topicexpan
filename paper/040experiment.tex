@@ -1,0 +1,208 @@
+% In this section, we present the experimental results that validate the superiority of \proposed.
+
+\subsection{Experimental Settings}
+\label{subsec:expsetting}
+\smallsection{Datasets}
+\label{subsubsec:dataset}
+% For our experiments,
+We use two real-world document corpora with their three-level topic taxonomy: \textbf{\amazon}~\cite{mcauley2013hidden} contains product reviews collected from Amazon, and \textbf{\dbpedia}~\cite{lehmann2015dbpedia} contains Wikipedia articles.
+All the documents in both datasets are tokenized by the BERT tokenizer~\cite{devlin2019bert} and truncated to have maximum 512 tokens.
+The statistics are listed in Table~\ref{tbl:datastats}.
+
+\smallsection{Baseline Methods}
+\label{subsubsec:baseline}
+We consider methods for building a topic taxonomy from scratch, \textbf{\hlda} \cite{blei2003hierarchical} and \textbf{\taxogen} \cite{zhang2018taxogen}. 
+We also evaluate the state-of-the-art methods for topic taxonomy expansion,
+\textbf{\corel} \cite{huang2020corel} and \textbf{\taxocom} \cite{lee2022taxocom}.\footnote{The implementation details and hyperparameter selection for the baselines and \proposed are in Sections~\ref{subsec:basedetail} and~\ref{subsec:implementation}.}
+Both of them identify and insert new topic nodes based on term embedding and clustering, with the initial topic taxonomy leveraged as supervision.
+% We employ the official author codes of \corel\footnote{https://github.com/teapot123/CoRel} and \taxocom\footnote{https://github.com/donalee/taxocom} for experiments.
+
+%\footnote{https://github.com/joewandy/hlda}
+%\footnote{https://github.com/franticnerd/taxogen}
+%\footnote{https://github.com/teapot123/CoRel}
+%\footnote{https://github.com/donalee/taxocom}
+
+% \begin{itemize}
+%     \item \textbf{\hlda}~\cite{blei2003hierarchical}: Hierarchical latent Dirichlet allocation for probabilistic topic modeling.
+    
+%     \item \textbf{\taxogen}~\cite{zhang2018taxogen}: The recursive framework based on text embedding and clustering.
+    
+%     \item \textbf{\corel}~\cite{huang2020corel}: 
+%     The first topic taxonomy expansion method.
+%     It trains a topic relation classifier by using the initial taxonomy, then recursively transfers the relation to find out candidate terms for novel subtopics. 
+%     Finally, it identifies novel topic nodes based on term embeddings induced by SkipGram~\cite{mikolov2013distributed}.
+    
+%     \item \textbf{\taxocom}~\cite{lee2022taxocom}: 
+%     The state-of-the-art method for topic taxonomy completion. 
+%     For each node from the root to the leaf, it recursively optimizes term embedding and performs term clustering to identify both known and novel subtopics.
+    
+%     \item \textbf{\proposed}: The proposed framework for topic taxonomy expansion.
+%     It trains a topic-conditional phrase generator by using the initial topic taxonomy, then generates topic-related phrases for a virtual topic node whose semantics is captured based on its surrounding relation structure in the hierarchy.
+% \end{itemize}
+
+\smallsection{Experimental Settings}
+To evaluate the performance for novel topic discovery, 
+%we run each expansion method using an incomplete topic taxonomy which is made by randomly deleting half of leaf topic nodes from the original topic taxonomy, as done in~\cite{lee2022taxocom}.
+we follow the previous convention that randomly deletes half of leaf nodes from the original taxonomy and asks each expansion method to reproduce them~\cite{shen2020taxoexpan, lee2022taxocom}.
+%\footnote{In detail, 259 topic nodes (for \amazon) and 109 topic nodes (for \dbpedia) are deleted.} 
+Considering the deleted topics as \textit{ground-truth}, we measure how completely new topics are discovered and how accurately they are inserted into the taxonomy.
+% Three different parts of the topic taxonomy $\subtaxo{1}$, $\subtaxo{2}$, and $\subtaxo{3}$ are given as the initial taxonomy for the expansion methods, each of which covers some of the first-level topics (and their subtrees) listed in Table~\ref{tbl:taxopart}.
+
+% \subsection{Experimental Results}
+% \label{subsec:expresult}
+
+\begin{table}[t]
+\small
+\caption{The statistics of the datasets.}
+\label{tbl:datastats}
+\centering
+\resizebox{0.99\linewidth}{!}{%
+\begin{tabular}{cccc}
+    \toprule
+        \textbf{Corpus} & \textbf{Vocab. size} & \textbf{\# Documents} & \textbf{\# Topic nodes} \\\midrule
+        \amazon & 19,615 & \ \ 29,487 & 531 \\
+        \dbpedia & 27,435 & 196,665 & 298 \\
+    \bottomrule
+\end{tabular}
+}
+\end{table}
+
+\input{041humaneval}
+\input{044ablationstudy}
+
+\subsection{Quantitative Evaluation}
+\subsubsection{Topic Taxonomy Expansion}
+\label{subsubsec:humaneval1}
+First of all, we assess the quality of output topic taxonomies.
+Following previous topic taxonomy evaluations~\cite{huang2020corel, lee2022taxocom}, we recruit 10 doctoral researchers and use their domain knowledge to examine three different aspects of a topic taxonomy.
+%\footnote{The scores are reported after being averaged over all evaluators and all target nodes.}
+\textbf{Term coherence} indicates how strongly terms in a topic node are relevant to each other. 
+% Human evaluators count the number of terms that are relevant to the common topic (or topic name) among the top-5 terms found for each topic node.
+\textbf{Relation accuracy} computes how accurately a topic node is inserted into the topic taxonomy (i.e., \textit{precision} for novel topic discovery).
+% For each valid position, human evaluators count the number of newly-inserted topics that are in the correct relationship with the surrounding topics.
+\textbf{Subtopic integrity} measures the completeness of subtopics for a topic node (i.e., \textit{recall} for novel topic discovery).
+% Human evaluators investigate how many ground-truth novel topics, which were deleted from the original taxonomy (Section~\ref{subsubsec:dataset}), match with one of the newly-inserted topics.
+% For practical evaluation on a large-scale topic taxonomy with hundreds of topic nodes,
+% We divide each output taxonomy into three parts $\subtaxo{1}$, $\subtaxo{2}$, and $\subtaxo{3}$ so that each of them covers some of the first-level topics (and their subtrees) listed in Table~\ref{tbl:taxopart}.
+For exhaustive evaluation, we divide the output taxonomy of each expansion method into three disjoint parts $\subtaxo{1}$, $\subtaxo{2}$, and $\subtaxo{3}$ so that each of them covers some first-level topics (and their subtrees) in Table~\ref{tbl:taxopart} in Section~\ref{subsec:evalprotocol}.\footnote{The details of the evaluation protocol are in Section~\ref{subsec:evalprotocol}.}
+
+In Table~\ref{tbl:humaneval}, \proposed achieves the highest scores for all the aspects.\footnote{The evaluation results obtain the Kendall coefficient of 0.96/0.91/0.84 (\amazon) and 0.93/0.90/0.91 (\dbpedia) respectively for each aspect, which indicates strong inter-rater agreement on ranks of the methods.}
+For all the baseline methods, the term coherence is not good enough~because they assign candidate terms into a new topic according to the topic-term relevance mostly learned~from term co-occurrences.
+In contrast, \proposed effectively collects coherent terms relevant to a new topic (i.e., term coherence $\geq 0.90$) by directly generating the topic-conditional terms from documents.
+\proposed also shows significantly higher relation accuracy and subtopic integrity than the other expansion methods, with the help of its GNN-based topic encoder that captures a holistic topic structure beyond the first-order topic relation.
+% Most of its topic phrases in each topic node are semantically relevant, i.e., term coherence $\geq 0.90$, and also most of its inserted new topics do not break relation consistency of the topic hierarchy, i.e., relation accuracy $\geq 0.85$.
+% \footnote{Note that only a few terms (and new topics) are presented to evaluators for each topic node (and each valid position), so the reported values of standard deviation smaller than 0.2 actually imply consistent assessment across the evaluators.}
+% \proposed also shows significantly better subtopic integrity than the other baseline methods.
+% We remark that the existing expansion methods have been validated only for a small topic hierarchy with tens of topic nodes~\cite{huang2020corel, lee2022taxocom};
+% that is, our results indicate that they do not work well for a larger and deeper topic hierarchy.
+% In conclusion, our framework can obtain a better expanded topic taxonomy than all the baselines, with the help of hierarchy-aware topic phrase generation.
+
+\input{042topicterms}
+\input{043noveltopics}
+
+\subsubsection{Topic-Conditional Phrase Generation}
+\label{subsubsec:ablation}
+We investigate the topic phrase prediction performance of our framework and other keyphrase extraction/generation models.
+% To validate the effectiveness of each component in our framework, we investigate the phrase generation performance for an ablation study:
+% 1) BERT encoder (vs. bidirectional-GRU encoder), 
+% 2) transformer decoder (vs. GRU decoder), 
+% 3) topic-attentive context representation (vs. simply concatenating the representation of a topic and that of each contextualized token), and
+% 4) GCN topic encoder with sideward relation modeling (vs. without sideward relation modeling).
+% 5) GCN topic encoder with hierarchical relation modeling (vs. without hierarchy-awareness).      
+We leave out 10\% of the positive triples $(\topic{j}, \doc{i}, \phrase{k})$ from the training set $\mathcal{X}$ and use them as the test set.
+We measure \textbf{perplexity (PPL)} and \textbf{accuracy (ACC)} by comparing each generated phrase with the target phrase at the token-level and phrase-level, respectively.
+% \begin{equation*}
+% \small
+% \begin{split}
+% \textstyle
+%     \text{PPL} &= \frac{1}{|\mathcal{X}_{test}|} \sum_{(\topic{j}, \doc{i}, \phrase{k})\in\mathcal{X}_{test}}\sum _{t=1}^T \ -\log P(\token{kt}|\token{k(<t)},\topic{j}, \doc{i}) \\
+%     \text{ACC} &=  \frac{1}{|\mathcal{X}_{test}|} \sum_{(\topic{j}, \doc{i}, \phrase{k})\in\mathcal{X}_{test}} \prod_{t=1}^T \mathbb{I}[\hat{v}_{kt} == \token{kt}]
+% \end{split}
+% \end{equation*}
+% We repeat the experiment three times and report their average.
+
+In Table~\ref{tbl:genperf}, \proposed achieves the best PPL and ACC scores.
+We observe that \proposed more accurately generates topic-related phrases from input documents, compared to the state-of-the-art keyphrase generation methods which are not able to consider a specific topic as the condition for generation.
+% We observe that utilizing the advanced neural architecture to encode and decode texts (i.e., transformer) as well as leveraging the pretrained checkpoint (i.e., BERT) contribute to accurate generation of topic phrases.
+In addition, ablation analyses validate that each component of our framework contributes to accurate generation of topic phrases. 
+% topic-attentive context representations play a critical role in precisely specifying the condition for generating a topic phrase from an input document.
+Particularly, the hierarchical (i.e., upward and downward) and sideward relation modeling of the topic encoder improves the quality of generated phrases.
+%by encouraging a topic representation to encode distinct semantics of a relation structure.
+
+
+\subsection{Qualitative Evaluation}
+\subsubsection{Comparison of Topic Terms}
+\label{subsubsec:topicterms}
+We qualitatively compare the topic terms found by each method.
+%, we list the top-5 terms of three topic nodes for each dataset.
+% Note that the extraction-based methods (i.e., \corel and \taxocom) retrieve topic terms from the predefined set of candidate terms (extracted by \autophrase~\cite{shang2018automated}) by using their relevance score to each topic, whereas the generation-based method (i.e., \proposed) sequentially decodes word tokens given a topic and an input document.
+In case of \proposed, we sort all confident topic terms by their cosine distances to the topic name (i.e., center term) using the global embedding features~\cite{pennington2014glove}.
+%, as done in Section~\ref{subsubsec:expansion}.
+
+Table~\ref{tbl:topicterms} shows that the topic terms of \proposed are superior to those of the baseline methods, in terms of the expressiveness as well as the topic relevance.
+In detail, some of the terms retrieved by \corel and \taxocom are either off-topic or too general (marked with a strikethrough);
+this indicates that their topic relevance score for each term is not good at capturing the hierarchical topic knowledge of a text corpus.
+% On the contrary, \proposed generates strongly topic-related terms from relevant documents, by using the relation structure of a target topic as the condition for generation.
+On the contrary, \proposed generates strongly topic-related terms by capturing the relation structure of each topic.
+Furthermore, \proposed is effective to find infrequently-appearing multi-word terms (underlined), which all the extraction-based methods fail to obtain.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{FIG/casestudy.pdf}
+    \caption{Examples of topic-conditional phrase generation, given a document and its relevant/irrelevant topic.}
+    \label{fig:casestudy}
+\end{figure}
+
+\subsubsection{Comparison of Novel Topics}
+\label{subsubsec:noveltopics}
+Next, we examine novel topics inserted by each expansion method.
+To show the effectiveness of sideward relation modeling adopted by our topic encoder (Section~\ref{subsubsec:topic_encoder}),
+we additionally present the results of \textbf{\proposedfull} and \textbf{\proposedab}, which computes topic representations with and without capturing the \underline{s}ideward topic \underline{r}elations.
+
+In Table~\ref{tbl:noveltopics}, \proposedfull successfully discovers new topics that should be placed in a target position.
+Notably, the new topics are clearly distinguishable from the sibling topics (i.e., known topics given in the initial topic hierarchy), which reduces the redundancy of the output topic taxonomy.
+On the other hand, \corel and \taxocom show limited performance for novel topic discovery; 
+some new topics are redundant (\ding{34}) while some others do not preserve the hierarchical relation with the existing topics ($\otimes$).
+Some of the new topics found by \proposedab semantically overlap with the sibling topics, even though they are at the correct position in the hierarchy;
+this implies that our topic encoder with sideward relation modeling makes the representation of a virtual topic node \textit{discriminative} with its sibling topic nodes, and it eventually helps to discover new conceptual topics of novel semantics.
+
+\subsubsection{Case Study of Topic Phrase Generation}
+\label{subsubsec:casestudy}
+To study how the generated phrases and their topic-document similarity scores (i.e., confidences) vary depending on a topic condition, we provide examples of topic-conditional phrase generation.
+The input document in Figure~\ref{fig:casestudy} contains a review about nail care products. 
+In case that the relation structure of a target topic implies the nail product (Figure~\ref{fig:casestudy} Left),
+%(i.e., the position of a node annotated with \texttt{[MASK]} in Figure~\ref{fig:casestudy} Left), 
+\proposed obtains the desired \textit{topic-relevant} phrase ``nail lacquer'' along with the high topic-document similarity of 0.8547.
+On the other hand, given the relation structure of a target topic which is inferred as a kind of meat foods (Figure~\ref{fig:casestudy} Right),
+%(i.e., the position of a node annotated with \texttt{[MASK]} in Figure~\ref{fig:casestudy} Right),
+it generates a \textit{topic-irrelevant} phrase ``metallic black'' from the document along with the low topic-document similarity of 0.0023.
+That is, \proposed fails to get a qualified topic phrase when the textual contents of an input document is obviously irrelevant to a target topic. 
+In this sense, \proposed filters out non-confident phrases having a low topic-document similarity score to collect only the phrases relevant to each virtual topic.
+% Please refer to the supplementary material for more examples of topic-conditional phrase generation.
+
+\subsection{Analysis of Topic-Document Similarity}
+\label{subsec:unseenphs}
+Finally, we investigate the changes of generated phrases in two aspects, with respect to the topic-document similarity scores.
+The first aspect is the ratio of three categories for generated phrases, which have been focused on in the literature of keyphrase generation~\cite{meng2017deep, zhou2021topic}: 
+\textbf{(1) present phrases} appearing in the input document, 
+\textbf{(2) absent phrases} not appearing in the input document but in the corpus at least once, 
+and \textbf{(3) unseen (i.e., totally-new) phrases} that are not observed in the corpus at all.
+The second aspect is the average semantic distance among the phrases, measured by using the semantic features. %~\cite{pennington2014glove}.
+For the plots in Figure~\ref{fig:confanal}, the horizontal axis represents 10 bins of normalized topic-document similarity scores over all generated phrases.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{FIG/confanal.pdf}
+    \caption{\reducetxt{The ratio of three categories for generated phrases (Left) and the average semantic distance among generated phrases (Right). The horizontal axis shows 10 bins of normalized topic-document similarity scores.}}
+    \label{fig:confanal}
+\end{figure}
+
+Interestingly, \proposed hardly generates absent phrases (about $0.7\%$ for \amazon, $1.7\%$ for \dbpedia) and unseen phrases (about $0.1\%$ for \amazon, $0.2\%$ for \dbpedia) regardless of the topic-document similarity; instead, it generates present phrases in most cases (Figure~\ref{fig:confanal} Left). 
+In other words, if the input document is not relevant to a target topic, it tends to generate an irrelevant-but-present phrase rather than a relevant-but-absent phrase, as shown in Section~\ref{subsubsec:casestudy}. 
+One potential risk of \proposed is to generate unseen phrases that are nonsense or implausible, also known as \textit{hallucinations} in neural text generation, and such unseen phrases can degrade the quality and credibility of output topic taxonomies. 
+This result supports that we can easily exclude all unseen phrases, which account for less than 0.2\% of generated phrases, to effectively address this issue.
+
+Moreover, the negative correlation between the topic-document similarity score and the inter-phrase semantic distance (Figure~\ref{fig:confanal} Right) provides empirical evidence that the similarity score can serve as the confidence of a generated topic phrase.
+There is a clear tendency toward decreasing the average semantic distance as the topic-document similarity score increases;
+this implies that the phrases generated from topic-relevant documents are semantically coherent to each other, and accordingly, they are likely to belong to the same topic.
+

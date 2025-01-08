@@ -1,0 +1,70 @@
+Topic taxonomy is a tree-structured representation of hierarchical relationship among multiple topics found in a text corpus~\cite{zhang2018taxogen, shang2020nettaxo, meng2020hierarchical}. 
+Each topic node is defined by a set of semantically coherent terms related to a specific topic (i.e., topic term cluster), and each edge implies the ``general-specific'' relation between two topics (i.e., topic-subtopic).
+With the knowledge of hierarchical topic structures, topic taxonomies have been successfully utilized in many text mining applications, such as text summarization~\cite{petinot2011hierarchical, bairi2015summarization} and categorization~\cite{meng2019weakly, shen2021taxoclass}.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{FIG/problem.pdf}
+    \caption{An example of topic taxonomy expansion. The known (i.e., existing) topics and novel topics are in single-line and double-line boxes, respectively.}
+    \label{fig:problem}
+\end{figure}
+
+Recently, automated expansion (or completion) of an existing topic taxonomy has been studied \cite{huang2020corel, lee2022taxocom}, which helps people to incrementally manage the topic knowledge within fast-growing document collections.
+This task has two technical challenges:
+% These methods typically consists of two steps:
+(1) identifying new topics by collecting topic-related terms that have novel semantics, and (2) inserting the new topics at the right position in the hierarchy.
+%, by leveraging the initial taxonomy as additional supervision. 
+In Figure~\ref{fig:problem}, for example, a new topic node \textit{painter} that consists of its topic-related terms [\textit{baroque painter}, \textit{realist painter}, \textit{portraitist}, ...] is inserted at the child position (i.e., subtopic) of the existing topic node \textit{artist}, without breaking the consistency of topic relations with the neighbor nodes.
+% For example, in Figure~\ref{fig:problem}, new topic nodes (``cakes'': [``fruit cake'', ``ounce cake'', $\ldots$]) and (``cookies'': [``chocolate cookies'', ``coconut chip cookies'', $\ldots$]) are inserted into the child (i.e., subtopic) of the existing topic node (``breads bakery'': [``pastries'', ``loaf'', $\ldots$]) while keeping the consistency of topic relations with the neighbor nodes.
+% The existing methods mainly employ term embedding and clustering techniques~\cite{mikolov2013distributed, meng2020hierarchical} to infer the semantic relevance among terms as well as the hierarchical relation between a topic and its new subtopic.
+
+The existing methods for topic taxonomy expansion, however, suffer from two major limitations:
+(1) \textit{Limited term coverage} --
+They identify new topics from a set of candidate terms, while relying on entity extraction tools~\cite{zeng2020tri} or phrase mining techniques~\cite{liu2015mining,shang2018automated,gu2021ucphrase} to obtain the high-frequency candidate terms in a corpus.
+Such extraction techniques will miss a lot of topic-related terms that have low frequency, and thus lead to an incomplete set of candidate terms~\cite{zeng2021enhancing}.
+(2) \textit{Inconsistent topic relation} --
+As they insert new topics by considering only the first-order relation between two topics (i.e., a topic and its subtopic), the newly-inserted topics are likely to have inconsistent relations with other existing topics.
+The expansion strategy based on the first-order topic relation is inadequate to capture the holistic structure information of the existing topic taxonomy.
+%, which eventually hinders new topic nodes from being inserted into the right position in the topic hierarchy
+% If a language model can encodes topic knowledge as well as their hierarchical relationship, it can generate a from any input document.
+
+As a solution to both challenges, we present \proposed, a new framework that expands the topic taxonomy via \textit{hierarchy-aware topic term generation}.
+The key idea is to directly generate topic-related terms from documents by taking the topic hierarchy into consideration.
+% That is, we aim to learn a neural text generation model for generating topic-related terms, each of which is regarded as a sequence of word tokens.
+From the perspective of term coverage, this generation-based approach can identify more multi-word terms even if they have low frequency in the given corpus~\cite{zeng2021enhancing}, compared to the extraction-based approach only working on the extracted candidate terms that frequently appear in the corpus.
+%compared to the extraction-based approach that requires candidate terms to appear frequently enough for identifying them and learning their reliable embeddings.
+To combat the challenge of relation inconsistency, we utilize graph neural networks (GNNs) to encode the relation structure surrounding each topic~\cite{kipf2017semi, shen2021taxoclass} and generate topic-related terms conditioned on these relation structure encodings.
+% we use the relation structure surrounding each topic as the condition for generating topic-related terms, with the help of graph neural networks (GNNs) that encode the structural information of the topic hierarchy~\cite{kipf2017semi, shen2021taxoclass}.
+This allows us to accurately capture a hierarchical structure beyond the first-order relation between two topics.
+% For example, in Figure~\ref{fig:problem}, a new topic ``dairy'' can be correctly inserted into the child of ``grocery gourmet food'' by considering its relation not only with the potential parent but also with all types of its neighbors, such as ancestors, siblings, and all descendants of the siblings.
+
+To be specific, \proposed consists of \textit{the training step} and \textit{the expansion step}.
+The training step is for optimizing a neural model that topic-conditionally generates a term from an input document.
+% The model architecture is designed to capture the semantic interaction among a topic, a document, and a topic-related term.
+Technically, for topic-conditional term generation, the model utilizes the relation structure of a topic node as well as the textual content of an input document.
+% In the expansion step, \proposed utilizes the trained model to infer the terms that belong to new topics, which are assumed to \textit{virtually exist} in the topic hierarchy.
+The expansion step is for discovering novel topics and inserting them into the topic taxonomy.
+To this end, \proposed places a \textit{virtual} topic node underneath each existing topic node, and then it generates the topic terms conditioned on the virtual topic by utilizing the trained model.
+In the end, it performs clustering on the generated terms to identify multiple novel topics, which are inserted at the position of the virtual topic node.
+% To this end, \proposed introduces a \textit{virtual} topic node as a child node of each existing topic node.
+% Using each virtual topic node along with all documents, it generates the terms that are likely to be relevant to the new topic, then it finds out multiple novel topics from the clusters of generated terms.
+% In the end, the identified new topic nodes are inserted into the position of the virtual node.
+
+% Our comprehensive evaluation on two real-world topic taxonomies along with their corresponding document collections demonstrates that \proposed obtains higher quality of topic taxonomy in terms of relation consistency as well as term coverage, compared to other baseline methods.
+% To be specific, topic-conditional term generation of our framework enables to explore a variety of multi-word terms relevant to each topic, whereas extraction-based baselines fail to identify such terms due to the low term frequency and the incompleteness of candidate terms.
+% Besides, the hierarchy-awareness of \proposed, induced by graph neural networks, helps to preserve the consistency of an expanded topic taxonomy, by capturing the new relation structure of a virtual topic node.
+% For reproducibility, the implementation will be publicly available through the anonymized github repository during the review process.\footnote{https://github.com/topicexpan-author/topicexpan}
+
+
+\smallsection{Contributions}
+The main contributions of this paper can be summarized as follows:
+(1) We propose a novel framework for topic taxonomy expansion, which tackles the challenges in topic term coverage and topic relation consistency via hierarchy-aware topic term generation.
+(2) We present a neural model to generate a topic-related term from an input document \textit{topic-conditionally} by capturing the hierarchical relation structure surrounding each topic based on GNNs.
+(3) Our comprehensive evaluation on two real-world datasets demonstrates that output taxonomies of \proposed show better relation consistency as well as term coverage, compared to that of other baseline methods.
+    
+% The main contribution of this paper can be summarized as follows.
+% \begin{itemize}
+%     \item We present a novel framework for topic taxonomy expansion, which discovers new topics at each valid position in a given taxonomy via hierarchy-aware topic term generation.
+%     \item Our model architecture is able to generate a multi-word term from an input document \textit{topic-conditionally} by capturing the relation structure of a topic hierarchy based on GNNs.
+%     \item Our comprehensive evaluation on two real-world datasets demonstrates that output taxonomies of \proposed show better relation consistency as well as term coverage, compared to that of other baseline methods.
+% \end{itemize}

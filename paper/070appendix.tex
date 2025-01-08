@@ -1,0 +1,154 @@
+\subsection{Pseudo-code of \proposed}
+\label{subsec:pseudocode}
+Algorithm~\ref{alg:overview} describes the detailed process of our framework, including the training step (Lines 1--9) and the expansion step (Lines 10--23). 
+The final output is the expanded topic taxonomy (Line 24).
+
+\input{071algorithm}
+
+\smallsection{Training Step (Lines 1--9)}
+\proposed first collects all positive triples $(\topic{j}, \doc{i}, \phrase{k})$ from an initial topic taxonomy $\taxo$ and a text corpus $\docuset$ (Line 1; Section~\ref{subsubsec:training}), and constructs a topic relation graph $\mathcal{G}$ from the topic hierarchy (Line 2; Section~\ref{subsubsec:topic_encoder}).
+Then, it updates all the trainable parameters based on the gradient back-propagation (Lines 5--9) to minimize the losses for the topic-document similarity prediction task (Line 6; Section~\ref{subsubsec:prediction}) and the topic-conditional phrase generation task (Line 7; Section~\ref{subsubsec:generation}).
+
+\smallsection{Expansion Step (Lines 10--23)}
+Using the trained model, \proposed discovers new topics that need to be inserted into each valid position in the topic hierarchy (Line 11).
+For a virtual topic node $\topic{j}^*$ as a newly-introduced child of each topic node $\topic{j}$ (Line 13), it constructs a topic relation graph $\mathcal{G}^*$ from the topic hierarchy augmented with the virtual topic node (Lines 14--15).
+Then, it collects all pairs of a topic-document similarity score and a generated topic phrase  $(\hat{s}, \hat{p})$, which are obtained by using the trained model on the augmented topic relation graph and all the documents (Lines 16--20; Section~\ref{subsubsec:collection}).
+Next, it filters out non-confident (i.e., irrelevant) phrases according to the normalized score (Line 21), then it performs clustering to find out multiple phrase clusters, each of which is considered as a new topic node having a novel topic semantics (Line 22; Section~\ref{subsubsec:clustering}).
+In the end, it inserts the identified new topic nodes into the target position (i.e., the child of a topic node $\topic{j}$) to expand the current topic taxonomy (Line 23).
+
+% \subsection{Reproducibility}
+% \label{subsec:reprod}
+% For reproducibility, this submission is accompanied by our codes and two datasets (i.e., \amazon and \dbpedia) used in the experiments.
+%at the anonymized github repository.\footnote{https://github.com/topicexpan-author/topicexpan}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{FIG/phrase_generator.pdf}
+    \caption{The phrase generator architecture. It generates the token sequence given a topic and a document, by using topic-attentive token representations as the context.
+    }
+    \label{fig:phrase_generator}
+\end{figure}
+
+\subsection{Baseline Methods}
+\label{subsec:basedetail}
+For the baselines, we employ the official author codes while following the parameter settings provided by~\cite{lee2022taxocom}.
+For all the methods that optimize the Euclidean or spherical embedding space (i.e., \taxogen, \corel, and \taxocom), we fix the number of negative terms (for each positive term pair) to 2 during the optimization.
+\begin{itemize}
+    \item \textbf{\hlda}\footnote{https://github.com/joewandy/hlda}~\cite{blei2003hierarchical} performs hierarchical latent Dirichlet allocation.
+    It models a document generation process as sampling its words along the path selected from the root to a leaf. 
+    We set the smoothing parameters $\alpha$ = 0.1 and $\eta$ = 1.0, respectively for document-topic distributions and topic-word distributions, and the concentration parameter in the Chinese restaurant process $\gamma$ = 1.0. 
+    
+    \item \textbf{\taxogen}\footnote{https://github.com/franticnerd/taxogen}~\cite{zhang2018taxogen} is the unsupervised framework for topic taxonomy construction. 
+    To identify hierarchical term clusters, it optimizes the term embedding space with SkipGram~\cite{mikolov2013distributed}.
+    %The number of child nodes is manually set, as done in~\cite{zhang2018taxogen,shang2020nettaxo}.
+    We set the maximum taxonomy depth to 3 and the number of child nodes to 5, as done in~\cite{zhang2018taxogen,shang2020nettaxo}.
+    
+    \item \textbf{\corel}\footnote{https://github.com/teapot123/CoRel}~\cite{huang2020corel} is the first topic taxonomy expansion method.
+    It trains a topic relation classifier by using the initial taxonomy, then recursively transfers the relation to find out candidate terms for novel subtopics. 
+    Finally, it identifies novel topic nodes based on term embeddings induced by SkipGram~\cite{mikolov2013distributed}.
+    
+    \item \textbf{\taxocom}\footnote{https://github.com/donalee/taxocom}~\cite{lee2022taxocom} is the state-of-the-art method for topic taxonomy expansion. 
+    For each node from the root to the leaf, it recursively optimizes term embedding and performs term clustering to identify both known and novel subtopics.
+    we set $\beta=1.5, 2.5, 3.0$ (for each level) in the novelty threshold $\tau_{nov}$, and fix the signficance threshold $\tau_{sig}=0.3$.
+    
+    % \item \textbf{\proposed}: The proposed framework for topic taxonomy expansion.
+    % It trains a topic-conditional phrase generator by using the initial topic taxonomy, then generates topic-related phrases for a virtual topic node whose semantics is captured based on its surrounding relation structure in the hierarchy.
+\end{itemize}
+
+\subsection{Implementation Details}
+\label{subsec:implementation}
+% \subsubsection{The \proposed Framework}
+\smallsection{Model Architecture}
+For the topic encoder, we use two GCN layers to avoid the over-smoothing problem, and fix the dimensionality of all node representations to 300.
+For the document encoder, we employ the \texttt{bert-base-uncased} provided by huggingface~\cite{devlin2019bert}, as the initial checkpoint of a pretrained model.
+It contains 12 layers of transformer blocks with 12 attention heads, thereby obtaining 768-dimensional contextualized token representations $[\vvec{i1}, \ldots, \vvec{iL}]$ (and a final document representation $\dvec{i}=\text{mean-pooling}(\vvec{i1}, \ldots, \vvec{iL})$) for an input document $\doc{i}$.
+Consequently, the size of the interaction matrix $\bm{M}$ in our topic-document similarity predictor (Equation~\eqref{eq:simloss}) becomes 300 $\times$ 768.
+For the phrase generator, we adopt a single layer of the transformer decoder with 16 attention heads\footnote{We empirically found that the number of decoding layers hardly affects the performance (i.e., accuracy) of topic-conditional phrase generation.} and train its parameters from scratch without using the checkpoint of a pretrained text decoder.
+We limit the maximum length of a generated phrase to 10.
+Figure~\ref{fig:phrase_generator} shows the phrase generator architecture.
+In total, our neural model contains 540K (for the topic encoder), 110M (for the document encoder), 230K (for the similarity predictor), and  30M (for the phrase generator) parameters.
+
+% \footnote{We adopt the greedy strategy, which selects the word token of the max probability.}
+%\footnote{Two special tokens, \texttt{[BOP]} and \texttt{[EOP]}, indicate the begin and the end of each phrase.}
+%\footnote{For training, we take the previous tokens from gold standards (i.e., target phrases) as the input token sequence of the transformer decoder, also known as \textit{teacher forcing}.}
+% \footnote{For inference, we use the previously predicted tokens as the input of the decoder.}
+
+\smallsection{Training Step}
+For the optimization of model parameters, we use the Adam optimizer~\cite{kingma2014adam} with the initial learning rate 5e-5 and the weight decay 5e-6.
+The batch size is set to 64, and the temperature parameter $\gamma$ in Equation~\eqref{eq:simloss} is set to 0.1.
+The best model is chosen using the best perplexity of generated topic phrases on the validation set of positive triples $(\topic{j}, \doc{i}, \phrase{k})$, which is evaluated every epoch.
+
+\smallsection{Expansion Step}
+To filter out non-confident phrases (Section~\ref{subsubsec:collection}), we set the threshold value $\tau$ to 0.8 after applying min-max normalization on all topic-document similarity scores computed for each virtual topic node.
+To perform $k$-means clustering on the collected topic phrases (Section~\ref{subsubsec:clustering}), we set the initial number of clusters $k$ to 10, then select top-5 clusters by their cluster size (i.e., the number of phrases assigned to each cluster).
+The center phrase of each cluster is used as the final topic name of the new topic node.
+
+\subsection{Computing Platform}
+All the experiments are carried out on a Linux server machine with Intel Xeon Gold 6130 CPU @2.10GHz and 128GB RAM by using a single RTX3090 GPU.
+In this environment, the model training of \proposed takes around 2 hours and 6 hours for \amazon and \dbpedia, respectively.
+
+\begin{table}[b]
+\small
+\caption{Three disjoint parts of the topic taxonomy.}
+\label{tbl:taxopart}
+\centering
+\resizebox{0.99\linewidth}{!}{%
+\begin{tabular}{VcT}
+    \toprule
+        \textbf{Corpus} & \textbf{Part} & \textbf{First-level topics} \\\midrule
+        & $\subtaxo{1}$ & grocery gourmet food, toys games\\
+        \amazon & $\subtaxo{2}$ & beauty, personal care \\
+        & $\subtaxo{3}$ & baby products, pet supplies \\\midrule
+        & $\subtaxo{1}$ & agent, work, place \\
+        \dbpedia & $\subtaxo{2}$ & species, unit of work, event \\
+        & $\subtaxo{3}$ & sports season, device, topical concept \\
+    \bottomrule
+\end{tabular}
+}
+\end{table}
+
+\subsection{Quantitative Evaluation Protocol}
+\label{subsec:evalprotocol}
+For exhaustive evaluation on a large-scale topic taxonomy with hundreds of topic nodes, the output taxonomy of topic taxonomy expansion methods (i.e., \corel, \taxocom, and \proposed) is divided into three parts $\subtaxo{1}$, $\subtaxo{2}$, and $\subtaxo{3}$ so that each part covers some of the first-level topics (and their subtrees) listed in Table~\ref{tbl:taxopart}.
+
+In case of \hlda and \taxogen, the first-level topics in their output taxonomies are not matched with the ground-truth topics (in Table~\ref{tbl:taxopart}), because they build a topic taxonomy from scratch.
+For this reason, in Table~\ref{tbl:humaneval}, their output taxonomies are evaluated whole without partitioning.
+In addition, the two metrics for novel topic discovery (i.e., relation accuracy and subtopic integrity) are designed to evaluate the topic taxonomy expansion methods, so it is infeasible to measure the aspects on the output taxonomies of \hlda and \taxogen.
+Thus, we only report the metric for topic identification (i.e., term coherence) in Table~\ref{tbl:humaneval}.
+
+\smallsection{Term Coherence}
+It indicates how strongly terms in a topic node are relevant to each other. 
+Evaluators count the number of terms that are relevant to the common topic (or topic name) among the top-5 terms found for each topic node.
+
+\smallsection{Relation Accuracy}
+It computes how accurately a topic node is inserted into a given topic hierarchy (i.e., \textit{precision} for novel topic discovery).
+For each valid position, evaluators count the number of newly-inserted topics that are in the correct relationship with the surrounding topics.
+
+\smallsection{Subtopic Integrity} 
+It measures the completeness of subtopics for each topic node (i.e., \textit{recall} for novel topic discovery).
+Evaluators investigate how many ground-truth novel topics, which were deleted from the original taxonomy, match with one of the newly-inserted topics.
+
+
+\subsection{Examples of Topic Phrase Generation}
+\label{subsec:examples}
+We provide additional examples of topic-conditional phrase generation, obtained by \proposed.
+Figure~\ref{fig:examples} illustrates a confident phrase (Left) and a non-confident phrase (Right), generated from each input document and the given relation structure of a target topic, for both datasets.
+As discussed in Section~\ref{subsubsec:casestudy}, 
+in case that a target topic is relevant to the document (i.e., high topic-document similarity score), \proposed successfully generates a phrase relevant to the target topic.
+On the other hand, in case that a target topic is irrelevant to the document (i.e., low topic-document similarity score), \proposed obtains a phrase irrelevant to the target topic.
+
+\begin{figure}[t]
+\centering
+\begin{subfigure}{\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{FIG/case_amazon.pdf}  
+    \caption{Dataset: \amazon}
+\end{subfigure}
+\begin{subfigure}{\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{FIG/case_dbpedia.pdf}
+    \caption{Dataset: \dbpedia}
+\end{subfigure}
+\caption{Examples of topic-conditional phrase generation, given a document and its relevant/irrelevant topic.}
+\label{fig:examples}
+\end{figure}

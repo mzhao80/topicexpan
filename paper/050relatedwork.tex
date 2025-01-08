@@ -1,0 +1,60 @@
+% In this section, we briefly review the literature on two relevant tasks:
+% (i) topic taxonomy construction and (ii) keyphrase prediction.
+
+\smallsection{Topic Taxonomy Construction}
+\label{subsec:topictaxo}
+% The classic approach to hierarchical topic discovery is to estimate probabilistic topic models that describe the generative process of a topic hierarchy~\cite{blei2003hierarchical, mimno2007mixtures}.
+% To avoid their computationally-expensive inference algorithm as well as improve the presentation of the knowledge, recent studies focus on a simple tree-structured topic taxonomy whose node is represented by a set of topic-related terms.
+To build a topic taxonomy of a given corpus from scratch, the state-of-the-art methods have focused on finding out discriminative term clusters in a hierarchical manner~\cite{zhang2018taxogen, meng2020hierarchical, shang2020nettaxo}. 
+%with the help of the advanced embedding and clustering techniques.
+Several recent studies have started to enrich and expand an existing topic taxonomy by discovering novel topics from a corpus and inserting them into the taxonomy~\cite{huang2020corel, lee2022taxocom}.
+They leverage the initial topic taxonomy as supervision for learning the hierarchical relation among topics.
+% To be specific, they infer the new relation between a topic and its novel subtopic to be inserted,
+To be specific, they discover new subtopics that should be inserted at the child of each topic,
+by using a relation classifier trained on (parent, child) topic pairs~\cite{huang2020corel} or performing novel subtopic clustering~\cite{lee2022taxocom}. 
+However, all the methods rely on candidate terms extracted from a corpus and also consider only the first-order relation between two topics, which degrades the term coverage and relation consistency of output topic taxonomies.
+
+\smallsection{GNN-based Taxonomy Expansion}
+\label{subsec:taxoexpan}
+Recently, there have been several attempts to employ GNNs for expanding a given entity taxonomy~\cite{mao2020octet,shen2020taxoexpan,zeng2021enhancing}.
+% \jw{need some careful explanation of topic taxonomy vs. entity taxonomy?}
+% Note that they mainly focus on a conventional entity (or term-level) taxonomy, which differs from a topic (or term cluster-level) taxonomy in that its node represents a single entity or term.
+Their goal is to figure out the correct position where a new entity should be inserted, by capturing structural information of the taxonomy based on GNNs.
+They mainly focus on an entity taxonomy that shows the hierarchical semantic relation among fine-grained entities (or terms), requiring plenty of nodes and edges in a given taxonomy to effectively learn the inter-entity relation.
+In contrast, a topic taxonomy represents coarse-grained topics (or high-level concepts) that encode \textit{discriminative term meanings} as well as \textit{term co-occurrences} in documents (Figure~\ref{fig:problem}), which allows its node to correspond to a topic class of documents.
+That~is, it is not straightforward to apply such methods to a topic taxonomy with much fewer nodes and edges, and thus how to enrich a topic taxonomy~with GNNs remains an important research question.
+% That is, leveraging GNNs for enriching a topic taxonomy has not been studied yet.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\linewidth]{FIG/framework.pdf}
+    \caption{The overall process of \proposed. 
+    (Left) It trains a unified model via multi-task learning of topic-document similarity prediction and topic-conditional phrase generation.
+    (Right) It selectively collects the phrases conditionally-generated for a virtual topic node, and then it identifies multiple novel topics from phrase clusters. % which accordingly expands the topic taxonomy by inserting the new topic nodes.
+    }
+    \label{fig:framework}
+\end{figure*}
+
+\smallsection{Keyphrase Generation}
+\label{subsec:kpg}
+The task of keyphrase prediction aims to find condensed terms that concisely summarize the primary information of an input document~\cite{liu2020keyphrase}.
+% The most dominant approach to this problem is modeling it as the sequence labeling task, which predicts whether each token in an input text is a part of keyphrases or not~\cite{gollapalli2014extracting}.
+% Inspired by the great success of pretrained language models~\cite{devlin2019bert, clark2020electra}, some studies take advantage of the BERT architecture by finetuning it for the target task~\cite{liu2020keyphrase, rungta2020transkp}.
+%also has gained much attention~\cite{meng2017deep, zhou2021topic} because they can obtain phrases that do not match any contiguous subsequence of an input text, referred to as absent keyphrases.
+The state-of-the-art approach to this problem is modeling it as the text generation task, which sequentially generates word tokens of a keyphrase~\cite{meng2017deep, zhou2021topic}.
+They adopt neural architectures as a text encoder and decoder, such as an RNN/GRU~\cite{meng2017deep, wang2019topic} and a transformer~\cite{zhou2021topic}. 
+Furthermore, several methods have incorporated a neural topic model into the generation process~\cite{wang2019topic, zhou2021topic} to fully utilize the topic information extracted in an unsupervised way.
+Despite their effectiveness, none of them has focused on \textit{topic-conditional} generation of keyphrases from a document, as well as \textit{hierarchical} modeling of topic relations.
+% Despite their effectiveness, none of them have explicitly modeled the semantic relationship among a document, a topic, and a topic-related phrase, in order to generate the keyphrase of a document while being conditioned on a specific topic.
+
+
+% \subsection{Hierarchical Multi-label Text Classification}
+% \label{subsec:hmtc}
+% Hierarchical Multi-label Text Classification (HMTC) aims to maps an input text into multi-label logits.
+% \cite{huang2019hierarchical}
+% \cite{zhou2020hierarchy}
+% \cite{peng2018large}.
+% Most 
+
+% In addition to the conventional supervised approach, \taxoclass~\cite{shen2021taxoclass} presented a weakly-supervised framework for the case where only the class hierarchy and unlabeled documents are given.
+% However, all the methods are not able to predict the unseen classes for an input document, 

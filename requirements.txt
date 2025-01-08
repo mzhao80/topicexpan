@@ -9,3 +9,4 @@ pydantic
 pytorch-nlp
 tensorboardx
 gensim
+graphviz

@@ -1,0 +1,172 @@
+% This must be in the first 5 lines to tell arXiv to use pdfLaTeX, which is strongly recommended.
+\pdfoutput=1
+% In particular, the hyperref package requires pdfLaTeX in order to break URLs across lines.
+
+\documentclass[11pt]{article}
+
+% Remove the "review" option to generate the final version.
+% \usepackage[review]{EMNLP2022}
+\usepackage{EMNLP2022}
+
+% Standard package includes
+\usepackage{times}
+\usepackage{latexsym}
+
+% User defined packages
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage{float}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{leftidx}
+\usepackage{url}
+\usepackage{tabularx, multirow, multicol}
+\usepackage{color, colortbl}
+\usepackage{soul}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{balance}
+\usepackage{setspace}
+\usepackage{bbm}
+\usepackage{pifont}
+\usepackage{microtype}
+\usepackage[normalem]{ulem}
+\usepackage{wasysym}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{dsfont}
+\usepackage{xspace}
+\usepackage{hyperref}
+
+\definecolor{Gray}{gray}{0.95}
+
+\newcolumntype{B}{>{\raggedright\arraybackslash}m{0.7\linewidth}}
+\newcolumntype{P}{>{\centering\arraybackslash}m{0.16\linewidth}}
+\newcolumntype{Q}{>{\raggedright\arraybackslash}m{0.6\linewidth}}
+\newcolumntype{R}{>{\raggedright\arraybackslash}m{0.71\linewidth}}
+\newcolumntype{T}{>{\raggedright\arraybackslash}m{0.61\linewidth}}
+\newcolumntype{U}{>{\centering\arraybackslash}m{0.23\linewidth}}
+\newcolumntype{V}{>{\centering\arraybackslash}m{0.18\linewidth}}
+
+\newcolumntype{S}{>{\raggedright\arraybackslash}m{0.5\linewidth}}
+\newcolumntype{W}{>{\raggedright\arraybackslash}m{0.55\linewidth}}
+
+\setlength{\abovecaptionskip}{5pt}
+\setlength{\belowcaptionskip}{5pt}
+\setlength{\floatsep}{10pt plus 1.0pt minus 1.0pt}
+\setlength{\textfloatsep}{10pt plus 1.0pt minus 1.0pt}
+\setlength{\dblfloatsep}{10pt plus 1.0pt minus 1.0pt}
+\setlength{\dbltextfloatsep}{10pt plus 1.0pt minus 1.0pt}
+
+% For proper rendering and hyphenation of words containing Latin characters (including in bib files)
+\usepackage[T1]{fontenc}
+% For Vietnamese characters
+% \usepackage[T5]{fontenc}
+% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
+
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+% This is not strictly necessary, and may be commented out.
+% However, it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+
+% This is also not strictly necessary, and may be commented out.
+% However, it will improve the aesthetics of text in
+% the typewriter font.
+\usepackage{inconsolata}
+
+\linespread{0.985}
+
+\input{dfn}
+
+% If the title and author information does not fit in the area allocated, uncomment the following
+%
+%\setlength\titlebox{<dim>}
+%
+% and set <dim> to something 5cm or larger.
+
+\title{\reducetxt{Topic Taxonomy Expansion via Hierarchy-Aware Topic Phrase Generation}}
+
+% Author information can be set in various styles:
+% For several authors from the same institution:
+% \author{Author 1 \and ... \and Author n \\
+%         Address line \\ ... \\ Address line}
+% if the names do not fit well on one line use
+%         Author 1 \\ {\bf Author 2} \\ ... \\ {\bf Author n} \\
+% For authors from different institutions:
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \And  ... \And
+%         Author n \\ Address line \\ ... \\ Address line}
+% To start a seperate ``row'' of authors use \AND, as in
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \AND
+%         Author 2 \\ Address line \\ ... \\ Address line \And
+%         Author 3 \\ Address line \\ ... \\ Address line}
+
+\newcommand*\samethanks[1][\value{footnote}]{\footnotemark[#1]}
+% \thanks{ \ \ Corresponding author}
+
+\author{Dongha Lee\textsuperscript{1}\hspace{-3pt}, Jiaming Shen\textsuperscript{2}\hspace{-3pt}, Seonghyeon Lee\textsuperscript{3}\hspace{-3pt}, Susik Yoon\textsuperscript{1}\hspace{-3pt}, Hwanjo Yu\textsuperscript{3}\thanks{\ \ Corresponding author}, and Jiawei Han\textsuperscript{1} \\
+  \textsuperscript{1}University of Illinois at Urbana-Champaign (UIUC), Urbana, IL, United States \\
+  \textsuperscript{2}Google Research, New York, NY, United States \\
+  \textsuperscript{3}Pohang University of Science and Technology (POSTECH), Pohang, Republic of Korea \\
+  {\{donghal,susik,hanj\}@illinois.edu, jmshen@google.com, \{sh0416,hwanjoyu\}@postech.ac.kr}\\}
+ 
+ 
+ %\hypersetup{draft}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+\input{000abstract}
+\end{abstract}
+
+
+\section{Introduction}
+\label{sec:intro}
+\input{010introduction}
+
+\section{Related Work}
+\label{sec:related}
+\input{050relatedwork}
+
+\section{Problem Formulation}
+\label{sec:problem}
+\input{020problem}
+
+\section{\proposed: Proposed Framework}
+\label{sec:method}
+\input{030method}
+
+\section{Experiments}
+\label{sec:exp}
+\input{040experiment}
+
+\section{Conclusion}
+\label{sec:conc}
+\input{060conclusion}
+
+\section{Limitations}
+\label{sec:limit}
+\input{080limitation}
+
+\section*{Acknowledgements}
+This work was supported by the IITP grant (No. 2018-0-00584, 2019-0-01906) and the NRF grant (No. 2020R1A2B5B03097210). 
+It was also supported by US DARPA KAIROS Program (No. FA8750-19-2-1004), SocialSim Program (No. W911NF-17-C-0099), INCAS Program (No. HR001121C0165), National Science Foundation (IIS-19-56151, IIS17-41317, IIS 17-04532), and the Molecule Maker Lab Institute: An AI Research Institutes program (No. 2019897).
+
+% Entries for the entire Anthology, followed by custom entries
+\bibliography{main}
+\bibliographystyle{acl_natbib}
+
+\newpage
+\appendix
+\section{Supplementary Material}
+\input{070appendix}
+
+\end{document}

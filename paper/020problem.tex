@@ -1,0 +1,25 @@
+% In this section, we formally define our target task, named topic taxonomy expansion.
+% We first describe the notations about a topic taxonomy, then formally define our target task, named topic taxonomy expansion.
+
+\smallsection{Notations}
+A \textit{topic taxonomy} $\taxo=(\cateset, \edgeset)$ is a tree structure about topics, where each node ($\in\cateset$) represents a single conceptual topic and each edge ($\in\edgeset$) implies the hierarchical relation between a topic and its subtopic.
+A topic node $\topic{j}\in\cateset$ is described by the set of topic-related terms, denoted by $\topicphs{j}$ (i.e., term cluster for the topic $\topic{j}$), where the most representative term (i.e., center term) serves as the topic name.
+Each document $\doc{i}=[\token{i1}, \ldots, \token{iL}]$ and each term\footnote{Note that our proposed approach considers each term as a sequence of word tokens, and this enables us to handle a much larger number of multi-word terms, compared to the case of using a precomputed set of candidate terms.}
+$\phrase{k}=[\token{k1}, \ldots, \token{kT}]$ in a given corpus $\docuset$ is the sequence of $L$ and $T$ word tokens in the vocabulary set $v\in\vocaset$, respectively.
+Here, each term is regarded as a phrase that consists of one or more word tokens, so the terms ``phrase'' and ``term'' are used interchangeably in this paper.
+% \footnote{For notational convenience, we simply use $L$ and $T$ as the maximum length of a document and a term, respectively.}
+
+\smallsection{Problem Definition}
+% \begin{definition}[Topic taxonomy expansion]
+% \textit{Topic taxonomy expansion} aims to discover new topics and their relevant terms from a given text corpus $\docuset$, and to expand the initial topic taxonomy $\taxo$ by inserting the new topic nodes at the right position in the taxonomy (Figure~\ref{fig:problem}).
+Given a text corpus $\docuset$ and an initial topic taxonomy $\taxo$, the task of topic taxonomy expansion aims to discover novel topics by collecting the topic-related terms from $\docuset$ and insert them at the right position in $\taxo$ (Figure~\ref{fig:problem}).
+% \end{definition}
+
+% Note that all previous studies on topic taxonomy construction~\cite{zhang2018taxogen, meng2020hierarchical} and expansion~\cite{huang2020corel, lee2022taxocom} require a predefined set of candidate terms.
+% Since a high-quality term set is necessary to obtain a high-quality topic taxonomy, they usually extract key terms from the given document corpus based on entity extraction tools~\cite{zeng2020tri} or phrase mining techniques~\cite{liu2015mining, shang2018automated, gu2021ucphrase}.
+% Nevertheless, it is practically infeasible for such extraction process that depends on term frequency or part-of-speech tags to find out all single-word and multi-word terms appearing in the corpus. 
+% As a result, this limits the term coverage of their output topic taxonomy.
+% On the contrary, our framework does not require the term set rather uses a vocabulary of word tokens $\vocaset$ to represent a term as a sequence of word tokens.
+% Note that our proposed approach considers each term as a sequence of word tokens, and this enables to handle much larger number of multi-word terms, compared to the case of using a precomputed set of candidate terms.
+%, which the extraction-based approach heavily relies on.
+% In other words, each term is assumed to be a phrase that consists of one or more word tokens, so we use the terms ``phrase'' and ``term'' interchangeably in this paper.

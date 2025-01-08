@@ -1,0 +1,239 @@
+% In this section, we present our topic taxonomy expansion framework, named \proposed, which effectively finds out novel topics from a text corpus via topic phrase generation conditioned on a newly-introduced topic relation structure.
+
+\subsection{Overview}
+\label{subsec:overview}
+\proposed consists of (1) \textit{the training step} that trains a neural model for generating phrases topic-conditionally from documents (Figure~\ref{fig:framework} Left)
+%to learn the semantic interaction among a topic, a document, and a topic-related phrase, given in the initial topic taxonomy and document corpus, 
+and (2) \textit{the expansion step} that identifies novel topics for each new position in the taxonomy by using the trained model (Figure~\ref{fig:framework} Right).
+%generated for a newly-introduced topic relation structure (i.e., a new position in the topic hierarchy).
+The detailed algorithm is described in Section~\ref{subsec:pseudocode}.
+%Algorithm~\ref{alg:overview}.
+% The overview is illustrated Figure~\ref{fig:framework} and Algorithm~\ref{alg:overview}.
+% Please refer to Section~\ref{subsec:pseudocode} for the detailed algorithm.
+
+% Note that the existing methods retrieve novel topic terms while relying on the embedding vectors of the terms extracted from the text corpus.
+% On the contrary, our framework directly generates novel topic phrases token-by-token by leveraging both textual information of the documents and structural information of the topic hierarchy.
+
+\smallsection{Training Step}
+\label{subsubsec:training}
+% In the training step, 
+% \proposed aims to train a neural model which reconstructs the given topic taxonomy from the document corpus. Specifically, it 
+\proposed optimizes parameters of its neural model to maximize the total likelihood of the initial taxonomy $\taxo$ given the corpus $\docuset$.
+%which is described as follows.
+\begin{equation}
+\small
+\label{eq:likelihood}
+    \begin{split}
+        P(\taxo;\docuset) &= \prod_{\topic{j}\in\cateset} \prod_{\phrase{k}\in\topicphs{j}} P(\phrase{k}|\topic{j};\docuset) \\
+        &= \prod_{\topic{j}\in\cateset} \prod_{\phrase{k}\in\topicphs{j}} \sum_{\doc{i}\in\docuset} P(\phrase{k}, \doc{i} |\topic{j}) \\
+        %&= \prod_{\topic{j}\in\cateset} \prod_{\doc{i}\in\docuset} \prod_{\phrase{k}\in\topicphs{j}\cap\doc{i}} P(\phrase{k}, \doc{i} |\topic{j}) \\
+        &\approx \prod_{\topic{j}\in\cateset} \prod_{\doc{i}\in\docuset} \prod_{\phrase{k}\in\topicphs{j}\cap\doc{i}} P(\phrase{k}|\doc{i},\topic{j}) P(\doc{i}|\topic{j}).
+    \end{split}
+    \raisetag{49pt}
+\end{equation}
+In the end, the total likelihood is factorized into the topic-conditional likelihoods of a document and a phrase, i.e., $P(\doc{i}|\topic{j})$ and $P(\phrase{k}|\doc{i},\topic{j})$, for all the positive triples $(\topic{j}, \doc{i}, \phrase{k})$ collected from $\taxo$ and $\docuset$.
+That is, each triple satisfies the condition that its phrase $\phrase{k}$ belongs to the topic $c_j$ (i.e., $p_k\in\topicphs{j}$) and also appears in the document $d_i$.
+
+To maximize Equation~\eqref{eq:likelihood}, we propose a unified model for estimating $P(\doc{i}|\topic{j})$ and $P(\phrase{k}|\doc{i},\topic{j})$ via the tasks of \textit{topic-document similarity prediction} and \textit{topic-conditional phrase generation}, respectively.
+% To be specific, the former task increases the similarity between a topic $\topic{j}$ and a document $\doc{i}$, indicating how confidently the document includes any sentences or mentions about the topic.
+In Figure~\ref{fig:framework} Left, for each positive triple $(\topic{j}, \doc{i}, \phrase{k})$, the former task increases the similarity between the topic $\topic{j}$ and the document $\doc{i}$.
+This similarity indicates how confidently the document $\doc{i}$ includes any sentences or mentions about the topic $\topic{j}$.
+% Since we do not have negatively-labeled topic-document pairs, we use randomly sampled documents as negative for discriminative learning of the topic-document similarity.
+At the same time, the latter task maximizes the decoding probability of the phrase $\phrase{k}$ (i.e., generates the phrase) 
+conditioned on the topic $\topic{j}$ and the document $\doc{i}$.
+% by using the relation structure of the topic $\topic{j}$ and the textual content of the document $\doc{i}$ as the condition for generation.
+The model parameters are jointly optimized for the two tasks, and each of them will be discussed in Section~\ref{subsec:training}.
+% : $\totalloss = \simloss + \genloss$.
+% \begin{equation}
+%     \totalloss = \simloss + \genloss.
+% \end{equation}
+
+\smallsection{Expansion Step}
+\label{subsubsec:expansion}
+% In the expansion step, 
+% \proposed utilizes the trained model along with the document corpus and the topic hierarchy, to find novel topics that should be inserted into the taxonomy.
+\proposed expands the topic taxonomy by discovering novel topics and inserting them into the taxonomy.
+To this end, it utilizes the trained model to generate the phrases $\phrase{}$ that have a high topic-conditional likelihood $P(\phrase{}|\vtopic{};\docuset)$ for a new topic $\vtopic{}$ from a given corpus $\docuset$.
+In Figure~\ref{fig:framework} Right, it first places a virtual topic node $\vtopic{j}$ at a \textit{valid} insertion position in the hierarchy (i.e., a child position of a topic node $\topic{j}$), and then it collects the phrases relevant to the virtual topic by generating them from documents $\doc{i}\in\docuset$.
+%whose topic-document similarity is larger than a threshold.
+% By doing so, it can collect confident phrases for the virtual topic node.
+Finally, it identifies multiple novel topics by clustering the collected phrases into semantically coherent but distinguishable clusters, which are inserted as the new topic nodes at the position of the virtual node.
+% so that each of the phrase clusters is semantically coherent but distinguishable from the others, thereby inserting the new topic nodes at the position of the virtual node.
+% Finally, it performs clustering on the phrases generated for the virtual topic node to identify multiple novel topics, 
+The details will be presented in Section~\ref{subsec:expansion}.
+% \jw{need linking to Figures 2 and 3 and give more high-level explanation/illustration of your methods in section 4.}
+
+\subsection{Encoder Architectures}
+\label{subsec:training}
+For modeling the two likelihoods $P(\doc{i}|\topic{j})$ and $P(\phrase{k}|\doc{i},\topic{j})$, we introduce a topic encoder and a document encoder, which respectively computes the representation of a topic $\topic{j}$ and a document $\doc{i}$.
+% (i) The encoder should be \textit{generalizable} to any unseen topics so as to estimate the likelihood of a phrase or a document given a novel topic.
+% However, a naive topic encoder that utilizes only topic-ids (e.g., an embedding matrix) or topic names (e.g., pretrained word vectors) as the input features is not capable of obtaining the representation of a novel topic, which is not observable during the training. 
+% To this end, \proposed adopts a \textit{structure encoder} that captures the structural information of the topic hierarchy into the topic representations, by taking the local relation graph surrounding each topic as the input features.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{FIG/topic_encoder.pdf}
+    \caption{\reducetxt{The topic encoder architecture.
+    It computes topic representations by encoding a topic relation graph.}
+    }
+    \label{fig:topic_encoder}
+\end{figure}
+
+\subsubsection{Topic Encoder}
+\label{subsubsec:topic_encoder}
+There are two important challenges of designing the architecture of a topic encoder:
+(1) The topic encoder should be \textit{hierarchy-aware} so that the representation of each topic can accurately encode the hierarchical relation with its neighbor topics, and
+(2) the representation of each topic needs to be \textit{discriminative} so that it can encode semantics distinguishable from that of the sibling topics.
+Hence, we adopt graph convolutional networks (GCNs)~\cite{kipf2017semi} to capture the semantic relation structure surrounding each topic.
+%(i.e., semantic relations with the neighbor topics).
+% Figure~\ref{fig:topic_encoder} shows the topic encoder architecture.
+
+We first construct a topic relation graph $\mathcal{G}$ by enriching the edges of the given hierarchy $\taxo$ to model heterogeneous relations between topics, as shown in Figure~\ref{fig:topic_encoder}.
+The graph contains three different types of inter-topic relations:
+(1) downward, (2) upward, and (3) sideward.
+The downward and upward edges respectively capture the top-down and bottom-up relations (i.e., hierarchy-awareness).
+We additionally insert the sideward edges between sibling nodes that have the same parent node.
+Unlike the downward and upward edges, the sideward edges pass the information in a negative way to make topic representations discriminative among the sibling topics.
+% Particularly, the sideward edges are necessary for novel topic discovery because they encourage a virtual (i.e., newly-introduced) topic node to encode the novel semantic, which is quite different from its known sibling topics, as shown in Figure~\ref{fig:topic_encoder}(b).
+%but satisfies the hierarchical relation with its parent topic.
+% For example, in Figure~\ref{fig:topic_encoder}(b), a novel subtopic of ``grocery gourmet food'' should be semantically different from ``breads bakery'' and ``beverages''.
+The topic representation of $\topic{j}$ at the $m$-th GCN layer is computed by
+\begin{equation}
+\small
+    \hvec{j}^{(m)}= \phi\left(
+    \sideset{}{_{(i, j)\in\mathcal{G}}}\sum \alpha_{r(i, j)} \cdot \bm{W}^{(m-1)}_{r(i, j)} \cdot \hvec{i}^{(m-1)}\right),
+\end{equation}
+where $\phi$ is the activation function, $r(i, j)\in\{\text{down}, \text{up}, \text{side}\}$ represents the relation type of an edge $(i,j)$, and $\alpha$ indicates either positive or negative aggregation according to its relation type; 
+i.e., $\alpha_{\text{down}}=\alpha_{\text{up}}=+1$ and $\alpha_{\text{side}}=-1$.
+The \glove word vectors~\cite{pennington2014glove} for each topic name are used as the base node features (i.e., $\hvec{j}^{(0)}$) after being averaged for all tokens in the topic name.
+Using a stack of $M$ GCN layers, we finally obtain the representation of a \textit{target} topic node $\topic{j}$ (i.e., the topic node that we want to obtain its representation) by $\cvec{j}=\hvec{j}^{(M)}$.
+
+The topic encoder should also be able to obtain the representation of a virtual topic node, whose topic name is not determined yet, during the expansion step. 
+% and it raises a technical challenge that such virtual nodes
+% To compute the representation of a target topic even if its name is unknown, 
+For this reason, we mask the base node features of a target topic node regardless of whether the node is virtual or not, as depicted in Figures~\ref{fig:topic_encoder}(a) and (b).
+% For this reason, we mask the name of a \textit{target} topic node (i.e., the topic node that we want to obtain its representation) with the token \texttt{[MASK]} regardless of whether the node is virtual or not, as illustrated in Figures~\ref{fig:topic_encoder}(a) and (b).
+% As a result, the final representation of each topic encodes the relation structure of its $M$-hop neighbor topics not knowing the name of the target topic.
+In other words, with the name of a target topic masked, the topic representation encodes the relation structure of its $M$-hop neighbor topics.
+
+\subsubsection{Document Encoder}
+\label{subsubsec:document_encoder}
+%Among various types of neural architectures that have been used for encoding texts, 
+For the document encoder, we employ a pretrained language model, BERT~\cite{devlin2019bert}.
+%which is effective to capture the long-term dependency among tokens in an input text.
+It models the interaction among the tokens based on the self-attention mechanism, thereby obtaining each token's contextualized representation, denoted by $[\vvec{i1},\ldots,\vvec{iL}]$.
+A document representation $\dvec{i}$ is obtained by mean pooling in the end. 
+
+\subsection{Learning Topic Taxonomy}
+\label{subsec:training}
+In the training step, \proposed optimizes model parameters by using positive triples as training data $\mathcal{X}=\{(\topic{j}, \doc{i}, \phrase{k})|\phrase{k}\in\topicphs{j}\cap\doc{i}, \forall \topic{j}\in\cateset, \forall\doc{i}\in\docuset\}$ 
+%to maximize the likelihood (Equation~\eqref{eq:likelihood})
+via multi-task learning of {topic-document similarity prediction} and {topic-conditional phrase generation} (Sections~\ref{subsubsec:prediction} and \ref{subsubsec:generation}).
+% As discussed in Section~\ref{subsubsec:training}, each positive triple is identified from $\taxo$ and $\docuset$, where a phrase $\phrase{k}$ belongs to a topic $\topic{j}$ and also appears in a document $\doc{i}$ at the same time.  
+
+\subsubsection{Topic-Document Similarity Prediction}
+\label{subsubsec:prediction}
+The first task is to learn the similarity between a topic and a document.
+We define the topic-document similarity score by bilinear interaction between their representations, i.e., $\cvec{j}^\top \bm{M} \dvec{i}$ where $\bm{M}$ is the trainable interaction matrix.
+The topic-conditional likelihood of a document in Equation~\eqref{eq:likelihood} is optimized by using this topic-document similarity score, $P(\doc{i}|\topic{j}) \propto \exp(\cvec{j}^\top \bm{M} \dvec{i})$.
+
+The loss function is defined based on InfoNCE \cite{oord2018representation}, which pulls positively-related documents into the topic while pushing away negatively-related documents from the topic.
+\begin{equation}
+\small
+\label{eq:simloss}
+    \simloss = - \sum_{(\topic{j},\doc{i},\phrase{k})\in\mathcal{X}} \log \frac{\exp(\cvec{j}^\top\bm{M} \dvec{i}/\gamma)}{\sum_{i'}\exp(\cvec{j}^\top \bm{M} \dvec{i'}/\gamma)},
+\end{equation}
+where $\gamma$ is the temperature parameter.
+For each triple $(\topic{j}, \doc{i}, \phrase{k})$, we use its document $\doc{i}$ as positive and regard documents from all the other triples in the current mini-batch as negatives.
+
+\subsubsection{Topic-Conditional Phrase Generation}
+\label{subsubsec:generation}
+The second task is to generate phrases from a document being conditioned on a topic.
+For the phrase generator, we employ the architecture of the transformer decoder~\cite{vaswani2017attention}.
+%which has been widely used in many text generation tasks, such as keyphrase generation~\cite{liu2020keyphrase} text summarization~\cite{zhang2020pegasus}, and machine translation~\cite{vaswani2017attention}
+
+For topic-conditional phrase generation, the \textit{context} representation, $\bm{Q}(\topic{j}, \doc{i})$, needs to be modeled by fusing the textual content of a document $\doc{i}$ as well as the relation structure of a topic $\topic{j}$.
+To leverage the textual features while focusing on the topic-relevant tokens, we compute \textit{topic-attentive} token representations and pass them as the input context of the transformer decoder.
+%(Figure~\ref{fig:phrase_generator}).
+Precisely, the topic-attention score of the $l$-th token in the document $\doc{i}$, $\beta_l(\topic{j},\doc{i})$, is defined by its similarity with the topic.
+% , then it is multiplied to the contextualized token representation $\vvec{il}$.
+% That is, \textit{topic-attentive document context} is computed as follows.
+\vspace{-15pt}
+\begin{equation}
+\small
+\label{eq:gencontext}
+    \begin{split}
+       \beta_l(\topic{j},\doc{i}) &= {\exp(\cvec{j}^\top\bm{M}\vvec{il})}/{\sideset{}{_{l'=1}^L}\sum\exp(\cvec{j}^\top\bm{M}\vvec{il'})} \\
+        \bm{Q}(\topic{j},\doc{i}) &= [\beta_1(\topic{j},\doc{i}) \cdot \vvec{i1}, \ldots, \beta_{L}(\topic{j},\doc{i}) \cdot \vvec{iL}],
+    \end{split}
+\end{equation}
+% It is worth noting
+where the interaction matrix $\bm{M}$ is weight-shared with the one in Equation~\eqref{eq:simloss}.
+%is weight-shared for computing the topic-attention scores.
+%Using the context representation, 
+Then, the sequential generation process of a token $\hat{v}_t$ is described by
+\begin{equation}
+\small
+\label{eq:genoutput}
+\begin{split}
+    \svec{t} &= \text{Decoder}(\hat{v}_{<t};\bm{Q}(\topic{j},\doc{i})) \\ 
+    \hat{v}_{t} &\sim \text{Softmax}(\text{FFN}(\svec{t})).
+\end{split}
+\end{equation}
+$\text{FFN}$ is the feed-forward networks for mapping a state vector $\svec{t}$ into vocabulary logits.
+Starting from the first token \texttt{[BOP]}, the phrase is acquired by sequentially decoding a next token $\hat{v}_t$ until the last token \texttt{[EOP]} is obtained;
+the two special tokens indicate the begin and the end of the phrase.
+
+% \footnote{We adopt the greedy strategy, which selects the word token of the max probability.}
+%\footnote{For training, we take the previous tokens from gold standards (i.e., target phrases) as the input token sequence of the transformer decoder, also known as \textit{teacher forcing}.}
+% \footnote{For inference, we use the previously predicted tokens as the input of the decoder.}
+
+The loss function is defined by the negative log-likelihood, where the phrase $\phrase{k}=[\token{k1},\ldots,\token{kT}]$ in a positive triple $(\topic{j},\doc{i},\phrase{k})$ is used as the target sequence of word tokens.
+\begin{equation}
+\small
+\label{eq:genloss}
+    \begin{split}
+        % \genloss &= - \sum_{(\topic{j}, \doc{i}, \phrase{k})} \log P(\phrase{k}|\doc{i},\topic{j}), \\
+        \genloss &= - \sum_{(\topic{j}, \doc{i}, \phrase{k})\in\mathcal{X}} \sum_{t=1}^{T}  \ \log P(\token{kt}|\token{k(<t)},\topic{j},\doc{i}). \\
+    \end{split}
+\end{equation}
+% By minimizing the loss, the generator can learn the sequence model for phrases conditioned on a topic-document pair.
+% \jw{need a little discussion on why your method can reduce hallucination in phrase generation.}
+
+To sum up, the joint optimization of Equations~\eqref{eq:simloss} and \eqref{eq:genloss} updates all the model parameters in an end-to-end manner, including the similarity predictor, the phrase generator, and both encoders.
+
+
+\subsection{Expanding Topic Taxonomy}
+\label{subsec:expansion}
+In the expansion step, \proposed expands the topic taxonomy by utilizing the trained model to generate the phrases 
+%having a high topic-conditional likelihood $P(\phrase{}|\vtopic{};\docuset)$ 
+for a virtual topic, which is assumed to be located at a valid insertion position in the hierarchy.
+For thorough expansion, it considers a child position of every existing topic node as the valid position.
+That is, for each virtual topic node $\vtopic{j}$ (referring to a new child of a topic node $\topic{j}$) {one at a time}, it performs topic phrase generation and clustering (Sections~\ref{subsubsec:collection} and~\ref{subsubsec:clustering}) to discover multiple novel topic nodes at the position.
+
+\subsubsection{Novel Topic Phrase Generation}
+\label{subsubsec:collection}
+Given a virtual topic node $\vtopic{j}$ and each document $\doc{i}\in\docuset$, the trained model computes the topic-document similarity score and generates a topic-conditional phrase 
+$\vphrase{}=[\hat{v}_{1},\ldots,\hat{v}_{T}]$ where $\hat{v}_{t}\sim P(\token{t}|\hat{v}_{<t},\vtopic{j},\doc{i})$.
+Here, the generated phrase $\vphrase{}$ is less likely to belong to the virtual topic $\vtopic{j}$ if its source document $\doc{i}$ is less relevant to the virtual topic.
+% According to Equation~\eqref{eq:likelihood}, the topic-conditional likelihood of a phrase is decomposed into $P(\doc{i}|\vtopic{j})$ and $P(\vphrase{}|\doc{i},\vtopic{j})$.
+Thus, we utilize the topic-document similarity score as the \textit{confidence} of the generated phrase.
+To collect only qualified topic phrases, we filter out non-confident phrases whose normalized topic-document similarity is smaller than a threshold, i.e., $P(\doc{i}|\vtopic{j})\approx\text{Norm}_{\doc{i}\in\docuset}(\exp(\cvec{j}^{*\top} \bm{M} \dvec{i})) < \tau$.
+% In Figure~\ref{fig:framework} Right, given a virtual topic node at the valid position, \proposed topic-conditionally generates a phrase ``coffee cakes'' from an input document.
+% Then, it inserts the phrase into the collection of confident phrases for the virtual node, because its topic-document similarity is larger than a threshold, i.e., $0.84 > \tau$.
+In addition to the confidence-based filtering, we exclude phrases that do not appear in the corpus at all, since they are likely implausible phrases.
+This has substantially reduced the \textit{hallucination} problem of a generation model.
+% In addition to the confidence-based filtering, we~exclude nonsense (or implausible) phrases that do not appear in the corpus at all, which effectively avoids the \textit{hallucination} problem of a generation model.
+% This filtering process effectively excludes not only topic-irrelevant phrases but also nonsense (or unseen) ones generated from topic-irrelevant documents, which helps to reduce \textit{hallucinations}.
+
+\subsubsection{Novel Topic Phrase Clustering}
+\label{subsubsec:clustering}
+To identify multiple novel topics at the position of the virtual topic node $\vtopic{j}$, we perform clustering on the phrases collected for the virtual topic.
+We acquire semantic features of each phrase by averaging the \glove vectors~\cite{pennington2014glove} of word tokens in the phrase, then run $k$-means clustering with the initial number of clusters $k$ manually set.
+% \footnote{The $k$-means clustering is useful to discover multiple clusters of distinct semantics.}
+% The details of the clustering process are provided in Section~\ref{subsec:implementation}.
+Among the clusters, we selectively identify the new topics based on their cluster size, and the center phrase of each cluster is used as the topic name.
+% Based on the clustering results, we can identify the new topic nodes, where the center phrase of each cluster is used as the final topic name.
+% In Figure~\ref{fig:framework} Right, \proposed successfully finds out two novel topics, ``cakes'' and ``cookies'', along with their topic-related phrases, by clustering the collected phrases for the target virtual node.
+% Finally, it inserts the new topic nodes into the target position, which is the child (i.e, subtopic) of ``breads bakery''.
+

@@ -1,0 +1,110 @@
+
+
+% \begin{table}[t]
+% \caption{Topic terms retrieved by each method. Irrelevant terms are colored in red, and multi-word terms that are not in the candidate term set of \autophrase are in boldface.}
+% \centering
+% \resizebox{0.99\linewidth}{!}{%
+% \begin{tabular}{cl}
+%     \toprule
+    
+%     \multicolumn{2}{l}{\textbf{\amazon} (Root $\rightarrow$ grocery gourmet food $\rightarrow$ beverages $\rightarrow$ tea)} \\\midrule
+%     \corel & blend, alvita, green tea, white tea, herbal tea \\
+%     \taxocom & earl grey, taylors of harrogate, black tea, herbal tea, teabags \\
+%     {\small \proposed} & Green tea, herbal tea, black tea, vanilla chai tea, organic teas \\\midrule
+    
+%     \multicolumn{2}{l}{\textbf{\amazon} (Root $\rightarrow$ health personal care $\rightarrow$ household supplies $\rightarrow$ dishwashing)} \\\midrule
+%     \corel & household, fresh, flushes, dirty, biological \\
+%     \taxocom & dishwasher, bubbles, dirty, smelly, nasty \\
+%     {\small \proposed} & dishwasher, dish soap, \textbf{dish detergent}, \textbf{dishwasher gel}, detergent \\\midrule
+    
+%     \multicolumn{2}{l}{\textbf{\amazon} (Root $\rightarrow$ pet supplies $\rightarrow$ fish aquatic pets $\rightarrow$ breeding tanks)} \\\midrule
+%     \corel & aquarium, fish, tank, litter, litter box \\
+%     \taxocom & goldfish, aquarium, fish, acrylic, tank \\
+%     {\small \proposed} &  \\\midrule
+
+%     \multicolumn{2}{l}{\textbf{\dbpedia} (Root $\rightarrow$ work $\rightarrow$ periodical literature $\rightarrow$ magazine)} \\ \midrule
+%     \corel & science fiction, comics, anthology, monthly, newspaper \\
+%     \taxocom & books, cover, fashion, specializing, publishers \\
+%     \multirow{2}{*}{\small \proposed} & weekly magazine, news magazine, \textbf{irish magazine} \\
+%     & \textbf{fantasy comics magazine}, \textbf{international reportage} \\\midrule
+    
+%     \multicolumn{2}{l}{\textbf{\dbpedia} (Root $\rightarrow$ event $\rightarrow$ societal event $\rightarrow$ film festival)
+%     } \\ \midrule
+%     \corel & international film festival, music festival, annual event, festival, cinema \\
+%     \taxocom & international film festival, fest, festival, independent film, annual festival \\
+%     \multirow{2}{*}{\small \proposed} & international film festival, \textbf{melbourne international film festival}, \\
+%     & annual film festival, \textbf{cannes film festival}, \textbf{venice film festival} \\\midrule
+    
+%     \multicolumn{2}{l}{\textbf{\dbpedia} (Root $\rightarrow$ sports season $\rightarrow$ sports team season $\rightarrow$ ncaa team season)} \\ \midrule
+%     \corel & naia, division ii, ncaa division ii, atlantic coast conference, mid american conferencer \\
+%     \taxocom & mastodons, basketball tournament, michigan state university, bulldogs men, lehigh mountain hawks \\
+%     \multirow{2}{*}{\small \proposed} & ncaa national team, ncaa tournament appearancel ncaa division iii, \\
+%     & ncaa division ii men, ncaa championship golf team \\
+%     \bottomrule
+% \end{tabular}
+% }
+% \label{tbl:humaneval}
+% \end{table}
+
+\begin{table*}[t]
+\caption{Top-5 topic terms included in each topic node. The off-topic (or too general) terms are marked with a strikethrough, and the multi-word terms that are not obtainable by the extraction-based methods are underlined.}
+\centering
+\setlength{\tabcolsep}{4pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{cQR}
+    \toprule
+    & \multicolumn{1}{l}{\textbf{\amazon}} & \multicolumn{1}{l}{\textbf{\dbpedia}} \\\midrule
+    
+    \textbf{Topic}
+    & \reduce{\textbf{Root $\rightarrow$ grocery gourmet food $\rightarrow$ beverages $\rightarrow$ tea}}
+    & \reduce{\textbf{Root $\rightarrow$ work $\rightarrow$ periodical literature $\rightarrow$ magazine}} \\\cmidrule(lr){1-1}\cmidrule(lr){2-2}\cmidrule(lr){3-3}
+    
+    \reduce{\corel}
+    & \reduce{blend, alvita, green tea, white tea, herbal tea}
+    & \reduce{science fiction, comics, anthology, \wrong{monthly}, newspaper} \\
+    
+    \reduce{\taxocom}
+    & \reduce{earl grey, taylors of harrogate, black tea, herbal tea, teabags} 
+    & \reduce{\wrong{books}, cover, fashion, \wrong{specializing}, publishers} \\
+    
+    \reduce{\proposed}
+    & \reduce{green tea, herbal tea, black tea, \unique{vanilla chai tea}, \unique{jasmine tea}}
+    & \reduce{news mag.., monthly mag.., \unique{business mag..}, \unique{comics mag..}, \unique{fashion mag..}} \\\midrule
+    
+    \textbf{Topic}
+    & \reduce{\textbf{Root $\rightarrow$ personal care $\rightarrow$ household supplies $\rightarrow$ dishwashing}}
+    & \reduce{\textbf{Root $\rightarrow$ event $\rightarrow$ societal event $\rightarrow$ film festival}} \\\cmidrule(lr){1-1}\cmidrule(lr){2-2}\cmidrule(lr){3-3}
+    
+    \reduce{\corel} 
+    & \reduce{\wrong{household}, fresh, flushes, dirty, \wrong{biological}} 
+    & \reduce{film festival, \wrong{music festival}, annual event, \wrong{festival}, cinema} \\
+    
+    \reduce{\taxocom}
+    & \reduce{dishwasher, bubbles, dirty, smelly, nasty}
+    & \reduce{film festival, \wrong{fest}, \wrong{festival}, independent film, annual festival} \\
+    
+    \reduce{\proposed}
+    & \reduce{dishwasher, dish soap, \unique{dish detergent}, \unique{dishwasher gel}, \unique{dishwasher soap}} 
+    & \reduce{film festi.., \unique{short film festi..}, annual film festi.., \unique{cannes film festi..}, \unique{venice film festi..}}\\\midrule
+    
+    \textbf{Topic}
+    & \reduce{\textbf{Root $\rightarrow$ baby products $\rightarrow$ diapering $\rightarrow$ cloth diapers}}
+    & \reduce{\textbf{Root $\rightarrow$ sports season $\rightarrow$ sports team season $\rightarrow$ ncaa team season}} \\\cmidrule(lr){1-1}\cmidrule(lr){2-2}\cmidrule(lr){3-3}
+    
+    \reduce{\corel}
+    & \reduce{cloth diaper, \wrong{diapers}, \wrong{diaperbag}, cloth diapering, {baby wipes}}
+    & \reduce{naia, div.. ii, ncaa div.. ii, atlantic coast conference, mid american conference} \\
+    
+    \reduce{\taxocom}
+    & \reduce{\wrong{disposable diapers}, \wrong{biodegradeable}, cloth diaper, \wrong{diapering}, bulky}
+    & \reduce{mastodons, basketball tournament, college football, bulldogs, hoosiers} \\
+    
+    \reduce{\proposed}
+    & \reduce{cloth diaper, prefold diaper, \unique{diaper cover}, \unique{diaper liner}, \unique{reusable diaper}}
+    & \reduce{\unique{ncaa national team}, ncaa tournament, ncaa div.. ii, ncaa div.. i, \unique{ncaa championship}} \\
+
+    \bottomrule
+\end{tabular}
+}
+\label{tbl:topicterms}
+\end{table*}
