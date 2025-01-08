@@ -180,37 +180,57 @@ def compute_topic_similarity(doc_text, topic_vec, word2vec_model):
 def main():
     print("Loading and preprocessing data...")
     
-    # Create congress directory if it doesn't exist
-    os.makedirs('congress', exist_ok=True)
-    
     # Load the CSV file
     df = pd.read_csv('congress/crec2023.csv')
     
-    # Initialize spaCy and KeyBERT
-    print("Initializing NLP models...")
-    nlp = spacy.load('en_core_web_sm')
-    keybert_model = KeyBERT()
-    
     # Create corpus.txt
     print("Creating corpus.txt...")
+    # Filter out clerk speeches first
+    valid_speeches = df[~df['speech'].str.startswith("The clerk")]
     with open('congress/corpus.txt', 'w', encoding='utf-8') as f:
-        for idx, text in enumerate(df['speech']):
+        for idx, text in tqdm(enumerate(valid_speeches['speech']), 
+                            total=len(valid_speeches), 
+                            desc="Writing corpus"):
             f.write(f"{idx}\t{text}\n")
+
+    # Initialize spaCy and KeyBERT
+    print("Initializing NLP models...")
+    # Enable GPU if available
+    spacy.require_gpu()
+    nlp = spacy.load('en_core_web_sm')
+    nlp.add_pipe('sentencizer')  # Add sentencizer for better batch processing
+    keybert_model = KeyBERT()
     
     # Extract phrases for each document
     print("Extracting phrases...")
     doc2phrases = {}
-    for idx, text in tqdm(enumerate(df['speech'])):
-        doc = nlp(text)
-        phrases = extract_phrases(doc, nlp, keybert_model)
-        if phrases:
-            doc2phrases[idx] = phrases
+    batch_size = 32  # Process documents in batches for GPU efficiency
+    
+    # Create batches of texts
+    texts = valid_speeches['speech'].tolist()
+    num_batches = (len(texts) + batch_size - 1) // batch_size  # Ceiling division
+    batches = [texts[i:i + batch_size] for i in range(0, len(texts), batch_size)]
+    
+    for batch_idx, batch in enumerate(tqdm(batches, 
+                                         total=num_batches,
+                                         desc="Processing documents")):
+        # Process batch with spaCy
+        docs = list(nlp.pipe(batch))
+        
+        # Extract phrases for each doc in batch
+        for doc_idx, doc in enumerate(docs):
+            global_idx = batch_idx * batch_size + doc_idx
+            phrases = extract_phrases(doc, nlp, keybert_model)
+            if phrases:
+                doc2phrases[global_idx] = phrases
     
     # Save doc2phrases.txt
     print("Saving doc2phrases.txt...")
     with open('congress/doc2phrases.txt', 'w', encoding='utf-8') as f:
-        for doc_id, phrases in doc2phrases.items():
-            f.write(f"{doc_id}\t{' '.join(phrases)}\n")
+        for doc_id in tqdm(sorted(doc2phrases.keys()), 
+                          total=len(doc2phrases),
+                          desc="Writing phrases"):
+            f.write(f"{doc_id}\t{' '.join(doc2phrases[doc_id])}\n")
     
     # Create topic hierarchy and get policy areas list
     print("Creating topic hierarchy...")
@@ -237,12 +257,26 @@ def main():
     
     # Create feature vectors for all topics
     print("Creating topic feature vectors...")
-    topic_features = create_topic_features(policy_areas, word2vec_model)
+    topic_features = {}
+    for topic in tqdm(policy_areas, 
+                     total=len(policy_areas),
+                     desc="Computing topic features"):
+        words = topic.split()
+        vectors = []
+        for word in words:
+            if word in word2vec_model:
+                vectors.append(word2vec_model[word])
+        if vectors:
+            topic_features[topic] = np.mean(vectors, axis=0)
+        else:
+            topic_features[topic] = np.zeros(300)
     
     # Save topic_triples.txt using policy areas from the CSV
     print("Creating topic triples...")
     with open('congress/topic_triples.txt', 'w', encoding='utf-8') as f:
-        for doc_idx, row in df.iterrows():
+        for doc_idx, row in tqdm(valid_speeches.iterrows(), 
+                                total=len(valid_speeches),
+                                desc="Computing document-topic similarities"):
             doc_text = row['speech']
             # For each document, compute similarity with all topics
             similarities = []
@@ -261,7 +295,9 @@ def main():
     print("Saving topic features...")
     with open('congress/topic_feats.txt', 'w', encoding='utf-8') as f:
         f.write(f"{len(policy_areas)} 300\n")  # num_topics topics, 300 dimensions
-        for topic in policy_areas:
+        for topic in tqdm(policy_areas, 
+                         total=len(policy_areas),
+                         desc="Writing topic features"):
             feature_vector = topic_features[topic]
             f.write(' '.join(map(str, feature_vector)) + '\n')
     
