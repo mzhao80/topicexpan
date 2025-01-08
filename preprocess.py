@@ -330,6 +330,8 @@ def main():
     topic_vectors = {'0': root_vector}
     # Add the actual topic vectors starting from index 1
     topic_vectors.update({str(idx+1): vec for idx, vec in enumerate(topic_features.values())})
+    # Add unknown vector as all zeros for masking
+    topic_vectors['unknown'] = np.zeros(300)
     save_vectors_word2vec_format('congress/topic_feats.txt', topic_vectors, 300)
     
     print("Preprocessing complete! Files have been created in the congress/ directory.")
