@@ -85,6 +85,18 @@ def extract_phrases(doc, nlp, keybert_model=None):
     
     return list(phrases)
 
+def load_glove_vectors(glove_path):
+    """Load GloVe vectors from file"""
+    print("Loading GloVe vectors...")
+    word2vec = {}
+    with open(glove_path, 'r', encoding='utf-8') as f:
+        for line in tqdm(f, desc="Reading GloVe vectors"):
+            values = line.split()
+            word = values[0]
+            vector = np.asarray(values[1:], dtype='float32')
+            word2vec[word] = vector
+    return word2vec
+
 def create_topic_hierarchy():
     # List of all policy areas
     policy_areas = [
@@ -206,16 +218,14 @@ def main():
     doc2phrases = {}
     batch_size = 32  # Process documents in batches for GPU efficiency
     
-    # Create batches of texts
-    texts = valid_speeches['speech'].tolist()
-    num_batches = (len(texts) + batch_size - 1) // batch_size  # Ceiling division
-    batches = [texts[i:i + batch_size] for i in range(0, len(texts), batch_size)]
-    
-    for batch_idx, batch in enumerate(tqdm(batches, 
-                                         total=num_batches,
-                                         desc="Processing documents")):
-        # Process batch with spaCy
-        docs = list(nlp.pipe(batch))
+    # skip this next section if congress/doc2phrases.txt already exists
+    if os.path.exists('congress/doc2phrases.txt'):
+        print("doc2phrases.txt already exists, skipping phrase extraction")
+    else:
+        # Create batches of texts
+        texts = valid_speeches['speech'].tolist()
+        num_batches = (len(texts) + batch_size - 1) // batch_size  # Ceiling division
+        batches = [texts[i:i + batch_size] for i in range(0, len(texts), batch_size)]
         
         # Extract phrases for each doc in batch
         for doc_idx, doc in enumerate(docs):
@@ -224,13 +234,13 @@ def main():
             if phrases:
                 doc2phrases[global_idx] = phrases
     
-    # Save doc2phrases.txt
-    print("Saving doc2phrases.txt...")
-    with open('congress/doc2phrases.txt', 'w', encoding='utf-8') as f:
-        for doc_id in tqdm(sorted(doc2phrases.keys()), 
-                          total=len(doc2phrases),
-                          desc="Writing phrases"):
-            f.write(f"{doc_id}\t{' '.join(doc2phrases[doc_id])}\n")
+        # Save doc2phrases.txt
+        print("Saving doc2phrases.txt...")
+        with open('congress/doc2phrases.txt', 'w', encoding='utf-8') as f:
+            for doc_id in tqdm(sorted(doc2phrases.keys()), 
+                            total=len(doc2phrases),
+                            desc="Writing phrases"):
+                f.write(f"{doc_id}\t{' '.join(doc2phrases[doc_id])}\n")
     
     # Create topic hierarchy and get policy areas list
     print("Creating topic hierarchy...")
@@ -250,10 +260,10 @@ def main():
         for area in hierarchy['politics']['children']:
             f.write(f"politics\t{area}\n")
     
-    # Load word2vec model for creating meaningful feature vectors
+    # Load GloVe vectors
     print("Loading GloVe embeddings...")
     word2vec_path = os.path.expanduser("~/Downloads/topicexpan/glove/glove.6B.300d.txt")
-    word2vec_model = KeyedVectors.load_word2vec_format(word2vec_path, binary=False)
+    word2vec_model = load_glove_vectors(word2vec_path)
     
     # Create feature vectors for all topics
     print("Creating topic feature vectors...")
