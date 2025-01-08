@@ -10,3 +10,5 @@ pytorch-nlp
 tensorboardx
 gensim
 graphviz
+spacy
+tqdm
