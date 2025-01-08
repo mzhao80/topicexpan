@@ -189,6 +189,16 @@ def compute_topic_similarity(doc_text, topic_vec, word2vec_model):
     similarity = np.dot(doc_vec, topic_vec) / (np.linalg.norm(doc_vec) * np.linalg.norm(topic_vec))
     return max(0, similarity)  # Ensure non-negative
 
+def save_vectors_word2vec_format(fname, vectors, vector_size):
+    """Save vectors in word2vec format"""
+    with open(fname, 'w', encoding='utf-8') as fout:
+        # Write header: number of vectors and vector size
+        fout.write(f"{len(vectors)} {vector_size}\n")
+        # Write vectors
+        for word, vector in vectors.items():
+            vector_str = ' '.join(map(str, vector))
+            fout.write(f"{word} {vector_str}\n")
+
 def main():
     print("Loading and preprocessing data...")
     
@@ -227,13 +237,19 @@ def main():
         num_batches = (len(texts) + batch_size - 1) // batch_size  # Ceiling division
         batches = [texts[i:i + batch_size] for i in range(0, len(texts), batch_size)]
         
-        # Extract phrases for each doc in batch
-        for doc_idx, doc in enumerate(docs):
-            global_idx = batch_idx * batch_size + doc_idx
-            phrases = extract_phrases(doc, nlp, keybert_model)
-            if phrases:
-                doc2phrases[global_idx] = phrases
-    
+        for batch_idx, batch in enumerate(tqdm(batches, 
+                                           total=num_batches,
+                                           desc="Processing documents")):
+            # Process batch with spaCy
+            docs = list(nlp.pipe(batch))
+            
+            # Extract phrases for each doc in batch
+            for doc_idx, doc in enumerate(docs):
+                global_idx = batch_idx * batch_size + doc_idx
+                phrases = extract_phrases(doc, nlp, keybert_model)
+                if phrases:
+                    doc2phrases[global_idx] = phrases
+        
         # Save doc2phrases.txt
         print("Saving doc2phrases.txt...")
         with open('congress/doc2phrases.txt', 'w', encoding='utf-8') as f:
@@ -301,15 +317,11 @@ def main():
                 confidence = int(sim * 100)
                 f.write(f"{doc_idx}\t{topic_idx}\t{confidence}\n")
     
-    # Save topic_feats.txt
+    # Save topic_feats.txt in word2vec format
     print("Saving topic features...")
-    with open('congress/topic_feats.txt', 'w', encoding='utf-8') as f:
-        f.write(f"{len(policy_areas)} 300\n")  # num_topics topics, 300 dimensions
-        for topic in tqdm(policy_areas, 
-                         total=len(policy_areas),
-                         desc="Writing topic features"):
-            feature_vector = topic_features[topic]
-            f.write(' '.join(map(str, feature_vector)) + '\n')
+    # Convert topic features to word2vec format (using indices as words)
+    topic_vectors = {str(idx): vec for idx, vec in enumerate(topic_features.values())}
+    save_vectors_word2vec_format('congress/topic_feats.txt', topic_vectors, 300)
     
     print("Preprocessing complete! Files have been created in the congress/ directory.")
 

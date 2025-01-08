@@ -9,3 +9,10 @@ pydantic
 pytorch-nlp
 tensorboardx
 gensim
+graphviz
+spacy
+tqdm
+keybert
+sentence-transformers
+spacy[cuda118]
+cupy-cuda11x
