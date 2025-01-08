@@ -320,16 +320,16 @@ def main():
     # Save topic_feats.txt in word2vec format
     print("Saving topic features...")
     # Convert topic features to word2vec format (using indices as words)
-    # Add root topic (politics) as index 34
-    words = "politics".split()
-    vectors = []
-    for word in words:
+    # Add root topic vector (index 0) using embedding of "politics"
+    root_words = ["politics"]
+    root_vectors = []
+    for word in root_words:
         if word in word2vec_model:
-            vectors.append(word2vec_model[word])
-    root_vector = np.mean(vectors, axis=0) if vectors else np.zeros(300)
-    
-    topic_vectors = {str(idx): vec for idx, vec in enumerate(topic_features.values())}
-    topic_vectors[str(len(topic_features))] = root_vector  # Add root topic vector
+            root_vectors.append(word2vec_model[word])
+    root_vector = np.mean(root_vectors, axis=0) if root_vectors else np.zeros(300)
+    topic_vectors = {'0': root_vector}
+    # Add the actual topic vectors starting from index 1
+    topic_vectors.update({str(idx+1): vec for idx, vec in enumerate(topic_features.values())})
     save_vectors_word2vec_format('congress/topic_feats.txt', topic_vectors, 300)
     
     print("Preprocessing complete! Files have been created in the congress/ directory.")
