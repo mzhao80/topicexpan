@@ -9,6 +9,14 @@ import json
 from gensim.models import KeyedVectors
 from tqdm import tqdm
 from keybert import KeyBERT
+from nltk.corpus import stopwords
+import nltk
+
+# Download stopwords if not already downloaded
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
 
 def clean_text(text):
     # Remove special characters and extra whitespace
@@ -161,7 +169,7 @@ def create_topic_features(topics, word2vec_model):
     """
     features = {}
     vector_dim = len(next(iter(word2vec_model.values())))  # Get dimension from first vector
-    stopwords = set(nlp.Defaults.stop_words)
+    stop_words = set(stopwords.words('english'))
     
     for topic in topics:
         # First try the whole phrase with hyphens/underscores replaced by spaces
@@ -175,7 +183,7 @@ def create_topic_features(topics, word2vec_model):
         # Filter out stopwords and get vectors
         vectors = []
         for word in words:
-            if word not in stopwords and word in word2vec_model:
+            if word not in stop_words and word in word2vec_model:
                 vectors.append(word2vec_model[word])
         
         if vectors:
