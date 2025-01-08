@@ -1,34 +1,33 @@
 0	politics
-1	agriculture and food
+1	agriculture_and_food
 2	animals
-3	armed forces and national security
-4	arts culture religion
-5	civil rights and liberties minority issues
-6	commerce
-7	crime and law enforcement
-8	economics and public finance
-9	education
-10	emergency management
-11	energy
-12	environmental protection
-13	families
-14	finance and financial sector
-15	foreign trade and international finance
-16	geographic areas entities and committees
-17	government operations and politics
-18	health
-19	housing and community development
-20	immigration
-21	international affairs
-22	labor and employment
-23	law
-24	native americans
-25	private legislation
-26	public lands and natural resources
-27	science technology communications
-28	social sciences and history
-29	social welfare
-30	sports and recreation
-31	taxation
-32	transportation and public works
-33	water resources development
+3	armed_forces_and_national_security
+4	arts_culture_religion
+5	civil_rights_and_liberties_minority_issues_commerce
+6	crime_and_law_enforcement
+7	economics_and_public_finance
+8	education
+9	emergency_management
+10	energy
+11	environmental_protection
+12	families
+13	finance_and_financial_sector
+14	foreign_trade_and_international_finance
+15	geographic_areas_entities_and_committees
+16	government_operations_and_politics
+17	health
+18	housing_and_community_development
+19	immigration
+20	international_affairs
+21	labor_and_employment
+22	law
+23	native_americans
+24	private_legislation
+25	public_lands_and_natural_resources
+26	science_technology_communications
+27	social_sciences_and_history
+28	social_welfare
+29	sports_and_recreation
+30	taxation
+31	transportation_and_public_works
+32	water_resources_development

@@ -1,34 +1,33 @@
-root	politics
-politics	agriculture and food
-politics	animals
-politics	armed forces and national security
-politics	arts culture religion
-politics	civil rights and liberties minority issues
-politics	commerce
-politics	crime and law enforcement
-politics	economics and public finance
-politics	education
-politics	emergency management
-politics	energy
-politics	environmental protection
-politics	families
-politics	finance and financial sector
-politics	foreign trade and international finance
-politics	geographic areas entities and committees
-politics	government operations and politics
-politics	health
-politics	housing and community development
-politics	immigration
-politics	international affairs
-politics	labor and employment
-politics	law
-politics	native americans
-politics	private legislation
-politics	public lands and natural resources
-politics	science technology communications
-politics	social sciences and history
-politics	social welfare
-politics	sports and recreation
-politics	taxation
-politics	transportation and public works
-politics	water resources development
+root	0
+0	1
+0	2
+0	3
+0	4
+0	5
+0	6
+0	7
+0	8
+0	9
+0	10
+0	11
+0	12
+0	13
+0	14
+0	15
+0	16
+0	17
+0	18
+0	19
+0	20
+0	21
+0	22
+0	23
+0	24
+0	25
+0	26
+0	27
+0	28
+0	29
+0	30
+0	31
+0	32
