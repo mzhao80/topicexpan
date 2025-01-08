@@ -1,0 +1,1527 @@
+2025-01-08 14:57:55,481 - train - INFO - TopicExpan(
+  (doc_encoder): BertDocEncoder(
+    (model): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0-11): 12 x BertLayer(
+            (attention): BertAttention(
+              (self): BertSdpaSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (activation): Tanh()
+      )
+    )
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+  )
+  (phrase_decoder): TransformerPhraseDecoder(
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (output_embeddings): Linear(in_features=768, out_features=30522, bias=False)
+    (model): TransformerDecoder(
+      (layers): ModuleList(
+        (0): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (multihead_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (linear1): Linear(in_features=768, out_features=2048, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (linear2): Linear(in_features=2048, out_features=768, bias=True)
+          (norm1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (norm3): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (dropout3): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+  )
+  (topic_encoder): GCNTopicEncoder(
+    (downward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=300, out=300, normalization=right, activation=None)
+    )
+    (upward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=300, out=300, normalization=right, activation=None)
+    )
+    (sideward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=300, out=300, normalization=right, activation=None)
+    )
+  )
+  (interaction): BilinearInteraction()
+  (linear_combiner): Linear(in_features=1068, out_features=768, bias=True)
+)
+Trainable parameters: 142394216
+2025-01-08 14:58:03,291 - trainer - WARNING - Warning: The number of GPU's configured to use is 8, but only 1 are available on this machine.
+2025-01-08 14:58:08,494 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:08,495 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:08,495 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:09,241 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:09,242 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:09,242 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:09,987 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:09,988 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:09,988 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:10,731 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:10,731 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:10,732 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:11,474 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:11,475 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:11,475 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:12,217 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:12,218 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:12,218 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:12,962 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:12,963 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:12,963 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:13,706 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:13,706 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:13,707 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:14,451 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:14,451 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:14,452 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:15,195 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:15,196 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:15,196 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:15,940 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:15,941 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:16,685 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:16,685 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:16,686 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:17,430 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:17,430 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:17,430 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:18,174 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:18,175 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:18,175 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:18,919 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:18,920 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:19,664 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:19,664 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:19,665 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:20,409 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:20,409 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:20,409 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:21,153 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:21,154 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:21,154 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:21,898 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:21,899 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:21,899 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:22,643 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:22,644 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:23,405 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:23,406 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:23,406 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:24,150 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:24,150 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:24,151 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:24,895 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:24,895 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:24,896 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:25,639 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:25,640 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:26,384 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:26,385 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:26,385 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:27,129 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:27,130 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:27,130 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:27,874 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:27,874 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:27,875 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:28,619 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:28,619 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:28,619 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:29,585 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:29,586 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:29,586 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:30,330 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:30,331 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:30,331 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:31,075 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:31,076 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:31,076 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:31,820 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:31,821 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:31,821 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:32,565 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:32,566 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:32,566 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:33,311 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:33,311 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:33,311 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:34,055 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:34,056 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:34,056 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:34,800 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:34,801 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:34,801 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:35,545 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:35,546 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:36,290 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:36,290 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:36,291 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:37,035 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:37,035 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:37,036 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:37,780 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:37,780 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:37,780 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:38,524 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:38,525 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:38,525 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:39,269 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:39,270 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:39,270 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:40,014 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:40,014 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:40,015 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:40,759 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:40,759 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:40,760 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:41,504 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:41,504 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:41,504 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:42,248 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:42,249 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:42,249 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:42,993 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:42,994 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:42,994 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:43,738 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:43,738 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:43,739 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:44,483 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:44,483 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:44,483 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:45,227 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:45,228 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:45,228 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:45,972 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:45,973 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:45,973 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:46,717 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:46,717 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:46,718 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:47,461 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:47,462 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:47,462 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:48,206 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:48,207 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:48,207 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:48,951 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:48,951 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:48,952 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:49,696 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:49,696 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:49,697 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:50,440 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:50,441 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:51,185 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:51,185 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:51,186 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:51,930 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:51,930 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:51,931 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:52,674 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:52,675 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:52,675 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:53,419 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:53,420 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:53,420 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:54,164 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:54,164 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:54,165 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:54,909 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:54,909 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:54,910 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:55,654 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:55,654 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:55,654 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:56,398 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:56,399 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:56,399 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:57,143 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:57,144 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:57,144 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:57,888 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:57,888 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:57,889 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:58,633 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:58,633 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:58,634 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:59,378 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:59,378 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:58:59,378 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:00,122 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:00,123 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:00,123 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:00,867 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:00,868 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:00,868 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:01,612 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:01,613 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:01,613 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:02,357 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:02,358 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:02,358 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:03,102 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:03,103 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:03,103 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:03,847 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:03,847 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:03,848 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:04,592 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:04,593 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:04,593 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:05,337 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:05,338 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:06,082 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:06,083 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:06,083 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:06,827 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:06,827 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:06,828 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:07,572 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:07,572 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:07,573 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:08,316 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:08,317 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:08,317 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:09,061 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:09,062 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:09,062 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:09,806 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:09,806 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:09,807 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:10,551 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:10,551 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:10,552 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:11,295 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:11,296 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:11,296 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:12,040 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:12,041 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:12,041 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:12,785 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:12,786 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:13,530 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:13,530 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:13,531 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:14,274 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:14,275 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:14,275 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:15,019 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:15,020 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:15,020 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:15,764 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:15,765 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:15,765 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:16,509 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:16,510 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:16,510 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:17,254 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:17,254 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:17,998 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:17,999 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:18,743 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:18,744 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:18,744 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:19,488 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:19,488 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:19,489 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:20,233 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:20,233 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:20,234 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:20,977 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:20,978 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:20,978 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:21,722 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:21,723 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:21,723 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:22,467 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:22,468 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:22,468 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:23,212 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:23,212 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:23,213 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:23,957 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:23,957 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:23,957 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:24,701 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:24,702 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:24,702 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:25,446 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:25,447 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:26,191 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:26,192 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:26,192 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:26,936 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:26,937 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:26,937 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:27,682 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:27,682 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:27,682 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:28,426 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:28,427 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:28,427 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:29,171 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:29,172 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:29,916 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:29,916 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:29,917 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:30,661 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:30,661 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:30,661 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:31,405 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:31,406 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:31,406 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:32,150 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:32,151 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:32,895 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:32,895 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:32,896 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:33,639 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:33,640 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:34,384 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:34,385 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:34,385 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:35,129 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:35,129 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:35,130 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:35,874 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:35,874 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:35,875 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:36,618 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:36,619 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:36,619 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:37,363 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:37,364 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:37,364 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:38,108 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:38,109 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:38,109 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:38,853 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:38,854 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:38,854 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:39,598 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:39,598 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:39,599 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:40,343 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:40,343 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:40,343 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:41,087 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:41,088 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:41,088 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:41,832 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:41,833 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:41,833 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:42,577 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:42,577 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:42,578 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:43,322 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:43,322 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:43,323 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:44,067 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:44,067 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:44,067 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:44,811 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:44,812 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:44,812 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:45,556 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:45,557 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:45,557 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:46,301 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:46,301 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:46,302 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:47,046 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:47,046 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:47,047 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:47,791 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:47,791 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:47,792 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:48,535 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:48,536 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:48,536 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:49,280 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:49,281 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:49,282 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:50,026 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:50,027 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:50,027 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:50,771 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:50,771 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:50,772 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:51,516 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:51,516 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:51,517 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:52,261 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:52,261 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:53,005 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:53,006 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:53,006 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:53,750 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:53,751 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:53,751 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:54,495 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:54,495 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:54,496 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:55,240 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:55,240 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:55,241 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:55,984 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:55,985 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:55,985 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:56,729 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:56,730 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:57,474 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:57,474 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:57,475 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:58,219 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:58,219 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:58,220 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:58,963 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:58,964 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:58,964 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:59,708 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:59,709 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 14:59:59,709 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:00,453 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:00,454 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:00,454 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:01,198 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:01,199 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:01,199 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:01,943 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:01,944 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:01,944 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:02,688 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:02,688 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:02,689 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:03,433 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:03,433 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:03,434 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:04,178 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:04,178 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:04,922 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:04,923 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:04,923 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:05,667 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:05,668 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:05,668 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:06,412 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:06,412 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:06,413 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:07,157 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:07,158 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:07,901 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:07,902 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:07,902 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:08,646 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:08,647 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:08,647 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:09,391 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:09,391 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:09,392 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:10,136 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:10,136 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:10,137 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:10,881 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:10,881 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:10,881 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:11,626 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:11,627 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:12,371 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:12,372 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:12,372 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:13,116 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:13,117 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:13,117 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:13,861 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:13,861 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:13,862 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:14,606 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:14,607 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:15,350 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:15,351 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:15,351 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:16,095 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:16,096 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:16,840 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:16,840 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:16,841 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:17,585 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:17,585 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:17,586 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:18,329 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:18,330 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:18,330 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:19,074 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:19,075 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:19,075 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:19,819 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:19,819 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:19,820 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:20,564 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:20,564 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:20,565 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:21,308 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:21,309 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:21,309 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:22,053 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:22,054 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:22,054 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:22,798 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:22,799 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:22,799 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:23,543 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:23,544 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:23,544 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:24,288 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:24,288 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:24,289 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:25,033 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:25,033 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:25,777 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:25,778 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:26,522 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:26,523 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:26,523 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:27,267 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:27,267 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:27,268 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:28,012 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:28,012 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:28,013 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:28,756 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:28,757 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:28,757 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:29,501 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:29,502 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:30,246 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:30,246 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:30,247 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:30,991 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:30,991 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:30,991 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:31,735 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:31,736 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:31,736 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:32,480 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:32,481 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:32,481 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:33,225 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:33,226 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:33,226 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:33,970 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:33,971 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:33,971 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:34,716 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:34,717 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:35,461 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:35,461 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:35,461 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:36,205 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:36,206 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:36,206 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:36,950 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:36,951 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:36,951 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:37,695 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:37,695 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:37,696 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:38,440 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:38,440 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:38,441 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:39,184 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:39,185 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:39,185 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:39,929 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:39,930 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:39,930 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:40,674 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:40,674 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:40,675 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:41,419 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:41,419 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:41,419 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:42,163 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:42,164 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:42,164 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:42,908 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:42,908 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:42,909 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:43,653 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:43,654 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:44,397 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:44,398 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:44,398 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:45,142 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:45,143 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:45,143 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:45,887 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:45,888 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:46,632 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:46,632 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:46,633 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:47,377 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:47,377 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:47,378 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:48,121 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:48,122 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:48,122 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:48,866 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:48,867 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:48,867 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:49,611 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:49,611 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:49,612 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:50,356 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:50,356 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:50,357 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:51,100 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:51,101 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:51,845 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:51,845 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:51,846 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:52,590 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:52,590 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:52,591 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:53,334 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:53,335 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:53,335 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:54,079 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:54,080 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:54,080 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:54,824 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:54,825 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:54,825 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:55,569 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:55,570 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:55,570 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:56,314 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:56,314 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:56,315 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:57,059 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:57,060 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:57,060 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:57,804 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:57,805 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:57,805 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:58,549 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:58,550 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:59,294 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:59,294 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:00:59,295 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:00,039 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:00,039 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:00,040 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:00,783 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:00,784 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:00,784 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:01,528 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:01,529 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:01,529 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:02,273 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:02,274 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:03,018 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:03,018 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:03,019 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:03,763 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:03,763 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:03,763 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:04,507 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:04,508 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:04,508 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:05,252 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:05,253 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:05,253 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:05,997 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:05,998 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:06,742 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:06,742 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:06,742 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:07,486 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:07,487 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:07,487 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:08,231 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:08,232 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:08,232 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:08,976 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:08,977 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:08,977 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:09,721 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:09,721 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:09,722 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:10,466 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:10,466 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:10,467 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:11,210 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:11,211 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:11,211 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:11,955 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:11,956 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:11,956 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:12,700 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:12,701 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:13,445 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:13,445 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:13,445 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:14,189 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:14,190 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:14,190 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:14,934 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:14,935 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:14,935 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:15,679 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:15,679 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:15,680 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:16,423 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:16,424 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:16,424 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:17,168 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:17,169 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:17,169 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:17,913 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:17,913 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:17,914 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:18,658 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:18,658 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:18,659 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:19,403 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:19,404 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:19,404 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:20,148 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:20,149 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:20,149 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:20,893 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:20,893 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:20,894 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:21,638 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:21,638 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:21,639 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:22,383 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:22,383 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:22,383 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:23,127 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:23,128 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:23,128 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:23,872 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:23,873 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:23,873 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:24,617 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:24,617 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:24,618 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:25,362 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:25,362 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:26,106 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:26,107 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:26,107 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:26,851 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:26,852 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:26,852 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:27,596 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:27,596 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:27,597 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:28,340 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:28,341 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:29,085 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:29,086 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:29,830 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:29,830 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:29,831 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:30,575 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:30,575 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:30,575 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:31,320 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:31,320 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:31,321 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:32,064 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:32,065 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:32,065 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:32,809 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:32,810 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:32,810 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:33,554 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:33,555 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:34,299 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:34,299 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:34,299 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:35,043 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:35,044 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:35,044 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:35,788 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:35,789 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:35,789 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:36,533 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:36,533 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:36,534 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:37,277 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:37,278 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:37,278 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:38,022 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:38,023 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:38,023 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:38,767 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:38,767 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:38,768 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:39,512 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:39,512 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:39,513 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:40,257 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:40,257 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:40,258 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:41,002 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:41,002 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:41,002 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:41,746 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:41,747 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:42,492 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:42,492 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:42,493 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:43,237 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:43,237 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:43,981 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:43,982 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:43,982 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:44,726 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:44,727 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:44,727 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:45,471 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:45,471 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:45,472 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:46,216 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:46,216 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:46,216 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:46,960 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:46,961 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:46,961 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:47,705 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:47,706 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:47,706 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:48,450 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:48,451 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:49,194 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:49,195 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:49,195 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:49,939 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:49,940 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:49,940 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:50,684 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:50,684 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:50,685 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:51,429 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:51,429 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:51,430 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:52,174 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:52,174 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:52,175 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:52,918 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:52,919 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:52,919 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:53,663 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:53,664 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:53,664 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:54,408 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:54,409 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:54,409 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:55,153 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:55,153 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:55,154 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:55,898 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:55,898 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:55,899 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:56,642 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:56,643 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:56,643 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:57,387 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:57,388 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:57,388 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:58,132 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:58,132 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:58,133 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:58,877 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:58,877 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:58,878 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:59,621 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:59,622 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:01:59,622 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:00,366 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:00,367 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:01,111 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:01,111 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:01,112 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:01,856 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:01,857 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:02,601 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:02,601 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:02,602 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:03,346 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:03,347 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:04,091 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:04,091 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:04,092 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:04,836 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:04,837 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:04,837 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:05,581 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:05,582 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:05,582 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:06,326 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:06,326 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:06,327 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:07,071 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:07,071 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:07,071 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:07,815 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:07,816 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:08,560 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:08,560 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:08,561 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:09,304 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:09,305 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:09,305 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:10,049 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:10,049 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:10,050 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:10,793 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:10,794 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:10,794 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:11,538 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:11,539 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:11,539 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:12,283 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:12,283 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:12,283 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:13,027 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:13,028 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:13,772 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:13,773 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:14,516 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:14,517 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:14,517 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:15,261 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:15,261 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:15,262 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:16,006 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:16,006 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:16,007 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:16,751 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:16,751 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:17,495 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:17,496 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:17,496 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:18,240 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:18,240 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:18,241 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:18,984 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:18,985 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:18,985 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:19,729 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:19,729 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:19,730 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:20,473 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:20,474 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:20,474 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:21,218 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:21,218 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:21,219 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:21,962 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:21,963 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:21,963 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:22,707 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:22,708 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:22,708 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:23,452 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:23,452 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:23,453 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:24,196 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:24,197 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:24,197 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:24,941 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:24,941 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:24,942 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:25,686 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:25,686 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:25,687 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:26,430 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:26,431 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:26,431 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:27,176 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:27,176 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:27,177 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:27,921 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:27,921 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:28,665 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:28,666 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:28,666 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:29,410 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:29,410 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:29,411 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:30,154 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:30,155 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:30,155 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:30,899 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:30,899 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:30,900 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:31,643 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:31,644 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:31,644 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:32,388 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:32,388 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:32,389 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:33,132 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:33,133 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:33,133 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:33,877 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:33,877 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:33,878 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:34,621 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:34,622 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:34,622 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:35,366 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:35,366 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:35,367 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:36,110 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:36,111 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:36,111 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:36,855 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:36,856 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:36,856 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:37,600 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:37,600 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:37,600 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:38,344 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:38,345 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:38,345 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:39,089 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:39,089 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:39,090 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:39,833 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:39,834 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:39,834 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:40,578 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:40,578 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:40,579 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:41,322 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:41,323 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:41,323 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:42,067 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:42,067 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:42,068 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:42,811 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:42,812 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:42,812 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:43,556 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:43,556 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:43,557 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:44,300 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:44,301 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:44,301 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:45,045 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:45,046 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:45,046 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:45,790 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:45,790 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:45,790 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:46,534 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:46,535 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:46,535 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:47,279 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:47,280 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:48,024 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:48,024 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:48,024 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:48,768 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:48,769 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:48,769 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:49,513 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:49,514 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:49,514 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:50,258 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:50,259 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:50,259 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:51,003 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:51,003 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:51,004 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:51,747 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:51,748 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:51,748 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:52,492 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:52,492 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:52,493 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:53,236 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:53,237 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:53,237 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:53,981 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:53,981 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:53,982 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:54,725 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:54,726 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:54,726 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:55,470 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:55,471 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:55,471 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:56,215 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:56,215 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:56,215 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:56,959 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:56,960 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:57,704 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:57,704 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:57,704 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:58,448 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:58,449 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:58,449 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:59,193 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:59,193 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:59,194 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:59,937 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:59,938 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:02:59,938 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:00,682 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:00,683 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:00,683 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:01,427 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:01,427 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:01,428 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:02,171 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:02,172 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:02,916 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:02,916 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:02,917 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:03,660 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:03,661 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:03,661 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:04,405 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:04,406 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:05,149 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:05,150 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:05,150 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:05,894 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:05,894 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:05,895 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:06,639 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:06,639 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:07,383 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:07,384 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:07,384 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:08,128 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:08,128 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:08,128 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:08,872 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:08,873 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:08,873 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:09,617 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:09,618 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:10,362 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:10,362 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:11,106 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:11,107 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:11,107 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:11,851 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:11,852 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:11,852 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:12,596 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:12,597 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:13,340 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:13,341 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:13,341 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:14,085 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:14,086 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:14,086 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:14,830 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:14,831 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:15,574 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:15,575 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:15,575 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:16,319 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:16,319 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:16,320 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:17,064 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:17,064 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:17,064 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:17,808 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:17,809 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:17,809 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:18,553 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:18,553 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:18,554 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:19,297 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:19,298 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:19,298 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:20,042 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:20,042 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:20,043 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:20,786 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:20,787 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:20,787 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:21,531 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:21,532 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:21,532 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:22,276 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:22,276 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:23,020 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:23,021 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:23,021 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:23,765 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:23,766 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:23,766 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:24,510 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:24,510 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:24,510 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:25,254 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:25,255 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:25,255 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:25,999 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:25,999 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:26,743 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:26,744 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:26,744 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:27,488 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:27,488 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:27,488 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:28,232 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:28,233 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:28,233 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:28,977 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:28,977 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:28,978 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:29,721 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:03:29,722 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:12,446 - train - INFO - TopicExpan(
+  (doc_encoder): BertDocEncoder(
+    (model): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0-11): 12 x BertLayer(
+            (attention): BertAttention(
+              (self): BertSdpaSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (activation): Tanh()
+      )
+    )
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+  )
+  (phrase_decoder): TransformerPhraseDecoder(
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (output_embeddings): Linear(in_features=768, out_features=30522, bias=False)
+    (model): TransformerDecoder(
+      (layers): ModuleList(
+        (0): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (multihead_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (linear1): Linear(in_features=768, out_features=2048, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (linear2): Linear(in_features=2048, out_features=768, bias=True)
+          (norm1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (norm3): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (dropout3): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+  )
+  (topic_encoder): GCNTopicEncoder(
+    (downward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=300, out=300, normalization=right, activation=None)
+    )
+    (upward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=300, out=300, normalization=right, activation=None)
+    )
+    (sideward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=300, out=300, normalization=right, activation=None)
+    )
+  )
+  (interaction): BilinearInteraction()
+  (linear_combiner): Linear(in_features=1068, out_features=768, bias=True)
+)
+Trainable parameters: 142394216
+2025-01-08 15:41:19,711 - trainer - WARNING - Warning: The number of GPU's configured to use is 8, but only 1 are available on this machine.
+2025-01-08 15:41:23,682 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:23,683 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:23,683 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:24,429 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:24,429 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:25,172 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:25,172 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:25,173 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:25,916 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:25,917 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:25,917 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:26,659 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:26,660 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:26,660 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:27,404 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:27,405 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:28,147 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:28,147 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:28,148 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:28,891 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:28,892 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:28,892 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:29,636 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:29,636 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:29,637 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:30,381 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:30,381 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:30,381 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:31,125 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:31,125 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:31,126 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:31,869 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:31,870 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:31,870 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:32,614 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:32,614 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:32,615 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:33,358 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:33,359 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:33,359 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:34,103 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:34,103 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:34,104 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:34,848 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:34,848 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:34,848 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:35,592 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:35,593 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:35,593 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:36,337 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:36,337 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:37,081 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:37,081 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:37,082 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:37,825 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:37,826 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:37,826 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:38,570 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:38,570 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:38,571 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:39,314 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:39,315 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:40,059 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:40,059 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:40,060 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:40,803 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:40,804 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:40,804 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:41,548 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:41,548 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:42,292 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:42,293 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:42,293 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:43,037 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:43,037 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:43,037 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:43,781 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:43,782 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:44,540 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:44,541 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:44,541 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:45,285 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:45,285 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:45,286 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:46,030 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:46,030 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:46,030 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:46,774 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:46,775 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:46,775 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:47,519 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:47,519 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:48,263 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
+2025-01-08 15:41:48,264 - tensorboardX.x2num - WARNING - NaN or Inf found in input tensor.
