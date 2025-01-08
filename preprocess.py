@@ -155,12 +155,13 @@ def create_topic_features(topics, word2vec_model):
     """Create feature vectors for topics using word embeddings
     
     For multi-word topics:
-    1. First try the exact phrase with hyphens replaced by spaces
-    2. If not found, try individual words and average their vectors
+    1. First try the exact phrase with hyphens/underscores replaced by spaces
+    2. If not found, try individual words and average their vectors, ignoring stopwords
     3. If no words found, use zero vector
     """
     features = {}
     vector_dim = len(next(iter(word2vec_model.values())))  # Get dimension from first vector
+    stopwords = set(nlp.Defaults.stop_words)
     
     for topic in topics:
         # First try the whole phrase with hyphens/underscores replaced by spaces
@@ -170,10 +171,11 @@ def create_topic_features(topics, word2vec_model):
             continue
             
         # If not found, split into words and try each word
-        words = cleaned_topic.split()
+        words = cleaned_topic.split(" ")
+        # Filter out stopwords and get vectors
         vectors = []
         for word in words:
-            if word in word2vec_model:
+            if word not in stopwords and word in word2vec_model:
                 vectors.append(word2vec_model[word])
         
         if vectors:
@@ -226,6 +228,11 @@ def main():
     
     # Load the CSV file
     df = pd.read_csv('congress/crec2023.csv')
+    
+    # Load config to get GloVe path
+    with open('config_files/config_congress.json', 'r') as f:
+        config = json.load(f)
+    glove_path = os.path.expanduser(os.path.join(config['embed_dir'], 'glove.6B.300d.txt'))
     
     # Create corpus.txt
     print("Creating corpus.txt...")
@@ -298,8 +305,7 @@ def main():
     
     # Load GloVe vectors
     print("Loading GloVe embeddings...")
-    word2vec_path = os.path.expanduser("~/Downloads/topicexpan/glove/glove.6B.300d.txt")
-    word2vec_model = load_glove_vectors(word2vec_path)
+    word2vec_model = load_glove_vectors(glove_path)
     
     # Create feature vectors for all topics
     print("Creating topic feature vectors...")
