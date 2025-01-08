@@ -185,8 +185,8 @@ def main():
     
     # Create corpus.txt
     print("Creating corpus.txt...")
-    # Filter out clerk speeches first
-    valid_speeches = df[~df['speech'].str.startswith("The clerk")]
+    # Filter out clerk speeches and NaN values
+    valid_speeches = df[df['speech'].notna() & ~df['speech'].astype(str).str.startswith("The clerk")]
     with open('congress/corpus.txt', 'w', encoding='utf-8') as f:
         for idx, text in tqdm(enumerate(valid_speeches['speech']), 
                             total=len(valid_speeches), 
