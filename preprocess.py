@@ -296,10 +296,25 @@ def main():
     
     # Save topic_triples.txt using policy areas from the CSV
     print("Creating topic triples...")
+    
+    # Load doc2phrases mapping first
+    doc2phrases_map = {}
+    with open('congress/doc2phrases.txt', 'r', encoding='utf-8') as f:
+        for line in f:
+            parts = line.strip().split('\t')
+            if len(parts) == 2:
+                doc_id = int(parts[0])
+                phrases = parts[1].split()
+                doc2phrases_map[doc_id] = phrases
+
     with open('congress/topic_triples.txt', 'w', encoding='utf-8') as f:
         for doc_idx, row in tqdm(valid_speeches.iterrows(), 
                                 total=len(valid_speeches),
                                 desc="Computing document-topic similarities"):
+            # Skip if document has no phrases
+            if doc_idx not in doc2phrases_map:
+                continue
+                
             doc_text = row['speech']
             # For each document, compute similarity with all topics
             similarities = []
@@ -307,12 +322,31 @@ def main():
                 sim = compute_topic_similarity(doc_text, topic_features[topic], word2vec_model)
                 similarities.append((topic_idx, sim))
             
-            # Sort by similarity and write top matches
+            # Sort by similarity and get top matches
             similarities.sort(key=lambda x: x[1], reverse=True)
-            for topic_idx, sim in similarities[:3]:  # Write top 3 most similar topics
-                # Convert similarity to integer confidence score (0-100)
-                confidence = int(sim * 100)
-                f.write(f"{doc_idx}\t{topic_idx}\t{confidence}\n")
+            top_topics = similarities[:3]  # Get top 3 most similar topics
+            
+            # For each top topic, find the most relevant phrases
+            phrases = doc2phrases_map[doc_idx]
+            for topic_idx, sim in top_topics:
+                # Get topic vector
+                topic_vec = topic_features[policy_areas[topic_idx]]
+                
+                # Compute similarity between each phrase and the topic
+                phrase_sims = []
+                for ph_idx, phrase in enumerate(phrases):
+                    # Get phrase vector (average of word vectors)
+                    words = phrase.split()
+                    word_vecs = [word2vec_model[w] for w in words if w in word2vec_model]
+                    if word_vecs:
+                        phrase_vec = np.mean(word_vecs, axis=0)
+                        phrase_sim = np.dot(phrase_vec, topic_vec) / (np.linalg.norm(phrase_vec) * np.linalg.norm(topic_vec))
+                        phrase_sims.append((ph_idx, max(0, phrase_sim)))
+                
+                # Write the most relevant phrase for this topic
+                if phrase_sims:
+                    best_phrase_idx, _ = max(phrase_sims, key=lambda x: x[1])
+                    f.write(f"{doc_idx}\t{topic_idx}\t{best_phrase_idx}\n")
     
     # Save topic_feats.txt in word2vec format
     print("Saving topic features...")

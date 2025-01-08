@@ -227,5 +227,28 @@ class DocTopicPhraseDataset(DatasetBase):
         else:
             doc_id, topic_id, phrase_idx = self.topic_triples[idx]
             doc_info = {k: v[doc_id, :] for k, v in self.tokenized_doc.items()}
-            phrase_info = {k: v[phrase_idx, :] for k, v in self.tokenized_phs[str(doc_id)].items()}
+            
+            # Check if doc_id exists in tokenized_phs
+            if str(doc_id) not in self.tokenized_phs:
+                # Return a dummy phrase with all zeros if doc_id not found
+                phrase_info = {
+                    'input_ids': torch.zeros(8, dtype=torch.long),
+                    'attention_mask': torch.zeros(8, dtype=torch.long),
+                    'token_type_ids': torch.zeros(8, dtype=torch.long)
+                }
+            else:
+                tokenized_phs = self.tokenized_phs[str(doc_id)]
+                num_phrases = tokenized_phs['input_ids'].size(0)
+                
+                # Check if phrase_idx is within bounds
+                if phrase_idx >= num_phrases:
+                    # Return a dummy phrase with all zeros if index out of bounds
+                    phrase_info = {
+                        'input_ids': torch.zeros(8, dtype=torch.long),
+                        'attention_mask': torch.zeros(8, dtype=torch.long),
+                        'token_type_ids': torch.zeros(8, dtype=torch.long)
+                    }
+                else:
+                    phrase_info = {k: v[phrase_idx, :] for k, v in tokenized_phs.items()}
+            
             return (doc_id, doc_info, topic_id, phrase_info)
