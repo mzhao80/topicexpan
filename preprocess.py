@@ -320,7 +320,16 @@ def main():
     # Save topic_feats.txt in word2vec format
     print("Saving topic features...")
     # Convert topic features to word2vec format (using indices as words)
+    # Add root topic (politics) as index 34
+    words = "politics".split()
+    vectors = []
+    for word in words:
+        if word in word2vec_model:
+            vectors.append(word2vec_model[word])
+    root_vector = np.mean(vectors, axis=0) if vectors else np.zeros(300)
+    
     topic_vectors = {str(idx): vec for idx, vec in enumerate(topic_features.values())}
+    topic_vectors[str(len(topic_features))] = root_vector  # Add root topic vector
     save_vectors_word2vec_format('congress/topic_feats.txt', topic_vectors, 300)
     
     print("Preprocessing complete! Files have been created in the congress/ directory.")

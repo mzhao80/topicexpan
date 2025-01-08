@@ -1,6 +1,6 @@
 {
     "name": "TopicExpan",
-    "n_gpu": 4,
+    "n_gpu": 8,
     "device": 0,
     "embed_dir": "~/Downloads/topicexpan/glove",
 
