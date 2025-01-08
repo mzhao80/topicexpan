@@ -171,10 +171,9 @@ def create_topic_features(topics, word2vec_model):
 
 def compute_topic_similarity(doc_text, topic_vec, word2vec_model):
     """Compute similarity between a document and a topic"""
-    # Get word vectors for document words
-    doc_words = doc_text.lower().split()
+    # Get document vectors for words that exist in the model
     doc_vecs = []
-    for word in doc_words:
+    for word in doc_text.split():
         if word in word2vec_model:
             doc_vecs.append(word2vec_model[word])
     
@@ -184,8 +183,15 @@ def compute_topic_similarity(doc_text, topic_vec, word2vec_model):
     # Average document vectors
     doc_vec = np.mean(doc_vecs, axis=0)
     
+    # Check for zero vectors
+    doc_norm = np.linalg.norm(doc_vec)
+    topic_norm = np.linalg.norm(topic_vec)
+    
+    if doc_norm == 0 or topic_norm == 0:
+        return 0.0
+    
     # Compute cosine similarity
-    similarity = np.dot(doc_vec, topic_vec) / (np.linalg.norm(doc_vec) * np.linalg.norm(topic_vec))
+    similarity = np.dot(doc_vec, topic_vec) / (doc_norm * topic_norm)
     return max(0, similarity)  # Ensure non-negative
 
 def save_vectors_word2vec_format(fname, vectors, vector_size):
@@ -340,7 +346,14 @@ def main():
                     word_vecs = [word2vec_model[w] for w in words if w in word2vec_model]
                     if word_vecs:
                         phrase_vec = np.mean(word_vecs, axis=0)
-                        phrase_sim = np.dot(phrase_vec, topic_vec) / (np.linalg.norm(phrase_vec) * np.linalg.norm(topic_vec))
+                        # Check for zero vectors
+                        phrase_norm = np.linalg.norm(phrase_vec)
+                        topic_norm = np.linalg.norm(topic_vec)
+                        
+                        if phrase_norm == 0 or topic_norm == 0:
+                            phrase_sim = 0.0
+                        else:
+                            phrase_sim = np.dot(phrase_vec, topic_vec) / (phrase_norm * topic_norm)
                         phrase_sims.append((ph_idx, max(0, phrase_sim)))
                 
                 # Write the most relevant phrase for this topic
