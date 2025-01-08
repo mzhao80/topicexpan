@@ -8,6 +8,7 @@ import json
 from gensim.models import KeyedVectors
 from tqdm import tqdm
 import re
+from keybert import KeyBERT
 
 def clean_text(text):
     # Remove special characters and extra whitespace
@@ -15,27 +16,74 @@ def clean_text(text):
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
-def extract_phrases(doc, nlp):
-    phrases = []
+def extract_phrases(doc, nlp, keybert_model=None):
+    """Extract meaningful phrases from text using both spaCy and KeyBERT
     
-    # Extract noun phrases
+    Args:
+        doc: spaCy Doc object
+        nlp: spaCy model
+        keybert_model: Optional KeyBERT model for semantic extraction
+        
+    Returns:
+        list of extracted phrases
+    """
+    phrases = set()  # Use set to avoid duplicates
+    
+    # 1. Extract noun phrases using spaCy
     for chunk in doc.noun_chunks:
-        phrase = ' '.join([token.text.lower() for token in chunk if not token.is_stop])
-        if phrase and len(phrase.split()) <= 4:  # Limit to 4 words
-            phrases.append(phrase)
+        phrase = ' '.join([token.text.lower() for token in chunk 
+                         if not token.is_stop and not token.is_punct])
+        if phrase and 1 <= len(phrase.split()) <= 4:
+            phrases.add(phrase)
     
-    # Extract verb phrases
+    # 2. Extract named entities
+    for ent in doc.ents:
+        if ent.label_ in ['ORG', 'PERSON', 'GPE', 'LAW', 'NORP']:  # Organizations, People, Locations, Laws, Political groups
+            phrase = ent.text.lower()
+            if 1 <= len(phrase.split()) <= 4:
+                phrases.add(phrase)
+    
+    # 3. Extract verb phrases with their objects
     for token in doc:
         if token.pos_ == "VERB":
-            phrase = token.text.lower()
+            # Get the verb
+            verb = token.text.lower()
             # Get object of verb if available
+            obj_tokens = []
             for child in token.children:
-                if child.dep_ in ['dobj', 'pobj']:
-                    phrase = f"{phrase} {child.text.lower()}"
-            if phrase:
-                phrases.append(phrase)
+                if child.dep_ in ['dobj', 'pobj'] and not child.is_stop:
+                    obj_tokens.extend([t.text.lower() for t in child.subtree 
+                                    if not t.is_stop and not t.is_punct])
+            if obj_tokens:
+                phrase = f"{verb} {' '.join(obj_tokens)}"
+                if len(phrase.split()) <= 4:
+                    phrases.add(phrase)
     
-    return list(set(phrases))
+    # 4. Extract policy-relevant adjective-noun pairs
+    for token in doc:
+        if token.pos_ == "NOUN" and not token.is_stop:
+            # Get adjectives describing this noun
+            adj_tokens = [child.text.lower() for child in token.children 
+                         if child.pos_ == "ADJ" and not child.is_stop]
+            if adj_tokens:
+                phrase = f"{' '.join(adj_tokens)} {token.text.lower()}"
+                if len(phrase.split()) <= 4:
+                    phrases.add(phrase)
+    
+    # 5. Use KeyBERT for semantic key phrases if available
+    if keybert_model is not None:
+        text = doc.text
+        keywords = keybert_model.extract_keywords(text, 
+                                                keyphrase_ngram_range=(1, 4),
+                                                stop_words='english',
+                                                use_maxsum=True,
+                                                nr_candidates=10,
+                                                top_n=5)
+        for kw, score in keywords:
+            if score > 0.3:  # Only keep phrases with good similarity
+                phrases.add(kw.lower())
+    
+    return list(phrases)
 
 def create_topic_hierarchy():
     # List of all policy areas
@@ -138,8 +186,10 @@ def main():
     # Load the CSV file
     df = pd.read_csv('congress/crec2023.csv')
     
-    # Initialize spaCy
+    # Initialize spaCy and KeyBERT
+    print("Initializing NLP models...")
     nlp = spacy.load('en_core_web_sm')
+    keybert_model = KeyBERT()
     
     # Create corpus.txt
     print("Creating corpus.txt...")
@@ -152,7 +202,7 @@ def main():
     doc2phrases = {}
     for idx, text in tqdm(enumerate(df['speech'])):
         doc = nlp(text)
-        phrases = extract_phrases(doc, nlp)
+        phrases = extract_phrases(doc, nlp, keybert_model)
         if phrases:
             doc2phrases[idx] = phrases
     

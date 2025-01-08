@@ -12,3 +12,5 @@ gensim
 graphviz
 spacy
 tqdm
+keybert
+sentence-transformers
