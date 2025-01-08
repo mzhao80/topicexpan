@@ -51,8 +51,9 @@ class TopicExpan(BaseModel):
         doc_encoder_output = self.doc_encoder(encoder_input)
         
         # Part 1 : Topic-Document Similarity Prediction
+        mask_sum = encoder_input['attention_mask'].sum(dim=1, keepdim=True).clamp(min=1e-9)
         doc_tensor = (doc_encoder_output * encoder_input['attention_mask'][:, :, None]).sum(dim=1) 
-        doc_tensor /= encoder_input['attention_mask'].sum(dim=1, keepdim=True)
+        doc_tensor = doc_tensor / mask_sum
         sim_score = self.interaction(doc_tensor, topic_encoder_output) 
         
         # Part 2 : Topic-conditional Phrase Generation (w/ Teacher Forcing)
@@ -67,8 +68,9 @@ class TopicExpan(BaseModel):
         topic_encoder_output = self.topic_encoder.encode() 
         
         doc_encoder_output = self.doc_encoder(encoder_input)
+        mask_sum = encoder_input['attention_mask'].sum(dim=1, keepdim=True).clamp(min=1e-9)
         doc_tensor = (doc_encoder_output * encoder_input['attention_mask'][:, :, None]).sum(dim=1) 
-        doc_tensor /= encoder_input['attention_mask'].sum(dim=1, keepdim=True)
+        doc_tensor = doc_tensor / mask_sum
         
         score = self.interaction(doc_tensor, topic_encoder_output) 
         return score
@@ -78,8 +80,9 @@ class TopicExpan(BaseModel):
         topic_encoder_output = torch.stack([topic_encoder_output[pid] for vid, pid in self.vid2pid.items()])
 
         doc_encoder_output = self.doc_encoder(encoder_input)
+        mask_sum = encoder_input['attention_mask'].sum(dim=1, keepdim=True).clamp(min=1e-9)
         doc_tensor = (doc_encoder_output * encoder_input['attention_mask'][:, :, None]).sum(dim=1) 
-        doc_tensor /= encoder_input['attention_mask'].sum(dim=1, keepdim=True)
+        doc_tensor = doc_tensor / mask_sum
 
         score = self.interaction(doc_tensor, topic_encoder_output)
         return score
@@ -120,8 +123,8 @@ class TopicExpan(BaseModel):
 
     def context_combiner(self, topic_context, doc_context, doc_mask):        
         scores = self.interaction.compute_attn_scores(doc_context, topic_context)
-        scores = (torch.exp(scores) + 1e-6) * doc_mask
-        scores /= scores.sum(dim=1, keepdim=True)
-
+        scores = torch.exp(scores.clamp(max=20)) * doc_mask  # Clamp to prevent overflow
+        scores_sum = scores.sum(dim=1, keepdim=True).clamp(min=1e-9)
+        scores = scores / scores_sum
         context = (doc_context * scores.unsqueeze(dim=2))
         return context

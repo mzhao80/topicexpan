@@ -3,11 +3,11 @@ import pandas as pd
 import numpy as np
 import spacy
 import os
+import re
 from collections import defaultdict
 import json
 from gensim.models import KeyedVectors
 from tqdm import tqdm
-import re
 from keybert import KeyBERT
 
 def clean_text(text):
@@ -152,20 +152,37 @@ def create_topic_hierarchy():
     return hierarchy, policy_areas
 
 def create_topic_features(topics, word2vec_model):
-    """Create feature vectors for topics using word embeddings"""
-    features = {}
+    """Create feature vectors for topics using word embeddings
     
-    # For each topic, create a feature vector from its words
+    For multi-word topics:
+    1. First try the exact phrase with hyphens replaced by spaces
+    2. If not found, try individual words and average their vectors
+    3. If no words found, use zero vector
+    """
+    features = {}
+    vector_dim = len(next(iter(word2vec_model.values())))  # Get dimension from first vector
+    
     for topic in topics:
-        words = topic.split()
+        # First try the whole phrase with hyphens/underscores replaced by spaces
+        cleaned_topic = re.sub(r'[_-]', ' ', topic).lower().strip()
+        if cleaned_topic in word2vec_model:
+            features[topic] = word2vec_model[cleaned_topic]
+            continue
+            
+        # If not found, split into words and try each word
+        words = cleaned_topic.split()
         vectors = []
         for word in words:
             if word in word2vec_model:
                 vectors.append(word2vec_model[word])
+        
         if vectors:
+            # Average the word vectors we found
             features[topic] = np.mean(vectors, axis=0)
         else:
-            features[topic] = np.zeros(300)  # Default to zero vector if no words found
+            # If no words found, use zero vector
+            print(f"Warning: No word vectors found for topic '{topic}', using zero vector")
+            features[topic] = np.zeros(vector_dim)
     
     return features
 
@@ -286,19 +303,7 @@ def main():
     
     # Create feature vectors for all topics
     print("Creating topic feature vectors...")
-    topic_features = {}
-    for topic in tqdm(policy_areas, 
-                     total=len(policy_areas),
-                     desc="Computing topic features"):
-        words = topic.split()
-        vectors = []
-        for word in words:
-            if word in word2vec_model:
-                vectors.append(word2vec_model[word])
-        if vectors:
-            topic_features[topic] = np.mean(vectors, axis=0)
-        else:
-            topic_features[topic] = np.zeros(300)
+    topic_features = create_topic_features(policy_areas, word2vec_model)
     
     # Save topic_triples.txt using policy areas from the CSV
     print("Creating topic triples...")
