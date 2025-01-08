@@ -269,8 +269,6 @@ def main():
     
     # Save topic_hier.txt
     with open('congress/topic_hier.txt', 'w', encoding='utf-8') as f:
-        # Write root -> politics relationship
-        f.write(f"root\t0\n")
         # Write politics -> policy areas relationships
         for area in hierarchy['0']['children']:
             f.write(f"0\t{area}\n")
