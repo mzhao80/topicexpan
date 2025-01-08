@@ -1,0 +1,34 @@
+root	politics
+politics	agriculture and food
+politics	animals
+politics	armed forces and national security
+politics	arts culture religion
+politics	civil rights and liberties minority issues
+politics	commerce
+politics	crime and law enforcement
+politics	economics and public finance
+politics	education
+politics	emergency management
+politics	energy
+politics	environmental protection
+politics	families
+politics	finance and financial sector
+politics	foreign trade and international finance
+politics	geographic areas entities and committees
+politics	government operations and politics
+politics	health
+politics	housing and community development
+politics	immigration
+politics	international affairs
+politics	labor and employment
+politics	law
+politics	native americans
+politics	private legislation
+politics	public lands and natural resources
+politics	science technology communications
+politics	social sciences and history
+politics	social welfare
+politics	sports and recreation
+politics	taxation
+politics	transportation and public works
+politics	water resources development
