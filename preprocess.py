@@ -294,7 +294,7 @@ def main():
             for doc_id in tqdm(sorted(doc2phrases.keys()), 
                             total=len(doc2phrases),
                             desc="Writing phrases"):
-                f.write(f"{doc_id}\t{' '.join(doc2phrases[doc_id])}\n")
+                f.write(f"{doc_id}\t{'\t'.join(doc2phrases[doc_id])}\n")
     
     # Create topic hierarchy and get policy areas list
     print("Creating topic hierarchy...")
@@ -330,7 +330,7 @@ def main():
             parts = line.strip().split('\t')
             if len(parts) == 2:
                 doc_id = int(parts[0])
-                phrases = parts[1].split()
+                phrases = parts[1].split('\t')
                 doc2phrases_map[doc_id] = phrases
 
     with open('congress/topic_triples.txt', 'w', encoding='utf-8') as f:
