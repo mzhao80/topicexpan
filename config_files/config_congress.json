@@ -22,7 +22,7 @@
         "type": "DocTopicPhraseDataLoader",
         "args":{
             "directory": "congress",
-            "batch_size": 16,
+            "batch_size": 8,
             "shuffle": true,
             "validation_split": 0.01,
             "num_workers": 4,
@@ -34,7 +34,7 @@
         "type": "DocDataLoader",
         "args":{
             "directory": "congress",
-            "batch_size": 16,
+            "batch_size": 8,
             "shuffle": false,
             "validation_split": 0.0,
             "num_workers": 4,
