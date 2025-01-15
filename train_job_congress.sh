@@ -17,8 +17,6 @@ module load cuda/11.8.0-fasrc01
 CHECKPOINT_DIR="congress-save/models"
 LATEST_CHECKPOINT=$(ls -t $CHECKPOINT_DIR/checkpoint-epoch*.pth | head -n 1)
 
-python update_gpu_config.py
-
 # Check if a checkpoint was found
 if [ -z "$LATEST_CHECKPOINT" ]; then
     echo "No checkpoint found. Starting training from scratch."

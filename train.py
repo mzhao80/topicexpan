@@ -33,15 +33,6 @@ def main(config):
     data_loader = config.init_obj('data_loader_for_training', module_data)
     valid_data_loader = data_loader.split_validation()
     
-    logger.info('Training set size: {}, Validation set size: {}'.
-                format(len(data_loader), len(valid_data_loader) if valid_data_loader else 0))
-
-    # Get number of available GPUs
-    num_gpus = torch.cuda.device_count()
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    device_ids = list(range(num_gpus)) if num_gpus > 0 else None
-    logger.info(f'Using {num_gpus} GPUs')
-
     # build model architecture, then print to console
     topic_hierarchy = data_loader.dataset.topic_hier
     topic_node_feats = data_loader.dataset.topic_node_feats
@@ -57,29 +48,6 @@ def main(config):
                     novel_topic_hierarchy=novel_topic_hierarhcy)
 
     logger.info(model)
-
-    # Move model to device first before wrapping with DataParallel
-    model = model.to(device)
-    
-    if num_gpus > 1:
-        model = torch.nn.DataParallel(model, device_ids=device_ids)
-
-    # Resume from checkpoint if specified
-    if config.resume is not None:
-        checkpoint = torch.load(config.resume, map_location=device)
-        state_dict = checkpoint['state_dict']
-        
-        # Handle case where model was saved with DataParallel but now running on single GPU or vice versa
-        if num_gpus <= 1 and all(k.startswith('module.') for k in state_dict.keys()):
-            # Remove 'module.' prefix for single GPU
-            state_dict = {k[7:]: v for k, v in state_dict.items()}
-        elif num_gpus > 1 and not all(k.startswith('module.') for k in state_dict.keys()):
-            # Add 'module.' prefix for DataParallel
-            state_dict = {'module.' + k: v for k, v in state_dict.items()}
-            
-        model.load_state_dict(state_dict)
-        
-        logger.info(f'Checkpoint loaded. Resume training from epoch {checkpoint["epoch"]}')
 
     # get function handles of loss and metrics
     criterions = {crt: getattr(module_loss, criterion) for crt, criterion in config['loss'].items()}
@@ -98,10 +66,9 @@ def main(config):
 
     trainer = Trainer(model, criterions, metrics, optimizer,
                       config=config,
-                      device=device,
-                      data_loader=data_loader.dataset,
+                      data_loader=data_loader,
                       valid_data_loader=valid_data_loader)
-
+                      
     trainer.train()
     
     

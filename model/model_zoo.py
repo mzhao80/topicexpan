@@ -103,25 +103,17 @@ class GCNTopicEncoder(BaseModel):
         return h
 
     def encode(self, use_mask=True):
-        # Ensure all tensors are on the same device
-        device = self.topic_node_feats.device
-        self.to_device(device)  # Move all graph tensors to same device
-        
         topic_node_feats = self.topic_node_feats
         topic_mask_feats = self.topic_mask_feats.repeat(topic_node_feats.shape[0], 1)
 
         if use_mask:
-            topic_mask = torch.rand(topic_node_feats.shape[0], 1, device=device) < 0.15
+            topic_mask = torch.rand(topic_node_feats.shape[0], 1).to(topic_node_feats.device) < 0.15
             topic_node_feats = topic_mask * topic_mask_feats + (~topic_mask) * topic_node_feats
 
         h = self.forward(self.downward_adjmat, self.upward_adjmat, self.sideward_adjmat, topic_node_feats)
         return h
 
     def inductive_encode(self):
-        # Ensure all tensors are on the same device
-        device = self.topic_node_feats.device
-        self.to_device(device)
-        
         parent2virtualh = {}
         virtual_id = self.num_topics
         topic_node_feats = torch.cat([self.topic_node_feats, self.topic_mask_feats[None, :]], dim=0)
