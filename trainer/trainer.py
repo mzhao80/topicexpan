@@ -13,17 +13,16 @@ class Trainer(BaseTrainer):
     """
     Trainer class
     """
-    def __init__(self, model, criterions, metric_ftns, optimizer, config, data_loader,
-                 valid_data_loader=None):
-        super().__init__(model, criterions, metric_ftns, optimizer, config)
-        self.config = config
-        self.data_loader = data_loader
-        self.dataset = data_loader.dataset
-
-        self.len_epoch = len(self.data_loader)
-        self.valid_data_loader = valid_data_loader
-        self.do_validation = self.valid_data_loader is not None
-        self.log_step = int(len(data_loader.dataset) / data_loader.batch_size * 0.2)
+    def __init__(self, model, criterions, metric_ftns, optimizer, config, device, 
+                 valid_data_loader=None, lr_scheduler=None, len_epoch=None):
+        self.criterions = criterions  # Store criterions separately
+        criterion = None  # Pass None as criterion to parent class
+        super().__init__(model, criterion, metric_ftns, optimizer, config, 
+                        valid_data_loader=valid_data_loader, lr_scheduler=lr_scheduler,
+                        len_epoch=len_epoch, device=device)
+                        
+        self.dataset = self.data_loader.dataset
+        self.log_step = int(len(self.data_loader.dataset) / self.data_loader.batch_size * 0.2)
 
         self.train_metrics = MetricTracker('loss', 'sim_loss', 'gen_loss', writer=self.writer)
         self.valid_metrics = MetricTracker('loss', 'sim_loss', 'gen_loss', *[m.__name__ for m in self.metric_ftns], writer=self.writer)
@@ -293,4 +292,3 @@ class Trainer(BaseTrainer):
                 vid2tinfos[vid].append(topic_info)
 
         return vid2tnames, vid2tinfos
-

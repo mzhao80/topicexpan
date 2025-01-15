@@ -159,21 +159,40 @@ class BaseTrainer:
         """
         resume_path = str(resume_path)
         self.logger.info("Loading checkpoint: {} ...".format(resume_path))
-        checkpoint = torch.load(resume_path)
+        # Load checkpoint to the same device as model
+        checkpoint = torch.load(resume_path, map_location=self.device)
         self.start_epoch = checkpoint['epoch'] + 1
         self.mnt_best = checkpoint['monitor_best']
 
         # load architecture params from checkpoint.
         if checkpoint['config']['arch'] != self.config['arch']:
             self.logger.warning("Warning: Architecture configuration given in config file is different from that of "
-                                "checkpoint. This may yield an exception while state_dict is being loaded.")
-        self.model.load_state_dict(checkpoint['state_dict'])
+                              "checkpoint. This may yield an exception while state_dict is being loaded.")
+        
+        state_dict = checkpoint['state_dict']
+        
+        # Handle case where model was saved with DataParallel but now running on different GPU setup
+        if len(self.config['device']) <= 1 and all(k.startswith('module.') for k in state_dict.keys()):
+            # Remove 'module.' prefix for single GPU
+            state_dict = {k[7:]: v for k, v in state_dict.items()}
+            self.logger.info("Converting DataParallel checkpoint to single GPU")
+        elif len(self.config['device']) > 1 and not all(k.startswith('module.') for k in state_dict.keys()):
+            # Add 'module.' prefix for DataParallel
+            state_dict = {'module.' + k: v for k, v in state_dict.items()}
+            self.logger.info("Converting single GPU checkpoint to DataParallel")
+            
+        self.model.load_state_dict(state_dict)
 
         # load optimizer state from checkpoint only when optimizer type is not changed.
         if checkpoint['config']['optimizer']['type'] != self.config['optimizer']['type']:
             self.logger.warning("Warning: Optimizer type given in config file is different from that of checkpoint. "
-                                "Optimizer parameters not being resumed.")
+                              "Optimizer parameters not being resumed.")
         else:
+            # Move optimizer state to correct device
+            for state in self.optimizer.state.values():
+                for k, v in state.items():
+                    if isinstance(v, torch.Tensor):
+                        state[k] = v.to(self.device)
             self.optimizer.load_state_dict(checkpoint['optimizer'])
 
         self.logger.info("Checkpoint loaded. Resume training from epoch {}".format(self.start_epoch))
