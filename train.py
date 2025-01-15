@@ -11,6 +11,12 @@ from torchnlp.word_to_vector import GloVe
 from parse_config import ConfigParser
 from trainer import Trainer, AdamW
 
+import gc
+
+gc.collect()
+
+torch.cuda.empty_cache()
+
 SEED = 0
 torch.manual_seed(SEED)
 torch.backends.cudnn.deterministic = True
