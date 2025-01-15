@@ -1,6 +1,6 @@
 {
     "name": "TopicExpan",
-    "n_gpu": 1,
+    "n_gpu": 8,
     "device": 0,
     "embed_dir": "~/Downloads/topicexpan/glove",
 
@@ -22,10 +22,10 @@
         "type": "DocTopicPhraseDataLoader",
         "args":{
             "directory": "congress",
-            "batch_size": 4,
+            "batch_size": 16,
             "shuffle": true,
             "validation_split": 0.01,
-            "num_workers": 2,
+            "num_workers": 4,
             "alpha": 0.5
         }
     },
@@ -34,10 +34,10 @@
         "type": "DocDataLoader",
         "args":{
             "directory": "congress",
-            "batch_size": 4,
+            "batch_size": 16,
             "shuffle": false,
             "validation_split": 0.0,
-            "num_workers": 2,
+            "num_workers": 4,
             "alpha": 0.5
         }
     },
