@@ -29,70 +29,58 @@ class Trainer(BaseTrainer):
         self.valid_metrics = MetricTracker('loss', 'sim_loss', 'gen_loss', *[m.__name__ for m in self.metric_ftns], writer=self.writer)
 
     def _train_epoch(self, epoch):
-        with torch.autograd.detect_anomaly():
-            """
-            Training logic for an epoch
+        """
+        Training logic for an epoch
 
-            :param epoch: Integer, current training epoch.
-            :return: A log that contains average loss and metric in this epoch.
-            """
-            self.model.train()
-            self.train_metrics.reset()
+        :param epoch: Integer, current training epoch.
+        :return: A log that contains average loss and metric in this epoch.
+        """
+        self.model.train()
+        self.train_metrics.reset()
 
-            for batch_idx, batch_data in enumerate(self.data_loader):
-                doc_ids, doc_infos, topic_ids, phrase_infos = batch_data
-                
-                # Debug prints
-                print("\nBatch {}:".format(batch_idx))
-                print("Document IDs:", doc_ids)
-                print("Document input shapes:", {k: v.shape for k, v in doc_infos.items()})
-                print("Topic IDs shape:", topic_ids.shape)
-                print("Phrase info shapes:", {k: v.shape for k, v in phrase_infos.items()})
-                print("Sample document text:", doc_infos['input_ids'][0][:50])  # First 50 tokens of first doc
-                print("Sample topic ID:", topic_ids[0])
-                print("Sample phrase:", phrase_infos['input_ids'][0])
-                
-                encoder_input = {k: v.to(self.device) for k, v in doc_infos.items()}
-                decoder_input = {k: v[:, :-1].to(self.device) for k, v in phrase_infos.items()}
-                
-                sim_target = topic_ids.to(self.device)
-                gen_target = phrase_infos['input_ids'][:, 1:].to(self.device)
+        for batch_idx, batch_data in enumerate(self.data_loader):
+            doc_ids, doc_infos, topic_ids, phrase_infos = batch_data
+            
+            encoder_input = {k: v.to(self.device) for k, v in doc_infos.items()}
+            decoder_input = {k: v[:, :-1].to(self.device) for k, v in phrase_infos.items()}
+            
+            sim_target = topic_ids.to(self.device)
+            gen_target = phrase_infos['input_ids'][:, 1:].to(self.device)
 
-                self.optimizer.zero_grad()
-                
-                sim_score, gen_score = self.model(encoder_input, decoder_input, topic_ids)
-                sim_loss = self.criterions['sim'](sim_score, sim_target)
-                gen_loss = self.criterions['gen'](gen_score, gen_target)
-                loss = sim_loss + gen_loss
+            self.optimizer.zero_grad()
+            
+            sim_score, gen_score = self.model(encoder_input, decoder_input, topic_ids)
+            sim_loss = self.criterions['sim'](sim_score, sim_target)
+            gen_loss = self.criterions['gen'](gen_score, gen_target)
+            loss = sim_loss + gen_loss
 
-                loss.backward()
-                torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
-                self.optimizer.step()
+            loss.backward()
+            self.optimizer.step()
 
-                self.writer.set_step((epoch - 1) * self.len_epoch + batch_idx)
-                self.train_metrics.update('sim_loss', sim_loss.item())
-                self.train_metrics.update('gen_loss', gen_loss.item())
-                self.train_metrics.update('loss', loss.item())
+            self.writer.set_step((epoch - 1) * self.len_epoch + batch_idx)
+            self.train_metrics.update('sim_loss', sim_loss.item())
+            self.train_metrics.update('gen_loss', gen_loss.item())
+            self.train_metrics.update('loss', loss.item())
 
-                if batch_idx % self.log_step == 0:
-                    self.logger.debug('Train Epoch: {} {} Loss: {:.6f} [{:.6f} + {:.6f}]'.format(
-                        epoch,
-                        self._progress(batch_idx),
-                        loss.item(),
-                        sim_loss.item(),
-                        gen_loss.item()))
+            if batch_idx % self.log_step == 0:
+                self.logger.debug('Train Epoch: {} {} Loss: {:.6f} [{:.6f} + {:.6f}]'.format(
+                    epoch,
+                    self._progress(batch_idx),
+                    loss.item(),
+                    sim_loss.item(),
+                    gen_loss.item()))
 
-                if batch_idx == self.len_epoch:
-                    break
+            if batch_idx == self.len_epoch:
+                break
 
-            log = self.train_metrics.result()
+        log = self.train_metrics.result()
 
-            if self.do_validation:
-                print(f"Start validation epoch: {epoch}")
-                val_log = self._valid_epoch(epoch)
-                log.update(**{'val_'+k : v for k, v in val_log.items()})
+        if self.do_validation:
+            print(f"Start validation epoch: {epoch}")
+            val_log = self._valid_epoch(epoch)
+            log.update(**{'val_'+k : v for k, v in val_log.items()})
 
-            return log
+        return log
 
     def _valid_epoch(self, epoch):
         """
@@ -108,16 +96,6 @@ class Trainer(BaseTrainer):
             for batch_idx, batch_data in enumerate(self.valid_data_loader):
                 doc_ids, doc_infos, topic_ids, phrase_infos = batch_data
             
-                # Debug prints
-                print("\nBatch {}:".format(batch_idx))
-                print("Document IDs:", doc_ids)
-                print("Document input shapes:", {k: v.shape for k, v in doc_infos.items()})
-                print("Topic IDs shape:", topic_ids.shape)
-                print("Phrase info shapes:", {k: v.shape for k, v in phrase_infos.items()})
-                print("Sample document text:", doc_infos['input_ids'][0][:50])  # First 50 tokens of first doc
-                print("Sample topic ID:", topic_ids[0])
-                print("Sample phrase:", phrase_infos['input_ids'][0])
-                
                 encoder_input = {k: v.to(self.device) for k, v in doc_infos.items()}
                 decoder_input = {k: v[:, :-1].to(self.device) for k, v in phrase_infos.items()}
 
@@ -315,3 +293,4 @@ class Trainer(BaseTrainer):
                 vid2tinfos[vid].append(topic_info)
 
         return vid2tnames, vid2tinfos
+
