@@ -328,10 +328,9 @@ def main():
     with open('congress/doc2phrases.txt', 'r', encoding='utf-8') as f:
         for line in f:
             parts = line.strip().split('\t')
-            if len(parts) == 2:
-                doc_id = int(parts[0])
-                phrases = parts[1].split('\t')
-                doc2phrases_map[doc_id] = phrases
+            doc_id = int(parts[0])
+            phrases = parts[1:]
+            doc2phrases_map[doc_id] = phrases
 
     with open('congress/topic_triples.txt', 'w', encoding='utf-8') as f:
         for doc_idx, row in tqdm(valid_speeches.iterrows(), 
