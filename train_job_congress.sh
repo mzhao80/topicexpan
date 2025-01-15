@@ -11,6 +11,7 @@
 
 cd ~/Downloads/topicexpan
 source myenv/bin/activate
+module load cuda/11.8.0-fasrc01
 
 # Find the most recent checkpoint
 CHECKPOINT_DIR="congress-save/models"
