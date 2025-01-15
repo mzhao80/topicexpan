@@ -10,7 +10,7 @@ from torch.nn import init, TransformerDecoderLayer, TransformerDecoder
 import dgl
 import dgl.function as fn
 from dgl.nn.pytorch.conv import GraphConv
-from transformers import AutoModel, AutoConfig
+from transformers import AutoModel, AutoConfig, BertModel, BertConfig
 from base import BaseModel
 
 """
@@ -19,8 +19,13 @@ from base import BaseModel
 class BertDocEncoder(BaseModel):
     def __init__(self, model_name="bert-base-uncased"):
         super().__init__()
-        self.model_name = model_name
-        self.model = AutoModel.from_pretrained(model_name)
+        config = BertConfig.from_pretrained(model_name)
+        
+        # Enable memory efficient attention
+        config.torch_dtype = torch.float16  # Use half precision
+        config.use_flash_attention = True  # Use flash attention if available
+        
+        self.model = BertModel.from_pretrained(model_name, config=config)
         self.input_embeddings = self.model.embeddings
         
     def forward(self, x):
