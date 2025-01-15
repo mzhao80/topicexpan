@@ -247,6 +247,9 @@ def main():
     print("Creating corpus.txt...")
     # Filter out clerk speeches and NaN values
     valid_speeches = df[df['speech'].notna() & ~df['speech'].astype(str).str.startswith("The clerk")]
+    # Take only first 10000 speeches
+    valid_speeches = valid_speeches.head(10000)
+    
     with open('congress/corpus.txt', 'w', encoding='utf-8') as f:
         for idx, text in tqdm(enumerate(valid_speeches['speech']), 
                             total=len(valid_speeches), 
