@@ -42,6 +42,16 @@ class Trainer(BaseTrainer):
             for batch_idx, batch_data in enumerate(self.data_loader):
                 doc_ids, doc_infos, topic_ids, phrase_infos = batch_data
                 
+                # Debug prints
+                print("\nBatch {}:".format(batch_idx))
+                print("Document IDs:", doc_ids)
+                print("Document input shapes:", {k: v.shape for k, v in doc_infos.items()})
+                print("Topic IDs shape:", topic_ids.shape)
+                print("Phrase info shapes:", {k: v.shape for k, v in phrase_infos.items()})
+                print("Sample document text:", doc_infos['input_ids'][0][:50])  # First 50 tokens of first doc
+                print("Sample topic ID:", topic_ids[0])
+                print("Sample phrase:", phrase_infos['input_ids'][0])
+                
                 encoder_input = {k: v.to(self.device) for k, v in doc_infos.items()}
                 decoder_input = {k: v[:, :-1].to(self.device) for k, v in phrase_infos.items()}
                 
@@ -56,6 +66,7 @@ class Trainer(BaseTrainer):
                 loss = sim_loss + gen_loss
 
                 loss.backward()
+                torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
                 self.optimizer.step()
 
                 self.writer.set_step((epoch - 1) * self.len_epoch + batch_idx)
@@ -97,6 +108,16 @@ class Trainer(BaseTrainer):
             for batch_idx, batch_data in enumerate(self.valid_data_loader):
                 doc_ids, doc_infos, topic_ids, phrase_infos = batch_data
             
+                # Debug prints
+                print("\nBatch {}:".format(batch_idx))
+                print("Document IDs:", doc_ids)
+                print("Document input shapes:", {k: v.shape for k, v in doc_infos.items()})
+                print("Topic IDs shape:", topic_ids.shape)
+                print("Phrase info shapes:", {k: v.shape for k, v in phrase_infos.items()})
+                print("Sample document text:", doc_infos['input_ids'][0][:50])  # First 50 tokens of first doc
+                print("Sample topic ID:", topic_ids[0])
+                print("Sample phrase:", phrase_infos['input_ids'][0])
+                
                 encoder_input = {k: v.to(self.device) for k, v in doc_infos.items()}
                 decoder_input = {k: v[:, :-1].to(self.device) for k, v in phrase_infos.items()}
 
@@ -294,4 +315,3 @@ class Trainer(BaseTrainer):
                 vid2tinfos[vid].append(topic_info)
 
         return vid2tnames, vid2tinfos
-
