@@ -38,9 +38,9 @@ def clean_text(text):
 
     # strip out the following phrases from the beginning of each text and leave the remainder:
     # "Mr. Speaker, I yield myself the balance of my time. "
-    text = re.sub(r'Mr\. Speaker, I yield myself the balance of my time\. ', '', text)
+    text = re.sub(r'^Mr\. Speaker I yield myself the balance of my time\. ', '', text)
     # "Mr. Speaker, " 
-    text = re.sub(r'Mr\. Speaker, ', '', text)
+    text = re.sub(r'^Mr\. Speaker ', '', text)
 
     return text
 
