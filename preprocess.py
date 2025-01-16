@@ -214,6 +214,9 @@ def main():
     ]
     # apply clean_text to valid_speeeches
     valid_speeches['speech'] = valid_speeches['speech'].apply(clean_text)
+
+    # cut valid speeches to first 1000
+    valid_speeches = valid_speeches[:1000]
     
     with open(os.path.join(args.data_dir, 'corpus.txt'), 'w', encoding='utf-8') as f:
         for idx, text in tqdm(enumerate(valid_speeches['speech']), 
@@ -274,11 +277,25 @@ def main():
     
     # Create topic features using BERT
     print("Creating topic features...")
-    topic_features = create_topic_features(policy_areas, model)
+    topic_features = create_topic_features(["politics"] + policy_areas, model)
     topic_vectors = {str(idx): vec for idx, vec in enumerate(topic_features.values())}
     vector_size = len(next(iter(topic_vectors.values())))  # Get dimension from first vector
     topic_vectors['unknown'] = np.zeros(vector_size)
-    save_vectors_word2vec_format(os.path.join(args.data_dir, 'topic_feats.txt'), topic_vectors, vector_size)
+    
+    # Save topic features
+    print("Saving topic features...")
+    with open(os.path.join(args.data_dir, 'topic_feats.txt'), 'w', encoding='utf-8') as fout:
+        # First write the number of topics and vector dimension
+        fout.write(f"{len(topic_vectors)} {vector_size}\n")
+        # Write each topic vector
+        for topic_id in range(len(topic_vectors)-1):  # -1 to exclude 'unknown'
+            vector = topic_vectors[str(topic_id)]
+            vector_str = ' '.join(map(str, vector))
+            fout.write(f"{topic_id} {vector_str}\n")
+        # Write the unknown topic vector last
+        vector = topic_vectors['unknown']
+        vector_str = ' '.join(map(str, vector))
+        fout.write(f"{len(topic_vectors)-1} {vector_str}\n")
     
     # Save topic_triples.txt using policy areas from the CSV
     print("Creating topic triples...")
@@ -331,7 +348,7 @@ def main():
             all_topic_sims.append(best_topic_sim)
             
             # Skip if the best topic similarity is too low
-            if best_topic_sim < 0.3:  # Adjust this threshold as needed
+            if best_topic_sim < 0.25:  # Adjust this threshold as needed
                 continue
                 
             # Now find the top 3 most relevant phrases for this topic
@@ -361,20 +378,16 @@ def main():
             # Sort by similarity score
             phrase_sims.sort(key=lambda x: x[1], reverse=True)
             
-            # Get top 3 phrases that exceed similarity threshold
+            # Get the top 3 phrases that exceed similarity threshold
             top_phrases = []
             for ph_idx, sim in phrase_sims:
-                if sim > 0.2:  # Adjust this threshold as needed
+                if sim > 0.1:  # Adjust this threshold as needed
                     top_phrases.append((ph_idx, sim))
-                if len(top_phrases) >= 3:
-                    break
-            
-            # Skip if we couldn't find any good phrases
-            if not top_phrases:
-                continue
+            # get top 3 phrases sorted
+            top_phrases = sorted(top_phrases, key=lambda x: x[1], reverse=True)
                 
             # Write the document-topic-phrase triples for the qualifying phrases
-            for ph_idx, sim in top_phrases:
+            for ph_idx, sim in top_phrases[:3]:
                 # +1 because topics are 1-indexed excluding the root, politics
                 f.write(f"{doc_idx}\t{best_topic_idx+1}\t{ph_idx}\n")
     
