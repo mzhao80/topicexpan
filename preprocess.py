@@ -346,7 +346,7 @@ def main():
             # all_topic_sims.append(best_topic_sim)
             
             # Skip if the best topic similarity is too low
-            if best_topic_sim < 0.5:  # Adjust this threshold as needed
+            if best_topic_sim < 0.3:  # Adjust this threshold as needed
                 continue
                 
             # Now find the most relevant phrase for this topic
@@ -379,7 +379,7 @@ def main():
             # Get the top phrase that exceeds similarity threshold
             top_phrases = []
             for ph_idx, sim in phrase_sims:
-                if sim > 0.4:  # Adjust this threshold as needed
+                if sim > 0.3:  # Adjust this threshold as needed
                     top_phrases.append((ph_idx, sim))
             # get top phrase by second index
             if top_phrases:

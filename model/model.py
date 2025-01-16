@@ -16,7 +16,7 @@ class TopicExpan(BaseModel):
 
         self.doc_encoder = BertDocEncoder(options["model_name"])
         # Enable gradient checkpointing for memory efficiency
-        self.doc_encoder.bert.gradient_checkpointing_enable()
+        self.doc_encoder.model.gradient_checkpointing_enable()
 
         self.phrase_decoder = TransformerPhraseDecoder(
                                     self.doc_encoder.input_embeddings, 
