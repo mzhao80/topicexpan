@@ -343,13 +343,13 @@ def main():
             best_topic_sim = topic_sims[best_topic_idx]
             
             # Store best topic similarity
-            all_topic_sims.append(best_topic_sim)
+            # all_topic_sims.append(best_topic_sim)
             
             # Skip if the best topic similarity is too low
-            if best_topic_sim < 0.25:  # Adjust this threshold as needed
+            if best_topic_sim < 0.5:  # Adjust this threshold as needed
                 continue
                 
-            # Now find the top 3 most relevant phrases for this topic
+            # Now find the most relevant phrase for this topic
             topic_vec = topic_features[policy_areas[best_topic_idx]]
             topic_norm = np.linalg.norm(topic_vec)
             
@@ -371,29 +371,28 @@ def main():
                     
                 sim = np.dot(phrase_vec, topic_vec) / (phrase_norm * topic_norm)
                 phrase_sims.append((phrase_idx, sim))
-                all_phrase_sims.append(sim)  # Store phrase similarity
+                #all_phrase_sims.append(sim)  # Store phrase similarity
             
             # Sort by similarity score
             phrase_sims.sort(key=lambda x: x[1], reverse=True)
             
-            # Get the top 3 phrases that exceed similarity threshold
+            # Get the top phrase that exceeds similarity threshold
             top_phrases = []
             for ph_idx, sim in phrase_sims:
-                if sim > 0.1:  # Adjust this threshold as needed
+                if sim > 0.4:  # Adjust this threshold as needed
                     top_phrases.append((ph_idx, sim))
-            # get top 3 phrases sorted
-            top_phrases = sorted(top_phrases, key=lambda x: x[1], reverse=True)
+            # get top phrase
+            top_phrase = max(top_phrases, key = lambda x: x[1])
                 
             # Write the document-topic-phrase triples for the qualifying phrases
-            for ph_idx, sim in top_phrases[:3]:
-                # +1 because topics are 1-indexed excluding the root, politics
-                f.write(f"{doc_idx}\t{best_topic_idx+1}\t{ph_idx}\n")
+            if top_phrase:
+                f.write(f"{doc_idx}\t{best_topic_idx+1}\t{top_phrase[0]}\n")
     
     # Plot similarity distributions
-    plot_similarity_distributions(all_topic_sims, all_phrase_sims, args.data_dir)
+    #plot_similarity_distributions(all_topic_sims, all_phrase_sims, args.data_dir)
     
     print(f"Preprocessing complete! Files have been created in the {args.data_dir}/ directory.")
-    print(f"Similarity distribution plots saved as similarity_distributions.png")
+    #print(f"Similarity distribution plots saved as similarity_distributions.png")
 
 if __name__ == "__main__":
     main()

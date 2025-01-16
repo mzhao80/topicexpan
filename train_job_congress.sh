@@ -16,8 +16,11 @@ echo "Activating virtual environment at $(date)"
 source myenv/bin/activate
 module load cuda/11.8.0-fasrc01
 
-#echo "Starting preprocessing at $(date)"
-#python preprocess.py
+echo "Starting preprocessing at $(date)"
+python preprocess.py
+
+echo "Making topic triples human-readable at $(date)"
+python analyze_data.py
 
 echo "Generating dataset binary at $(date)"
 python generate_dataset_binary.py --data_dir congress

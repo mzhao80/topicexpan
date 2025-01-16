@@ -15,13 +15,16 @@ class TopicExpan(BaseModel):
         super(TopicExpan, self).__init__()
 
         self.doc_encoder = BertDocEncoder(options["model_name"])
+        # Enable gradient checkpointing for memory efficiency
+        self.doc_encoder.bert.gradient_checkpointing_enable()
 
         self.phrase_decoder = TransformerPhraseDecoder(
                                     self.doc_encoder.input_embeddings, 
                                     pad_token_id, bos_token_id, eos_token_id,
                                     options["tfm_decoder_num_layers"], 
                                     options["tfm_decoder_num_heads"], 
-                                    options["tfm_decoder_max_length"])
+                                    options["tfm_decoder_max_length"],
+                                    use_flash_attention=True)  # Enable flash attention
 
         self.topic_hier = options["topic_hierarchy"]
         self.novel_topic_hier = options["novel_topic_hierarchy"]

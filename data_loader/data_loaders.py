@@ -10,7 +10,9 @@ import torch.nn.functional as F
 class DocTopicPhraseDataLoader(BaseDataLoader):
     def __init__(self, directory, batch_size=16, shuffle=True, validation_split=0.0, num_workers=1, alpha=0.5):
         self.dataset = DocTopicPhraseDataset(directory=directory, batch_type="doc_topic_phrase", alpha=alpha, raw=False)
-        super().__init__(self.dataset, batch_size, shuffle, validation_split, num_workers, collate_fn=doc_topic_phrase_dataset_collate_fn)
+        super().__init__(self.dataset, batch_size, shuffle, validation_split, num_workers, 
+                        collate_fn=doc_topic_phrase_dataset_collate_fn,
+                        pin_memory=True)  # Enable pin memory for faster GPU transfer
         self.n_samples = len(self.dataset)
 
 def doc_topic_phrase_dataset_collate_fn(samples):
@@ -31,7 +33,9 @@ def doc_topic_phrase_dataset_collate_fn(samples):
 class DocDataLoader(BaseDataLoader):
     def __init__(self, directory, batch_size=16, shuffle=True, validation_split=0.0, num_workers=1, alpha=0.5):
         self.dataset = DocTopicPhraseDataset(directory=directory, batch_type="doc_only", alpha=alpha, raw=False)
-        super().__init__(self.dataset, batch_size, shuffle, validation_split, num_workers, collate_fn=doc_dataset_collate_fn)
+        super().__init__(self.dataset, batch_size, shuffle, validation_split, num_workers, 
+                        collate_fn=doc_dataset_collate_fn,
+                        pin_memory=True)  # Enable pin memory for faster GPU transfer
         self.n_samples = len(self.dataset)
 
 def doc_dataset_collate_fn(samples):
