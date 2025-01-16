@@ -72,6 +72,9 @@ class BaseTrainer:
         """
         not_improved_count = 0
         for epoch in range(self.start_epoch, self.epochs + 1):
+            self.logger.info('='*80)
+            self.logger.info(f'Starting epoch {epoch} at {time.strftime("%Y-%m-%d %H:%M:%S")}')
+            
             start = time.time()
             result = self._train_epoch(epoch)
 
@@ -80,6 +83,7 @@ class BaseTrainer:
             log.update(result)
 
             # print logged informations to the screen
+            self.logger.info(f'Epoch {epoch} completed at {time.strftime("%Y-%m-%d %H:%M:%S")}')
             for key, value in log.items():
                 self.logger.info('    {:15s}: {}'.format(str(key), value))
 

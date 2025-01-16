@@ -6,8 +6,8 @@ from utils import MetricTracker
 from sklearn.cluster import DBSCAN, KMeans
 from sklearn.metrics.pairwise import euclidean_distances
 from gensim.models import KeyedVectors
-
 import os, pickle
+import time
 
 class Trainer(BaseTrainer):
     """
@@ -63,12 +63,8 @@ class Trainer(BaseTrainer):
             self.train_metrics.update('loss', loss.item())
 
             if batch_idx % self.log_step == 0:
-                self.logger.debug('Train Epoch: {} {} Loss: {:.6f} [{:.6f} + {:.6f}]'.format(
-                    epoch,
-                    self._progress(batch_idx),
-                    loss.item(),
-                    sim_loss.item(),
-                    gen_loss.item()))
+                current_time = time.strftime("%Y-%m-%d %H:%M:%S")
+                self.logger.debug(f'[{current_time}] Train Epoch: {epoch} {self._progress(batch_idx)} Loss: {loss.item():.6f} [{sim_loss.item():.6f} + {gen_loss.item():.6f}]')
 
             if batch_idx == self.len_epoch:
                 break
@@ -76,7 +72,8 @@ class Trainer(BaseTrainer):
         log = self.train_metrics.result()
 
         if self.do_validation:
-            print(f"Start validation epoch: {epoch}")
+            current_time = time.strftime("%Y-%m-%d %H:%M:%S")
+            self.logger.info(f'[{current_time}] Starting validation for epoch: {epoch}')
             val_log = self._valid_epoch(epoch)
             log.update(**{'val_'+k : v for k, v in val_log.items()})
 
@@ -293,4 +290,3 @@ class Trainer(BaseTrainer):
                 vid2tinfos[vid].append(topic_info)
 
         return vid2tnames, vid2tinfos
-
