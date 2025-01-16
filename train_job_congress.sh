@@ -13,9 +13,15 @@ cd ~/Downloads/topicexpan
 source myenv/bin/activate
 module load cuda/11.8.0-fasrc01
 
+mkdir congress-save
+mkdir congress-save/models
+mkdir congress-save/log
+
 # Find the most recent checkpoint
 CHECKPOINT_DIR="congress-save/models"
 LATEST_CHECKPOINT=$(ls -t $CHECKPOINT_DIR/checkpoint-epoch*.pth | head -n 1)
+
+python update_gpu_config.py
 
 # Check if a checkpoint was found
 if [ -z "$LATEST_CHECKPOINT" ]; then
