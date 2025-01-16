@@ -14,6 +14,7 @@ spacy
 tqdm
 keybert
 sentence-transformers
+sentence-transformers
 spacy[cuda118]
 cupy-cuda11x
 nltk

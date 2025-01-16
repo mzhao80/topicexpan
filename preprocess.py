@@ -57,7 +57,7 @@ def get_bert_embedding(text, model):
     """Get BERT embedding for a piece of text"""
     # KeyBERT's model has a encode method that returns embeddings
     # The encode method automatically uses the same device as the model
-    embedding = model.model.encode([text], convert_to_numpy=True)[0]
+    embedding = model.encode([text], convert_to_numpy=True)[0]
     return embedding
 
 def create_topic_features(topics, model):
@@ -196,9 +196,9 @@ def main():
     # Initialize KeyBERT with GPU support
     print("Initializing KeyBERT model...")
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    keybert_model = KeyBERT(model='all-MiniLM-L6-v2')  # Specify a smaller but efficient model
-    # Move model to GPU
-    keybert_model.model.to(device)
+    from sentence_transformers import SentenceTransformer
+    model = SentenceTransformer('all-MiniLM-L6-v2', device=device)
+    keybert_model = KeyBERT(model=model)
     
     # skip this next section if doc2phrases.txt already exists
     if os.path.exists(os.path.join(args.data_dir, 'doc2phrases.txt')):
@@ -248,7 +248,7 @@ def main():
     
     # Create topic features using BERT
     print("Creating topic features...")
-    topic_features = create_topic_features(policy_areas, keybert_model)
+    topic_features = create_topic_features(policy_areas, model)
     
     # Save topic_triples.txt using policy areas from the CSV
     print("Creating topic triples...")
@@ -283,7 +283,7 @@ def main():
                 if phrase in embedding_cache:
                     phrase_vec = embedding_cache[phrase]
                 else:
-                    phrase_vec = get_bert_embedding(phrase, keybert_model)
+                    phrase_vec = get_bert_embedding(phrase, model)
                     embedding_cache[phrase] = phrase_vec
                 
                 # Compute cosine similarity
