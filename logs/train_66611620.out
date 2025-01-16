@@ -335,3 +335,406 @@ Starting epoch 4 at 2025-01-16 12:49:52
 [2025-01-16 12:49:54] Train Epoch: 4 [0/8116 (0%)] Loss: 149.258606 [7.376271 + 141.882339]
 [2025-01-16 12:53:52] Train Epoch: 4 [1616/8116 (20%)] Loss: 143.369705 [9.615363 + 133.754349]
 [2025-01-16 12:57:50] Train Epoch: 4 [3232/8116 (40%)] Loss: 152.812714 [10.093233 + 142.719482]
+[2025-01-16 13:01:48] Train Epoch: 4 [4848/8116 (60%)] Loss: 160.501892 [5.520993 + 154.980896]
+[2025-01-16 13:05:47] Train Epoch: 4 [6464/8116 (80%)] Loss: 167.625732 [3.944243 + 163.681488]
+[2025-01-16 13:09:38] Starting validation for epoch: 4
+Validation Epoch: 4 [0/1005 (0%)] Loss: 167.259506
+Epoch 4 completed at 2025-01-16 13:09:54
+    epoch          : 4
+    elapsed time   : 1201.6294600963593
+    loss           : 148.60965466855177
+    sim_loss       : 7.757846985232844
+    gen_loss       : 140.85180781729778
+    val_loss       : 176.1847431009466
+    val_sim_loss   : 5.812467835166237
+    val_gen_loss   : 170.37227223136207
+    val_perplexity : 21.94144630432129
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 5 at 2025-01-16 13:09:54
+[2025-01-16 13:09:55] Train Epoch: 5 [0/8116 (0%)] Loss: 119.771271 [9.395262 + 110.376007]
+[2025-01-16 13:13:54] Train Epoch: 5 [1616/8116 (20%)] Loss: 133.911484 [3.306180 + 130.605301]
+[2025-01-16 13:17:53] Train Epoch: 5 [3232/8116 (40%)] Loss: 148.062393 [6.782896 + 141.279495]
+[2025-01-16 13:21:52] Train Epoch: 5 [4848/8116 (60%)] Loss: 113.013359 [4.496079 + 108.517281]
+[2025-01-16 13:25:51] Train Epoch: 5 [6464/8116 (80%)] Loss: 151.419479 [5.376139 + 146.043335]
+[2025-01-16 13:29:42] Starting validation for epoch: 5
+Validation Epoch: 5 [0/1005 (0%)] Loss: 191.218933
+Epoch 5 completed at 2025-01-16 13:29:57
+    epoch          : 5
+    elapsed time   : 1203.6032733917236
+    loss           : 135.59005999209276
+    sim_loss       : 6.78221147036671
+    gen_loss       : 128.80784855553168
+    val_loss       : 178.1423225402832
+    val_sim_loss   : 6.122251207178289
+    val_gen_loss   : 172.02007189663973
+    val_perplexity : 24.733304977416992
+    val_accuracy   : 0.0
+Saving checkpoint: congress-save/models/checkpoint-epoch5.pth ...
+================================================================================
+Starting epoch 6 at 2025-01-16 13:30:14
+[2025-01-16 13:30:15] Train Epoch: 6 [0/8116 (0%)] Loss: 122.310699 [9.397266 + 112.913429]
+[2025-01-16 13:34:14] Train Epoch: 6 [1616/8116 (20%)] Loss: 101.531113 [7.073997 + 94.457115]
+[2025-01-16 13:38:13] Train Epoch: 6 [3232/8116 (40%)] Loss: 124.976997 [9.462388 + 115.514610]
+[2025-01-16 13:42:12] Train Epoch: 6 [4848/8116 (60%)] Loss: 138.744263 [6.956345 + 131.787918]
+[2025-01-16 13:46:11] Train Epoch: 6 [6464/8116 (80%)] Loss: 129.627655 [3.706618 + 125.921043]
+[2025-01-16 13:50:02] Starting validation for epoch: 6
+Validation Epoch: 6 [0/1005 (0%)] Loss: 151.054565
+Epoch 6 completed at 2025-01-16 13:50:17
+    epoch          : 6
+    elapsed time   : 1203.7759203910828
+    loss           : 124.61204950512938
+    sim_loss       : 6.439581373319104
+    gen_loss       : 118.17246818732266
+    val_loss       : 178.8780299100009
+    val_sim_loss   : 5.807640184055675
+    val_gen_loss   : 173.0703905278986
+    val_perplexity : 22.953216552734375
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 7 at 2025-01-16 13:50:17
+[2025-01-16 13:50:19] Train Epoch: 7 [0/8116 (0%)] Loss: 103.699516 [9.052658 + 94.646858]
+[2025-01-16 13:54:18] Train Epoch: 7 [1616/8116 (20%)] Loss: 109.940292 [8.957632 + 100.982658]
+[2025-01-16 13:58:18] Train Epoch: 7 [3232/8116 (40%)] Loss: 112.932899 [6.637059 + 106.295837]
+[2025-01-16 14:02:16] Train Epoch: 7 [4848/8116 (60%)] Loss: 113.938095 [7.709007 + 106.229088]
+[2025-01-16 14:06:15] Train Epoch: 7 [6464/8116 (80%)] Loss: 128.528625 [11.761053 + 116.767570]
+[2025-01-16 14:10:07] Starting validation for epoch: 7
+Validation Epoch: 7 [0/1005 (0%)] Loss: 185.186096
+Epoch 7 completed at 2025-01-16 14:10:22
+    epoch          : 7
+    elapsed time   : 1204.4681220054626
+    loss           : 114.93448512139013
+    sim_loss       : 6.295642060705401
+    gen_loss       : 108.6388431606008
+    val_loss       : 181.84891908819026
+    val_sim_loss   : 5.9482619979164815
+    val_gen_loss   : 175.90065748041326
+    val_perplexity : 24.379741668701172
+    val_accuracy   : 0.011363636363636364
+================================================================================
+Starting epoch 8 at 2025-01-16 14:10:22
+[2025-01-16 14:10:24] Train Epoch: 8 [0/8116 (0%)] Loss: 101.714256 [2.608072 + 99.106186]
+[2025-01-16 14:14:23] Train Epoch: 8 [1616/8116 (20%)] Loss: 108.363777 [5.601811 + 102.761963]
+[2025-01-16 14:18:22] Train Epoch: 8 [3232/8116 (40%)] Loss: 96.542969 [2.065984 + 94.476982]
+[2025-01-16 14:22:20] Train Epoch: 8 [4848/8116 (60%)] Loss: 114.128387 [7.147270 + 106.981117]
+[2025-01-16 14:26:19] Train Epoch: 8 [6464/8116 (80%)] Loss: 112.912148 [8.100393 + 104.811752]
+[2025-01-16 14:30:11] Starting validation for epoch: 8
+Validation Epoch: 8 [0/1005 (0%)] Loss: 284.899323
+Epoch 8 completed at 2025-01-16 14:30:26
+    epoch          : 8
+    elapsed time   : 1203.8532509803772
+    loss           : 106.65813433898622
+    sim_loss       : 6.102680619513217
+    gen_loss       : 100.55545368858832
+    val_loss       : 185.23735930702904
+    val_sim_loss   : 5.978736617348411
+    val_gen_loss   : 179.2586217360063
+    val_perplexity : 24.436260223388672
+    val_accuracy   : 0.022727272727272728
+================================================================================
+Starting epoch 9 at 2025-01-16 14:30:26
+[2025-01-16 14:30:28] Train Epoch: 9 [0/8116 (0%)] Loss: 94.390495 [6.430107 + 87.960388]
+[2025-01-16 14:34:26] Train Epoch: 9 [1616/8116 (20%)] Loss: 100.783989 [11.153108 + 89.630882]
+[2025-01-16 14:38:25] Train Epoch: 9 [3232/8116 (40%)] Loss: 106.222115 [8.458411 + 97.763702]
+[2025-01-16 14:42:24] Train Epoch: 9 [4848/8116 (60%)] Loss: 105.529510 [5.869772 + 99.659737]
+[2025-01-16 14:46:23] Train Epoch: 9 [6464/8116 (80%)] Loss: 97.328308 [4.605845 + 92.722466]
+[2025-01-16 14:50:14] Starting validation for epoch: 9
+Validation Epoch: 9 [0/1005 (0%)] Loss: 179.766022
+Epoch 9 completed at 2025-01-16 14:50:30
+    epoch          : 9
+    elapsed time   : 1203.7672908306122
+    loss           : 99.98996314053512
+    sim_loss       : 5.9535590003666226
+    gen_loss       : 94.03640416842788
+    val_loss       : 188.18409451571378
+    val_sim_loss   : 5.206021845340729
+    val_gen_loss   : 182.97807173295453
+    val_perplexity : 25.567655563354492
+    val_accuracy   : 0.011363636363636364
+================================================================================
+Starting epoch 10 at 2025-01-16 14:50:30
+[2025-01-16 14:50:31] Train Epoch: 10 [0/8116 (0%)] Loss: 95.189491 [8.101727 + 87.087761]
+[2025-01-16 14:54:30] Train Epoch: 10 [1616/8116 (20%)] Loss: 94.810898 [2.497649 + 92.313248]
+[2025-01-16 14:58:29] Train Epoch: 10 [3232/8116 (40%)] Loss: 85.605858 [4.508193 + 81.097664]
+[2025-01-16 15:02:28] Train Epoch: 10 [4848/8116 (60%)] Loss: 90.293518 [6.274942 + 84.018578]
+[2025-01-16 15:06:27] Train Epoch: 10 [6464/8116 (80%)] Loss: 95.588585 [5.379645 + 90.208939]
+[2025-01-16 15:10:18] Starting validation for epoch: 10
+Validation Epoch: 10 [0/1005 (0%)] Loss: 232.306061
+Epoch 10 completed at 2025-01-16 15:10:33
+    epoch          : 10
+    elapsed time   : 1203.2780039310455
+    loss           : 94.94086457437544
+    sim_loss       : 6.0018147804992115
+    gen_loss       : 88.93904971601951
+    val_loss       : 191.38612539117986
+    val_sim_loss   : 3.824024872346358
+    val_gen_loss   : 187.56209806962445
+    val_perplexity : 24.872472763061523
+    val_accuracy   : 0.0
+Job started at Thu Jan 16 15:26:03 EST 2025
+Activating virtual environment at Thu Jan 16 15:26:03 EST 2025
+Generating dataset binary at Thu Jan 16 15:26:03 EST 2025
+Loading topic node base features (topic name embeddings) ...
+Finish loading topic embeddings of size (35, 384)
+Start saving pickle data
+Save pickled dataset to congress/all.pickle
+Creating save directories at Thu Jan 16 15:26:27 EST 2025
+Checking for checkpoint at Thu Jan 16 15:26:27 EST 2025
+Resuming from checkpoint: congress-save/models/checkpoint-epoch10.pth
+Starting training at Thu Jan 16 15:26:27 EST 2025
+Tokenizing documents and phrases using bert-base-uncased tokenizer, please wait...
+TopicExpan(
+  (doc_encoder): BertDocEncoder(
+    (model): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0-11): 12 x BertLayer(
+            (attention): BertAttention(
+              (self): BertSdpaSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (activation): Tanh()
+      )
+    )
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+  )
+  (phrase_decoder): TransformerPhraseDecoder(
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (output_embeddings): Linear(in_features=768, out_features=30522, bias=False)
+    (model): TransformerDecoder(
+      (layers): ModuleList(
+        (0): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (multihead_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (linear1): Linear(in_features=768, out_features=2048, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (linear2): Linear(in_features=2048, out_features=768, bias=True)
+          (norm1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (norm3): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (dropout3): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+  )
+  (topic_encoder): GCNTopicEncoder(
+    (downward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (upward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (sideward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+  )
+  (interaction): BilinearInteraction()
+  (linear_combiner): Linear(in_features=1152, out_features=768, bias=True)
+)
+Trainable parameters: 142868480
+Loading checkpoint: congress-save/models/checkpoint-epoch10.pth ...
+Checkpoint loaded. Resume training from epoch 11
+================================================================================
+Starting epoch 11 at 2025-01-16 15:28:14
+[2025-01-16 15:28:16] Train Epoch: 11 [0/8116 (0%)] Loss: 88.821129 [8.948492 + 79.872635]
+[2025-01-16 15:32:15] Train Epoch: 11 [1616/8116 (20%)] Loss: 87.957291 [9.796890 + 78.160400]
+[2025-01-16 15:36:14] Train Epoch: 11 [3232/8116 (40%)] Loss: 87.675713 [5.321358 + 82.354355]
+[2025-01-16 15:40:13] Train Epoch: 11 [4848/8116 (60%)] Loss: 82.893417 [5.836222 + 77.057198]
+[2025-01-16 15:44:12] Train Epoch: 11 [6464/8116 (80%)] Loss: 94.744110 [2.872211 + 91.871902]
+[2025-01-16 15:48:03] Starting validation for epoch: 11
+Validation Epoch: 11 [0/1005 (0%)] Loss: 271.039520
+Epoch 11 completed at 2025-01-16 15:48:18
+    epoch          : 11
+    elapsed time   : 1204.5750958919525
+    loss           : 88.05706505467049
+    sim_loss       : 5.96681684534348
+    gen_loss       : 82.0902481990074
+    val_loss       : 195.6306656924161
+    val_sim_loss   : 4.003547495061701
+    val_gen_loss   : 191.62711871754038
+    val_perplexity : 25.641103744506836
+    val_accuracy   : 0.011363636363636364
+================================================================================
+Starting epoch 12 at 2025-01-16 15:48:18
+[2025-01-16 15:48:20] Train Epoch: 12 [0/8116 (0%)] Loss: 84.816940 [4.185741 + 80.631203]
+[2025-01-16 15:52:19] Train Epoch: 12 [1616/8116 (20%)] Loss: 89.062714 [7.126149 + 81.936562]
+[2025-01-16 15:56:18] Train Epoch: 12 [3232/8116 (40%)] Loss: 84.987488 [4.727570 + 80.259918]
+[2025-01-16 16:00:17] Train Epoch: 12 [4848/8116 (60%)] Loss: 90.159111 [2.862451 + 87.296661]
+Job started at Thu Jan 16 16:10:42 EST 2025
+Activating virtual environment at Thu Jan 16 16:10:42 EST 2025
+Generating dataset binary at Thu Jan 16 16:10:43 EST 2025
+Loading topic node base features (topic name embeddings) ...
+Finish loading topic embeddings of size (35, 384)
+Start saving pickle data
+Save pickled dataset to congress/all.pickle
+Creating save directories at Thu Jan 16 16:11:03 EST 2025
+Checking for checkpoint at Thu Jan 16 16:11:03 EST 2025
+Resuming from checkpoint: congress-save/models/checkpoint-epoch10.pth
+Starting training at Thu Jan 16 16:11:03 EST 2025
+Tokenizing documents and phrases using bert-base-uncased tokenizer, please wait...
+TopicExpan(
+  (doc_encoder): BertDocEncoder(
+    (model): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0-11): 12 x BertLayer(
+            (attention): BertAttention(
+              (self): BertSdpaSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (activation): Tanh()
+      )
+    )
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+  )
+  (phrase_decoder): TransformerPhraseDecoder(
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (output_embeddings): Linear(in_features=768, out_features=30522, bias=False)
+    (model): TransformerDecoder(
+      (layers): ModuleList(
+        (0): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (multihead_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (linear1): Linear(in_features=768, out_features=2048, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (linear2): Linear(in_features=2048, out_features=768, bias=True)
+          (norm1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (norm3): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (dropout3): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+  )
+  (topic_encoder): GCNTopicEncoder(
+    (downward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (upward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (sideward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+  )
+  (interaction): BilinearInteraction()
+  (linear_combiner): Linear(in_features=1152, out_features=768, bias=True)
+)
+Trainable parameters: 142868480
+Loading checkpoint: congress-save/models/checkpoint-epoch10.pth ...
+Checkpoint loaded. Resume training from epoch 11
+================================================================================
+Starting epoch 11 at 2025-01-16 16:12:24
+[2025-01-16 16:12:27] Train Epoch: 11 [0/8116 (0%)] Loss: 88.821129 [8.948492 + 79.872635]
+[2025-01-16 16:16:23] Train Epoch: 11 [1616/8116 (20%)] Loss: 87.989998 [9.815788 + 78.174210]
+Job started at Thu Jan 16 16:22:41 EST 2025
+Activating virtual environment at Thu Jan 16 16:22:41 EST 2025
+Generating dataset binary at Thu Jan 16 16:22:41 EST 2025
+Loading topic node base features (topic name embeddings) ...
+Finish loading topic embeddings of size (35, 384)
+Start saving pickle data
+Save pickled dataset to congress/all.pickle
+Creating save directories at Thu Jan 16 16:23:01 EST 2025
+Checking for checkpoint at Thu Jan 16 16:23:01 EST 2025
+Resuming from checkpoint: congress-save/models/checkpoint-epoch10.pth
+Starting training at Thu Jan 16 16:23:01 EST 2025
+Tokenizing documents and phrases using bert-base-uncased tokenizer, please wait...
+Starting expansion at Thu Jan 16 16:24:09 EST 2025
+Tokenizing documents and phrases using bert-base-uncased tokenizer, please wait...
+Job completed at Thu Jan 16 16:25:25 EST 2025

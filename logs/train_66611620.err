@@ -110,3 +110,135 @@ Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
   self._data.average[key] = self._data.total[key] / self._data.counts[key]
+slurmstepd: error: *** JOB 66611620 ON holygpu7c1311 CANCELLED AT 2025-01-16T15:10:46 DUE TO PREEMPTION ***
+Loading documents: 0it [00:00, ?it/s]Loading documents: 14377it [00:00, 143760.88it/s]Loading documents: 21683it [00:00, 165502.16it/s]
+Loading topics: 0it [00:00, ?it/s]Loading topics: 34it [00:00, 133276.95it/s]
+Loading phrases: 0it [00:00, ?it/s]Loading phrases: 16350it [00:00, 163491.19it/s]Loading phrases: 21683it [00:00, 96009.50it/s] 
+Loading topic hierarchy: 0it [00:00, ?it/s]Loading topic hierarchy: 33it [00:00, 501492.87it/s]
+Loading positive triples: 0it [00:00, ?it/s]Loading positive triples: 19119it [00:00, 859937.57it/s]
+  0%|          | 0/21683 [00:00<?, ?it/s]100%|██████████| 21683/21683 [00:00<00:00, 2259617.71it/s]
+/n/home09/michaelzhao/Downloads/topicexpan/base/base_trainer.py:157: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(resume_path)
+/n/home09/michaelzhao/Downloads/topicexpan/myenv/lib/python3.12/site-packages/torch/nn/functional.py:5193: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+/n/home09/michaelzhao/Downloads/topicexpan/trainer/optimization.py:155: UserWarning: This overload of add_ is deprecated:
+	add_(Number alpha, Tensor other)
+Consider using one of the following signatures instead:
+	add_(Tensor other, *, Number alpha = 1) (Triggered internally at ../torch/csrc/utils/python_arg_parser.cpp:1581.)
+  exp_avg.mul_(beta1).add_(1.0 - beta1, grad)
+/n/home09/michaelzhao/Downloads/topicexpan/utils/util.py:30: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  self._data.total[key] += value * n
+/n/home09/michaelzhao/Downloads/topicexpan/utils/util.py:31: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  self._data.counts[key] += n
+/n/home09/michaelzhao/Downloads/topicexpan/utils/util.py:32: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  self._data.average[key] = self._data.total[key] / self._data.counts[key]
+slurmstepd: error: *** JOB 66611620 ON holygpu7c1311 CANCELLED AT 2025-01-16T16:00:31 DUE TO PREEMPTION ***
+Loading documents: 0it [00:00, ?it/s]Loading documents: 20632it [00:00, 206242.01it/s]Loading documents: 21683it [00:00, 206005.15it/s]
+Loading topics: 0it [00:00, ?it/s]Loading topics: 34it [00:00, 108363.48it/s]
+Loading phrases: 0it [00:00, ?it/s]Loading phrases: 20128it [00:00, 131281.33it/s]Loading phrases: 21683it [00:00, 137063.97it/s]
+Loading topic hierarchy: 0it [00:00, ?it/s]Loading topic hierarchy: 33it [00:00, 225794.51it/s]
+Loading positive triples: 0it [00:00, ?it/s]Loading positive triples: 19119it [00:00, 976889.41it/s]
+  0%|          | 0/21683 [00:00<?, ?it/s]100%|██████████| 21683/21683 [00:00<00:00, 2292945.41it/s]
+/n/home09/michaelzhao/Downloads/topicexpan/base/base_trainer.py:157: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(resume_path)
+/n/home09/michaelzhao/Downloads/topicexpan/myenv/lib/python3.12/site-packages/torch/nn/functional.py:5193: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+/n/home09/michaelzhao/Downloads/topicexpan/trainer/optimization.py:155: UserWarning: This overload of add_ is deprecated:
+	add_(Number alpha, Tensor other)
+Consider using one of the following signatures instead:
+	add_(Tensor other, *, Number alpha = 1) (Triggered internally at ../torch/csrc/utils/python_arg_parser.cpp:1581.)
+  exp_avg.mul_(beta1).add_(1.0 - beta1, grad)
+/n/home09/michaelzhao/Downloads/topicexpan/utils/util.py:30: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  self._data.total[key] += value * n
+/n/home09/michaelzhao/Downloads/topicexpan/utils/util.py:31: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  self._data.counts[key] += n
+/n/home09/michaelzhao/Downloads/topicexpan/utils/util.py:32: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  self._data.average[key] = self._data.total[key] / self._data.counts[key]
+slurmstepd: error: *** JOB 66611620 ON holygpu7c1311 CANCELLED AT 2025-01-16T16:19:33 DUE TO PREEMPTION ***
+Loading documents: 0it [00:00, ?it/s]Loading documents: 21683it [00:00, 223305.83it/s]
+Loading topics: 0it [00:00, ?it/s]Loading topics: 34it [00:00, 132780.57it/s]
+Loading phrases: 0it [00:00, ?it/s]Loading phrases: 19427it [00:00, 129808.09it/s]Loading phrases: 21683it [00:00, 138472.22it/s]
+Loading topic hierarchy: 0it [00:00, ?it/s]Loading topic hierarchy: 33it [00:00, 477282.87it/s]
+Loading positive triples: 0it [00:00, ?it/s]Loading positive triples: 19119it [00:00, 1043500.13it/s]
+  0%|          | 0/21683 [00:00<?, ?it/s]100%|██████████| 21683/21683 [00:00<00:00, 2307723.96it/s]
+Traceback (most recent call last):
+  File "/n/home09/michaelzhao/Downloads/topicexpan/train.py", line 86, in <module>
+    main(config)
+  File "/n/home09/michaelzhao/Downloads/topicexpan/train.py", line 33, in main
+    data_loader = config.init_obj('data_loader_for_training', module_data)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/home09/michaelzhao/Downloads/topicexpan/parse_config.py", line 100, in init_obj
+    return getattr(module, module_name)(*args, **module_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/home09/michaelzhao/Downloads/topicexpan/data_loader/data_loaders.py", line 13, in __init__
+    super().__init__(self.dataset, batch_size, shuffle, validation_split, num_workers, 
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseDataLoader.__init__() got an unexpected keyword argument 'pin_memory'
+  0%|          | 0/21683 [00:00<?, ?it/s]100%|██████████| 21683/21683 [00:00<00:00, 2333481.13it/s]
+Traceback (most recent call last):
+  File "/n/home09/michaelzhao/Downloads/topicexpan/expand.py", line 79, in <module>
+    main(config)
+  File "/n/home09/michaelzhao/Downloads/topicexpan/expand.py", line 26, in main
+    data_loader = config.init_obj('data_loader_for_expansion', module_data)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/home09/michaelzhao/Downloads/topicexpan/parse_config.py", line 100, in init_obj
+    return getattr(module, module_name)(*args, **module_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/home09/michaelzhao/Downloads/topicexpan/data_loader/data_loaders.py", line 36, in __init__
+    super().__init__(self.dataset, batch_size, shuffle, validation_split, num_workers, 
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseDataLoader.__init__() got an unexpected keyword argument 'pin_memory'
