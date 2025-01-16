@@ -280,22 +280,20 @@ def main():
     topic_features = create_topic_features(["politics"] + policy_areas, model)
     topic_vectors = {str(idx): vec for idx, vec in enumerate(topic_features.values())}
     vector_size = len(next(iter(topic_vectors.values())))  # Get dimension from first vector
-    topic_vectors['unknown'] = np.zeros(vector_size)
     
     # Save topic features
     print("Saving topic features...")
     with open(os.path.join(args.data_dir, 'topic_feats.txt'), 'w', encoding='utf-8') as fout:
-        # First write the number of topics and vector dimension
-        fout.write(f"{len(topic_vectors)} {vector_size}\n")
+        # First write the number of topics (including unknown) and vector dimension
+        fout.write(f"{len(topic_vectors) + 1} {vector_size}\n")
         # Write each topic vector
-        for topic_id in range(len(topic_vectors)-1):  # -1 to exclude 'unknown'
+        for topic_id in range(len(topic_vectors)):
             vector = topic_vectors[str(topic_id)]
             vector_str = ' '.join(map(str, vector))
             fout.write(f"{topic_id} {vector_str}\n")
-        # Write the unknown topic vector last
-        vector = topic_vectors['unknown']
-        vector_str = ' '.join(map(str, vector))
-        fout.write(f"{len(topic_vectors)-1} {vector_str}\n")
+        # Write the unknown topic vector (all zeros) with index len(topic_vectors)
+        unknown_vector = ' '.join(['0.0'] * vector_size)
+        fout.write(f"{len(topic_vectors)} {unknown_vector}\n")
     
     # Save topic_triples.txt using policy areas from the CSV
     print("Creating topic triples...")
