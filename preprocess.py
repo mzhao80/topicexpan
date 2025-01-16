@@ -159,10 +159,10 @@ def save_vectors_word2vec_format(fname, vectors, vector_size):
 def main():
     # Parse command line arguments
     parser = argparse.ArgumentParser(description='Preprocess data for topic expansion')
-    parser.add_argument('--data-dir', type=str, default='congress-full',
-                      help='Directory to store processed files (default: congress-full)')
-    parser.add_argument('--input-file', type=str, default='congress-full/crec2023.csv',
-                      help='Input CSV file path (default: congress-full/crec2023.csv)')
+    parser.add_argument('--data-dir', type=str, default='congress',
+                      help='Directory to store processed files (default: congress)')
+    parser.add_argument('--input-file', type=str, default='congress/crec2023.csv',
+                      help='Input CSV file path (default: congress/crec2023.csv)')
     parser.add_argument('--min-words', type=int, default=50,
                       help='Minimum number of words required in a speech (default: 50)')
     args = parser.parse_args()
