@@ -1,28 +1,28 @@
 0	invited join pledge allegiance	clerk led pledge	pledge allegiance clerk led	pledge allegiance flag united	follows pledge allegiance flag
 1	chair appreciates cooperation members	clerk responsibility preserve order	general parliamentary law clerk	chair members elect second	address remarks chair
-2	votes speaker house	divide today severe 1856	mccarthy speaker house ready	abolitionists won day people	madam clerk rise nominate
-3	behalf democratic caucus	lewis voting rights advancement	hakeem stood voter suppression	democratic process madam clerk	nominate hakeem
-4	elected black speaker united	donalds florida begin	change yesterday elected black	congressman james house	byron donalds prop spent
+2	leader mccarthy speaker	talk history days 1856	longer votes speaker house	votes speaker house took	mr speaker rise nominate
+3	rise nominate hakeem	behalf democratic caucus say	jeffries new york speaker	support john lewis voting	restrictive voting laws hakeem
+4	speaker united states house	member elect quote tweeted	byron donalds prop spent	change yesterday elected black	donalds florida begin saying
 5	votes cast speaker	honorable donald trump state	hakeem jeffries state new	state florida received 19	number votes cast
-6	texas fear	rise nominate kevin mccarthy	constitution united states fear	mccarthy proudly speaker	friend general pennsylvania fears
-7	said house democrats	convene congress today	leader hakeem jeffries stands	deliver votes american people	house madam clerk 212
-8	party said wanted change	control going bring border	know coming election just	want leader congress think	change administration administration inflicted
+6	constitution united states fear	rise nominate kevin mccarthy	say friends texas fear	mccarthy proudly speaker	friend general pennsylvania fears
+7	said house democrats	house mr speaker 212	hakeem jeffries stands united	responsibility elect speaker	leader hakeem jeffries stands
+8	speaker house know coming	changing leadership told process	change administration administration inflicted	coming election just	border control going bring
 9	speaker elected clerk recognizes	number votes cast	florida received 17 honorable	hakeem jeffries state new	donald trump state florida
-10	speaker house kevin	speaker mccarthy held accountable	removal speaker house kevin	vacate chair nancy pelosi	nominate kevin mccarthy
-11	nominate hakeem	clerk rise today nominate	clerk house democrats ready	hakeem jeffries plan american	jeffries speaker house vote
-12	absolute privilege standing serving	privilege responsibility taken	representing united states america	madam clerk rise nominate	byron donalds speaker house
-13	sent commonsense amendments restore	like single subject legislation	help collaborate craft legislation	legislation statehouses utilize	clerk thank equal representation
-14	byron donalds voting kevin	speaker house madam	clerk rise nominate	mccarthy does votes understanding	oklahoma mr hern speaker
+10	removal speaker house kevin	long speaker mccarthy held	nominate kevin mccarthy	speaker mccarthy held accountable	mccarthy speaker house 118th
+11	nominate hakeem	speaker house vote	speaker house democrats ready	hakeem jeffries plan american	jeffries vote vote nomination
+12	privilege responsibility taken place	donalds speaker house representatives	representing united states america	speaker rise nominate	nominate byron
+13	single subject legislation	actually bring amendment forward	sent commonsense amendments restore	help collaborate craft legislation	legislation statehouses utilize
+14	byron donalds voting kevin	america tired rhetoric want	rise nominate gentleman oklahoma	mccarthy does votes understanding	speaker house mr speaker
 15	votes cast speaker elected	oklahoma received votes	votes honorable kevin mccarthy	hakeem jeffries state	432 honorable hakeem jeffries
-16	mccarthy cares american	kevin mccarthy secured republican	rise nominate kevin mccarthy	american dream kevin mccarthy	mccarthy speaker house
-17	nominate hakeem	chamber hakeem jeffries new	jeffries lead vote getter	madam clerk rise nominate	clerk importance character hakeem
-18	clerk known byron roughly	donalds speaker	speaker house madam clerk	rise nominate byron	exactly vote speaker house
-19	conference true leader	madam clerk rise nominate	let elect republican	hern speaker house simple	vote kevin hern hope
+16	mccarthy speaker house 118th	dream kevin mccarthy	mccarthy cares american people	kevin mccarthy secured republican	rise nominate kevin mccarthy
+17	jeffries lead vote getter	jeffries speaker house mr	importance character hakeem jeffries	speaker rise nominate hakeem	ballot make sure hakeem
+18	rise nominate byron	exactly vote speaker house	speaker known byron roughly	donalds speaker house	nominate byron donalds
+19	elect republican	conference true leader	vote kevin hern hope	hern speaker house simple	mr speaker rise nominate
 20	oklahoma received votes	votes cast speaker	432 honorable hakeem jeffries	votes honorable kevin mccarthy	hakeem jeffries state
-21	house kevin mccarthy	speaker kevin mccarthy agrees	mccarthy role speaker	speaker house madam	speaker house madam clerk
-22	york madam clerk	nominate gentleman new	committee nominate hakeem jeffries	hakeem jeffries speaker house	coolidge like madam clerk
+21	house kevin mccarthy	speaker house mr	mccarthy role speaker	speaker house mr speaker	speaker kevin mccarthy agrees
+22	say leader hakeem jeffries	committee nominate hakeem	jeffries mr speaker great	speaker house mr speaker	speaker rise nominate
 23	president taxes cut	presidency democrat nominee speaker	administration rise nominate donald	trump focus nation veterans	great moments bipartisanship trump
-24	house said great representation	tonight enjoying elected members	madam chair rise purpose	placing nomination privilege	house congress greatest nation
+24	mr speaker rise	placing nomination privilege	tonight enjoying elected members	said great representation constitutional	house congress greatest nation
 25	honorable donald trump state	florida received member	votes cast speaker	hakeem jeffries state new	number votes
 26	pledge allegiance flag	follows pledge	led pledge allegiance follows	clerk led pledge	allegiance pledge allegiance clerk
 27	career ms lynn	honor career ms lynn	behalf ms yates coworkers	ms yates graduated towson	maryland native ms yates
@@ -172,7 +172,7 @@
 171	regulated utilities operating wastewater	state water resources control	water state revolving fund	waterways clean public financing	federal clean water act
 172	otis carroll owned	foods carroll foods huge	feed mr carroll	harold prestage clinton north	helped make prestage farms
 173	courts dr trevino	texas doctor veteran	ages city laredo honored	laredo 1978 opened trevino	tennis association texas laredo
-174	moving forward legislative process	bills improved committee mark	decide cosponsor completed committee	2019 meaning cosponsoring legislation	legislation statement
+174	moving forward legislative process	bills improved committee mark	2019 meaning cosponsoring legislation	decide cosponsor completed committee	legislation statement
 175	year bulldogs second	excite college football world	represented university state georgia	georgia incredibly pulling undefeated	congratulate 2022 university georgia
 176	family community cathy born	mr speaker cathy morgan	county tennessee cathy passed	hamblen county tennessee cathy	speaker cathy morgan richardson
 177	sergeant united states	marine corps southlake texas	texas honorable service	community ml dillahunty enlisted	mr dillahunty demonstrated marine
@@ -193,7 +193,7 @@
 192	football dawgs	congratulate university georgia especially	georgia bulldogs haven gotten	happier state dawgs	speaker bout dawgs honor
 193	served georgia state house	jobseekers georgia future workforce	butler service state	commissioner labor mark	today recognize mark butler
 194	honor friend jon burns	speakership jon burns look	elected georgia state house	deserving speakership jon	elected 74th speaker georgia
-195	land grant universities	universities university georgia	partnership recent award	help georgia communities	archway partnership recent award
+195	land grant universities	archway partnership nationally recognized	help georgia communities	partnership recent award	today congratulate university georgia
 196	thiago appearance playing minutes	argentina thiago plays georgia	thiago long career ahead	year world cup thiago	cup thiago argentinean
 197	water drought years holding	water projects california	lake oroville recently 2019	rainfall yes low lake	oroville spillway collapse lack
 198	defend life	breathing outside womb democrats	stand today week republican	speaker rise today unborn	unborn protection defense vulnerable
@@ -344,105 +344,105 @@
 343	mrs sykes come forward	led pledge allegiance	follows pledge allegiance flag	gentlewoman ohio mrs sykes	house pledge allegiance
 344	legislation money american	troops successfully protected america	yesterday 118th congress newly	house republicans fight inflation	mr speaker
 345	high school 1991 brian	brian mr speaker	commemorate life service brian	souls brian born denton	brian received district honors
-346	policies remain mexico title	republicans democrats acknowledge immigration	2021 inherited commonsense immigration	crisis border president	immigration broken speaker
-347	pennsylvania governor elect	pennsylvanians sent congressional	woman represent pennsylvania	democratic caucus pennsylvania democrats	speaker good time pennsylvania
-348	industry pennsylvania pennsylvania dairy	join celebrating national milk	milk day today great	pennsylvania pennsylvania dairy industry	day thanking dairy farm
-349	clear condemn violence forms	resolution political extreme republicans	short condemning violence	pro choice caucus resolution	provide abortion services attacks
-350	written psalm 139	abortion survivors protection	praise fearfully wonderfully	taken oath serve womb	life ensure unborn live
-351	today human trafficking day	acknowledge human trafficking awareness	trafficking school zones act	trafficking look forward bipartisan	stop human trafficking school
-352	coast florida biden	keys state emergency president	leader department homeland security	administration action reimburse monroe	migratory crisis unlike florida
-353	freedoms woman mother congresswoman	abortion care legal safe	democratic colleagues stop reproductive	decision overturn roe wade	madam speaker supreme court
-354	voice east texans congress	speaker honored stand today	protecting lives opposing	madam speaker thank	born alive abortion survivors
-355	attacking women reproductive healthcare	needs republicans	congress make meaningful difference	week advancing legislation fight	madam speaker rise
-356	information including reproductive health	improve maternal infant health	shamefully insinuate healthcare	pregnancy centers today	communities shamefully insinuate healthcare
-357	country chief mcintire hometown	chief justin mcintire gunned	brackenridge police chief	honor life brackenridge police	day recovering chief mcintire
-358	pandemic despite continued	gives president overreaching authority	public health emergency declaration	speaker september 2022 president	use vaccines allowed president
-359	attend years ago fort	wilbun fort worth texas	commemorating mr	wilbun served united states	school dedicated veteran mr
-360	intimidation pro life	draft opinion ensuing violent	roe wade little accountability	pro life activists	today condemn violent attacks
-361	voted protect lifesaving reproductive	restrict ban abortion vermont	voters codified abortion rights	reproductive care republican strongholds	madam speaker state abortion
-362	jim son tenant farmer	inaugurated jim pillen traveling	story jim	nebraska 41st governor newly	honor nebraska 41st governor
-363	work gop	house shaft taxpayers	guarantee budget deficit increased	things republicans	madam speaker
-364	support res resolution condemns	violence condemn madam speaker	thank congressman mike johnson	attacks pro life facilities	fearing targeted idaho life
-365	resolution attack abortion	condemning countless acts violence	attack abortion providers patients	facility providing abortions attacked	condemn acts violence vandalism
-366	aidan clear sense honor	open capitol number guests	congress hope reminded	today visited constituent cadet	responsibility house serve american
+346	pass legislation secures border	republicans democrats acknowledge immigration	crisis border president biden	immigration broken speaker	immigration broken speaker mccarthy
+347	pennsylvania governor elect	pennsylvania democrats united determined	woman represent pennsylvania congress	november pennsylvanians spoke	speaker good time pennsylvania
+348	join celebrating national milk	industry pennsylvania pennsylvania dairy	day thanking dairy farm	pennsylvania pennsylvania dairy industry	national milk day today
+349	clear condemn violence forms	provide abortion services attacks	short condemning violence	resolution political extreme republicans	pro choice caucus resolution
+350	written psalm 139	abortion survivors protection	taken oath serve womb	womb tomb written psalm	stand life ensure unborn
+351	human trafficking day recognize	acknowledge human trafficking awareness	trafficking look forward bipartisan	trafficking school zones act	stop human trafficking school
+352	governor ron desantis	state florida local resources	president unwillingness secure border	monroe county state florida	keys state emergency president
+353	mr speaker supreme court	democratic colleagues stop reproductive	abortion care legal safe	speaker supreme court decision	roe wade dehumanizing dangerous
+354	protecting lives opposing action	voice east texans congress	speaker honored stand today	thank colleague congresswoman	born alive abortion survivors
+355	needs republicans choosing spend	republicans doubling assault women	congress make meaningful difference	week advancing legislation fight	mr speaker rise today
+356	information services provide pregnant	care misleading actually medical	oppose legislation today	infant health outcomes american	reproductive health talk crisis
+357	brackenridge police chief	chief justin mcintire gunned	honor life brackenridge police	day recovering chief mcintire	chief mcintire today funeral
+358	pandemic despite continued	gives president overreaching authority	speaker september 2022 president	public health emergency declaration	use vaccines allowed president
+359	attend years ago fort	hope arkansas mr wilbun	wilbun served united states	thomas wilbun fort worth	dedicated veteran mr
+360	life activists resolution necessary	intimidation pro life	draft opinion ensuing violent	roe wade little accountability	today condemn violent attacks
+361	abortion politicians think colleagues	ban abortion vermont michigan	abortion rights ballot	reproductive care republican strongholds	mr speaker state abortion
+362	inaugurated jim pillen traveling	jim son tenant farmer	story jim	honor nebraska 41st governor	nebraska 41st governor newly
+363	deficit 114 billion	mr speaker	taxpayers increase budget deficit	things republicans	republicans house shaft
+364	fearing targeted idaho	support res resolution condemns	violence condemn mr speaker	attacks pro life facilities	thank congressman mike johnson
+365	mentioned resolution attack abortion	attack abortion providers patients	facility providing abortions attacked	unequivocally condemn acts violence	condemn acts violence vandalism
+366	congress hope reminded	aidan clear sense honor	118th congress importance significance	today visited constituent cadet	house serve american people
 367	leaked acts violence pregnancy	abortion activists day dobbs	rise today condemn intimidation	tactics pro abortion	condemn attacks department justice
 368	gentleman ohio general leave	minority leader respective designees	resolution shall	hour equally divided controlled	concurrent
-369	anti life activists targeted	just abortions applies pro	face act prohibits threats	reproductive healthcare services justice	justice home direct violation
-370	justice kavanaugh	speaker important condemn	res like reiterate condemnation	abortion extremists madam speaker	condemn violence providers resolution
-371	congress condemning recent	condemn happens churches	unanimous madam speaker yield	pro life centers condemned	republicans condemn violence time
-372	democratic colleagues join condemnation	july 11 pro abortion	favor commonsense legislation	attacks pro life organizations	legislation res
-373	killed abortion	planned parenthood facilities	republicans say resolution condemning	hypocrisy going chamber week	hear republicans condemning violence
-374	act prosecute people vandalize	madam speaker yield minute	asking haven madam speaker	doj ability use face	tennessee believe doj
-375	speaker thank colleague	madam speaker wake dobbs	decision pro abortion radicals	thank colleague louisiana mr	johnson leadership pro life
-376	target killed legislation	constitutional rights urge colleagues	clinics showed assaults abortion	madam speaker solemn moment	acknowledge loss life innocent
-377	dedicated pro life pregnancy	provide care pregnant women	violence pregnancy centers	abortion activists seen horrific	attack radical abortion
-378	majority appears actually legislating	legislating great challenge colleagues	rising violence support current	rise appalled republican	abortion providers madam speaker
-379	prohibit killing unborn children	supreme court opinion leaked	leftwing extremists deep	following attack radical pro	wisconsin abortions aren safe
-380	resolution condemns violence	medical decisions house republicans	measures house republicans bringing	threats abortion providers patients	women rights attack nonbinding
-381	hopeful legislation administration act	protecting life states unfortunately	act grateful republican	state mississippi returning decisions	extremism committed churches pro
-382	pregnancy centers engage deceptive	seeking abortion care able	unfair deceptive advertising abortion	introduce stop anti abortion	abortion disinformation act direct
-383	madam speaker scary ongoing	typical atheistic totalitarian	protect speech want women	want legalize month abortions	conservative christian viewpoints common
-384	resolution proof colleagues hypocrisy	today opposition res resolution	reproductive freedom women american	abortion laws amanda	violence abortion providers staff
-385	pregnancy care center	compassion dead pregnancy care	firebombing vandalism pro abortion	abortion activists coordinated effort	speaker women spoke pregnancy
-386	speaker let condemn	madam speaker women	facing today republican agenda	danger women healthcare providers	health services including abortion
-387	bring perpetrators justice	house representatives condemns	court overturn roe wade	history comes protecting unborn	res urge colleagues vote
-388	violence urge colleagues vote	fact abortion providers faced	today strongly condemn violence	abortion ban regardless state	aisle support national abortion
-389	life pregnancy centers assassination	senator schumer threat supreme	abortions aren safe sentence	speaker attacks churches	thugs elevate extreme political
-390	denied healthcare house ignoring	healthcare infant illegal veiled	speak resolutions poll	abortion bans voting	attacking facilities providing healthcare
-391	continue pregnancy merrick garland	protect facilities help pregnant	nationalism death christians care	pro murder extremists	god 2019 pregnancy
-392	parenthood anti abortion	anti abortion activist drove	join democratic colleagues	documented violence reproductive healthcare	political violence resolution fails
-393	americans support abortion	opposing violence	support abortion rights support	abortion rights statistics absolutely	violence including violence majority
-394	survivors attacks condemn gop	stop hate speech quickly	safeguarding reproductive healthcare congresswoman	hate violence democracy violence	caucus rise opposition res
-395	act jane revenge perpetrator	minister women crisis progressive	violence targeting provide	terrorism today congressional	progressive america colleagues talk
-396	abortion access nationwide exceptions	abortion measures revolting assault	abortions deprives woman basic	state horrific anti abortion	week abortion ban law
-397	really shameful fact democratic	abortion ban	condemn violence paper colleagues	anti abortion anti freedom	speaker heard word shameful
-398	workplace violence ranges threats	violence targeting women health	ignoring acts violence republicans	republican colleagues want condemn	condemns attacks health care
-399	representatives condemns acts	medical advice fear violence	resolved house representatives	attacks healthcare facilities	violence everybody gets healthcare
-400	pro life centers 2022	colorado condemn violence condemn	decision condemning violence	pregnancy centers targeted	abortion protestors rise
-401	misinformation crisis pregnancy centers	plain crisis pregnancy centers	abortion healthcare fundamental human	chair abortion rights access	madam speaker chair abortion
-402	expressing sense congress condemning	pro life pregnancy centers	life facilities madam speaker	stand violence support res	abortion activists initial
-403	house republicans condemning violence	violence surrounding debate abortion	madam speaker urge members	abortion resolution clear	time closing madam speaker
-404	destruction pro life facilities	cited abortion clinics people	churches crisis pregnancy	protect rights pro life	crisis pregnancy centers attacked
-405	amend title	attempted abortion ask immediate	house resolution 26	madam speaker pursuant	prohibit health care practitioner
+369	outside abortion clinic	justice department said act	prosecuted face act single	anti life activists targeted	ablaze vandalizing words abortions
+370	effort condemn political violence	res like reiterate condemnation	justice kavanaugh	condemn violence providers resolution	abortion extremists mr speaker
+371	condemn violence time happens	abortion clinics condemn happens	pro life centers condemned	expressing sense congress condemning	does republicans condemn violence
+372	democratic colleagues join condemnation	abortion ballot proposal	congress condemn violence committed	attacks pro life organizations	commonsense legislation res really
+373	crimes planned parenthood	hear republicans condemning	resolution condemning violence	abortion care providers	hypocrisy going chamber week
+374	prosecute people vandalize attack	said department justice says	doj ability use face	act prosecute people	tennessee believe doj
+375	condemn violence voting	support saved lives	mr johnson leadership pro	abortion radicals waged	dobbs decision pro abortion
+376	clinics showed assaults abortion	vigilantism passed legislation bounty	shot killed opponent abortion	acknowledge loss life innocent	oppose legislation maybe solemnity
+377	support pregnant women	dedicated pro life pregnancy	violence pregnancy centers	abortion activists seen horrific	attack radical abortion
+378	supported legislation offered	abortion providers mr speaker	rising violence support current	legislating great challenge colleagues	rise appalled republican
+379	supreme court opinion leaked	leftwing extremists deep	following attack radical pro	prohibit killing unborn children	wisconsin abortions aren safe
+380	women rights attack nonbinding	violence forms resolution condemns	measures house republicans bringing	threats abortion providers patients	medical decisions house republicans
+381	state mississippi returning decisions	protecting life states unfortunately	hopeful legislation administration act	act grateful republican	extremism committed churches pro
+382	pregnancy centers engage deceptive	seeking abortion care able	introduce stop anti abortion	unfair deceptive advertising abortion	abortion disinformation act direct
+383	viewpoints common scare	abortions attacks like venues	years typical atheistic totalitarian	want legalize month abortions	conservative christian
+384	texas anti abortion laws	reproductive freedom women american	resolution proof colleagues hypocrisy	today opposition res resolution	violence abortion providers staff
+385	dead pregnancy care centers	lot abortion clinic changed	firebombing vandalism pro abortion	speaker women spoke pregnancy	abortion activists coordinated effort
+386	condemn violence streets country	resolution political ploy distraction	today republican agenda	health services including abortion	condemn mr speaker
+387	bring perpetrators justice	house representatives condemns	supreme court overturn roe	res urge colleagues vote	wade pro life pregnancy
+388	reproductive rights millions americans	fact abortion providers faced	abortion seen poll	abortion ban regardless state	aisle support national abortion
+389	responded kkk biden justice	mr speaker attacks churches	recall senator schumer threat	thugs elevate extreme political	abortions aren safe
+390	permitting speak resolutions	afraid abortion	healthcare house ignoring	american public opposition legislation	healthcare infant illegal
+391	nationalism death christians care	continue pregnancy merrick garland	abortion isn safe mr	god 2019 pregnancy centers	terrorist group said abortion
+392	abortion activist drove	condemns forms political violence	join democratic colleagues	democratic colleagues opposing strongest	documented violence reproductive healthcare
+393	opposing violence	americans support abortion	support abortion rights support	violence including violence majority	abortion rights statistics absolutely
+394	resolution condemns attacks healthcare	survivors attacks condemn gop	caucus rise opposition	speech quickly hate violence	chair pro choice caucus
+395	condemning acts violence condemn	terrorism today congressional democrats	violence targeting provide services	crisis progressive america	progressive america colleagues talk
+396	abortions deprives woman basic	abortion measures revolting assault	abortion access nationwide exceptions	week abortion ban law	state horrific anti abortion
+397	abortion ban looks birth	shameful fact democratic colleagues	anti abortion anti freedom	condemn violence resolution sided	speaker heard word shameful
+398	threat violence targeting women	violence republicans sending dangerous	acts political violence condemns	condemns attacks health care	republican colleagues want condemn
+399	representatives condemns acts	resolved house representatives	medical advice fear violence	attacks healthcare facilities	violence everybody gets healthcare
+400	pro life centers 2022	dobbs decision condemning violence	colorado condemn violence condemn	pregnancy centers targeted	abortion protestors rise
+401	misinformation crisis pregnancy centers	mr speaker chair abortion	plain crisis pregnancy centers	abortion healthcare fundamental human	chair abortion rights access
+402	pro life facilities groups	stand violence support res	pro life pregnancy centers	congress clear condemning violence	expressing sense congress condemning
+403	speaker urge members vote	house republicans condemning	violence surrounding debate abortion	closing mr speaker	abortion resolution clear
+404	protect rights pro life	interesting violence cited abortion	crisis pregnancy centers attacked	clinics pro life crisis	hundreds churches crisis pregnancy
+405	abortion attempted abortion ask	states code prohibit health	proper degree care case	26 amend title	mr speaker pursuant house
 406	minority leader respective designees	ohio mr jordan general	shall debatable hour equally	chair recognizes gentleman ohio	dividing control majority
-407	child born alive protected	alive abortion attempted abortion	provides mother abortion	abortion survivor civil	issue abortion
-408	abortion trusted adequate measures	ban abortion support 26	infant born attempted abortion	abortion nationwide madam speaker	medical infants mothers republicans
-409	language passed bipartisan support	state missouri mrs	speaker yield minutes gentlewoman	mrs wagner sponsor legislation	madam speaker point
-410	survive abortions child	alive abortion	lifesaving care innocent newborns	support vulnerable americans unborn	abortion survivors protection act
-411	oppose extreme maga republican	let course reiterate democrats	distinction today democrats	democrats look forward trying	republican agenda getting substance
-412	unborn children right	life unborn children	position roe wade position	leader said position roe	radical taking life unborn
-413	alive abortion survivors	born alive abortion clinic	penalties healthcare practitioner abortion	abortion infant requires infant	abortion survivors protection act
-414	crime kill child born	clear abortion care	murder killing infants serving	born fatal disabilities legislation	scaring people outlawing abortions
-415	access abortion	abortion sanctity life	speaker corpsman combat medic	combat medic navy seal	battlefield wounded obligated international
-416	abortion	care criminalize doctors politicians	abortion rights spread disinformation	grotesque attempt politicize abortion	new congress attack abortion
-417	babies deserve chance live	job madam speaker babies	science says babies people	asking mama talking abortion	babies people democrats pushing
-418	pregnancy account percent abortions	reproductive freedom ruse ban	safe legal abortions country	callous truth abortions occur	republicans control women reproductive
-419	abortion resulting live birth	speaker thank chairman	practitioners present attempted abortion	madam speaker thank chairman	abortion survivors protection act
-420	bipartisan born alive infants	abortion mr speaker	alive abortion survivors protection	following abortion received	birth abortion ban like
-421	abortion procedure rights unreasonable	constitution exempt newborns	infanticide 26 legislation	care infant born	lifesaving care simply partisan
-422	reject extreme republican agenda	women politicians make healthcare	abortion misleading offensively named	steam ahead criminalize abortion	abortion nationwide madam speaker
-423	transcends abortion debate	womb baby america killed	baby legal murder questioned	states allow baby killed	abortion want madam speaker
-424	appropriate endanger life infant	illegal provide infant	federal law kill infant	problem endangers infants stating	infants protection act bipartisan
-425	extremist criminalize doctors	procedures pregnant dangerous	congress conservative extremists supreme	pregnant dangerous exceptions protect	war reproductive healthcare war
-426	patients afraid misleading bills	today stand day oppose	provide reproductive healthcare assault	madam speaker rise opposition	26 house republicans claim
+407	mother abortion survivor civil	alive following abortion kids	child born alive protected	issue abortion	abortion survivors protection act
+408	ban abortion support 26	abortion survivors protection act	born alive abortion	infant born attempted abortion	providers perform abortions routinely
+409	sponsor legislation	mr speaker yield minutes	state missouri mrs wagner	passed bipartisan	speaker yield minutes gentlewoman
+410	survive abortions child	alive abortions	lifesaving care innocent newborns	support vulnerable americans unborn	abortion survivors protection act
+411	issue 118th congress	oppose extreme maga republican	distinction today democrats	democrats look forward trying	republican agenda yes continue
+412	right birth day governor	life unborn children	roe	position roe wade position	radical taking life unborn
+413	alive abortion survivors	term abortion baby born	penalties healthcare practitioner abortion	abortion infant requires infant	abortion survivors protection act
+414	clear abortion care	murder killing infants serving	scaring people outlawing abortions	born fatal disabilities legislation	abortions criminalizing politicians business
+415	corpsman combat medic	combat medic navy seal	battlefield wounded obligated international	aid innocent unborn child	woman access abortion sanctity
+416	healthcare don want politicians	care criminalize doctors politicians	abortion care	abortion rights spread disinformation	new congress attack abortion
+417	science says babies people	asking mama talking abortion	mr speaker babies deserve	babies deserve chance live	babies people democrats pushing
+418	account percent abortions	safe legal abortions country	abortions occur exclusively woman	republicans control women reproductive	false callous truth abortions
+419	abortions mr	practitioners present attempted abortion	26 born alive abortion	mr speaker thank chairman	abortion survivors protection act
+420	abortion nationwide	alive abortion survivors protection	following abortion received	birth abortion ban like	bipartisan born alive infants
+421	care infant born	constitution exempt newborns	infanticide 26 legislation receive	abortion procedure rights unreasonable	lifesaving care simply partisan
+422	agenda standing today democrats	abortion misleading offensively named	reject extreme republican agenda	steam ahead criminalize abortion	abortion nationwide mr speaker
+423	abortion debate dobbs	womb baby america killed	abortion want mr speaker	states allow baby killed	inhumane transcends abortion debate
+424	survival infant problem directs	federal law kill infant	endangers infants stating	infant born alive illegal	infants protection act bipartisan
+425	extremist criminalize doctors	congress conservative extremists supreme	procedures pregnant dangerous	war reproductive healthcare war	pregnant dangerous exceptions protect
+426	today stand day oppose	reproductive healthcare assault seen	oppose like talk	26 house republicans	patients afraid misleading bills
 427	paying bills thrilled bipartisan	bipartisan support chamber	disinformation abortion care actually	invite support democrats efforts	create federal right abortion
-428	life failure care unborn	support commonsense lifesaving legislation	abortion survivors matter intent	voted bipartisan support	voted bipartisan support ask
+428	bipartisan	support commonsense lifesaving legislation	abortion survivors matter intent	babies survive abortion receive	voted bipartisan support ask
 429	abortion illegal nationally country	care infanticide murder heard	said illegal care born	make abortion	infant law provided republican
-430	abortion survivors	position abortion demand birth	pro life legislation ensure	colleagues support pro life	botched abortion commonsense support
-431	today talk freedom	individual freedom core american	freedom core american value	colleagues demand individual freedom	freedoms simultaneously
-432	abortions grand jury report	abortion clinic sycloria williams	alive abortion survivors protection	abortion little known dr	madam speaker philadelphia abortionist
-433	illegal madam speaker stand	madam speaker stand oppose	wrong bring reproductive freedom	access reproductive freedom members	states beating rights reproductive
-434	debate defend life	abortion infamous words governor	heinous practice abortion	debate defend life survives	baby survives abortion attempt
-435	continue let extreme republican	uteruses women country madam	newborn children control republicans	overturning roe wade bans	madam speaker rise opposition
-436	alive failed abortion infant	abortion provider responded	babies survive abortions madam	considering abortion provider baby	abortion survivors protection act
-437	pro choice christian chose	support parental maternal rights	issue personal faith	government womb speaker	womb believe life precious
-438	survives abortion receive medical	care attempted abortion baby	issue legislation protects babies	alive abortion	legislation protects babies
-439	abortion abortion intentional	abortion	abortion does affect woman	support abortions ignore	masks affects having abortion
-440	abortion restrictions ballot	american people republican colleagues	overwhelmingly reject gop plan	abortion decisions woman doctor	healthcare providers don republicans
+430	support radical position abortion	defending life issue agree	abortion demand birth	pro life legislation ensure	botched abortion commonsense support
+431	freedom make decisions body	today talk freedom specifically	colleagues demand individual freedom	freedom core american value	freedoms simultaneously
+432	abortion survivors protection	snipping born alive abortion	alive attempted abortions grand	abortion little known dr	abortion performed obtain appropriate
+433	stand oppose 26	speaker stand oppose 26	reproductive freedom women safety	reproductive freedom mr speaker	states beating rights reproductive
+434	heinous practice abortion	debate defend life	debate defend life survives	ago baby survives abortion	practice abortion infamous words
+435	let extreme republican party	enact overturning roe wade	roe wade bans american	newborn children control republicans	criminalizing doctors nationwide abortion
+436	true born alive abortion	babies survive abortions mr	considering abortion provider baby	abortion provider baby taken	abortion survivors protection act
+437	womb believe life	government womb speaker	support parental maternal rights	issue personal faith informs	pro choice christian chose
+438	lives policy issue legislation	abortion murder previous democrat	attempted abortion baby survives	allow babies killed birth	issue legislation protects babies
+439	abortion does affect woman	abortion abortion intentional	abortion	masks affects having abortion	support abortions ignore
+440	don care state abortion	american people republican colleagues	abortion restrictions ballot rejected	woman access abortion care	overwhelmingly reject gop plan
 441	amendment	unanimous consent add text	exactly saw dobbs decision	providing abortion care place	deter doctors providing abortion
-442	attempted abortion afforded constitutional	babies born alive protected	protected baby born alive	abortion procedures imposes	abortion survivors protection act
-443	plan criminalize abortion	listen healthcare professionals legislation	protections quality healthcare infant	babies alive republicans say	abortion nationwide house reject
-444	liberty pursuit happiness	launched experiment freedom america	endowed creator life liberty	freedom don freedom true	chose mention life liberty
+442	protected baby born alive	attempted abortion afforded constitutional	abortion procedures imposes	abortion survivors protection act	support born alive abortion
+443	protect infants harmless enacted	plan criminalize abortion	protections quality healthcare infant	babies alive republicans say	abortion nationwide house reject
+444	launched experiment freedom america	america declaration independence	endowed creator life liberty	freedom don freedom true	liberty pursuit happiness think
 445	pursuant house	expired	question ordered	house resolution previous	time debate
 446	proceedings resume questions previously	xx remaining electronic votes	questions previously postponed votes	15 minute vote pursuant	agreeing res electronic vote
 447	abortion offered gentlewoman colorado	motion recommit 26	proper degree care case	amend title	unfinished business vote motion
@@ -465,7 +465,7 @@
 464	attorney office rowland served	office rowland served	mcgaughy 1953 children rowland	geddie iii rowland began	children rowland hill geddie
 465	homeless john announced	tackle homelessness task force	homelessness denver led development	colorado coalition homeless grown	coalition homeless doubt john
 466	arthur murphy transitioned	diverse voices community arthur	community leadership roles arthur	arthur murphy born	arthur active member naacp
-467	care republican agenda women	demonization reproductive healthcare providers	democrats fight protect abortion	criminalizing abortion nationwide banning	reproductive health policies gop
+467	rejecting extremist anti abortion	demonization reproductive healthcare providers	criminalizing abortion nationwide banning	democrats fight protect abortion	reproductive health policies gop
 468	sherri jackson	truth seeker sherri spearheaded	journalist impact sherri journalistic	home cbs 42 sherri	services alabama sherri
 469	war petty officer	navy seabees association	president conservative texans charitable	martin jr served country	texans charitable bingo helped
 470	aozasa bruins women soccer	congratulate ucla	sincerely congratulate ucla	ncaa championship earned ucla	bruins women soccer program
@@ -508,7 +508,7 @@
 507	energy raided spr	president biden want reserve	attacked american energy	strategic petroleum reserve just	spr referred president biden
 508	sell oil china	republican policy destroy jobs	lifting ban export crude	percent crude oil china	consequence republican policy
 509	use resources pennsylvania biden	stop risking national security	chinese communist party threatens	000 barrels american strategic	petroleum reserve sold chinese
-510	china petroleum chemical corporation	disastrous energy policies biden	secretary energy selling america	drain reserves chinese communist	reserves chinese communist party
+510	china petroleum chemical corporation	disastrous energy policies biden	drain reserves chinese communist	reserves chinese communist party	secretary energy selling america
 511	ounce strategic petroleum reserve	declared war american energy	sell strategic petroleum	china remember joe biden	china mr speaker rise
 512	oil reserves	announce independent petroleum association	bring gasoline prices election	america leadership natural gas	petroleum reserve spr spr
 513	russia adversaries percent oil	spr continue able sell	prevent selling china	seconds certainly surprise oil	oil industry support does
@@ -521,39 +521,39 @@
 520	spr banned selling oil	gallon peak republicans want	listening republican arguments today	stress closing republicans caused	oil spr china
 521	switch unleash american energy	economic power energy	energy affordable reliable america	energy dominance important american	energy security global leadership
 522	start 118th congress short	people mr speaker house	represent people michigan 13th	congress sad day body	speaker house democrats united
-523	incredible players georgia	georgia dominating victory	wide receiver seasons uga	uga time bulldog amassed	championship year bulldogs ended
-524	alabama sherri career earned	central alabama sherri career	recognizing sherri jackson extraordinary	broadcasters association grateful sherri	anchor sherri jackson celebrating
-525	india doctors community	meeting ambassador god bless	immigrated directly india	constituents especially immigrated	represent best citizens america
-526	hamlin finally released hospital	nfl alumni congressman owens	recognizing damar hamlin	congratulations recovery madam speaker	madam speaker news damar
-527	inspire bless god	inspire bless god bless	hamlin fighting	hamlin family teammates entire	damar hamlin family
-528	betty stanley lee	margaret 1970 lee founded	lee served memorial medical	lee founded business fiduciary	butler savannah georgia lee
-529	buffalo bills player	turned nightmare buffalo bills	celebrate people spirit buffalo	buffalo works struggles prouder	madam speaker buffalo western
-530	homeowners convert home gas	ban natural gas force	energy plan	gas electric average homeowner	stoves governor new york
-531	housing childcare need immigration	congress needs address challenges	carolina 13th district seen	represent people north carolina	madam speaker support immigration
-532	investigated congress doj	information offense democrats hillary	speaker monday classified documents	security concerns mishandling classified	documents discovered president biden
-533	speaker rise today praise	president biden leadership inflation	madam speaker rise today	president biden work restore	president biden economic policies
-534	damn high rent damn	madam speaker rent	provide housing	corporate landlords suppressing oppressing	continuing raise rent president
-535	weather congress serve	illinois 17th congressional district	honor serving illinois	serve constituents trusted voice	madam speaker
-536	time ensure american energy	strategic petroleum reserve china	prohibit sale oil tyrants	speaker america economic independence	energy independence today voted
-537	answer children shooters access	speak child ask america	founder congressional children caucus	let lift children healthy	guns congressional year 2023
+523	mater university georgia dominating	incredible players georgia	georgia started wide receiver	seasons uga time bulldog	championship year bulldogs ended
+524	alabama sherri career earned	recognizing sherri jackson extraordinary	broadcasters association grateful sherri	birmingham alabama sherri jackson	anchor sherri jackson celebrating
+525	meeting ambassador god bless	immigrated directly india	doctors community india represent	constituents especially immigrated	represent best citizens america
+526	fellow nfl alumni	congressman owens colleagues	damar hamlin finally released	congratulations recovery mr speaker	damar hamlin inspiring story
+527	prayers millions weeks teammates	inspire bless god bless	pulling damar hamlin	hamlin fighting spirit	damar hamlin family
+528	lee born chicago 1926	savannah georgia lee	lee served memorial medical	life lee butler savannah	lee founded business fiduciary
+529	buffalo bills	turned nightmare buffalo bills	speaker buffalo western new	celebrate people spirit buffalo	buffalo works struggles prouder
+530	comprehensive energy plan portfolio	ban natural gas force	announced plans ban gas	gas electric average homeowner	stoves governor new york
+531	housing childcare need immigration	congress needs address challenges	carolina 13th district seen	mr speaker support immigration	represent people north carolina
+532	information offense democrats hillary	investigated congress doj	speaker monday classified documents	security concerns mishandling classified	documents discovered president biden
+533	mr speaker rise today	biden leadership inflation	rise today praise president	president biden work restore	president biden economic policies
+534	oppressing evicting tenants just	continuing raise rent	speaker rent damn high	provide housing	rent president biden
+535	weather congress serve	serve constituents trusted	illinois 17th congressional district	serving illinois	mr speaker honor
+536	strategic petroleum reserve china	time ensure american energy	prohibit sale oil tyrants	speaker america economic independence	energy independence today voted
+537	answer children shooters access	founder congressional children caucus	let lift children healthy	guns congressional year 2023	congress claims year child
 538	china want rewrite history	america strategic petroleum reserve	china act republicans brought	extend ban north korea	crude oil export ban
-539	happy birthday sweet boy	january 19 son	anniversary partner best	constituent son davis january	decision grateful love support
-540	passage affordable care	medicaid coverage gap	health benefits residents states	carolinians access affordable healthcare	medicaid madam speaker hardworking
-541	bipartisan highly reliable leader	home cincinnati congressional	commitment new colleagues madam	congress thank folks	madam speaker rise
-542	narrative interfere doctor care	doctors voted 26	suggest doctors don legal	reproductive decisions	stand women reproductive rights
-543	agreement safe staffing ratios	efforts nurses picket line	york state nurses	speaker wish congratulate nurses	congratulate nurses mount sinai
-544	rise commemorate korean american	dedicated honoring century korean	ensure korean american community	congress recognize sacrifices korean	korean american day tomorrow
-545	receive abortions healthcare	rights kentucky respond night	speaker supreme court overturned	attacks women rights	woman doctor house republicans
-546	speaker people house open	ccp madam speaker	seeking bipartisanship	outstanding madam speaker people	house floor overwhelmingly bipartisan
-547	joined attorney general tim	arkansans time congress anushree	later district representative working	intern later district representative	arkansas thank anushree
-548	arkansas department education mlk	upcoming martin luther	commission praised dr king	king jr commission	mission arkansas martin luther
-549	hank fine furniture	conservancy arkansas impact hank	state hank browne passed	hank browne founded freight	hank browne community forgotten
-550	welding competitions congratulate	competition receive scholarships welding	welding students st joseph	welding program university arkansas	welding students represent conway
-551	smith 19 years alderwoman	madam speaker rise	council recognized ms smith	thank mary years service	madam speaker rise today
-552	touted science museum equivalent	recognize museum discovery	2021 museum	award resilience award presented	award resilience award
-553	today congratulate paul browning	promotion congratulate paul retirement	madam speaker rise	service community morrilton madam	browning assistant chief
-554	quote dr king conscience	lives forward conscience agenda	promise conscience agenda	question conscience speaking	enslaved conscience agenda recognize
-555	expect number irs employees	irs employees drop used	000 300 taxes need	000 employees past state	income irs
+539	happy birthday sweet boy	12th anniversary husband ian	life built happy anniversary	constituent son davis january	decision grateful love support
+540	north carolinians access affordable	affordable care act	medicaid mr speaker hardworking	health benefits residents states	placing medicaid coverage gap
+541	home cincinnati congressional	mr speaker new	congress thank folks	mr speaker rise today	bipartisan highly reliable leader
+542	suggest doctors don legal	decisions republican colleagues	doctors voted 26 continue	vilify punish women doctors	women reproductive rights
+543	tentative agreement safe staffing	efforts nurses picket line	agreement safe staffing ratios	new york state nurses	speaker wish congratulate nurses
+544	dedicated honoring century korean	impact korean american community	korean american national museum	korean american day tomorrow	congress recognize sacrifices korean
+545	attacks women rights	speaker supreme court overturned	receive abortions healthcare	rights kentucky respond night	woman doctor house republicans
+546	elected democrats seeking bipartisanship	premium talking bipartisanship	house floor overwhelmingly bipartisan	seeking bipartisanship aisle week	bipartisanship aisle week house
+547	anushree jumde cherished member	joined attorney general tim	later district representative working	intern later district representative	arkansas thank anushree
+548	arkansas department education mlk	upcoming martin luther	king jr commission 30	commission praised dr king	luther king day honored
+549	rock 1975 hank browne	conservancy arkansas impact hank	hank browne passed away	hank browne founded freight	arkansas hank fine furniture
+550	welding competitions congratulate	welding students represent conway	welding students st joseph	competition receive scholarships welding	welding program university arkansas
+551	appreciated beloved member conway	mayor bart castleberry conway	ms smith compassion insight	thank mary years service	alderwoman ms smith
+552	2021 museum	award resilience award presented	touted science museum equivalent	award resilience award	recognize museum discovery
+553	mr speaker rise	mr speaker congratulate joseph	browning assistant chief city	congratulate paul retirement	paul browning assistant
+554	good conscience agenda	quote dr king conscience	lives forward conscience agenda	question conscience speaking	enslaved conscience agenda recognize
+555	irs employees drop used	000 employees past state	irs employees intended added	number irs	000 300 taxes need
 556	deportation weak compared people	000 biden administration year	huge numbers increasing americans	families november 000 unaccompanied	immigration numbers friday publicize
 557	grieve kahne mother contacted	correspondence kahne learned military	mr speaker kahne loftus	loved ones holidays kahne	kahne life derek harris
 558	financial foundation vallejo education	schools dr ubalde dedication	role modernizing vallejo education	dr ubalde ushered vallejo	ubalde joined board education
@@ -592,13 +592,13 @@
 591	house resolution house	hour debate legislative business	pursuant section house resolution	adjourned noon	adjourned tuesday january 24
 592	rules senate appoint	president pro tempore mrs	duties chair patty murray	read following letter senate	president pro tempore washington
 593	resignation senator benjamin sasse	nebraska certificate	certificate appointment unexpired term	chair lays senate	certificate chair advised form
-594	gun safety legislation year	president want welcome new	weekend tragic terrible shooting	mourning spoke yesterday sheriff	thoughts senate people monterey
+594	today thoughts senate people	stop shooter prevent lives	safety legislation year welcome	weekend tragic terrible shooting	mourning spoke yesterday sheriff
 595	senator designate pete ricketts	ricketts escorted mrs fischer	vice president oath	desk chair administer oath	senator designate present
-596	electing electing governor ricketts	effect secured nebraska families	governor ricketts huge margins	years nebraskans rest easy	nebraska new junior senator
-597	ricketts family commitment certainly	going stay wrigley	newest senator state nebraska	new senator productive gratifying	baseball america ricketts
-598	response covid 19	issues dc covid	virus respond leaders parties	congress president deemed pandemic	covid lockdowns dangerous citizen
-599	border past time congress	solve crisis standing border	immigration border safe orderly	border security crisis took	southern border crisis raging
-600	texas touched issues tennessee	way people tennessee	tennessee disregard federal policy	tn devastating floods 20	county tn devastating floods
+596	welcome senator	electing governor ricketts huge	educations time people nebraska	effect secured nebraska families	new junior senator took
+597	stay wrigley	nebraska pete ricketts don	baseball america ricketts family	new senator productive gratifying	welcoming newest senator state
+598	policies response covid 19	issues dc covid	virus respond leaders parties	covid lockdowns dangerous citizen	congress president deemed pandemic
+599	border crossings valuable senator	border security crisis took	crisis bipartisan conversations occurring	border states senator	security crisis southern border
+600	tennessee year know colleagues	texas touched issues tennessee	communities tennessee disregard federal	tn devastating floods 20	county tn devastating floods
 601	voted nay senator	senator utah mr lee	senator idaho mr risch	senators necessarily absent	following senators necessarily absent
 602	alfie dedicated service united	leadership award department veterans	serving washington state veterans	veterans alfie alumna harvard	alfie leadership secured federal
 603	critical legislation like ada	tenure bobby worked build	ben experiences physical disabilities	representatives senate bobby	improve lives individuals disabilities
@@ -614,12 +614,12 @@
 613	providence police officer serve	meeting tom young officer	cop cop tom renowned	commander verdi served distinction	thomas verdi retirement providence
 614	dr scott robison retiring	superintendent zionsville community schools	robison innovative leader	hoosier children dr robison	superintendent marion adams schools
 615	pare served rhode	safety city providence commissioner	oversaw police operations providence	commissioner steven pare retirement	congratulate commissioner steven pare
-616	billion wildfire resilience federal	support community wildfire	significant wildfire risk eligible	wildfire protection act bipartisan	community wildfire resilience grants
-617	exposing california coastline risk	drilling protect pacific	federal waters california allowed	drilling state waters 1994	coast additional oil spills
+616	billion wildfire resilience federal	support community wildfire	wildfire protection act bipartisan	community wildfire resilience grants	significant wildfire risk eligible
+617	federal waters california	drilling protect pacific	ocean protection act legislation	exposing california coastline risk	oil spills californians know
 618	partnerships help combat homelessness	homeless providing housing paired	issue homelessness introducing fighting	homelessness services housing act	continue contend increase homelessness
-619	billion wildfire resilience federal	support community wildfire	significant wildfire risk eligible	wildfire protection act bipartisan	community wildfire resilience grants
+619	billion wildfire resilience federal	support community wildfire	wildfire protection act bipartisan	community wildfire resilience grants	significant wildfire risk eligible
 620	partnerships help combat homelessness	homeless providing housing paired	issue homelessness introducing fighting	homelessness services housing act	continue contend increase homelessness
-621	exposing california coastline risk	drilling protect pacific	federal waters california allowed	drilling state waters 1994	coast additional oil spills
+621	federal waters california	drilling protect pacific	ocean protection act legislation	exposing california coastline risk	oil spills californians know
 622	honorable joe manchin iii	states senate appointment senate	chair behalf president pro	trustee james madison	foundation honorable joe manchin
 623	10 minutes finally senate	senate completes business today	morning business senators permitted	ask unanimous consent senate	senate recess 12
 624	deepest condolences lisa marie	celebration life graceland elvis	graceland memphis buried	american music culture lisa	daughter memphis world renowned
@@ -735,12 +735,12 @@
 734	dover foxcroft established	foxcroft academy empowered succeed	opportunity history foxcroft academy	today foxcroft academy sits	foxcroft academy demonstrates commitment
 735	honor sebastian county judge	county judge managed	congratulate judge david hudson	elected county judge managed	important issues judge hudson
 736	published new republic	article george black honoring	honoring legacies senator patrick	leahy tim rieser printed	president rise today
-737	afford pay energy costs	energy prices dramatically higher	conversation climate president energy	energy american warm winter	energy standpoint biden administration
-738	provide report fighting corruption	president biden said corruption	corruption core united states	global corruption act joined	fight corruption countries meeting
-739	afford pay energy costs	energy prices dramatically higher	conversation climate president energy	energy american warm winter	energy standpoint biden administration
-740	provide report fighting corruption	president biden said corruption	corruption core united states	global corruption act joined	fight corruption countries meeting
+737	conversation climate president energy	energy american warm winter	energy prices dramatically higher	energy standpoint biden administration	americans afford pay energy
+738	provide report fighting corruption	said corruption threatens united	corruption core united states	global corruption act joined	fight corruption countries meeting
+739	conversation climate president energy	energy american warm winter	energy prices dramatically higher	energy standpoint biden administration	americans afford pay energy
+740	provide report fighting corruption	said corruption threatens united	corruption core united states	global corruption act joined	fight corruption countries meeting
 741	adjourned	morning business senators	senate completes business	today stand adjourned	ask unanimous consent senate
-742	today session senate approval	following committees authorized	requests committees	madam president requests	meet today session senate
+742	authorized meet today session	today session senate approval	rules senate following committees	mr speaker requests committees	requests committees meet
 743	simpson dedication duty	charles simpson occasion retirement	2017 captain simpson	simpson joined dearborn department	worthy commendation captain simpson
 744	tanks essential convincing german	defend ukraine germany	send german leopard tanks	abrams tanks reach ukraine	tanks support ukraine doubt
 745	equity justice progress america	showing gratitude lisa life	congressman augustus gus hawkins	maryland country mourning lisa	lisa later work organizations
@@ -754,31 +754,31 @@
 753	arianne served deputy city	woman lawyers michigan naacp	judge arianne slay	woman lawyers association michigan	arianne native ann arbor
 754	state directors veterans affairs	military public service alfie	department veterans affairs recognized	alfie leadership washington state	veterans affairs wdva served
 755	chair recognize members	hour debate	majority minority leaders morning	minority whip limited minutes	house january 2023 chair
-756	spoke anniversary chicago treasures	lin chicago icon poet	chicagoans xrt radio dry	chicago music theater	yorker began radio career
+756	xrt did chicago lin	spoke anniversary chicago treasures	chicago music theater	yorker began radio career	chicagoans xrt radio dry
 757	delivery abrams tanks european	help ukraine push victory	aggression russia continent liberty	abrams tank lima ohio	americans know brave ukrainians
-758	merit scholarship commendation award	virginia withheld national merit	award letters hundreds students	equity starts harming students	appalled learn multiple schools
-759	expansion dual enrollment	dual enrollment great way	enrollment program education innovation	postsecondary education dual	dual enrollment classes rising
+758	award letters hundreds students	education bureaucracy failed	national merit scholarship commendation	equity starts harming students	appalled learn multiple schools
+759	enrollment program education innovation	dual enrollment great way	postsecondary education dual	school students dual enrollment	dual enrollment classes rising
 760	skilled trade fortunately isn	fewer fewer young people	trades skilled professionals repair	decades people told bachelor	open technical jobs
-761	strategically protect food	facing food shortages	thought pandemic	protect food resources abroad	pandemic reason government overreach
-762	recognize university georgia building	preparing students enter poultry	state art poultry	university georgia building	poultry industry vital
-763	green building ranks sixth	savings georgia leader green	today recognize state georgia	green building sustainability proud	achieve ranking recognizing georgia
-764	foot containers 2022 2022	georgia supply	year port savannah achieved	containers congratulate gpa wonderful	georgia ports authority percent
-765	succeed correctional deputy	deputy cordero service began	sheriff department deputy	valley station deputy cordero	jail later promoted deputy
-766	children children deputy calhoun	deputy darnell calhoun communities	deputy calhoun fatally	family thing deputy calhoun	deputy calhoun word devoted
-767	deficit balance budget books	members impacts debt ceiling	debt ceiling hope	way reduce deficit balance	economy note debt ceiling
-768	appointed house agriculture house	farm enormous responsibility priorities	nation reauthorization farm enormous	agriculture committee 118th congress	congress agriculture largest economic
-769	debt limit passed	debt limit december	debt accusations colleagues	30 2022 national debt	bit national debt accusations
-770	speaker talk debt limit	catastrophic real default	treasury begun avoid default	jobs increase national debt	democratic speaker talk debt
-771	harm come economy debt	threaten defaulting debt secure	debt ceiling addressed avoid	congress dealt debt ceiling	debt secure service cuts
-772	challenges facing iowans dire	state servant iowa	district nonstop hear iowans	bring iowa influential voice	family iowan agree congress
-773	colonel brock served sacrificed	brock tennessee second district	speaker rise honor colonel	colonel brock plans retire	recognize colonel jason brock
-774	midway iga retiring grocery	road long road madam	madam speaker joe	friends madam speaker local	started longmire grocery
-775	republicans economic plan hurt	maga republicans jack prices	extreme maga republicans americans	economic progress house democrats	house gop want increase
-776	completely overhaul tax blatantly	effects just income taxes	child tax credit republicans	avoid paying taxes conservatives	tax blatantly favor rich
+761	food food shortages realize	strategically protect food	protect food resources abroad	concerning reasons thought pandemic	pandemic reason government overreach
+762	students enter poultry	university georgia building	creation state art poultry	poultry science building alma	poultry industry vital state
+763	green building sustainability	united states green building	savings georgia leader green	ranking recognizing georgia	achieve ranking recognizing georgia
+764	georgia supply	port savannah set increase	year port savannah achieved	georgia ports authority percent	containers 2022 2022 georgia
+765	motor deputy served	promoted deputy sheriff completing	community remember deputy cordero	department deputy isaiah cordero	jail later promoted deputy
+766	deputy darnell calhoun communities	children children deputy calhoun	family thing deputy calhoun	deputy calhoun fatally	deputy calhoun word devoted
+767	deficit balance budget books	debt ceiling hope	members impacts debt ceiling	economy note debt ceiling	way reduce deficit balance
+768	agriculture largest economic driver	honored serve house agriculture	reauthorization farm enormous responsibility	farm food policy america	agriculture committee 118th congress
+769	hit debt limit december	debt limit passed	bit national debt accusations	30 2022 national debt	national debt accusations colleagues
+770	talk debt limit	default catastrophic real default	jobs increase national debt	treasury begun avoid default	democratic speaker talk debt
+771	harm come economy debt	threaten defaulting debt secure	debt ceiling addressed avoid	debt secure service cuts	congress dealt debt ceiling
+772	bring homegrown iowa	challenges facing iowans dire	bring iowa influential voice	family iowan agree congress	job serve representative iowan
+773	colonel brock began military	like colonel brock served	brock tennessee second district	jason brock tennessee	colonel brock plans retire
+774	joe dale grocery business	work best fried chicken	say community good longmires	longmire started longmire grocery	midway iga great community
+775	maga republicans jack prices	alarm extreme maga republicans	republicans economic plan hurt	economic progress house democrats	house gop want increase
+776	completely overhaul tax blatantly	child tax credit republicans	effects just income taxes	avoid paying taxes conservatives	tax blatantly favor rich
 777	state piece mr drahos	drahos beloved world war	ii heroes mr drahos	speaker harvey drahos exemplifies	life service harvey drahos
-778	veterans affairs served director	honor lourdes alfie alvarado	washingtonians decades alfie	madam speaker rise	portfolio services madam speaker
-779	literacy splash new	encourage reading encourage everybody	focus reading don florida	celebrate reading americans	week florida department education
-780	constitutional convention 1787 asked	franklin leaving constitutional	vigorously defend constitution	constitutional republic rule law	constitution rights americans congress
+778	honor lourdes alfie alvarado	washingtonians decades alfie	department veterans affairs congratulate	speaker career alfie	veterans affairs served director
+779	students families make reading	encourage reading encourage everybody	focus reading don florida	week florida department education	americans happy celebrate literacy
+780	vigorously defend constitution	franklin leaving constitutional	constitutional convention 1787 asked	constitutional republic rule law	constitution rights americans congress
 781	massachusetts mr auchincloss	pledge allegiance flag united	allegiance follows pledge allegiance	massachusetts mr auchincloss come	lead house pledge allegiance
 782	crash flight 3407	thousands flights america malfunction	upgrades airline safety	missions improvement act	operations needs reformed notice
 783	abortion protect living soul	topic abortion	born alive abortion survivors	wars don understand divided	abortion survivors protection act
@@ -849,30 +849,30 @@
 848	vote motion suspend rules	purposes amended yeas	unfinished business vote	clause rule xx unfinished	notices air missions
 849	invested small business investment	business vote motion suspend	investment act 1958 increase	rule xx unfinished business	400 amend small business
 850	rules agree concurrent resolution	men iran demonstrating 133	rights abuses amended yeas	xx unfinished business vote	safety speak iranian
-851	cast vote res	iranian regime human rights	commedning bravery courage	safety speak iranian	vote res commedning
-852	unable attend today legislative	speaker regret inform	bonamici madam speaker	session present voted	voted yea rollcall 36
-853	student success board dawgs	work university georgia	talented professors thanks initiatives	georgia just year university	breaking completion rates university
-854	leaders black	black history showcase honored	american history empowering young	madam speaker rise today	cassady davis grader evening
-855	15th congressional district 15th	congress strong voice citizens	community serve madam speaker	today represent pennsylvania	counties madam speaker
-856	attacks african american	african american culture florida	education reject content	desantis believes education	indoctrination welcome america wokeness
-857	reagan said freedom fragile	championed considerable population iranian	act violence imposed iranian	iranian protestors fighting	bravery men women iran
+851	unable cast vote res	iranian regime human rights	commedning bravery courage	cast vote res commedning	safety speak iranian
+852	voted yea rollcall	mr speaker present	unable attend today legislative	legislative session present voted	speaker regret inform
+853	completion rate freshmen	student success board dawgs	work university georgia	talented professors thanks initiatives	rates university georgia
+854	year old cassady davis	black history showcase honored	day leaders black	american history empowering young	month cassady davis grader
+855	counties mr speaker great	congress strong voice citizens	represent pennsylvania	citizens 15th district challenges	15th congressional district encompasses
+856	african american culture florida	attacks african american	desantis believes education	education reject content	indoctrination welcome america wokeness
+857	championed considerable population iranian	reagan said freedom fragile	act violence imposed iranian	iranian protestors fighting	bravery men women iran
 858	murders pierced peace joy	supposed celebration year rabbit	violence thank helping honor	celebration thriving asian american	hospital lunar new year
 859	infrastructure need better evacuation	storing water storms	flooding result california	drought emergency modern california	storage flood infrastructure instead
-860	abortion 50 years	abortion ban creating hardship	politicians freedom control reproductive	anniversary roe wade historic	roe wade rise say
+860	abortion 50 years	abortion ban creating hardship	anniversary roe wade historic	politicians freedom control reproductive	roe wade rise say
 861	congress operating think better	thank house democrat counterparts	118th congress want	important work 118th congress	rooting success congress obviously
-862	humbled represent texas	texas congressional	texas filled individuals reverence	congressional district texas dedicated	introduce introduce district texas
-863	texas texas represented district	lawler madam speaker yield	congress representative mike	lawler madam speaker	pearl river delighted congressman
-864	grade parents pushed	college graduated valedictorian	talk respect school	class profound impact colleague	teacher immigrant russia said
-865	brought incoming members freshman	department defense adviser foreign	uniform served state department	army combat veteran recipient	representative cory mills tell
-866	grandparents humbling experience just	defined voice american people	florida seventh district rest	florida mother father suffered	american exceptionalism excelled representative
-867	grounds mexican american woman	madam speaker thank friend	congresswoman anna paulina luna	conservative cause madam speaker	florida like introduce congresswoman
-868	today address politicization	politicization happening southern	stand people trafficked racist	immigration debate alarming things	trafficking activist
-869	elected california state	attorney general elected california	representative kevin	gentleman california mr kiley	bit representative kevin kiley
-870	fires relief soon provided	california office emergency service	grizzly flats burned caldor	wildfires ravage california year	california district madam speaker
-871	represented madam	madam speaker yield balance	thank friend california district	ahead 118th congress madam	speaker thank friend california
-872	professional randy sawyer	friend wonderful professional randy	chemical plants randy served	proud author legacy randy	deputy director randy efforts
+862	texas filled individuals reverence	texas congressional	humbled represent texas congressional	district texas boasts landscape	introduce introduce district texas
+863	118th congress representative mike	pearl river delighted congressman	lawler mr speaker	texas texas represented district	speaker thank gentleman texas
+864	parents pushed school acquiesced	class profound impact colleague	today talk respect school	college graduated valedictorian class	teacher immigrant russia said
+865	introduce new member representative	incoming members freshman	cory mills	army combat veteran recipient	pentagon department defense adviser
+866	adopted taken grandparents humbling	defined voice american people	freedoms american exceptionalism	florida seventh district rest	florida mother father suffered
+867	united states congress represent	anna paulina luna serve	florida mrs luna	grounds mexican american woman	like introduce congresswoman
+868	politicization happening southern	stand people trafficked racist	rise today address politicization	trafficking activist	immigration debate alarming things
+869	california district house district	mr speaker thank friend	attorney general elected california	representative kevin	kiley serves people california
+870	california district mr speaker	burned caldor continued	fires relief soon provided	destructive wildfires 2021	california office emergency
+871	conference congress look	represented mr speaker obvious	speaker thank friend	california district represented	congress look forward serving
+872	wonderful professional randy	sawyer randy dedicated public	chemical plants randy served	proud author legacy randy	deputy director randy efforts
 873	senate completes business	ask unanimous consent senate	today stand adjourned	senate proceed consideration klobuchar	morning business closed conclusion
-874	following committees	session senate approval	requests committees	madam president requests	meet today session senate
+874	session senate approval majority	today session senate	mr speaker requests committees	requests committees meet	committees authorized meet
 875	tanks good news	tanks biden	armored firepower help ukraine	expeditiously send ukraine modern	germany announced supply ukraine
 876	list 500 plus homicides	carjacking day homicides year	know crime getting worse	swamped level crime unsafe	ky saw 10 homicides
 877	brinksmanship default debt ceiling	debate raising debt	ceiling proposal congress house	mccarthy sitting clear plan	speaker mccarthy house gop
@@ -883,20 +883,20 @@
 882	support national institutes	funding help cure prevent	prioritize medical research funding	nation investment medical	increased funding cdc years
 883	permanently united states asylum	border protection encountered migrants	hearing immigration	future immigration court hearing	people showing claiming asylum
 884	negotiated senator mcconnell budget	debt limit suggest time	negotiate continue rack debt	control federal spending	president negotiating hard
-885	number apprehensions southern border	talk southern border new	president biden border crisis	december apprehensions southern border	demonstrate crisis border escalating
-886	madam president gave remarks	chair republican conference gathered	senator ernst iowa	really pleased chair policy	gave remarks border security
+885	biden border crisis numbers	number apprehensions southern border	december apprehensions southern border	talk southern border new	demonstrate crisis border escalating
+886	security new vice chair	chair republican conference gathered	mr speaker gave remarks	gave remarks border security	senator ernst iowa
 887	percent increase fentanyl seizures	overdoses drug smuggling border	trafficking state nebraska 2022	fentanyl seizures just november	nebraska nation numbers drug
-888	fentanyl epidemic lawmakers make	biden million illegal immigrants	drug united states funneling	border amen folks agree	borders 2010 senator chuck
-889	people oklahoma open immigration	southwest border spent couple	oklahoma open immigration just	border things administration doing	illegally crossed southwest border
-890	bipartisan delegation talk	crisis border needs	immigration reform border security	having discussion immigration reform	trying negotiate bipartisan
-891	border patrol agents handling	rio border sector texas	biden careless border immigration	mexican border american human	history million border apprehensions
-892	talk texas military border	border crossings border patrol	border policy making difficult	say border patrol discouraged	southern border biden administration
+888	deadly fentanyl epidemic lawmakers	conversation reforming immigration	americans border amen folks	need increase security mexico	borders 2010 senator chuck
+889	oklahoma open immigration	people oklahoma open immigration	border people coming right	southwest border spent	illegally crossed southwest border
+890	border want start senator	issue bipartisan delegation	trying negotiate bipartisan	having discussion immigration reform	discussion immigration reform border
+891	process illegal immigrants just	biden careless border immigration	crisis learned border patrol	texas traveled border	rio border sector texas
+892	texas dps border working	border patrol discouraged looked	policy support southern border	talk texas military border	border biden administration
 893	security privatize medicare	privatize medicare social	social security philosophic	social security philosophic ideological	security medicare debate debate
-894	safer communities act	shootings homicides prevented limiting	shootings time california spoke	horrific mass shootings	bipartisan safer
-895	latino media marketing technology	good chance walter ulloa	executive officer entravision grew	working walter admired	entravision global latino media
-896	stories cope service	calf cope tasked	robert cope affectionately	working dr cope public	cope served lemhi county
-897	senate vote adoption resolution	tomorrow senate proceed immediate	res 13 submitted earlier	madam president ask unanimous	resolution agreed preamble considered
-898	veterinary medicine millers	paws maintained accreditation american	wellness surgery paws jim	paws idaho small business	street pet clinic located
+894	getting guns political	shootings homicides prevented limiting	shootings time california spoke	passed summer bipartisan safer	safer communities act
+895	character life walter ulloa	global latino media marketing	entravision global latino media	walter grew brawley ca	knowing working walter admired
+896	killed calf cope tasked	stories cope service	robert cope affectionately called	working dr cope public	cope served lemhi county
+897	tomorrow senate proceed immediate	resolution resolution agreed preamble	senate vote adoption resolution	ask unanimous consent	res 13 submitted earlier
+898	veterinary medicine millers	paws maintained accreditation american	wellness surgery paws jim	street pet clinic located	paws idaho small business
 899	activist barbara	orleans enterprise congress member	orleans parish democratic executive	new orleans director constituent	culture bearer activist barbara
 900	officer leroy service country	years leroy help ms	leroy awarded lifetime achievement	states army leroy served	intelligence security concerns leroy
 901	lifeline alfie recipient	superintendent washington veterans	state department veteran affairs	crisis lifeline alfie recipient	alfie alvarado ramos retirement
@@ -921,28 +921,28 @@
 920	outstanding leadership clear dianne	dianne born raised	scouts mayor new holstein	congratulating mrs dianne	service mayor new holstein
 921	chair recognize members	hour debate	majority minority leaders morning	minority whip limited minutes	house january 2023 chair
 922	join bipartisan german american	skilled workforce caucus tremendous	bipartisan career technical education	education caucus congressional service	invite join bipartisan career
-923	make safer agree	disastrous emboldening criminals threatening	combating crime	agree mayor bowser combating	protecting citizens conservative issue
-924	fighting second amendment	national firearms act ongoing	dismantling second amendment freedoms	banning pistols stabilizing braces	atf registering banning pistols
+923	disastrous emboldening criminals threatening	crimes council included radical	make safer agree	agree mayor bowser combating	protecting citizens conservative issue
+924	fighting second amendment	banning pistols stabilizing braces	dismantling second amendment freedoms	national firearms act ongoing	atf registering banning pistols
 925	border surprise president	251 000 illegal aliens	southern border biden administration	terrorists cross southern border	border releasing latest cbp
-926	alabama mississippi georgia destroying	southeast ravaging communities alabama	congressional district alabama affected	disasters selma strong	help impacted disasters selma
-927	mayorkas repeatedly claimed border	border mexican drug cartels	president biden homeland security	border kill billion innocent	administration crisis seriously cbp
-928	football championship year gladiators	gladiators 10th state	riverheads running game strong	riverheads won notable seven	riverheads players coaches staff
-929	cash caring compassionate leader	recognition mother willa	willie knew ms cash	resident detroit community mother	mother michigan 12th congressional
-930	water shutoff moratorium ended	advocacy community water warriors	guarantee water human right	city detroit water shutoff	water punishing people poor
-931	iran streets demanding human	courageous protesters risking lives	rights women equality courageous	courageous iranians especially young	women protesting human rights
-932	judge harold murphy born	judge murphy served consecutive	carter nominated judge murphy	1971 judge murphy appointed	georgia 1927 judge murphy
-933	madam speaker	helped walter roland ronald	father walter sr mother	achieve great success walter	brawley global powerhouse walter
-934	border policy president biden	drug crisis smuggling dangerous	million illegal immigrants apprehended	york democrats criminals	border arrested long island
-935	provide expanded mental health	safer communities act	advocating build bipartisan safer	gun violence homelessness	california result pandemic americans
-936	flooded farmworkers lost homes	federal california water	impacts farmers working governor	efforts divert flood	water california weather forecasters
-937	enjoy dairy producers working	nation dairy producers key	dairy producing state union	speaker california number agriculture	funding help california dairy
-938	careers young women chief	leadership courageous service fresno	donis madam speaker want	congratulating chief kerri donis	safety firefighters community madam
-939	lands waters drilling	wonder republicans pushing legislation	effectively big oil	public lands waters comes	gas prices house republicans
-940	tragedy tragedy safer america	mass shootings country 40	new jersey mass shooting	mass shootings month 2023	soul seen mass shootings
-941	shooter holidays unless act	holiday fear getting shot	university memorialize anniversary shooting	gun homicides united states	woken news mass shooting
+926	alabama ef tornado tore	southeast ravaging communities alabama	disasters selma strong	help impacted disasters selma	congressional district alabama affected
+927	border mexican drug cartels	border recorded 251 000	administration crisis seriously cbp	president biden homeland security	secure borders glad week
+928	record congratulations riverheads	football championship year gladiators	riverheads running game strong	gladiators 10th state	riverheads players coaches staff
+929	cash love compassion family	lives worked state michigan	willie knew ms cash	mother willa cash contribution	mother michigan 12th congressional
+930	city detroit water	jeopardy shutoffs americans water	water shutoff moratorium ended	guarantee water human right	organizing advocacy community water
+931	rights women equality courageous	courageous protesters risking lives	iran streets demanding human	women protesting human rights	courageous iranians especially young
+932	judge murphy served consecutive	1971 judge murphy appointed	judge harold murphy born	carter nominated judge murphy	georgia 1927 judge murphy
+933	walter skill young tennis	father walter sr mother	instilling walter brothers values	helped walter roland ronald	brawley global powerhouse walter
+934	narcotics fentanyl joe biden	york democrats criminals ahead	biden securing border preventing	million illegal immigrants apprehended	border arrested long island
+935	safer communities act	provide expanded mental health	advocating build bipartisan safer	gun violence homelessness	california result pandemic americans
+936	funding begin fix infrastructure	funding dairy producers	impacts farmers working governor	california half community flooded	water california weather forecasters
+937	dairy producers key	aid support dairy producers	dairy producing state union	speaker california number agriculture	california dairy farmers continue
+938	department kerri woman hold	firefighters women leadership	courageous service fresno department	join congratulating chief kerri	women chief donis remembered
+939	handing public lands waters	effectively big oil	wonder republicans pushing legislation	gas prices house republicans	president releases oils reserve
+940	tragedy safer america possible	mass shootings country 40	new jersey mass shooting	mass shootings month 2023	soul seen mass shootings
+941	holiday fear getting shot	shooter holidays unless act	woken news mass shooting	university memorialize anniversary shooting	gun homicides united states
 942	make america course bipartisan	decades bipartisan chips	unity bipartisan action congress	bipartisan safer communities act	safety action decades bipartisan
 943	nevada stellar performances dazzled	dance team crew represented	nevada continue cheer	today congratulate unlv rebel	rebel girls company success
-944	federal deficit	words cut social security	medicare programs entitlements listening	benefits stake reagan	madam speaker ronald reagan
+944	federal deficit soar	social security veterans	mr speaker ronald reagan	medicare programs entitlements listening	reagan say congress congress
 945	clear consequences azerbaijan plunging	armenians citizens citizens	azerbaijan provide critical humanitarian	government azerbaijan forcibly cut	cleansing armenian population artsakh
 946	negotiate reducing social security	threatening country default debt	markets dillydallying debt	limit republicans say	republicans say want negotiate
 947	individuals claiming asylum don	stand secure border stop	requests people criminals	migration talk number million	southern border seen million
