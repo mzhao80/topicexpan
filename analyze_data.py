@@ -50,9 +50,9 @@ def create_readable_triples():
             f.write(f"Phrase: {doc2phrases[doc][int(phrase)]}\n")
 
 if __name__ == "__main__":
-    print("Creating text length histogram...")
-    create_length_histogram()
-    print("Histogram saved as text_length_distribution.png")
+    # print("Creating text length histogram...")
+    # create_length_histogram()
+    # print("Histogram saved as text_length_distribution.png")
     
     print("\nCreating readable topic triples...")
     create_readable_triples()

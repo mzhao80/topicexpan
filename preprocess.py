@@ -53,10 +53,7 @@ def extract_phrases(text, keybert_model):
         
     Returns:
         list of extracted phrases
-    """
-    # Clean the text first
-    text = clean_text(text)
-    
+    """   
     # Use KeyBERT to extract keyphrases
     keyphrases = keybert_model.extract_keywords(
         text,
@@ -135,8 +132,9 @@ def create_topic_hierarchy():
 
     # Create hierarchy using indices
     hierarchy = {
-        '0': {'parent': 'root', 'children': [str(i) for i in range(1, len(policy_areas))], 'terms': []}  # Skip politics
+        '0': {'parent': 'root', 'children': [str(i) for i in range(1, len(policy_areas)+1)], 'terms': []}  # Skip politics
     }
+    print(hierarchy)
     
     return hierarchy, policy_areas
 
@@ -192,6 +190,8 @@ def main():
     valid_speeches = df[
         df['speech'].str.split().str.len() >= args.min_words
     ]
+    # apply clean_text to valid_speeeches
+    valid_speeches['speech'] = valid_speeches['speech'].apply(clean_text)
 
     # only take the first 1000
     valid_speeches = valid_speeches.head(1000)
