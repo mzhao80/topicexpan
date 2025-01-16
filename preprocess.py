@@ -381,11 +381,9 @@ def main():
             for ph_idx, sim in phrase_sims:
                 if sim > 0.4:  # Adjust this threshold as needed
                     top_phrases.append((ph_idx, sim))
-            # get top phrase
-            top_phrase = max(top_phrases, key = lambda x: x[1])
-                
-            # Write the document-topic-phrase triples for the qualifying phrases
-            if top_phrase:
+            # get top phrase by second index
+            if top_phrases:
+                top_phrase = max(top_phrases, key = lambda x: x[1])            
                 f.write(f"{doc_idx}\t{best_topic_idx+1}\t{top_phrase[0]}\n")
     
     # Plot similarity distributions
