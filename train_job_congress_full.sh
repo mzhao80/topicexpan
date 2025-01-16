@@ -13,20 +13,4 @@ cd ~/Downloads/topicexpan
 source myenv/bin/activate
 module load cuda/11.8.0-fasrc01
 
-python preprocess_full.py
-python generate_dataset_binary.py --data_dir congress_full
-
-mkdir -p congress_full-save/models congress_full-save/log
-
-# Find the most recent checkpoint
-CHECKPOINT_DIR="congress_full-save/models"
-LATEST_CHECKPOINT=$(ls -t $CHECKPOINT_DIR/checkpoint-epoch*.pth | head -n 1)
-
-# Check if a checkpoint was found
-if [ -z "$LATEST_CHECKPOINT" ]; then
-    echo "No checkpoint found. Starting training from scratch."
-    python train.py --config config_files/config_congress_full.json
-else
-    echo "Resuming from checkpoint: $LATEST_CHECKPOINT"
-    python train.py --config config_files/config_congress_full.json --resume "$LATEST_CHECKPOINT"
-fi
+python preprocess.py
