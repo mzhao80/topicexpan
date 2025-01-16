@@ -13,15 +13,22 @@ cd ~/Downloads/topicexpan
 source myenv/bin/activate
 module load cuda/11.8.0-fasrc01
 
-mkdir congress-save
-mkdir congress-save/models
-mkdir congress-save/log
+mkdir -p congress-save/models congress-save/log logs
+
+exec 1> >(tee logs/train_${SLURM_JOB_ID}.out)
+exec 2> >(tee logs/train_${SLURM_JOB_ID}.err)
+
+# if nvidia-smi --query-gpu=name --format=csv,noheader | wc -l < 2 then exit
+if [ $(nvidia-smi --query-gpu=name --format=csv,noheader | wc -l) -lt 2 ]; then
+    echo "Only 1 GPU available. Exiting."
+    exit 1
+fi
+
+python update_gpu_config.py
 
 # Find the most recent checkpoint
 CHECKPOINT_DIR="congress-save/models"
-LATEST_CHECKPOINT=$(ls -t $CHECKPOINT_DIR/checkpoint-epoch*.pth | head -n 1)
-
-python update_gpu_config.py
+LATEST_CHECKPOINT=$(ls -t $CHECKPOINT_DIR/checkpoint-epoch*.pth 2>/dev/null | head -n 1)
 
 # Check if a checkpoint was found
 if [ -z "$LATEST_CHECKPOINT" ]; then
