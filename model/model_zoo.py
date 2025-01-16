@@ -43,10 +43,18 @@ class GCNTopicEncoder(BaseModel):
         self.num_layers = topic_num_layers
         self.activation = F.leaky_relu
         
-        self.topic_node_feats = torch.Tensor(topic_node_feats)
-        self.topic_mask_feats = torch.Tensor(topic_mask_feats)
+        # Convert to tensors and move to GPU if available
+        device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+        self.topic_node_feats = torch.tensor(topic_node_feats, device=device)
+        self.topic_mask_feats = torch.tensor(topic_mask_feats, device=device)
         self.topic_hier, self.num_topics = topic_hier, num_topics
+        
+        # Generate and move adjacency matrices to GPU
         self.downward_adjmat, self.upward_adjmat, self.sideward_adjmat = self._generate_adjmat(topic_hier, num_topics)
+        self.downward_adjmat = self.downward_adjmat.to(device)
+        self.upward_adjmat = self.upward_adjmat.to(device)
+        self.sideward_adjmat = self.sideward_adjmat.to(device)
+
         self.downward_layers, self.upward_layers, self.sideward_layers = nn.ModuleList(), nn.ModuleList(), nn.ModuleList()
 
         for layers in [self.downward_layers, self.upward_layers, self.sideward_layers]:
@@ -54,6 +62,9 @@ class GCNTopicEncoder(BaseModel):
             for l in range(self.num_layers - 2):
                 layers.append(GraphConv(hidden_dim, hidden_dim, norm='right', allow_zero_in_degree=True))
             layers.append(GraphConv(hidden_dim, out_dim, norm='right', allow_zero_in_degree=True))
+        
+        # Move model to GPU
+        self.to(device)
 
     def _generate_adjmat(self, topic_hier, num_topics, virtual_src=None, virtual_dst=None):
         vsrc, vdst, hsrc, hdst = [], [], [], []
@@ -106,13 +117,13 @@ class GCNTopicEncoder(BaseModel):
         return self
 
     def forward(self, downward_adjmat, upward_adjmat, sideward_adjmat, features):
-        # Verify input devices
-        print(f"\nForward pass devices:")
-        print(f"- features: {features.device}")
-        print(f"- downward_adjmat: {downward_adjmat.device}")
-        for i, layer in enumerate(self.downward_layers):
-            for name, param in layer.named_parameters():
-                print(f"- downward_layers[{i}].{name}: {param.device}")
+        device = next(self.parameters()).device  # Get device from model parameters
+        
+        # Ensure input tensors are on the same device as model
+        downward_adjmat = downward_adjmat.to(device)
+        upward_adjmat = upward_adjmat.to(device)
+        sideward_adjmat = sideward_adjmat.to(device)
+        features = features.to(device)
         
         h = features
         
@@ -131,17 +142,23 @@ class GCNTopicEncoder(BaseModel):
         return h
 
     def encode(self, use_mask=True):
-        # Get device from topic_node_feats
-        device = self.topic_node_feats.device
+        device = next(self.parameters()).device  # Get device from model parameters
         
-        topic_node_feats = self.topic_node_feats
-        topic_mask_feats = self.topic_mask_feats.repeat(topic_node_feats.shape[0], 1)
-
+        # Ensure input tensors are on the same device as model
+        topic_node_feats = self.topic_node_feats.to(device)
+        topic_mask_feats = self.topic_mask_feats.to(device)
+        
+        # Create mask on same device
         if use_mask:
             topic_mask = torch.rand(topic_node_feats.shape[0], 1, device=device) < 0.15
             topic_node_feats = topic_mask * topic_mask_feats + (~topic_mask) * topic_node_feats
 
-        h = self.forward(self.downward_adjmat, self.upward_adjmat, self.sideward_adjmat, topic_node_feats)
+        # Ensure adjacency matrices are on same device
+        downward_adjmat = self.downward_adjmat.to(device)
+        upward_adjmat = self.upward_adjmat.to(device)
+        sideward_adjmat = self.sideward_adjmat.to(device)
+        
+        h = self.forward(downward_adjmat, upward_adjmat, sideward_adjmat, topic_node_feats)
         return h
 
     def inductive_encode(self):
