@@ -82,11 +82,19 @@ class GCNTopicEncoder(BaseModel):
         return downward_adjmat, upward_adjmat, sideward_adjmat
 
     def to_device(self, device):
+        """Move all model components to the specified device"""
         self.topic_node_feats = self.topic_node_feats.to(device)
         self.topic_mask_feats = self.topic_mask_feats.to(device)
         self.downward_adjmat = self.downward_adjmat.to(device)
         self.upward_adjmat = self.upward_adjmat.to(device)
         self.sideward_adjmat = self.sideward_adjmat.to(device)
+        
+        # Move GNN layers
+        self.downward_layers = [layer.to(device) for layer in self.downward_layers]
+        self.upward_layers = [layer.to(device) for layer in self.upward_layers]
+        self.sideward_layers = [layer.to(device) for layer in self.sideward_layers]
+        
+        return self
 
     def forward(self, downward_adjmat, upward_adjmat, sideward_adjmat, features):
         h = features
@@ -103,11 +111,14 @@ class GCNTopicEncoder(BaseModel):
         return h
 
     def encode(self, use_mask=True):
+        # Get device from topic_node_feats
+        device = self.topic_node_feats.device
+        
         topic_node_feats = self.topic_node_feats
         topic_mask_feats = self.topic_mask_feats.repeat(topic_node_feats.shape[0], 1)
 
         if use_mask:
-            topic_mask = torch.rand(topic_node_feats.shape[0], 1).to(topic_node_feats.device) < 0.15
+            topic_mask = torch.rand(topic_node_feats.shape[0], 1, device=device) < 0.15
             topic_node_feats = topic_mask * topic_mask_feats + (~topic_mask) * topic_node_feats
 
         h = self.forward(self.downward_adjmat, self.upward_adjmat, self.sideward_adjmat, topic_node_feats)

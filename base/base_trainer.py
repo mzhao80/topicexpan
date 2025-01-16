@@ -15,7 +15,7 @@ class BaseTrainer:
 
         # setup GPU device if available
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.model = model.to(self.device)
+        self.model = model.to(self.device)  
         if torch.cuda.device_count() > 1:
             self.logger.info(f"Using {torch.cuda.device_count()} GPUs")
             self.model = torch.nn.DataParallel(self.model)
