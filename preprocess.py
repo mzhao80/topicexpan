@@ -135,17 +135,8 @@ def create_topic_hierarchy():
 
     # Create hierarchy using indices
     hierarchy = {
-        'root': {'children': ['0'], 'terms': []},  # 0 is politics
         '0': {'parent': 'root', 'children': [str(i) for i in range(1, len(policy_areas))], 'terms': []}  # Skip politics
     }
-    
-    # Add each policy area to hierarchy using indices
-    for i in range(1, len(policy_areas)):  # Skip politics
-        hierarchy[str(i)] = {
-            'parent': '0',  # Parent is politics (index 0)
-            'children': [],
-            'terms': []
-        }
     
     return hierarchy, policy_areas
 
@@ -261,11 +252,6 @@ def main():
         # Write politics -> policy areas relationships
         for area in hierarchy['0']['children']:
             f.write(f"0\t{area}\n")
-        # Write policy areas -> subtopics relationships
-        for area, info in hierarchy.items():
-            if area != '0':  # Skip the root node
-                for subtopic in info['children']:
-                    f.write(f"{area}\t{subtopic}\n")
     
     # Create topic features using BERT
     print("Creating topic features...")
@@ -348,7 +334,8 @@ def main():
             # Write the document-topic-phrase triples for the top 3 phrases
             for ph_idx, sim in top_phrases:
                 if sim > 0:
-                    f.write(f"{doc_idx}\t{best_topic_idx}\t{ph_idx}\n")
+                    # +1 because topics are 1-indexed excluding the root, politics
+                    f.write(f"{doc_idx}\t{best_topic_idx+1}\t{ph_idx}\n")
     
     print(f"Preprocessing complete! Files have been created in the {args.data_dir}/ directory.")
 
