@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "/n/home09/michaelzhao/Downloads/topicexpan/preprocess_full.py", line 395, in <module>
+    main()
+  File "/n/home09/michaelzhao/Downloads/topicexpan/preprocess_full.py", line 242, in main
+    with open('config_files/config_congress_full.json', 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'config_files/config_congress_full.json'
+Traceback (most recent call last):
+  File "/n/home09/michaelzhao/Downloads/topicexpan/generate_dataset_binary.py", line 29, in <module>
+    main(args)
+  File "/n/home09/michaelzhao/Downloads/topicexpan/generate_dataset_binary.py", line 5, in main
+    binary_dataset = DatasetBase(directory=args.data_dir, raw=True, \
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/home09/michaelzhao/Downloads/topicexpan/data_loader/dataset.py", line 35, in __init__
+    self._load_dataset_raw(directory, **args)
+  File "/n/home09/michaelzhao/Downloads/topicexpan/data_loader/dataset.py", line 60, in _load_dataset_raw
+    with open(corpus_path, "r") as fin:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'congress_full/corpus.txt'
+ls: cannot access 'congress_full-save/models/checkpoint-epoch*.pth': No such file or directory
+Traceback (most recent call last):
+  File "/n/home09/michaelzhao/Downloads/topicexpan/train.py", line 85, in <module>
+    config = ConfigParser.from_args(args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/home09/michaelzhao/Downloads/topicexpan/parse_config.py", line 78, in from_args
+    config = read_json(cfg_fname)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/n/home09/michaelzhao/Downloads/topicexpan/utils/util.py", line 9, in read_json
+    with fname.open('rt') as handle:
+         ^^^^^^^^^^^^^^^^
+  File "/n/sw/Miniforge3-24.7.1-0/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'config_files/config_congress_full.json'
