@@ -247,7 +247,7 @@ class Trainer(BaseTrainer):
             f.close()
         
     def _cluster_phrases(self, vid2phrases, num_clusters):
-        glove_embeds = KeyedVectors.load_word2vec_format(os.path.join(self.config['embed_dir'], 'glove.6B.300d.word2vec.txt'), binary=False)
+        glove_embeds = KeyedVectors.load_word2vec_format(os.path.join(self.config['embed_dir'], 'glove.6B.300d.txt'), binary=False, no_header=True)
         
         vid2tnames = {vid: [] for vid in vid2phrases}
         vid2tinfos = {vid: [] for vid in vid2phrases}
