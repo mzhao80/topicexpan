@@ -11,7 +11,8 @@ def create_length_histogram():
     
     # Create histogram
     plt.figure(figsize=(12, 6))
-    sns.histplot(data=text_lengths, bins=50)
+    # have buckets of size 10, until 200
+    sns.histplot(data=text_lengths, bins=range(0, 200, 10))
     plt.title('Distribution of Text Lengths in Congressional Records')
     plt.xlabel('Text Length (characters)')
     plt.ylabel('Count')
