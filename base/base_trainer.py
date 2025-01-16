@@ -15,10 +15,17 @@ class BaseTrainer:
 
         # setup GPU device if available
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.model = model.to(self.device)  
+        
+        # Move model to device and wrap with DataParallel if multiple GPUs
+        self.model = model.to(self.device)
         if torch.cuda.device_count() > 1:
             self.logger.info(f"Using {torch.cuda.device_count()} GPUs")
             self.model = torch.nn.DataParallel(self.model)
+            
+        # Verify model device
+        for param in self.model.parameters():
+            if param.device != self.device:
+                self.logger.warning(f"Found parameter on {param.device}, expected {self.device}")
 
         self.criterions = criterions
         self.metric_ftns = metric_ftns

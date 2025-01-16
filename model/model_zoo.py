@@ -89,10 +89,10 @@ class GCNTopicEncoder(BaseModel):
         self.upward_adjmat = self.upward_adjmat.to(device)
         self.sideward_adjmat = self.sideward_adjmat.to(device)
         
-        # Move GNN layers
-        self.downward_layers = [layer.to(device) for layer in self.downward_layers]
-        self.upward_layers = [layer.to(device) for layer in self.upward_layers]
-        self.sideward_layers = [layer.to(device) for layer in self.sideward_layers]
+        # Move GNN layers using nn.Module's to() method
+        self.downward_layers = nn.ModuleList([layer.to(device) for layer in self.downward_layers])
+        self.upward_layers = nn.ModuleList([layer.to(device) for layer in self.upward_layers])
+        self.sideward_layers = nn.ModuleList([layer.to(device) for layer in self.sideward_layers])
         
         return self
 
