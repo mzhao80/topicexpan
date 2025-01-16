@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --partition=gpu      # Use the gpu_requeue partition
+#SBATCH --partition=gpu_test      # Use the gpu_requeue partition
 #SBATCH --gres=gpu:8                # Request 4 GPUs
 #SBATCH --cpus-per-task=8           # Request 8 CPUs
 #SBATCH --mem=20G                   # Request 20 GB of memory
