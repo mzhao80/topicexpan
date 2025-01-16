@@ -12,6 +12,7 @@ from nltk.corpus import stopwords
 import nltk
 import argparse
 import torch
+import matplotlib.pyplot as plt
 
 # Download stopwords if not already downloaded
 try:
@@ -25,6 +26,7 @@ def clean_text(text):
     text = re.sub(r'Mr\. Clerk', 'Mr. Speaker', text)
     text = re.sub(r'Mr\. Chair', 'Mr. Speaker', text)
     text = re.sub(r'Mr\. Chairman', 'Mr. Speaker', text)
+    text = re.sub(r'Mr\. Speakerman', 'Mr. Speaker', text)
     text = re.sub(r'Madam President', 'Mr. Speaker', text)
     text = re.sub(r'Madam Speaker', 'Mr. Speaker', text)
     text = re.sub(r'Madam Clerk', 'Mr. Speaker', text)
@@ -55,11 +57,11 @@ def extract_phrases(text, keybert_model):
     # Use KeyBERT to extract keyphrases
     keyphrases = keybert_model.extract_keywords(
         text,
-        keyphrase_ngram_range=(1, 4),
+        keyphrase_ngram_range=(1, 3),
         stop_words='english',
-        use_maxsum=True,
-        nr_candidates=20,
-        top_n=5
+        use_mmr=True,
+        nr_candidates=100,
+        top_n=20
     )
     
     # Extract just the phrases (without scores)
@@ -163,6 +165,28 @@ def save_vectors_word2vec_format(fname, vectors, vector_size):
             vector_str = ' '.join(map(str, vector))
             fout.write(f"{word} {vector_str}\n")
 
+def plot_similarity_distributions(topic_similarities, phrase_similarities, output_dir):
+    """Plot histograms of topic and phrase similarities"""
+    plt.figure(figsize=(12, 5))
+    
+    # Plot topic similarities
+    plt.subplot(1, 2, 1)
+    plt.hist(topic_similarities, bins=50, edgecolor='black')
+    plt.title('Distribution of Best Topic Similarities')
+    plt.xlabel('Similarity Score')
+    plt.ylabel('Count')
+    
+    # Plot phrase similarities
+    plt.subplot(1, 2, 2)
+    plt.hist(phrase_similarities, bins=50, edgecolor='black')
+    plt.title('Distribution of Phrase Similarities')
+    plt.xlabel('Similarity Score')
+    plt.ylabel('Count')
+    
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, 'similarity_distributions.png'))
+    plt.close()
+
 def main():
     # Parse command line arguments
     parser = argparse.ArgumentParser(description='Preprocess data for topic expansion')
@@ -190,9 +214,6 @@ def main():
     ]
     # apply clean_text to valid_speeeches
     valid_speeches['speech'] = valid_speeches['speech'].apply(clean_text)
-
-    # only take the first 1000
-    valid_speeches = valid_speeches.head(1000)
     
     with open(os.path.join(args.data_dir, 'corpus.txt'), 'w', encoding='utf-8') as f:
         for idx, text in tqdm(enumerate(valid_speeches['speech']), 
@@ -272,6 +293,10 @@ def main():
             phrases = parts[1:]
             doc2phrases_map[doc_id] = phrases
     
+    # Lists to store similarity scores
+    all_topic_sims = []
+    all_phrase_sims = []
+    
     with open(os.path.join(args.data_dir, 'topic_triples.txt'), 'w', encoding='utf-8') as f:
         for doc_idx, row in tqdm(valid_speeches.iterrows(), 
                                 total=len(valid_speeches),
@@ -292,15 +317,21 @@ def main():
                 topic_vec = topic_features[topic]
                 topic_norm = np.linalg.norm(topic_vec)
                 
-                if topic_norm == 0 or doc_norm == 0:
-                    sim = 0.0
-                else:
-                    sim = np.dot(doc_vec, topic_vec) / (doc_norm * topic_norm)
-                topic_sims.append((topic_idx, sim))
+                if topic_norm == 0:
+                    topic_sims.append(0)
+                    continue
+                    
+                sim = np.dot(doc_vec, topic_vec) / (doc_norm * topic_norm)
+                topic_sims.append(sim)
+                
+            best_topic_idx = np.argmax(topic_sims)
+            best_topic_sim = topic_sims[best_topic_idx]
             
-            # Get the most relevant topic
-            best_topic_idx, best_topic_sim = max(topic_sims, key=lambda x: x[1])
-            if best_topic_sim <= 0:
+            # Store best topic similarity
+            all_topic_sims.append(best_topic_sim)
+            
+            # Skip if the best topic similarity is too low
+            if best_topic_sim < 0.3:  # Adjust this threshold as needed
                 continue
                 
             # Now find the top 3 most relevant phrases for this topic
@@ -309,7 +340,7 @@ def main():
             
             # Compute similarity between each phrase and the best topic
             phrase_sims = []
-            for ph_idx, phrase in enumerate(phrases):
+            for phrase_idx, phrase in enumerate(phrases):
                 # Get phrase embedding
                 if phrase in embedding_cache:
                     phrase_vec = embedding_cache[phrase]
@@ -319,23 +350,39 @@ def main():
                 
                 # Compute cosine similarity
                 phrase_norm = np.linalg.norm(phrase_vec)
-                if phrase_norm == 0 or topic_norm == 0:
-                    phrase_sim = 0.0
-                else:
-                    phrase_sim = np.dot(phrase_vec, topic_vec) / (phrase_norm * topic_norm)
-                phrase_sims.append((ph_idx, phrase_sim))
+                if phrase_norm == 0:
+                    phrase_sims.append((phrase_idx, 0))
+                    continue
+                    
+                sim = np.dot(phrase_vec, topic_vec) / (phrase_norm * topic_norm)
+                phrase_sims.append((phrase_idx, sim))
+                all_phrase_sims.append(sim)  # Store phrase similarity
             
-            # Sort phrases by similarity and get top 3
+            # Sort by similarity score
             phrase_sims.sort(key=lambda x: x[1], reverse=True)
-            top_phrases = phrase_sims[:3]
             
-            # Write the document-topic-phrase triples for the top 3 phrases
+            # Get top 3 phrases that exceed similarity threshold
+            top_phrases = []
+            for ph_idx, sim in phrase_sims:
+                if sim > 0.2:  # Adjust this threshold as needed
+                    top_phrases.append((ph_idx, sim))
+                if len(top_phrases) >= 3:
+                    break
+            
+            # Skip if we couldn't find any good phrases
+            if not top_phrases:
+                continue
+                
+            # Write the document-topic-phrase triples for the qualifying phrases
             for ph_idx, sim in top_phrases:
-                if sim > 0:
-                    # +1 because topics are 1-indexed excluding the root, politics
-                    f.write(f"{doc_idx}\t{best_topic_idx+1}\t{ph_idx}\n")
+                # +1 because topics are 1-indexed excluding the root, politics
+                f.write(f"{doc_idx}\t{best_topic_idx+1}\t{ph_idx}\n")
+    
+    # Plot similarity distributions
+    plot_similarity_distributions(all_topic_sims, all_phrase_sims, args.data_dir)
     
     print(f"Preprocessing complete! Files have been created in the {args.data_dir}/ directory.")
+    print(f"Similarity distribution plots saved as similarity_distributions.png")
 
 if __name__ == "__main__":
     main()
