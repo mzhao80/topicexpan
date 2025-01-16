@@ -20,10 +20,6 @@ except LookupError:
     nltk.download('stopwords')
 
 def clean_text(text):
-    # Remove special characters and extra whitespace
-    text = re.sub(r'[^\w\s]', ' ', str(text))
-    text = re.sub(r'\s+', ' ', text).strip()
-
     # Replace Madam Speaker, Mr. President, Madam President with Mr. Speaker
     text = re.sub(r'Mr\. President', 'Mr. Speaker', text)
     text = re.sub(r'Mr\. Clerk', 'Mr. Speaker', text)
@@ -38,9 +34,9 @@ def clean_text(text):
 
     # strip out the following phrases from the beginning of each text and leave the remainder:
     # "Mr. Speaker, I yield myself the balance of my time. "
-    text = re.sub(r'^Mr\. Speaker I yield myself the balance of my time\. ', '', text)
+    text = re.sub(r'^Mr\. Speaker, I yield myself the balance of my time\. ', '', text)
     # "Mr. Speaker, " 
-    text = re.sub(r'^Mr\. Speaker ', '', text)
+    text = re.sub(r'^Mr\. Speaker, ', '', text)
 
     return text
 
