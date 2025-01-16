@@ -1,0 +1,112 @@
+slurmstepd: error: *** JOB 66611620 ON holygpu7c1311 CANCELLED AT 2025-01-16T10:32:10 DUE TO PREEMPTION ***
+slurmstepd: error: *** JOB 66611620 ON holygpu7c1311 CANCELLED AT 2025-01-16T10:43:40 DUE TO PREEMPTION ***
+Loading documents: 0it [00:00, ?it/s]Loading documents: 2018it [00:00, 19925.90it/s]Loading documents: 4326it [00:00, 21492.71it/s]Loading documents: 6740it [00:00, 22688.48it/s]Loading documents: 9319it [00:00, 23904.03it/s]Loading documents: 11943it [00:00, 24740.12it/s]Loading documents: 14500it [00:00, 25020.99it/s]Loading documents: 17361it [00:00, 25958.36it/s]Loading documents: 20224it [00:00, 26798.22it/s]Loading documents: 21683it [00:00, 25079.86it/s]
+Loading topics: 0it [00:00, ?it/s]Loading topics: 34it [00:00, 58325.70it/s]
+Loading phrases: 0it [00:00, ?it/s]Loading phrases: 20128it [00:00, 82971.53it/s]Loading phrases: 21683it [00:00, 87599.83it/s]
+Loading topic hierarchy: 0it [00:00, ?it/s]Loading topic hierarchy: 33it [00:00, 209081.62it/s]
+Loading positive triples: 0it [00:00, ?it/s]Loading positive triples: 19119it [00:00, 994110.26it/s]
+ls: cannot access 'congress-save/models/checkpoint-epoch*.pth': No such file or directory
+  0%|          | 0/21683 [00:00<?, ?it/s]100%|██████████| 21683/21683 [00:00<00:00, 2328701.12it/s]
+/n/home09/michaelzhao/Downloads/topicexpan/myenv/lib/python3.12/site-packages/torch/nn/functional.py:5193: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+/n/home09/michaelzhao/Downloads/topicexpan/trainer/optimization.py:155: UserWarning: This overload of add_ is deprecated:
+	add_(Number alpha, Tensor other)
+Consider using one of the following signatures instead:
+	add_(Tensor other, *, Number alpha = 1) (Triggered internally at ../torch/csrc/utils/python_arg_parser.cpp:1581.)
+  exp_avg.mul_(beta1).add_(1.0 - beta1, grad)
+/n/home09/michaelzhao/Downloads/topicexpan/utils/util.py:30: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  self._data.total[key] += value * n
+/n/home09/michaelzhao/Downloads/topicexpan/utils/util.py:31: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  self._data.counts[key] += n
+/n/home09/michaelzhao/Downloads/topicexpan/utils/util.py:32: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  self._data.average[key] = self._data.total[key] / self._data.counts[key]
+slurmstepd: error: *** JOB 66611620 ON holygpu7c1311 CANCELLED AT 2025-01-16T11:29:32 DUE TO PREEMPTION ***
+Loading documents: 0it [00:00, ?it/s]Loading documents: 21475it [00:00, 214725.63it/s]Loading documents: 21683it [00:00, 214418.30it/s]
+Loading topics: 0it [00:00, ?it/s]Loading topics: 34it [00:00, 127554.86it/s]
+Loading phrases: 0it [00:00, ?it/s]Loading phrases: 20128it [00:00, 127459.34it/s]Loading phrases: 21683it [00:00, 133285.30it/s]
+Loading topic hierarchy: 0it [00:00, ?it/s]Loading topic hierarchy: 33it [00:00, 497885.01it/s]
+Loading positive triples: 0it [00:00, ?it/s]Loading positive triples: 19119it [00:00, 1024685.96it/s]
+ls: cannot access 'congress-save/models/checkpoint-epoch*.pth': No such file or directory
+slurmstepd: error: *** JOB 66611620 ON holygpu7c1311 CANCELLED AT 2025-01-16T11:37:41 DUE TO PREEMPTION ***
+Loading documents: 0it [00:00, ?it/s]Loading documents: 21683it [00:00, 220322.33it/s]
+Loading topics: 0it [00:00, ?it/s]Loading topics: 34it [00:00, 129289.52it/s]
+Loading phrases: 0it [00:00, ?it/s]Loading phrases: 20128it [00:00, 127585.71it/s]Loading phrases: 21683it [00:00, 133426.09it/s]
+Loading topic hierarchy: 0it [00:00, ?it/s]Loading topic hierarchy: 33it [00:00, 524288.00it/s]
+Loading positive triples: 0it [00:00, ?it/s]Loading positive triples: 19119it [00:00, 1050072.65it/s]
+ls: cannot access 'congress-save/models/checkpoint-epoch*.pth': No such file or directory
+  0%|          | 0/21683 [00:00<?, ?it/s]100%|██████████| 21683/21683 [00:00<00:00, 2277841.35it/s]
+slurmstepd: error: *** JOB 66611620 ON holygpu7c1311 CANCELLED AT 2025-01-16T11:43:17 DUE TO PREEMPTION ***
+Loading documents: 0it [00:00, ?it/s]Loading documents: 21683it [00:00, 225055.35it/s]
+Loading topics: 0it [00:00, ?it/s]Loading topics: 34it [00:00, 135043.88it/s]
+Loading phrases: 0it [00:00, ?it/s]Loading phrases: 20128it [00:00, 127993.46it/s]Loading phrases: 21683it [00:00, 133815.20it/s]
+Loading topic hierarchy: 0it [00:00, ?it/s]Loading topic hierarchy: 33it [00:00, 499682.43it/s]
+Loading positive triples: 0it [00:00, ?it/s]Loading positive triples: 19119it [00:00, 922497.91it/s]
+ls: cannot access 'congress-save/models/checkpoint-epoch*.pth': No such file or directory
+  0%|          | 0/21683 [00:00<?, ?it/s]100%|██████████| 21683/21683 [00:00<00:00, 2295086.40it/s]
+/n/home09/michaelzhao/Downloads/topicexpan/myenv/lib/python3.12/site-packages/torch/nn/functional.py:5193: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+/n/home09/michaelzhao/Downloads/topicexpan/trainer/optimization.py:155: UserWarning: This overload of add_ is deprecated:
+	add_(Number alpha, Tensor other)
+Consider using one of the following signatures instead:
+	add_(Tensor other, *, Number alpha = 1) (Triggered internally at ../torch/csrc/utils/python_arg_parser.cpp:1581.)
+  exp_avg.mul_(beta1).add_(1.0 - beta1, grad)
+/n/home09/michaelzhao/Downloads/topicexpan/utils/util.py:30: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  self._data.total[key] += value * n
+/n/home09/michaelzhao/Downloads/topicexpan/utils/util.py:31: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  self._data.counts[key] += n
+/n/home09/michaelzhao/Downloads/topicexpan/utils/util.py:32: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  self._data.average[key] = self._data.total[key] / self._data.counts[key]
