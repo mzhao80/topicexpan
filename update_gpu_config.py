@@ -7,11 +7,9 @@ def update_gpu_config(config_path):
     num_gpus = torch.cuda.device_count()
     
     # Get list of available GPU devices
-    gpu_devices = []
     for i in range(num_gpus):
         gpu_info = torch.cuda.get_device_properties(i)
         print(f"Found GPU {i}: {gpu_info.name} with {gpu_info.total_memory / 1024**3:.1f}GB memory")
-        gpu_devices.append(i)
     
     print(f"\nTotal GPUs available: {num_gpus}")
     
@@ -19,9 +17,11 @@ def update_gpu_config(config_path):
     with open(config_path, 'r') as f:
         config = json.load(f)
     
-    # Update GPU configuration
-    config['n_gpu'] = num_gpus
-    config['device'] = gpu_devices if gpu_devices else [-1]  # Use [-1] for CPU
+    # Update GPU configuration - remove device since we'll use all GPUs
+    if 'device' in config:
+        del config['device']
+    if 'n_gpu' in config:
+        del config['n_gpu']
     
     # Backup original config
     backup_path = config_path + '.backup'
@@ -34,9 +34,7 @@ def update_gpu_config(config_path):
     with open(config_path, 'w') as f:
         json.dump(config, f, indent=4)
     
-    print(f"\nUpdated {config_path} with:")
-    print(f"n_gpu: {config['n_gpu']}")
-    print(f"device: {config['device']}")
+    print(f"\nUpdated {config_path} - removed GPU configuration to use all available GPUs")
 
 if __name__ == "__main__":
     config_path = os.path.join('config_files', 'config_congress.json')

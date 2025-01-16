@@ -13,11 +13,12 @@ class BaseTrainer:
         self.config = config
         self.logger = config.get_logger('trainer', config['trainer']['verbosity'])
 
-        # setup GPU device if available, move model into configured device
-        self.device, device_ids = self._prepare_device(config['n_gpu'], config['device'])
-        self.model = model.to_device(self.device)
-        if len(device_ids) > 1:
-            self.model = torch.nn.DataParallel(model, device_ids=device_ids)
+        # setup GPU device if available
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.model = model.to(self.device)
+        if torch.cuda.device_count() > 1:
+            self.logger.info(f"Using {torch.cuda.device_count()} GPUs")
+            self.model = torch.nn.DataParallel(self.model)
 
         self.criterions = criterions
         self.metric_ftns = metric_ftns
@@ -108,23 +109,6 @@ class BaseTrainer:
         Inferece logic
         """
         raise NotImplementedError
-
-    def _prepare_device(self, n_gpu_use, device):
-        """
-        setup GPU device if available, move model into configured device
-        """
-        n_gpu = torch.cuda.device_count()
-        if n_gpu_use > 0 and n_gpu == 0:
-            self.logger.warning("Warning: There\'s no GPU available on this machine,"
-                                "training will be performed on CPU.")
-            n_gpu_use = 0
-        if n_gpu_use > n_gpu:
-            self.logger.warning("Warning: The number of GPU\'s configured to use is {}, but only {} are available "
-                                "on this machine.".format(n_gpu_use, n_gpu))
-            n_gpu_use = n_gpu
-        device = torch.device('cuda:' + str(device) if n_gpu_use > 0 else 'cpu')
-        list_ids = list(range(n_gpu_use))
-        return device, list_ids
 
     def _save_checkpoint(self, epoch, save_best=False):
         """
