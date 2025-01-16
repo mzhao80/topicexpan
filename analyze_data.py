@@ -7,7 +7,7 @@ def create_length_histogram():
     df = pd.read_csv('congress/crec2023.csv')
     
     # Calculate lengths
-    text_lengths = df['text'].str.len()
+    text_lengths = df['speech'].str.len()
     
     # Create histogram
     plt.figure(figsize=(12, 6))
@@ -27,6 +27,14 @@ def create_readable_triples():
         for line in f:
             idx, name = line.strip().split('\t')
             topics[int(idx)] = name
+
+    # Read doc2phrases
+    doc2phrases = {}
+    with open('congress/doc2phrases.txt', 'r') as f:
+        for line in f:
+            content = line.strip().split('\t')
+            doc = content[0]
+            doc2phrases[doc] = content[1:]
     
     # Read triples and convert to readable format
     with open('congress/topic_triples.txt', 'r') as f:
@@ -35,13 +43,10 @@ def create_readable_triples():
     # Write readable triples
     with open('congress/topic_triples_readable.txt', 'w') as f:
         for triple in triples:
-            if len(triple) == 3:
-                topic1, topic2, count = triple
-                try:
-                    readable_triple = f"{topics[int(topic1)]}\t{topics[int(topic2)]}\t{count}\n"
-                    f.write(readable_triple)
-                except (KeyError, ValueError) as e:
-                    print(f"Warning: Could not process triple {triple}: {e}")
+            doc, topic, phrase = triple
+            f.write(f"Document: {doc}\t")
+            f.write(f"Topic: {topics[int(topic)]}\t")
+            f.write(f"Phrase: {doc2phrases[doc][int(phrase)]}\n")
 
 if __name__ == "__main__":
     print("Creating text length histogram...")
