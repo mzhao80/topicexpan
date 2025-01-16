@@ -11,6 +11,7 @@ from keybert import KeyBERT
 from nltk.corpus import stopwords
 import nltk
 import argparse
+import torch
 
 # Download stopwords if not already downloaded
 try:
@@ -55,7 +56,8 @@ def extract_phrases(text, keybert_model):
 def get_bert_embedding(text, model):
     """Get BERT embedding for a piece of text"""
     # KeyBERT's model has a encode method that returns embeddings
-    embedding = model.model.encode([text])[0]
+    # The encode method automatically uses the same device as the model
+    embedding = model.model.encode([text], convert_to_numpy=True)[0]
     return embedding
 
 def create_topic_features(topics, model):
@@ -191,9 +193,12 @@ def main():
                             desc="Writing corpus"):
             f.write(f"{idx}\t{text}\n")
     
-    # Initialize KeyBERT
+    # Initialize KeyBERT with GPU support
     print("Initializing KeyBERT model...")
-    keybert_model = KeyBERT()
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    keybert_model = KeyBERT(model='all-MiniLM-L6-v2')  # Specify a smaller but efficient model
+    # Move model to GPU
+    keybert_model.model.to(device)
     
     # skip this next section if doc2phrases.txt already exists
     if os.path.exists(os.path.join(args.data_dir, 'doc2phrases.txt')):
