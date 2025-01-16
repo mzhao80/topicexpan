@@ -83,21 +83,38 @@ class GCNTopicEncoder(BaseModel):
 
     def to_device(self, device):
         """Move all model components to the specified device"""
+        super().to(device)  # Call parent's to() to handle nn.Module parameters
+        
+        # Move tensors
         self.topic_node_feats = self.topic_node_feats.to(device)
         self.topic_mask_feats = self.topic_mask_feats.to(device)
         self.downward_adjmat = self.downward_adjmat.to(device)
         self.upward_adjmat = self.upward_adjmat.to(device)
         self.sideward_adjmat = self.sideward_adjmat.to(device)
         
-        # Move GNN layers using nn.Module's to() method
-        self.downward_layers = nn.ModuleList([layer.to(device) for layer in self.downward_layers])
-        self.upward_layers = nn.ModuleList([layer.to(device) for layer in self.upward_layers])
-        self.sideward_layers = nn.ModuleList([layer.to(device) for layer in self.sideward_layers])
+        # Verify all components are on correct device
+        print(f"TopicEncoder devices:")
+        print(f"- topic_node_feats: {self.topic_node_feats.device}")
+        print(f"- topic_mask_feats: {self.topic_mask_feats.device}")
+        print(f"- downward_adjmat: {self.downward_adjmat.device}")
+        print(f"- upward_adjmat: {self.upward_adjmat.device}")
+        print(f"- sideward_adjmat: {self.sideward_adjmat.device}")
+        print(f"- downward_layers[0].weight: {self.downward_layers[0].weight.device}")
+        print(f"- upward_layers[0].weight: {self.upward_layers[0].weight.device}")
+        print(f"- sideward_layers[0].weight: {self.sideward_layers[0].weight.device}")
         
         return self
 
     def forward(self, downward_adjmat, upward_adjmat, sideward_adjmat, features):
+        # Verify input devices
+        print(f"\nForward pass devices:")
+        print(f"- features: {features.device}")
+        print(f"- downward_adjmat: {downward_adjmat.device}")
+        print(f"- downward_layers[0].weight: {self.downward_layers[0].weight.device}")
+        
         h = features
+        
+        # Apply GNN layers
         for layer_idx, (downward_layer, upward_layer, sideward_layer) \
                     in enumerate(zip(self.downward_layers, self.upward_layers, self.sideward_layers)):
 
