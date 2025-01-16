@@ -54,10 +54,10 @@
     "trainer": {
         "epochs": 30,
         "save_dir": "congress-save",
-        "save_period": 1,
+        "save_period": 5,
         "verbosity": 2,
         "monitor": "max val_accuracy",
-        "early_stop": 10,
+        "early_stop": 5,
         "tensorboard": true
     },
     "expansion": {
