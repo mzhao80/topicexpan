@@ -230,29 +230,7 @@ class TransformerPhraseDecoder(BaseModel):
         self.input_embeddings = input_embeddings
         self.output_embeddings = nn.Linear(self.hidden_size, self.vocab_size, bias=False)
 
-        # Enable flash attention if available
-        if use_flash_attention:
-            try:
-                from flash_attn.flash_attention import FlashMHA
-                attention_cls = lambda: FlashMHA(
-                    embed_dim=self.hidden_size,
-                    num_heads=num_heads,
-                    batch_first=True,
-                    causal=True
-                )
-            except ImportError:
-                print("Flash attention not available, falling back to regular attention")
-                attention_cls = None
-        else:
-            attention_cls = None
-
-        model_layer = TransformerDecoderLayer(
-            d_model=self.hidden_size, 
-            nhead=num_heads, 
-            batch_first=True,
-            norm_first=True,  # Better performance with pre-norm
-            attention_cls=attention_cls if attention_cls else None
-        )
+        model_layer = TransformerDecoderLayer(d_model=self.hidden_size, nhead=num_heads, batch_first=True)
         self.model = TransformerDecoder(model_layer, num_layers=num_layers)
 
         self.max_length = max_length
