@@ -58,3 +58,21 @@ Call stack:
     self.logger.debug('Train Epoch: {} {} Loss: {:.6f} [{:.6f} + {:.6f}]'.format(
 Message: 'Train Epoch: 4 [2960/7437 (40%)] Loss: 88.431091 [16.606346 + 71.824745]'
 Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/n/sw/Miniforge3-24.7.1-0/lib/python3.12/logging/__init__.py", line 1164, in emit
+    self.flush()
+  File "/n/sw/Miniforge3-24.7.1-0/lib/python3.12/logging/__init__.py", line 1144, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/n/home09/michaelzhao/Downloads/topicexpan/train.py", line 86, in <module>
+    main(config)
+  File "/n/home09/michaelzhao/Downloads/topicexpan/train.py", line 72, in main
+    trainer.train()
+  File "/n/home09/michaelzhao/Downloads/topicexpan/base/base_trainer.py", line 76, in train
+    result = self._train_epoch(epoch)
+  File "/n/home09/michaelzhao/Downloads/topicexpan/trainer/trainer.py", line 66, in _train_epoch
+    self.logger.debug('Train Epoch: {} {} Loss: {:.6f} [{:.6f} + {:.6f}]'.format(
+Message: 'Train Epoch: 4 [4440/7437 (60%)] Loss: 99.029129 [16.974552 + 82.054581]'
+Arguments: ()
