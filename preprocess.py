@@ -293,7 +293,7 @@ def main():
             fout.write(f"{topic_id} {vector_str}\n")
         # Write the unknown topic vector (all zeros) with index len(topic_vectors)
         unknown_vector = ' '.join(['0.0'] * vector_size)
-        fout.write(f"{len(topic_vectors)} {unknown_vector}\n")
+        fout.write(f"unknown {unknown_vector}\n")
     
     # Save topic_triples.txt using policy areas from the CSV
     print("Creating topic triples...")
