@@ -6,8 +6,8 @@ def create_length_histogram():
     # Read the CSV file
     df = pd.read_csv('congress/crec2023.csv')
     
-    # Calculate lengths
-    text_lengths = df['speech'].str.len()
+    # Calculate text length in words by splitting on spaces
+    text_lengths = df['speech'].str.split().str.len()
     
     # Create histogram
     plt.figure(figsize=(12, 6))
