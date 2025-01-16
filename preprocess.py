@@ -23,6 +23,25 @@ def clean_text(text):
     # Remove special characters and extra whitespace
     text = re.sub(r'[^\w\s]', ' ', str(text))
     text = re.sub(r'\s+', ' ', text).strip()
+
+    # Replace Madam Speaker, Mr. President, Madam President with Mr. Speaker
+    text = re.sub(r'Mr\. President', 'Mr. Speaker', text)
+    text = re.sub(r'Mr\. Clerk', 'Mr. Speaker', text)
+    text = re.sub(r'Mr\. Chair', 'Mr. Speaker', text)
+    text = re.sub(r'Mr\. Chairman', 'Mr. Speaker', text)
+    text = re.sub(r'Madam President', 'Mr. Speaker', text)
+    text = re.sub(r'Madam Speaker', 'Mr. Speaker', text)
+    text = re.sub(r'Madam Clerk', 'Mr. Speaker', text)
+    text = re.sub(r'Madam Chair', 'Mr. Speaker', text)
+    text = re.sub(r'Madam Chairman', 'Mr. Speaker', text)
+    text = re.sub(r'Madam Chairwoman', 'Mr. Speaker', text)
+
+    # strip out the following phrases from the beginning of each text and leave the remainder:
+    # "Mr. Speaker, I yield myself the balance of my time. "
+    text = re.sub(r'Mr\. Speaker, I yield myself the balance of my time\. ', '', text)
+    # "Mr. Speaker, " 
+    text = re.sub(r'Mr\. Speaker, ', '', text)
+
     return text
 
 def extract_phrases(text, keybert_model):
@@ -79,7 +98,6 @@ def create_topic_features(topics, model):
 
 def create_topic_hierarchy():
     policy_areas = [
-        "politics",
         "agriculture_and_food",
         "animals",
         "armed_forces_and_national_security",
@@ -114,7 +132,7 @@ def create_topic_hierarchy():
         "transportation_and_public_works",
         "water_resources_development",
     ]
-    
+
     # Create hierarchy using indices
     hierarchy = {
         'root': {'children': ['0'], 'terms': []},  # 0 is politics
@@ -231,8 +249,11 @@ def main():
     # Save topics.txt
     print("Saving topics.txt...")
     with open(os.path.join(args.data_dir, 'topics.txt'), 'w', encoding='utf-8') as f:
-        for idx, topic in enumerate(policy_areas):
-            f.write(f"{idx}\t{topic}\n")
+        # Write politics as topic 0
+        f.write(f"0\tpolitics\n")
+        # Write other policy areas
+        for i, area in enumerate(policy_areas):
+            f.write(f"{i+1}\t{area}\n")
     
     # Save topic_hier.txt
     print("Saving topic hierarchy...")
@@ -249,6 +270,10 @@ def main():
     # Create topic features using BERT
     print("Creating topic features...")
     topic_features = create_topic_features(policy_areas, model)
+    topic_vectors = {str(idx): vec for idx, vec in enumerate(topic_features.values())}
+    vector_size = len(next(iter(topic_vectors.values())))  # Get dimension from first vector
+    topic_vectors['unknown'] = np.zeros(vector_size)
+    save_vectors_word2vec_format(os.path.join(args.data_dir, 'topic_feats.txt'), topic_vectors, vector_size)
     
     # Save topic_triples.txt using policy areas from the CSV
     print("Creating topic triples...")
@@ -271,14 +296,36 @@ def main():
                 continue
                 
             phrases = doc2phrases_map[doc_idx]
-            if not phrases:
-                continue
             
-            # For each topic
+            # First find the most relevant topic for this document
+            doc_text = row['speech']
+            doc_vec = get_bert_embedding(doc_text, model)
+            doc_norm = np.linalg.norm(doc_vec)
+            
+            # Compute similarity with each topic
+            topic_sims = []
             for topic_idx, topic in enumerate(policy_areas):
                 topic_vec = topic_features[topic]
                 topic_norm = np.linalg.norm(topic_vec)
-                        
+                
+                if topic_norm == 0 or doc_norm == 0:
+                    sim = 0.0
+                else:
+                    sim = np.dot(doc_vec, topic_vec) / (doc_norm * topic_norm)
+                topic_sims.append((topic_idx, sim))
+            
+            # Get the most relevant topic
+            best_topic_idx, best_topic_sim = max(topic_sims, key=lambda x: x[1])
+            if best_topic_sim <= 0:
+                continue
+                
+            # Now find the top 3 most relevant phrases for this topic
+            topic_vec = topic_features[policy_areas[best_topic_idx]]
+            topic_norm = np.linalg.norm(topic_vec)
+            
+            # Compute similarity between each phrase and the best topic
+            phrase_sims = []
+            for ph_idx, phrase in enumerate(phrases):
                 # Get phrase embedding
                 if phrase in embedding_cache:
                     phrase_vec = embedding_cache[phrase]
@@ -293,20 +340,15 @@ def main():
                 else:
                     phrase_sim = np.dot(phrase_vec, topic_vec) / (phrase_norm * topic_norm)
                 phrase_sims.append((ph_idx, phrase_sim))
-                phrase_cache[phrase] = phrase_sim
-                
-                # Write the most relevant phrase for this topic
-                if phrase_sims:
-                    best_phrase_idx, score = max(phrase_sims, key=lambda x: x[1])
-                    if score > 0:
-                        f.write(f"{doc_idx}\t{topic_idx}\t{best_phrase_idx}\n")
-    
-    # Save topic_feats.txt in word2vec format
-    print("Saving topic features...")
-    topic_vectors = {str(idx): vec for idx, vec in enumerate(topic_features.values())}
-    vector_size = len(next(iter(topic_vectors.values())))  # Get dimension from first vector
-    topic_vectors['unknown'] = np.zeros(vector_size)
-    save_vectors_word2vec_format(os.path.join(args.data_dir, 'topic_feats.txt'), topic_vectors, vector_size)
+            
+            # Sort phrases by similarity and get top 3
+            phrase_sims.sort(key=lambda x: x[1], reverse=True)
+            top_phrases = phrase_sims[:3]
+            
+            # Write the document-topic-phrase triples for the top 3 phrases
+            for ph_idx, sim in top_phrases:
+                if sim > 0:
+                    f.write(f"{doc_idx}\t{best_topic_idx}\t{ph_idx}\n")
     
     print(f"Preprocessing complete! Files have been created in the {args.data_dir}/ directory.")
 
