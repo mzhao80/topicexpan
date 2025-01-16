@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import pandas as pd
 import numpy as np
-import spacy
 import os
 import re
 from collections import defaultdict
@@ -11,6 +10,7 @@ from tqdm import tqdm
 from keybert import KeyBERT
 from nltk.corpus import stopwords
 import nltk
+import argparse
 
 # Download stopwords if not already downloaded
 try:
@@ -24,89 +24,58 @@ def clean_text(text):
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
-def extract_phrases(doc, nlp, keybert_model=None):
-    """Extract meaningful phrases from text using both spaCy and KeyBERT
+def extract_phrases(text, keybert_model):
+    """Extract meaningful phrases from text using KeyBERT
     
     Args:
-        doc: spaCy Doc object
-        nlp: spaCy model
-        keybert_model: Optional KeyBERT model for semantic extraction
+        text: raw text string
+        keybert_model: KeyBERT model for extraction
         
     Returns:
         list of extracted phrases
     """
-    phrases = set()  # Use set to avoid duplicates
+    # Clean the text first
+    text = clean_text(text)
     
-    # 1. Extract noun phrases using spaCy
-    for chunk in doc.noun_chunks:
-        phrase = ' '.join([token.text.lower() for token in chunk 
-                         if not token.is_stop and not token.is_punct])
-        if phrase and 1 <= len(phrase.split()) <= 4:
-            phrases.add(phrase)
+    # Use KeyBERT to extract keyphrases
+    keyphrases = keybert_model.extract_keywords(
+        text,
+        keyphrase_ngram_range=(1, 4),
+        stop_words='english',
+        use_maxsum=True,
+        nr_candidates=20,
+        top_n=5
+    )
     
-    # 2. Extract named entities
-    for ent in doc.ents:
-        if ent.label_ in ['ORG', 'PERSON', 'GPE', 'LAW', 'NORP']:  # Organizations, People, Locations, Laws, Political groups
-            phrase = ent.text.lower()
-            if 1 <= len(phrase.split()) <= 4:
-                phrases.add(phrase)
+    # Extract just the phrases (without scores)
+    phrases = [phrase for phrase, score in keyphrases]
     
-    # 3. Extract verb phrases with their objects
-    for token in doc:
-        if token.pos_ == "VERB":
-            # Get the verb
-            verb = token.text.lower()
-            # Get object of verb if available
-            obj_tokens = []
-            for child in token.children:
-                if child.dep_ in ['dobj', 'pobj'] and not child.is_stop:
-                    obj_tokens.extend([t.text.lower() for t in child.subtree 
-                                    if not t.is_stop and not t.is_punct])
-            if obj_tokens:
-                phrase = f"{verb} {' '.join(obj_tokens)}"
-                if len(phrase.split()) <= 4:
-                    phrases.add(phrase)
-    
-    # 4. Extract policy-relevant adjective-noun pairs
-    for token in doc:
-        if token.pos_ == "NOUN" and not token.is_stop:
-            # Get adjectives describing this noun
-            adj_tokens = [child.text.lower() for child in token.children 
-                         if child.pos_ == "ADJ" and not child.is_stop]
-            if adj_tokens:
-                phrase = f"{' '.join(adj_tokens)} {token.text.lower()}"
-                if len(phrase.split()) <= 4:
-                    phrases.add(phrase)
-    
-    # 5. Use KeyBERT for semantic key phrases if available
-    if keybert_model is not None:
-        text = doc.text
-        keywords = keybert_model.extract_keywords(text, 
-                                                keyphrase_ngram_range=(1, 4),
-                                                stop_words='english',
-                                                use_maxsum=True,
-                                                nr_candidates=10,
-                                                top_n=5)
-        for kw, score in keywords:
-            if score > 0.3:  # Only keep phrases with good similarity
-                phrases.add(kw.lower())
-    
-    return list(phrases)
+    return phrases
 
-def load_glove_vectors(glove_path):
-    """Load GloVe vectors from file"""
-    print("Loading GloVe vectors...")
-    word2vec = {}
-    with open(glove_path, 'r', encoding='utf-8') as f:
-        for line in tqdm(f, desc="Reading GloVe vectors"):
-            values = line.split()
-            word = values[0]
-            vector = np.asarray(values[1:], dtype='float32')
-            word2vec[word] = vector
-    return word2vec
+def get_bert_embedding(text, model):
+    """Get BERT embedding for a piece of text"""
+    # KeyBERT's model has a encode method that returns embeddings
+    embedding = model.model.encode([text])[0]
+    return embedding
+
+def create_topic_features(topics, model):
+    """Create feature vectors for topics using BERT embeddings
+    
+    For multi-word topics:
+    1. Replace hyphens/underscores with spaces
+    2. Get BERT embedding for the entire phrase
+    """
+    features = {}
+    
+    for topic in topics:
+        # Clean the topic name
+        cleaned_topic = topic.replace('_', ' ').replace('-', ' ')
+        # Get BERT embedding
+        features[topic] = get_bert_embedding(cleaned_topic, model)
+    
+    return features
 
 def create_topic_hierarchy():
-    # List of all policy areas
     policy_areas = [
         "politics",
         "agriculture_and_food",
@@ -160,65 +129,20 @@ def create_topic_hierarchy():
     
     return hierarchy, policy_areas
 
-def create_topic_features(topics, word2vec_model):
-    """Create feature vectors for topics using word embeddings
-    
-    For multi-word topics:
-    1. First try the exact phrase with hyphens/underscores replaced by spaces
-    2. If not found, try individual words and average their vectors, ignoring stopwords
-    3. If no words found, use zero vector
-    """
-    features = {}
-    vector_dim = len(next(iter(word2vec_model.values())))  # Get dimension from first vector
-    stop_words = set(stopwords.words('english'))
-    
-    for topic in topics:
-        # First try the whole phrase with hyphens/underscores replaced by spaces
-        cleaned_topic = re.sub(r'[_-]', ' ', topic).lower().strip()
-        if cleaned_topic in word2vec_model:
-            features[topic] = word2vec_model[cleaned_topic]
-            continue
-            
-        # If not found, split into words and try each word
-        words = cleaned_topic.split(" ")
-        # Filter out stopwords and get vectors
-        vectors = []
-        for word in words:
-            if word not in stop_words and word in word2vec_model:
-                vectors.append(word2vec_model[word])
-        
-        if vectors:
-            # Average the word vectors we found
-            features[topic] = np.mean(vectors, axis=0)
-        else:
-            # If no words found, use zero vector
-            print(f"Warning: No word vectors found for topic '{topic}', using zero vector")
-            features[topic] = np.zeros(vector_dim)
-    
-    return features
+stop_words = set(stopwords.words('english'))
 
-def compute_topic_similarity(doc_text, topic_vec, word2vec_model):
+def compute_topic_similarity(doc_text, topic_vec, model):
     """Compute similarity between a document and a topic"""
-    # Get document vectors for words that exist in the model
-    doc_vecs = []
-    for word in doc_text.split():
-        if word in word2vec_model:
-            doc_vecs.append(word2vec_model[word])
+    # Get document embedding
+    doc_vec = get_bert_embedding(doc_text, model)
     
-    if not doc_vecs:
-        return 0.0
-    
-    # Average document vectors
-    doc_vec = np.mean(doc_vecs, axis=0)
-    
-    # Check for zero vectors
+    # Compute cosine similarity
     doc_norm = np.linalg.norm(doc_vec)
     topic_norm = np.linalg.norm(topic_vec)
     
     if doc_norm == 0 or topic_norm == 0:
         return 0.0
-    
-    # Compute cosine similarity
+        
     similarity = np.dot(doc_vec, topic_vec) / (doc_norm * topic_norm)
     return max(0, similarity)  # Ensure non-negative
 
@@ -233,71 +157,67 @@ def save_vectors_word2vec_format(fname, vectors, vector_size):
             fout.write(f"{word} {vector_str}\n")
 
 def main():
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description='Preprocess data for topic expansion')
+    parser.add_argument('--data-dir', type=str, default='congress-full',
+                      help='Directory to store processed files (default: congress-full)')
+    parser.add_argument('--input-file', type=str, default='congress-full/crec2023.csv',
+                      help='Input CSV file path (default: congress-full/crec2023.csv)')
+    parser.add_argument('--min-words', type=int, default=50,
+                      help='Minimum number of words required in a speech (default: 50)')
+    args = parser.parse_args()
+    
     print("Loading and preprocessing data...")
     
     # Load the CSV file
-    df = pd.read_csv('congress/crec2023.csv')
+    df = pd.read_csv(args.input_file)
     
-    # Load config to get GloVe path
-    with open('config_files/config_congress.json', 'r') as f:
-        config = json.load(f)
-    glove_path = os.path.expanduser(os.path.join(config['embed_dir'], 'glove.6B.300d.txt'))
+    # Create output directory if it doesn't exist
+    os.makedirs(args.data_dir, exist_ok=True)
     
     # Create corpus.txt
     print("Creating corpus.txt...")
-    # Filter out clerk speeches and NaN values
-    valid_speeches = df[df['speech'].notna() & ~df['speech'].astype(str).str.startswith("The clerk")]
-    # Take only first 10000 speeches
-    valid_speeches = valid_speeches.head(10000)
+    # Filter out short speeches
+    valid_speeches = df[
+        df['speech'].str.split().str.len() >= args.min_words
+    ]
+
+    # only take the first 1000
+    valid_speeches = valid_speeches.head(1000)
     
-    with open('congress/corpus.txt', 'w', encoding='utf-8') as f:
+    with open(os.path.join(args.data_dir, 'corpus.txt'), 'w', encoding='utf-8') as f:
         for idx, text in tqdm(enumerate(valid_speeches['speech']), 
                             total=len(valid_speeches), 
                             desc="Writing corpus"):
             f.write(f"{idx}\t{text}\n")
-
-    # Initialize spaCy and KeyBERT
-    print("Initializing NLP models...")
-    # Enable GPU if available
-    spacy.require_gpu()
-    nlp = spacy.load('en_core_web_sm')
-    nlp.add_pipe('sentencizer')  # Add sentencizer for better batch processing
+    
+    # Initialize KeyBERT
+    print("Initializing KeyBERT model...")
     keybert_model = KeyBERT()
     
-    # Extract phrases for each document
-    print("Extracting phrases...")
-    doc2phrases = {}
-    batch_size = 32  # Process documents in batches for GPU efficiency
-    
-    # skip this next section if congress/doc2phrases.txt already exists
-    if os.path.exists('congress/doc2phrases.txt'):
+    # skip this next section if doc2phrases.txt already exists
+    if os.path.exists(os.path.join(args.data_dir, 'doc2phrases.txt')):
         print("doc2phrases.txt already exists, skipping phrase extraction")
     else:
-        # Create batches of texts
-        texts = valid_speeches['speech'].tolist()
-        num_batches = (len(texts) + batch_size - 1) // batch_size  # Ceiling division
-        batches = [texts[i:i + batch_size] for i in range(0, len(texts), batch_size)]
+        print("Extracting phrases from documents...")
+        doc2phrases = {}
         
-        for batch_idx, batch in enumerate(tqdm(batches, 
-                                           total=num_batches,
-                                           desc="Processing documents")):
-            # Process batch with spaCy
-            docs = list(nlp.pipe(batch))
-            
-            # Extract phrases for each doc in batch
-            for doc_idx, doc in enumerate(docs):
-                global_idx = batch_idx * batch_size + doc_idx
-                phrases = extract_phrases(doc, nlp, keybert_model)
-                if phrases:
-                    doc2phrases[global_idx] = phrases
+        # Process each document
+        for idx, text in tqdm(enumerate(valid_speeches['speech']), 
+                            total=len(valid_speeches),
+                            desc="Extracting phrases"):
+            phrases = extract_phrases(text, keybert_model)
+            doc2phrases[idx] = phrases
         
         # Save doc2phrases.txt
         print("Saving doc2phrases.txt...")
-        with open('congress/doc2phrases.txt', 'w', encoding='utf-8') as f:
+        with open(os.path.join(args.data_dir, 'doc2phrases.txt'), 'w', encoding='utf-8') as f:
             for doc_id in tqdm(sorted(doc2phrases.keys()), 
                             total=len(doc2phrases),
                             desc="Writing phrases"):
-                f.write(f"{doc_id}\t{'\t'.join(doc2phrases[doc_id])}\n")
+                phrases = doc2phrases[doc_id]
+                if phrases:  # Only write if there are phrases
+                    f.write(f"{doc_id}\t{'\t'.join(phrases)}\n")
     
     # Create topic hierarchy and get policy areas list
     print("Creating topic hierarchy...")
@@ -305,93 +225,85 @@ def main():
     
     # Save topics.txt
     print("Saving topics.txt...")
-    with open('congress/topics.txt', 'w', encoding='utf-8') as f:
+    with open(os.path.join(args.data_dir, 'topics.txt'), 'w', encoding='utf-8') as f:
         for idx, topic in enumerate(policy_areas):
             f.write(f"{idx}\t{topic}\n")
     
     # Save topic_hier.txt
-    with open('congress/topic_hier.txt', 'w', encoding='utf-8') as f:
+    print("Saving topic hierarchy...")
+    with open(os.path.join(args.data_dir, 'topic_hier.txt'), 'w', encoding='utf-8') as f:
         # Write politics -> policy areas relationships
         for area in hierarchy['0']['children']:
             f.write(f"0\t{area}\n")
+        # Write policy areas -> subtopics relationships
+        for area, info in hierarchy.items():
+            if area != '0':  # Skip the root node
+                for subtopic in info['children']:
+                    f.write(f"{area}\t{subtopic}\n")
     
-    # Load GloVe vectors
-    print("Loading GloVe embeddings...")
-    word2vec_model = load_glove_vectors(glove_path)
-    
-    # Create feature vectors for all topics
-    print("Creating topic feature vectors...")
-    topic_features = create_topic_features(policy_areas, word2vec_model)
+    # Create topic features using BERT
+    print("Creating topic features...")
+    topic_features = create_topic_features(policy_areas, keybert_model)
     
     # Save topic_triples.txt using policy areas from the CSV
     print("Creating topic triples...")
+    embedding_cache = {}
     
     # Load doc2phrases mapping first
     doc2phrases_map = {}
-    with open('congress/doc2phrases.txt', 'r', encoding='utf-8') as f:
+    with open(os.path.join(args.data_dir, 'doc2phrases.txt'), 'r', encoding='utf-8') as f:
         for line in f:
             parts = line.strip().split('\t')
             doc_id = int(parts[0])
             phrases = parts[1:]
             doc2phrases_map[doc_id] = phrases
-
-    with open('congress/topic_triples.txt', 'w', encoding='utf-8') as f:
+    
+    with open(os.path.join(args.data_dir, 'topic_triples.txt'), 'w', encoding='utf-8') as f:
         for doc_idx, row in tqdm(valid_speeches.iterrows(), 
                                 total=len(valid_speeches),
                                 desc="Computing document-topic similarities"):
-            # Skip if document has no phrases
             if doc_idx not in doc2phrases_map:
                 continue
                 
-            doc_text = row['speech']
-            # For each document, compute similarity with all topics
-            similarities = []
-            for topic_idx, topic in enumerate(policy_areas):
-                sim = compute_topic_similarity(doc_text, topic_features[topic], word2vec_model)
-                similarities.append((topic_idx, sim))
-            
-            # Sort by similarity and get top matches
-            similarities.sort(key=lambda x: x[1], reverse=True)
-            top_topics = similarities[:3]  # Get top 3 most similar topics
-            
-            # For each top topic, find the most relevant phrases
             phrases = doc2phrases_map[doc_idx]
-            for topic_idx, sim in top_topics:
-                # Get topic vector
-                topic_vec = topic_features[policy_areas[topic_idx]]
-                
-                # Compute similarity between each phrase and the topic
-                phrase_sims = []
-                for ph_idx, phrase in enumerate(phrases):
-                    # Get phrase vector (average of word vectors)
-                    words = phrase.split()
-                    word_vecs = [word2vec_model[w] for w in words if w in word2vec_model]
-                    if word_vecs:
-                        phrase_vec = np.mean(word_vecs, axis=0)
-                        # Check for zero vectors
-                        phrase_norm = np.linalg.norm(phrase_vec)
-                        topic_norm = np.linalg.norm(topic_vec)
+            if not phrases:
+                continue
+            
+            # For each topic
+            for topic_idx, topic in enumerate(policy_areas):
+                topic_vec = topic_features[topic]
+                topic_norm = np.linalg.norm(topic_vec)
                         
-                        if phrase_norm == 0 or topic_norm == 0:
-                            phrase_sim = 0.0
-                        else:
-                            phrase_sim = np.dot(phrase_vec, topic_vec) / (phrase_norm * topic_norm)
-                        phrase_sims.append((ph_idx, max(0, phrase_sim)))
+                # Get phrase embedding
+                if phrase in embedding_cache:
+                    phrase_vec = embedding_cache[phrase]
+                else:
+                    phrase_vec = get_bert_embedding(phrase, keybert_model)
+                    embedding_cache[phrase] = phrase_vec
+                
+                # Compute cosine similarity
+                phrase_norm = np.linalg.norm(phrase_vec)
+                if phrase_norm == 0 or topic_norm == 0:
+                    phrase_sim = 0.0
+                else:
+                    phrase_sim = np.dot(phrase_vec, topic_vec) / (phrase_norm * topic_norm)
+                phrase_sims.append((ph_idx, phrase_sim))
+                phrase_cache[phrase] = phrase_sim
                 
                 # Write the most relevant phrase for this topic
                 if phrase_sims:
-                    best_phrase_idx, _ = max(phrase_sims, key=lambda x: x[1])
-                    f.write(f"{doc_idx}\t{topic_idx}\t{best_phrase_idx}\n")
+                    best_phrase_idx, score = max(phrase_sims, key=lambda x: x[1])
+                    if score > 0:
+                        f.write(f"{doc_idx}\t{topic_idx}\t{best_phrase_idx}\n")
     
     # Save topic_feats.txt in word2vec format
     print("Saving topic features...")
-    # Convert topic features to word2vec format (using indices as words)
     topic_vectors = {str(idx): vec for idx, vec in enumerate(topic_features.values())}
-    # Add unknown vector as all zeros for masking
-    topic_vectors['unknown'] = np.zeros(300)
-    save_vectors_word2vec_format('congress/topic_feats.txt', topic_vectors, 300)
+    vector_size = len(next(iter(topic_vectors.values())))  # Get dimension from first vector
+    topic_vectors['unknown'] = np.zeros(vector_size)
+    save_vectors_word2vec_format(os.path.join(args.data_dir, 'topic_feats.txt'), topic_vectors, vector_size)
     
-    print("Preprocessing complete! Files have been created in the congress/ directory.")
+    print(f"Preprocessing complete! Files have been created in the {args.data_dir}/ directory.")
 
 if __name__ == "__main__":
     main()
