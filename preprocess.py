@@ -33,11 +33,13 @@ def clean_text(text):
     text = re.sub(r'Madam Chairwoman', 'Mr. Speaker', text)
 
     # strip out the following phrases from the beginning of each text and leave the remainder:
-    # "Mr. Speaker, I yield myself the balance of my time. "
-    text = re.sub(r'^Mr\. Speaker, I yield myself the balance of my time\. ', '', text)
     # "Mr. Speaker, " 
     text = re.sub(r'^Mr\. Speaker, ', '', text)
-
+    # "Mr. Speaker, I yield myself the balance of my time. "
+    text = re.sub(r'^I yield myself the balance of my time\. ', '', text)
+    # "I yield myself such time as I may consume. "
+    text = re.sub(r'^I yield myself such time as I may consume\. ', '', text)
+    
     return text
 
 def extract_phrases(text, keybert_model):
