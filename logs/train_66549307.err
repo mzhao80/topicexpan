@@ -76,3 +76,70 @@ Call stack:
     self.logger.debug('Train Epoch: {} {} Loss: {:.6f} [{:.6f} + {:.6f}]'.format(
 Message: 'Train Epoch: 4 [4440/7437 (60%)] Loss: 99.029129 [16.974552 + 82.054581]'
 Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/n/sw/Miniforge3-24.7.1-0/lib/python3.12/logging/__init__.py", line 1164, in emit
+    self.flush()
+  File "/n/sw/Miniforge3-24.7.1-0/lib/python3.12/logging/__init__.py", line 1144, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/n/home09/michaelzhao/Downloads/topicexpan/train.py", line 86, in <module>
+    main(config)
+  File "/n/home09/michaelzhao/Downloads/topicexpan/train.py", line 72, in main
+    trainer.train()
+  File "/n/home09/michaelzhao/Downloads/topicexpan/base/base_trainer.py", line 76, in train
+    result = self._train_epoch(epoch)
+  File "/n/home09/michaelzhao/Downloads/topicexpan/trainer/trainer.py", line 66, in _train_epoch
+    self.logger.debug('Train Epoch: {} {} Loss: {:.6f} [{:.6f} + {:.6f}]'.format(
+Message: 'Train Epoch: 4 [5920/7437 (80%)] Loss: 90.673164 [16.907288 + 73.765877]'
+Arguments: ()
+Traceback (most recent call last):
+  File "/n/home09/michaelzhao/Downloads/topicexpan/train.py", line 86, in <module>
+    main(config)
+  File "/n/home09/michaelzhao/Downloads/topicexpan/train.py", line 72, in main
+    trainer.train()
+  File "/n/home09/michaelzhao/Downloads/topicexpan/base/base_trainer.py", line 76, in train
+    result = self._train_epoch(epoch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/home09/michaelzhao/Downloads/topicexpan/trainer/trainer.py", line 80, in _train_epoch
+    val_log = self._valid_epoch(epoch)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/home09/michaelzhao/Downloads/topicexpan/trainer/trainer.py", line 96, in _valid_epoch
+    for batch_idx, batch_data in enumerate(self.valid_data_loader):
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/home09/michaelzhao/Downloads/topicexpan/myenv/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 440, in __iter__
+    return self._get_iterator()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/n/home09/michaelzhao/Downloads/topicexpan/myenv/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 388, in _get_iterator
+    return _MultiProcessingDataLoaderIter(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/home09/michaelzhao/Downloads/topicexpan/myenv/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1038, in __init__
+    w.start()
+  File "/n/sw/Miniforge3-24.7.1-0/lib/python3.12/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+                  ^^^^^^^^^^^^^^^^^
+  File "/n/sw/Miniforge3-24.7.1-0/lib/python3.12/multiprocessing/context.py", line 224, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/sw/Miniforge3-24.7.1-0/lib/python3.12/multiprocessing/context.py", line 282, in _Popen
+    return Popen(process_obj)
+           ^^^^^^^^^^^^^^^^^^
+  File "/n/sw/Miniforge3-24.7.1-0/lib/python3.12/multiprocessing/popen_fork.py", line 16, in __init__
+    util._flush_std_streams()
+  File "/n/sw/Miniforge3-24.7.1-0/lib/python3.12/multiprocessing/util.py", line 438, in _flush_std_streams
+    sys.stdout.flush()
+OSError: [Errno 116] Stale file handle
+Exception ignored in atexit callback: <function FileWriter.__init__.<locals>.cleanup at 0x15176554e200>
+Traceback (most recent call last):
+  File "/n/home09/michaelzhao/Downloads/topicexpan/myenv/lib/python3.12/site-packages/tensorboardX/writer.py", line 108, in cleanup
+    self.event_writer.close()
+  File "/n/home09/michaelzhao/Downloads/topicexpan/myenv/lib/python3.12/site-packages/tensorboardX/event_file_writer.py", line 158, in close
+    self._ev_writer.close()
+  File "/n/home09/michaelzhao/Downloads/topicexpan/myenv/lib/python3.12/site-packages/tensorboardX/event_file_writer.py", line 76, in close
+    self._py_recordio_writer.close()
+  File "/n/home09/michaelzhao/Downloads/topicexpan/myenv/lib/python3.12/site-packages/tensorboardX/record_writer.py", line 196, in close
+    self._writer.close()
+OSError: [Errno 116] Stale file handle
+Exception ignored in: <_io.TextIOWrapper name='<stdout>' mode='w' encoding='utf-8'>
+OSError: [Errno 116] Stale file handle
