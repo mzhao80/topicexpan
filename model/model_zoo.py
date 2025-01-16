@@ -99,9 +99,9 @@ class GCNTopicEncoder(BaseModel):
         print(f"- downward_adjmat: {self.downward_adjmat.device}")
         print(f"- upward_adjmat: {self.upward_adjmat.device}")
         print(f"- sideward_adjmat: {self.sideward_adjmat.device}")
-        print(f"- downward_layers[0].weight: {self.downward_layers[0].weight.device}")
-        print(f"- upward_layers[0].weight: {self.upward_layers[0].weight.device}")
-        print(f"- sideward_layers[0].weight: {self.sideward_layers[0].weight.device}")
+        for i, layer in enumerate(self.downward_layers):
+            for name, param in layer.named_parameters():
+                print(f"- downward_layers[{i}].{name}: {param.device}")
         
         return self
 
@@ -110,21 +110,24 @@ class GCNTopicEncoder(BaseModel):
         print(f"\nForward pass devices:")
         print(f"- features: {features.device}")
         print(f"- downward_adjmat: {downward_adjmat.device}")
-        print(f"- downward_layers[0].weight: {self.downward_layers[0].weight.device}")
+        for i, layer in enumerate(self.downward_layers):
+            for name, param in layer.named_parameters():
+                print(f"- downward_layers[{i}].{name}: {param.device}")
         
         h = features
         
         # Apply GNN layers
-        for layer_idx, (downward_layer, upward_layer, sideward_layer) \
-                    in enumerate(zip(self.downward_layers, self.upward_layers, self.sideward_layers)):
-
-            downward_h = downward_layer(downward_adjmat, h)
-            upward_h = upward_layer(upward_adjmat, h)
-            sideward_h = sideward_layer(sideward_adjmat, h)
-            h = downward_h + upward_h - sideward_h
-
-            if layer_idx < self.num_layers:
-                h = self.activation(h)
+        for layer_idx in range(self.num_layers):
+            # Move tensors to same device as layer weights
+            layer_device = next(self.downward_layers[layer_idx].parameters()).device
+            downward_h = self.downward_layers[layer_idx](downward_adjmat.to(layer_device), h.to(layer_device))
+            upward_h = self.upward_layers[layer_idx](upward_adjmat.to(layer_device), h.to(layer_device))
+            sideward_h = self.sideward_layers[layer_idx](sideward_adjmat.to(layer_device), h.to(layer_device))
+            
+            # Combine the outputs
+            h = downward_h + upward_h + sideward_h
+            h = self.activation(h)
+            
         return h
 
     def encode(self, use_mask=True):

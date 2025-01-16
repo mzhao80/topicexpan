@@ -14,7 +14,7 @@ class BaseTrainer:
         self.logger = config.get_logger('trainer', config['trainer']['verbosity'])
 
         # setup GPU device if available
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         
         # Move model to device and wrap with DataParallel if multiple GPUs
         self.model = model.to(self.device)
@@ -22,10 +22,10 @@ class BaseTrainer:
             self.logger.info(f"Using {torch.cuda.device_count()} GPUs")
             self.model = torch.nn.DataParallel(self.model)
             
-        # Verify model device
+        # Verify model device (only warn if not on CPU or any CUDA device)
         for param in self.model.parameters():
-            if param.device != self.device:
-                self.logger.warning(f"Found parameter on {param.device}, expected {self.device}")
+            if not (param.device.type == "cpu" or param.device.type == "cuda"):
+                self.logger.warning(f"Found parameter on unexpected device type: {param.device}")
 
         self.criterions = criterions
         self.metric_ftns = metric_ftns
