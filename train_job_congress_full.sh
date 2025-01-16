@@ -7,7 +7,7 @@
 #SBATCH --open-mode=append
 #SBATCH --output=logs/train_full_%j.out       # Standard output log file (with job ID)
 #SBATCH --error=logs/train_full_%j.err        # Standard error log file (with job ID)
-#SBATCH --job-name=topicexpan_train_full # Job name
+#SBATCH --job-name=topicexpan_full # Job name
 
 echo "Job started at $(date)"
 

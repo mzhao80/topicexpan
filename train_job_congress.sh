@@ -17,10 +17,10 @@ source myenv/bin/activate
 module load cuda/11.8.0-fasrc01
 
 echo "Starting preprocessing at $(date)"
-python preprocess.py
+python preprocess.py --data-dir congress
 
 echo "Making topic triples human-readable at $(date)"
-python analyze_data.py
+python analyze_data.py --data-dir congress
 
 echo "Generating dataset binary at $(date)"
 python generate_dataset_binary.py --data_dir congress
