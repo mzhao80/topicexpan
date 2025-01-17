@@ -213,3 +213,658 @@ Starting epoch 5 at 2025-01-16 20:18:27
 [2025-01-16 20:19:24] Train Epoch: 5 [288/733 (39%)] Loss: 353.787964 [41.058487 + 312.729492]
 [2025-01-16 20:19:51] Train Epoch: 5 [432/733 (59%)] Loss: 309.958191 [27.066929 + 282.891266]
 [2025-01-16 20:20:18] Train Epoch: 5 [576/733 (79%)] Loss: 309.060913 [27.600433 + 281.460480]
+[2025-01-16 20:20:43] Train Epoch: 5 [720/733 (98%)] Loss: 95.524139 [7.402102 + 88.122040]
+[2025-01-16 20:20:43] Starting validation for epoch: 5
+Validation Epoch: 5 [0/46 (0%)] Loss: 181.045288
+Epoch 5 completed at 2025-01-16 20:20:51
+    epoch          : 5
+    elapsed time   : 144.5652084350586
+    loss           : 323.6890643575917
+    sim_loss       : 30.338160152020663
+    gen_loss       : 293.35090305494225
+    val_loss       : 181.0452880859375
+    val_sim_loss   : 18.152915954589844
+    val_gen_loss   : 162.89236450195312
+    val_perplexity : 23.27033805847168
+    val_accuracy   : 0.0
+Saving checkpoint: congress_full-save/models/checkpoint-epoch5.pth ...
+Saving current best: model_best.pth ...
+================================================================================
+Starting epoch 6 at 2025-01-16 20:21:25
+[2025-01-16 20:21:29] Train Epoch: 6 [0/733 (0%)] Loss: 279.693176 [34.571815 + 245.121353]
+[2025-01-16 20:21:55] Train Epoch: 6 [144/733 (20%)] Loss: 294.294678 [28.181625 + 266.113037]
+[2025-01-16 20:22:22] Train Epoch: 6 [288/733 (39%)] Loss: 329.551544 [33.197144 + 296.354401]
+[2025-01-16 20:22:49] Train Epoch: 6 [432/733 (59%)] Loss: 317.810455 [30.507740 + 287.302704]
+[2025-01-16 20:23:16] Train Epoch: 6 [576/733 (79%)] Loss: 260.064697 [34.592819 + 225.471893]
+[2025-01-16 20:23:41] Train Epoch: 6 [720/733 (98%)] Loss: 105.890808 [4.558544 + 101.332268]
+[2025-01-16 20:23:41] Starting validation for epoch: 6
+Validation Epoch: 6 [0/46 (0%)] Loss: 180.240234
+Epoch 6 completed at 2025-01-16 20:23:49
+    epoch          : 6
+    elapsed time   : 144.35750484466553
+    loss           : 310.86853491741675
+    sim_loss       : 29.147385680157207
+    gen_loss       : 281.72114811772883
+    val_loss       : 180.240234375
+    val_sim_loss   : 17.33403778076172
+    val_gen_loss   : 162.9062042236328
+    val_perplexity : 23.272315979003906
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 7 at 2025-01-16 20:23:49
+[2025-01-16 20:23:53] Train Epoch: 7 [0/733 (0%)] Loss: 289.114594 [26.823631 + 262.290955]
+[2025-01-16 20:24:20] Train Epoch: 7 [144/733 (20%)] Loss: 310.744568 [34.820786 + 275.923767]
+[2025-01-16 20:24:46] Train Epoch: 7 [288/733 (39%)] Loss: 299.448792 [29.234688 + 270.214111]
+[2025-01-16 20:25:13] Train Epoch: 7 [432/733 (59%)] Loss: 305.469696 [23.497368 + 281.972321]
+[2025-01-16 20:25:40] Train Epoch: 7 [576/733 (79%)] Loss: 314.547333 [22.991829 + 291.555511]
+[2025-01-16 20:26:05] Train Epoch: 7 [720/733 (98%)] Loss: 130.281143 [7.557670 + 122.723473]
+[2025-01-16 20:26:05] Starting validation for epoch: 7
+Validation Epoch: 7 [0/46 (0%)] Loss: 180.648331
+Epoch 7 completed at 2025-01-16 20:26:13
+    epoch          : 7
+    elapsed time   : 144.19015741348267
+    loss           : 296.64577251931894
+    sim_loss       : 26.69449223642764
+    gen_loss       : 269.9512808426567
+    val_loss       : 180.64833068847656
+    val_sim_loss   : 18.27267837524414
+    val_gen_loss   : 162.3756561279297
+    val_perplexity : 23.196523666381836
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 8 at 2025-01-16 20:26:13
+[2025-01-16 20:26:17] Train Epoch: 8 [0/733 (0%)] Loss: 271.727051 [22.822365 + 248.904694]
+[2025-01-16 20:26:44] Train Epoch: 8 [144/733 (20%)] Loss: 255.613434 [25.889507 + 229.723923]
+[2025-01-16 20:27:11] Train Epoch: 8 [288/733 (39%)] Loss: 306.520081 [25.223194 + 281.296875]
+[2025-01-16 20:27:37] Train Epoch: 8 [432/733 (59%)] Loss: 249.593536 [21.932541 + 227.660995]
+[2025-01-16 20:28:04] Train Epoch: 8 [576/733 (79%)] Loss: 282.329041 [28.636444 + 253.692581]
+[2025-01-16 20:28:29] Train Epoch: 8 [720/733 (98%)] Loss: 123.887520 [6.866524 + 117.020996]
+[2025-01-16 20:28:29] Starting validation for epoch: 8
+Validation Epoch: 8 [0/46 (0%)] Loss: 183.773407
+Epoch 8 completed at 2025-01-16 20:28:38
+    epoch          : 8
+    elapsed time   : 144.29795026779175
+    loss           : 282.5610990109651
+    sim_loss       : 25.312540303105894
+    gen_loss       : 257.2485600347104
+    val_loss       : 183.77340698242188
+    val_sim_loss   : 21.28498077392578
+    val_gen_loss   : 162.48841857910156
+    val_perplexity : 23.21263313293457
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 9 at 2025-01-16 20:28:38
+[2025-01-16 20:28:41] Train Epoch: 9 [0/733 (0%)] Loss: 252.377533 [22.458532 + 229.919006]
+[2025-01-16 20:29:08] Train Epoch: 9 [144/733 (20%)] Loss: 245.204117 [24.282042 + 220.922073]
+[2025-01-16 20:29:35] Train Epoch: 9 [288/733 (39%)] Loss: 267.078125 [29.472366 + 237.605743]
+[2025-01-16 20:30:02] Train Epoch: 9 [432/733 (59%)] Loss: 287.857513 [23.428345 + 264.429169]
+[2025-01-16 20:30:28] Train Epoch: 9 [576/733 (79%)] Loss: 272.315308 [27.962393 + 244.352905]
+[2025-01-16 20:30:53] Train Epoch: 9 [720/733 (98%)] Loss: 90.790489 [1.624529 + 89.165962]
+[2025-01-16 20:30:54] Starting validation for epoch: 9
+Validation Epoch: 9 [0/46 (0%)] Loss: 182.932510
+Epoch 9 completed at 2025-01-16 20:31:02
+    epoch          : 9
+    elapsed time   : 144.25947761535645
+    loss           : 269.8563754869544
+    sim_loss       : 24.909335017204285
+    gen_loss       : 244.94703956272292
+    val_loss       : 182.93251037597656
+    val_sim_loss   : 19.901874542236328
+    val_gen_loss   : 163.0306396484375
+    val_perplexity : 23.29009246826172
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 10 at 2025-01-16 20:31:02
+[2025-01-16 20:31:06] Train Epoch: 10 [0/733 (0%)] Loss: 222.899811 [26.863014 + 196.036804]
+[2025-01-16 20:31:32] Train Epoch: 10 [144/733 (20%)] Loss: 292.432556 [26.534670 + 265.897888]
+[2025-01-16 20:31:59] Train Epoch: 10 [288/733 (39%)] Loss: 267.708069 [25.738306 + 241.969757]
+[2025-01-16 20:32:26] Train Epoch: 10 [432/733 (59%)] Loss: 258.663666 [26.043861 + 232.619797]
+[2025-01-16 20:32:53] Train Epoch: 10 [576/733 (79%)] Loss: 227.743484 [30.955782 + 196.787704]
+[2025-01-16 20:33:18] Train Epoch: 10 [720/733 (98%)] Loss: 81.210495 [7.648741 + 73.561752]
+[2025-01-16 20:33:18] Starting validation for epoch: 10
+Validation Epoch: 10 [0/46 (0%)] Loss: 181.604874
+Epoch 10 completed at 2025-01-16 20:33:26
+    epoch          : 10
+    elapsed time   : 144.3477988243103
+    loss           : 258.4752800982931
+    sim_loss       : 25.841100412866343
+    gen_loss       : 232.6341781616211
+    val_loss       : 181.60487365722656
+    val_sim_loss   : 18.20826530456543
+    val_gen_loss   : 163.3966064453125
+    val_perplexity : 23.34237289428711
+    val_accuracy   : 0.0
+Saving checkpoint: congress_full-save/models/checkpoint-epoch10.pth ...
+Saving current best: model_best.pth ...
+================================================================================
+Starting epoch 11 at 2025-01-16 20:33:59
+[2025-01-16 20:34:03] Train Epoch: 11 [0/733 (0%)] Loss: 229.071533 [28.209904 + 200.861633]
+[2025-01-16 20:34:29] Train Epoch: 11 [144/733 (20%)] Loss: 224.518585 [18.434898 + 206.083694]
+[2025-01-16 20:34:56] Train Epoch: 11 [288/733 (39%)] Loss: 253.684830 [28.355057 + 225.329773]
+[2025-01-16 20:35:23] Train Epoch: 11 [432/733 (59%)] Loss: 225.637283 [18.921476 + 206.715805]
+[2025-01-16 20:35:50] Train Epoch: 11 [576/733 (79%)] Loss: 256.642120 [20.993633 + 235.648483]
+[2025-01-16 20:36:15] Train Epoch: 11 [720/733 (98%)] Loss: 80.981339 [1.967833 + 79.013504]
+[2025-01-16 20:36:15] Starting validation for epoch: 11
+Validation Epoch: 11 [0/46 (0%)] Loss: 180.217392
+Epoch 11 completed at 2025-01-16 20:36:23
+    epoch          : 11
+    elapsed time   : 144.4509561061859
+    loss           : 243.992013350777
+    sim_loss       : 23.55851203462352
+    gen_loss       : 220.43350020698878
+    val_loss       : 180.21739196777344
+    val_sim_loss   : 16.3607120513916
+    val_gen_loss   : 163.85667419433594
+    val_perplexity : 23.408098220825195
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 12 at 2025-01-16 20:36:23
+[2025-01-16 20:36:27] Train Epoch: 12 [0/733 (0%)] Loss: 225.708282 [24.328859 + 201.379425]
+[2025-01-16 20:36:54] Train Epoch: 12 [144/733 (20%)] Loss: 242.753601 [30.061871 + 212.691727]
+[2025-01-16 20:37:21] Train Epoch: 12 [288/733 (39%)] Loss: 246.055054 [19.817841 + 226.237213]
+[2025-01-16 20:37:47] Train Epoch: 12 [432/733 (59%)] Loss: 249.907364 [21.829090 + 228.078278]
+[2025-01-16 20:38:14] Train Epoch: 12 [576/733 (79%)] Loss: 227.186356 [17.194929 + 209.991425]
+[2025-01-16 20:38:39] Train Epoch: 12 [720/733 (98%)] Loss: 78.015900 [4.339477 + 73.676422]
+[2025-01-16 20:38:39] Starting validation for epoch: 12
+Validation Epoch: 12 [0/46 (0%)] Loss: 187.014633
+Epoch 12 completed at 2025-01-16 20:38:48
+    epoch          : 12
+    elapsed time   : 144.4872989654541
+    loss           : 231.39675538436225
+    sim_loss       : 22.543745403704435
+    gen_loss       : 208.8530097629713
+    val_loss       : 187.01463317871094
+    val_sim_loss   : 22.3701114654541
+    val_gen_loss   : 164.64451599121094
+    val_perplexity : 23.520647048950195
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 13 at 2025-01-16 20:38:48
+[2025-01-16 20:38:52] Train Epoch: 13 [0/733 (0%)] Loss: 244.372253 [25.437637 + 218.934616]
+[2025-01-16 20:39:18] Train Epoch: 13 [144/733 (20%)] Loss: 219.931259 [32.998138 + 186.933121]
+[2025-01-16 20:39:45] Train Epoch: 13 [288/733 (39%)] Loss: 238.190369 [27.072731 + 211.117645]
+[2025-01-16 20:40:12] Train Epoch: 13 [432/733 (59%)] Loss: 215.849030 [26.603447 + 189.245575]
+[2025-01-16 20:40:39] Train Epoch: 13 [576/733 (79%)] Loss: 200.586349 [25.053263 + 175.533081]
+[2025-01-16 20:41:04] Train Epoch: 13 [720/733 (98%)] Loss: 84.738853 [3.487573 + 81.251282]
+[2025-01-16 20:41:04] Starting validation for epoch: 13
+Validation Epoch: 13 [0/46 (0%)] Loss: 191.942551
+Epoch 13 completed at 2025-01-16 20:41:13
+    epoch          : 13
+    elapsed time   : 144.87122130393982
+    loss           : 221.17375332376233
+    sim_loss       : 24.055900610011555
+    gen_loss       : 197.11785357931385
+    val_loss       : 191.9425506591797
+    val_sim_loss   : 26.064990997314453
+    val_gen_loss   : 165.8775634765625
+    val_perplexity : 23.696796417236328
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 14 at 2025-01-16 20:41:13
+[2025-01-16 20:41:16] Train Epoch: 14 [0/733 (0%)] Loss: 221.658325 [20.701626 + 200.956696]
+[2025-01-16 20:41:43] Train Epoch: 14 [144/733 (20%)] Loss: 218.400925 [19.831768 + 198.569153]
+[2025-01-16 20:42:10] Train Epoch: 14 [288/733 (39%)] Loss: 200.709000 [24.864933 + 175.844070]
+[2025-01-16 20:42:37] Train Epoch: 14 [432/733 (59%)] Loss: 192.042435 [19.332022 + 172.710419]
+[2025-01-16 20:43:03] Train Epoch: 14 [576/733 (79%)] Loss: 230.613403 [18.421677 + 212.191727]
+[2025-01-16 20:43:28] Train Epoch: 14 [720/733 (98%)] Loss: 70.073082 [5.050844 + 65.022240]
+[2025-01-16 20:43:29] Starting validation for epoch: 14
+Validation Epoch: 14 [0/46 (0%)] Loss: 195.344315
+Epoch 14 completed at 2025-01-16 20:43:37
+    epoch          : 14
+    elapsed time   : 144.4270360469818
+    loss           : 208.9800038545028
+    sim_loss       : 22.628620147705078
+    gen_loss       : 186.35138387265414
+    val_loss       : 195.3443145751953
+    val_sim_loss   : 27.0577392578125
+    val_gen_loss   : 168.2865753173828
+    val_perplexity : 24.04094123840332
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 15 at 2025-01-16 20:43:37
+[2025-01-16 20:43:41] Train Epoch: 15 [0/733 (0%)] Loss: 196.772583 [16.018715 + 180.753876]
+[2025-01-16 20:44:08] Train Epoch: 15 [144/733 (20%)] Loss: 205.022034 [21.051033 + 183.970993]
+[2025-01-16 20:44:34] Train Epoch: 15 [288/733 (39%)] Loss: 220.780396 [25.811480 + 194.968918]
+[2025-01-16 20:45:01] Train Epoch: 15 [432/733 (59%)] Loss: 187.850739 [16.070572 + 171.780167]
+[2025-01-16 20:45:28] Train Epoch: 15 [576/733 (79%)] Loss: 206.164703 [27.027473 + 179.137238]
+[2025-01-16 20:45:53] Train Epoch: 15 [720/733 (98%)] Loss: 70.744118 [7.430116 + 63.314003]
+[2025-01-16 20:45:53] Starting validation for epoch: 15
+Validation Epoch: 15 [0/46 (0%)] Loss: 191.759094
+Epoch 15 completed at 2025-01-16 20:46:01
+    epoch          : 15
+    elapsed time   : 144.2515058517456
+    loss           : 197.90481086399245
+    sim_loss       : 21.596018946689107
+    gen_loss       : 176.3087922801142
+    val_loss       : 191.75909423828125
+    val_sim_loss   : 23.805416107177734
+    val_gen_loss   : 167.95367431640625
+    val_perplexity : 23.993383407592773
+    val_accuracy   : 0.0
+Saving checkpoint: congress_full-save/models/checkpoint-epoch15.pth ...
+Saving current best: model_best.pth ...
+================================================================================
+Starting epoch 16 at 2025-01-16 20:46:35
+[2025-01-16 20:46:39] Train Epoch: 16 [0/733 (0%)] Loss: 174.729050 [20.942245 + 153.786804]
+[2025-01-16 20:47:05] Train Epoch: 16 [144/733 (20%)] Loss: 178.145020 [20.407856 + 157.737167]
+[2025-01-16 20:47:32] Train Epoch: 16 [288/733 (39%)] Loss: 184.671631 [20.327986 + 164.343643]
+[2025-01-16 20:47:59] Train Epoch: 16 [432/733 (59%)] Loss: 191.437256 [24.035744 + 167.401520]
+[2025-01-16 20:48:26] Train Epoch: 16 [576/733 (79%)] Loss: 186.764908 [22.088528 + 164.676376]
+[2025-01-16 20:48:51] Train Epoch: 16 [720/733 (98%)] Loss: 56.814392 [2.895634 + 53.918758]
+[2025-01-16 20:48:51] Starting validation for epoch: 16
+Validation Epoch: 16 [0/46 (0%)] Loss: 201.865768
+Epoch 16 completed at 2025-01-16 20:48:59
+    epoch          : 16
+    elapsed time   : 144.2982120513916
+    loss           : 188.48390562637994
+    sim_loss       : 21.457065504530203
+    gen_loss       : 167.02684012703273
+    val_loss       : 201.8657684326172
+    val_sim_loss   : 32.13468933105469
+    val_gen_loss   : 169.7310791015625
+    val_perplexity : 24.247297286987305
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 17 at 2025-01-16 20:48:59
+[2025-01-16 20:49:03] Train Epoch: 17 [0/733 (0%)] Loss: 180.402863 [21.478985 + 158.923874]
+[2025-01-16 20:49:30] Train Epoch: 17 [144/733 (20%)] Loss: 170.452347 [22.316853 + 148.135498]
+[2025-01-16 20:49:56] Train Epoch: 17 [288/733 (39%)] Loss: 193.419022 [23.330036 + 170.088989]
+[2025-01-16 20:50:23] Train Epoch: 17 [432/733 (59%)] Loss: 186.152832 [27.578041 + 158.574783]
+[2025-01-16 20:50:50] Train Epoch: 17 [576/733 (79%)] Loss: 185.747757 [22.227711 + 163.520050]
+[2025-01-16 20:51:15] Train Epoch: 17 [720/733 (98%)] Loss: 63.754555 [2.324476 + 61.430080]
+[2025-01-16 20:51:15] Starting validation for epoch: 17
+Validation Epoch: 17 [0/46 (0%)] Loss: 188.739914
+Epoch 17 completed at 2025-01-16 20:51:24
+    epoch          : 17
+    elapsed time   : 144.37424635887146
+    loss           : 181.1946144104004
+    sim_loss       : 22.716703782910887
+    gen_loss       : 158.47790950277576
+    val_loss       : 188.7399139404297
+    val_sim_loss   : 18.477325439453125
+    val_gen_loss   : 170.26258850097656
+    val_perplexity : 24.32322883605957
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 18 at 2025-01-16 20:51:24
+[2025-01-16 20:51:27] Train Epoch: 18 [0/733 (0%)] Loss: 186.121277 [27.911636 + 158.209641]
+[2025-01-16 20:51:54] Train Epoch: 18 [144/733 (20%)] Loss: 165.816422 [20.366499 + 145.449921]
+[2025-01-16 20:52:21] Train Epoch: 18 [288/733 (39%)] Loss: 169.381775 [17.928612 + 151.453156]
+[2025-01-16 20:52:48] Train Epoch: 18 [432/733 (59%)] Loss: 181.469208 [24.924393 + 156.544815]
+[2025-01-16 20:53:14] Train Epoch: 18 [576/733 (79%)] Loss: 183.896729 [19.619904 + 164.276825]
+[2025-01-16 20:53:39] Train Epoch: 18 [720/733 (98%)] Loss: 65.802063 [2.903475 + 62.898586]
+[2025-01-16 20:53:40] Starting validation for epoch: 18
+Validation Epoch: 18 [0/46 (0%)] Loss: 196.853455
+Epoch 18 completed at 2025-01-16 20:53:48
+    epoch          : 18
+    elapsed time   : 144.28385162353516
+    loss           : 172.83623007069463
+    sim_loss       : 22.260928330214128
+    gen_loss       : 150.57530170938244
+    val_loss       : 196.85345458984375
+    val_sim_loss   : 25.22538185119629
+    val_gen_loss   : 171.62806701660156
+    val_perplexity : 24.51829719543457
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 19 at 2025-01-16 20:53:48
+[2025-01-16 20:53:52] Train Epoch: 19 [0/733 (0%)] Loss: 168.953232 [25.424725 + 143.528503]
+[2025-01-16 20:54:18] Train Epoch: 19 [144/733 (20%)] Loss: 183.874207 [25.626451 + 158.247757]
+[2025-01-16 20:54:45] Train Epoch: 19 [288/733 (39%)] Loss: 172.533997 [23.674286 + 148.859711]
+[2025-01-16 20:55:12] Train Epoch: 19 [432/733 (59%)] Loss: 173.876663 [20.523697 + 153.352966]
+[2025-01-16 20:55:39] Train Epoch: 19 [576/733 (79%)] Loss: 151.907562 [14.415243 + 137.492325]
+[2025-01-16 20:56:04] Train Epoch: 19 [720/733 (98%)] Loss: 64.593285 [3.646456 + 60.946831]
+[2025-01-16 20:56:04] Starting validation for epoch: 19
+Validation Epoch: 19 [0/46 (0%)] Loss: 193.272812
+Epoch 19 completed at 2025-01-16 20:56:12
+    epoch          : 19
+    elapsed time   : 144.11350274085999
+    loss           : 167.19051311327064
+    sim_loss       : 22.719706550888393
+    gen_loss       : 144.47080595596978
+    val_loss       : 193.27281188964844
+    val_sim_loss   : 19.821186065673828
+    val_gen_loss   : 173.45162963867188
+    val_perplexity : 24.778804779052734
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 20 at 2025-01-16 20:56:12
+[2025-01-16 20:56:16] Train Epoch: 20 [0/733 (0%)] Loss: 153.404663 [17.962919 + 135.441742]
+[2025-01-16 20:56:42] Train Epoch: 20 [144/733 (20%)] Loss: 164.335434 [19.831839 + 144.503601]
+[2025-01-16 20:57:09] Train Epoch: 20 [288/733 (39%)] Loss: 154.116394 [18.576677 + 135.539719]
+[2025-01-16 20:57:36] Train Epoch: 20 [432/733 (59%)] Loss: 147.984146 [15.941630 + 132.042511]
+[2025-01-16 20:58:03] Train Epoch: 20 [576/733 (79%)] Loss: 173.327393 [36.910255 + 136.417130]
+[2025-01-16 20:58:28] Train Epoch: 20 [720/733 (98%)] Loss: 51.445667 [5.622916 + 45.822750]
+[2025-01-16 20:58:28] Starting validation for epoch: 20
+Validation Epoch: 20 [0/46 (0%)] Loss: 201.097626
+Epoch 20 completed at 2025-01-16 20:58:36
+    epoch          : 20
+    elapsed time   : 144.29688262939453
+    loss           : 159.35401427227518
+    sim_loss       : 20.63215624767801
+    gen_loss       : 138.72185790020487
+    val_loss       : 201.09762573242188
+    val_sim_loss   : 26.578327178955078
+    val_gen_loss   : 174.51930236816406
+    val_perplexity : 24.93132972717285
+    val_accuracy   : 0.0
+Saving checkpoint: congress_full-save/models/checkpoint-epoch20.pth ...
+Saving current best: model_best.pth ...
+================================================================================
+Starting epoch 21 at 2025-01-16 20:59:09
+[2025-01-16 20:59:13] Train Epoch: 21 [0/733 (0%)] Loss: 157.888885 [21.944412 + 135.944473]
+[2025-01-16 20:59:40] Train Epoch: 21 [144/733 (20%)] Loss: 148.981445 [21.478638 + 127.502808]
+[2025-01-16 21:00:07] Train Epoch: 21 [288/733 (39%)] Loss: 159.249023 [34.130135 + 125.118881]
+[2025-01-16 21:00:33] Train Epoch: 21 [432/733 (59%)] Loss: 159.646622 [15.699591 + 143.947037]
+[2025-01-16 21:01:00] Train Epoch: 21 [576/733 (79%)] Loss: 152.150406 [22.218128 + 129.932281]
+[2025-01-16 21:01:25] Train Epoch: 21 [720/733 (98%)] Loss: 55.185436 [3.467216 + 51.718220]
+[2025-01-16 21:01:25] Starting validation for epoch: 21
+Validation Epoch: 21 [0/46 (0%)] Loss: 195.618698
+Epoch 21 completed at 2025-01-16 21:01:34
+    epoch          : 21
+    elapsed time   : 144.5906891822815
+    loss           : 155.9669414188551
+    sim_loss       : 21.918497013009112
+    gen_loss       : 134.048444416212
+    val_loss       : 195.6186981201172
+    val_sim_loss   : 18.363035202026367
+    val_gen_loss   : 177.2556610107422
+    val_perplexity : 25.32223892211914
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 22 at 2025-01-16 21:01:34
+[2025-01-16 21:01:38] Train Epoch: 22 [0/733 (0%)] Loss: 147.988144 [13.862191 + 134.125946]
+[2025-01-16 21:02:04] Train Epoch: 22 [144/733 (20%)] Loss: 150.265289 [23.842848 + 126.422440]
+[2025-01-16 21:02:31] Train Epoch: 22 [288/733 (39%)] Loss: 151.053879 [19.910767 + 131.143112]
+[2025-01-16 21:02:58] Train Epoch: 22 [432/733 (59%)] Loss: 151.515930 [13.968287 + 137.547638]
+[2025-01-16 21:03:25] Train Epoch: 22 [576/733 (79%)] Loss: 148.724762 [17.349319 + 131.375443]
+[2025-01-16 21:03:50] Train Epoch: 22 [720/733 (98%)] Loss: 55.713894 [3.498214 + 52.215679]
+[2025-01-16 21:03:50] Starting validation for epoch: 22
+Validation Epoch: 22 [0/46 (0%)] Loss: 204.699295
+Epoch 22 completed at 2025-01-16 21:03:58
+    epoch          : 22
+    elapsed time   : 144.47413325309753
+    loss           : 150.10240131875744
+    sim_loss       : 20.289301120716594
+    gen_loss       : 129.8130996538245
+    val_loss       : 204.6992950439453
+    val_sim_loss   : 26.507980346679688
+    val_gen_loss   : 178.19131469726562
+    val_perplexity : 25.455904006958008
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 23 at 2025-01-16 21:03:58
+[2025-01-16 21:04:02] Train Epoch: 23 [0/733 (0%)] Loss: 136.764740 [18.276329 + 118.488419]
+[2025-01-16 21:04:29] Train Epoch: 23 [144/733 (20%)] Loss: 147.655334 [25.393288 + 122.262054]
+[2025-01-16 21:04:56] Train Epoch: 23 [288/733 (39%)] Loss: 151.382080 [23.681421 + 127.700653]
+[2025-01-16 21:05:22] Train Epoch: 23 [432/733 (59%)] Loss: 140.709534 [15.911491 + 124.798042]
+[2025-01-16 21:05:49] Train Epoch: 23 [576/733 (79%)] Loss: 147.461761 [23.330299 + 124.131454]
+[2025-01-16 21:06:14] Train Epoch: 23 [720/733 (98%)] Loss: 51.064323 [5.959595 + 45.104729]
+[2025-01-16 21:06:14] Starting validation for epoch: 23
+Validation Epoch: 23 [0/46 (0%)] Loss: 206.912201
+Epoch 23 completed at 2025-01-16 21:06:23
+    epoch          : 23
+    elapsed time   : 144.47482919692993
+    loss           : 147.5828278583029
+    sim_loss       : 20.73758159513059
+    gen_loss       : 126.84524784917417
+    val_loss       : 206.91220092773438
+    val_sim_loss   : 28.100200653076172
+    val_gen_loss   : 178.81199645996094
+    val_perplexity : 25.544572830200195
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 24 at 2025-01-16 21:06:23
+[2025-01-16 21:06:27] Train Epoch: 24 [0/733 (0%)] Loss: 145.609650 [20.264717 + 125.344925]
+[2025-01-16 21:06:53] Train Epoch: 24 [144/733 (20%)] Loss: 136.630432 [18.348644 + 118.281792]
+[2025-01-16 21:07:20] Train Epoch: 24 [288/733 (39%)] Loss: 156.928604 [31.872625 + 125.055984]
+[2025-01-16 21:07:47] Train Epoch: 24 [432/733 (59%)] Loss: 149.834915 [16.379843 + 133.455078]
+[2025-01-16 21:08:14] Train Epoch: 24 [576/733 (79%)] Loss: 138.777481 [14.442819 + 124.334656]
+[2025-01-16 21:08:39] Train Epoch: 24 [720/733 (98%)] Loss: 52.514843 [2.333217 + 50.181625]
+[2025-01-16 21:08:39] Starting validation for epoch: 24
+Validation Epoch: 24 [0/46 (0%)] Loss: 206.892151
+Epoch 24 completed at 2025-01-16 21:08:47
+    epoch          : 24
+    elapsed time   : 144.38995122909546
+    loss           : 145.7057646875796
+    sim_loss       : 21.366817075273264
+    gen_loss       : 124.338948291281
+    val_loss       : 206.89215087890625
+    val_sim_loss   : 27.555391311645508
+    val_gen_loss   : 179.33676147460938
+    val_perplexity : 25.619539260864258
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 25 at 2025-01-16 21:08:47
+[2025-01-16 21:08:51] Train Epoch: 25 [0/733 (0%)] Loss: 148.646515 [23.003208 + 125.643303]
+[2025-01-16 21:09:18] Train Epoch: 25 [144/733 (20%)] Loss: 137.469025 [20.234905 + 117.234123]
+[2025-01-16 21:09:44] Train Epoch: 25 [288/733 (39%)] Loss: 142.523285 [18.546690 + 123.976593]
+[2025-01-16 21:10:11] Train Epoch: 25 [432/733 (59%)] Loss: 152.804810 [19.722939 + 133.081863]
+[2025-01-16 21:10:38] Train Epoch: 25 [576/733 (79%)] Loss: 144.960617 [23.025501 + 121.935112]
+[2025-01-16 21:11:03] Train Epoch: 25 [720/733 (98%)] Loss: 49.231010 [5.510168 + 43.720844]
+[2025-01-16 21:11:03] Starting validation for epoch: 25
+Validation Epoch: 25 [0/46 (0%)] Loss: 218.053680
+Epoch 25 completed at 2025-01-16 21:11:11
+    epoch          : 25
+    elapsed time   : 144.24878096580505
+    loss           : 142.33136036085045
+    sim_loss       : 20.279684553975645
+    gen_loss       : 122.05167563065238
+    val_loss       : 218.05368041992188
+    val_sim_loss   : 36.3929328918457
+    val_gen_loss   : 181.66075134277344
+    val_perplexity : 25.951536178588867
+    val_accuracy   : 0.0
+Saving checkpoint: congress_full-save/models/checkpoint-epoch25.pth ...
+Saving current best: model_best.pth ...
+================================================================================
+Starting epoch 26 at 2025-01-16 21:11:45
+[2025-01-16 21:11:49] Train Epoch: 26 [0/733 (0%)] Loss: 144.821320 [22.640068 + 122.181259]
+[2025-01-16 21:12:15] Train Epoch: 26 [144/733 (20%)] Loss: 137.816376 [22.967602 + 114.848778]
+[2025-01-16 21:12:42] Train Epoch: 26 [288/733 (39%)] Loss: 143.519531 [17.890099 + 125.629425]
+[2025-01-16 21:13:09] Train Epoch: 26 [432/733 (59%)] Loss: 142.480621 [15.533748 + 126.946869]
+[2025-01-16 21:13:36] Train Epoch: 26 [576/733 (79%)] Loss: 147.468384 [25.644821 + 121.823563]
+[2025-01-16 21:14:01] Train Epoch: 26 [720/733 (98%)] Loss: 46.503292 [2.786400 + 43.716892]
+[2025-01-16 21:14:01] Starting validation for epoch: 26
+Validation Epoch: 26 [0/46 (0%)] Loss: 198.436295
+Epoch 26 completed at 2025-01-16 21:14:09
+    epoch          : 26
+    elapsed time   : 144.29933285713196
+    loss           : 140.27020951975948
+    sim_loss       : 20.340855261553887
+    gen_loss       : 119.92935387984566
+    val_loss       : 198.43629455566406
+    val_sim_loss   : 15.858811378479004
+    val_gen_loss   : 182.57748413085938
+    val_perplexity : 26.08249855041504
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 27 at 2025-01-16 21:14:09
+[2025-01-16 21:14:13] Train Epoch: 27 [0/733 (0%)] Loss: 138.541504 [18.088026 + 120.453476]
+[2025-01-16 21:14:40] Train Epoch: 27 [144/733 (20%)] Loss: 144.354919 [23.827221 + 120.527695]
+[2025-01-16 21:15:07] Train Epoch: 27 [288/733 (39%)] Loss: 132.295975 [18.620689 + 113.675285]
+[2025-01-16 21:15:33] Train Epoch: 27 [432/733 (59%)] Loss: 140.921295 [18.516359 + 122.404938]
+[2025-01-16 21:16:00] Train Epoch: 27 [576/733 (79%)] Loss: 137.168411 [25.059605 + 112.108803]
+[2025-01-16 21:16:25] Train Epoch: 27 [720/733 (98%)] Loss: 46.639290 [3.514982 + 43.124306]
+[2025-01-16 21:16:25] Starting validation for epoch: 27
+Validation Epoch: 27 [0/46 (0%)] Loss: 220.768799
+Epoch 27 completed at 2025-01-16 21:16:34
+    epoch          : 27
+    elapsed time   : 144.52303218841553
+    loss           : 138.9024142389712
+    sim_loss       : 21.332969810651697
+    gen_loss       : 117.56944473930027
+    val_loss       : 220.768798828125
+    val_sim_loss   : 37.37110137939453
+    val_gen_loss   : 183.397705078125
+    val_perplexity : 26.19967269897461
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 28 at 2025-01-16 21:16:34
+[2025-01-16 21:16:38] Train Epoch: 28 [0/733 (0%)] Loss: 130.985107 [17.714024 + 113.271080]
+[2025-01-16 21:17:04] Train Epoch: 28 [144/733 (20%)] Loss: 127.874596 [19.727221 + 108.147377]
+[2025-01-16 21:17:31] Train Epoch: 28 [288/733 (39%)] Loss: 141.213867 [23.653107 + 117.560753]
+[2025-01-16 21:17:58] Train Epoch: 28 [432/733 (59%)] Loss: 139.755920 [15.426544 + 124.329369]
+[2025-01-16 21:18:25] Train Epoch: 28 [576/733 (79%)] Loss: 140.860901 [18.346844 + 122.514053]
+[2025-01-16 21:18:49] Train Epoch: 28 [720/733 (98%)] Loss: 44.918697 [0.007811 + 44.910885]
+[2025-01-16 21:18:50] Starting validation for epoch: 28
+Validation Epoch: 28 [0/46 (0%)] Loss: 229.735199
+Epoch 28 completed at 2025-01-16 21:18:58
+    epoch          : 28
+    elapsed time   : 144.27272534370422
+    loss           : 136.4867003896962
+    sim_loss       : 19.781145330235038
+    gen_loss       : 116.70555438166079
+    val_loss       : 229.73519897460938
+    val_sim_loss   : 46.37810516357422
+    val_gen_loss   : 183.3571014404297
+    val_perplexity : 26.193872451782227
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 29 at 2025-01-16 21:18:58
+[2025-01-16 21:19:02] Train Epoch: 29 [0/733 (0%)] Loss: 135.133224 [20.619127 + 114.514099]
+[2025-01-16 21:19:29] Train Epoch: 29 [144/733 (20%)] Loss: 138.521561 [20.576023 + 117.945534]
+[2025-01-16 21:19:55] Train Epoch: 29 [288/733 (39%)] Loss: 137.486160 [17.776157 + 119.710007]
+[2025-01-16 21:20:22] Train Epoch: 29 [432/733 (59%)] Loss: 133.631165 [20.359604 + 113.271553]
+[2025-01-16 21:20:49] Train Epoch: 29 [576/733 (79%)] Loss: 136.134018 [23.459200 + 112.674820]
+[2025-01-16 21:21:14] Train Epoch: 29 [720/733 (98%)] Loss: 49.969517 [4.938554 + 45.030964]
+[2025-01-16 21:21:14] Starting validation for epoch: 29
+Validation Epoch: 29 [0/46 (0%)] Loss: 214.508392
+Epoch 29 completed at 2025-01-16 21:21:22
+    epoch          : 29
+    elapsed time   : 144.40616917610168
+    loss           : 134.98353103969407
+    sim_loss       : 20.56930076557657
+    gen_loss       : 114.41422960032587
+    val_loss       : 214.50839233398438
+    val_sim_loss   : 30.353843688964844
+    val_gen_loss   : 184.154541015625
+    val_perplexity : 26.30779266357422
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 30 at 2025-01-16 21:21:22
+[2025-01-16 21:21:26] Train Epoch: 30 [0/733 (0%)] Loss: 138.730927 [22.337479 + 116.393448]
+[2025-01-16 21:21:53] Train Epoch: 30 [144/733 (20%)] Loss: 130.356628 [13.430569 + 116.926056]
+[2025-01-16 21:22:20] Train Epoch: 30 [288/733 (39%)] Loss: 125.226158 [16.581274 + 108.644882]
+[2025-01-16 21:22:46] Train Epoch: 30 [432/733 (59%)] Loss: 134.077927 [13.302171 + 120.775757]
+[2025-01-16 21:23:13] Train Epoch: 30 [576/733 (79%)] Loss: 138.366577 [18.708748 + 119.657822]
+[2025-01-16 21:23:38] Train Epoch: 30 [720/733 (98%)] Loss: 50.136932 [3.082971 + 47.053963]
+[2025-01-16 21:23:38] Starting validation for epoch: 30
+Validation Epoch: 30 [0/46 (0%)] Loss: 215.615448
+Epoch 30 completed at 2025-01-16 21:23:47
+    epoch          : 30
+    elapsed time   : 144.2903606891632
+    loss           : 133.38011268947434
+    sim_loss       : 19.79630364542422
+    gen_loss       : 113.58380840135658
+    val_loss       : 215.61544799804688
+    val_sim_loss   : 29.859073638916016
+    val_gen_loss   : 185.75637817382812
+    val_perplexity : 26.5366268157959
+    val_accuracy   : 0.0
+Saving checkpoint: congress_full-save/models/checkpoint-epoch30.pth ...
+Saving current best: model_best.pth ...
+Starting expansion at Thu Jan 16 21:24:24 EST 2025
+Tokenizing documents and phrases using bert-base-uncased tokenizer, please wait...
+TopicExpan(
+  (doc_encoder): BertDocEncoder(
+    (model): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0-11): 12 x BertLayer(
+            (attention): BertAttention(
+              (self): BertSdpaSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (activation): Tanh()
+      )
+    )
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+  )
+  (phrase_decoder): TransformerPhraseDecoder(
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (output_embeddings): Linear(in_features=768, out_features=30522, bias=False)
+    (model): TransformerDecoder(
+      (layers): ModuleList(
+        (0): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (multihead_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (linear1): Linear(in_features=768, out_features=2048, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (linear2): Linear(in_features=2048, out_features=768, bias=True)
+          (norm1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (norm3): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (dropout3): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+  )
+  (topic_encoder): GCNTopicEncoder(
+    (downward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (upward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (sideward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+  )
+  (interaction): BilinearInteraction()
+  (linear_combiner): Linear(in_features=1152, out_features=768, bias=True)
+)
+Trainable parameters: 142868480
+Loading checkpoint: congress_full-save/models/model_best.pth ...
+Checkpoint loaded. Resume training from epoch 31
+loading projection weights from ~/Downloads/topicexpan/glove/glove.6B.300d.txt
+KeyedVectors lifecycle event {'msg': 'loaded (400000, 300) matrix of type float32 from ~/Downloads/topicexpan/glove/glove.6B.300d.txt', 'binary': False, 'encoding': 'utf8', 'datetime': '2025-01-16T21:47:18.541738', 'gensim': '4.3.3', 'python': '3.12.5 | packaged by conda-forge | (main, Aug  8 2024, 18:36:51) [GCC 12.4.0]', 'platform': 'Linux-4.18.0-513.18.1.el8_9.x86_64-x86_64-with-glibc2.28', 'event': 'load_word2vec_format'}
+Job completed at Thu Jan 16 21:47:23 EST 2025

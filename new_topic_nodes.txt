@@ -38,1340 +38,4368 @@ NOVEL TOPIC NAME :
 ( 33) water resources development
 
 FOUND TOPIC NAME :
-(  0) national security
-(  1) amendment
-(  2) amendment clerk
-(  3) amendment
-(  4) amendment
-(  5) amendment
-(  6) amendment
-(  7) amendment
-(  8) amendment
-(  9) amendment
+(  0) states decide issues
+(  1) amendment clerk
+(  2) public lands hunt
+(  3) states decide issues
+(  4) states decide issues
+(  5) states decide issues
+(  6) states decide issues
+(  7) states decide issues
+(  8) states decide issues
+(  9) states decide issues
 
-Topic   0 : national security
-  [  163] national security
-  [  171] national security
-  [  237] national security
-  [  253] national security
-  [  331] national security
-  [  486] national security
-  [  893] national security
-  [  922] national security
-  [ 1148] national security
-  [ 1187] national security
-  [ 1269] national security
-  [ 1360] national security
-  [ 1411] national security
-  [ 1443] national security
-  [ 1453] national security
-  [ 1592] national security
-  [ 1609] national security
-  [ 1610] national security
-  [ 1635] national security
-  [ 1636] national security
-  [ 1644] national security
-  [ 1648] national security
-  [ 1695] national security
-  [ 1701] national security
-  [ 1709] national security
-  [ 1849] national security
-  [ 1866] national security
-  [ 1895] national security
-  [ 1900] national security
-  [ 1902] national security
-  [ 1914] national security
-  [ 1974] national security
-  [ 2138] national security
-  [ 2154] national security
-  [ 2170] national security
-  [ 2239] national security
-  [ 2268] national security
-  [ 2467] national security
-  [ 2570] national security
-  [ 2711] national security
-  [ 2726] national security
-  [ 2760] national security
-  [ 2824] national security
-  [ 2827] national security
-  [ 2847] national security
-  [ 2861] national security
-  [ 2878] national security
-  [ 3161] national security
-  [ 3210] national security
-  [ 3241] national security
-  [ 3242] national security
-  [ 3277] national security
-  [ 3300] national security
-  [ 3321] national security
-  [ 3341] national security
-  [ 3343] national security
-  [ 3347] national security
-  [ 3380] national security
-  [ 3392] national security
-  [ 3429] national security
-  [ 3444] national security
-  [ 3453] national security
-  [ 3558] national security
-  [ 3744] national security
-  [ 3747] national security
-  [ 3855] national security
-  [ 3938] national security
-  [ 4144] national security
-  [ 4223] national security
-  [ 4323] national security
-  [ 4329] national security
-  [ 4541] national security
-  [ 4573] national security
-  [ 4586] national security
-  [ 4730] national security
-  [ 4758] national security
-  [ 4887] national security
-  [ 4900] national security
-  [ 5006] national security
-  [ 5036] national security
-  [ 5049] national security
-  [ 5071] national security
-  [ 5327] national security
-  [ 5334] national security
-  [ 5349] national security
-  [ 5425] national security
-  [ 5552] national security
-  [ 5560] national security
-  [ 5632] national security
-  [ 5790] national security
-  [ 5799] national security
-  [ 6000] national security
-  [ 6140] national security
-  [ 6175] national security
-  [ 6478] national security
-  [ 6671] national security
-  [ 6877] national security
-  [ 6879] national security
-  [ 7018] national security
-  [ 7039] national security
-  [ 7047] national security
-  [ 7309] national security
-  [ 7455] national security
-  [ 7471] national security
-  [ 7479] national security
-  [ 7484] national security
-  [ 7523] national security
-  [ 7758] national security
-  [ 8189] national security
-  [ 8196] national security
-  [ 8509] national security
-  [ 8512] national security
-  [ 8646] national security
-  [ 8747] national security
-  [ 8801] national security
-  [ 8813] national security
-  [ 8885] national security
-  [ 8887] national security
-  [ 9242] national security
-  [ 9248] national security
-  [ 9273] national security
-  [ 9654] national security
-  [ 9826] national security
-  [ 9885] national security
-  [10262] national security
-  [10326] national security
-  [10327] national security
-  [10346] national security
-  [10355] national security
-  [10478] national security
-  [10715] national security
-  [10903] national security
-  [10923] national security
-  [11061] national security
-  [11073] national security
-  [11091] national security
-  [11102] national security
-  [11115] national security
-  [11144] national security
-  [11193] national security
-  [11268] national security
-  [11330] national security
-  [11331] national security
-  [11364] national security
-  [11498] national security
-  [11600] national security
-  [11740] national security
-  [11968] national security
-  [12097] national security
-  [12313] national security
-  [12330] national security
-  [12382] national security
-  [12388] national security
-  [12408] national security
-  [12515] national security
-  [12579] national security
-  [12632] national security
-  [12713] national security
-  [12762] national security
-  [12803] national security
-  [12831] national security
-  [12892] national security
-  [12958] national security
-  [12976] national security
-  [13298] national security
-  [13301] national security
-  [13342] national security
-  [13403] national security
-  [13544] national security
-  [13550] national security
-  [13565] national security
-  [13642] national security
-  [13956] national security
-  [14144] national security
-  [14208] national security
-  [14219] national security
-  [14393] national security
-  [14414] national security
-  [14425] national security
-  [14612] national security
-  [14647] national security
-  [14653] national security
-  [14673] national security
-  [14674] national security
-  [14694] national security
-  [14767] national security
-  [14782] national security
-  [14873] national security
-  [14874] national security
-  [14904] national security
-  [14905] national security
-  [14966] national security
-  [14976] national security
-  [15107] national security
-  [15120] national security
-  [15152] national security
-  [15275] national security
-  [15276] national security
-  [15282] national security
-  [15284] national security
-  [15366] national security
-  [15368] national security
-  [15447] national security
-  [15456] national security
-  [15464] national security
-  [15466] national security
-  [15500] national security
-  [15506] national security
-  [15508] national security
-  [15512] national security
-  [15521] national security
-  [15526] national security
-  [15528] national security
-  [15531] national security
-  [15537] national security
-  [15538] national security
-  [15576] national security
-  [15582] national security
-  [15584] national security
-  [15592] national security
-  [15593] national security
-  [15595] national security
-  [15596] national security
-  [15597] national security
-  [15598] national security
-  [15601] national security
-  [15602] national security
-  [15605] national security
-  [15606] national security
-  [15607] national security
-  [15609] national security
-  [15617] national security
-  [15618] national security
-  [15628] national security
-  [15630] national security
-  [15633] national security
-  [15638] national security
-  [15653] national security
-  [15689] national security
-  [15753] national security
-  [15808] national security
-  [15848] national security
-  [15852] national security
-  [15858] national security
-  [15881] national security
-  [15899] national security
-  [15902] national security
-  [15906] national security
-  [15914] national security
-  [15915] national security
-  [15916] national security
-  [15917] national security
-  [15919] national security
-  [15920] national security
-  [15923] national security
-  [15927] national security
-  [15929] national security
-  [15936] national security
-  [15938] national security
-  [15939] national security
-  [15940] national security
-  [15941] national security
-  [15942] national security
-  [15943] national security
-  [15948] national security
-  [15953] national security
-  [15956] national security
-  [15962] national security
-  [15966] national security
-  [15969] national security
-  [15970] national security
-  [15975] national security
-  [15977] national security
-  [15980] national security
-  [15991] national security
-  [15994] national security
-  [16001] national security
-  [16004] national security
-  [16007] national security
-  [16013] national security
-  [16014] national security
-  [16019] national security
-  [16035] national security
-  [16036] national security
-  [16037] national security
-  [16045] national security
-  [16048] national security
-  [16051] national security
-  [16055] national security
-  [16056] national security
-  [16065] national security
-  [16066] national security
-  [16067] national security
-  [16068] national security
-  [16070] national security
-  [16072] national security
-  [16078] national security
-  [16084] national security
-  [16103] national security
-  [16104] national security
-  [16109] national security
-  [16120] national security
-  [16124] national security
-  [16127] national security
-  [16129] national security
-  [16131] national security
-  [16132] national security
-  [16146] national security
-  [16176] national security
-  [16178] national security
-  [16180] national security
-  [16185] national security
-  [16188] national security
-  [16196] national security
-  [16199] national security
-  [16200] national security
-  [16216] national security
-  [16219] national security
-  [16222] national security
-  [16254] national security
-  [16258] national security
-  [16260] national security
-  [16262] national security
-  [16266] national security
-  [16277] national security
-  [16280] national security
-  [16282] national security
-  [16298] national security
-  [16300] national security
-  [16301] national security
-  [16304] national security
-  [16312] national security
-  [16315] national security
-  [16316] national security
-  [16320] national security
-  [16322] national security
-  [16328] national security
-  [16339] national security
-  [16373] national security
-  [16374] national security
-  [16382] national security
-  [16400] national security
-  [16422] national security
-  [16440] national security
-  [16456] national security
-  [16464] national security
-  [16467] national security
-  [16528] national security
-  [16558] national security
-  [16593] national security
-  [16596] national security
-  [16708] national security
-  [16721] national security
-  [16774] national security
-  [16784] national security
-  [16800] national security
-  [16812] national security
-  [16835] national security
-  [16865] national security
-  [16888] national security
-  [16892] national security
-  [16896] national security
-  [16910] national security
-  [16919] national security
-  [16970] national security
-  [16995] national security
-  [16997] national security
-  [16999] national security
-  [17005] national security
-  [17009] national security
-  [17012] national security
-  [17013] national security
-  [17017] national security
-  [17018] national security
-  [17023] national security
-  [17024] national security
-  [17032] national security
-  [17040] national security
-  [17045] national security
-  [17048] national security
-  [17050] national security
-  [17055] national security
-  [17147] national security
-  [17192] national security
-  [17193] national security
-  [17241] national security
-  [17253] national security
-  [17256] national security
-  [17262] national security
-  [17265] national security
-  [17267] national security
-  [17272] national security
-  [17273] national security
-  [17538] national security
-  [17580] national security
-  [17640] national security
-  [17669] national security
-  [17678] national security
-  [17682] national security
-  [17691] national security
-  [17710] national security
-  [17807] national security
-  [17834] national security
-  [17961] national security
-  [18025] national security
-  [18033] national security
-  [18038] national security
-  [18085] national security
-  [18089] national security
-  [18249] national security
-  [18332] national security
-  [18378] national security
-  [18613] national security
-  [18705] national security
-  [18773] national security
-  [18784] national security
-  [18847] national security
-  [18848] national security
-  [18849] national security
-  [18850] national security
-  [18857] national security
-  [18935] national security
-  [18990] national security
-  [19229] national security
-  [19328] national security
-  [19391] national security
-  [19392] national security
-  [19396] national security
-  [19442] national security
-  [19450] national security
-  [19470] national security
-  [19529] national security
-  [19543] national security
-  [19618] national security
-  [19621] national security
-  [19771] national security
-  [19782] national security
-  [19788] national security
-  [19790] national security
-  [19875] national security
-  [19879] national security
-  [19885] national security
-  [19890] national security
-  [19968] national security
-  [20003] national security
-  [20077] national security
-  [20079] national security
-  [20311] national security
-  [20392] national security
-  [20440] national security
-  [20482] national security
-  [20487] national security
-  [20532] national security
-  [20539] national security
-  [20540] national security
-  [20560] national security
-  [20623] national security
-  [20692] national security
-  [20824] national security
-  [20963] national security
-  [20967] national security
-  [21045] national security
-  [21100] national security
-  [21107] national security
-  [21223] national security
-  [21329] national security
-  [21443] national security
-  [21458] national security
-  [21464] national security
-Topic   1 : amendment
-  [   37] amendment
-  [   69] amendment
-  [  100] amendment
-  [  275] amendment
-  [  323] amendment
-  [  343] amendment
-  [  653] amendment
-  [  671] amendment
-  [  686] amendment
-  [  733] amendment
-  [  796] amendment
-  [  818] amendment
-  [  848] amendment
-  [  849] amendment
-  [  951] amendment
-  [  962] amendment
-  [  996] amendment
-  [ 1013] amendment
-  [ 1019] amendment
-  [ 1028] amendment
-  [ 1037] amendment
-  [ 1045] amendment
-  [ 1066] amendment
-  [ 1074] amendment
-  [ 1076] amendment
-  [ 1078] amendment
-  [ 1084] amendment
-  [ 1090] amendment
-  [ 1167] amendment
-  [ 1181] amendment
-  [ 1205] amendment
-  [ 1276] amendment
-  [ 1292] amendment
-  [ 1346] amendment
-  [ 1358] amendment
-  [ 1398] amendment
-  [ 1418] amendment
-  [ 1486] amendment
-  [ 1492] amendment
-  [ 1545] amendment
-  [ 1581] amendment
-  [ 1638] amendment
-  [ 1686] amendment
-  [ 1713] amendment
-  [ 1757] amendment
-  [ 1760] amendment
-  [ 1846] amendment
-  [ 1882] amendment
-  [ 1885] amendment
-  [ 1903] amendment
-  [ 1917] amendment
-  [ 1976] amendment
-  [ 2013] amendment
-  [ 2019] amendment
-  [ 2046] amendment
-  [ 2120] amendment
-  [ 2375] amendment
-  [ 2376] amendment
-  [ 2378] amendment
-  [ 2387] amendment
-  [ 2415] amendment
-  [ 2636] amendment
-  [ 2786] amendment
-  [ 2793] amendment
-  [ 2890] amendment
-  [ 3152] amendment
-  [ 3197] amendment
-  [ 3198] amendment
-  [ 3333] amendment
-  [ 3344] amendment
-  [ 3405] amendment
-  [ 3410] amendment
-  [ 3421] amendment
-  [ 3450] amendment
-  [ 3560] amendment
-  [ 3649] amendment
-  [ 3782] amendment
-  [ 3977] amendment
-  [ 3993] amendment
-  [ 4025] amendment
-  [ 4083] amendment
-  [ 4126] amendment
-  [ 4158] amendment
-  [ 4267] amendment
-  [ 4288] amendment
-  [ 4375] amendment
-  [ 4452] amendment
-  [ 4461] amendment
-  [ 4466] amendment
-  [ 4477] amendment
-  [ 4568] amendment
-  [ 4626] amendment
-  [ 4627] amendment
-  [ 4709] amendment
-  [ 4726] amendment
-  [ 4734] amendment
-  [ 4737] amendment
-  [ 4906] amendment
-  [ 4957] amendment
-  [ 4983] amendment
-  [ 5099] amendment
-  [ 5144] amendment
-  [ 5149] amendment
-  [ 5188] amendment
-  [ 5374] amendment
-  [ 5514] amendment
-  [ 5532] amendment
-  [ 5676] amendment
-  [ 5770] amendment
-  [ 5787] amendment
-  [ 5794] amendment
-  [ 5804] amendment
-  [ 5846] amendment
-  [ 5857] amendment
-  [ 5860] amendment
-  [ 5896] amendment
-  [ 5927] amendment
-  [ 5953] amendment
-  [ 5992] amendment
-  [ 5997] amendment
-  [ 6001] amendment
-  [ 6002] amendment
-  [ 6003] amendment
-  [ 6004] amendment
-  [ 6029] amendment
-  [ 6047] amendment
-  [ 6141] amendment
-  [ 6162] amendment
-  [ 6179] amendment
-  [ 6181] amendment
-  [ 6254] amendment
-  [ 6269] amendment
-  [ 6297] amendment
-  [ 6540] amendment
-  [ 6796] amendment
-  [ 6808] amendment
-  [ 6968] amendment
-  [ 7014] amendment
-  [ 7019] amendment
-  [ 7049] amendment
-  [ 7050] amendment
-  [ 7270] amendment
-  [ 7354] amendment
-  [ 7364] amendment
-  [ 7422] amendment
-  [ 7429] amendment
-  [ 7472] amendment
-  [ 7542] amendment
-  [ 7640] amendment
-  [ 7678] amendment
-  [ 7694] amendment
-  [ 7770] amendment
-  [ 7832] amendment
-  [ 7840] amendment
-  [ 7918] amendment
-  [ 7945] amendment
-  [ 8046] amendment
-  [ 8230] amendment
-  [ 8315] amendment
-  [ 8401] amendment
-  [ 8552] amendment
-  [ 8574] amendment
-  [ 8579] amendment
-  [ 8597] amendment
-  [ 8667] amendment
-  [ 8717] amendment
-  [ 8739] amendment
-  [ 8821] amendment
-  [ 8822] amendment
-  [ 8839] amendment
-  [ 8842] amendment
-  [ 8873] amendment
-  [ 8897] amendment
-  [ 8899] amendment
-  [ 8947] amendment
-  [ 9096] amendment
-  [ 9207] amendment
-  [ 9210] amendment
-  [ 9243] amendment
-  [ 9335] amendment
-  [ 9569] amendment
-  [ 9622] amendment
-  [ 9623] amendment
-  [ 9626] amendment
-  [ 9627] amendment
-  [ 9628] amendment
-  [ 9657] amendment
-  [ 9720] amendment
-  [ 9788] amendment
-  [ 9825] amendment
-  [ 9854] amendment
-  [ 9949] amendment
-  [ 9967] amendment
-  [10002] amendment
-  [10007] amendment
-  [10018] amendment
-  [10051] amendment
-  [10088] amendment
-  [10263] amendment
-  [10361] amendment
-  [10427] amendment
-  [10436] amendment
-  [10661] amendment
-  [10675] amendment
-  [10700] amendment
-  [10762] amendment
-  [11075] amendment
-  [11087] amendment
-  [11094] amendment
-  [11096] amendment
-  [11098] amendment
-  [11107] amendment
-  [11137] amendment
-  [11173] amendment
-  [11194] amendment
-  [11197] amendment
-  [11210] amendment
-  [11213] amendment
-  [11214] amendment
-  [11224] amendment
-  [11248] amendment
-  [11275] amendment
-  [11293] amendment
-  [11348] amendment
-  [11448] amendment
-  [11459] amendment
-  [11476] amendment
-  [11486] amendment
-  [11513] amendment
-  [11524] amendment
-  [11577] amendment
-  [11826] amendment
-  [11911] amendment
-  [11913] amendment
-  [11914] amendment
-  [11915] amendment
-  [11918] amendment
-  [11919] amendment
-  [11921] amendment
-  [11922] amendment
-  [11927] amendment
-  [11928] amendment
-  [11929] amendment
-  [11953] amendment
-  [11959] amendment
-  [12029] amendment
-  [12030] amendment
-  [12076] amendment
-  [12142] amendment
-  [12406] amendment
-  [12496] amendment
-  [12497] amendment
-  [12498] amendment
-  [12672] amendment
-  [12724] amendment
-  [12779] amendment
-  [12795] amendment
-  [12796] amendment
-  [12956] amendment
-  [13168] amendment
-  [13204] amendment
-  [13335] amendment
-  [13379] amendment
-  [13386] amendment
-  [13394] amendment
-  [13406] amendment
-  [13516] amendment
-  [13521] amendment
-  [13647] amendment
-  [13683] amendment
-  [13690] amendment
-  [13729] amendment
-  [13785] amendment
-  [13809] amendment
-  [14096] amendment
-  [14117] amendment
-  [14119] amendment
-  [14297] amendment
-  [14307] amendment
-  [14309] amendment
-  [14366] amendment
-  [14417] amendment
-  [14477] amendment
-  [14497] amendment
-  [14504] amendment
-  [14512] amendment
-  [14535] amendment
-  [14550] amendment
-  [14554] amendment
-  [14591] amendment
-  [14646] amendment
-  [14657] amendment
-  [14671] amendment
-  [14695] amendment
-  [14696] amendment
-  [14789] amendment
-  [14806] amendment
-  [14821] amendment
-  [14830] amendment
-  [14840] amendment
-  [14841] amendment
-  [14842] amendment
-  [14843] amendment
-  [14844] amendment
-  [14845] amendment
-  [14846] amendment
-  [14848] amendment
-  [14849] amendment
-  [14850] amendment
-  [14851] amendment
-  [14857] amendment
-  [14858] amendment
-  [14863] amendment
-  [14864] amendment
-  [14867] amendment
-  [14889] amendment
-  [14894] amendment
-  [15030] amendment
-  [15031] amendment
-  [15036] amendment
-  [15096] amendment
-  [15106] amendment
-  [15151] amendment
-  [15162] amendment
-  [15179] amendment
-  [15264] amendment
-  [15300] amendment
-  [15302] amendment
-  [15304] amendment
-  [15306] amendment
-  [15315] amendment
-  [15321] amendment
-  [15362] amendment
-  [15395] amendment
-  [15406] amendment
-  [15427] amendment
-  [15435] amendment
-  [15503] amendment
-  [15507] amendment
-  [15509] amendment
-  [15524] amendment
-  [15532] amendment
-  [15534] amendment
-  [15536] amendment
-  [15552] amendment
-  [15554] amendment
-  [15578] amendment
-  [15613] amendment
-  [15642] amendment
-  [15644] amendment
-  [15659] amendment
-  [15686] amendment
-  [15698] amendment
-  [15717] amendment
-  [15739] amendment
-  [15843] amendment
-  [15846] amendment
-  [15864] amendment
-  [15903] amendment
-  [15909] amendment
-  [15912] amendment
-  [15944] amendment
-  [16006] amendment
-  [16027] amendment
-  [16058] amendment
-  [16062] amendment
-  [16074] amendment
-  [16080] amendment
-  [16089] amendment
-  [16119] amendment
-  [16194] amendment
-  [16232] amendment
-  [16371] amendment
-  [16375] amendment
-  [16402] amendment
-  [16442] amendment
-  [16465] amendment
-  [16469] amendment
-  [16479] amendment
-  [16485] amendment
-  [16568] amendment
-  [16583] amendment
-  [16608] amendment
-  [16610] amendment
-  [16611] amendment
-  [16615] amendment
-  [16627] amendment
-  [16669] amendment
-  [16682] amendment
-  [16778] amendment
-  [16785] amendment
-  [16797] amendment
-  [16856] amendment
-  [16885] amendment
-  [16942] amendment
-  [16945] amendment
-  [16967] amendment
-  [17117] amendment
-  [17135] amendment
-  [17170] amendment
-  [17188] amendment
-  [17200] amendment
-  [17232] amendment
-  [17250] amendment
-  [17251] amendment
-  [17283] amendment
-  [17286] amendment
-  [17289] amendment
-  [17290] amendment
-  [17293] amendment
-  [17294] amendment
-  [17350] amendment
-  [17388] amendment
-  [17389] amendment
-  [17404] amendment
-  [17408] amendment
-  [17419] amendment
-  [17420] amendment
-  [17421] amendment
-  [17427] amendment
-  [17428] amendment
-  [17439] amendment
-  [17454] amendment
-  [17513] amendment
-  [17553] amendment
-  [17593] amendment
-  [17654] amendment
-  [17675] amendment
-  [17820] amendment
-  [17830] amendment
-  [17914] amendment
-  [17987] amendment
-  [17999] amendment
-  [18026] amendment
-  [18124] amendment
-  [18126] amendment
-  [18151] amendment
-  [18154] amendment
-  [18195] amendment
-  [18215] amendment
-  [18216] amendment
-  [18217] amendment
-  [18218] amendment
-  [18252] amendment
-  [18317] amendment
-  [18552] amendment
-  [18574] amendment
-  [18579] amendment
-  [18598] amendment
-  [18646] amendment
-  [18688] amendment
-  [18694] amendment
-  [18738] amendment
-  [18778] amendment
-  [18798] amendment
-  [18947] amendment
-  [18967] amendment
-  [18992] amendment
-  [19008] amendment
-  [19071] amendment
-  [19079] amendment
-  [19086] amendment
-  [19333] amendment
-  [19376] amendment
-  [19395] amendment
-  [19404] amendment
-  [19405] amendment
-  [19408] amendment
-  [19478] amendment
-  [19580] amendment
-  [19622] amendment
-  [19625] amendment
-  [19728] amendment
-  [19776] amendment
-  [19817] amendment
-  [19839] amendment
-  [19859] amendment
-  [19860] amendment
-  [19864] amendment
-  [19867] amendment
-  [19973] amendment
-  [20024] amendment
-  [20027] amendment
-  [20184] amendment
-  [20185] amendment
-  [20212] amendment
-  [20355] amendment
-  [20395] amendment
-  [20405] amendment
-  [20418] amendment
-  [20447] amendment
-  [20478] amendment
-  [20498] amendment
-  [20546] amendment
-  [20554] amendment
-  [20578] amendment
-  [20704] amendment
-  [20885] amendment
-  [20934] amendment
-  [20939] amendment
-  [21079] amendment
-  [21162] amendment
-  [21342] amendment
-  [21491] amendment
-  [21609] amendment
-  [21617] amendment
-  [21638] amendment
-  [21640] amendment
-Topic   2 : amendment clerk
-  [   18] amendment clerk
-  [   62] amendment clerk
+Topic   0 : states decide issues
+  [    3] states decide issues
+  [   25] states decide issues
+  [   34] states decide issues
+  [   75] states decide issues
+  [   76] states decide issues
+  [  158] states decide issues
+  [  160] states decide issues
+  [  165] states decide issues
+  [  167] states decide issues
+  [  177] states decide issues
+  [  178] states decide issues
+  [  180] states decide issues
+  [  185] states decide issues
+  [  211] states decide issues
+  [  212] states decide issues
+  [  214] states decide issues
+  [  219] states decide issues
+  [  220] states decide issues
+  [  224] states decide issues
+  [  230] states decide issues
+  [  236] states decide issues
+  [  238] states decide issues
+  [  243] states decide issues
+  [  252] states decide issues
+  [  253] states decide issues
+  [  256] states decide issues
+  [  258] states decide issues
+  [  259] states decide issues
+  [  265] states decide issues
+  [  270] states decide issues
+  [  273] states decide issues
+  [  274] states decide issues
+  [  278] states decide issues
+  [  291] states decide issues
+  [  294] states decide issues
+  [  300] states decide issues
+  [  324] states decide issues
+  [  333] states decide issues
+  [  338] states decide issues
+  [  350] states decide issues
+  [  354] states decide issues
+  [  356] states decide issues
+  [  367] states decide issues
+  [  370] states decide issues
+  [  372] states decide issues
+  [  377] states decide issues
+  [  380] states decide issues
+  [  382] states decide issues
+  [  389] states decide issues
+  [  394] states decide issues
+  [  398] states decide issues
+  [  400] states decide issues
+  [  401] states decide issues
+  [  407] states decide issues
+  [  408] states decide issues
+  [  410] states decide issues
+  [  413] states decide issues
+  [  414] states decide issues
+  [  420] states decide issues
+  [  421] states decide issues
+  [  423] states decide issues
+  [  424] states decide issues
+  [  430] states decide issues
+  [  432] states decide issues
+  [  434] states decide issues
+  [  436] states decide issues
+  [  437] states decide issues
+  [  439] states decide issues
+  [  440] states decide issues
+  [  442] states decide issues
+  [  443] states decide issues
+  [  452] states decide issues
+  [  453] states decide issues
+  [  455] states decide issues
+  [  464] states decide issues
+  [  465] states decide issues
+  [  487] states decide issues
+  [  495] states decide issues
+  [  501] states decide issues
+  [  505] states decide issues
+  [  514] states decide issues
+  [  520] states decide issues
+  [  548] states decide issues
+  [  572] states decide issues
+  [  573] states decide issues
+  [  578] states decide issues
+  [  580] states decide issues
+  [  608] states decide issues
+  [  617] states decide issues
+  [  621] states decide issues
+  [  626] states decide issues
+  [  628] states decide issues
+  [  632] states decide issues
+  [  634] states decide issues
+  [  641] states decide issues
+  [  649] states decide issues
+  [  663] states decide issues
+  [  677] states decide issues
+  [  683] states decide issues
+  [  690] states decide issues
+  [  696] states decide issues
+  [  702] states decide issues
+  [  704] states decide issues
+  [  708] states decide issues
+  [  709] states decide issues
+  [  711] states decide issues
+  [  713] states decide issues
+  [  716] states decide issues
+  [  717] states decide issues
+  [  718] states decide issues
+  [  725] states decide issues
+  [  728] states decide issues
+  [  730] states decide issues
+  [  732] states decide issues
+  [  743] states decide issues
+  [  744] states decide issues
+  [  748] states decide issues
+  [  750] states decide issues
+  [  751] states decide issues
+  [  754] states decide issues
+  [  783] states decide issues
+  [  797] states decide issues
+  [  836] states decide issues
+  [  838] states decide issues
+  [  839] states decide issues
+  [  841] states decide issues
+  [  842] states decide issues
+  [  843] states decide issues
+  [  845] states decide issues
+  [  847] states decide issues
+  [  862] states decide issues
+  [  872] states decide issues
+  [  875] states decide issues
+  [  880] states decide issues
+  [  882] states decide issues
+  [  891] states decide issues
+  [  892] states decide issues
+  [  901] states decide issues
+  [  908] states decide issues
+  [  910] states decide issues
+  [  913] states decide issues
+  [  919] states decide issues
+  [  941] states decide issues
+  [  948] states decide issues
+  [  956] states decide issues
+  [  960] states decide issues
+  [  964] states decide issues
+  [  965] states decide issues
+  [  966] states decide issues
+  [  974] states decide issues
+  [  978] states decide issues
+  [  990] states decide issues
+  [  991] states decide issues
+  [ 1012] states decide issues
+  [ 1016] states decide issues
+  [ 1018] states decide issues
+  [ 1020] states decide issues
+  [ 1022] states decide issues
+  [ 1023] states decide issues
+  [ 1033] states decide issues
+  [ 1038] states decide issues
+  [ 1039] states decide issues
+  [ 1040] states decide issues
+  [ 1043] states decide issues
+  [ 1047] states decide issues
+  [ 1049] states decide issues
+  [ 1053] states decide issues
+  [ 1055] states decide issues
+  [ 1057] states decide issues
+  [ 1059] states decide issues
+  [ 1067] states decide issues
+  [ 1073] states decide issues
+  [ 1075] states decide issues
+  [ 1094] states decide issues
+  [ 1110] states decide issues
+  [ 1114] states decide issues
+  [ 1128] states decide issues
+  [ 1131] states decide issues
+  [ 1134] states decide issues
+  [ 1140] states decide issues
+  [ 1144] states decide issues
+  [ 1148] states decide issues
+  [ 1155] states decide issues
+  [ 1156] states decide issues
+  [ 1161] states decide issues
+  [ 1166] states decide issues
+  [ 1184] states decide issues
+  [ 1189] states decide issues
+  [ 1193] states decide issues
+  [ 1195] states decide issues
+  [ 1209] states decide issues
+  [ 1213] states decide issues
+  [ 1214] states decide issues
+  [ 1218] states decide issues
+  [ 1219] states decide issues
+  [ 1227] states decide issues
+  [ 1233] states decide issues
+  [ 1236] states decide issues
+  [ 1250] states decide issues
+  [ 1251] states decide issues
+  [ 1262] states decide issues
+  [ 1266] states decide issues
+  [ 1271] states decide issues
+  [ 1280] states decide issues
+  [ 1310] states decide issues
+  [ 1313] states decide issues
+  [ 1332] states decide issues
+  [ 1338] states decide issues
+  [ 1352] states decide issues
+  [ 1371] states decide issues
+  [ 1410] states decide issues
+  [ 1415] states decide issues
+  [ 1417] states decide issues
+  [ 1420] states decide issues
+  [ 1421] states decide issues
+  [ 1424] states decide issues
+  [ 1426] states decide issues
+  [ 1428] states decide issues
+  [ 1429] states decide issues
+  [ 1440] states decide issues
+  [ 1441] states decide issues
+  [ 1456] states decide issues
+  [ 1468] states decide issues
+  [ 1473] states decide issues
+  [ 1501] states decide issues
+  [ 1503] states decide issues
+  [ 1528] states decide issues
+  [ 1543] states decide issues
+  [ 1544] states decide issues
+  [ 1547] states decide issues
+  [ 1552] states decide issues
+  [ 1553] states decide issues
+  [ 1554] states decide issues
+  [ 1557] states decide issues
+  [ 1564] states decide issues
+  [ 1569] states decide issues
+  [ 1570] states decide issues
+  [ 1571] states decide issues
+  [ 1574] states decide issues
+  [ 1583] states decide issues
+  [ 1584] states decide issues
+  [ 1604] states decide issues
+  [ 1606] states decide issues
+  [ 1613] states decide issues
+  [ 1619] states decide issues
+  [ 1620] states decide issues
+  [ 1623] states decide issues
+  [ 1626] states decide issues
+  [ 1633] states decide issues
+  [ 1646] states decide issues
+  [ 1657] states decide issues
+  [ 1664] states decide issues
+  [ 1684] states decide issues
+  [ 1694] states decide issues
+  [ 1697] states decide issues
+  [ 1698] states decide issues
+  [ 1701] states decide issues
+  [ 1702] states decide issues
+  [ 1766] states decide issues
+  [ 1778] states decide issues
+  [ 1779] states decide issues
+  [ 1791] states decide issues
+  [ 1805] states decide issues
+  [ 1808] states decide issues
+  [ 1809] states decide issues
+  [ 1812] states decide issues
+  [ 1820] states decide issues
+  [ 1827] states decide issues
+  [ 1829] states decide issues
+  [ 1836] states decide issues
+  [ 1838] states decide issues
+  [ 1841] states decide issues
+  [ 1842] states decide issues
+  [ 1848] states decide issues
+  [ 1854] states decide issues
+  [ 1878] states decide issues
+  [ 1893] states decide issues
+  [ 1895] states decide issues
+  [ 1901] states decide issues
+  [ 1947] states decide issues
+  [ 1968] states decide issues
+  [ 1970] states decide issues
+  [ 1981] states decide issues
+  [ 1983] states decide issues
+  [ 1989] states decide issues
+  [ 1993] states decide issues
+  [ 2001] states decide issues
+  [ 2003] states decide issues
+  [ 2012] states decide issues
+  [ 2016] states decide issues
+  [ 2020] states decide issues
+  [ 2025] states decide issues
+  [ 2026] states decide issues
+  [ 2027] states decide issues
+  [ 2030] states decide issues
+  [ 2055] states decide issues
+  [ 2060] states decide issues
+  [ 2063] states decide issues
+  [ 2065] states decide issues
+  [ 2070] states decide issues
+  [ 2075] states decide issues
+  [ 2080] states decide issues
+  [ 2092] states decide issues
+  [ 2097] states decide issues
+  [ 2101] states decide issues
+  [ 2102] states decide issues
+  [ 2103] states decide issues
+  [ 2104] states decide issues
+  [ 2105] states decide issues
+  [ 2116] states decide issues
+  [ 2118] states decide issues
+  [ 2128] states decide issues
+  [ 2161] states decide issues
+  [ 2167] states decide issues
+  [ 2173] states decide issues
+  [ 2180] states decide issues
+  [ 2193] states decide issues
+  [ 2195] states decide issues
+  [ 2202] states decide issues
+  [ 2206] states decide issues
+  [ 2213] states decide issues
+  [ 2216] states decide issues
+  [ 2219] states decide issues
+  [ 2220] states decide issues
+  [ 2221] states decide issues
+  [ 2222] states decide issues
+  [ 2247] states decide issues
+  [ 2249] states decide issues
+  [ 2255] states decide issues
+  [ 2273] states decide issues
+  [ 2277] states decide issues
+  [ 2278] states decide issues
+  [ 2305] states decide issues
+  [ 2315] states decide issues
+  [ 2316] states decide issues
+  [ 2317] states decide issues
+  [ 2321] states decide issues
+  [ 2322] states decide issues
+  [ 2324] states decide issues
+  [ 2326] states decide issues
+  [ 2328] states decide issues
+  [ 2333] states decide issues
+  [ 2334] states decide issues
+  [ 2351] states decide issues
+  [ 2367] states decide issues
+  [ 2370] states decide issues
+  [ 2371] states decide issues
+  [ 2384] states decide issues
+  [ 2386] states decide issues
+  [ 2406] states decide issues
+  [ 2409] states decide issues
+  [ 2414] states decide issues
+  [ 2437] states decide issues
+  [ 2441] states decide issues
+  [ 2448] states decide issues
+  [ 2451] states decide issues
+  [ 2452] states decide issues
+  [ 2456] states decide issues
+  [ 2458] states decide issues
+  [ 2461] states decide issues
+  [ 2483] states decide issues
+  [ 2487] states decide issues
+  [ 2488] states decide issues
+  [ 2495] states decide issues
+  [ 2496] states decide issues
+  [ 2499] states decide issues
+  [ 2505] states decide issues
+  [ 2506] states decide issues
+  [ 2510] states decide issues
+  [ 2517] states decide issues
+  [ 2519] states decide issues
+  [ 2531] states decide issues
+  [ 2536] states decide issues
+  [ 2546] states decide issues
+  [ 2559] states decide issues
+  [ 2560] states decide issues
+  [ 2568] states decide issues
+  [ 2570] states decide issues
+  [ 2596] states decide issues
+  [ 2605] states decide issues
+  [ 2607] states decide issues
+  [ 2610] states decide issues
+  [ 2615] states decide issues
+  [ 2626] states decide issues
+  [ 2628] states decide issues
+  [ 2629] states decide issues
+  [ 2630] states decide issues
+  [ 2642] states decide issues
+  [ 2646] states decide issues
+  [ 2655] states decide issues
+  [ 2667] states decide issues
+  [ 2668] states decide issues
+  [ 2682] states decide issues
+  [ 2684] states decide issues
+  [ 2688] states decide issues
+  [ 2690] states decide issues
+  [ 2693] states decide issues
+  [ 2695] states decide issues
+  [ 2703] states decide issues
+  [ 2712] states decide issues
+  [ 2714] states decide issues
+  [ 2715] states decide issues
+  [ 2717] states decide issues
+  [ 2720] states decide issues
+  [ 2724] states decide issues
+  [ 2725] states decide issues
+  [ 2731] states decide issues
+  [ 2747] states decide issues
+  [ 2748] states decide issues
+  [ 2753] states decide issues
+  [ 2757] states decide issues
+  [ 2774] states decide issues
+  [ 2778] states decide issues
+  [ 2779] states decide issues
+  [ 2781] states decide issues
+  [ 2839] states decide issues
+  [ 2847] states decide issues
+  [ 2875] states decide issues
+  [ 2879] states decide issues
+  [ 2884] states decide issues
+  [ 2904] states decide issues
+  [ 2905] states decide issues
+  [ 2913] states decide issues
+  [ 2914] states decide issues
+  [ 2922] states decide issues
+  [ 2924] states decide issues
+  [ 2926] states decide issues
+  [ 2927] states decide issues
+  [ 2931] states decide issues
+  [ 2936] states decide issues
+  [ 2938] states decide issues
+  [ 2939] states decide issues
+  [ 2987] states decide issues
+  [ 2992] states decide issues
+  [ 3003] states decide issues
+  [ 3012] states decide issues
+  [ 3013] states decide issues
+  [ 3017] states decide issues
+  [ 3018] states decide issues
+  [ 3019] states decide issues
+  [ 3037] states decide issues
+  [ 3039] states decide issues
+  [ 3041] states decide issues
+  [ 3059] states decide issues
+  [ 3067] states decide issues
+  [ 3079] states decide issues
+  [ 3080] states decide issues
+  [ 3086] states decide issues
+  [ 3092] states decide issues
+  [ 3094] states decide issues
+  [ 3103] states decide issues
+  [ 3104] states decide issues
+  [ 3109] states decide issues
+  [ 3110] states decide issues
+  [ 3114] states decide issues
+  [ 3115] states decide issues
+  [ 3128] states decide issues
+  [ 3135] states decide issues
+  [ 3142] states decide issues
+  [ 3145] states decide issues
+  [ 3146] states decide issues
+  [ 3147] states decide issues
+  [ 3148] states decide issues
+  [ 3153] states decide issues
+  [ 3154] states decide issues
+  [ 3160] states decide issues
+  [ 3164] states decide issues
+  [ 3171] states decide issues
+  [ 3182] states decide issues
+  [ 3185] states decide issues
+  [ 3188] states decide issues
+  [ 3190] states decide issues
+  [ 3191] states decide issues
+  [ 3194] states decide issues
+  [ 3195] states decide issues
+  [ 3199] states decide issues
+  [ 3212] states decide issues
+  [ 3219] states decide issues
+  [ 3224] states decide issues
+  [ 3226] states decide issues
+  [ 3228] states decide issues
+  [ 3234] states decide issues
+  [ 3238] states decide issues
+  [ 3239] states decide issues
+  [ 3240] states decide issues
+  [ 3254] states decide issues
+  [ 3269] states decide issues
+  [ 3270] states decide issues
+  [ 3278] states decide issues
+  [ 3281] states decide issues
+  [ 3282] states decide issues
+  [ 3297] states decide issues
+  [ 3311] states decide issues
+  [ 3314] states decide issues
+  [ 3316] states decide issues
+  [ 3319] states decide issues
+  [ 3320] states decide issues
+  [ 3323] states decide issues
+  [ 3325] states decide issues
+  [ 3327] states decide issues
+  [ 3329] states decide issues
+  [ 3330] states decide issues
+  [ 3341] states decide issues
+  [ 3342] states decide issues
+  [ 3343] states decide issues
+  [ 3347] states decide issues
+  [ 3350] states decide issues
+  [ 3356] states decide issues
+  [ 3360] states decide issues
+  [ 3363] states decide issues
+  [ 3369] states decide issues
+  [ 3373] states decide issues
+  [ 3375] states decide issues
+  [ 3376] states decide issues
+  [ 3378] states decide issues
+  [ 3379] states decide issues
+  [ 3388] states decide issues
+  [ 3389] states decide issues
+  [ 3392] states decide issues
+  [ 3393] states decide issues
+  [ 3396] states decide issues
+  [ 3397] states decide issues
+  [ 3398] states decide issues
+  [ 3401] states decide issues
+  [ 3402] states decide issues
+  [ 3424] states decide issues
+  [ 3439] states decide issues
+  [ 3453] states decide issues
+  [ 3461] states decide issues
+  [ 3469] states decide issues
+  [ 3471] states decide issues
+  [ 3472] states decide issues
+  [ 3473] states decide issues
+  [ 3479] states decide issues
+  [ 3480] states decide issues
+  [ 3485] states decide issues
+  [ 3500] states decide issues
+  [ 3504] states decide issues
+  [ 3517] states decide issues
+  [ 3518] states decide issues
+  [ 3523] states decide issues
+  [ 3529] states decide issues
+  [ 3531] states decide issues
+  [ 3559] states decide issues
+  [ 3563] states decide issues
+  [ 3573] states decide issues
+  [ 3580] states decide issues
+  [ 3585] states decide issues
+  [ 3600] states decide issues
+  [ 3614] states decide issues
+  [ 3631] states decide issues
+  [ 3635] states decide issues
+  [ 3636] states decide issues
+  [ 3637] states decide issues
+  [ 3655] states decide issues
+  [ 3657] states decide issues
+  [ 3665] states decide issues
+  [ 3678] states decide issues
+  [ 3680] states decide issues
+  [ 3682] states decide issues
+  [ 3686] states decide issues
+  [ 3689] states decide issues
+  [ 3702] states decide issues
+  [ 3714] states decide issues
+  [ 3720] states decide issues
+  [ 3748] states decide issues
+  [ 3749] states decide issues
+  [ 3755] states decide issues
+  [ 3761] states decide issues
+  [ 3769] states decide issues
+  [ 3781] states decide issues
+  [ 3804] states decide issues
+  [ 3808] states decide issues
+  [ 3812] states decide issues
+  [ 3815] states decide issues
+  [ 3816] states decide issues
+  [ 3818] states decide issues
+  [ 3835] states decide issues
+  [ 3836] states decide issues
+  [ 3837] states decide issues
+  [ 3850] states decide issues
+  [ 3851] states decide issues
+  [ 3853] states decide issues
+  [ 3854] states decide issues
+  [ 3858] states decide issues
+  [ 3859] states decide issues
+  [ 3861] states decide issues
+  [ 3872] states decide issues
+  [ 3874] states decide issues
+  [ 3876] states decide issues
+  [ 3878] states decide issues
+  [ 3888] states decide issues
+  [ 3914] states decide issues
+  [ 3915] states decide issues
+  [ 3926] states decide issues
+  [ 3929] states decide issues
+  [ 3943] states decide issues
+  [ 3944] states decide issues
+  [ 3945] states decide issues
+  [ 3957] states decide issues
+  [ 3958] states decide issues
+  [ 3959] states decide issues
+  [ 3967] states decide issues
+  [ 3969] states decide issues
+  [ 3970] states decide issues
+  [ 3971] states decide issues
+  [ 4003] states decide issues
+  [ 4011] states decide issues
+  [ 4012] states decide issues
+  [ 4016] states decide issues
+  [ 4023] states decide issues
+  [ 4038] states decide issues
+  [ 4048] states decide issues
+  [ 4051] states decide issues
+  [ 4052] states decide issues
+  [ 4053] states decide issues
+  [ 4059] states decide issues
+  [ 4063] states decide issues
+  [ 4073] states decide issues
+  [ 4078] states decide issues
+  [ 4079] states decide issues
+  [ 4084] states decide issues
+  [ 4088] states decide issues
+  [ 4094] states decide issues
+  [ 4099] states decide issues
+  [ 4100] states decide issues
+  [ 4103] states decide issues
+  [ 4104] states decide issues
+  [ 4105] states decide issues
+  [ 4110] states decide issues
+  [ 4112] states decide issues
+  [ 4121] states decide issues
+  [ 4129] states decide issues
+  [ 4139] states decide issues
+  [ 4271] states decide issues
+  [ 4282] states decide issues
+  [ 4296] states decide issues
+  [ 4299] states decide issues
+  [ 4312] states decide issues
+  [ 4313] states decide issues
+  [ 4314] states decide issues
+  [ 4323] states decide issues
+  [ 4327] states decide issues
+  [ 4329] states decide issues
+  [ 4333] states decide issues
+  [ 4344] states decide issues
+  [ 4347] states decide issues
+  [ 4348] states decide issues
+  [ 4351] states decide issues
+  [ 4389] states decide issues
+  [ 4401] states decide issues
+  [ 4411] states decide issues
+  [ 4417] states decide issues
+  [ 4419] states decide issues
+  [ 4421] states decide issues
+  [ 4423] states decide issues
+  [ 4424] states decide issues
+  [ 4427] states decide issues
+  [ 4428] states decide issues
+  [ 4431] states decide issues
+  [ 4432] states decide issues
+  [ 4436] states decide issues
+  [ 4446] states decide issues
+  [ 4447] states decide issues
+  [ 4457] states decide issues
+  [ 4464] states decide issues
+  [ 4467] states decide issues
+  [ 4468] states decide issues
+  [ 4470] states decide issues
+  [ 4474] states decide issues
+  [ 4483] states decide issues
+  [ 4489] states decide issues
+  [ 4494] states decide issues
+  [ 4495] states decide issues
+  [ 4496] states decide issues
+  [ 4497] states decide issues
+  [ 4498] states decide issues
+  [ 4499] states decide issues
+  [ 4500] states decide issues
+  [ 4501] states decide issues
+  [ 4504] states decide issues
+  [ 4507] states decide issues
+  [ 4509] states decide issues
+  [ 4511] states decide issues
+  [ 4512] states decide issues
+  [ 4521] states decide issues
+  [ 4523] states decide issues
+  [ 4529] states decide issues
+  [ 4530] states decide issues
+  [ 4544] states decide issues
+  [ 4548] states decide issues
+  [ 4566] states decide issues
+  [ 4685] states decide issues
+  [ 4686] states decide issues
+  [ 4691] states decide issues
+  [ 4692] states decide issues
+  [ 4719] states decide issues
+  [ 4720] states decide issues
+  [ 4722] states decide issues
+  [ 4727] states decide issues
+  [ 4728] states decide issues
+  [ 4729] states decide issues
+  [ 4730] states decide issues
+  [ 4731] states decide issues
+  [ 4732] states decide issues
+  [ 4733] states decide issues
+  [ 4735] states decide issues
+  [ 4736] states decide issues
+  [ 4744] states decide issues
+  [ 4758] states decide issues
+  [ 4760] states decide issues
+  [ 4766] states decide issues
+  [ 4779] states decide issues
+  [ 4785] states decide issues
+  [ 4787] states decide issues
+  [ 4792] states decide issues
+  [ 4795] states decide issues
+  [ 4796] states decide issues
+  [ 4810] states decide issues
+  [ 4848] states decide issues
+  [ 4855] states decide issues
+  [ 4910] states decide issues
+  [ 4921] states decide issues
+  [ 4926] states decide issues
+  [ 4937] states decide issues
+  [ 4967] states decide issues
+  [ 4976] states decide issues
+  [ 4989] states decide issues
+  [ 4993] states decide issues
+  [ 4995] states decide issues
+  [ 5000] states decide issues
+  [ 5019] states decide issues
+  [ 5020] states decide issues
+  [ 5024] states decide issues
+  [ 5025] states decide issues
+  [ 5026] states decide issues
+  [ 5027] states decide issues
+  [ 5028] states decide issues
+  [ 5029] states decide issues
+  [ 5040] states decide issues
+  [ 5042] states decide issues
+  [ 5054] states decide issues
+  [ 5055] states decide issues
+  [ 5057] states decide issues
+  [ 5061] states decide issues
+  [ 5063] states decide issues
+  [ 5065] states decide issues
+  [ 5067] states decide issues
+  [ 5068] states decide issues
+  [ 5079] states decide issues
+  [ 5081] states decide issues
+  [ 5084] states decide issues
+  [ 5085] states decide issues
+  [ 5089] states decide issues
+  [ 5092] states decide issues
+  [ 5093] states decide issues
+  [ 5094] states decide issues
+  [ 5095] states decide issues
+  [ 5101] states decide issues
+  [ 5110] states decide issues
+  [ 5113] states decide issues
+  [ 5117] states decide issues
+  [ 5120] states decide issues
+  [ 5133] states decide issues
+  [ 5134] states decide issues
+  [ 5155] states decide issues
+  [ 5159] states decide issues
+  [ 5165] states decide issues
+  [ 5171] states decide issues
+  [ 5175] states decide issues
+  [ 5197] states decide issues
+  [ 5199] states decide issues
+  [ 5205] states decide issues
+  [ 5217] states decide issues
+  [ 5233] states decide issues
+  [ 5247] states decide issues
+  [ 5254] states decide issues
+  [ 5265] states decide issues
+  [ 5270] states decide issues
+  [ 5271] states decide issues
+  [ 5274] states decide issues
+  [ 5278] states decide issues
+  [ 5294] states decide issues
+  [ 5298] states decide issues
+  [ 5302] states decide issues
+  [ 5304] states decide issues
+  [ 5310] states decide issues
+  [ 5316] states decide issues
+  [ 5329] states decide issues
+  [ 5331] states decide issues
+  [ 5332] states decide issues
+  [ 5338] states decide issues
+  [ 5339] states decide issues
+  [ 5349] states decide issues
+  [ 5365] states decide issues
+  [ 5368] states decide issues
+  [ 5369] states decide issues
+  [ 5376] states decide issues
+  [ 5391] states decide issues
+  [ 5398] states decide issues
+  [ 5404] states decide issues
+  [ 5411] states decide issues
+  [ 5413] states decide issues
+  [ 5416] states decide issues
+  [ 5426] states decide issues
+  [ 5436] states decide issues
+  [ 5446] states decide issues
+  [ 5450] states decide issues
+  [ 5455] states decide issues
+  [ 5461] states decide issues
+  [ 5467] states decide issues
+  [ 5470] states decide issues
+  [ 5474] states decide issues
+  [ 5476] states decide issues
+  [ 5488] states decide issues
+  [ 5489] states decide issues
+  [ 5497] states decide issues
+  [ 5519] states decide issues
+  [ 5524] states decide issues
+  [ 5525] states decide issues
+  [ 5526] states decide issues
+  [ 5544] states decide issues
+  [ 5565] states decide issues
+  [ 5570] states decide issues
+  [ 5572] states decide issues
+  [ 5573] states decide issues
+  [ 5574] states decide issues
+  [ 5576] states decide issues
+  [ 5589] states decide issues
+  [ 5591] states decide issues
+  [ 5597] states decide issues
+  [ 5606] states decide issues
+  [ 5613] states decide issues
+  [ 5620] states decide issues
+  [ 5629] states decide issues
+  [ 5635] states decide issues
+  [ 5667] states decide issues
+  [ 5670] states decide issues
+  [ 5679] states decide issues
+  [ 5686] states decide issues
+  [ 5691] states decide issues
+  [ 5698] states decide issues
+  [ 5704] states decide issues
+  [ 5728] states decide issues
+  [ 5746] states decide issues
+  [ 5750] states decide issues
+  [ 5758] states decide issues
+  [ 5762] states decide issues
+  [ 5764] states decide issues
+  [ 5769] states decide issues
+  [ 5774] states decide issues
+  [ 5779] states decide issues
+  [ 5780] states decide issues
+  [ 5781] states decide issues
+  [ 5782] states decide issues
+  [ 5786] states decide issues
+  [ 5795] states decide issues
+  [ 5796] states decide issues
+  [ 5806] states decide issues
+  [ 5807] states decide issues
+  [ 5811] states decide issues
+  [ 5825] states decide issues
+  [ 5832] states decide issues
+  [ 5840] states decide issues
+  [ 5848] states decide issues
+  [ 5851] states decide issues
+  [ 5862] states decide issues
+  [ 5864] states decide issues
+  [ 5870] states decide issues
+  [ 5880] states decide issues
+  [ 5881] states decide issues
+  [ 5884] states decide issues
+  [ 5894] states decide issues
+  [ 5904] states decide issues
+  [ 5905] states decide issues
+  [ 5909] states decide issues
+  [ 5910] states decide issues
+  [ 5911] states decide issues
+  [ 5915] states decide issues
+  [ 5934] states decide issues
+  [ 5935] states decide issues
+  [ 5943] states decide issues
+  [ 5945] states decide issues
+  [ 5946] states decide issues
+  [ 5960] states decide issues
+  [ 5989] states decide issues
+  [ 5993] states decide issues
+  [ 6036] states decide issues
+  [ 6038] states decide issues
+  [ 6039] states decide issues
+  [ 6040] states decide issues
+  [ 6053] states decide issues
+  [ 6055] states decide issues
+  [ 6070] states decide issues
+  [ 6072] states decide issues
+  [ 6075] states decide issues
+  [ 6076] states decide issues
+  [ 6077] states decide issues
+  [ 6081] states decide issues
+  [ 6097] states decide issues
+  [ 6108] states decide issues
+  [ 6110] states decide issues
+  [ 6116] states decide issues
+  [ 6117] states decide issues
+  [ 6120] states decide issues
+  [ 6121] states decide issues
+  [ 6128] states decide issues
+  [ 6142] states decide issues
+  [ 6144] states decide issues
+  [ 6280] states decide issues
+  [ 6294] states decide issues
+  [ 6299] states decide issues
+  [ 6311] states decide issues
+  [ 6314] states decide issues
+  [ 6318] states decide issues
+  [ 6319] states decide issues
+  [ 6322] states decide issues
+  [ 6331] states decide issues
+  [ 6333] states decide issues
+  [ 6342] states decide issues
+  [ 6364] states decide issues
+  [ 6367] states decide issues
+  [ 6368] states decide issues
+  [ 6371] states decide issues
+  [ 6372] states decide issues
+  [ 6375] states decide issues
+  [ 6386] states decide issues
+  [ 6390] states decide issues
+  [ 6391] states decide issues
+  [ 6397] states decide issues
+  [ 6399] states decide issues
+  [ 6403] states decide issues
+  [ 6406] states decide issues
+  [ 6410] states decide issues
+  [ 6413] states decide issues
+  [ 6417] states decide issues
+  [ 6419] states decide issues
+  [ 6426] states decide issues
+  [ 6432] states decide issues
+  [ 6433] states decide issues
+  [ 6434] states decide issues
+  [ 6437] states decide issues
+  [ 6449] states decide issues
+  [ 6454] states decide issues
+  [ 6456] states decide issues
+  [ 6462] states decide issues
+  [ 6468] states decide issues
+  [ 6469] states decide issues
+  [ 6476] states decide issues
+  [ 6477] states decide issues
+  [ 6482] states decide issues
+  [ 6487] states decide issues
+  [ 6488] states decide issues
+  [ 6491] states decide issues
+  [ 6492] states decide issues
+  [ 6493] states decide issues
+  [ 6508] states decide issues
+  [ 6549] states decide issues
+  [ 6551] states decide issues
+  [ 6567] states decide issues
+  [ 6578] states decide issues
+  [ 6583] states decide issues
+  [ 6591] states decide issues
+  [ 6593] states decide issues
+  [ 6594] states decide issues
+  [ 6597] states decide issues
+  [ 6598] states decide issues
+  [ 6608] states decide issues
+  [ 6613] states decide issues
+  [ 6622] states decide issues
+  [ 6630] states decide issues
+  [ 6636] states decide issues
+  [ 6637] states decide issues
+  [ 6641] states decide issues
+  [ 6644] states decide issues
+  [ 6647] states decide issues
+  [ 6683] states decide issues
+  [ 6684] states decide issues
+  [ 6687] states decide issues
+  [ 6688] states decide issues
+  [ 6691] states decide issues
+  [ 6706] states decide issues
+  [ 6710] states decide issues
+  [ 6717] states decide issues
+  [ 6718] states decide issues
+  [ 6721] states decide issues
+  [ 6723] states decide issues
+  [ 6727] states decide issues
+  [ 6734] states decide issues
+  [ 6736] states decide issues
+  [ 6744] states decide issues
+  [ 6745] states decide issues
+  [ 6756] states decide issues
+  [ 6757] states decide issues
+  [ 6760] states decide issues
+  [ 6770] states decide issues
+  [ 6780] states decide issues
+  [ 6783] states decide issues
+  [ 6797] states decide issues
+  [ 6800] states decide issues
+  [ 6806] states decide issues
+  [ 6818] states decide issues
+  [ 6819] states decide issues
+  [ 6833] states decide issues
+  [ 6852] states decide issues
+  [ 6862] states decide issues
+  [ 6870] states decide issues
+  [ 6873] states decide issues
+  [ 6879] states decide issues
+  [ 6883] states decide issues
+  [ 6886] states decide issues
+  [ 6890] states decide issues
+  [ 6891] states decide issues
+  [ 6897] states decide issues
+  [ 6907] states decide issues
+  [ 6913] states decide issues
+  [ 6917] states decide issues
+  [ 6920] states decide issues
+  [ 6921] states decide issues
+  [ 6924] states decide issues
+  [ 6926] states decide issues
+  [ 6928] states decide issues
+  [ 6929] states decide issues
+  [ 6931] states decide issues
+  [ 6949] states decide issues
+  [ 6967] states decide issues
+  [ 6985] states decide issues
+  [ 6992] states decide issues
+  [ 7037] states decide issues
+  [ 7043] states decide issues
+  [ 7057] states decide issues
+  [ 7065] states decide issues
+  [ 7066] states decide issues
+  [ 7068] states decide issues
+  [ 7070] states decide issues
+  [ 7071] states decide issues
+  [ 7074] states decide issues
+  [ 7076] states decide issues
+  [ 7079] states decide issues
+  [ 7081] states decide issues
+  [ 7082] states decide issues
+  [ 7106] states decide issues
+  [ 7108] states decide issues
+  [ 7112] states decide issues
+  [ 7121] states decide issues
+  [ 7123] states decide issues
+  [ 7160] states decide issues
+  [ 7172] states decide issues
+  [ 7179] states decide issues
+  [ 7200] states decide issues
+  [ 7204] states decide issues
+  [ 7207] states decide issues
+  [ 7215] states decide issues
+  [ 7283] states decide issues
+  [ 7291] states decide issues
+  [ 7293] states decide issues
+  [ 7308] states decide issues
+  [ 7324] states decide issues
+  [ 7329] states decide issues
+  [ 7344] states decide issues
+  [ 7347] states decide issues
+  [ 7353] states decide issues
+  [ 7356] states decide issues
+  [ 7363] states decide issues
+  [ 7371] states decide issues
+  [ 7373] states decide issues
+  [ 7374] states decide issues
+  [ 7375] states decide issues
+  [ 7377] states decide issues
+  [ 7381] states decide issues
+  [ 7390] states decide issues
+  [ 7401] states decide issues
+  [ 7404] states decide issues
+  [ 7407] states decide issues
+  [ 7408] states decide issues
+  [ 7411] states decide issues
+  [ 7412] states decide issues
+  [ 7416] states decide issues
+  [ 7417] states decide issues
+  [ 7419] states decide issues
+  [ 7420] states decide issues
+  [ 7421] states decide issues
+  [ 7427] states decide issues
+  [ 7441] states decide issues
+  [ 7445] states decide issues
+  [ 7456] states decide issues
+  [ 7467] states decide issues
+  [ 7488] states decide issues
+  [ 7491] states decide issues
+  [ 7494] states decide issues
+  [ 7506] states decide issues
+  [ 7509] states decide issues
+  [ 7512] states decide issues
+  [ 7514] states decide issues
+  [ 7519] states decide issues
+  [ 7520] states decide issues
+  [ 7521] states decide issues
+  [ 7522] states decide issues
+  [ 7523] states decide issues
+  [ 7529] states decide issues
+  [ 7530] states decide issues
+  [ 7535] states decide issues
+  [ 7536] states decide issues
+  [ 7537] states decide issues
+  [ 7539] states decide issues
+  [ 7540] states decide issues
+  [ 7541] states decide issues
+  [ 7548] states decide issues
+  [ 7550] states decide issues
+  [ 7551] states decide issues
+  [ 7563] states decide issues
+  [ 7572] states decide issues
+  [ 7576] states decide issues
+  [ 7577] states decide issues
+  [ 7587] states decide issues
+  [ 7591] states decide issues
+  [ 7605] states decide issues
+  [ 7624] states decide issues
+  [ 7632] states decide issues
+  [ 7633] states decide issues
+  [ 7634] states decide issues
+  [ 7645] states decide issues
+  [ 7647] states decide issues
+  [ 7667] states decide issues
+  [ 7668] states decide issues
+  [ 7672] states decide issues
+  [ 7679] states decide issues
+  [ 7682] states decide issues
+  [ 7683] states decide issues
+  [ 7684] states decide issues
+  [ 7700] states decide issues
+  [ 7705] states decide issues
+  [ 7714] states decide issues
+  [ 7716] states decide issues
+  [ 7717] states decide issues
+  [ 7721] states decide issues
+  [ 7735] states decide issues
+  [ 7737] states decide issues
+  [ 7738] states decide issues
+  [ 7740] states decide issues
+  [ 7743] states decide issues
+  [ 7751] states decide issues
+  [ 7752] states decide issues
+  [ 7753] states decide issues
+  [ 7762] states decide issues
+  [ 7765] states decide issues
+  [ 7766] states decide issues
+  [ 7767] states decide issues
+  [ 7768] states decide issues
+  [ 7774] states decide issues
+  [ 7776] states decide issues
+  [ 7784] states decide issues
+  [ 7788] states decide issues
+  [ 7790] states decide issues
+  [ 7791] states decide issues
+  [ 7794] states decide issues
+  [ 7804] states decide issues
+  [ 7811] states decide issues
+  [ 7814] states decide issues
+  [ 7817] states decide issues
+  [ 7821] states decide issues
+  [ 7822] states decide issues
+  [ 7823] states decide issues
+  [ 7827] states decide issues
+  [ 7830] states decide issues
+  [ 7833] states decide issues
+  [ 7837] states decide issues
+  [ 7838] states decide issues
+  [ 7847] states decide issues
+  [ 7849] states decide issues
+  [ 7858] states decide issues
+  [ 7865] states decide issues
+  [ 7876] states decide issues
+  [ 7877] states decide issues
+  [ 7885] states decide issues
+  [ 7892] states decide issues
+  [ 7928] states decide issues
+  [ 7931] states decide issues
+  [ 7936] states decide issues
+  [ 7939] states decide issues
+  [ 7941] states decide issues
+  [ 7942] states decide issues
+  [ 7946] states decide issues
+  [ 7947] states decide issues
+  [ 7949] states decide issues
+  [ 7956] states decide issues
+  [ 7964] states decide issues
+  [ 7975] states decide issues
+  [ 7976] states decide issues
+  [ 7979] states decide issues
+  [ 8018] states decide issues
+  [ 8022] states decide issues
+  [ 8023] states decide issues
+  [ 8024] states decide issues
+  [ 8025] states decide issues
+  [ 8026] states decide issues
+  [ 8028] states decide issues
+  [ 8030] states decide issues
+  [ 8041] states decide issues
+  [ 8051] states decide issues
+  [ 8057] states decide issues
+  [ 8059] states decide issues
+  [ 8063] states decide issues
+  [ 8064] states decide issues
+  [ 8073] states decide issues
+  [ 8171] states decide issues
+  [ 8172] states decide issues
+  [ 8181] states decide issues
+  [ 8182] states decide issues
+  [ 8186] states decide issues
+  [ 8187] states decide issues
+  [ 8188] states decide issues
+  [ 8189] states decide issues
+  [ 8194] states decide issues
+  [ 8197] states decide issues
+  [ 8201] states decide issues
+  [ 8209] states decide issues
+  [ 8217] states decide issues
+  [ 8218] states decide issues
+  [ 8224] states decide issues
+  [ 8226] states decide issues
+  [ 8229] states decide issues
+  [ 8235] states decide issues
+  [ 8245] states decide issues
+  [ 8264] states decide issues
+  [ 8329] states decide issues
+  [ 8344] states decide issues
+  [ 8345] states decide issues
+  [ 8360] states decide issues
+  [ 8365] states decide issues
+  [ 8370] states decide issues
+  [ 8382] states decide issues
+  [ 8390] states decide issues
+  [ 8403] states decide issues
+  [ 8408] states decide issues
+  [ 8418] states decide issues
+  [ 8479] states decide issues
+  [ 8514] states decide issues
+  [ 8519] states decide issues
+  [ 8520] states decide issues
+  [ 8536] states decide issues
+  [ 8565] states decide issues
+  [ 8575] states decide issues
+  [ 8583] states decide issues
+  [ 8585] states decide issues
+  [ 8588] states decide issues
+  [ 8590] states decide issues
+  [ 8591] states decide issues
+  [ 8596] states decide issues
+  [ 8603] states decide issues
+  [ 8605] states decide issues
+  [ 8609] states decide issues
+  [ 8622] states decide issues
+  [ 8661] states decide issues
+  [ 8726] states decide issues
+  [ 8731] states decide issues
+  [ 8733] states decide issues
+  [ 8737] states decide issues
+  [ 8738] states decide issues
+  [ 8741] states decide issues
+  [ 8742] states decide issues
+  [ 8743] states decide issues
+  [ 8744] states decide issues
+  [ 8746] states decide issues
+  [ 8747] states decide issues
+  [ 8748] states decide issues
+  [ 8756] states decide issues
+  [ 8762] states decide issues
+  [ 8771] states decide issues
+  [ 8772] states decide issues
+  [ 8774] states decide issues
+  [ 8775] states decide issues
+  [ 8779] states decide issues
+  [ 8818] states decide issues
+  [ 8855] states decide issues
+  [ 8864] states decide issues
+  [ 8871] states decide issues
+  [ 8876] states decide issues
+  [ 8895] states decide issues
+  [ 8904] states decide issues
+  [ 8950] states decide issues
+  [ 8960] states decide issues
+  [ 8961] states decide issues
+  [ 8963] states decide issues
+  [ 8965] states decide issues
+  [ 8973] states decide issues
+  [ 8975] states decide issues
+  [ 8979] states decide issues
+  [ 8988] states decide issues
+  [ 8991] states decide issues
+  [ 8992] states decide issues
+  [ 9000] states decide issues
+  [ 9003] states decide issues
+  [ 9014] states decide issues
+  [ 9024] states decide issues
+  [ 9031] states decide issues
+  [ 9032] states decide issues
+  [ 9034] states decide issues
+  [ 9061] states decide issues
+  [ 9069] states decide issues
+  [ 9074] states decide issues
+  [ 9078] states decide issues
+  [ 9080] states decide issues
+  [ 9081] states decide issues
+  [ 9095] states decide issues
+  [ 9103] states decide issues
+  [ 9111] states decide issues
+  [ 9141] states decide issues
+  [ 9146] states decide issues
+  [ 9147] states decide issues
+  [ 9151] states decide issues
+  [ 9163] states decide issues
+  [ 9164] states decide issues
+  [ 9166] states decide issues
+  [ 9178] states decide issues
+  [ 9183] states decide issues
+  [ 9188] states decide issues
+  [ 9209] states decide issues
+  [ 9211] states decide issues
+  [ 9218] states decide issues
+  [ 9219] states decide issues
+  [ 9220] states decide issues
+  [ 9225] states decide issues
+  [ 9231] states decide issues
+  [ 9239] states decide issues
+  [ 9241] states decide issues
+  [ 9242] states decide issues
+  [ 9245] states decide issues
+  [ 9247] states decide issues
+  [ 9249] states decide issues
+  [ 9258] states decide issues
+  [ 9260] states decide issues
+  [ 9261] states decide issues
+  [ 9263] states decide issues
+  [ 9265] states decide issues
+  [ 9267] states decide issues
+  [ 9274] states decide issues
+  [ 9277] states decide issues
+  [ 9280] states decide issues
+  [ 9283] states decide issues
+  [ 9285] states decide issues
+  [ 9293] states decide issues
+  [ 9298] states decide issues
+  [ 9308] states decide issues
+  [ 9314] states decide issues
+  [ 9316] states decide issues
+  [ 9318] states decide issues
+  [ 9332] states decide issues
+  [ 9344] states decide issues
+  [ 9350] states decide issues
+  [ 9369] states decide issues
+  [ 9393] states decide issues
+  [ 9410] states decide issues
+  [ 9444] states decide issues
+  [ 9446] states decide issues
+  [ 9450] states decide issues
+  [ 9452] states decide issues
+  [ 9457] states decide issues
+  [ 9466] states decide issues
+  [ 9468] states decide issues
+  [ 9469] states decide issues
+  [ 9472] states decide issues
+  [ 9477] states decide issues
+  [ 9505] states decide issues
+  [ 9515] states decide issues
+  [ 9516] states decide issues
+  [ 9523] states decide issues
+  [ 9559] states decide issues
+  [ 9577] states decide issues
+  [ 9579] states decide issues
+  [ 9602] states decide issues
+  [ 9607] states decide issues
+  [ 9610] states decide issues
+  [ 9612] states decide issues
+  [ 9619] states decide issues
+  [ 9638] states decide issues
+  [ 9649] states decide issues
+  [ 9652] states decide issues
+  [ 9671] states decide issues
+  [ 9672] states decide issues
+  [ 9677] states decide issues
+  [ 9679] states decide issues
+  [ 9687] states decide issues
+  [ 9689] states decide issues
+  [ 9693] states decide issues
+  [ 9694] states decide issues
+  [ 9699] states decide issues
+  [ 9707] states decide issues
+  [ 9722] states decide issues
+  [ 9726] states decide issues
+  [ 9729] states decide issues
+  [ 9733] states decide issues
+  [ 9734] states decide issues
+  [ 9750] states decide issues
+  [ 9752] states decide issues
+  [ 9766] states decide issues
+  [ 9769] states decide issues
+  [ 9770] states decide issues
+  [ 9772] states decide issues
+  [ 9776] states decide issues
+  [ 9777] states decide issues
+  [ 9778] states decide issues
+  [ 9794] states decide issues
+  [ 9795] states decide issues
+  [ 9796] states decide issues
+  [ 9801] states decide issues
+  [ 9820] states decide issues
+  [ 9822] states decide issues
+  [ 9832] states decide issues
+  [ 9834] states decide issues
+  [ 9840] states decide issues
+  [ 9842] states decide issues
+  [ 9843] states decide issues
+  [ 9849] states decide issues
+  [ 9851] states decide issues
+  [ 9853] states decide issues
+  [ 9857] states decide issues
+  [ 9859] states decide issues
+  [ 9885] states decide issues
+  [ 9890] states decide issues
+  [ 9891] states decide issues
+  [ 9892] states decide issues
+  [ 9895] states decide issues
+  [ 9897] states decide issues
+  [ 9898] states decide issues
+  [ 9900] states decide issues
+  [ 9903] states decide issues
+  [ 9910] states decide issues
+  [ 9914] states decide issues
+  [ 9916] states decide issues
+  [ 9919] states decide issues
+  [ 9926] states decide issues
+  [ 9927] states decide issues
+  [ 9930] states decide issues
+  [ 9933] states decide issues
+  [ 9935] states decide issues
+  [ 9941] states decide issues
+  [ 9953] states decide issues
+  [ 9986] states decide issues
+  [ 9987] states decide issues
+  [ 9994] states decide issues
+  [10001] states decide issues
+  [10043] states decide issues
+  [10062] states decide issues
+  [10086] states decide issues
+  [10097] states decide issues
+  [10103] states decide issues
+  [10104] states decide issues
+  [10132] states decide issues
+  [10137] states decide issues
+  [10142] states decide issues
+  [10144] states decide issues
+  [10145] states decide issues
+  [10147] states decide issues
+  [10149] states decide issues
+  [10150] states decide issues
+  [10156] states decide issues
+  [10160] states decide issues
+  [10162] states decide issues
+  [10167] states decide issues
+  [10176] states decide issues
+  [10178] states decide issues
+  [10183] states decide issues
+  [10197] states decide issues
+  [10199] states decide issues
+  [10206] states decide issues
+  [10211] states decide issues
+  [10216] states decide issues
+  [10236] states decide issues
+  [10256] states decide issues
+  [10258] states decide issues
+  [10282] states decide issues
+  [10283] states decide issues
+  [10297] states decide issues
+  [10306] states decide issues
+  [10319] states decide issues
+  [10322] states decide issues
+  [10331] states decide issues
+  [10333] states decide issues
+  [10340] states decide issues
+  [10343] states decide issues
+  [10351] states decide issues
+  [10353] states decide issues
+  [10360] states decide issues
+  [10370] states decide issues
+  [10380] states decide issues
+  [10381] states decide issues
+  [10386] states decide issues
+  [10389] states decide issues
+  [10393] states decide issues
+  [10394] states decide issues
+  [10395] states decide issues
+  [10403] states decide issues
+  [10404] states decide issues
+  [10453] states decide issues
+  [10458] states decide issues
+  [10461] states decide issues
+  [10462] states decide issues
+  [10466] states decide issues
+  [10474] states decide issues
+  [10480] states decide issues
+  [10483] states decide issues
+  [10488] states decide issues
+  [10491] states decide issues
+  [10496] states decide issues
+  [10518] states decide issues
+  [10522] states decide issues
+  [10530] states decide issues
+  [10537] states decide issues
+  [10538] states decide issues
+  [10543] states decide issues
+  [10545] states decide issues
+  [10550] states decide issues
+  [10553] states decide issues
+  [10554] states decide issues
+  [10558] states decide issues
+  [10559] states decide issues
+  [10574] states decide issues
+  [10578] states decide issues
+  [10585] states decide issues
+  [10587] states decide issues
+  [10606] states decide issues
+  [10610] states decide issues
+  [10611] states decide issues
+  [10622] states decide issues
+  [10632] states decide issues
+  [10638] states decide issues
+  [10641] states decide issues
+  [10679] states decide issues
+  [10681] states decide issues
+  [10694] states decide issues
+  [10695] states decide issues
+  [10710] states decide issues
+  [10711] states decide issues
+  [10728] states decide issues
+  [10729] states decide issues
+  [10738] states decide issues
+  [10740] states decide issues
+  [10747] states decide issues
+  [10748] states decide issues
+  [10749] states decide issues
+  [10753] states decide issues
+  [10764] states decide issues
+  [10765] states decide issues
+  [10776] states decide issues
+  [10780] states decide issues
+  [10803] states decide issues
+  [10808] states decide issues
+  [10811] states decide issues
+  [10826] states decide issues
+  [10835] states decide issues
+  [10849] states decide issues
+  [10856] states decide issues
+  [10878] states decide issues
+  [10884] states decide issues
+  [10897] states decide issues
+  [10907] states decide issues
+  [10910] states decide issues
+  [10912] states decide issues
+  [10915] states decide issues
+  [10919] states decide issues
+  [10925] states decide issues
+  [10941] states decide issues
+  [10945] states decide issues
+  [10946] states decide issues
+  [10947] states decide issues
+  [10952] states decide issues
+  [10967] states decide issues
+  [10969] states decide issues
+  [10972] states decide issues
+  [10976] states decide issues
+  [10977] states decide issues
+  [10992] states decide issues
+  [10997] states decide issues
+  [11001] states decide issues
+  [11011] states decide issues
+  [11017] states decide issues
+  [11019] states decide issues
+  [11020] states decide issues
+  [11021] states decide issues
+  [11023] states decide issues
+  [11024] states decide issues
+  [11025] states decide issues
+  [11027] states decide issues
+  [11038] states decide issues
+  [11041] states decide issues
+  [11043] states decide issues
+  [11044] states decide issues
+  [11052] states decide issues
+  [11053] states decide issues
+  [11055] states decide issues
+  [11062] states decide issues
+  [11064] states decide issues
+  [11066] states decide issues
+  [11067] states decide issues
+  [11074] states decide issues
+  [11080] states decide issues
+  [11083] states decide issues
+  [11092] states decide issues
+  [11099] states decide issues
+  [11109] states decide issues
+  [11113] states decide issues
+  [11123] states decide issues
+  [11125] states decide issues
+  [11144] states decide issues
+  [11160] states decide issues
+  [11162] states decide issues
+  [11163] states decide issues
+  [11166] states decide issues
+  [11171] states decide issues
+  [11174] states decide issues
+  [11175] states decide issues
+  [11176] states decide issues
+  [11180] states decide issues
+  [11181] states decide issues
+  [11186] states decide issues
+  [11188] states decide issues
+  [11189] states decide issues
+  [11190] states decide issues
+  [11195] states decide issues
+  [11196] states decide issues
+  [11199] states decide issues
+  [11202] states decide issues
+  [11204] states decide issues
+  [11207] states decide issues
+  [11208] states decide issues
+  [11212] states decide issues
+  [11216] states decide issues
+  [11218] states decide issues
+  [11223] states decide issues
+  [11225] states decide issues
+  [11231] states decide issues
+  [11238] states decide issues
+  [11240] states decide issues
+  [11241] states decide issues
+  [11243] states decide issues
+  [11244] states decide issues
+  [11246] states decide issues
+  [11257] states decide issues
+  [11259] states decide issues
+  [11262] states decide issues
+  [11268] states decide issues
+  [11270] states decide issues
+  [11271] states decide issues
+  [11274] states decide issues
+  [11277] states decide issues
+  [11301] states decide issues
+  [11306] states decide issues
+  [11309] states decide issues
+  [11318] states decide issues
+  [11319] states decide issues
+  [11320] states decide issues
+  [11323] states decide issues
+  [11336] states decide issues
+  [11338] states decide issues
+  [11339] states decide issues
+  [11340] states decide issues
+  [11341] states decide issues
+  [11345] states decide issues
+  [11358] states decide issues
+  [11360] states decide issues
+  [11364] states decide issues
+  [11373] states decide issues
+  [11375] states decide issues
+  [11378] states decide issues
+  [11380] states decide issues
+  [11382] states decide issues
+  [11384] states decide issues
+  [11385] states decide issues
+  [11403] states decide issues
+  [11405] states decide issues
+  [11408] states decide issues
+  [11417] states decide issues
+  [11445] states decide issues
+  [11458] states decide issues
+  [11496] states decide issues
+  [11498] states decide issues
+  [11519] states decide issues
+  [11555] states decide issues
+  [11575] states decide issues
+  [11587] states decide issues
+  [11596] states decide issues
+  [11597] states decide issues
+  [11598] states decide issues
+  [11600] states decide issues
+  [11603] states decide issues
+  [11604] states decide issues
+  [11607] states decide issues
+  [11612] states decide issues
+  [11618] states decide issues
+  [11620] states decide issues
+  [11643] states decide issues
+  [11647] states decide issues
+  [11650] states decide issues
+  [11659] states decide issues
+  [11663] states decide issues
+  [11673] states decide issues
+  [11678] states decide issues
+  [11684] states decide issues
+  [11687] states decide issues
+  [11700] states decide issues
+  [11715] states decide issues
+  [11717] states decide issues
+  [11718] states decide issues
+  [11719] states decide issues
+  [11720] states decide issues
+  [11723] states decide issues
+  [11739] states decide issues
+  [11743] states decide issues
+  [11745] states decide issues
+  [11748] states decide issues
+  [11749] states decide issues
+  [11771] states decide issues
+  [11798] states decide issues
+  [11811] states decide issues
+  [11814] states decide issues
+  [11821] states decide issues
+  [11823] states decide issues
+  [11827] states decide issues
+  [11828] states decide issues
+  [11829] states decide issues
+  [11833] states decide issues
+  [11839] states decide issues
+  [11840] states decide issues
+  [11841] states decide issues
+  [11851] states decide issues
+  [11857] states decide issues
+  [11879] states decide issues
+  [11891] states decide issues
+  [11936] states decide issues
+  [11941] states decide issues
+  [11942] states decide issues
+  [11945] states decide issues
+  [11947] states decide issues
+  [11948] states decide issues
+  [11949] states decide issues
+  [11958] states decide issues
+  [11961] states decide issues
+  [11962] states decide issues
+  [11965] states decide issues
+  [11966] states decide issues
+  [11979] states decide issues
+  [11981] states decide issues
+  [11985] states decide issues
+  [11995] states decide issues
+  [12005] states decide issues
+  [12006] states decide issues
+  [12014] states decide issues
+  [12017] states decide issues
+  [12035] states decide issues
+  [12046] states decide issues
+  [12060] states decide issues
+  [12062] states decide issues
+  [12063] states decide issues
+  [12065] states decide issues
+  [12066] states decide issues
+  [12068] states decide issues
+  [12069] states decide issues
+  [12089] states decide issues
+  [12098] states decide issues
+  [12106] states decide issues
+  [12107] states decide issues
+  [12112] states decide issues
+  [12119] states decide issues
+  [12120] states decide issues
+  [12122] states decide issues
+  [12123] states decide issues
+  [12126] states decide issues
+  [12131] states decide issues
+  [12134] states decide issues
+  [12135] states decide issues
+  [12136] states decide issues
+  [12140] states decide issues
+  [12151] states decide issues
+  [12154] states decide issues
+  [12180] states decide issues
+  [12200] states decide issues
+  [12203] states decide issues
+  [12229] states decide issues
+  [12235] states decide issues
+  [12241] states decide issues
+  [12242] states decide issues
+  [12246] states decide issues
+  [12248] states decide issues
+  [12250] states decide issues
+  [12254] states decide issues
+  [12257] states decide issues
+  [12266] states decide issues
+  [12267] states decide issues
+  [12270] states decide issues
+  [12274] states decide issues
+  [12275] states decide issues
+  [12277] states decide issues
+  [12278] states decide issues
+  [12280] states decide issues
+  [12308] states decide issues
+  [12310] states decide issues
+  [12317] states decide issues
+  [12322] states decide issues
+  [12323] states decide issues
+  [12334] states decide issues
+  [12338] states decide issues
+  [12345] states decide issues
+  [12351] states decide issues
+  [12357] states decide issues
+  [12362] states decide issues
+  [12364] states decide issues
+  [12389] states decide issues
+  [12416] states decide issues
+  [12418] states decide issues
+  [12420] states decide issues
+  [12422] states decide issues
+  [12433] states decide issues
+  [12449] states decide issues
+  [12459] states decide issues
+  [12465] states decide issues
+  [12473] states decide issues
+  [12475] states decide issues
+  [12479] states decide issues
+  [12481] states decide issues
+  [12516] states decide issues
+  [12520] states decide issues
+  [12527] states decide issues
+  [12533] states decide issues
+  [12535] states decide issues
+  [12536] states decide issues
+  [12537] states decide issues
+  [12538] states decide issues
+  [12539] states decide issues
+  [12543] states decide issues
+  [12544] states decide issues
+  [12545] states decide issues
+  [12555] states decide issues
+  [12556] states decide issues
+  [12558] states decide issues
+  [12565] states decide issues
+  [12567] states decide issues
+  [12569] states decide issues
+  [12572] states decide issues
+  [12575] states decide issues
+  [12578] states decide issues
+  [12587] states decide issues
+  [12589] states decide issues
+  [12590] states decide issues
+  [12593] states decide issues
+  [12597] states decide issues
+  [12612] states decide issues
+  [12622] states decide issues
+  [12626] states decide issues
+  [12637] states decide issues
+  [12639] states decide issues
+  [12642] states decide issues
+  [12643] states decide issues
+  [12644] states decide issues
+  [12654] states decide issues
+  [12661] states decide issues
+  [12711] states decide issues
+  [12732] states decide issues
+  [12743] states decide issues
+  [12767] states decide issues
+  [12768] states decide issues
+  [12787] states decide issues
+  [12791] states decide issues
+  [12792] states decide issues
+  [12798] states decide issues
+  [12799] states decide issues
+  [12803] states decide issues
+  [12836] states decide issues
+  [12841] states decide issues
+  [12845] states decide issues
+  [12848] states decide issues
+  [12855] states decide issues
+  [12863] states decide issues
+  [12866] states decide issues
+  [12868] states decide issues
+  [12880] states decide issues
+  [12889] states decide issues
+  [12896] states decide issues
+  [12910] states decide issues
+  [12913] states decide issues
+  [12914] states decide issues
+  [12915] states decide issues
+  [12918] states decide issues
+  [12921] states decide issues
+  [12931] states decide issues
+  [12932] states decide issues
+  [12936] states decide issues
+  [12941] states decide issues
+  [12963] states decide issues
+  [12965] states decide issues
+  [12970] states decide issues
+  [12974] states decide issues
+  [12979] states decide issues
+  [12986] states decide issues
+  [12994] states decide issues
+  [12997] states decide issues
+  [12999] states decide issues
+  [13003] states decide issues
+  [13004] states decide issues
+  [13005] states decide issues
+  [13008] states decide issues
+  [13017] states decide issues
+  [13028] states decide issues
+  [13031] states decide issues
+  [13036] states decide issues
+  [13041] states decide issues
+  [13049] states decide issues
+  [13052] states decide issues
+  [13054] states decide issues
+  [13062] states decide issues
+  [13065] states decide issues
+  [13073] states decide issues
+  [13075] states decide issues
+  [13077] states decide issues
+  [13078] states decide issues
+  [13082] states decide issues
+  [13090] states decide issues
+  [13092] states decide issues
+  [13098] states decide issues
+  [13102] states decide issues
+  [13108] states decide issues
+  [13115] states decide issues
+  [13117] states decide issues
+  [13165] states decide issues
+  [13172] states decide issues
+  [13186] states decide issues
+  [13189] states decide issues
+  [13208] states decide issues
+  [13210] states decide issues
+  [13222] states decide issues
+  [13231] states decide issues
+  [13247] states decide issues
+  [13260] states decide issues
+  [13271] states decide issues
+  [13272] states decide issues
+  [13274] states decide issues
+  [13280] states decide issues
+  [13281] states decide issues
+  [13292] states decide issues
+  [13294] states decide issues
+  [13305] states decide issues
+  [13308] states decide issues
+  [13313] states decide issues
+  [13314] states decide issues
+  [13324] states decide issues
+  [13327] states decide issues
+  [13330] states decide issues
+  [13334] states decide issues
+  [13339] states decide issues
+  [13341] states decide issues
+  [13354] states decide issues
+  [13357] states decide issues
+  [13361] states decide issues
+  [13362] states decide issues
+  [13366] states decide issues
+  [13367] states decide issues
+  [13370] states decide issues
+  [13375] states decide issues
+  [13377] states decide issues
+  [13380] states decide issues
+  [13399] states decide issues
+  [13415] states decide issues
+  [13424] states decide issues
+  [13446] states decide issues
+  [13455] states decide issues
+  [13456] states decide issues
+  [13481] states decide issues
+  [13485] states decide issues
+  [13486] states decide issues
+  [13493] states decide issues
+  [13494] states decide issues
+  [13512] states decide issues
+  [13522] states decide issues
+  [13523] states decide issues
+  [13565] states decide issues
+  [13567] states decide issues
+  [13568] states decide issues
+  [13577] states decide issues
+  [13589] states decide issues
+  [13590] states decide issues
+  [13594] states decide issues
+  [13601] states decide issues
+  [13641] states decide issues
+  [13649] states decide issues
+  [13734] states decide issues
+  [13745] states decide issues
+  [13746] states decide issues
+  [13747] states decide issues
+  [13750] states decide issues
+  [13757] states decide issues
+  [13758] states decide issues
+  [13760] states decide issues
+  [13765] states decide issues
+  [13768] states decide issues
+  [13777] states decide issues
+  [13780] states decide issues
+  [13782] states decide issues
+  [13792] states decide issues
+  [13793] states decide issues
+  [13795] states decide issues
+  [13803] states decide issues
+  [13813] states decide issues
+  [13814] states decide issues
+  [13815] states decide issues
+  [13816] states decide issues
+  [13819] states decide issues
+  [13834] states decide issues
+  [13838] states decide issues
+  [13839] states decide issues
+  [13844] states decide issues
+  [13845] states decide issues
+  [13850] states decide issues
+  [13853] states decide issues
+  [13854] states decide issues
+  [13865] states decide issues
+  [13866] states decide issues
+  [13870] states decide issues
+  [13887] states decide issues
+  [13911] states decide issues
+  [13914] states decide issues
+  [13920] states decide issues
+  [13921] states decide issues
+  [13922] states decide issues
+  [13924] states decide issues
+  [13934] states decide issues
+  [13935] states decide issues
+  [13942] states decide issues
+  [13945] states decide issues
+  [13950] states decide issues
+  [13951] states decide issues
+  [13953] states decide issues
+  [13973] states decide issues
+  [13974] states decide issues
+  [13975] states decide issues
+  [13976] states decide issues
+  [13981] states decide issues
+  [13983] states decide issues
+  [13985] states decide issues
+  [14010] states decide issues
+  [14012] states decide issues
+  [14013] states decide issues
+  [14018] states decide issues
+  [14020] states decide issues
+  [14027] states decide issues
+  [14030] states decide issues
+  [14036] states decide issues
+  [14056] states decide issues
+  [14063] states decide issues
+  [14064] states decide issues
+  [14066] states decide issues
+  [14067] states decide issues
+  [14072] states decide issues
+  [14076] states decide issues
+  [14077] states decide issues
+  [14079] states decide issues
+  [14081] states decide issues
+  [14082] states decide issues
+  [14083] states decide issues
+  [14089] states decide issues
+  [14091] states decide issues
+  [14106] states decide issues
+  [14107] states decide issues
+  [14132] states decide issues
+  [14150] states decide issues
+  [14157] states decide issues
+  [14158] states decide issues
+  [14159] states decide issues
+  [14160] states decide issues
+  [14161] states decide issues
+  [14164] states decide issues
+  [14167] states decide issues
+  [14169] states decide issues
+  [14174] states decide issues
+  [14184] states decide issues
+  [14197] states decide issues
+  [14204] states decide issues
+  [14215] states decide issues
+  [14230] states decide issues
+  [14232] states decide issues
+  [14233] states decide issues
+  [14244] states decide issues
+  [14245] states decide issues
+  [14246] states decide issues
+  [14247] states decide issues
+  [14249] states decide issues
+  [14251] states decide issues
+  [14253] states decide issues
+  [14256] states decide issues
+  [14257] states decide issues
+  [14259] states decide issues
+  [14266] states decide issues
+  [14268] states decide issues
+  [14275] states decide issues
+  [14279] states decide issues
+  [14282] states decide issues
+  [14283] states decide issues
+  [14285] states decide issues
+  [14286] states decide issues
+  [14290] states decide issues
+  [14293] states decide issues
+  [14300] states decide issues
+  [14305] states decide issues
+  [14320] states decide issues
+  [14323] states decide issues
+  [14328] states decide issues
+  [14335] states decide issues
+  [14344] states decide issues
+  [14350] states decide issues
+  [14400] states decide issues
+  [14453] states decide issues
+  [14471] states decide issues
+  [14557] states decide issues
+  [14558] states decide issues
+  [14566] states decide issues
+  [14568] states decide issues
+  [14576] states decide issues
+  [14580] states decide issues
+  [14588] states decide issues
+  [14589] states decide issues
+  [14595] states decide issues
+  [14598] states decide issues
+  [14600] states decide issues
+  [14604] states decide issues
+  [14607] states decide issues
+  [14608] states decide issues
+  [14610] states decide issues
+  [14614] states decide issues
+  [14616] states decide issues
+  [14617] states decide issues
+  [14618] states decide issues
+  [14631] states decide issues
+  [14634] states decide issues
+  [14639] states decide issues
+  [14643] states decide issues
+  [14650] states decide issues
+  [14654] states decide issues
+  [14655] states decide issues
+  [14662] states decide issues
+  [14663] states decide issues
+  [14666] states decide issues
+  [14668] states decide issues
+  [14674] states decide issues
+  [14680] states decide issues
+  [14681] states decide issues
+  [14694] states decide issues
+  [14699] states decide issues
+  [14701] states decide issues
+  [14708] states decide issues
+  [14709] states decide issues
+  [14715] states decide issues
+  [14716] states decide issues
+  [14718] states decide issues
+  [14724] states decide issues
+  [14739] states decide issues
+  [14740] states decide issues
+  [14741] states decide issues
+  [14746] states decide issues
+  [14748] states decide issues
+  [14749] states decide issues
+  [14765] states decide issues
+  [14774] states decide issues
+  [14778] states decide issues
+  [14783] states decide issues
+  [14790] states decide issues
+  [14804] states decide issues
+  [14819] states decide issues
+  [14824] states decide issues
+  [14834] states decide issues
+  [14869] states decide issues
+  [14871] states decide issues
+  [14873] states decide issues
+  [14875] states decide issues
+  [14887] states decide issues
+  [14906] states decide issues
+  [14909] states decide issues
+  [14911] states decide issues
+  [14912] states decide issues
+  [14916] states decide issues
+  [14917] states decide issues
+  [14930] states decide issues
+  [14932] states decide issues
+  [14934] states decide issues
+  [14936] states decide issues
+  [14939] states decide issues
+  [14960] states decide issues
+  [14962] states decide issues
+  [14966] states decide issues
+  [14969] states decide issues
+  [14970] states decide issues
+  [14988] states decide issues
+  [14991] states decide issues
+  [14992] states decide issues
+  [14993] states decide issues
+  [14999] states decide issues
+  [15002] states decide issues
+  [15014] states decide issues
+  [15022] states decide issues
+  [15054] states decide issues
+  [15061] states decide issues
+  [15071] states decide issues
+  [15073] states decide issues
+  [15076] states decide issues
+  [15077] states decide issues
+  [15079] states decide issues
+  [15080] states decide issues
+  [15087] states decide issues
+  [15090] states decide issues
+  [15097] states decide issues
+  [15098] states decide issues
+  [15103] states decide issues
+  [15111] states decide issues
+  [15119] states decide issues
+  [15136] states decide issues
+  [15153] states decide issues
+  [15154] states decide issues
+  [15155] states decide issues
+  [15171] states decide issues
+  [15172] states decide issues
+  [15181] states decide issues
+  [15182] states decide issues
+  [15191] states decide issues
+  [15192] states decide issues
+  [15194] states decide issues
+  [15196] states decide issues
+  [15197] states decide issues
+  [15206] states decide issues
+  [15214] states decide issues
+  [15222] states decide issues
+  [15224] states decide issues
+  [15226] states decide issues
+  [15228] states decide issues
+  [15234] states decide issues
+  [15240] states decide issues
+  [15261] states decide issues
+  [15280] states decide issues
+  [15351] states decide issues
+  [15353] states decide issues
+  [15366] states decide issues
+  [15381] states decide issues
+  [15387] states decide issues
+  [15388] states decide issues
+  [15389] states decide issues
+  [15400] states decide issues
+  [15408] states decide issues
+  [15415] states decide issues
+  [15420] states decide issues
+  [15446] states decide issues
+  [15449] states decide issues
+  [15452] states decide issues
+  [15459] states decide issues
+  [15461] states decide issues
+  [15464] states decide issues
+  [15468] states decide issues
+  [15469] states decide issues
+  [15471] states decide issues
+  [15477] states decide issues
+  [15482] states decide issues
+  [15485] states decide issues
+  [15489] states decide issues
+  [15493] states decide issues
+  [15495] states decide issues
+  [15596] states decide issues
+  [15608] states decide issues
+  [15634] states decide issues
+  [15643] states decide issues
+  [15649] states decide issues
+  [15706] states decide issues
+  [15720] states decide issues
+  [15721] states decide issues
+  [15729] states decide issues
+  [15731] states decide issues
+  [15733] states decide issues
+  [15735] states decide issues
+  [15736] states decide issues
+  [15744] states decide issues
+  [15757] states decide issues
+  [15761] states decide issues
+  [15774] states decide issues
+  [15789] states decide issues
+  [15820] states decide issues
+  [15824] states decide issues
+  [15849] states decide issues
+  [15851] states decide issues
+  [15853] states decide issues
+  [15854] states decide issues
+  [15861] states decide issues
+  [15868] states decide issues
+  [15881] states decide issues
+  [15887] states decide issues
+  [15894] states decide issues
+  [15902] states decide issues
+  [15904] states decide issues
+  [15974] states decide issues
+  [16064] states decide issues
+  [16083] states decide issues
+  [16084] states decide issues
+  [16097] states decide issues
+  [16099] states decide issues
+  [16139] states decide issues
+  [16140] states decide issues
+  [16141] states decide issues
+  [16146] states decide issues
+  [16148] states decide issues
+  [16149] states decide issues
+  [16152] states decide issues
+  [16161] states decide issues
+  [16162] states decide issues
+  [16185] states decide issues
+  [16193] states decide issues
+  [16203] states decide issues
+  [16204] states decide issues
+  [16206] states decide issues
+  [16209] states decide issues
+  [16210] states decide issues
+  [16211] states decide issues
+  [16213] states decide issues
+  [16214] states decide issues
+  [16215] states decide issues
+  [16216] states decide issues
+  [16218] states decide issues
+  [16225] states decide issues
+  [16229] states decide issues
+  [16231] states decide issues
+  [16237] states decide issues
+  [16256] states decide issues
+  [16269] states decide issues
+  [16275] states decide issues
+  [16278] states decide issues
+  [16284] states decide issues
+  [16286] states decide issues
+  [16287] states decide issues
+  [16290] states decide issues
+  [16323] states decide issues
+  [16348] states decide issues
+  [16360] states decide issues
+  [16361] states decide issues
+  [16363] states decide issues
+  [16376] states decide issues
+  [16379] states decide issues
+  [16381] states decide issues
+  [16382] states decide issues
+  [16385] states decide issues
+  [16386] states decide issues
+  [16387] states decide issues
+  [16388] states decide issues
+  [16389] states decide issues
+  [16398] states decide issues
+  [16407] states decide issues
+  [16409] states decide issues
+  [16410] states decide issues
+  [16414] states decide issues
+  [16415] states decide issues
+  [16416] states decide issues
+  [16462] states decide issues
+  [16489] states decide issues
+  [16500] states decide issues
+  [16503] states decide issues
+  [16507] states decide issues
+  [16508] states decide issues
+  [16509] states decide issues
+  [16510] states decide issues
+  [16511] states decide issues
+  [16512] states decide issues
+  [16517] states decide issues
+  [16519] states decide issues
+  [16526] states decide issues
+  [16532] states decide issues
+  [16539] states decide issues
+  [16551] states decide issues
+  [16560] states decide issues
+  [16569] states decide issues
+  [16624] states decide issues
+  [16673] states decide issues
+  [16690] states decide issues
+  [16693] states decide issues
+  [16700] states decide issues
+  [16702] states decide issues
+  [16704] states decide issues
+  [16705] states decide issues
+  [16716] states decide issues
+  [16734] states decide issues
+  [16738] states decide issues
+  [16745] states decide issues
+  [16746] states decide issues
+  [16753] states decide issues
+  [16764] states decide issues
+  [16765] states decide issues
+  [16782] states decide issues
+  [16783] states decide issues
+  [16787] states decide issues
+  [16788] states decide issues
+  [16800] states decide issues
+  [16802] states decide issues
+  [16803] states decide issues
+  [16810] states decide issues
+  [16814] states decide issues
+  [16825] states decide issues
+  [16830] states decide issues
+  [16836] states decide issues
+  [16838] states decide issues
+  [16845] states decide issues
+  [16846] states decide issues
+  [16847] states decide issues
+  [16849] states decide issues
+  [16851] states decide issues
+  [16853] states decide issues
+  [16869] states decide issues
+  [16881] states decide issues
+  [16883] states decide issues
+  [16887] states decide issues
+  [16888] states decide issues
+  [16889] states decide issues
+  [16890] states decide issues
+  [16891] states decide issues
+  [16896] states decide issues
+  [16898] states decide issues
+  [16901] states decide issues
+  [16902] states decide issues
+  [16913] states decide issues
+  [16916] states decide issues
+  [16938] states decide issues
+  [16950] states decide issues
+  [16952] states decide issues
+  [16958] states decide issues
+  [16972] states decide issues
+  [16987] states decide issues
+  [16992] states decide issues
+  [16993] states decide issues
+  [17011] states decide issues
+  [17041] states decide issues
+  [17044] states decide issues
+  [17047] states decide issues
+  [17068] states decide issues
+  [17069] states decide issues
+  [17073] states decide issues
+  [17074] states decide issues
+  [17085] states decide issues
+  [17094] states decide issues
+  [17098] states decide issues
+  [17100] states decide issues
+  [17112] states decide issues
+  [17165] states decide issues
+  [17174] states decide issues
+  [17179] states decide issues
+  [17182] states decide issues
+  [17198] states decide issues
+  [17214] states decide issues
+  [17219] states decide issues
+  [17220] states decide issues
+  [17226] states decide issues
+  [17228] states decide issues
+  [17230] states decide issues
+  [17239] states decide issues
+  [17242] states decide issues
+  [17246] states decide issues
+  [17254] states decide issues
+  [17264] states decide issues
+  [17271] states decide issues
+  [17274] states decide issues
+  [17307] states decide issues
+  [17311] states decide issues
+  [17319] states decide issues
+  [17323] states decide issues
+  [17325] states decide issues
+  [17331] states decide issues
+  [17339] states decide issues
+  [17340] states decide issues
+  [17342] states decide issues
+  [17351] states decide issues
+  [17361] states decide issues
+  [17376] states decide issues
+  [17405] states decide issues
+  [17445] states decide issues
+  [17449] states decide issues
+  [17465] states decide issues
+  [17466] states decide issues
+  [17468] states decide issues
+  [17500] states decide issues
+  [17505] states decide issues
+  [17510] states decide issues
+  [17515] states decide issues
+  [17522] states decide issues
+  [17523] states decide issues
+  [17559] states decide issues
+  [17568] states decide issues
+  [17578] states decide issues
+  [17582] states decide issues
+  [17583] states decide issues
+  [17587] states decide issues
+  [17591] states decide issues
+  [17594] states decide issues
+  [17596] states decide issues
+  [17617] states decide issues
+  [17619] states decide issues
+  [17620] states decide issues
+  [17621] states decide issues
+  [17622] states decide issues
+  [17625] states decide issues
+  [17627] states decide issues
+  [17628] states decide issues
+  [17635] states decide issues
+  [17652] states decide issues
+  [17707] states decide issues
+  [17710] states decide issues
+  [17713] states decide issues
+  [17722] states decide issues
+  [17725] states decide issues
+  [17729] states decide issues
+  [17735] states decide issues
+  [17739] states decide issues
+  [17755] states decide issues
+  [17757] states decide issues
+  [17763] states decide issues
+  [17766] states decide issues
+  [17768] states decide issues
+  [17787] states decide issues
+  [17791] states decide issues
+  [17792] states decide issues
+  [17797] states decide issues
+  [17811] states decide issues
+  [17823] states decide issues
+  [17839] states decide issues
+  [17842] states decide issues
+  [17849] states decide issues
+  [17850] states decide issues
+  [17853] states decide issues
+  [17930] states decide issues
+  [17932] states decide issues
+  [17951] states decide issues
+  [18007] states decide issues
+  [18010] states decide issues
+  [18012] states decide issues
+  [18014] states decide issues
+  [18023] states decide issues
+  [18027] states decide issues
+  [18034] states decide issues
+  [18038] states decide issues
+  [18043] states decide issues
+  [18045] states decide issues
+  [18046] states decide issues
+  [18047] states decide issues
+  [18048] states decide issues
+  [18050] states decide issues
+  [18051] states decide issues
+  [18055] states decide issues
+  [18061] states decide issues
+  [18063] states decide issues
+  [18064] states decide issues
+  [18072] states decide issues
+  [18074] states decide issues
+  [18076] states decide issues
+  [18078] states decide issues
+  [18101] states decide issues
+  [18111] states decide issues
+  [18112] states decide issues
+  [18115] states decide issues
+  [18118] states decide issues
+  [18130] states decide issues
+  [18135] states decide issues
+  [18153] states decide issues
+  [18170] states decide issues
+  [18173] states decide issues
+  [18200] states decide issues
+  [18231] states decide issues
+  [18232] states decide issues
+  [18234] states decide issues
+  [18235] states decide issues
+  [18242] states decide issues
+  [18255] states decide issues
+  [18259] states decide issues
+  [18289] states decide issues
+  [18291] states decide issues
+  [18302] states decide issues
+  [18305] states decide issues
+  [18306] states decide issues
+  [18319] states decide issues
+  [18324] states decide issues
+  [18331] states decide issues
+  [18362] states decide issues
+  [18365] states decide issues
+  [18369] states decide issues
+  [18374] states decide issues
+  [18375] states decide issues
+  [18376] states decide issues
+  [18379] states decide issues
+  [18390] states decide issues
+  [18391] states decide issues
+  [18392] states decide issues
+  [18393] states decide issues
+  [18401] states decide issues
+  [18403] states decide issues
+  [18405] states decide issues
+  [18406] states decide issues
+  [18416] states decide issues
+  [18417] states decide issues
+  [18418] states decide issues
+  [18421] states decide issues
+  [18426] states decide issues
+  [18427] states decide issues
+  [18433] states decide issues
+  [18445] states decide issues
+  [18459] states decide issues
+  [18469] states decide issues
+  [18471] states decide issues
+  [18480] states decide issues
+  [18483] states decide issues
+  [18484] states decide issues
+  [18499] states decide issues
+  [18504] states decide issues
+  [18505] states decide issues
+  [18519] states decide issues
+  [18522] states decide issues
+  [18524] states decide issues
+  [18527] states decide issues
+  [18536] states decide issues
+  [18537] states decide issues
+  [18539] states decide issues
+  [18547] states decide issues
+  [18565] states decide issues
+  [18566] states decide issues
+  [18567] states decide issues
+  [18569] states decide issues
+  [18575] states decide issues
+  [18583] states decide issues
+  [18588] states decide issues
+  [18591] states decide issues
+  [18592] states decide issues
+  [18595] states decide issues
+  [18602] states decide issues
+  [18626] states decide issues
+  [18631] states decide issues
+  [18632] states decide issues
+  [18643] states decide issues
+  [18648] states decide issues
+  [18649] states decide issues
+  [18651] states decide issues
+  [18652] states decide issues
+  [18653] states decide issues
+  [18654] states decide issues
+  [18668] states decide issues
+  [18671] states decide issues
+  [18674] states decide issues
+  [18711] states decide issues
+  [18727] states decide issues
+  [18734] states decide issues
+  [18750] states decide issues
+  [18751] states decide issues
+  [18754] states decide issues
+  [18759] states decide issues
+  [18764] states decide issues
+  [18767] states decide issues
+  [18769] states decide issues
+  [18771] states decide issues
+  [18773] states decide issues
+  [18777] states decide issues
+  [18786] states decide issues
+  [18801] states decide issues
+  [18841] states decide issues
+  [18863] states decide issues
+  [18864] states decide issues
+  [18865] states decide issues
+  [18888] states decide issues
+  [18889] states decide issues
+  [18893] states decide issues
+  [18905] states decide issues
+  [18906] states decide issues
+  [18923] states decide issues
+  [18928] states decide issues
+  [18930] states decide issues
+  [18931] states decide issues
+  [18941] states decide issues
+  [18944] states decide issues
+  [18948] states decide issues
+  [18959] states decide issues
+  [18961] states decide issues
+  [18977] states decide issues
+  [18980] states decide issues
+  [18981] states decide issues
+  [18982] states decide issues
+  [18983] states decide issues
+  [18991] states decide issues
+  [18993] states decide issues
+  [18994] states decide issues
+  [18996] states decide issues
+  [19005] states decide issues
+  [19012] states decide issues
+  [19016] states decide issues
+  [19017] states decide issues
+  [19022] states decide issues
+  [19024] states decide issues
+  [19025] states decide issues
+  [19033] states decide issues
+  [19046] states decide issues
+  [19048] states decide issues
+  [19057] states decide issues
+  [19059] states decide issues
+  [19065] states decide issues
+  [19075] states decide issues
+  [19076] states decide issues
+  [19090] states decide issues
+  [19092] states decide issues
+  [19100] states decide issues
+  [19101] states decide issues
+  [19111] states decide issues
+  [19169] states decide issues
+  [19172] states decide issues
+  [19176] states decide issues
+  [19178] states decide issues
+  [19192] states decide issues
+  [19218] states decide issues
+  [19220] states decide issues
+  [19221] states decide issues
+  [19222] states decide issues
+  [19223] states decide issues
+  [19227] states decide issues
+  [19231] states decide issues
+  [19232] states decide issues
+  [19242] states decide issues
+  [19255] states decide issues
+  [19258] states decide issues
+  [19261] states decide issues
+  [19265] states decide issues
+  [19266] states decide issues
+  [19273] states decide issues
+  [19275] states decide issues
+  [19282] states decide issues
+  [19301] states decide issues
+  [19302] states decide issues
+  [19306] states decide issues
+  [19314] states decide issues
+  [19334] states decide issues
+  [19335] states decide issues
+  [19384] states decide issues
+  [19387] states decide issues
+  [19388] states decide issues
+  [19389] states decide issues
+  [19412] states decide issues
+  [19413] states decide issues
+  [19430] states decide issues
+  [19432] states decide issues
+  [19435] states decide issues
+  [19448] states decide issues
+  [19449] states decide issues
+  [19451] states decide issues
+  [19455] states decide issues
+  [19480] states decide issues
+  [19486] states decide issues
+  [19489] states decide issues
+  [19496] states decide issues
+  [19503] states decide issues
+  [19504] states decide issues
+  [19549] states decide issues
+  [19550] states decide issues
+  [19566] states decide issues
+  [19577] states decide issues
+  [19582] states decide issues
+  [19584] states decide issues
+  [19606] states decide issues
+  [19616] states decide issues
+  [19624] states decide issues
+  [19652] states decide issues
+  [19654] states decide issues
+  [19658] states decide issues
+  [19661] states decide issues
+  [19663] states decide issues
+  [19671] states decide issues
+  [19677] states decide issues
+  [19682] states decide issues
+  [19694] states decide issues
+  [19696] states decide issues
+  [19710] states decide issues
+  [19711] states decide issues
+  [19714] states decide issues
+  [19716] states decide issues
+  [19717] states decide issues
+  [19725] states decide issues
+  [19726] states decide issues
+  [19727] states decide issues
+  [19740] states decide issues
+  [19744] states decide issues
+  [19769] states decide issues
+  [19773] states decide issues
+  [19777] states decide issues
+  [19780] states decide issues
+  [19783] states decide issues
+  [19788] states decide issues
+  [19790] states decide issues
+  [19795] states decide issues
+  [19803] states decide issues
+  [19808] states decide issues
+  [19855] states decide issues
+  [19862] states decide issues
+  [19871] states decide issues
+  [19882] states decide issues
+  [19889] states decide issues
+  [19894] states decide issues
+  [19897] states decide issues
+  [19899] states decide issues
+  [19901] states decide issues
+  [19902] states decide issues
+  [19903] states decide issues
+  [19936] states decide issues
+  [19943] states decide issues
+  [19944] states decide issues
+  [19980] states decide issues
+  [19983] states decide issues
+  [19990] states decide issues
+  [19999] states decide issues
+  [20006] states decide issues
+  [20008] states decide issues
+  [20009] states decide issues
+  [20015] states decide issues
+  [20028] states decide issues
+  [20062] states decide issues
+  [20071] states decide issues
+  [20073] states decide issues
+  [20075] states decide issues
+  [20079] states decide issues
+  [20082] states decide issues
+  [20084] states decide issues
+  [20088] states decide issues
+  [20089] states decide issues
+  [20094] states decide issues
+  [20096] states decide issues
+  [20100] states decide issues
+  [20105] states decide issues
+  [20106] states decide issues
+  [20116] states decide issues
+  [20117] states decide issues
+  [20118] states decide issues
+  [20129] states decide issues
+  [20134] states decide issues
+  [20149] states decide issues
+  [20193] states decide issues
+  [20196] states decide issues
+  [20204] states decide issues
+  [20213] states decide issues
+  [20214] states decide issues
+  [20223] states decide issues
+  [20227] states decide issues
+  [20228] states decide issues
+  [20245] states decide issues
+  [20251] states decide issues
+  [20252] states decide issues
+  [20269] states decide issues
+  [20276] states decide issues
+  [20278] states decide issues
+  [20279] states decide issues
+  [20289] states decide issues
+  [20296] states decide issues
+  [20298] states decide issues
+  [20304] states decide issues
+  [20308] states decide issues
+  [20332] states decide issues
+  [20334] states decide issues
+  [20383] states decide issues
+  [20386] states decide issues
+  [20390] states decide issues
+  [20401] states decide issues
+  [20410] states decide issues
+  [20412] states decide issues
+  [20417] states decide issues
+  [20423] states decide issues
+  [20424] states decide issues
+  [20446] states decide issues
+  [20477] states decide issues
+  [20492] states decide issues
+  [20499] states decide issues
+  [20501] states decide issues
+  [20509] states decide issues
+  [20510] states decide issues
+  [20512] states decide issues
+  [20513] states decide issues
+  [20521] states decide issues
+  [20528] states decide issues
+  [20534] states decide issues
+  [20567] states decide issues
+  [20569] states decide issues
+  [20571] states decide issues
+  [20573] states decide issues
+  [20575] states decide issues
+  [20603] states decide issues
+  [20609] states decide issues
+  [20610] states decide issues
+  [20612] states decide issues
+  [20615] states decide issues
+  [20617] states decide issues
+  [20618] states decide issues
+  [20625] states decide issues
+  [20627] states decide issues
+  [20628] states decide issues
+  [20629] states decide issues
+  [20631] states decide issues
+  [20634] states decide issues
+  [20636] states decide issues
+  [20650] states decide issues
+  [20652] states decide issues
+  [20659] states decide issues
+  [20669] states decide issues
+  [20670] states decide issues
+  [20672] states decide issues
+  [20680] states decide issues
+  [20683] states decide issues
+  [20686] states decide issues
+  [20689] states decide issues
+  [20700] states decide issues
+  [20707] states decide issues
+  [20712] states decide issues
+  [20728] states decide issues
+  [20730] states decide issues
+  [20770] states decide issues
+  [20796] states decide issues
+  [20805] states decide issues
+  [20806] states decide issues
+  [20807] states decide issues
+  [20808] states decide issues
+  [20811] states decide issues
+  [20813] states decide issues
+  [20814] states decide issues
+  [20818] states decide issues
+  [20819] states decide issues
+  [20834] states decide issues
+  [20835] states decide issues
+  [20836] states decide issues
+  [20839] states decide issues
+  [20861] states decide issues
+  [20863] states decide issues
+  [20870] states decide issues
+  [20873] states decide issues
+  [20880] states decide issues
+  [20881] states decide issues
+  [20888] states decide issues
+  [20903] states decide issues
+  [20904] states decide issues
+  [20907] states decide issues
+  [20909] states decide issues
+  [20913] states decide issues
+  [20923] states decide issues
+  [20937] states decide issues
+  [20943] states decide issues
+  [20961] states decide issues
+  [20972] states decide issues
+  [20978] states decide issues
+  [20983] states decide issues
+  [20985] states decide issues
+  [20986] states decide issues
+  [20989] states decide issues
+  [20993] states decide issues
+  [20998] states decide issues
+  [21019] states decide issues
+  [21026] states decide issues
+  [21027] states decide issues
+  [21035] states decide issues
+  [21039] states decide issues
+  [21056] states decide issues
+  [21058] states decide issues
+  [21060] states decide issues
+  [21063] states decide issues
+  [21071] states decide issues
+  [21072] states decide issues
+  [21078] states decide issues
+  [21103] states decide issues
+  [21116] states decide issues
+  [21126] states decide issues
+  [21134] states decide issues
+  [21153] states decide issues
+  [21177] states decide issues
+  [21187] states decide issues
+  [21198] states decide issues
+  [21211] states decide issues
+  [21213] states decide issues
+  [21229] states decide issues
+  [21231] states decide issues
+  [21236] states decide issues
+  [21237] states decide issues
+  [21249] states decide issues
+  [21250] states decide issues
+  [21256] states decide issues
+  [21257] states decide issues
+  [21263] states decide issues
+  [21264] states decide issues
+  [21270] states decide issues
+  [21272] states decide issues
+  [21273] states decide issues
+  [21275] states decide issues
+  [21282] states decide issues
+  [21313] states decide issues
+  [21314] states decide issues
+  [21325] states decide issues
+  [21326] states decide issues
+  [21328] states decide issues
+  [21344] states decide issues
+  [21346] states decide issues
+  [21351] states decide issues
+  [21354] states decide issues
+  [21372] states decide issues
+  [21373] states decide issues
+  [21383] states decide issues
+  [21387] states decide issues
+  [21390] states decide issues
+  [21399] states decide issues
+  [21412] states decide issues
+  [21418] states decide issues
+  [21432] states decide issues
+  [21434] states decide issues
+  [21445] states decide issues
+  [21447] states decide issues
+  [21457] states decide issues
+  [21468] states decide issues
+  [21469] states decide issues
+  [21473] states decide issues
+  [21485] states decide issues
+  [21487] states decide issues
+  [21497] states decide issues
+  [21503] states decide issues
+  [21523] states decide issues
+  [21542] states decide issues
+  [21552] states decide issues
+  [21555] states decide issues
+  [21556] states decide issues
+  [21576] states decide issues
+  [21581] states decide issues
+  [21586] states decide issues
+  [21593] states decide issues
+  [21597] states decide issues
+  [21601] states decide issues
+  [21607] states decide issues
+  [21608] states decide issues
+  [21626] states decide issues
+  [21648] states decide issues
+  [21649] states decide issues
+  [21661] states decide issues
+  [21663] states decide issues
+Topic   1 : amendment clerk
+  [  152] amendment clerk
+  [  154] amendment clerk
+  [  198] amendment clerk
+  [  199] amendment clerk
+  [  209] amendment clerk
+  [  233] amendment clerk
+  [  235] amendment clerk
+  [  242] amendment clerk
+  [  244] amendment clerk
+  [  246] amendment clerk
+  [  263] amendment clerk
+  [  264] amendment clerk
+  [  269] amendment clerk
+  [  317] amendment clerk
+  [  357] amendment clerk
+  [  360] amendment clerk
   [  365] amendment clerk
-  [  371] amendment clerk
-  [  383] amendment clerk
-  [  458] amendment clerk
-  [  479] amendment clerk
-  [  511] amendment clerk
-  [  542] amendment clerk
-  [  793] amendment clerk
-  [  948] amendment clerk
-  [ 1014] amendment clerk
+  [  387] amendment clerk
+  [  390] amendment clerk
+  [  393] amendment clerk
+  [  412] amendment clerk
+  [  415] amendment clerk
+  [  416] amendment clerk
+  [  418] amendment clerk
+  [  419] amendment clerk
+  [  422] amendment clerk
+  [  425] amendment clerk
+  [  428] amendment clerk
+  [  429] amendment clerk
+  [  438] amendment clerk
+  [  447] amendment clerk
+  [  477] amendment clerk
+  [  485] amendment clerk
+  [  488] amendment clerk
+  [  508] amendment clerk
+  [  513] amendment clerk
+  [  515] amendment clerk
+  [  517] amendment clerk
+  [  518] amendment clerk
+  [  536] amendment clerk
+  [  597] amendment clerk
+  [  654] amendment clerk
+  [  657] amendment clerk
+  [  685] amendment clerk
+  [  688] amendment clerk
+  [  691] amendment clerk
+  [  706] amendment clerk
+  [  707] amendment clerk
+  [  715] amendment clerk
+  [  719] amendment clerk
+  [  736] amendment clerk
+  [  741] amendment clerk
+  [  742] amendment clerk
+  [  848] amendment clerk
+  [  857] amendment clerk
+  [  874] amendment clerk
+  [  886] amendment clerk
+  [  931] amendment clerk
+  [  938] amendment clerk
+  [  950] amendment clerk
+  [  954] amendment clerk
+  [  957] amendment clerk
+  [  968] amendment clerk
+  [ 1003] amendment clerk
+  [ 1011] amendment clerk
+  [ 1013] amendment clerk
+  [ 1015] amendment clerk
+  [ 1019] amendment clerk
+  [ 1027] amendment clerk
+  [ 1028] amendment clerk
+  [ 1029] amendment clerk
+  [ 1030] amendment clerk
+  [ 1045] amendment clerk
+  [ 1051] amendment clerk
   [ 1056] amendment clerk
-  [ 1088] amendment clerk
-  [ 1121] amendment clerk
-  [ 1248] amendment clerk
-  [ 1315] amendment clerk
-  [ 1387] amendment clerk
-  [ 1642] amendment clerk
-  [ 1689] amendment clerk
-  [ 1690] amendment clerk
-  [ 1704] amendment clerk
+  [ 1063] amendment clerk
+  [ 1066] amendment clerk
+  [ 1068] amendment clerk
+  [ 1069] amendment clerk
+  [ 1070] amendment clerk
+  [ 1076] amendment clerk
+  [ 1080] amendment clerk
+  [ 1082] amendment clerk
+  [ 1084] amendment clerk
+  [ 1085] amendment clerk
+  [ 1089] amendment clerk
+  [ 1091] amendment clerk
+  [ 1093] amendment clerk
+  [ 1096] amendment clerk
+  [ 1101] amendment clerk
+  [ 1118] amendment clerk
+  [ 1120] amendment clerk
+  [ 1123] amendment clerk
+  [ 1133] amendment clerk
+  [ 1142] amendment clerk
+  [ 1159] amendment clerk
+  [ 1164] amendment clerk
+  [ 1167] amendment clerk
+  [ 1168] amendment clerk
+  [ 1171] amendment clerk
+  [ 1173] amendment clerk
+  [ 1179] amendment clerk
+  [ 1180] amendment clerk
+  [ 1183] amendment clerk
+  [ 1211] amendment clerk
+  [ 1223] amendment clerk
+  [ 1224] amendment clerk
+  [ 1239] amendment clerk
+  [ 1245] amendment clerk
+  [ 1253] amendment clerk
+  [ 1255] amendment clerk
+  [ 1264] amendment clerk
+  [ 1277] amendment clerk
+  [ 1281] amendment clerk
+  [ 1282] amendment clerk
+  [ 1286] amendment clerk
+  [ 1287] amendment clerk
+  [ 1289] amendment clerk
+  [ 1290] amendment clerk
+  [ 1291] amendment clerk
+  [ 1292] amendment clerk
+  [ 1293] amendment clerk
+  [ 1294] amendment clerk
+  [ 1295] amendment clerk
+  [ 1297] amendment clerk
+  [ 1298] amendment clerk
+  [ 1306] amendment clerk
+  [ 1316] amendment clerk
+  [ 1321] amendment clerk
+  [ 1327] amendment clerk
+  [ 1330] amendment clerk
+  [ 1390] amendment clerk
+  [ 1467] amendment clerk
+  [ 1475] amendment clerk
+  [ 1502] amendment clerk
+  [ 1521] amendment clerk
+  [ 1562] amendment clerk
+  [ 1567] amendment clerk
+  [ 1577] amendment clerk
+  [ 1639] amendment clerk
+  [ 1669] amendment clerk
+  [ 1675] amendment clerk
+  [ 1762] amendment clerk
+  [ 1785] amendment clerk
+  [ 1798] amendment clerk
+  [ 1834] amendment clerk
+  [ 1860] amendment clerk
+  [ 1861] amendment clerk
   [ 1874] amendment clerk
-  [ 1875] amendment clerk
-  [ 1881] amendment clerk
-  [ 1884] amendment clerk
-  [ 1897] amendment clerk
-  [ 1910] amendment clerk
-  [ 1927] amendment clerk
-  [ 2094] amendment clerk
-  [ 2336] amendment clerk
-  [ 2525] amendment clerk
-  [ 2665] amendment clerk
-  [ 2771] amendment clerk
-  [ 2782] amendment clerk
-  [ 2791] amendment clerk
-  [ 2820] amendment clerk
-  [ 2877] amendment clerk
-  [ 2953] amendment clerk
+  [ 1879] amendment clerk
+  [ 1894] amendment clerk
+  [ 1906] amendment clerk
+  [ 1912] amendment clerk
+  [ 1953] amendment clerk
+  [ 1994] amendment clerk
+  [ 2028] amendment clerk
+  [ 2029] amendment clerk
+  [ 2039] amendment clerk
+  [ 2044] amendment clerk
+  [ 2047] amendment clerk
+  [ 2058] amendment clerk
+  [ 2095] amendment clerk
+  [ 2106] amendment clerk
+  [ 2127] amendment clerk
+  [ 2189] amendment clerk
+  [ 2223] amendment clerk
+  [ 2275] amendment clerk
+  [ 2288] amendment clerk
+  [ 2299] amendment clerk
+  [ 2301] amendment clerk
+  [ 2306] amendment clerk
+  [ 2343] amendment clerk
+  [ 2463] amendment clerk
+  [ 2486] amendment clerk
+  [ 2500] amendment clerk
+  [ 2528] amendment clerk
+  [ 2647] amendment clerk
+  [ 2656] amendment clerk
+  [ 2680] amendment clerk
+  [ 2681] amendment clerk
+  [ 2698] amendment clerk
+  [ 2716] amendment clerk
+  [ 2883] amendment clerk
+  [ 2885] amendment clerk
+  [ 2888] amendment clerk
+  [ 2902] amendment clerk
+  [ 2937] amendment clerk
+  [ 2972] amendment clerk
+  [ 2974] amendment clerk
+  [ 2975] amendment clerk
+  [ 2991] amendment clerk
+  [ 3000] amendment clerk
+  [ 3057] amendment clerk
   [ 3062] amendment clerk
-  [ 3192] amendment clerk
-  [ 3336] amendment clerk
-  [ 3353] amendment clerk
-  [ 3389] amendment clerk
-  [ 3495] amendment clerk
-  [ 3622] amendment clerk
-  [ 3647] amendment clerk
-  [ 3725] amendment clerk
-  [ 3745] amendment clerk
-  [ 3983] amendment clerk
-  [ 4037] amendment clerk
+  [ 3081] amendment clerk
+  [ 3176] amendment clerk
+  [ 3197] amendment clerk
+  [ 3198] amendment clerk
+  [ 3201] amendment clerk
+  [ 3248] amendment clerk
+  [ 3289] amendment clerk
+  [ 3305] amendment clerk
+  [ 3328] amendment clerk
+  [ 3332] amendment clerk
+  [ 3355] amendment clerk
+  [ 3364] amendment clerk
+  [ 3365] amendment clerk
+  [ 3374] amendment clerk
+  [ 3377] amendment clerk
+  [ 3381] amendment clerk
+  [ 3385] amendment clerk
+  [ 3386] amendment clerk
+  [ 3387] amendment clerk
+  [ 3390] amendment clerk
+  [ 3391] amendment clerk
+  [ 3394] amendment clerk
+  [ 3395] amendment clerk
+  [ 3399] amendment clerk
+  [ 3403] amendment clerk
+  [ 3404] amendment clerk
+  [ 3406] amendment clerk
+  [ 3407] amendment clerk
+  [ 3409] amendment clerk
+  [ 3411] amendment clerk
+  [ 3413] amendment clerk
+  [ 3440] amendment clerk
+  [ 3450] amendment clerk
+  [ 3457] amendment clerk
+  [ 3499] amendment clerk
+  [ 3501] amendment clerk
+  [ 3549] amendment clerk
+  [ 3561] amendment clerk
+  [ 3564] amendment clerk
+  [ 3566] amendment clerk
+  [ 3587] amendment clerk
+  [ 3601] amendment clerk
+  [ 3634] amendment clerk
+  [ 3638] amendment clerk
+  [ 3645] amendment clerk
+  [ 3675] amendment clerk
+  [ 3694] amendment clerk
+  [ 3703] amendment clerk
+  [ 3719] amendment clerk
+  [ 3767] amendment clerk
+  [ 3801] amendment clerk
+  [ 3802] amendment clerk
+  [ 3811] amendment clerk
+  [ 3826] amendment clerk
+  [ 3828] amendment clerk
+  [ 3845] amendment clerk
+  [ 3848] amendment clerk
+  [ 3863] amendment clerk
+  [ 3880] amendment clerk
+  [ 3881] amendment clerk
+  [ 3882] amendment clerk
+  [ 3885] amendment clerk
+  [ 3892] amendment clerk
+  [ 3917] amendment clerk
+  [ 3950] amendment clerk
+  [ 3951] amendment clerk
+  [ 3999] amendment clerk
+  [ 4005] amendment clerk
+  [ 4006] amendment clerk
+  [ 4007] amendment clerk
+  [ 4028] amendment clerk
+  [ 4033] amendment clerk
+  [ 4080] amendment clerk
   [ 4081] amendment clerk
-  [ 4082] amendment clerk
-  [ 4136] amendment clerk
-  [ 4304] amendment clerk
+  [ 4083] amendment clerk
+  [ 4086] amendment clerk
+  [ 4115] amendment clerk
+  [ 4124] amendment clerk
+  [ 4159] amendment clerk
+  [ 4164] amendment clerk
+  [ 4166] amendment clerk
+  [ 4188] amendment clerk
+  [ 4259] amendment clerk
+  [ 4262] amendment clerk
+  [ 4300] amendment clerk
+  [ 4315] amendment clerk
   [ 4316] amendment clerk
   [ 4324] amendment clerk
-  [ 4569] amendment clerk
-  [ 4666] amendment clerk
-  [ 4676] amendment clerk
-  [ 4697] amendment clerk
-  [ 4728] amendment clerk
-  [ 4733] amendment clerk
+  [ 4328] amendment clerk
+  [ 4338] amendment clerk
+  [ 4355] amendment clerk
+  [ 4387] amendment clerk
+  [ 4402] amendment clerk
+  [ 4451] amendment clerk
+  [ 4492] amendment clerk
+  [ 4522] amendment clerk
+  [ 4570] amendment clerk
+  [ 4592] amendment clerk
+  [ 4617] amendment clerk
+  [ 4690] amendment clerk
+  [ 4710] amendment clerk
+  [ 4717] amendment clerk
+  [ 4724] amendment clerk
+  [ 4725] amendment clerk
+  [ 4726] amendment clerk
+  [ 4734] amendment clerk
+  [ 4737] amendment clerk
+  [ 4738] amendment clerk
   [ 4739] amendment clerk
-  [ 4841] amendment clerk
-  [ 4848] amendment clerk
-  [ 4860] amendment clerk
-  [ 4884] amendment clerk
-  [ 4890] amendment clerk
-  [ 4920] amendment clerk
-  [ 4937] amendment clerk
-  [ 4938] amendment clerk
-  [ 4966] amendment clerk
-  [ 5133] amendment clerk
-  [ 5599] amendment clerk
-  [ 5600] amendment clerk
-  [ 5788] amendment clerk
-  [ 5812] amendment clerk
-  [ 5866] amendment clerk
+  [ 4741] amendment clerk
+  [ 4802] amendment clerk
+  [ 4963] amendment clerk
+  [ 4974] amendment clerk
+  [ 4990] amendment clerk
+  [ 4992] amendment clerk
+  [ 5023] amendment clerk
+  [ 5059] amendment clerk
+  [ 5070] amendment clerk
+  [ 5082] amendment clerk
+  [ 5114] amendment clerk
+  [ 5142] amendment clerk
+  [ 5160] amendment clerk
+  [ 5162] amendment clerk
+  [ 5222] amendment clerk
+  [ 5371] amendment clerk
+  [ 5372] amendment clerk
+  [ 5373] amendment clerk
+  [ 5374] amendment clerk
+  [ 5378] amendment clerk
+  [ 5428] amendment clerk
+  [ 5456] amendment clerk
+  [ 5479] amendment clerk
+  [ 5486] amendment clerk
+  [ 5487] amendment clerk
+  [ 5509] amendment clerk
+  [ 5532] amendment clerk
+  [ 5541] amendment clerk
+  [ 5569] amendment clerk
+  [ 5575] amendment clerk
+  [ 5598] amendment clerk
+  [ 5655] amendment clerk
+  [ 5709] amendment clerk
+  [ 5726] amendment clerk
+  [ 5747] amendment clerk
+  [ 5753] amendment clerk
+  [ 5767] amendment clerk
+  [ 5770] amendment clerk
+  [ 5789] amendment clerk
+  [ 5817] amendment clerk
+  [ 5837] amendment clerk
+  [ 5856] amendment clerk
+  [ 5857] amendment clerk
+  [ 5858] amendment clerk
+  [ 5867] amendment clerk
   [ 5900] amendment clerk
-  [ 5973] amendment clerk
-  [ 6156] amendment clerk
-  [ 6509] amendment clerk
-  [ 6803] amendment clerk
-  [ 6814] amendment clerk
-  [ 6842] amendment clerk
-  [ 6864] amendment clerk
-  [ 7271] amendment clerk
-  [ 7274] amendment clerk
-  [ 7285] amendment clerk
-  [ 7286] amendment clerk
-  [ 7392] amendment clerk
-  [ 7811] amendment clerk
-  [ 7933] amendment clerk
-  [ 8085] amendment clerk
-  [ 8272] amendment clerk
-  [ 8434] amendment clerk
-  [ 8458] amendment clerk
-  [ 8472] amendment clerk
-  [ 8476] amendment clerk
-  [ 8571] amendment clerk
-  [ 8627] amendment clerk
+  [ 5922] amendment clerk
+  [ 5929] amendment clerk
+  [ 5931] amendment clerk
+  [ 5966] amendment clerk
+  [ 5969] amendment clerk
+  [ 5972] amendment clerk
+  [ 5999] amendment clerk
+  [ 6007] amendment clerk
+  [ 6041] amendment clerk
+  [ 6061] amendment clerk
+  [ 6065] amendment clerk
+  [ 6078] amendment clerk
+  [ 6079] amendment clerk
+  [ 6087] amendment clerk
+  [ 6094] amendment clerk
+  [ 6122] amendment clerk
+  [ 6147] amendment clerk
+  [ 6266] amendment clerk
+  [ 6269] amendment clerk
+  [ 6298] amendment clerk
+  [ 6309] amendment clerk
+  [ 6345] amendment clerk
+  [ 6348] amendment clerk
+  [ 6356] amendment clerk
+  [ 6378] amendment clerk
+  [ 6381] amendment clerk
+  [ 6385] amendment clerk
+  [ 6398] amendment clerk
+  [ 6411] amendment clerk
+  [ 6436] amendment clerk
+  [ 6443] amendment clerk
+  [ 6484] amendment clerk
+  [ 6506] amendment clerk
+  [ 6545] amendment clerk
+  [ 6563] amendment clerk
+  [ 6569] amendment clerk
+  [ 6615] amendment clerk
+  [ 6709] amendment clerk
+  [ 6732] amendment clerk
+  [ 6755] amendment clerk
+  [ 6804] amendment clerk
+  [ 6822] amendment clerk
+  [ 6831] amendment clerk
+  [ 6882] amendment clerk
+  [ 6894] amendment clerk
+  [ 6940] amendment clerk
+  [ 6979] amendment clerk
+  [ 6996] amendment clerk
+  [ 7028] amendment clerk
+  [ 7041] amendment clerk
+  [ 7060] amendment clerk
+  [ 7102] amendment clerk
+  [ 7143] amendment clerk
+  [ 7145] amendment clerk
+  [ 7148] amendment clerk
+  [ 7153] amendment clerk
+  [ 7203] amendment clerk
+  [ 7206] amendment clerk
+  [ 7264] amendment clerk
+  [ 7305] amendment clerk
+  [ 7319] amendment clerk
+  [ 7346] amendment clerk
+  [ 7367] amendment clerk
+  [ 7379] amendment clerk
+  [ 7383] amendment clerk
+  [ 7384] amendment clerk
+  [ 7409] amendment clerk
+  [ 7410] amendment clerk
+  [ 7414] amendment clerk
+  [ 7465] amendment clerk
+  [ 7466] amendment clerk
+  [ 7481] amendment clerk
+  [ 7505] amendment clerk
+  [ 7524] amendment clerk
+  [ 7552] amendment clerk
+  [ 7613] amendment clerk
+  [ 7616] amendment clerk
+  [ 7622] amendment clerk
+  [ 7631] amendment clerk
+  [ 7636] amendment clerk
+  [ 7638] amendment clerk
+  [ 7642] amendment clerk
+  [ 7644] amendment clerk
+  [ 7648] amendment clerk
+  [ 7650] amendment clerk
+  [ 7652] amendment clerk
+  [ 7655] amendment clerk
+  [ 7656] amendment clerk
+  [ 7657] amendment clerk
+  [ 7658] amendment clerk
+  [ 7659] amendment clerk
+  [ 7660] amendment clerk
+  [ 7661] amendment clerk
+  [ 7662] amendment clerk
+  [ 7663] amendment clerk
+  [ 7665] amendment clerk
+  [ 7676] amendment clerk
+  [ 7680] amendment clerk
+  [ 7686] amendment clerk
+  [ 7689] amendment clerk
+  [ 7693] amendment clerk
+  [ 7695] amendment clerk
+  [ 7701] amendment clerk
+  [ 7702] amendment clerk
+  [ 7703] amendment clerk
+  [ 7718] amendment clerk
+  [ 7722] amendment clerk
+  [ 7744] amendment clerk
+  [ 7799] amendment clerk
+  [ 7812] amendment clerk
+  [ 7820] amendment clerk
+  [ 7824] amendment clerk
+  [ 7829] amendment clerk
+  [ 7832] amendment clerk
+  [ 7839] amendment clerk
+  [ 7840] amendment clerk
+  [ 7853] amendment clerk
+  [ 7857] amendment clerk
+  [ 7868] amendment clerk
+  [ 7918] amendment clerk
+  [ 7953] amendment clerk
+  [ 7955] amendment clerk
+  [ 7957] amendment clerk
+  [ 7965] amendment clerk
+  [ 7971] amendment clerk
+  [ 7973] amendment clerk
+  [ 7977] amendment clerk
+  [ 7980] amendment clerk
+  [ 8006] amendment clerk
+  [ 8007] amendment clerk
+  [ 8008] amendment clerk
+  [ 8038] amendment clerk
+  [ 8046] amendment clerk
+  [ 8087] amendment clerk
+  [ 8090] amendment clerk
+  [ 8212] amendment clerk
+  [ 8244] amendment clerk
+  [ 8279] amendment clerk
+  [ 8306] amendment clerk
+  [ 8391] amendment clerk
+  [ 8393] amendment clerk
+  [ 8539] amendment clerk
+  [ 8555] amendment clerk
+  [ 8574] amendment clerk
+  [ 8586] amendment clerk
+  [ 8617] amendment clerk
+  [ 8637] amendment clerk
+  [ 8686] amendment clerk
+  [ 8732] amendment clerk
+  [ 8736] amendment clerk
+  [ 8769] amendment clerk
   [ 8819] amendment clerk
-  [ 9092] amendment clerk
-  [ 9198] amendment clerk
-  [ 9203] amendment clerk
-  [ 9212] amendment clerk
-  [ 9926] amendment clerk
-  [10005] amendment clerk
-  [10125] amendment clerk
-  [10126] amendment clerk
-  [10255] amendment clerk
-  [10451] amendment clerk
-  [10485] amendment clerk
-  [10943] amendment clerk
-  [11028] amendment clerk
-  [11047] amendment clerk
-  [11067] amendment clerk
-  [11072] amendment clerk
-  [11080] amendment clerk
-  [11104] amendment clerk
+  [ 8821] amendment clerk
+  [ 8826] amendment clerk
+  [ 8841] amendment clerk
+  [ 8903] amendment clerk
+  [ 9010] amendment clerk
+  [ 9055] amendment clerk
+  [ 9096] amendment clerk
+  [ 9158] amendment clerk
+  [ 9159] amendment clerk
+  [ 9210] amendment clerk
+  [ 9226] amendment clerk
+  [ 9243] amendment clerk
+  [ 9286] amendment clerk
+  [ 9289] amendment clerk
+  [ 9294] amendment clerk
+  [ 9301] amendment clerk
+  [ 9317] amendment clerk
+  [ 9322] amendment clerk
+  [ 9327] amendment clerk
+  [ 9329] amendment clerk
+  [ 9337] amendment clerk
+  [ 9353] amendment clerk
+  [ 9355] amendment clerk
+  [ 9367] amendment clerk
+  [ 9378] amendment clerk
+  [ 9380] amendment clerk
+  [ 9382] amendment clerk
+  [ 9388] amendment clerk
+  [ 9394] amendment clerk
+  [ 9407] amendment clerk
+  [ 9436] amendment clerk
+  [ 9440] amendment clerk
+  [ 9453] amendment clerk
+  [ 9456] amendment clerk
+  [ 9475] amendment clerk
+  [ 9496] amendment clerk
+  [ 9558] amendment clerk
+  [ 9564] amendment clerk
+  [ 9571] amendment clerk
+  [ 9581] amendment clerk
+  [ 9583] amendment clerk
+  [ 9584] amendment clerk
+  [ 9585] amendment clerk
+  [ 9595] amendment clerk
+  [ 9596] amendment clerk
+  [ 9597] amendment clerk
+  [ 9598] amendment clerk
+  [ 9599] amendment clerk
+  [ 9601] amendment clerk
+  [ 9603] amendment clerk
+  [ 9604] amendment clerk
+  [ 9605] amendment clerk
+  [ 9606] amendment clerk
+  [ 9608] amendment clerk
+  [ 9618] amendment clerk
+  [ 9621] amendment clerk
+  [ 9626] amendment clerk
+  [ 9627] amendment clerk
+  [ 9628] amendment clerk
+  [ 9631] amendment clerk
+  [ 9633] amendment clerk
+  [ 9637] amendment clerk
+  [ 9719] amendment clerk
+  [ 9727] amendment clerk
+  [ 9728] amendment clerk
+  [ 9730] amendment clerk
+  [ 9735] amendment clerk
+  [ 9736] amendment clerk
+  [ 9737] amendment clerk
+  [ 9740] amendment clerk
+  [ 9755] amendment clerk
+  [ 9788] amendment clerk
+  [ 9854] amendment clerk
+  [ 9856] amendment clerk
+  [ 9883] amendment clerk
+  [ 9901] amendment clerk
+  [ 9907] amendment clerk
+  [ 9925] amendment clerk
+  [ 9951] amendment clerk
+  [ 9954] amendment clerk
+  [ 9979] amendment clerk
+  [ 9980] amendment clerk
+  [ 9984] amendment clerk
+  [ 9989] amendment clerk
+  [ 9993] amendment clerk
+  [10004] amendment clerk
+  [10007] amendment clerk
+  [10008] amendment clerk
+  [10009] amendment clerk
+  [10010] amendment clerk
+  [10013] amendment clerk
+  [10020] amendment clerk
+  [10027] amendment clerk
+  [10048] amendment clerk
+  [10078] amendment clerk
+  [10079] amendment clerk
+  [10080] amendment clerk
+  [10081] amendment clerk
+  [10100] amendment clerk
+  [10108] amendment clerk
+  [10139] amendment clerk
+  [10151] amendment clerk
+  [10179] amendment clerk
+  [10218] amendment clerk
+  [10220] amendment clerk
+  [10224] amendment clerk
+  [10235] amendment clerk
+  [10245] amendment clerk
+  [10308] amendment clerk
+  [10315] amendment clerk
+  [10320] amendment clerk
+  [10361] amendment clerk
+  [10365] amendment clerk
+  [10450] amendment clerk
+  [10456] amendment clerk
+  [10698] amendment clerk
+  [10701] amendment clerk
+  [10713] amendment clerk
+  [10762] amendment clerk
+  [10790] amendment clerk
+  [10793] amendment clerk
+  [10795] amendment clerk
+  [10812] amendment clerk
+  [10831] amendment clerk
+  [10866] amendment clerk
+  [10870] amendment clerk
+  [10871] amendment clerk
+  [10872] amendment clerk
+  [10873] amendment clerk
+  [10875] amendment clerk
+  [10881] amendment clerk
+  [10885] amendment clerk
+  [10918] amendment clerk
+  [10938] amendment clerk
+  [11013] amendment clerk
+  [11037] amendment clerk
+  [11046] amendment clerk
+  [11048] amendment clerk
+  [11049] amendment clerk
+  [11051] amendment clerk
+  [11054] amendment clerk
+  [11060] amendment clerk
+  [11075] amendment clerk
+  [11106] amendment clerk
+  [11107] amendment clerk
+  [11116] amendment clerk
+  [11127] amendment clerk
+  [11128] amendment clerk
+  [11133] amendment clerk
+  [11141] amendment clerk
+  [11142] amendment clerk
+  [11146] amendment clerk
+  [11147] amendment clerk
+  [11149] amendment clerk
+  [11159] amendment clerk
+  [11161] amendment clerk
+  [11164] amendment clerk
+  [11168] amendment clerk
+  [11169] amendment clerk
+  [11170] amendment clerk
+  [11172] amendment clerk
+  [11173] amendment clerk
+  [11178] amendment clerk
+  [11182] amendment clerk
+  [11184] amendment clerk
+  [11200] amendment clerk
   [11201] amendment clerk
   [11203] amendment clerk
-  [11225] amendment clerk
-  [11233] amendment clerk
-  [11567] amendment clerk
-  [11623] amendment clerk
-  [11631] amendment clerk
-  [11639] amendment clerk
-  [11779] amendment clerk
-  [12018] amendment clerk
-  [12091] amendment clerk
-  [12397] amendment clerk
-  [12503] amendment clerk
-  [12740] amendment clerk
-  [13223] amendment clerk
+  [11205] amendment clerk
+  [11206] amendment clerk
+  [11209] amendment clerk
+  [11210] amendment clerk
+  [11214] amendment clerk
+  [11221] amendment clerk
+  [11226] amendment clerk
+  [11237] amendment clerk
+  [11245] amendment clerk
+  [11247] amendment clerk
+  [11250] amendment clerk
+  [11251] amendment clerk
+  [11252] amendment clerk
+  [11254] amendment clerk
+  [11264] amendment clerk
+  [11265] amendment clerk
+  [11267] amendment clerk
+  [11273] amendment clerk
+  [11279] amendment clerk
+  [11282] amendment clerk
+  [11287] amendment clerk
+  [11290] amendment clerk
+  [11308] amendment clerk
+  [11329] amendment clerk
+  [11332] amendment clerk
+  [11367] amendment clerk
+  [11368] amendment clerk
+  [11377] amendment clerk
+  [11386] amendment clerk
+  [11392] amendment clerk
+  [11393] amendment clerk
+  [11409] amendment clerk
+  [11414] amendment clerk
+  [11455] amendment clerk
+  [11456] amendment clerk
+  [11481] amendment clerk
+  [11553] amendment clerk
+  [11602] amendment clerk
+  [11608] amendment clerk
+  [11614] amendment clerk
+  [11615] amendment clerk
+  [11630] amendment clerk
+  [11644] amendment clerk
+  [11658] amendment clerk
+  [11688] amendment clerk
+  [11696] amendment clerk
+  [11775] amendment clerk
+  [11780] amendment clerk
+  [11787] amendment clerk
+  [11790] amendment clerk
+  [11799] amendment clerk
+  [11809] amendment clerk
+  [11815] amendment clerk
+  [11816] amendment clerk
+  [11825] amendment clerk
+  [11834] amendment clerk
+  [11835] amendment clerk
+  [11838] amendment clerk
+  [11858] amendment clerk
+  [11864] amendment clerk
+  [11867] amendment clerk
+  [11870] amendment clerk
+  [11873] amendment clerk
+  [11874] amendment clerk
+  [11875] amendment clerk
+  [11876] amendment clerk
+  [11886] amendment clerk
+  [11907] amendment clerk
+  [11909] amendment clerk
+  [11910] amendment clerk
+  [11923] amendment clerk
+  [11939] amendment clerk
+  [11950] amendment clerk
+  [11952] amendment clerk
+  [11953] amendment clerk
+  [11954] amendment clerk
+  [11957] amendment clerk
+  [11974] amendment clerk
+  [11975] amendment clerk
+  [12000] amendment clerk
+  [12010] amendment clerk
+  [12044] amendment clerk
+  [12072] amendment clerk
+  [12074] amendment clerk
+  [12090] amendment clerk
+  [12149] amendment clerk
+  [12162] amendment clerk
+  [12163] amendment clerk
+  [12168] amendment clerk
+  [12183] amendment clerk
+  [12192] amendment clerk
+  [12202] amendment clerk
+  [12212] amendment clerk
+  [12213] amendment clerk
+  [12243] amendment clerk
+  [12279] amendment clerk
+  [12327] amendment clerk
+  [12361] amendment clerk
+  [12390] amendment clerk
+  [12434] amendment clerk
+  [12438] amendment clerk
+  [12440] amendment clerk
+  [12442] amendment clerk
+  [12444] amendment clerk
+  [12451] amendment clerk
+  [12456] amendment clerk
+  [12457] amendment clerk
+  [12458] amendment clerk
+  [12461] amendment clerk
+  [12462] amendment clerk
+  [12463] amendment clerk
+  [12470] amendment clerk
+  [12471] amendment clerk
+  [12478] amendment clerk
+  [12486] amendment clerk
+  [12487] amendment clerk
+  [12490] amendment clerk
+  [12497] amendment clerk
+  [12629] amendment clerk
+  [12649] amendment clerk
+  [12676] amendment clerk
+  [12682] amendment clerk
+  [12710] amendment clerk
+  [12748] amendment clerk
+  [12760] amendment clerk
+  [12786] amendment clerk
+  [12806] amendment clerk
+  [12844] amendment clerk
+  [12888] amendment clerk
+  [12902] amendment clerk
+  [13020] amendment clerk
+  [13094] amendment clerk
+  [13133] amendment clerk
+  [13192] amendment clerk
+  [13218] amendment clerk
+  [13244] amendment clerk
+  [13270] amendment clerk
+  [13353] amendment clerk
+  [13360] amendment clerk
+  [13364] amendment clerk
+  [13374] amendment clerk
+  [13379] amendment clerk
+  [13393] amendment clerk
+  [13404] amendment clerk
+  [13405] amendment clerk
+  [13406] amendment clerk
+  [13407] amendment clerk
+  [13450] amendment clerk
+  [13451] amendment clerk
   [13462] amendment clerk
-  [13709] amendment clerk
-  [14172] amendment clerk
-  [14373] amendment clerk
-  [14440] amendment clerk
-  [14460] amendment clerk
-  [14625] amendment clerk
-  [14638] amendment clerk
-  [14656] amendment clerk
-  [14672] amendment clerk
-  [14710] amendment clerk
+  [13468] amendment clerk
+  [13476] amendment clerk
+  [13497] amendment clerk
+  [13532] amendment clerk
+  [13548] amendment clerk
+  [13592] amendment clerk
+  [13625] amendment clerk
+  [13651] amendment clerk
+  [13653] amendment clerk
+  [13664] amendment clerk
+  [13684] amendment clerk
+  [13736] amendment clerk
+  [13785] amendment clerk
+  [13818] amendment clerk
+  [13840] amendment clerk
+  [13841] amendment clerk
+  [13842] amendment clerk
+  [13847] amendment clerk
+  [13857] amendment clerk
+  [13858] amendment clerk
+  [13925] amendment clerk
+  [13931] amendment clerk
+  [13960] amendment clerk
+  [14004] amendment clerk
+  [14039] amendment clerk
+  [14052] amendment clerk
+  [14060] amendment clerk
+  [14065] amendment clerk
+  [14073] amendment clerk
+  [14075] amendment clerk
+  [14078] amendment clerk
+  [14085] amendment clerk
+  [14090] amendment clerk
+  [14095] amendment clerk
+  [14109] amendment clerk
+  [14111] amendment clerk
+  [14124] amendment clerk
+  [14148] amendment clerk
+  [14171] amendment clerk
+  [14180] amendment clerk
+  [14207] amendment clerk
+  [14213] amendment clerk
+  [14241] amendment clerk
+  [14309] amendment clerk
+  [14364] amendment clerk
+  [14384] amendment clerk
+  [14503] amendment clerk
+  [14538] amendment clerk
+  [14539] amendment clerk
+  [14548] amendment clerk
+  [14553] amendment clerk
+  [14562] amendment clerk
+  [14564] amendment clerk
+  [14586] amendment clerk
+  [14623] amendment clerk
+  [14646] amendment clerk
+  [14649] amendment clerk
+  [14677] amendment clerk
+  [14679] amendment clerk
+  [14685] amendment clerk
+  [14691] amendment clerk
+  [14692] amendment clerk
+  [14705] amendment clerk
+  [14714] amendment clerk
+  [14717] amendment clerk
+  [14720] amendment clerk
+  [14725] amendment clerk
+  [14730] amendment clerk
+  [14731] amendment clerk
+  [14732] amendment clerk
+  [14735] amendment clerk
   [14743] amendment clerk
-  [15007] amendment clerk
-  [15045] amendment clerk
-  [15064] amendment clerk
-  [15116] amendment clerk
-  [15164] amendment clerk
-  [15177] amendment clerk
-  [15185] amendment clerk
-  [15197] amendment clerk
+  [14747] amendment clerk
+  [14762] amendment clerk
+  [14770] amendment clerk
+  [14777] amendment clerk
+  [14780] amendment clerk
+  [14785] amendment clerk
+  [14789] amendment clerk
+  [14794] amendment clerk
+  [14815] amendment clerk
+  [14825] amendment clerk
+  [14845] amendment clerk
+  [14848] amendment clerk
+  [14849] amendment clerk
+  [14850] amendment clerk
+  [14856] amendment clerk
+  [14857] amendment clerk
+  [14859] amendment clerk
+  [14862] amendment clerk
+  [14866] amendment clerk
+  [14867] amendment clerk
+  [14888] amendment clerk
+  [14889] amendment clerk
+  [14920] amendment clerk
+  [14925] amendment clerk
+  [14946] amendment clerk
+  [14950] amendment clerk
+  [14982] amendment clerk
+  [15025] amendment clerk
+  [15026] amendment clerk
+  [15027] amendment clerk
+  [15028] amendment clerk
+  [15029] amendment clerk
+  [15038] amendment clerk
+  [15048] amendment clerk
+  [15049] amendment clerk
+  [15062] amendment clerk
+  [15066] amendment clerk
+  [15130] amendment clerk
+  [15139] amendment clerk
+  [15141] amendment clerk
+  [15147] amendment clerk
+  [15169] amendment clerk
+  [15174] amendment clerk
+  [15183] amendment clerk
+  [15187] amendment clerk
   [15202] amendment clerk
-  [15227] amendment clerk
-  [15229] amendment clerk
-  [15237] amendment clerk
-  [15337] amendment clerk
-  [15343] amendment clerk
-  [15352] amendment clerk
-  [15382] amendment clerk
-  [15404] amendment clerk
-  [15409] amendment clerk
-  [15523] amendment clerk
-  [15535] amendment clerk
-  [15555] amendment clerk
-  [15563] amendment clerk
-  [15565] amendment clerk
-  [15566] amendment clerk
-  [15568] amendment clerk
-  [15579] amendment clerk
-  [15623] amendment clerk
-  [15656] amendment clerk
-  [15657] amendment clerk
-  [15731] amendment clerk
-  [15743] amendment clerk
-  [15745] amendment clerk
-  [15774] amendment clerk
-  [15802] amendment clerk
-  [15867] amendment clerk
-  [15910] amendment clerk
-  [15922] amendment clerk
-  [15924] amendment clerk
-  [15928] amendment clerk
-  [15932] amendment clerk
-  [15937] amendment clerk
-  [15947] amendment clerk
-  [15951] amendment clerk
-  [15955] amendment clerk
-  [15957] amendment clerk
-  [15958] amendment clerk
-  [15959] amendment clerk
-  [15963] amendment clerk
-  [15964] amendment clerk
-  [15965] amendment clerk
-  [15968] amendment clerk
-  [15972] amendment clerk
-  [15973] amendment clerk
-  [15976] amendment clerk
-  [15978] amendment clerk
-  [15982] amendment clerk
-  [15983] amendment clerk
-  [15984] amendment clerk
-  [15985] amendment clerk
-  [15987] amendment clerk
-  [15988] amendment clerk
-  [15990] amendment clerk
-  [15995] amendment clerk
-  [15996] amendment clerk
-  [15997] amendment clerk
-  [15998] amendment clerk
-  [16000] amendment clerk
-  [16003] amendment clerk
-  [16008] amendment clerk
-  [16010] amendment clerk
-  [16016] amendment clerk
-  [16021] amendment clerk
-  [16023] amendment clerk
-  [16024] amendment clerk
-  [16026] amendment clerk
-  [16029] amendment clerk
-  [16030] amendment clerk
-  [16031] amendment clerk
-  [16034] amendment clerk
-  [16040] amendment clerk
-  [16044] amendment clerk
-  [16047] amendment clerk
-  [16049] amendment clerk
-  [16050] amendment clerk
-  [16052] amendment clerk
-  [16054] amendment clerk
-  [16057] amendment clerk
-  [16059] amendment clerk
-  [16060] amendment clerk
-  [16061] amendment clerk
-  [16071] amendment clerk
-  [16073] amendment clerk
-  [16077] amendment clerk
-  [16106] amendment clerk
-  [16115] amendment clerk
-  [16121] amendment clerk
-  [16122] amendment clerk
-  [16160] amendment clerk
-  [16170] amendment clerk
-  [16177] amendment clerk
-  [16182] amendment clerk
-  [16186] amendment clerk
-  [16190] amendment clerk
-  [16192] amendment clerk
-  [16197] amendment clerk
-  [16229] amendment clerk
-  [16231] amendment clerk
-  [16295] amendment clerk
-  [16297] amendment clerk
-  [16311] amendment clerk
-  [16385] amendment clerk
-  [16393] amendment clerk
-  [16394] amendment clerk
-  [16395] amendment clerk
-  [16401] amendment clerk
-  [16417] amendment clerk
-  [16449] amendment clerk
-  [16459] amendment clerk
-  [16471] amendment clerk
-  [16475] amendment clerk
-  [16486] amendment clerk
-  [16489] amendment clerk
-  [16631] amendment clerk
-  [16706] amendment clerk
-  [16725] amendment clerk
-  [16795] amendment clerk
-  [16867] amendment clerk
-  [17000] amendment clerk
-  [17001] amendment clerk
-  [17002] amendment clerk
-  [17053] amendment clerk
-  [17092] amendment clerk
-  [17122] amendment clerk
-  [17144] amendment clerk
-  [17160] amendment clerk
+  [15203] amendment clerk
+  [15216] amendment clerk
+  [15242] amendment clerk
+  [15259] amendment clerk
+  [15263] amendment clerk
+  [15266] amendment clerk
+  [15268] amendment clerk
+  [15289] amendment clerk
+  [15291] amendment clerk
+  [15292] amendment clerk
+  [15307] amendment clerk
+  [15311] amendment clerk
+  [15321] amendment clerk
+  [15362] amendment clerk
+  [15390] amendment clerk
+  [15391] amendment clerk
+  [15407] amendment clerk
+  [15414] amendment clerk
+  [15417] amendment clerk
+  [15418] amendment clerk
+  [15419] amendment clerk
+  [15421] amendment clerk
+  [15426] amendment clerk
+  [15430] amendment clerk
+  [15441] amendment clerk
+  [15467] amendment clerk
+  [15487] amendment clerk
+  [15488] amendment clerk
+  [15690] amendment clerk
+  [15704] amendment clerk
+  [15732] amendment clerk
+  [15737] amendment clerk
+  [15739] amendment clerk
+  [15764] amendment clerk
+  [15800] amendment clerk
+  [15883] amendment clerk
+  [15898] amendment clerk
+  [15907] amendment clerk
+  [15909] amendment clerk
+  [15949] amendment clerk
+  [15989] amendment clerk
+  [16080] amendment clerk
+  [16093] amendment clerk
+  [16166] amendment clerk
+  [16233] amendment clerk
+  [16250] amendment clerk
+  [16251] amendment clerk
+  [16267] amendment clerk
+  [16273] amendment clerk
+  [16292] amendment clerk
+  [16372] amendment clerk
+  [16406] amendment clerk
+  [16442] amendment clerk
+  [16477] amendment clerk
+  [16552] amendment clerk
+  [16602] amendment clerk
+  [16607] amendment clerk
+  [16618] amendment clerk
+  [16625] amendment clerk
+  [16626] amendment clerk
+  [16640] amendment clerk
+  [16646] amendment clerk
+  [16648] amendment clerk
+  [16660] amendment clerk
+  [16662] amendment clerk
+  [16680] amendment clerk
+  [16695] amendment clerk
+  [16699] amendment clerk
+  [16720] amendment clerk
+  [16763] amendment clerk
+  [16786] amendment clerk
+  [16792] amendment clerk
+  [16793] amendment clerk
+  [16798] amendment clerk
+  [16805] amendment clerk
+  [16819] amendment clerk
+  [16821] amendment clerk
+  [16866] amendment clerk
+  [16884] amendment clerk
+  [16885] amendment clerk
+  [16886] amendment clerk
+  [16900] amendment clerk
+  [16905] amendment clerk
+  [16945] amendment clerk
+  [16979] amendment clerk
+  [16983] amendment clerk
+  [16998] amendment clerk
+  [17070] amendment clerk
+  [17095] amendment clerk
+  [17096] amendment clerk
+  [17103] amendment clerk
+  [17111] amendment clerk
+  [17121] amendment clerk
+  [17148] amendment clerk
   [17167] amendment clerk
-  [17175] amendment clerk
-  [17204] amendment clerk
-  [17217] amendment clerk
-  [17252] amendment clerk
-  [17276] amendment clerk
-  [17299] amendment clerk
-  [17302] amendment clerk
+  [17177] amendment clerk
+  [17215] amendment clerk
+  [17232] amendment clerk
+  [17233] amendment clerk
+  [17247] amendment clerk
+  [17259] amendment clerk
+  [17282] amendment clerk
+  [17283] amendment clerk
+  [17291] amendment clerk
+  [17293] amendment clerk
+  [17309] amendment clerk
+  [17313] amendment clerk
+  [17318] amendment clerk
+  [17320] amendment clerk
+  [17326] amendment clerk
+  [17327] amendment clerk
+  [17329] amendment clerk
+  [17334] amendment clerk
+  [17335] amendment clerk
   [17337] amendment clerk
-  [17345] amendment clerk
-  [17381] amendment clerk
-  [17522] amendment clerk
-  [17564] amendment clerk
-  [17636] amendment clerk
-  [17698] amendment clerk
-  [17770] amendment clerk
-  [17772] amendment clerk
-  [17842] amendment clerk
-  [17853] amendment clerk
-  [17857] amendment clerk
-  [17982] amendment clerk
-  [18095] amendment clerk
-  [18187] amendment clerk
-  [18188] amendment clerk
-  [18367] amendment clerk
-  [18429] amendment clerk
-  [18462] amendment clerk
-  [18677] amendment clerk
-  [18714] amendment clerk
-  [18924] amendment clerk
-  [19078] amendment clerk
-  [19112] amendment clerk
-  [19214] amendment clerk
-  [19282] amendment clerk
-  [19296] amendment clerk
-  [19327] amendment clerk
-  [19484] amendment clerk
-  [19582] amendment clerk
-  [19685] amendment clerk
-  [19726] amendment clerk
-  [19767] amendment clerk
-  [19787] amendment clerk
-  [19808] amendment clerk
+  [17338] amendment clerk
+  [17343] amendment clerk
+  [17346] amendment clerk
+  [17347] amendment clerk
+  [17348] amendment clerk
+  [17353] amendment clerk
+  [17354] amendment clerk
+  [17358] amendment clerk
+  [17372] amendment clerk
+  [17388] amendment clerk
+  [17408] amendment clerk
+  [17414] amendment clerk
+  [17419] amendment clerk
+  [17429] amendment clerk
+  [17430] amendment clerk
+  [17431] amendment clerk
+  [17432] amendment clerk
+  [17448] amendment clerk
+  [17451] amendment clerk
+  [17470] amendment clerk
+  [17472] amendment clerk
+  [17474] amendment clerk
+  [17475] amendment clerk
+  [17479] amendment clerk
+  [17493] amendment clerk
+  [17520] amendment clerk
+  [17548] amendment clerk
+  [17551] amendment clerk
+  [17553] amendment clerk
+  [17554] amendment clerk
+  [17557] amendment clerk
+  [17618] amendment clerk
+  [17626] amendment clerk
+  [17631] amendment clerk
+  [17637] amendment clerk
+  [17655] amendment clerk
+  [17659] amendment clerk
+  [17727] amendment clerk
+  [17782] amendment clerk
+  [17790] amendment clerk
+  [17827] amendment clerk
+  [17828] amendment clerk
+  [17837] amendment clerk
+  [17843] amendment clerk
+  [17858] amendment clerk
+  [17867] amendment clerk
+  [17895] amendment clerk
+  [17899] amendment clerk
+  [17931] amendment clerk
+  [17934] amendment clerk
+  [17949] amendment clerk
+  [17950] amendment clerk
+  [17953] amendment clerk
+  [17975] amendment clerk
+  [17985] amendment clerk
+  [17993] amendment clerk
+  [17995] amendment clerk
+  [17996] amendment clerk
+  [17997] amendment clerk
+  [18077] amendment clerk
+  [18116] amendment clerk
+  [18117] amendment clerk
+  [18119] amendment clerk
+  [18120] amendment clerk
+  [18151] amendment clerk
+  [18168] amendment clerk
+  [18176] amendment clerk
+  [18182] amendment clerk
+  [18186] amendment clerk
+  [18218] amendment clerk
+  [18233] amendment clerk
+  [18237] amendment clerk
+  [18238] amendment clerk
+  [18248] amendment clerk
+  [18254] amendment clerk
+  [18257] amendment clerk
+  [18260] amendment clerk
+  [18262] amendment clerk
+  [18290] amendment clerk
+  [18297] amendment clerk
+  [18303] amendment clerk
+  [18312] amendment clerk
+  [18317] amendment clerk
+  [18321] amendment clerk
+  [18326] amendment clerk
+  [18328] amendment clerk
+  [18399] amendment clerk
+  [18409] amendment clerk
+  [18413] amendment clerk
+  [18420] amendment clerk
+  [18425] amendment clerk
+  [18428] amendment clerk
+  [18443] amendment clerk
+  [18451] amendment clerk
+  [18455] amendment clerk
+  [18463] amendment clerk
+  [18503] amendment clerk
+  [18568] amendment clerk
+  [18601] amendment clerk
+  [18621] amendment clerk
+  [18639] amendment clerk
+  [18681] amendment clerk
+  [18722] amendment clerk
+  [18749] amendment clerk
+  [18753] amendment clerk
+  [18757] amendment clerk
+  [18761] amendment clerk
+  [18768] amendment clerk
+  [18779] amendment clerk
+  [18798] amendment clerk
+  [18821] amendment clerk
+  [18898] amendment clerk
+  [18907] amendment clerk
+  [18909] amendment clerk
+  [18915] amendment clerk
+  [18921] amendment clerk
+  [18932] amendment clerk
+  [18942] amendment clerk
+  [18951] amendment clerk
+  [18953] amendment clerk
+  [18954] amendment clerk
+  [18967] amendment clerk
+  [18989] amendment clerk
+  [18992] amendment clerk
+  [19014] amendment clerk
+  [19023] amendment clerk
+  [19027] amendment clerk
+  [19032] amendment clerk
+  [19053] amendment clerk
+  [19054] amendment clerk
+  [19060] amendment clerk
+  [19077] amendment clerk
+  [19081] amendment clerk
+  [19082] amendment clerk
+  [19105] amendment clerk
+  [19137] amendment clerk
+  [19145] amendment clerk
+  [19193] amendment clerk
+  [19194] amendment clerk
+  [19212] amendment clerk
+  [19342] amendment clerk
+  [19411] amendment clerk
+  [19422] amendment clerk
+  [19517] amendment clerk
+  [19551] amendment clerk
+  [19564] amendment clerk
+  [19591] amendment clerk
+  [19613] amendment clerk
+  [19617] amendment clerk
+  [19672] amendment clerk
+  [19745] amendment clerk
+  [19764] amendment clerk
+  [19779] amendment clerk
+  [19784] amendment clerk
+  [19791] amendment clerk
+  [19793] amendment clerk
+  [19794] amendment clerk
+  [19800] amendment clerk
+  [19802] amendment clerk
+  [19805] amendment clerk
+  [19809] amendment clerk
+  [19812] amendment clerk
+  [19817] amendment clerk
+  [19824] amendment clerk
+  [19837] amendment clerk
+  [19840] amendment clerk
+  [19842] amendment clerk
+  [19843] amendment clerk
+  [19847] amendment clerk
+  [19860] amendment clerk
+  [19868] amendment clerk
+  [19869] amendment clerk
+  [19878] amendment clerk
   [19887] amendment clerk
-  [20000] amendment clerk
-  [20078] amendment clerk
-  [20080] amendment clerk
-  [20327] amendment clerk
-  [20464] amendment clerk
-  [20466] amendment clerk
-  [20874] amendment clerk
-  [20953] amendment clerk
-  [21393] amendment clerk
-  [21524] amendment clerk
-  [21623] amendment clerk
-Topic   3 : amendment
-Topic   4 : amendment
-Topic   5 : amendment
-Topic   6 : amendment
-Topic   7 : amendment
-Topic   8 : amendment
-Topic   9 : amendment
+  [19909] amendment clerk
+  [19939] amendment clerk
+  [19975] amendment clerk
+  [19976] amendment clerk
+  [19979] amendment clerk
+  [19995] amendment clerk
+  [20061] amendment clerk
+  [20083] amendment clerk
+  [20136] amendment clerk
+  [20159] amendment clerk
+  [20169] amendment clerk
+  [20183] amendment clerk
+  [20221] amendment clerk
+  [20248] amendment clerk
+  [20325] amendment clerk
+  [20369] amendment clerk
+  [20382] amendment clerk
+  [20396] amendment clerk
+  [20397] amendment clerk
+  [20398] amendment clerk
+  [20400] amendment clerk
+  [20402] amendment clerk
+  [20404] amendment clerk
+  [20405] amendment clerk
+  [20407] amendment clerk
+  [20418] amendment clerk
+  [20419] amendment clerk
+  [20420] amendment clerk
+  [20422] amendment clerk
+  [20427] amendment clerk
+  [20428] amendment clerk
+  [20430] amendment clerk
+  [20434] amendment clerk
+  [20462] amendment clerk
+  [20489] amendment clerk
+  [20595] amendment clerk
+  [20596] amendment clerk
+  [20601] amendment clerk
+  [20620] amendment clerk
+  [20654] amendment clerk
+  [20657] amendment clerk
+  [20709] amendment clerk
+  [20713] amendment clerk
+  [20742] amendment clerk
+  [20795] amendment clerk
+  [20817] amendment clerk
+  [20921] amendment clerk
+  [20932] amendment clerk
+  [20939] amendment clerk
+  [20946] amendment clerk
+  [20960] amendment clerk
+  [21031] amendment clerk
+  [21065] amendment clerk
+  [21085] amendment clerk
+  [21104] amendment clerk
+  [21115] amendment clerk
+  [21137] amendment clerk
+  [21146] amendment clerk
+  [21168] amendment clerk
+  [21174] amendment clerk
+  [21193] amendment clerk
+  [21203] amendment clerk
+  [21206] amendment clerk
+  [21239] amendment clerk
+  [21241] amendment clerk
+  [21242] amendment clerk
+  [21291] amendment clerk
+  [21330] amendment clerk
+  [21342] amendment clerk
+  [21366] amendment clerk
+  [21378] amendment clerk
+  [21391] amendment clerk
+  [21397] amendment clerk
+  [21415] amendment clerk
+  [21492] amendment clerk
+  [21637] amendment clerk
+  [21639] amendment clerk
+Topic   2 : public lands hunt
+  [ 1099] public lands hunt
+  [ 3193] public lands hunt
+  [ 9433] public lands hunt
+  [12093] public lands hunt
+  [14009] public lands hunt
+  [15296] public lands hunt
+  [18935] public lands hunt
+Topic   3 : states decide issues
+Topic   4 : states decide issues
+Topic   5 : states decide issues
+Topic   6 : states decide issues
+Topic   7 : states decide issues
+Topic   8 : states decide issues
+Topic   9 : states decide issues
 
