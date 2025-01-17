@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --partition=gpu_requeue      # Use the gpu_requeue partition
-#SBATCH --gres=gpu:4                # Request 4 GPUs
+#SBATCH --gres=gpu:8                # Request 4 GPUs
 #SBATCH --cpus-per-task=8           # Request 8 CPUs
-#SBATCH --mem=10G                   # Request 10 GB of memory
+#SBATCH --mem=20G                   # Request 10 GB of memory
 #SBATCH --time=1-00:00:00           # Set the maximum runtime (1 day)
 #SBATCH --open-mode=append
 #SBATCH --output=logs/expand_%j.out       # Standard output log file (with job ID)
