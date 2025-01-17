@@ -1,0 +1,1830 @@
+Document: 77	Topic: private_legislation	Phrase: budgetary rules designed
+Document: 81	Topic: private_legislation	Phrase: legislative process
+Document: 88	Topic: government_operations_and_politics	Phrase: trump internal revenue
+Document: 92	Topic: private_legislation	Phrase: taxpayer services mean
+Document: 96	Topic: private_legislation	Phrase: business small taxpayer
+Document: 99	Topic: private_legislation	Phrase: taxpayers policymakers
+Document: 109	Topic: economics_and_public_finance	Phrase: protect wealthy disadvantage
+Document: 111	Topic: private_legislation	Phrase: business taxpayer protection
+Document: 118	Topic: government_operations_and_politics	Phrase: billion spent enforcement
+Document: 127	Topic: taxation	Phrase: irs
+Document: 137	Topic: social_welfare	Phrase: small business taxpayer
+Document: 140	Topic: private_legislation	Phrase: actually serve taxpayers
+Document: 144	Topic: private_legislation	Phrase: concern legislation passed
+Document: 146	Topic: government_operations_and_politics	Phrase: taxpayer protection act
+Document: 149	Topic: private_legislation	Phrase: proceedings
+Document: 198	Topic: private_legislation	Phrase: declaration independence
+Document: 200	Topic: taxation	Phrase: pay taxed income
+Document: 205	Topic: taxation	Phrase: south texas irs
+Document: 213	Topic: taxation	Phrase: congresses privilege
+Document: 215	Topic: taxation	Phrase: policy united states
+Document: 216	Topic: geographic_areas_entities_and_committees	Phrase: select committee china
+Document: 217	Topic: taxation	Phrase: goods coming legislation
+Document: 221	Topic: government_operations_and_politics	Phrase: legitimate concerns actions
+Document: 227	Topic: taxation	Phrase: democracy independence
+Document: 229	Topic: taxation	Phrase: strengthening dollar commonsense
+Document: 231	Topic: taxation	Phrase: substantive work bipartisan
+Document: 242	Topic: taxation	Phrase: accountability
+Document: 246	Topic: taxation	Phrase: use government authority
+Document: 252	Topic: taxation	Phrase: curious thing legislation
+Document: 263	Topic: taxation	Phrase: rights
+Document: 265	Topic: taxation	Phrase: irs target individuals
+Document: 269	Topic: taxation	Phrase: seized
+Document: 276	Topic: taxation	Phrase: proceedings
+Document: 279	Topic: taxation	Phrase: taxes boosted economy
+Document: 283	Topic: taxation	Phrase: national
+Document: 285	Topic: taxation	Phrase: presidents giving
+Document: 301	Topic: taxation	Phrase: corporation profit
+Document: 302	Topic: taxation	Phrase: public systems
+Document: 321	Topic: armed_forces_and_national_security	Phrase: directors national
+Document: 323	Topic: immigration	Phrase: serve congress immigrant
+Document: 337	Topic: agriculture_and_food	Phrase: track advocates agriculture
+Document: 342	Topic: private_legislation	Phrase: competition national case
+Document: 354	Topic: taxation	Phrase: legislation step
+Document: 358	Topic: families	Phrase: welfare
+Document: 382	Topic: taxation	Phrase: act direct federal
+Document: 383	Topic: immigration	Phrase: urgency law enforcement
+Document: 402	Topic: international_affairs	Phrase: organization anti life
+Document: 404	Topic: international_affairs	Phrase: political nature justice
+Document: 412	Topic: environmental_protection	Phrase: legislation
+Document: 414	Topic: geographic_areas_entities_and_committees	Phrase: decisions legislators
+Document: 416	Topic: international_affairs	Phrase: national shame
+Document: 438	Topic: civil_rights_and_liberties_minority_issues	Phrase: defending innocent lives
+Document: 450	Topic: civil_rights_and_liberties_minority_issues	Phrase: rights criminal justice
+Document: 456	Topic: government_operations_and_politics	Phrase: package office congressional
+Document: 466	Topic: civil_rights_and_liberties_minority_issues	Phrase: naacp various community
+Document: 488	Topic: civil_rights_and_liberties_minority_issues	Phrase: speak support protecting
+Document: 505	Topic: government_operations_and_politics	Phrase: national security issue
+Document: 506	Topic: private_legislation	Phrase: government controlled stockpile
+Document: 508	Topic: civil_rights_and_liberties_minority_issues	Phrase: republicans created problem
+Document: 515	Topic: armed_forces_and_national_security	Phrase: national security stand
+Document: 532	Topic: private_legislation	Phrase: special prosecutions political
+Document: 537	Topic: armed_forces_and_national_security	Phrase: shooters access guns
+Document: 542	Topic: immigration	Phrase: families facing
+Document: 570	Topic: social_welfare	Phrase: utility sector took
+Document: 571	Topic: private_legislation	Phrase: ceremony advocate representative
+Document: 619	Topic: crime_and_law_enforcement	Phrase: california safe council
+Document: 636	Topic: civil_rights_and_liberties_minority_issues	Phrase: taken law enforcement
+Document: 640	Topic: civil_rights_and_liberties_minority_issues	Phrase: issue raised appeals
+Document: 650	Topic: government_operations_and_politics	Phrase: control organization jurisdiction
+Document: 661	Topic: civil_rights_and_liberties_minority_issues	Phrase: liberties times russell
+Document: 685	Topic: civil_rights_and_liberties_minority_issues	Phrase: civil service
+Document: 691	Topic: civil_rights_and_liberties_minority_issues	Phrase: government amendment protects
+Document: 698	Topic: private_legislation	Phrase: choice incentivize public
+Document: 708	Topic: civil_rights_and_liberties_minority_issues	Phrase: patriotic americans abortion
+Document: 728	Topic: civil_rights_and_liberties_minority_issues	Phrase: 1973 court struggling
+Document: 730	Topic: civil_rights_and_liberties_minority_issues	Phrase: rights lives millions
+Document: 741	Topic: private_legislation	Phrase: business senators permitted
+Document: 753	Topic: private_legislation	Phrase: member state bar
+Document: 769	Topic: private_legislation	Phrase: day legislation signed
+Document: 783	Topic: civil_rights_and_liberties_minority_issues	Phrase: divided topic abortion
+Document: 787	Topic: civil_rights_and_liberties_minority_issues	Phrase: patriots valued citizens
+Document: 818	Topic: law	Phrase: sophisticated legal departments
+Document: 843	Topic: government_operations_and_politics	Phrase: seeking democracy
+Document: 844	Topic: government_operations_and_politics	Phrase: struggle dictators congressional
+Document: 851	Topic: housing_and_community_development	Phrase: cities risking
+Document: 862	Topic: geographic_areas_entities_and_committees	Phrase: introduce district texas
+Document: 867	Topic: native_americans	Phrase: mexican american
+Document: 885	Topic: environmental_protection	Phrase: increase interior enforcement
+Document: 913	Topic: public_lands_and_natural_resources	Phrase: help civil
+Document: 953	Topic: energy	Phrase: maintaining momentum coming
+Document: 962	Topic: immigration	Phrase: freedom
+Document: 966	Topic: sports_and_recreation	Phrase: city just accomplishments
+Document: 981	Topic: private_legislation	Phrase: colleagues support legislation
+Document: 999	Topic: immigration	Phrase: federal lands matter
+Document: 1004	Topic: armed_forces_and_national_security	Phrase: strategic reserve law
+Document: 1016	Topic: water_resources_development	Phrase: coastal communities depend
+Document: 1030	Topic: health	Phrase: environmental
+Document: 1081	Topic: international_affairs	Phrase: amendment
+Document: 1095	Topic: public_lands_and_natural_resources	Phrase: invite federal lands
+Document: 1096	Topic: environmental_protection	Phrase: environmental standards
+Document: 1097	Topic: housing_and_community_development	Phrase: need federal land
+Document: 1098	Topic: public_lands_and_natural_resources	Phrase: lands leased production
+Document: 1112	Topic: immigration	Phrase: state struggling
+Document: 1124	Topic: water_resources_development	Phrase: pipelines permitting
+Document: 1125	Topic: families	Phrase: educate
+Document: 1126	Topic: private_legislation	Phrase: final amendment requires
+Document: 1135	Topic: crime_and_law_enforcement	Phrase: safety standards world
+Document: 1142	Topic: civil_rights_and_liberties_minority_issues	Phrase: consensus need protect
+Document: 1144	Topic: sports_and_recreation	Phrase: recreation closing encourage
+Document: 1149	Topic: education	Phrase: make decision government
+Document: 1152	Topic: agriculture_and_food	Phrase: public lands hunt
+Document: 1166	Topic: education	Phrase: globally developing countless
+Document: 1180	Topic: civil_rights_and_liberties_minority_issues	Phrase: colleagues support amendment
+Document: 1187	Topic: private_legislation	Phrase: congress help understand
+Document: 1188	Topic: private_legislation	Phrase: taxes regulations afford
+Document: 1190	Topic: private_legislation	Phrase: 2023 senate provisions
+Document: 1192	Topic: private_legislation	Phrase: congress going job
+Document: 1195	Topic: private_legislation	Phrase: prison systems congress
+Document: 1197	Topic: private_legislation	Phrase: successful passing legislation
+Document: 1199	Topic: private_legislation	Phrase: better new law
+Document: 1205	Topic: law	Phrase: vehicles senate
+Document: 1217	Topic: education	Phrase: lives giving
+Document: 1227	Topic: education	Phrase: life public service
+Document: 1228	Topic: housing_and_community_development	Phrase: 21 house floor
+Document: 1253	Topic: civil_rights_and_liberties_minority_issues	Phrase: security bipartisan concern
+Document: 1275	Topic: immigration	Phrase: house
+Document: 1277	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment offered gentleman
+Document: 1291	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment recorded
+Document: 1306	Topic: civil_rights_and_liberties_minority_issues	Phrase: honor victims
+Document: 1321	Topic: civil_rights_and_liberties_minority_issues	Phrase: deeply passionate lgbtq
+Document: 1329	Topic: international_affairs	Phrase: suddenly warning institute
+Document: 1351	Topic: armed_forces_and_national_security	Phrase: uso red cross
+Document: 1354	Topic: education	Phrase: congratulations students educators
+Document: 1357	Topic: agriculture_and_food	Phrase: environmental preservation arya
+Document: 1359	Topic: agriculture_and_food	Phrase: socialist policies
+Document: 1360	Topic: environmental_protection	Phrase: socialist policies protect
+Document: 1363	Topic: crime_and_law_enforcement	Phrase: indivisible liberty justice
+Document: 1368	Topic: agriculture_and_food	Phrase: agriculture disaster monitoring
+Document: 1399	Topic: international_affairs	Phrase: company act
+Document: 1403	Topic: social_welfare	Phrase: assistance idea
+Document: 1404	Topic: transportation_and_public_works	Phrase: citizen building horton
+Document: 1406	Topic: taxation	Phrase: double taxation
+Document: 1415	Topic: emergency_management	Phrase: deadly assault
+Document: 1417	Topic: emergency_management	Phrase: enforcement escalation training
+Document: 1432	Topic: private_legislation	Phrase: congressional executive commission
+Document: 1433	Topic: private_legislation	Phrase: business senators permitted
+Document: 1465	Topic: environmental_protection	Phrase: impact government
+Document: 1473	Topic: private_legislation	Phrase: human rights subjecting
+Document: 1476	Topic: private_legislation	Phrase: provide access actually
+Document: 1477	Topic: private_legislation	Phrase: legislation save lives
+Document: 1482	Topic: private_legislation	Phrase: companion signed law
+Document: 1489	Topic: private_legislation	Phrase: provides priority congress
+Document: 1490	Topic: private_legislation	Phrase: committee rules
+Document: 1506	Topic: economics_and_public_finance	Phrase: maga republicans economic
+Document: 1513	Topic: economics_and_public_finance	Phrase: federal funding absence
+Document: 1519	Topic: international_affairs	Phrase: government overreach irresponsible
+Document: 1523	Topic: international_affairs	Phrase: government pandemic response
+Document: 1533	Topic: private_legislation	Phrase: saying public law
+Document: 1537	Topic: international_affairs	Phrase: cares act 2020
+Document: 1542	Topic: civil_rights_and_liberties_minority_issues	Phrase: support 497 freedom
+Document: 1543	Topic: international_affairs	Phrase: pandemic nation struggling
+Document: 1552	Topic: private_legislation	Phrase: legislation attack public
+Document: 1566	Topic: education	Phrase: field entirely ultimately
+Document: 1581	Topic: immigration	Phrase: force ethnic
+Document: 1625	Topic: immigration	Phrase: future americans
+Document: 1648	Topic: immigration	Phrase: foster
+Document: 1673	Topic: armed_forces_and_national_security	Phrase: protect
+Document: 1697	Topic: civil_rights_and_liberties_minority_issues	Phrase: better defense freedom
+Document: 1713	Topic: immigration	Phrase: consideration
+Document: 1737	Topic: transportation_and_public_works	Phrase: government workers expected
+Document: 1743	Topic: agriculture_and_food	Phrase: problems bringing economy
+Document: 1744	Topic: crime_and_law_enforcement	Phrase: administrative policy opposing
+Document: 1752	Topic: international_affairs	Phrase: national emergencies act
+Document: 1763	Topic: private_legislation	Phrase: rule order house
+Document: 1764	Topic: energy	Phrase: 78
+Document: 1771	Topic: public_lands_and_natural_resources	Phrase: understated environmental matter
+Document: 1802	Topic: environmental_protection	Phrase: infrastructure law great
+Document: 1810	Topic: energy	Phrase: debate
+Document: 1813	Topic: energy	Phrase: energy prices
+Document: 1814	Topic: economics_and_public_finance	Phrase: irresponsible government spending
+Document: 1831	Topic: environmental_protection	Phrase: competitor law protects
+Document: 1886	Topic: private_legislation	Phrase: capitalist resolution today
+Document: 2015	Topic: public_lands_and_natural_resources	Phrase: federal government proposals
+Document: 2025	Topic: public_lands_and_natural_resources	Phrase: cherokee historic lands
+Document: 2034	Topic: environmental_protection	Phrase: prevent runoff
+Document: 2041	Topic: public_lands_and_natural_resources	Phrase: infrastructure home state
+Document: 2083	Topic: public_lands_and_natural_resources	Phrase: states constitution does
+Document: 2090	Topic: environmental_protection	Phrase: strategic petroleum reserve
+Document: 2110	Topic: environmental_protection	Phrase: legislation block
+Document: 2111	Topic: environmental_protection	Phrase: public safety think
+Document: 2115	Topic: environmental_protection	Phrase: obligation protect residents
+Document: 2121	Topic: private_legislation	Phrase: provides priority congress
+Document: 2132	Topic: private_legislation	Phrase: congress look forward
+Document: 2155	Topic: geographic_areas_entities_and_committees	Phrase: infrastructure subcommittee coast
+Document: 2165	Topic: housing_and_community_development	Phrase: pleased commend house
+Document: 2239	Topic: armed_forces_and_national_security	Phrase: discuss veterans
+Document: 2258	Topic: environmental_protection	Phrase: destroying affordable energy
+Document: 2371	Topic: environmental_protection	Phrase: native people environmental
+Document: 2391	Topic: environmental_protection	Phrase: cultivates workplace environment
+Document: 2401	Topic: environmental_protection	Phrase: school advisory
+Document: 2404	Topic: environmental_protection	Phrase: threat united states
+Document: 2419	Topic: environmental_protection	Phrase: advantage services
+Document: 2551	Topic: private_legislation	Phrase: help set congressional
+Document: 2601	Topic: public_lands_and_natural_resources	Phrase: read public service
+Document: 2618	Topic: private_legislation	Phrase: moved act
+Document: 2645	Topic: public_lands_and_natural_resources	Phrase: regulate americans fossil
+Document: 2659	Topic: public_lands_and_natural_resources	Phrase: environmental
+Document: 2666	Topic: public_lands_and_natural_resources	Phrase: governments area support
+Document: 2686	Topic: public_lands_and_natural_resources	Phrase: public need national
+Document: 2699	Topic: private_legislation	Phrase: claim program fifth
+Document: 2726	Topic: immigration	Phrase: wash american
+Document: 2748	Topic: taxation	Phrase: rise today pay
+Document: 2813	Topic: families	Phrase: interests
+Document: 2816	Topic: international_affairs	Phrase: interests urge
+Document: 2817	Topic: international_affairs	Phrase: member congress
+Document: 2820	Topic: health	Phrase: purposes
+Document: 2822	Topic: health	Phrase: reduce exacerbated
+Document: 2824	Topic: immigration	Phrase: afraid transparency american
+Document: 2831	Topic: armed_forces_and_national_security	Phrase: spending patterns military
+Document: 2856	Topic: armed_forces_and_national_security	Phrase: restriction powers presidential
+Document: 2859	Topic: private_legislation	Phrase: public good
+Document: 2867	Topic: economics_and_public_finance	Phrase: ripple economy accounted
+Document: 2879	Topic: civil_rights_and_liberties_minority_issues	Phrase: regulation help liberals
+Document: 2880	Topic: education	Phrase: generations higher education
+Document: 2897	Topic: public_lands_and_natural_resources	Phrase: recreation opportunities lead
+Document: 2910	Topic: emergency_management	Phrase: santa ana security
+Document: 2925	Topic: energy	Phrase: product
+Document: 2959	Topic: public_lands_and_natural_resources	Phrase: legislature instead handing
+Document: 2968	Topic: economics_and_public_finance	Phrase: incomes watched helplessly
+Document: 3005	Topic: energy	Phrase: high costs energy
+Document: 3153	Topic: emergency_management	Phrase: emergency 13 counties
+Document: 3163	Topic: education	Phrase: strong middle class
+Document: 3169	Topic: private_legislation	Phrase: projecting federal
+Document: 3170	Topic: social_welfare	Phrase: attorney southern poverty
+Document: 3204	Topic: private_legislation	Phrase: making history congress
+Document: 3206	Topic: housing_and_community_development	Phrase: live heritage culture
+Document: 3218	Topic: families	Phrase: ancestors died right
+Document: 3230	Topic: government_operations_and_politics	Phrase: crime policies devastating
+Document: 3241	Topic: environmental_protection	Phrase: quality government called
+Document: 3249	Topic: private_legislation	Phrase: advocacy work
+Document: 3264	Topic: economics_and_public_finance	Phrase: agent internal revenue
+Document: 3296	Topic: housing_and_community_development	Phrase: reported house resolution
+Document: 3305	Topic: private_legislation	Phrase: unanimous consent include
+Document: 3321	Topic: taxation	Phrase: russia having incentive
+Document: 3334	Topic: crime_and_law_enforcement	Phrase: fighting
+Document: 3341	Topic: environmental_protection	Phrase: guard oil fields
+Document: 3346	Topic: crime_and_law_enforcement	Phrase: coerce private sector
+Document: 3348	Topic: government_operations_and_politics	Phrase: positions attack americans
+Document: 3352	Topic: crime_and_law_enforcement	Phrase: evidence fbi colluded
+Document: 3371	Topic: armed_forces_and_national_security	Phrase: support amendment protecting
+Document: 3389	Topic: private_legislation	Phrase: amendment basic obscenity
+Document: 3394	Topic: civil_rights_and_liberties_minority_issues	Phrase: protected speech recent
+Document: 3402	Topic: armed_forces_and_national_security	Phrase: upstanding patriotic
+Document: 3426	Topic: public_lands_and_natural_resources	Phrase: regulate land biden
+Document: 3438	Topic: private_legislation	Phrase: assistant legislative clerk
+Document: 3456	Topic: civil_rights_and_liberties_minority_issues	Phrase: issue fact introduced
+Document: 3468	Topic: private_legislation	Phrase: introducing congress act
+Document: 3471	Topic: private_legislation	Phrase: state legislature considering
+Document: 3472	Topic: private_legislation	Phrase: prohibitions medically unnecessary
+Document: 3474	Topic: social_welfare	Phrase: politics intrude care
+Document: 3475	Topic: social_welfare	Phrase: supporting women health
+Document: 3478	Topic: social_welfare	Phrase: freedoms support
+Document: 3486	Topic: emergency_management	Phrase: volunteers dedicated time
+Document: 3510	Topic: emergency_management	Phrase: oversees staff 42
+Document: 3525	Topic: emergency_management	Phrase: committee homeland security
+Document: 3545	Topic: emergency_management	Phrase: providing aid stranded
+Document: 3553	Topic: emergency_management	Phrase: volunteered time immanuel
+Document: 3563	Topic: emergency_management	Phrase: respond crimes threats
+Document: 3583	Topic: private_legislation	Phrase: limited federal protections
+Document: 3627	Topic: private_legislation	Phrase: bipartisan congressional delegation
+Document: 3629	Topic: emergency_management	Phrase: holding future hostage
+Document: 3669	Topic: public_lands_and_natural_resources	Phrase: economy land disputes
+Document: 3675	Topic: civil_rights_and_liberties_minority_issues	Phrase: minority leaders pursuant
+Document: 3679	Topic: housing_and_community_development	Phrase: construction management identified
+Document: 3683	Topic: government_operations_and_politics	Phrase: development infrastructure prosperous
+Document: 3703	Topic: civil_rights_and_liberties_minority_issues	Phrase: minority member permanent
+Document: 3730	Topic: public_lands_and_natural_resources	Phrase: invest public education
+Document: 3745	Topic: immigration	Phrase: served new mexico
+Document: 3749	Topic: environmental_protection	Phrase: taking accountability act
+Document: 3755	Topic: armed_forces_and_national_security	Phrase: career united states
+Document: 3768	Topic: international_affairs	Phrase: normandy day act
+Document: 3790	Topic: social_welfare	Phrase: healthy livable earned
+Document: 3794	Topic: emergency_management	Phrase: recognize life service
+Document: 3797	Topic: families	Phrase: families serves community
+Document: 3799	Topic: law	Phrase: public law 107
+Document: 3802	Topic: international_affairs	Phrase: senator
+Document: 3806	Topic: education	Phrase: like lot money
+Document: 3808	Topic: civil_rights_and_liberties_minority_issues	Phrase: southern border issues
+Document: 3818	Topic: civil_rights_and_liberties_minority_issues	Phrase: opposition act courage
+Document: 3826	Topic: civil_rights_and_liberties_minority_issues	Phrase: highlighted problem americans
+Document: 3852	Topic: social_welfare	Phrase: prevent taxpayer dollars
+Document: 3869	Topic: social_welfare	Phrase: accountability wall street
+Document: 3910	Topic: taxation	Phrase: career internal revenue
+Document: 3928	Topic: government_operations_and_politics	Phrase: infrastructure present dangers
+Document: 3933	Topic: government_operations_and_politics	Phrase: president
+Document: 3953	Topic: emergency_management	Phrase: grateful presiding officer
+Document: 3954	Topic: economics_and_public_finance	Phrase: act thanks affordable
+Document: 3960	Topic: emergency_management	Phrase: finest modern facilities
+Document: 3961	Topic: emergency_management	Phrase: sheriff
+Document: 3963	Topic: emergency_management	Phrase: aid residents dearborn
+Document: 3999	Topic: civil_rights_and_liberties_minority_issues	Phrase: pakistani advocacy group
+Document: 4005	Topic: education	Phrase: training ship
+Document: 4007	Topic: civil_rights_and_liberties_minority_issues	Phrase: important bipartisan measure
+Document: 4009	Topic: immigration	Phrase: brought home state
+Document: 4026	Topic: emergency_management	Phrase: make sure survivors
+Document: 4047	Topic: armed_forces_and_national_security	Phrase: public servant veteran
+Document: 4069	Topic: government_operations_and_politics	Phrase: civilian employees
+Document: 4111	Topic: economics_and_public_finance	Phrase: spending prescription
+Document: 4127	Topic: civil_rights_and_liberties_minority_issues	Phrase: protecting nation residents
+Document: 4138	Topic: crime_and_law_enforcement	Phrase: jail teachers bullying
+Document: 4151	Topic: government_operations_and_politics	Phrase: places hands congress
+Document: 4177	Topic: armed_forces_and_national_security	Phrase: addressing gun violence
+Document: 4185	Topic: social_welfare	Phrase: adopt policy
+Document: 4190	Topic: social_welfare	Phrase: oppose keeping kids
+Document: 4197	Topic: economics_and_public_finance	Phrase: commonsense transparency
+Document: 4199	Topic: social_welfare	Phrase: vulnerable kids america
+Document: 4201	Topic: social_welfare	Phrase: protected families
+Document: 4203	Topic: social_welfare	Phrase: included help parents
+Document: 4211	Topic: social_welfare	Phrase: child education advocacy
+Document: 4217	Topic: social_welfare	Phrase: deserve right taxpayer
+Document: 4230	Topic: social_welfare	Phrase: burdens understaffed schools
+Document: 4237	Topic: social_welfare	Phrase: schools right fund
+Document: 4238	Topic: social_welfare	Phrase: dangerous inclusive policies
+Document: 4244	Topic: social_welfare	Phrase: want treated fairly
+Document: 4254	Topic: economics_and_public_finance	Phrase: investment returns biden
+Document: 4264	Topic: social_welfare	Phrase: schools
+Document: 4268	Topic: social_welfare	Phrase: money barrier parental
+Document: 4279	Topic: international_affairs	Phrase: federal right action
+Document: 4281	Topic: international_affairs	Phrase: unencumbered political
+Document: 4292	Topic: international_affairs	Phrase: education
+Document: 4300	Topic: civil_rights_and_liberties_minority_issues	Phrase: democratic women
+Document: 4349	Topic: international_affairs	Phrase: trilateral security partnership
+Document: 4350	Topic: international_affairs	Phrase: uaw activist
+Document: 4361	Topic: economics_and_public_finance	Phrase: dollars spent child
+Document: 4366	Topic: economics_and_public_finance	Phrase: public reduce money
+Document: 4378	Topic: crime_and_law_enforcement	Phrase: terrible incident
+Document: 4380	Topic: international_affairs	Phrase: federal
+Document: 4381	Topic: education	Phrase: education concerned happening
+Document: 4385	Topic: civil_rights_and_liberties_minority_issues	Phrase: ensure rights parents
+Document: 4387	Topic: civil_rights_and_liberties_minority_issues	Phrase: protections given women
+Document: 4420	Topic: environmental_protection	Phrase: protect child
+Document: 4423	Topic: international_affairs	Phrase: 1984 department
+Document: 4480	Topic: families	Phrase: parents nashville experiencing
+Document: 4510	Topic: immigration	Phrase: authorization troops desperately
+Document: 4511	Topic: international_affairs	Phrase: weapons bush administration
+Document: 4520	Topic: international_affairs	Phrase: trade relations
+Document: 4557	Topic: public_lands_and_natural_resources	Phrase: funding water infrastructure
+Document: 4564	Topic: education	Phrase: care children lose
+Document: 4572	Topic: geographic_areas_entities_and_committees	Phrase: member rules committee
+Document: 4575	Topic: private_legislation	Phrase: democratic environmental policies
+Document: 4576	Topic: public_lands_and_natural_resources	Phrase: committee natural resources
+Document: 4578	Topic: private_legislation	Phrase: nation bills republicans
+Document: 4583	Topic: environmental_protection	Phrase: bedrock environmental protections
+Document: 4585	Topic: environmental_protection	Phrase: security leaders conservation
+Document: 4587	Topic: private_legislation	Phrase: congress closed rule
+Document: 4595	Topic: private_legislation	Phrase: government accountability meaningful
+Document: 4615	Topic: crime_and_law_enforcement	Phrase: nevada
+Document: 4620	Topic: civil_rights_and_liberties_minority_issues	Phrase: supply issues republicans
+Document: 4636	Topic: crime_and_law_enforcement	Phrase: weakening enforcement
+Document: 4646	Topic: international_affairs	Phrase: resources nation
+Document: 4653	Topic: armed_forces_and_national_security	Phrase: costs secure america
+Document: 4676	Topic: private_legislation	Phrase: makes environmental laws
+Document: 4682	Topic: private_legislation	Phrase: provisions clean
+Document: 4684	Topic: taxation	Phrase: energy costs act
+Document: 4686	Topic: government_operations_and_politics	Phrase: consistent congressional intent
+Document: 4688	Topic: private_legislation	Phrase: inflation reduction act
+Document: 4690	Topic: armed_forces_and_national_security	Phrase: security promote innovation
+Document: 4694	Topic: private_legislation	Phrase: legislature decide protect
+Document: 4695	Topic: private_legislation	Phrase: projects permitted let
+Document: 4706	Topic: private_legislation	Phrase: producers federal government
+Document: 4709	Topic: geographic_areas_entities_and_committees	Phrase: environment fact ask
+Document: 4721	Topic: government_operations_and_politics	Phrase: happening foreign entities
+Document: 4723	Topic: geographic_areas_entities_and_committees	Phrase: intergovernmental
+Document: 4737	Topic: international_affairs	Phrase: report united states
+Document: 4759	Topic: international_affairs	Phrase: degree international relations
+Document: 4806	Topic: international_affairs	Phrase: international trans day
+Document: 4809	Topic: agriculture_and_food	Phrase: increasing domestic
+Document: 4810	Topic: armed_forces_and_national_security	Phrase: dedication defending freedom
+Document: 4826	Topic: international_affairs	Phrase: day biden administration
+Document: 4828	Topic: foreign_trade_and_international_finance	Phrase: increase american
+Document: 4839	Topic: housing_and_community_development	Phrase: home real solutions
+Document: 4848	Topic: armed_forces_and_national_security	Phrase: communist party protecting
+Document: 4870	Topic: crime_and_law_enforcement	Phrase: policy coming washington
+Document: 4910	Topic: private_legislation	Phrase: giving states regulatory
+Document: 4915	Topic: private_legislation	Phrase: price mandates administration
+Document: 4971	Topic: native_americans	Phrase: navajo nation 1940s
+Document: 5019	Topic: civil_rights_and_liberties_minority_issues	Phrase: important question majority
+Document: 5027	Topic: government_operations_and_politics	Phrase: multiple administrations relied
+Document: 5028	Topic: government_operations_and_politics	Phrase: challenging national security
+Document: 5039	Topic: civil_rights_and_liberties_minority_issues	Phrase: controversial matter understand
+Document: 5042	Topic: civil_rights_and_liberties_minority_issues	Phrase: freedoms nebraskans
+Document: 5049	Topic: immigration	Phrase: americans
+Document: 5053	Topic: civil_rights_and_liberties_minority_issues	Phrase: country protects american
+Document: 5055	Topic: civil_rights_and_liberties_minority_issues	Phrase: kentucky mentions rights
+Document: 5056	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment issue trying
+Document: 5065	Topic: emergency_management	Phrase: support armed services
+Document: 5067	Topic: private_legislation	Phrase: learn law
+Document: 5081	Topic: civil_rights_and_liberties_minority_issues	Phrase: appropriate protecting americans
+Document: 5087	Topic: social_welfare	Phrase: breaking cycle poverty
+Document: 5091	Topic: crime_and_law_enforcement	Phrase: pursue
+Document: 5109	Topic: social_welfare	Phrase: families struggling continue
+Document: 5112	Topic: crime_and_law_enforcement	Phrase: including home state
+Document: 5119	Topic: crime_and_law_enforcement	Phrase: deterrent
+Document: 5120	Topic: government_operations_and_politics	Phrase: large corporate interests
+Document: 5122	Topic: crime_and_law_enforcement	Phrase: government responsible protecting
+Document: 5128	Topic: private_legislation	Phrase: legislation really team
+Document: 5132	Topic: crime_and_law_enforcement	Phrase: government accountability
+Document: 5138	Topic: crime_and_law_enforcement	Phrase: authority determine activities
+Document: 5139	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment support
+Document: 5140	Topic: crime_and_law_enforcement	Phrase: laws
+Document: 5141	Topic: private_legislation	Phrase: introducing amendment
+Document: 5143	Topic: crime_and_law_enforcement	Phrase: amendment
+Document: 5144	Topic: crime_and_law_enforcement	Phrase: amendment clerk
+Document: 5145	Topic: crime_and_law_enforcement	Phrase: california
+Document: 5146	Topic: crime_and_law_enforcement	Phrase: proceedings
+Document: 5147	Topic: private_legislation	Phrase: amendment 34 printed
+Document: 5148	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment clerk
+Document: 5172	Topic: international_affairs	Phrase: pearl harbor west
+Document: 5173	Topic: government_operations_and_politics	Phrase: want congress actually
+Document: 5181	Topic: international_affairs	Phrase: let stop political
+Document: 5183	Topic: government_operations_and_politics	Phrase: action debate
+Document: 5216	Topic: government_operations_and_politics	Phrase: appointed state
+Document: 5220	Topic: emergency_management	Phrase: service conduct
+Document: 5231	Topic: labor_and_employment	Phrase: rise today pay
+Document: 5301	Topic: public_lands_and_natural_resources	Phrase: resources taught sanctity
+Document: 5310	Topic: international_affairs	Phrase: duty officers
+Document: 5313	Topic: geographic_areas_entities_and_committees	Phrase: states
+Document: 5323	Topic: education	Phrase: new schools having
+Document: 5334	Topic: immigration	Phrase: children american revolution
+Document: 5350	Topic: immigration	Phrase: permanent international criminal
+Document: 5362	Topic: armed_forces_and_national_security	Phrase: states national security
+Document: 5363	Topic: education	Phrase: support
+Document: 5407	Topic: armed_forces_and_national_security	Phrase: america fighting hand
+Document: 5443	Topic: civil_rights_and_liberties_minority_issues	Phrase: advocates
+Document: 5446	Topic: sports_and_recreation	Phrase: district safer enjoyable
+Document: 5568	Topic: housing_and_community_development	Phrase: discussed district issues
+Document: 5612	Topic: civil_rights_and_liberties_minority_issues	Phrase: hagerty amendments provided
+Document: 5638	Topic: crime_and_law_enforcement	Phrase: prison far wardens
+Document: 5656	Topic: government_operations_and_politics	Phrase: state senate explaining
+Document: 5692	Topic: public_lands_and_natural_resources	Phrase: resources compared male
+Document: 5799	Topic: immigration	Phrase: thousands americans risk
+Document: 5812	Topic: immigration	Phrase: lives
+Document: 5816	Topic: civil_rights_and_liberties_minority_issues	Phrase: safety advocacy
+Document: 5821	Topic: civil_rights_and_liberties_minority_issues	Phrase: public protection classification
+Document: 5834	Topic: international_affairs	Phrase: nationals academic
+Document: 5839	Topic: economics_and_public_finance	Phrase: politicians right options
+Document: 5929	Topic: civil_rights_and_liberties_minority_issues	Phrase: office constituents washington
+Document: 5934	Topic: emergency_management	Phrase: personal financial disasters
+Document: 5952	Topic: education	Phrase: coach staff parent
+Document: 5982	Topic: environmental_protection	Phrase: potential protect
+Document: 5992	Topic: energy	Phrase: economic
+Document: 5995	Topic: armed_forces_and_national_security	Phrase: demilitarized democratic
+Document: 6003	Topic: armed_forces_and_national_security	Phrase: security economic benefits
+Document: 6015	Topic: social_welfare	Phrase: consumers workers forced
+Document: 6026	Topic: emergency_management	Phrase: providing economic relief
+Document: 6029	Topic: international_affairs	Phrase: importance congressional
+Document: 6030	Topic: international_affairs	Phrase: white house supreme
+Document: 6032	Topic: international_affairs	Phrase: reforms absurd position
+Document: 6033	Topic: international_affairs	Phrase: american history maga
+Document: 6038	Topic: armed_forces_and_national_security	Phrase: using military facilities
+Document: 6057	Topic: private_legislation	Phrase: act require institute
+Document: 6065	Topic: private_legislation	Phrase: constituent
+Document: 6074	Topic: private_legislation	Phrase: career public service
+Document: 6077	Topic: private_legislation	Phrase: lack effective regulation
+Document: 6079	Topic: private_legislation	Phrase: today honor constituent
+Document: 6082	Topic: private_legislation	Phrase: act gave school
+Document: 6126	Topic: education	Phrase: montana students
+Document: 6151	Topic: government_operations_and_politics	Phrase: argue federal spending
+Document: 6155	Topic: armed_forces_and_national_security	Phrase: ability protecting national
+Document: 6211	Topic: international_affairs	Phrase: demanding partisan policies
+Document: 6215	Topic: international_affairs	Phrase: consequences real president
+Document: 6216	Topic: international_affairs	Phrase: iraq afghanistan note
+Document: 6223	Topic: families	Phrase: making
+Document: 6250	Topic: agriculture_and_food	Phrase: welfare
+Document: 6253	Topic: housing_and_community_development	Phrase: contribute economy help
+Document: 6256	Topic: economics_and_public_finance	Phrase: funding wealthy tax
+Document: 6258	Topic: social_welfare	Phrase: medicaid social security
+Document: 6260	Topic: environmental_protection	Phrase: repeal
+Document: 6274	Topic: environmental_protection	Phrase: protect endangered
+Document: 6287	Topic: private_legislation	Phrase: institutions rule
+Document: 6292	Topic: social_welfare	Phrase: benefits person
+Document: 6313	Topic: private_legislation	Phrase: citizens need constitutional
+Document: 6323	Topic: economics_and_public_finance	Phrase: incentives clean energy
+Document: 6336	Topic: economics_and_public_finance	Phrase: percent higher public
+Document: 6537	Topic: taxation	Phrase: result green tax
+Document: 6626	Topic: international_affairs	Phrase: future policymaking passage
+Document: 6646	Topic: geographic_areas_entities_and_committees	Phrase: district contended viewed
+Document: 6649	Topic: crime_and_law_enforcement	Phrase: career public service
+Document: 6653	Topic: private_legislation	Phrase: bipartisan reauthorize programs
+Document: 6654	Topic: immigration	Phrase: approval majority
+Document: 6664	Topic: environmental_protection	Phrase: regional counsel environmental
+Document: 6681	Topic: agriculture_and_food	Phrase: chickens high regard
+Document: 6687	Topic: armed_forces_and_national_security	Phrase: coming honor serving
+Document: 6748	Topic: armed_forces_and_national_security	Phrase: service national
+Document: 6761	Topic: economics_and_public_finance	Phrase: opened public years
+Document: 6823	Topic: international_affairs	Phrase: handling national institute
+Document: 6836	Topic: private_legislation	Phrase: pathways like charter
+Document: 6845	Topic: civil_rights_and_liberties_minority_issues	Phrase: soldiers protect democracy
+Document: 6854	Topic: law	Phrase: congressional
+Document: 6898	Topic: government_operations_and_politics	Phrase: report information federal
+Document: 6905	Topic: government_operations_and_politics	Phrase: senator
+Document: 6935	Topic: private_legislation	Phrase: develop policies directly
+Document: 6939	Topic: economics_and_public_finance	Phrase: economic impact report
+Document: 6968	Topic: immigration	Phrase: security
+Document: 6973	Topic: international_affairs	Phrase: reform way america
+Document: 6974	Topic: international_affairs	Phrase: border act 2023
+Document: 6982	Topic: social_welfare	Phrase: power american people
+Document: 7005	Topic: emergency_management	Phrase: protect homeland security
+Document: 7006	Topic: crime_and_law_enforcement	Phrase: hours border patrol
+Document: 7010	Topic: emergency_management	Phrase: patrol agents welcoming
+Document: 7019	Topic: immigration	Phrase: border security
+Document: 7041	Topic: armed_forces_and_national_security	Phrase: participate national police
+Document: 7124	Topic: private_legislation	Phrase: chapel official
+Document: 7158	Topic: immigration	Phrase: migrants 100 countries
+Document: 7211	Topic: immigration	Phrase: border patrol agents
+Document: 7218	Topic: families	Phrase: address crisis
+Document: 7221	Topic: crime_and_law_enforcement	Phrase: security tackling
+Document: 7233	Topic: international_affairs	Phrase: pleading biden administration
+Document: 7243	Topic: armed_forces_and_national_security	Phrase: proud support protecting
+Document: 7246	Topic: international_affairs	Phrase: american rescue plan
+Document: 7250	Topic: private_legislation	Phrase: protecting taxpayers victims
+Document: 7254	Topic: families	Phrase: bills taking care
+Document: 7256	Topic: private_legislation	Phrase: law protects individuals
+Document: 7261	Topic: economics_and_public_finance	Phrase: guts federal funding
+Document: 7263	Topic: housing_and_community_development	Phrase: house
+Document: 7269	Topic: international_affairs	Phrase: representatives express deep
+Document: 7275	Topic: private_legislation	Phrase: shareholder primacy public
+Document: 7297	Topic: private_legislation	Phrase: second amendment
+Document: 7320	Topic: private_legislation	Phrase: unanimous consent
+Document: 7351	Topic: private_legislation	Phrase: comfort act congress
+Document: 7359	Topic: native_americans	Phrase: restoring native prairie
+Document: 7367	Topic: civil_rights_and_liberties_minority_issues	Phrase: important legislation deterrence
+Document: 7371	Topic: civil_rights_and_liberties_minority_issues	Phrase: fairness act crucial
+Document: 7375	Topic: civil_rights_and_liberties_minority_issues	Phrase: citizens seek harm
+Document: 7379	Topic: civil_rights_and_liberties_minority_issues	Phrase: memorializing law enforcement
+Document: 7383	Topic: civil_rights_and_liberties_minority_issues	Phrase: america challenges policing
+Document: 7397	Topic: crime_and_law_enforcement	Phrase: doubling threats
+Document: 7467	Topic: international_affairs	Phrase: aliens administration continues
+Document: 7468	Topic: international_affairs	Phrase: federal protective service
+Document: 7474	Topic: crime_and_law_enforcement	Phrase: supporting law enforcement
+Document: 7478	Topic: crime_and_law_enforcement	Phrase: police week talking
+Document: 7480	Topic: government_operations_and_politics	Phrase: enforcement officials honoring
+Document: 7498	Topic: environmental_protection	Phrase: project provided shelter
+Document: 7517	Topic: transportation_and_public_works	Phrase: job motion picture
+Document: 7534	Topic: transportation_and_public_works	Phrase: addressed legislatively bring
+Document: 7536	Topic: emergency_management	Phrase: time notify commanding
+Document: 7537	Topic: civil_rights_and_liberties_minority_issues	Phrase: states decide issues
+Document: 7541	Topic: public_lands_and_natural_resources	Phrase: suggestion states rights
+Document: 7542	Topic: armed_forces_and_national_security	Phrase: ranking officers going
+Document: 7557	Topic: armed_forces_and_national_security	Phrase: defense seeking trial
+Document: 7568	Topic: social_welfare	Phrase: health social services
+Document: 7576	Topic: international_affairs	Phrase: today support national
+Document: 7591	Topic: private_legislation	Phrase: legislator officially acknowledge
+Document: 7608	Topic: armed_forces_and_national_security	Phrase: secure border act
+Document: 7609	Topic: armed_forces_and_national_security	Phrase: social security pandemic
+Document: 7614	Topic: international_affairs	Phrase: recognizing peace officers
+Document: 7618	Topic: armed_forces_and_national_security	Phrase: god bless troops
+Document: 7622	Topic: armed_forces_and_national_security	Phrase: providing law enforcement
+Document: 7624	Topic: armed_forces_and_national_security	Phrase: war ii fight
+Document: 7634	Topic: armed_forces_and_national_security	Phrase: officers nation appreciate
+Document: 7638	Topic: armed_forces_and_national_security	Phrase: uniform national police
+Document: 7642	Topic: armed_forces_and_national_security	Phrase: weapon requiring agency
+Document: 7656	Topic: armed_forces_and_national_security	Phrase: handguns weapons federal
+Document: 7664	Topic: private_legislation	Phrase: committee house state
+Document: 7665	Topic: private_legislation	Phrase: judiciary respective designees
+Document: 7674	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment colleagues need
+Document: 7676	Topic: private_legislation	Phrase: members oppose legislation
+Document: 7679	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment promote accountability
+Document: 7682	Topic: civil_rights_and_liberties_minority_issues	Phrase: colleagues oppose amendment
+Document: 7697	Topic: civil_rights_and_liberties_minority_issues	Phrase: demonize law enforcement
+Document: 7711	Topic: civil_rights_and_liberties_minority_issues	Phrase: defend american workers
+Document: 7717	Topic: private_legislation	Phrase: enforcement let hold
+Document: 7721	Topic: armed_forces_and_national_security	Phrase: officers nation men
+Document: 7729	Topic: international_affairs	Phrase: highlights america governance
+Document: 7732	Topic: crime_and_law_enforcement	Phrase: washington dc 17
+Document: 7792	Topic: private_legislation	Phrase: ndo fairness act
+Document: 7817	Topic: armed_forces_and_national_security	Phrase: notion federalizing police
+Document: 7822	Topic: private_legislation	Phrase: planning local law
+Document: 7824	Topic: private_legislation	Phrase: federal law
+Document: 7838	Topic: civil_rights_and_liberties_minority_issues	Phrase: rights controversial measure
+Document: 7844	Topic: agriculture_and_food	Phrase: speak national infrastructure
+Document: 7845	Topic: international_affairs	Phrase: communist
+Document: 7862	Topic: environmental_protection	Phrase: communities ensure affected
+Document: 7863	Topic: economics_and_public_finance	Phrase: march stephens financial
+Document: 7891	Topic: crime_and_law_enforcement	Phrase: conservatives stated policing
+Document: 7893	Topic: crime_and_law_enforcement	Phrase: police executive research
+Document: 7895	Topic: crime_and_law_enforcement	Phrase: criminal justice reform
+Document: 7897	Topic: crime_and_law_enforcement	Phrase: action assault
+Document: 7901	Topic: crime_and_law_enforcement	Phrase: policing justice amendment
+Document: 7903	Topic: crime_and_law_enforcement	Phrase: metropolitan nashville police
+Document: 7905	Topic: government_operations_and_politics	Phrase: executive officer wade
+Document: 7911	Topic: crime_and_law_enforcement	Phrase: defense advocating
+Document: 7917	Topic: crime_and_law_enforcement	Phrase: relevant federal agencies
+Document: 7923	Topic: crime_and_law_enforcement	Phrase: justice region recognition
+Document: 7927	Topic: private_legislation	Phrase: constituent friend
+Document: 7929	Topic: crime_and_law_enforcement	Phrase: infrastructure damages
+Document: 7939	Topic: armed_forces_and_national_security	Phrase: served department police
+Document: 7953	Topic: civil_rights_and_liberties_minority_issues	Phrase: indivisible liberty justice
+Document: 7955	Topic: civil_rights_and_liberties_minority_issues	Phrase: discrimination violence nationwide
+Document: 7957	Topic: civil_rights_and_liberties_minority_issues	Phrase: constitution rights
+Document: 7965	Topic: civil_rights_and_liberties_minority_issues	Phrase: protecting innocent americans
+Document: 7971	Topic: civil_rights_and_liberties_minority_issues	Phrase: important issues
+Document: 7975	Topic: civil_rights_and_liberties_minority_issues	Phrase: war naturalized citizens
+Document: 7977	Topic: civil_rights_and_liberties_minority_issues	Phrase: house judiciary
+Document: 8034	Topic: environmental_protection	Phrase: california radical environmental
+Document: 8055	Topic: housing_and_community_development	Phrase: productive lives raised
+Document: 8087	Topic: government_operations_and_politics	Phrase: legislatures people ultimately
+Document: 8089	Topic: immigration	Phrase: families country struggling
+Document: 8100	Topic: economics_and_public_finance	Phrase: economy millionaires hurt
+Document: 8114	Topic: private_legislation	Phrase: people line legislation
+Document: 8136	Topic: private_legislation	Phrase: regulations simply afford
+Document: 8138	Topic: private_legislation	Phrase: rule technology manufacturers
+Document: 8149	Topic: environmental_protection	Phrase: discuss dangers
+Document: 8161	Topic: environmental_protection	Phrase: keeping america
+Document: 8168	Topic: environmental_protection	Phrase: house prevent individuals
+Document: 8179	Topic: environmental_protection	Phrase: protect serve community
+Document: 8191	Topic: water_resources_development	Phrase: tribal resources lasting
+Document: 8206	Topic: public_lands_and_natural_resources	Phrase: creation national association
+Document: 8209	Topic: environmental_protection	Phrase: underwater demolition
+Document: 8212	Topic: environmental_protection	Phrase: skin care precautions
+Document: 8229	Topic: private_legislation	Phrase: united states constitution
+Document: 8248	Topic: environmental_protection	Phrase: future taxpayers
+Document: 8251	Topic: taxation	Phrase: congress meritless
+Document: 8273	Topic: economics_and_public_finance	Phrase: affordable education economic
+Document: 8275	Topic: economics_and_public_finance	Phrase: current future borrowers
+Document: 8285	Topic: housing_and_community_development	Phrase: stakeholders
+Document: 8294	Topic: environmental_protection	Phrase: protect american workers
+Document: 8295	Topic: taxation	Phrase: circumventing tariffs
+Document: 8313	Topic: taxation	Phrase: act halt
+Document: 8372	Topic: international_affairs	Phrase: rico years meeting
+Document: 8377	Topic: native_americans	Phrase: america current
+Document: 8381	Topic: housing_and_community_development	Phrase: people environment
+Document: 8398	Topic: geographic_areas_entities_and_committees	Phrase: agenda strip millions
+Document: 8415	Topic: housing_and_community_development	Phrase: home district strong
+Document: 8429	Topic: agriculture_and_food	Phrase: food safety vital
+Document: 8434	Topic: social_welfare	Phrase: 600 households social
+Document: 8449	Topic: international_affairs	Phrase: agencies slash
+Document: 8483	Topic: armed_forces_and_national_security	Phrase: veterans children protecting
+Document: 8494	Topic: armed_forces_and_national_security	Phrase: targeting 000 veterans
+Document: 8496	Topic: social_welfare	Phrase: hurting working families
+Document: 8497	Topic: private_legislation	Phrase: continue govern way
+Document: 8502	Topic: economics_and_public_finance	Phrase: mccarthy spending
+Document: 8503	Topic: economics_and_public_finance	Phrase: savings
+Document: 8513	Topic: economics_and_public_finance	Phrase: debt crisis republicans
+Document: 8517	Topic: economics_and_public_finance	Phrase: fiscal restraint happen
+Document: 8523	Topic: international_affairs	Phrase: partnership illinois department
+Document: 8539	Topic: civil_rights_and_liberties_minority_issues	Phrase: god indivisible liberty
+Document: 8540	Topic: armed_forces_and_national_security	Phrase: families fallen soldiers
+Document: 8637	Topic: international_affairs	Phrase: nation better
+Document: 8709	Topic: economics_and_public_finance	Phrase: general public told
+Document: 8711	Topic: economics_and_public_finance	Phrase: revisiting tax cuts
+Document: 8715	Topic: economics_and_public_finance	Phrase: ordinary prudence standard
+Document: 8719	Topic: families	Phrase: families needless delay
+Document: 8787	Topic: armed_forces_and_national_security	Phrase: force united states
+Document: 8811	Topic: crime_and_law_enforcement	Phrase: government just smart
+Document: 8826	Topic: civil_rights_and_liberties_minority_issues	Phrase: support marshall amendment
+Document: 8831	Topic: international_affairs	Phrase: bring jobs country
+Document: 8832	Topic: international_affairs	Phrase: trade policy china
+Document: 8835	Topic: international_affairs	Phrase: amendment
+Document: 8838	Topic: private_legislation	Phrase: want fiscal responsibility
+Document: 8840	Topic: private_legislation	Phrase: regulatory
+Document: 8841	Topic: private_legislation	Phrase: regulation meaningless amendment
+Document: 8842	Topic: law	Phrase: agencies exercising discretion
+Document: 8843	Topic: law	Phrase: rights accorded law
+Document: 8846	Topic: private_legislation	Phrase: required law total
+Document: 8847	Topic: private_legislation	Phrase: spending additional legislation
+Document: 8848	Topic: law	Phrase: congress statutory direction
+Document: 8849	Topic: law	Phrase: act provision federal
+Document: 8852	Topic: private_legislation	Phrase: credit public service
+Document: 8873	Topic: immigration	Phrase: opportunities
+Document: 8874	Topic: immigration	Phrase: opportunities united states
+Document: 8877	Topic: native_americans	Phrase: pacific american
+Document: 8887	Topic: immigration	Phrase: emigrated united states
+Document: 8888	Topic: civil_rights_and_liberties_minority_issues	Phrase: community service activism
+Document: 8894	Topic: crime_and_law_enforcement	Phrase: pursues thrilling new
+Document: 8922	Topic: education	Phrase: citizens taskforce study
+Document: 8947	Topic: immigration	Phrase: business
+Document: 8975	Topic: international_affairs	Phrase: conflicts history american
+Document: 9010	Topic: civil_rights_and_liberties_minority_issues	Phrase: unconstitutional constitutional infirmity
+Document: 9032	Topic: civil_rights_and_liberties_minority_issues	Phrase: document justice department
+Document: 9033	Topic: native_americans	Phrase: unique texas people
+Document: 9058	Topic: agriculture_and_food	Phrase: serves global biotechnology
+Document: 9068	Topic: international_affairs	Phrase: government doesn work
+Document: 9069	Topic: armed_forces_and_national_security	Phrase: tragic gun violence
+Document: 9078	Topic: international_affairs	Phrase: afghanistan april 2011
+Document: 9080	Topic: armed_forces_and_national_security	Phrase: national levels sickey
+Document: 9081	Topic: international_affairs	Phrase: essential roles
+Document: 9092	Topic: international_affairs	Phrase: head government foreign
+Document: 9095	Topic: international_affairs	Phrase: started political career
+Document: 9097	Topic: international_affairs	Phrase: national defense
+Document: 9098	Topic: international_affairs	Phrase: legislative business
+Document: 9108	Topic: international_affairs	Phrase: house initiative asian
+Document: 9110	Topic: international_affairs	Phrase: business administration shall
+Document: 9111	Topic: international_affairs	Phrase: defense secretary
+Document: 9112	Topic: international_affairs	Phrase: administration mr syed
+Document: 9133	Topic: international_affairs	Phrase: committee foreign relations
+Document: 9169	Topic: civil_rights_and_liberties_minority_issues	Phrase: broad interracial movement
+Document: 9173	Topic: taxation	Phrase: states
+Document: 9203	Topic: immigration	Phrase: need place welcoming
+Document: 9213	Topic: armed_forces_and_national_security	Phrase: deployment federal programs
+Document: 9219	Topic: armed_forces_and_national_security	Phrase: administration secure evan
+Document: 9229	Topic: armed_forces_and_national_security	Phrase: provide deterrence stop
+Document: 9243	Topic: armed_forces_and_national_security	Phrase: trump national security
+Document: 9247	Topic: civil_rights_and_liberties_minority_issues	Phrase: democrat issue human
+Document: 9263	Topic: armed_forces_and_national_security	Phrase: spill military
+Document: 9289	Topic: sports_and_recreation	Phrase: physical
+Document: 9294	Topic: international_affairs	Phrase: united
+Document: 9302	Topic: armed_forces_and_national_security	Phrase: operation enduring freedom
+Document: 9333	Topic: water_resources_development	Phrase: issue climate change
+Document: 9335	Topic: armed_forces_and_national_security	Phrase: envoy abraham accords
+Document: 9338	Topic: civil_rights_and_liberties_minority_issues	Phrase: preserves amendment unalienable
+Document: 9341	Topic: social_welfare	Phrase: defend service
+Document: 9345	Topic: civil_rights_and_liberties_minority_issues	Phrase: public safety issues
+Document: 9350	Topic: private_legislation	Phrase: amendment rights offer
+Document: 9351	Topic: education	Phrase: covered
+Document: 9355	Topic: private_legislation	Phrase: turning law
+Document: 9363	Topic: civil_rights_and_liberties_minority_issues	Phrase: stand law enforcement
+Document: 9364	Topic: civil_rights_and_liberties_minority_issues	Phrase: matters rejected courts
+Document: 9368	Topic: civil_rights_and_liberties_minority_issues	Phrase: protection freedom act
+Document: 9373	Topic: private_legislation	Phrase: legislation prohibit consumer
+Document: 9377	Topic: private_legislation	Phrase: important federal regulatory
+Document: 9379	Topic: civil_rights_and_liberties_minority_issues	Phrase: allow americans freedoms
+Document: 9386	Topic: private_legislation	Phrase: passing meaningful legislation
+Document: 9387	Topic: private_legislation	Phrase: continues restrict freedoms
+Document: 9388	Topic: civil_rights_and_liberties_minority_issues	Phrase: vote protect children
+Document: 9394	Topic: civil_rights_and_liberties_minority_issues	Phrase: dangerous amendment
+Document: 9395	Topic: private_legislation	Phrase: congressional disapproval chapter
+Document: 9401	Topic: private_legislation	Phrase: rules agree resolution
+Document: 9409	Topic: international_affairs	Phrase: congress energy policy
+Document: 9415	Topic: education	Phrase: policy
+Document: 9416	Topic: education	Phrase: washington state
+Document: 9418	Topic: education	Phrase: industry drive
+Document: 9420	Topic: education	Phrase: friends
+Document: 9422	Topic: education	Phrase: electric counterparts course
+Document: 9431	Topic: private_legislation	Phrase: disclose certain stakeholder
+Document: 9433	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment contains harm
+Document: 9434	Topic: civil_rights_and_liberties_minority_issues	Phrase: colleagues oppose amendment
+Document: 9438	Topic: civil_rights_and_liberties_minority_issues	Phrase: colleagues oppose amendment
+Document: 9440	Topic: civil_rights_and_liberties_minority_issues	Phrase: oppose amendment
+Document: 9444	Topic: private_legislation	Phrase: does important regulation
+Document: 9446	Topic: civil_rights_and_liberties_minority_issues	Phrase: unconstitutional referring supreme
+Document: 9458	Topic: private_legislation	Phrase: regulations executive overreach
+Document: 9462	Topic: education	Phrase: conveyed global stage
+Document: 9466	Topic: education	Phrase: stanford university medical
+Document: 9468	Topic: civil_rights_and_liberties_minority_issues	Phrase: privilege known constituent
+Document: 9469	Topic: civil_rights_and_liberties_minority_issues	Phrase: 2020 black lives
+Document: 9472	Topic: civil_rights_and_liberties_minority_issues	Phrase: interfering freedoms think
+Document: 9474	Topic: private_legislation	Phrase: stand rest congress
+Document: 9475	Topic: civil_rights_and_liberties_minority_issues	Phrase: freedom represent nation
+Document: 9481	Topic: private_legislation	Phrase: mandatory
+Document: 9486	Topic: civil_rights_and_liberties_minority_issues	Phrase: defending equal justice
+Document: 9520	Topic: education	Phrase: family
+Document: 9521	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment roll 255
+Document: 9536	Topic: education	Phrase: training insurance
+Document: 9548	Topic: private_legislation	Phrase: congress fmc business
+Document: 9571	Topic: civil_rights_and_liberties_minority_issues	Phrase: rules oppose amendment
+Document: 9588	Topic: private_legislation	Phrase: constitutional responsibility laws
+Document: 9596	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment supported ask
+Document: 9597	Topic: private_legislation	Phrase: congresses words act
+Document: 9601	Topic: civil_rights_and_liberties_minority_issues	Phrase: opposition amendment undermine
+Document: 9624	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment
+Document: 9667	Topic: civil_rights_and_liberties_minority_issues	Phrase: civil matters giving
+Document: 9692	Topic: education	Phrase: areas care
+Document: 9696	Topic: education	Phrase: relations graduate
+Document: 9716	Topic: private_legislation	Phrase: litigation
+Document: 9719	Topic: private_legislation	Phrase: pursuant house resolution
+Document: 9730	Topic: education	Phrase: legislation
+Document: 9740	Topic: civil_rights_and_liberties_minority_issues	Phrase: judicial review
+Document: 9761	Topic: civil_rights_and_liberties_minority_issues	Phrase: agreements tribal populations
+Document: 9823	Topic: armed_forces_and_national_security	Phrase: defended united states
+Document: 9833	Topic: civil_rights_and_liberties_minority_issues	Phrase: issues facing american
+Document: 9925	Topic: public_lands_and_natural_resources	Phrase: park state provides
+Document: 9931	Topic: international_affairs	Phrase: access country today
+Document: 9932	Topic: private_legislation	Phrase: passion public safety
+Document: 9943	Topic: economics_and_public_finance	Phrase: wealthy educated citizens
+Document: 9961	Topic: economics_and_public_finance	Phrase: opinion doesn money
+Document: 9972	Topic: civil_rights_and_liberties_minority_issues	Phrase: civil rights act
+Document: 9989	Topic: civil_rights_and_liberties_minority_issues	Phrase: democrats stripped precedents
+Document: 10019	Topic: private_legislation	Phrase: house committee
+Document: 10041	Topic: education	Phrase: education workforce
+Document: 10042	Topic: private_legislation	Phrase: 3799 includes legislation
+Document: 10043	Topic: civil_rights_and_liberties_minority_issues	Phrase: discrimination denial coverage
+Document: 10045	Topic: crime_and_law_enforcement	Phrase: states
+Document: 10048	Topic: civil_rights_and_liberties_minority_issues	Phrase: oppose
+Document: 10049	Topic: private_legislation	Phrase: legislation consideration deserves
+Document: 10051	Topic: immigration	Phrase: subject amendment
+Document: 10076	Topic: education	Phrase: education respecting taxpayers
+Document: 10083	Topic: families	Phrase: questions
+Document: 10084	Topic: international_affairs	Phrase: waiting hear government
+Document: 10088	Topic: law	Phrase: make case
+Document: 10100	Topic: civil_rights_and_liberties_minority_issues	Phrase: nra war living
+Document: 10102	Topic: armed_forces_and_national_security	Phrase: security great
+Document: 10117	Topic: international_affairs	Phrase: executive branch
+Document: 10126	Topic: finance_and_financial_sector	Phrase: realize revenue treasury
+Document: 10131	Topic: armed_forces_and_national_security	Phrase: national defense authorization
+Document: 10142	Topic: armed_forces_and_national_security	Phrase: senate military department
+Document: 10150	Topic: civil_rights_and_liberties_minority_issues	Phrase: states rights radicals
+Document: 10164	Topic: international_affairs	Phrase: act 2023 including
+Document: 10181	Topic: private_legislation	Phrase: following committees authorized
+Document: 10193	Topic: energy	Phrase: promote self sustaining
+Document: 10199	Topic: civil_rights_and_liberties_minority_issues	Phrase: citizenship community integration
+Document: 10220	Topic: civil_rights_and_liberties_minority_issues	Phrase: york amendment present
+Document: 10226	Topic: civil_rights_and_liberties_minority_issues	Phrase: september regardless supreme
+Document: 10239	Topic: private_legislation	Phrase: policy disagreement
+Document: 10247	Topic: private_legislation	Phrase: purpose congressional purview
+Document: 10257	Topic: armed_forces_and_national_security	Phrase: national security threat
+Document: 10285	Topic: social_welfare	Phrase: freely mental reservation
+Document: 10313	Topic: agriculture_and_food	Phrase: tariffs help farmers
+Document: 10314	Topic: international_affairs	Phrase: called united states
+Document: 10329	Topic: environmental_protection	Phrase: human rights violations
+Document: 10331	Topic: environmental_protection	Phrase: unum helps protect
+Document: 10349	Topic: social_welfare	Phrase: force grateful social
+Document: 10357	Topic: energy	Phrase: facilitation renewable
+Document: 10370	Topic: environmental_protection	Phrase: care eat safe
+Document: 10373	Topic: social_welfare	Phrase: affordable care act
+Document: 10379	Topic: economics_and_public_finance	Phrase: economy contributing
+Document: 10388	Topic: environmental_protection	Phrase: allow united states
+Document: 10389	Topic: private_legislation	Phrase: services justice
+Document: 10415	Topic: private_legislation	Phrase: support legislation collating
+Document: 10418	Topic: environmental_protection	Phrase: borrower protection act
+Document: 10421	Topic: environmental_protection	Phrase: appropriately according risk
+Document: 10423	Topic: environmental_protection	Phrase: protects wealthy home
+Document: 10426	Topic: environmental_protection	Phrase: purpose
+Document: 10429	Topic: public_lands_and_natural_resources	Phrase: public citizen
+Document: 10430	Topic: environmental_protection	Phrase: policy enacted crl
+Document: 10431	Topic: economics_and_public_finance	Phrase: don understand spending
+Document: 10432	Topic: public_lands_and_natural_resources	Phrase: direct government accountability
+Document: 10435	Topic: environmental_protection	Phrase: policies follows
+Document: 10436	Topic: environmental_protection	Phrase: impact housing
+Document: 10437	Topic: energy	Phrase: balance
+Document: 10442	Topic: economics_and_public_finance	Phrase: federal housing finance
+Document: 10453	Topic: environmental_protection	Phrase: championing freedom
+Document: 10455	Topic: environmental_protection	Phrase: america fight eliminating
+Document: 10457	Topic: environmental_protection	Phrase: process massive environmental
+Document: 10461	Topic: environmental_protection	Phrase: ins
+Document: 10464	Topic: environmental_protection	Phrase: guard
+Document: 10465	Topic: environmental_protection	Phrase: defending communities serving
+Document: 10469	Topic: environmental_protection	Phrase: away rights protecting
+Document: 10473	Topic: environmental_protection	Phrase: improving lives eastern
+Document: 10485	Topic: energy	Phrase: positive
+Document: 10494	Topic: environmental_protection	Phrase: overseeing parks
+Document: 10503	Topic: public_lands_and_natural_resources	Phrase: used resource
+Document: 10512	Topic: energy	Phrase: work kron
+Document: 10549	Topic: energy	Phrase: power hailed farmington
+Document: 10570	Topic: environmental_protection	Phrase: long safety
+Document: 10579	Topic: environmental_protection	Phrase: justice
+Document: 10580	Topic: energy	Phrase: hour
+Document: 10581	Topic: public_lands_and_natural_resources	Phrase: 000 new infrastructure
+Document: 10592	Topic: environmental_protection	Phrase: defend country adversaries
+Document: 10620	Topic: environmental_protection	Phrase: united conservation
+Document: 10631	Topic: public_lands_and_natural_resources	Phrase: change american environmental
+Document: 10636	Topic: environmental_protection	Phrase: prevention legislation
+Document: 10654	Topic: armed_forces_and_national_security	Phrase: nations specifically codifies
+Document: 10658	Topic: public_lands_and_natural_resources	Phrase: plains organizations
+Document: 10662	Topic: crime_and_law_enforcement	Phrase: time federal government
+Document: 10664	Topic: international_affairs	Phrase: national defense authorization
+Document: 10683	Topic: international_affairs	Phrase: amended
+Document: 10697	Topic: armed_forces_and_national_security	Phrase: freedom operation enduring
+Document: 10710	Topic: armed_forces_and_national_security	Phrase: weaponized individuals disagree
+Document: 10725	Topic: international_affairs	Phrase: universities nation freedom
+Document: 10730	Topic: international_affairs	Phrase: clear authority congress
+Document: 10781	Topic: public_lands_and_natural_resources	Phrase: acres land acquired
+Document: 10791	Topic: housing_and_community_development	Phrase: house january 2023
+Document: 10798	Topic: crime_and_law_enforcement	Phrase: skyrocketing crime indianapolis
+Document: 10806	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment submitted direct
+Document: 10832	Topic: economics_and_public_finance	Phrase: provide government contracting
+Document: 10846	Topic: education	Phrase: democratic priorities
+Document: 10849	Topic: taxation	Phrase: wins divided government
+Document: 10851	Topic: economics_and_public_finance	Phrase: fiscal year 2024
+Document: 10871	Topic: private_legislation	Phrase: amendment nos
+Document: 10881	Topic: environmental_protection	Phrase: environmental cleaning efforts
+Document: 10888	Topic: environmental_protection	Phrase: security simply onus
+Document: 10910	Topic: environmental_protection	Phrase: contaminated government wonders
+Document: 10914	Topic: environmental_protection	Phrase: safety pushing climate
+Document: 10930	Topic: environmental_protection	Phrase: introduce safe electrical
+Document: 10935	Topic: emergency_management	Phrase: accepted volunteer emergency
+Document: 10943	Topic: environmental_protection	Phrase: lasting impact
+Document: 10950	Topic: environmental_protection	Phrase: protections goals reach
+Document: 10955	Topic: environmental_protection	Phrase: properties infrastructure overseen
+Document: 10959	Topic: private_legislation	Phrase: visiting delegation legislators
+Document: 10967	Topic: environmental_protection	Phrase: amendments national defense
+Document: 10971	Topic: energy	Phrase: tireless energy outstanding
+Document: 10984	Topic: environmental_protection	Phrase: leadership prioritize safety
+Document: 10994	Topic: energy	Phrase: labor
+Document: 11002	Topic: environmental_protection	Phrase: justice
+Document: 11008	Topic: energy	Phrase: america energy independent
+Document: 11017	Topic: energy	Phrase: earth resources support
+Document: 11019	Topic: environmental_protection	Phrase: amendment protections
+Document: 11029	Topic: energy	Phrase: votes
+Document: 11031	Topic: environmental_protection	Phrase: construction defense activities
+Document: 11041	Topic: public_lands_and_natural_resources	Phrase: away fundamental rights
+Document: 11046	Topic: environmental_protection	Phrase: policy
+Document: 11054	Topic: public_lands_and_natural_resources	Phrase: commonsense amendment
+Document: 11056	Topic: private_legislation	Phrase: abortions let
+Document: 11061	Topic: private_legislation	Phrase: prohibits provision gender
+Document: 11078	Topic: environmental_protection	Phrase: stop tide imperialism
+Document: 11081	Topic: environmental_protection	Phrase: infrastructure deter
+Document: 11082	Topic: environmental_protection	Phrase: money spent defense
+Document: 11084	Topic: environmental_protection	Phrase: dollars safely
+Document: 11107	Topic: taxation	Phrase: policy
+Document: 11109	Topic: taxation	Phrase: congress included provisions
+Document: 11125	Topic: environmental_protection	Phrase: direct threat health
+Document: 11143	Topic: environmental_protection	Phrase: defense undermine freedom
+Document: 11148	Topic: environmental_protection	Phrase: use defense use
+Document: 11159	Topic: private_legislation	Phrase: amendment prohibits member
+Document: 11186	Topic: geographic_areas_entities_and_committees	Phrase: united states interests
+Document: 11190	Topic: private_legislation	Phrase: say related amendment
+Document: 11201	Topic: environmental_protection	Phrase: protecting children
+Document: 11203	Topic: environmental_protection	Phrase: cleaning
+Document: 11231	Topic: environmental_protection	Phrase: hurting national security
+Document: 11272	Topic: private_legislation	Phrase: law important information
+Document: 11275	Topic: private_legislation	Phrase: member oversight accountability
+Document: 11277	Topic: private_legislation	Phrase: criminal efforts government
+Document: 11285	Topic: environmental_protection	Phrase: purposes
+Document: 11303	Topic: native_americans	Phrase: western states suffer
+Document: 11304	Topic: public_lands_and_natural_resources	Phrase: available resources
+Document: 11305	Topic: armed_forces_and_national_security	Phrase: national emergencies
+Document: 11313	Topic: public_lands_and_natural_resources	Phrase: states
+Document: 11331	Topic: public_lands_and_natural_resources	Phrase: region legislation
+Document: 11354	Topic: public_lands_and_natural_resources	Phrase: amendment reserve balance
+Document: 11367	Topic: public_lands_and_natural_resources	Phrase: energy systems nation
+Document: 11368	Topic: civil_rights_and_liberties_minority_issues	Phrase: defend fourth amendment
+Document: 11379	Topic: environmental_protection	Phrase: nation biodefense strategy
+Document: 11398	Topic: public_lands_and_natural_resources	Phrase: free taxpayer actually
+Document: 11399	Topic: public_lands_and_natural_resources	Phrase: washington spending
+Document: 11410	Topic: public_lands_and_natural_resources	Phrase: committees dealing environmental
+Document: 11476	Topic: armed_forces_and_national_security	Phrase: states attracting foreign
+Document: 11502	Topic: private_legislation	Phrase: congress conversation
+Document: 11518	Topic: water_resources_development	Phrase: opposition environmental threats
+Document: 11543	Topic: civil_rights_and_liberties_minority_issues	Phrase: immigrants public schools
+Document: 11549	Topic: government_operations_and_politics	Phrase: agency house republicans
+Document: 11556	Topic: energy	Phrase: food ought fundamental
+Document: 11618	Topic: emergency_management	Phrase: terminating national emergency
+Document: 11652	Topic: crime_and_law_enforcement	Phrase: american students consequences
+Document: 11653	Topic: armed_forces_and_national_security	Phrase: nation great
+Document: 11654	Topic: crime_and_law_enforcement	Phrase: action gun violence
+Document: 11655	Topic: armed_forces_and_national_security	Phrase: border policies urge
+Document: 11657	Topic: geographic_areas_entities_and_committees	Phrase: allows state local
+Document: 11677	Topic: crime_and_law_enforcement	Phrase: death gun violence
+Document: 11684	Topic: environmental_protection	Phrase: prevention laws seventy
+Document: 11685	Topic: armed_forces_and_national_security	Phrase: gun regulations urge
+Document: 11686	Topic: civil_rights_and_liberties_minority_issues	Phrase: access guns regardless
+Document: 11689	Topic: environmental_protection	Phrase: offer carbon management
+Document: 11717	Topic: international_affairs	Phrase: natural resources committee
+Document: 11729	Topic: environmental_protection	Phrase: evasion protect integrity
+Document: 11746	Topic: environmental_protection	Phrase: justice
+Document: 11755	Topic: environmental_protection	Phrase: greener innovative
+Document: 11757	Topic: public_lands_and_natural_resources	Phrase: disabilities addressing environmental
+Document: 11768	Topic: environmental_protection	Phrase: district travel safety
+Document: 11771	Topic: environmental_protection	Phrase: safety helped amendment
+Document: 11783	Topic: environmental_protection	Phrase: safety make related
+Document: 11784	Topic: environmental_protection	Phrase: environment conduct research
+Document: 11795	Topic: environmental_protection	Phrase: enhanced safety standards
+Document: 11830	Topic: private_legislation	Phrase: improvement act passed
+Document: 11849	Topic: civil_rights_and_liberties_minority_issues	Phrase: unified america amendment
+Document: 11852	Topic: public_lands_and_natural_resources	Phrase: amendment waste faa
+Document: 11853	Topic: environmental_protection	Phrase: safety roles
+Document: 11854	Topic: housing_and_community_development	Phrase: diversity equity inclusion
+Document: 11855	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment wait
+Document: 11862	Topic: economics_and_public_finance	Phrase: public
+Document: 11869	Topic: armed_forces_and_national_security	Phrase: enforcement
+Document: 11873	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment encourage
+Document: 11881	Topic: armed_forces_and_national_security	Phrase: rules national
+Document: 11896	Topic: government_operations_and_politics	Phrase: spending washington
+Document: 11922	Topic: immigration	Phrase: redesignated
+Document: 11924	Topic: economics_and_public_finance	Phrase: unfinished business demand
+Document: 11926	Topic: international_affairs	Phrase: proceedings
+Document: 12020	Topic: international_affairs	Phrase: concern american people
+Document: 12024	Topic: transportation_and_public_works	Phrase: serve required work
+Document: 12025	Topic: international_affairs	Phrase: agencies
+Document: 12032	Topic: transportation_and_public_works	Phrase: projects led representatives
+Document: 12041	Topic: geographic_areas_entities_and_committees	Phrase: write farm congress
+Document: 12068	Topic: native_americans	Phrase: american soldiers identify
+Document: 12072	Topic: civil_rights_and_liberties_minority_issues	Phrase: scott amendment work
+Document: 12081	Topic: families	Phrase: protect children
+Document: 12103	Topic: private_legislation	Phrase: states
+Document: 12113	Topic: sports_and_recreation	Phrase: women sports
+Document: 12136	Topic: native_americans	Phrase: began indianola mount
+Document: 12146	Topic: emergency_management	Phrase: department energy environmental
+Document: 12166	Topic: emergency_management	Phrase: political attack body
+Document: 12176	Topic: families	Phrase: rape children infants
+Document: 12188	Topic: taxation	Phrase: largely taxpayer
+Document: 12200	Topic: water_resources_development	Phrase: analysis development
+Document: 12215	Topic: international_affairs	Phrase: coordination federal agencies
+Document: 12217	Topic: private_legislation	Phrase: enable private
+Document: 12228	Topic: international_affairs	Phrase: leading initiative urge
+Document: 12241	Topic: armed_forces_and_national_security	Phrase: homeland security equipped
+Document: 12242	Topic: international_affairs	Phrase: united states research
+Document: 12243	Topic: international_affairs	Phrase: department
+Document: 12260	Topic: armed_forces_and_national_security	Phrase: gun access encourages
+Document: 12273	Topic: private_legislation	Phrase: investment transparency act
+Document: 12278	Topic: civil_rights_and_liberties_minority_issues	Phrase: reasons support amendment
+Document: 12308	Topic: civil_rights_and_liberties_minority_issues	Phrase: upholds values justice
+Document: 12318	Topic: international_affairs	Phrase: relations marketing agency
+Document: 12322	Topic: foreign_trade_and_international_finance	Phrase: economy strong
+Document: 12333	Topic: economics_and_public_finance	Phrase: introduction loan american
+Document: 12356	Topic: international_affairs	Phrase: plane wai anae
+Document: 12359	Topic: international_affairs	Phrase: pacific task force
+Document: 12360	Topic: armed_forces_and_national_security	Phrase: keeping americans safe
+Document: 12368	Topic: armed_forces_and_national_security	Phrase: funds department defense
+Document: 12395	Topic: armed_forces_and_national_security	Phrase: oppose realignment military
+Document: 12408	Topic: taxation	Phrase: responsibility act appropriations
+Document: 12425	Topic: armed_forces_and_national_security	Phrase: imperils military readiness
+Document: 12439	Topic: civil_rights_and_liberties_minority_issues	Phrase: closure amendment 23
+Document: 12444	Topic: armed_forces_and_national_security	Phrase: thing veterans amendment
+Document: 12450	Topic: private_legislation	Phrase: amendment deals authorizing
+Document: 12454	Topic: crime_and_law_enforcement	Phrase: make clear department
+Document: 12455	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendments underlying
+Document: 12456	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment simple veterans
+Document: 12461	Topic: private_legislation	Phrase: legal federal
+Document: 12462	Topic: private_legislation	Phrase: cannabis policy extremely
+Document: 12463	Topic: civil_rights_and_liberties_minority_issues	Phrase: support bipartisan amendment
+Document: 12478	Topic: civil_rights_and_liberties_minority_issues	Phrase: culmination civil war
+Document: 12483	Topic: social_welfare	Phrase: policies ensure mitigate
+Document: 12492	Topic: sports_and_recreation	Phrase: business
+Document: 12511	Topic: water_resources_development	Phrase: clean energy programs
+Document: 12512	Topic: environmental_protection	Phrase: climate change policies
+Document: 12515	Topic: environmental_protection	Phrase: banning gas generators
+Document: 12517	Topic: environmental_protection	Phrase: harmful regulations dictate
+Document: 12520	Topic: environmental_protection	Phrase: pits environmental toxins
+Document: 12526	Topic: environmental_protection	Phrase: global labor environmental
+Document: 12532	Topic: environmental_protection	Phrase: america cleaning toxic
+Document: 12539	Topic: environmental_protection	Phrase: afghan evacuees ensures
+Document: 12543	Topic: environmental_protection	Phrase: risk chemical facilities
+Document: 12562	Topic: taxation	Phrase: state
+Document: 12563	Topic: taxation	Phrase: billion taxpayers war
+Document: 12564	Topic: taxation	Phrase: oversight government spending
+Document: 12588	Topic: civil_rights_and_liberties_minority_issues	Phrase: arkansas attended segregated
+Document: 12607	Topic: taxation	Phrase: government negotiate
+Document: 12654	Topic: public_lands_and_natural_resources	Phrase: desegregated armed forces
+Document: 12656	Topic: private_legislation	Phrase: state owned facilities
+Document: 12702	Topic: agriculture_and_food	Phrase: energy independence food
+Document: 12727	Topic: private_legislation	Phrase: world kinds policies
+Document: 12736	Topic: armed_forces_and_national_security	Phrase: protecting america imperiled
+Document: 12753	Topic: armed_forces_and_national_security	Phrase: honorably fought nation
+Document: 12781	Topic: crime_and_law_enforcement	Phrase: urgency southern district
+Document: 12782	Topic: crime_and_law_enforcement	Phrase: security
+Document: 12784	Topic: crime_and_law_enforcement	Phrase: far going department
+Document: 12785	Topic: crime_and_law_enforcement	Phrase: national security just
+Document: 12786	Topic: civil_rights_and_liberties_minority_issues	Phrase: year little debate
+Document: 12792	Topic: civil_rights_and_liberties_minority_issues	Phrase: rights lgbtq rights
+Document: 12799	Topic: crime_and_law_enforcement	Phrase: basic justice
+Document: 12800	Topic: crime_and_law_enforcement	Phrase: security purposes working
+Document: 12804	Topic: geographic_areas_entities_and_committees	Phrase: promote greater local
+Document: 12809	Topic: civil_rights_and_liberties_minority_issues	Phrase: lists human rights
+Document: 12813	Topic: crime_and_law_enforcement	Phrase: amendment
+Document: 12822	Topic: private_legislation	Phrase: regard legislation addresses
+Document: 12836	Topic: civil_rights_and_liberties_minority_issues	Phrase: human rights issues
+Document: 12858	Topic: civil_rights_and_liberties_minority_issues	Phrase: families women minorities
+Document: 12879	Topic: private_legislation	Phrase: conservation act 2023
+Document: 12886	Topic: private_legislation	Phrase: legislation allow specialty
+Document: 12888	Topic: civil_rights_and_liberties_minority_issues	Phrase: minority leaders authorized
+Document: 12907	Topic: education	Phrase: ed
+Document: 12909	Topic: sports_and_recreation	Phrase: time volunteer able
+Document: 12920	Topic: sports_and_recreation	Phrase: play outside
+Document: 12922	Topic: sports_and_recreation	Phrase: celebrates diversity inclusion
+Document: 12923	Topic: sports_and_recreation	Phrase: american outdoors act
+Document: 12928	Topic: private_legislation	Phrase: provisions rule
+Document: 12932	Topic: private_legislation	Phrase: work explaining law
+Document: 12944	Topic: public_lands_and_natural_resources	Phrase: force parks independent
+Document: 12956	Topic: immigration	Phrase: sent nation nuclear
+Document: 12959	Topic: immigration	Phrase: uniform united states
+Document: 12967	Topic: families	Phrase: family easley police
+Document: 12977	Topic: sports_and_recreation	Phrase: nature love outdoors
+Document: 12978	Topic: sports_and_recreation	Phrase: tackled professional personal
+Document: 12998	Topic: emergency_management	Phrase: hope cancer patients
+Document: 13002	Topic: armed_forces_and_national_security	Phrase: finest military learning
+Document: 13004	Topic: private_legislation	Phrase: impact constituency privilege
+Document: 13008	Topic: emergency_management	Phrase: rescue squad recipient
+Document: 13034	Topic: environmental_protection	Phrase: justice
+Document: 13036	Topic: water_resources_development	Phrase: need additional resources
+Document: 13067	Topic: civil_rights_and_liberties_minority_issues	Phrase: florida privilege attending
+Document: 13100	Topic: taxation	Phrase: act facilitated federal
+Document: 13123	Topic: international_affairs	Phrase: hero served country
+Document: 13125	Topic: international_affairs	Phrase: world tours 15
+Document: 13129	Topic: international_affairs	Phrase: civil rights organization
+Document: 13133	Topic: international_affairs	Phrase: vii civil rights
+Document: 13140	Topic: crime_and_law_enforcement	Phrase: substance abuse crisis
+Document: 13148	Topic: geographic_areas_entities_and_committees	Phrase: foreign relations committee
+Document: 13158	Topic: international_affairs	Phrase: passage national defense
+Document: 13164	Topic: government_operations_and_politics	Phrase: kirk took operations
+Document: 13175	Topic: education	Phrase: family farm teacher
+Document: 13179	Topic: economics_and_public_finance	Phrase: policies impacting west
+Document: 13216	Topic: civil_rights_and_liberties_minority_issues	Phrase: legislation protect
+Document: 13262	Topic: sports_and_recreation	Phrase: yosemite national park
+Document: 13267	Topic: international_affairs	Phrase: states
+Document: 13277	Topic: social_welfare	Phrase: care benefits pact
+Document: 13278	Topic: international_affairs	Phrase: foreign relations committee
+Document: 13304	Topic: environmental_protection	Phrase: enforcement outreach efforts
+Document: 13351	Topic: private_legislation	Phrase: acts september 11
+Document: 13389	Topic: armed_forces_and_national_security	Phrase: federal land management
+Document: 13396	Topic: international_affairs	Phrase: secretary interior conduct
+Document: 13403	Topic: environmental_protection	Phrase: federally owned public
+Document: 13465	Topic: sports_and_recreation	Phrase: began career
+Document: 13467	Topic: social_welfare	Phrase: raise family
+Document: 13478	Topic: government_operations_and_politics	Phrase: police department urban
+Document: 13489	Topic: emergency_management	Phrase: corps officer
+Document: 13498	Topic: emergency_management	Phrase: public service health
+Document: 13503	Topic: science_technology_communications	Phrase: technician south
+Document: 13536	Topic: international_affairs	Phrase: america progress honored
+Document: 13547	Topic: international_affairs	Phrase: facing nation nation
+Document: 13550	Topic: international_affairs	Phrase: america projections article
+Document: 13571	Topic: agriculture_and_food	Phrase: economy vitality
+Document: 13575	Topic: environmental_protection	Phrase: flood insurance follows
+Document: 13577	Topic: private_legislation	Phrase: lawmakers military branches
+Document: 13586	Topic: international_affairs	Phrase: department veterans affairs
+Document: 13612	Topic: government_operations_and_politics	Phrase: federal agencies high
+Document: 13659	Topic: private_legislation	Phrase: budget agreement
+Document: 13671	Topic: crime_and_law_enforcement	Phrase: vehicle
+Document: 13674	Topic: environmental_protection	Phrase: emissions manufactured america
+Document: 13675	Topic: families	Phrase: families dangerous pollution
+Document: 13677	Topic: education	Phrase: opposing
+Document: 13683	Topic: education	Phrase: control
+Document: 13687	Topic: private_legislation	Phrase: shut government reprehensible
+Document: 13707	Topic: international_affairs	Phrase: america means compete
+Document: 13722	Topic: international_affairs	Phrase: agenda
+Document: 13783	Topic: foreign_trade_and_international_finance	Phrase: need investments latino
+Document: 13855	Topic: taxation	Phrase: work congress
+Document: 13863	Topic: economics_and_public_finance	Phrase: philanthropist
+Document: 13880	Topic: economics_and_public_finance	Phrase: nondefense spending devastating
+Document: 13882	Topic: economics_and_public_finance	Phrase: vote allow appropriations
+Document: 13884	Topic: social_welfare	Phrase: government 12 different
+Document: 13901	Topic: economics_and_public_finance	Phrase: grant funding meet
+Document: 13943	Topic: taxation	Phrase: legislation today urge
+Document: 13956	Topic: social_welfare	Phrase: talk social security
+Document: 13968	Topic: private_legislation	Phrase: rural communities protections
+Document: 13998	Topic: social_welfare	Phrase: public
+Document: 13999	Topic: social_welfare	Phrase: worker devoted getting
+Document: 14011	Topic: social_welfare	Phrase: giving causes championed
+Document: 14034	Topic: private_legislation	Phrase: michigan state legislature
+Document: 14045	Topic: economics_and_public_finance	Phrase: built companies economy
+Document: 14050	Topic: economics_and_public_finance	Phrase: isolation shame debt
+Document: 14051	Topic: private_legislation	Phrase: order mandates congress
+Document: 14054	Topic: international_affairs	Phrase: country instruct
+Document: 14061	Topic: emergency_management	Phrase: stem humanitarian crisis
+Document: 14072	Topic: civil_rights_and_liberties_minority_issues	Phrase: second class citizens
+Document: 14080	Topic: government_operations_and_politics	Phrase: got elected decision
+Document: 14085	Topic: environmental_protection	Phrase: repeal department defense
+Document: 14152	Topic: sports_and_recreation	Phrase: national wildlife
+Document: 14154	Topic: civil_rights_and_liberties_minority_issues	Phrase: continuation racial reconciliation
+Document: 14158	Topic: sports_and_recreation	Phrase: knowledge local volunteer
+Document: 14162	Topic: sports_and_recreation	Phrase: community tremendously value
+Document: 14197	Topic: civil_rights_and_liberties_minority_issues	Phrase: safe american democracy
+Document: 14205	Topic: private_legislation	Phrase: act noted bipartisan
+Document: 14207	Topic: civil_rights_and_liberties_minority_issues	Phrase: armed services respectfully
+Document: 14213	Topic: civil_rights_and_liberties_minority_issues	Phrase: issues think
+Document: 14215	Topic: civil_rights_and_liberties_minority_issues	Phrase: justice holocaust survivors
+Document: 14217	Topic: environmental_protection	Phrase: security harmed significantly
+Document: 14241	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment
+Document: 14272	Topic: education	Phrase: education month years
+Document: 14273	Topic: emergency_management	Phrase: military service united
+Document: 14275	Topic: international_affairs	Phrase: military service great
+Document: 14302	Topic: armed_forces_and_national_security	Phrase: help coast guard
+Document: 14308	Topic: armed_forces_and_national_security	Phrase: family owned security
+Document: 14310	Topic: armed_forces_and_national_security	Phrase: federal government
+Document: 14311	Topic: armed_forces_and_national_security	Phrase: strength fortitude
+Document: 14313	Topic: international_affairs	Phrase: defending national security
+Document: 14314	Topic: international_affairs	Phrase: fund government today
+Document: 14321	Topic: armed_forces_and_national_security	Phrase: base president administration
+Document: 14322	Topic: government_operations_and_politics	Phrase: issue matters districts
+Document: 14332	Topic: armed_forces_and_national_security	Phrase: ability protect americans
+Document: 14339	Topic: armed_forces_and_national_security	Phrase: veterans access important
+Document: 14343	Topic: economics_and_public_finance	Phrase: government need make
+Document: 14346	Topic: economics_and_public_finance	Phrase: budget act 1974
+Document: 14352	Topic: economics_and_public_finance	Phrase: appropriations bills
+Document: 14358	Topic: economics_and_public_finance	Phrase: government open shouldn
+Document: 14359	Topic: government_operations_and_politics	Phrase: senate president act
+Document: 14360	Topic: armed_forces_and_national_security	Phrase: national security crisis
+Document: 14362	Topic: armed_forces_and_national_security	Phrase: vote national security
+Document: 14366	Topic: armed_forces_and_national_security	Phrase: fighting
+Document: 14367	Topic: crime_and_law_enforcement	Phrase: tsa agents going
+Document: 14390	Topic: civil_rights_and_liberties_minority_issues	Phrase: cleared 20 amendments
+Document: 14417	Topic: international_affairs	Phrase: hazard trillion
+Document: 14423	Topic: international_affairs	Phrase: america going
+Document: 14424	Topic: law	Phrase: people want legislation
+Document: 14426	Topic: armed_forces_and_national_security	Phrase: amendment nos 10
+Document: 14439	Topic: education	Phrase: civil rights usda
+Document: 14440	Topic: immigration	Phrase: discrimination society going
+Document: 14444	Topic: education	Phrase: long term
+Document: 14479	Topic: foreign_trade_and_international_finance	Phrase: trading commission fiscal
+Document: 14482	Topic: armed_forces_and_national_security	Phrase: thinking federal agencies
+Document: 14514	Topic: private_legislation	Phrase: act publicize
+Document: 14520	Topic: environmental_protection	Phrase: create restriction legislation
+Document: 14521	Topic: civil_rights_and_liberties_minority_issues	Phrase: good amendment contains
+Document: 14522	Topic: foreign_trade_and_international_finance	Phrase: regulatory actions usda
+Document: 14523	Topic: taxation	Phrase: amendment little appropriations
+Document: 14531	Topic: environmental_protection	Phrase: new uses covered
+Document: 14544	Topic: immigration	Phrase: jobs help nation
+Document: 14553	Topic: environmental_protection	Phrase: harmful policies
+Document: 14555	Topic: labor_and_employment	Phrase: doing important work
+Document: 14588	Topic: government_operations_and_politics	Phrase: federal efforts help
+Document: 14589	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment 102 reduce
+Document: 14594	Topic: international_affairs	Phrase: colorado service president
+Document: 14621	Topic: armed_forces_and_national_security	Phrase: texas nation secured
+Document: 14668	Topic: armed_forces_and_national_security	Phrase: senseless murder civilians
+Document: 14690	Topic: armed_forces_and_national_security	Phrase: department army remove
+Document: 14701	Topic: emergency_management	Phrase: evacuation amendment change
+Document: 14703	Topic: social_welfare	Phrase: security aid american
+Document: 14710	Topic: private_legislation	Phrase: oversight provisions funding
+Document: 14713	Topic: international_affairs	Phrase: united states america
+Document: 14739	Topic: armed_forces_and_national_security	Phrase: department homeland security
+Document: 14761	Topic: armed_forces_and_national_security	Phrase: force ensure military
+Document: 14769	Topic: armed_forces_and_national_security	Phrase: member defense subcommittee
+Document: 14778	Topic: civil_rights_and_liberties_minority_issues	Phrase: gender security issues
+Document: 14793	Topic: immigration	Phrase: state foreign
+Document: 14852	Topic: private_legislation	Phrase: proceedings
+Document: 14854	Topic: environmental_protection	Phrase: purposes
+Document: 14874	Topic: environmental_protection	Phrase: step avoiding harmful
+Document: 14904	Topic: law	Phrase: bicameral agreement
+Document: 14908	Topic: civil_rights_and_liberties_minority_issues	Phrase: impacting second amendment
+Document: 14909	Topic: civil_rights_and_liberties_minority_issues	Phrase: texas support commonsense
+Document: 14933	Topic: public_lands_and_natural_resources	Phrase: mile away landowners
+Document: 14968	Topic: international_affairs	Phrase: homeland security folks
+Document: 15008	Topic: international_affairs	Phrase: homeland values secretary
+Document: 15014	Topic: government_operations_and_politics	Phrase: mind agencies dhs
+Document: 15033	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment clerk
+Document: 15073	Topic: international_affairs	Phrase: politics role models
+Document: 15077	Topic: international_affairs	Phrase: assisted humanitarian
+Document: 15107	Topic: immigration	Phrase: department state foreign
+Document: 15136	Topic: emergency_management	Phrase: assist times crisis
+Document: 15164	Topic: public_lands_and_natural_resources	Phrase: funding global environment
+Document: 15169	Topic: education	Phrase: american people democracy
+Document: 15170	Topic: crime_and_law_enforcement	Phrase: policing protected speech
+Document: 15177	Topic: immigration	Phrase: secretary state
+Document: 15179	Topic: immigration	Phrase: urge adoption amendment
+Document: 15193	Topic: private_legislation	Phrase: progress congress comport
+Document: 15198	Topic: environmental_protection	Phrase: wasteful government spending
+Document: 15207	Topic: public_lands_and_natural_resources	Phrase: funds green climate
+Document: 15218	Topic: international_affairs	Phrase: diplomacy serves
+Document: 15227	Topic: environmental_protection	Phrase: help prevent
+Document: 15230	Topic: emergency_management	Phrase: recovery efforts humanitarian
+Document: 15264	Topic: private_legislation	Phrase: change amendment
+Document: 15271	Topic: education	Phrase: pass
+Document: 15278	Topic: immigration	Phrase: compromise
+Document: 15280	Topic: civil_rights_and_liberties_minority_issues	Phrase: far right disproportionate
+Document: 15282	Topic: armed_forces_and_national_security	Phrase: funding border security
+Document: 15289	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendments
+Document: 15293	Topic: crime_and_law_enforcement	Phrase: amendment clerk
+Document: 15310	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment 44
+Document: 15319	Topic: crime_and_law_enforcement	Phrase: amendment clerk
+Document: 15323	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment recorded
+Document: 15333	Topic: armed_forces_and_national_security	Phrase: national security crisis
+Document: 15338	Topic: armed_forces_and_national_security	Phrase: government protect people
+Document: 15343	Topic: armed_forces_and_national_security	Phrase: making sure national
+Document: 15388	Topic: armed_forces_and_national_security	Phrase: policy pursued let
+Document: 15401	Topic: international_affairs	Phrase: operations appropriations legislation
+Document: 15404	Topic: armed_forces_and_national_security	Phrase: america favor adversaries
+Document: 15425	Topic: international_affairs	Phrase: foreign operations related
+Document: 15456	Topic: immigration	Phrase: criminal justice
+Document: 15466	Topic: immigration	Phrase: number refugees
+Document: 15481	Topic: social_welfare	Phrase: provide homes
+Document: 15484	Topic: immigration	Phrase: spurred protest
+Document: 15502	Topic: private_legislation	Phrase: control spending
+Document: 15503	Topic: immigration	Phrase: cr going law
+Document: 15508	Topic: immigration	Phrase: devastating government
+Document: 15509	Topic: immigration	Phrase: endanger national security
+Document: 15510	Topic: immigration	Phrase: border security destructive
+Document: 15515	Topic: immigration	Phrase: save american people
+Document: 15518	Topic: private_legislation	Phrase: raped cartels policies
+Document: 15519	Topic: immigration	Phrase: force border patrol
+Document: 15520	Topic: immigration	Phrase: national security don
+Document: 15524	Topic: immigration	Phrase: leave
+Document: 15527	Topic: private_legislation	Phrase: wants shut government
+Document: 15529	Topic: social_welfare	Phrase: energy assistance benefits
+Document: 15531	Topic: immigration	Phrase: border prioritize safety
+Document: 15534	Topic: immigration	Phrase: migrants
+Document: 15536	Topic: immigration	Phrase: families
+Document: 15538	Topic: immigration	Phrase: prioritizes border security
+Document: 15539	Topic: immigration	Phrase: sanity secure border
+Document: 15573	Topic: immigration	Phrase: american way
+Document: 15575	Topic: immigration	Phrase: state trooper trevor
+Document: 15577	Topic: immigration	Phrase: hardworking american taxpayers
+Document: 15580	Topic: immigration	Phrase: hardworking american taxpayers
+Document: 15582	Topic: immigration	Phrase: make sense federal
+Document: 15583	Topic: immigration	Phrase: military
+Document: 15592	Topic: immigration	Phrase: illegal aliens cost
+Document: 15609	Topic: immigration	Phrase: foreign affairs
+Document: 15611	Topic: immigration	Phrase: nation going leave
+Document: 15621	Topic: social_welfare	Phrase: middle class americans
+Document: 15623	Topic: immigration	Phrase: amendment
+Document: 15628	Topic: immigration	Phrase: border funding endangered
+Document: 15638	Topic: immigration	Phrase: serving american
+Document: 15639	Topic: immigration	Phrase: california senator alex
+Document: 15642	Topic: immigration	Phrase: legislative
+Document: 15647	Topic: immigration	Phrase: states
+Document: 15652	Topic: immigration	Phrase: american people today
+Document: 15657	Topic: immigration	Phrase: protecting southern border
+Document: 15661	Topic: housing_and_community_development	Phrase: pay raise house
+Document: 15662	Topic: economics_and_public_finance	Phrase: killing recession leadership
+Document: 15670	Topic: crime_and_law_enforcement	Phrase: reiterate department defense
+Document: 15674	Topic: crime_and_law_enforcement	Phrase: effect gun violence
+Document: 15680	Topic: crime_and_law_enforcement	Phrase: priorities securing
+Document: 15681	Topic: emergency_management	Phrase: vital america security
+Document: 15745	Topic: immigration	Phrase: family recently emigrated
+Document: 15795	Topic: private_legislation	Phrase: consideration 4364 legislative
+Document: 15796	Topic: private_legislation	Phrase: government outrageous demands
+Document: 15797	Topic: private_legislation	Phrase: trip taxpayers
+Document: 15802	Topic: private_legislation	Phrase: constitution pipeline brought
+Document: 15803	Topic: geographic_areas_entities_and_committees	Phrase: communities dependent federal
+Document: 15812	Topic: international_affairs	Phrase: white house willing
+Document: 15830	Topic: families	Phrase: american families way
+Document: 15852	Topic: immigration	Phrase: vulnerable americans temporarily
+Document: 15856	Topic: immigration	Phrase: senate foreign relations
+Document: 15867	Topic: crime_and_law_enforcement	Phrase: run sheriff
+Document: 15878	Topic: immigration	Phrase: assault
+Document: 15888	Topic: crime_and_law_enforcement	Phrase: legislative
+Document: 15893	Topic: immigration	Phrase: stop sex trafficking
+Document: 15894	Topic: education	Phrase: understand doing southeast
+Document: 15895	Topic: armed_forces_and_national_security	Phrase: homeland security released
+Document: 15900	Topic: immigration	Phrase: americans lose likelihood
+Document: 15917	Topic: immigration	Phrase: columbia spending operation
+Document: 15922	Topic: immigration	Phrase: state discussions
+Document: 15924	Topic: immigration	Phrase: worked foster
+Document: 15930	Topic: immigration	Phrase: states
+Document: 15935	Topic: immigration	Phrase: american community today
+Document: 15942	Topic: immigration	Phrase: passed statehood bo
+Document: 15959	Topic: immigration	Phrase: receiving united states
+Document: 15965	Topic: immigration	Phrase: native career improving
+Document: 15975	Topic: immigration	Phrase: refugee resettlement
+Document: 15980	Topic: immigration	Phrase: california initiative community
+Document: 15985	Topic: immigration	Phrase: proclaimed super citizen
+Document: 15998	Topic: immigration	Phrase: american flag
+Document: 16003	Topic: immigration	Phrase: south
+Document: 16007	Topic: immigration	Phrase: national guards transferring
+Document: 16023	Topic: immigration	Phrase: bless united states
+Document: 16024	Topic: immigration	Phrase: bless united states
+Document: 16027	Topic: immigration	Phrase: states america republic
+Document: 16031	Topic: immigration	Phrase: americans backgrounds opportunity
+Document: 16036	Topic: immigration	Phrase: elected california
+Document: 16038	Topic: agriculture_and_food	Phrase: provided food
+Document: 16040	Topic: immigration	Phrase: 1942 immigrated united
+Document: 16056	Topic: immigration	Phrase: speaking migrant children
+Document: 16061	Topic: immigration	Phrase: francisco
+Document: 16063	Topic: social_welfare	Phrase: advocate workers
+Document: 16069	Topic: labor_and_employment	Phrase: department working senior
+Document: 16072	Topic: immigration	Phrase: mexico serving
+Document: 16074	Topic: immigration	Phrase: justice
+Document: 16098	Topic: social_welfare	Phrase: advocating
+Document: 16117	Topic: social_welfare	Phrase: 000 grant assistance
+Document: 16135	Topic: private_legislation	Phrase: senior assistant legislative
+Document: 16150	Topic: social_welfare	Phrase: humanitarian
+Document: 16191	Topic: emergency_management	Phrase: leadership positions
+Document: 16192	Topic: emergency_management	Phrase: arkansas military responders
+Document: 16194	Topic: immigration	Phrase: bless united states
+Document: 16195	Topic: immigration	Phrase: states world talented
+Document: 16197	Topic: armed_forces_and_national_security	Phrase: nation youth addition
+Document: 16199	Topic: immigration	Phrase: debate border security
+Document: 16221	Topic: crime_and_law_enforcement	Phrase: education everybody america
+Document: 16224	Topic: crime_and_law_enforcement	Phrase: washington dc just
+Document: 16225	Topic: civil_rights_and_liberties_minority_issues	Phrase: cowards kidnapped children
+Document: 16234	Topic: immigration	Phrase: people come border
+Document: 16236	Topic: immigration	Phrase: israeli citizens americans
+Document: 16238	Topic: environmental_protection	Phrase: litigating case
+Document: 16254	Topic: immigration	Phrase: bring
+Document: 16259	Topic: transportation_and_public_works	Phrase: forward effort businesses
+Document: 16267	Topic: international_affairs	Phrase: states
+Document: 16269	Topic: international_affairs	Phrase: classified briefing israel
+Document: 16271	Topic: international_affairs	Phrase: extraordinary responsibility preserve
+Document: 16276	Topic: private_legislation	Phrase: sector private sector
+Document: 16279	Topic: private_legislation	Phrase: promoting policies
+Document: 16338	Topic: armed_forces_and_national_security	Phrase: doing secure safe
+Document: 16341	Topic: crime_and_law_enforcement	Phrase: protection infrastructure education
+Document: 16366	Topic: private_legislation	Phrase: shop tax act
+Document: 16380	Topic: armed_forces_and_national_security	Phrase: human shields threatening
+Document: 16385	Topic: armed_forces_and_national_security	Phrase: american civilians killed
+Document: 16409	Topic: armed_forces_and_national_security	Phrase: terrorists lastly proud
+Document: 16429	Topic: economics_and_public_finance	Phrase: prices pump strategic
+Document: 16431	Topic: economics_and_public_finance	Phrase: fiscal responsibility
+Document: 16436	Topic: crime_and_law_enforcement	Phrase: case west shore
+Document: 16437	Topic: crime_and_law_enforcement	Phrase: state authority amendment
+Document: 16446	Topic: crime_and_law_enforcement	Phrase: states program
+Document: 16454	Topic: armed_forces_and_national_security	Phrase: security economy going
+Document: 16470	Topic: crime_and_law_enforcement	Phrase: election
+Document: 16511	Topic: armed_forces_and_national_security	Phrase: emergency national security
+Document: 16553	Topic: labor_and_employment	Phrase: angeles county work
+Document: 16576	Topic: crime_and_law_enforcement	Phrase: deterrent people home
+Document: 16581	Topic: crime_and_law_enforcement	Phrase: south carolina responsible
+Document: 16585	Topic: crime_and_law_enforcement	Phrase: amendment
+Document: 16587	Topic: public_lands_and_natural_resources	Phrase: war reserve
+Document: 16598	Topic: armed_forces_and_national_security	Phrase: amendment
+Document: 16600	Topic: economics_and_public_finance	Phrase: utility costs
+Document: 16609	Topic: crime_and_law_enforcement	Phrase: proceedings
+Document: 16611	Topic: private_legislation	Phrase: amendment clerk
+Document: 16612	Topic: crime_and_law_enforcement	Phrase: amendment clerk
+Document: 16616	Topic: crime_and_law_enforcement	Phrase: amendment clerk
+Document: 16618	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment 36 printed
+Document: 16622	Topic: government_operations_and_politics	Phrase: security administration proposed
+Document: 16641	Topic: crime_and_law_enforcement	Phrase: amendment
+Document: 16645	Topic: crime_and_law_enforcement	Phrase: amendment
+Document: 16646	Topic: armed_forces_and_national_security	Phrase: country amendment prioritizes
+Document: 16653	Topic: armed_forces_and_national_security	Phrase: powers build institutions
+Document: 16662	Topic: armed_forces_and_national_security	Phrase: say energy security
+Document: 16665	Topic: emergency_management	Phrase: department energy water
+Document: 16671	Topic: transportation_and_public_works	Phrase: motor vehicles base
+Document: 16674	Topic: housing_and_community_development	Phrase: house report 118
+Document: 16675	Topic: crime_and_law_enforcement	Phrase: amendment clerk
+Document: 16712	Topic: armed_forces_and_national_security	Phrase: security advisor wrote
+Document: 16714	Topic: crime_and_law_enforcement	Phrase: campus security saying
+Document: 16731	Topic: crime_and_law_enforcement	Phrase: costs safety neighborhoods
+Document: 16752	Topic: armed_forces_and_national_security	Phrase: state art police
+Document: 16758	Topic: armed_forces_and_national_security	Phrase: intelligence applaud president
+Document: 16760	Topic: armed_forces_and_national_security	Phrase: energy securing southern
+Document: 16770	Topic: armed_forces_and_national_security	Phrase: human services award
+Document: 16773	Topic: native_americans	Phrase: pacific thing republicans
+Document: 16775	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendments 40 floor
+Document: 16777	Topic: armed_forces_and_national_security	Phrase: better protect americans
+Document: 16783	Topic: civil_rights_and_liberties_minority_issues	Phrase: institutions attacked citizens
+Document: 16792	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment negatively impact
+Document: 16796	Topic: crime_and_law_enforcement	Phrase: mandates federal agencies
+Document: 16805	Topic: private_legislation	Phrase: senator
+Document: 16828	Topic: agriculture_and_food	Phrase: helped economy
+Document: 16840	Topic: crime_and_law_enforcement	Phrase: safety advancing racial
+Document: 16866	Topic: social_welfare	Phrase: states
+Document: 16878	Topic: crime_and_law_enforcement	Phrase: aggression united states
+Document: 16884	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment
+Document: 16901	Topic: armed_forces_and_national_security	Phrase: idf soldiers math
+Document: 16912	Topic: private_legislation	Phrase: unacceptable free speech
+Document: 16913	Topic: armed_forces_and_national_security	Phrase: israeli military installations
+Document: 16914	Topic: private_legislation	Phrase: committed free speech
+Document: 16918	Topic: crime_and_law_enforcement	Phrase: dangerous acts anti
+Document: 16921	Topic: crime_and_law_enforcement	Phrase: new york
+Document: 16923	Topic: private_legislation	Phrase: act 2024 let
+Document: 16924	Topic: crime_and_law_enforcement	Phrase: jurisdiction came conclusion
+Document: 16931	Topic: armed_forces_and_national_security	Phrase: president handshake let
+Document: 16960	Topic: armed_forces_and_national_security	Phrase: attack civilians israel
+Document: 16963	Topic: armed_forces_and_national_security	Phrase: government accountability
+Document: 16966	Topic: crime_and_law_enforcement	Phrase: federal government americans
+Document: 16989	Topic: crime_and_law_enforcement	Phrase: punish people
+Document: 16994	Topic: crime_and_law_enforcement	Phrase: communication
+Document: 16996	Topic: immigration	Phrase: people
+Document: 17006	Topic: crime_and_law_enforcement	Phrase: air force officers
+Document: 17009	Topic: crime_and_law_enforcement	Phrase: forces american
+Document: 17012	Topic: immigration	Phrase: national security position
+Document: 17035	Topic: crime_and_law_enforcement	Phrase: hurting national security
+Document: 17102	Topic: crime_and_law_enforcement	Phrase: gun violence prevention
+Document: 17106	Topic: environmental_protection	Phrase: public housing improving
+Document: 17129	Topic: crime_and_law_enforcement	Phrase: house state union
+Document: 17137	Topic: crime_and_law_enforcement	Phrase: environmental protection agency
+Document: 17140	Topic: government_operations_and_politics	Phrase: federal
+Document: 17164	Topic: crime_and_law_enforcement	Phrase: act
+Document: 17170	Topic: armed_forces_and_national_security	Phrase: federal agencies
+Document: 17188	Topic: immigration	Phrase: congress
+Document: 17190	Topic: immigration	Phrase: museum american latino
+Document: 17192	Topic: immigration	Phrase: amendment
+Document: 17194	Topic: immigration	Phrase: taking federal
+Document: 17196	Topic: immigration	Phrase: make sure america
+Document: 17216	Topic: immigration	Phrase: states executive branch
+Document: 17240	Topic: sports_and_recreation	Phrase: important wildlife
+Document: 17250	Topic: immigration	Phrase: national
+Document: 17251	Topic: immigration	Phrase: leave
+Document: 17265	Topic: immigration	Phrase: protect citizens israel
+Document: 17266	Topic: social_welfare	Phrase: relief doesn humanitarian
+Document: 17268	Topic: armed_forces_and_national_security	Phrase: present danger country
+Document: 17274	Topic: armed_forces_and_national_security	Phrase: security needs legislation
+Document: 17286	Topic: crime_and_law_enforcement	Phrase: proceedings
+Document: 17294	Topic: international_affairs	Phrase: hezbollah
+Document: 17305	Topic: social_welfare	Phrase: congressional funding inclusion
+Document: 17310	Topic: armed_forces_and_national_security	Phrase: strength national security
+Document: 17316	Topic: crime_and_law_enforcement	Phrase: government
+Document: 17319	Topic: civil_rights_and_liberties_minority_issues	Phrase: heritage instead amendment
+Document: 17320	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment
+Document: 17321	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment favor american
+Document: 17323	Topic: civil_rights_and_liberties_minority_issues	Phrase: leftist activists young
+Document: 17327	Topic: civil_rights_and_liberties_minority_issues	Phrase: council second amendment
+Document: 17328	Topic: crime_and_law_enforcement	Phrase: states locked federally
+Document: 17329	Topic: civil_rights_and_liberties_minority_issues	Phrase: federally controlled lands
+Document: 17333	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment 91 prohibits
+Document: 17338	Topic: civil_rights_and_liberties_minority_issues	Phrase: public lands
+Document: 17345	Topic: crime_and_law_enforcement	Phrase: states violently
+Document: 17347	Topic: civil_rights_and_liberties_minority_issues	Phrase: problems america today
+Document: 17357	Topic: crime_and_law_enforcement	Phrase: tribal authorities
+Document: 17358	Topic: civil_rights_and_liberties_minority_issues	Phrase: oppose
+Document: 17373	Topic: civil_rights_and_liberties_minority_issues	Phrase: colleagues reject amendment
+Document: 17374	Topic: transportation_and_public_works	Phrase: using taxpayer
+Document: 17376	Topic: environmental_protection	Phrase: concerns forest service
+Document: 17381	Topic: immigration	Phrase: environmental justice american
+Document: 17382	Topic: civil_rights_and_liberties_minority_issues	Phrase: colleagues reject amendment
+Document: 17384	Topic: crime_and_law_enforcement	Phrase: environmental justice important
+Document: 17386	Topic: crime_and_law_enforcement	Phrase: compliance
+Document: 17387	Topic: crime_and_law_enforcement	Phrase: department interior
+Document: 17393	Topic: economics_and_public_finance	Phrase: reducing salary dollar
+Document: 17395	Topic: international_affairs	Phrase: administration wants cover
+Document: 17396	Topic: emergency_management	Phrase: public servant
+Document: 17399	Topic: armed_forces_and_national_security	Phrase: amendment
+Document: 17402	Topic: armed_forces_and_national_security	Phrase: government like em
+Document: 17408	Topic: international_affairs	Phrase: act provides president
+Document: 17411	Topic: armed_forces_and_national_security	Phrase: protect future generations
+Document: 17413	Topic: armed_forces_and_national_security	Phrase: countries making sure
+Document: 17422	Topic: families	Phrase: business
+Document: 17432	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment recorded
+Document: 17434	Topic: economics_and_public_finance	Phrase: environmental financial advisory
+Document: 17438	Topic: native_americans	Phrase: taking away americans
+Document: 17446	Topic: civil_rights_and_liberties_minority_issues	Phrase: rolling american citizens
+Document: 17456	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment prevent department
+Document: 17460	Topic: environmental_protection	Phrase: prohibiting
+Document: 17501	Topic: environmental_protection	Phrase: ensure safety america
+Document: 17503	Topic: public_lands_and_natural_resources	Phrase: county local arts
+Document: 17550	Topic: emergency_management	Phrase: severe crises seen
+Document: 17575	Topic: native_americans	Phrase: connecticut
+Document: 17577	Topic: crime_and_law_enforcement	Phrase: regulations levels
+Document: 17613	Topic: private_legislation	Phrase: legislation language erroneously
+Document: 17623	Topic: armed_forces_and_national_security	Phrase: federal involvement thank
+Document: 17625	Topic: armed_forces_and_national_security	Phrase: war nation highest
+Document: 17627	Topic: armed_forces_and_national_security	Phrase: soldiers received nation
+Document: 17632	Topic: international_affairs	Phrase: 144 years nation
+Document: 17645	Topic: private_legislation	Phrase: legislation responsibly
+Document: 17651	Topic: social_welfare	Phrase: problems reality funding
+Document: 17658	Topic: private_legislation	Phrase: amendment provided section
+Document: 17671	Topic: social_welfare	Phrase: taxpayer making sure
+Document: 17673	Topic: social_welfare	Phrase: providing funding program
+Document: 17693	Topic: environmental_protection	Phrase: city safe safety
+Document: 17696	Topic: private_legislation	Phrase: accountability ought accountability
+Document: 17699	Topic: economics_and_public_finance	Phrase: capital funding washington
+Document: 17707	Topic: international_affairs	Phrase: gaddis world war
+Document: 17730	Topic: civil_rights_and_liberties_minority_issues	Phrase: supporting empowering low
+Document: 17736	Topic: social_sciences_and_history	Phrase: european studies program
+Document: 17750	Topic: public_lands_and_natural_resources	Phrase: infrastructure investment
+Document: 17752	Topic: public_lands_and_natural_resources	Phrase: watching state resources
+Document: 17754	Topic: international_affairs	Phrase: cooperation summit leading
+Document: 17762	Topic: public_lands_and_natural_resources	Phrase: parks created nationally
+Document: 17804	Topic: social_welfare	Phrase: funding level giving
+Document: 17817	Topic: private_legislation	Phrase: social
+Document: 17820	Topic: taxation	Phrase: funded
+Document: 17822	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment res 847
+Document: 17826	Topic: families	Phrase: related agencies
+Document: 17838	Topic: private_legislation	Phrase: serving congress perspective
+Document: 17845	Topic: environmental_protection	Phrase: resolution protect institution
+Document: 17883	Topic: private_legislation	Phrase: fiscal years later
+Document: 17890	Topic: environmental_protection	Phrase: emission reductions goals
+Document: 17896	Topic: environmental_protection	Phrase: protects certain
+Document: 17897	Topic: environmental_protection	Phrase: protect health safety
+Document: 17900	Topic: environmental_protection	Phrase: enforcement actions regard
+Document: 17902	Topic: environmental_protection	Phrase: helpful safety americans
+Document: 17904	Topic: environmental_protection	Phrase: regulations costing americans
+Document: 17906	Topic: environmental_protection	Phrase: climate change initiatives
+Document: 17908	Topic: environmental_protection	Phrase: government curb carbon
+Document: 17913	Topic: environmental_protection	Phrase: safe underlying proposed
+Document: 17918	Topic: environmental_protection	Phrase: survive free market
+Document: 17920	Topic: environmental_protection	Phrase: kind sweeping prohibition
+Document: 17922	Topic: economics_and_public_finance	Phrase: states funds available
+Document: 17925	Topic: environmental_protection	Phrase: antitrust analyses going
+Document: 17939	Topic: transportation_and_public_works	Phrase: department transportation congress
+Document: 17940	Topic: environmental_protection	Phrase: emissions ferry
+Document: 17944	Topic: environmental_protection	Phrase: issue policy let
+Document: 17946	Topic: environmental_protection	Phrase: environmental reviews democrats
+Document: 17947	Topic: environmental_protection	Phrase: infrastructure responsible greenhouse
+Document: 17948	Topic: environmental_protection	Phrase: emission reductions
+Document: 17953	Topic: private_legislation	Phrase: provisions provided individuals
+Document: 17977	Topic: taxation	Phrase: intent congress administration
+Document: 17980	Topic: social_welfare	Phrase: merits government attempting
+Document: 18014	Topic: civil_rights_and_liberties_minority_issues	Phrase: issues distinctly
+Document: 18028	Topic: emergency_management	Phrase: lifesaving agency nih
+Document: 18046	Topic: native_americans	Phrase: americans increasingly concerned
+Document: 18049	Topic: crime_and_law_enforcement	Phrase: national security direct
+Document: 18051	Topic: armed_forces_and_national_security	Phrase: servicemembers come military
+Document: 18054	Topic: immigration	Phrase: notable citizens excerpts
+Document: 18077	Topic: environmental_protection	Phrase: justice
+Document: 18089	Topic: immigration	Phrase: national security majority
+Document: 18105	Topic: private_legislation	Phrase: private partnerships means
+Document: 18110	Topic: economics_and_public_finance	Phrase: financial realities modern
+Document: 18121	Topic: economics_and_public_finance	Phrase: domestic finance
+Document: 18122	Topic: economics_and_public_finance	Phrase: treasury federal reserve
+Document: 18132	Topic: education	Phrase: institution assert long
+Document: 18134	Topic: economics_and_public_finance	Phrase: amendment reduces funding
+Document: 18165	Topic: economics_and_public_finance	Phrase: federal
+Document: 18190	Topic: taxation	Phrase: fiscal year oppose
+Document: 18194	Topic: environmental_protection	Phrase: presume enforcement action
+Document: 18195	Topic: private_legislation	Phrase: amendment
+Document: 18196	Topic: environmental_protection	Phrase: agriculture regulated epa
+Document: 18197	Topic: international_affairs	Phrase: amendment
+Document: 18201	Topic: private_legislation	Phrase: make sure legislation
+Document: 18222	Topic: private_legislation	Phrase: law agency urge
+Document: 18227	Topic: private_legislation	Phrase: regulatory guardrails
+Document: 18241	Topic: private_legislation	Phrase: congress need protect
+Document: 18242	Topic: private_legislation	Phrase: people deserve transparency
+Document: 18311	Topic: taxation	Phrase: labor
+Document: 18320	Topic: social_welfare	Phrase: provision protect americans
+Document: 18332	Topic: immigration	Phrase: bring statehood
+Document: 18334	Topic: agriculture_and_food	Phrase: citizens harming economy
+Document: 18336	Topic: sports_and_recreation	Phrase: country engage
+Document: 18351	Topic: international_affairs	Phrase: business
+Document: 18354	Topic: private_legislation	Phrase: redesignate amendment
+Document: 18392	Topic: private_legislation	Phrase: government does free
+Document: 18445	Topic: armed_forces_and_national_security	Phrase: oversight council fsoc
+Document: 18448	Topic: social_welfare	Phrase: billion american taxpayer
+Document: 18471	Topic: environmental_protection	Phrase: issue led policies
+Document: 18498	Topic: social_welfare	Phrase: taxpayer money abortion
+Document: 18577	Topic: crime_and_law_enforcement	Phrase: law
+Document: 18590	Topic: private_legislation	Phrase: priority pieces legislation
+Document: 18593	Topic: geographic_areas_entities_and_committees	Phrase: entire georgia delegation
+Document: 18604	Topic: private_legislation	Phrase: path duty govern
+Document: 18610	Topic: economics_and_public_finance	Phrase: community ongoing appropriations
+Document: 18614	Topic: private_legislation	Phrase: wiping discretionary budget
+Document: 18646	Topic: private_legislation	Phrase: business senators permitted
+Document: 18681	Topic: civil_rights_and_liberties_minority_issues	Phrase: project america citizens
+Document: 18687	Topic: private_legislation	Phrase: maga bills brought
+Document: 18691	Topic: private_legislation	Phrase: vote pursuant
+Document: 18693	Topic: private_legislation	Phrase: declares house committee
+Document: 18734	Topic: international_affairs	Phrase: oversight reform
+Document: 18736	Topic: public_lands_and_natural_resources	Phrase: improving jurisdictions public
+Document: 18751	Topic: health	Phrase: health amendment
+Document: 18754	Topic: armed_forces_and_national_security	Phrase: going war
+Document: 18762	Topic: native_americans	Phrase: american people looking
+Document: 18769	Topic: international_affairs	Phrase: equatorial guinea threats
+Document: 18780	Topic: taxation	Phrase: children better government
+Document: 18791	Topic: taxation	Phrase: public policy incentivizes
+Document: 18808	Topic: environmental_protection	Phrase: constrained protecting
+Document: 18810	Topic: private_legislation	Phrase: enacted law support
+Document: 18818	Topic: social_welfare	Phrase: fiscal restraint supporting
+Document: 18848	Topic: immigration	Phrase: border crisis
+Document: 18859	Topic: foreign_trade_and_international_finance	Phrase: investing border security
+Document: 18861	Topic: economics_and_public_finance	Phrase: comprehensive supplemental funding
+Document: 18869	Topic: economics_and_public_finance	Phrase: decisions spend money
+Document: 18871	Topic: economics_and_public_finance	Phrase: studies
+Document: 18899	Topic: taxation	Phrase: declares
+Document: 18901	Topic: environmental_protection	Phrase: thwarts economic policy
+Document: 18911	Topic: economics_and_public_finance	Phrase: financial advice americans
+Document: 18913	Topic: economics_and_public_finance	Phrase: financial advisers assist
+Document: 18941	Topic: taxation	Phrase: dollars expense
+Document: 19007	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment block funding
+Document: 19034	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment amendment
+Document: 19036	Topic: armed_forces_and_national_security	Phrase: roosevelt dealt national
+Document: 19124	Topic: armed_forces_and_national_security	Phrase: security checks reduces
+Document: 19168	Topic: armed_forces_and_national_security	Phrase: reform border security
+Document: 19203	Topic: emergency_management	Phrase: relief programs foundational
+Document: 19207	Topic: economics_and_public_finance	Phrase: regulatory reforms led
+Document: 19219	Topic: private_legislation	Phrase: biden using taxpayer
+Document: 19362	Topic: private_legislation	Phrase: regulations benefit small
+Document: 19398	Topic: taxation	Phrase: belong congress period
+Document: 19400	Topic: private_legislation	Phrase: establish regulations regularize
+Document: 19442	Topic: commerce	Phrase: markets products solution
+Document: 19485	Topic: crime_and_law_enforcement	Phrase: high school
+Document: 19492	Topic: agriculture_and_food	Phrase: earning arvada wheat
+Document: 19510	Topic: economics_and_public_finance	Phrase: investing trillion 2020
+Document: 19514	Topic: economics_and_public_finance	Phrase: goals including fiscal
+Document: 19521	Topic: private_legislation	Phrase: legislation running house
+Document: 19522	Topic: economics_and_public_finance	Phrase: crucial ensuring public
+Document: 19524	Topic: economics_and_public_finance	Phrase: 2024 increased funding
+Document: 19528	Topic: private_legislation	Phrase: question bring legislation
+Document: 19544	Topic: private_legislation	Phrase: pay citizens
+Document: 19553	Topic: private_legislation	Phrase: engage congress
+Document: 19555	Topic: finance_and_financial_sector	Phrase: dollars administration destructive
+Document: 19556	Topic: private_legislation	Phrase: legislation actually does
+Document: 19560	Topic: private_legislation	Phrase: home congress does
+Document: 19565	Topic: finance_and_financial_sector	Phrase: let talk economy
+Document: 19602	Topic: private_legislation	Phrase: passed legislation ease
+Document: 19605	Topic: economics_and_public_finance	Phrase: bills advocacy seen
+Document: 19615	Topic: private_legislation	Phrase: issue simple policies
+Document: 19617	Topic: private_legislation	Phrase: legislation going focused
+Document: 19637	Topic: social_welfare	Phrase: people problem biden
+Document: 19651	Topic: crime_and_law_enforcement	Phrase: criminal civil rights
+Document: 19654	Topic: native_americans	Phrase: states america gabonese
+Document: 19655	Topic: finance_and_financial_sector	Phrase: reserve fund legislation
+Document: 19671	Topic: private_legislation	Phrase: congress tried years
+Document: 19688	Topic: civil_rights_and_liberties_minority_issues	Phrase: claimed discriminated movement
+Document: 19701	Topic: agriculture_and_food	Phrase: wheat
+Document: 19705	Topic: housing_and_community_development	Phrase: vital role communities
+Document: 19713	Topic: private_legislation	Phrase: began career public
+Document: 19731	Topic: private_legislation	Phrase: undermine wasting taxpayer
+Document: 19737	Topic: social_welfare	Phrase: compassion
+Document: 19741	Topic: private_legislation	Phrase: ethics committee evidence
+Document: 19750	Topic: private_legislation	Phrase: deal representation people
+Document: 19773	Topic: government_operations_and_politics	Phrase: house foreign affairs
+Document: 19781	Topic: government_operations_and_politics	Phrase: purpose amendment billion
+Document: 19821	Topic: environmental_protection	Phrase: enforcement officials sterling
+Document: 19830	Topic: geographic_areas_entities_and_committees	Phrase: resolved committee
+Document: 19843	Topic: education	Phrase: printed
+Document: 19869	Topic: environmental_protection	Phrase: defend constitution
+Document: 19880	Topic: immigration	Phrase: americans wrongfully detained
+Document: 19889	Topic: government_operations_and_politics	Phrase: america ruling al
+Document: 19891	Topic: international_affairs	Phrase: united states aggressively
+Document: 19917	Topic: armed_forces_and_national_security	Phrase: serving protecting residents
+Document: 19957	Topic: private_legislation	Phrase: mandates burdensome personal
+Document: 19967	Topic: taxation	Phrase: completely exempt appropriations
+Document: 19979	Topic: civil_rights_and_liberties_minority_issues	Phrase: security solutions act
+Document: 19990	Topic: education	Phrase: public schools jewish
+Document: 20032	Topic: energy	Phrase: addition
+Document: 20103	Topic: international_affairs	Phrase: united states stands
+Document: 20109	Topic: geographic_areas_entities_and_committees	Phrase: district provides good
+Document: 20127	Topic: health	Phrase: birth child
+Document: 20146	Topic: public_lands_and_natural_resources	Phrase: agricultural sector continue
+Document: 20147	Topic: armed_forces_and_national_security	Phrase: citizens
+Document: 20154	Topic: international_affairs	Phrase: states america republic
+Document: 20158	Topic: armed_forces_and_national_security	Phrase: bless troops successfully
+Document: 20167	Topic: public_lands_and_natural_resources	Phrase: clean renewable energy
+Document: 20169	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment extraneous material
+Document: 20176	Topic: armed_forces_and_national_security	Phrase: secure border strong
+Document: 20180	Topic: international_affairs	Phrase: countries concern require
+Document: 20184	Topic: environmental_protection	Phrase: improvements laws
+Document: 20193	Topic: international_affairs	Phrase: powerful woman america
+Document: 20196	Topic: international_affairs	Phrase: attending united states
+Document: 20218	Topic: international_affairs	Phrase: president nation long
+Document: 20228	Topic: international_affairs	Phrase: officers political
+Document: 20229	Topic: international_affairs	Phrase: international election observers
+Document: 20231	Topic: international_affairs	Phrase: diplomatic engagement strategically
+Document: 20236	Topic: international_affairs	Phrase: actively harm american
+Document: 20245	Topic: public_lands_and_natural_resources	Phrase: settlers established farms
+Document: 20271	Topic: armed_forces_and_national_security	Phrase: nationalists increasingly
+Document: 20272	Topic: international_affairs	Phrase: political mastermind claude
+Document: 20309	Topic: social_welfare	Phrase: chinese communist
+Document: 20318	Topic: international_affairs	Phrase: executive board 1992
+Document: 20327	Topic: international_affairs	Phrase: allies defend freedom
+Document: 20328	Topic: international_affairs	Phrase: department energy fierce
+Document: 20339	Topic: education	Phrase: subject demand
+Document: 20344	Topic: international_affairs	Phrase: obligation protect americans
+Document: 20345	Topic: environmental_protection	Phrase: standards stringently epa
+Document: 20352	Topic: water_resources_development	Phrase: water
+Document: 20358	Topic: private_legislation	Phrase: finalizing proposed rule
+Document: 20365	Topic: private_legislation	Phrase: proposed rule
+Document: 20367	Topic: private_legislation	Phrase: proposed standards eliminate
+Document: 20369	Topic: civil_rights_and_liberties_minority_issues	Phrase: legislation protecting choice
+Document: 20397	Topic: armed_forces_and_national_security	Phrase: concerned foreign adversaries
+Document: 20398	Topic: civil_rights_and_liberties_minority_issues	Phrase: amendment deep concerns
+Document: 20400	Topic: civil_rights_and_liberties_minority_issues	Phrase: speaker oppose amendment
+Document: 20401	Topic: civil_rights_and_liberties_minority_issues	Phrase: investigations needed amendment
+Document: 20407	Topic: civil_rights_and_liberties_minority_issues	Phrase: short amendment says
+Document: 20413	Topic: private_legislation	Phrase: reporting need transparency
+Document: 20415	Topic: private_legislation	Phrase: amendment
+Document: 20419	Topic: civil_rights_and_liberties_minority_issues	Phrase: important citizens know
+Document: 20432	Topic: armed_forces_and_national_security	Phrase: law enforcement public
+Document: 20444	Topic: civil_rights_and_liberties_minority_issues	Phrase: issue gun violence
+Document: 20446	Topic: armed_forces_and_national_security	Phrase: alert capitol police
+Document: 20447	Topic: private_legislation	Phrase: talks following constitution
+Document: 20453	Topic: private_legislation	Phrase: constituents like shut
+Document: 20471	Topic: civil_rights_and_liberties_minority_issues	Phrase: privilege represent
+Document: 20477	Topic: civil_rights_and_liberties_minority_issues	Phrase: constitutional rights americans
+Document: 20488	Topic: civil_rights_and_liberties_minority_issues	Phrase: invasion hearings issue
+Document: 20492	Topic: civil_rights_and_liberties_minority_issues	Phrase: stand action americans
+Document: 20495	Topic: armed_forces_and_national_security	Phrase: defense country unrelated
+Document: 20499	Topic: civil_rights_and_liberties_minority_issues	Phrase: unconstitutional restrictions democrat
+Document: 20502	Topic: armed_forces_and_national_security	Phrase: military democrats congress
+Document: 20527	Topic: geographic_areas_entities_and_committees	Phrase: proposal regarding border
+Document: 20531	Topic: crime_and_law_enforcement	Phrase: state fight
+Document: 20537	Topic: private_legislation	Phrase: pass supplemental funding
+Document: 20539	Topic: environmental_protection	Phrase: seriousness global threat
+Document: 20540	Topic: environmental_protection	Phrase: critical protecting interests
+Document: 20542	Topic: environmental_protection	Phrase: doing retaliation defending
+Document: 20546	Topic: private_legislation	Phrase: consent committee finance
+Document: 20574	Topic: environmental_protection	Phrase: protecting iowa communities
+Document: 20580	Topic: private_legislation	Phrase: higher education act
+Document: 20604	Topic: private_legislation	Phrase: federal planning
+Document: 20606	Topic: private_legislation	Phrase: strong majority lawmakers
+Document: 20630	Topic: energy	Phrase: force appreciate
+Document: 20642	Topic: energy	Phrase: charged use
+Document: 20651	Topic: energy	Phrase: struggling effects war
+Document: 20702	Topic: private_legislation	Phrase: pay prohibiting council
+Document: 20714	Topic: private_legislation	Phrase: act 1971
+Document: 20715	Topic: private_legislation	Phrase: transparency accountability laws
+Document: 20716	Topic: private_legislation	Phrase: laws guidance state
+Document: 20717	Topic: private_legislation	Phrase: legislation true nonpartisan
+Document: 20721	Topic: private_legislation	Phrase: similar legislation allow
+Document: 20724	Topic: private_legislation	Phrase: modernize government services
+Document: 20725	Topic: private_legislation	Phrase: legislation urge adoption
+Document: 20728	Topic: private_legislation	Phrase: act shut illegal
+Document: 20732	Topic: private_legislation	Phrase: bank secrecy act
+Document: 20733	Topic: environmental_protection	Phrase: helps protect national
+Document: 20735	Topic: private_legislation	Phrase: mitigation programs legislation
+Document: 20737	Topic: private_legislation	Phrase: support legislation yield
+Document: 20738	Topic: private_legislation	Phrase: authority
+Document: 20761	Topic: immigration	Phrase: legislation victory american
+Document: 20772	Topic: economics_and_public_finance	Phrase: use federal funds
+Document: 20803	Topic: international_affairs	Phrase: policies trillion massive
+Document: 20819	Topic: international_affairs	Phrase: nation mr speaker
+Document: 20877	Topic: armed_forces_and_national_security	Phrase: sacrifices law enforcement
+Document: 20886	Topic: environmental_protection	Phrase: coming prevent humanitarian
+Document: 20895	Topic: sports_and_recreation	Phrase: guests kinnick stadium
+Document: 20905	Topic: international_affairs	Phrase: united states abroad
+Document: 20908	Topic: international_affairs	Phrase: engineering president guice
+Document: 20909	Topic: international_affairs	Phrase: nation liberty justice
+Document: 20913	Topic: geographic_areas_entities_and_committees	Phrase: resident commissioner linda
+Document: 20924	Topic: environmental_protection	Phrase: eat safe
+Document: 20926	Topic: environmental_protection	Phrase: survival risk
+Document: 20928	Topic: armed_forces_and_national_security	Phrase: nra members mr
+Document: 20930	Topic: environmental_protection	Phrase: beholden taxpayers priorities
+Document: 20939	Topic: private_legislation	Phrase: approve regulation
+Document: 20947	Topic: economics_and_public_finance	Phrase: businesses curbed unless
+Document: 20967	Topic: private_legislation	Phrase: congress responsibility act
+Document: 20974	Topic: private_legislation	Phrase: bring bipartisan pass
+Document: 20982	Topic: private_legislation	Phrase: proposed free speech
+Document: 20985	Topic: private_legislation	Phrase: rabbi behalf senate
+Document: 20986	Topic: private_legislation	Phrase: partner making congressman
+Document: 20993	Topic: private_legislation	Phrase: congress 2021
+Document: 21005	Topic: private_legislation	Phrase: committees authorized meet
+Document: 21008	Topic: private_legislation	Phrase: community college public
+Document: 21029	Topic: private_legislation	Phrase: transparency act
+Document: 21032	Topic: private_legislation	Phrase: legislation directly impacts
+Document: 21049	Topic: private_legislation	Phrase: challenges issues legislative
+Document: 21057	Topic: private_legislation	Phrase: political fights giving
+Document: 21074	Topic: private_legislation	Phrase: current rule house
+Document: 21077	Topic: private_legislation	Phrase: introduce commonsense bills
+Document: 21079	Topic: private_legislation	Phrase: indivisible liberty justice
+Document: 21085	Topic: private_legislation	Phrase: applying public pressure
+Document: 21090	Topic: civil_rights_and_liberties_minority_issues	Phrase: low republicans
+Document: 21110	Topic: private_legislation	Phrase: tax case proven
+Document: 21139	Topic: private_legislation	Phrase: politicians wants offer
+Document: 21154	Topic: private_legislation	Phrase: comply nonsensical ban
+Document: 21165	Topic: private_legislation	Phrase: congress use
+Document: 21186	Topic: native_americans	Phrase: genocide fellow students
+Document: 21187	Topic: native_americans	Phrase: murder palestinian american
+Document: 21214	Topic: private_legislation	Phrase: draft regulations executive
+Document: 21218	Topic: international_affairs	Phrase: service great nation
+Document: 21239	Topic: government_operations_and_politics	Phrase: transparency measure government
+Document: 21250	Topic: environmental_protection	Phrase: safer communities act
+Document: 21309	Topic: health	Phrase: aid likely
+Document: 21311	Topic: health	Phrase: great things
+Document: 21326	Topic: private_legislation	Phrase: masons addition judicial
+Document: 21339	Topic: housing_and_community_development	Phrase: infrastructure environmental
+Document: 21346	Topic: private_legislation	Phrase: legislation eliminate chief
+Document: 21352	Topic: environmental_protection	Phrase: legislation includes clean
+Document: 21366	Topic: education	Phrase: services
+Document: 21373	Topic: private_legislation	Phrase: bipartisan legislation supporting
+Document: 21374	Topic: government_operations_and_politics	Phrase: taxpayer dollars vital
+Document: 21381	Topic: government_operations_and_politics	Phrase: reckless political agenda
+Document: 21392	Topic: private_legislation	Phrase: fund implement national
+Document: 21394	Topic: private_legislation	Phrase: authorization act proud
+Document: 21407	Topic: private_legislation	Phrase: public policy awesome
+Document: 21428	Topic: private_legislation	Phrase: irresponsible antithetical constitutional
+Document: 21431	Topic: international_affairs	Phrase: institute american
+Document: 21437	Topic: government_operations_and_politics	Phrase: term authorization congress
+Document: 21443	Topic: private_legislation	Phrase: tax legislation
+Document: 21449	Topic: foreign_trade_and_international_finance	Phrase: foreign imports safe
+Document: 21489	Topic: international_affairs	Phrase: states
+Document: 21524	Topic: immigration	Phrase: life 2020 census
+Document: 21542	Topic: international_affairs	Phrase: united states interests
+Document: 21568	Topic: armed_forces_and_national_security	Phrase: secure title win
+Document: 21569	Topic: geographic_areas_entities_and_committees	Phrase: accomplishments constituent district
+Document: 21615	Topic: immigration	Phrase: foreign relations committee
+Document: 21627	Topic: private_legislation	Phrase: agreement critical national
+Document: 21634	Topic: armed_forces_and_national_security	Phrase: inspector general federal
+Document: 21639	Topic: private_legislation	Phrase: question senate advise
