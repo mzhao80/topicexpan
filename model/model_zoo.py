@@ -230,7 +230,11 @@ class TransformerPhraseDecoder(BaseModel):
         self.input_embeddings = input_embeddings
         self.output_embeddings = nn.Linear(self.hidden_size, self.vocab_size, bias=False)
 
-        model_layer = TransformerDecoderLayer(d_model=self.hidden_size, nhead=num_heads, batch_first=True)
+        model_layer = TransformerDecoderLayer(
+            d_model=self.hidden_size, 
+            nhead=num_heads, 
+            batch_first=True
+        )
         self.model = TransformerDecoder(model_layer, num_layers=num_layers)
 
         self.max_length = max_length
@@ -238,57 +242,44 @@ class TransformerPhraseDecoder(BaseModel):
         self.bos_token_id = bos_token_id
         self.eos_token_id = eos_token_id
 
+    def _make_causal_mask(self, x):
+        # Create causal mask for decoder
+        sz = x.size(1)
+        mask = (torch.triu(torch.ones(sz, sz)) == 1).transpose(0, 1)
+        mask = mask.float().masked_fill(mask == 0, float('-inf')).masked_fill(mask == 1, float(0.0))
+        return mask.to(x.device)
+
     def forward(self, x, context):
-        input_embeds = self.input_embeddings(input_ids=x['input_ids'])
-        target_mask, padding_mask = self._make_decoder_mask(x['input_ids'], x['attention_mask'])
-        hidden_state = self.model(input_embeds, context, tgt_mask=target_mask, tgt_key_padding_mask=padding_mask) 
-        output_logits = self.output_embeddings(hidden_state)
-        return output_logits
-
-    def _make_decoder_mask(self, input_ids, attention_mask):
-        length = input_ids.shape[1]
-        target_mask = (torch.triu(torch.ones((length, length), device=input_ids.device)) == 1)
-        target_mask = target_mask.transpose(0, 1).float()
-        target_mask = target_mask.masked_fill(target_mask == 0, float('-inf'))
-        target_mask = target_mask.masked_fill(target_mask == 1, float(0.0))
-        padding_mask = attention_mask == 0
-        return target_mask, padding_mask
-
-    # This function is a simplified version of transformer.generate() and greedy_search() from huggingface
-    def generate(self, context):
-        input_ids = torch.ones((context.shape[0], 1), dtype=torch.long, device=context.device) * self.bos_token_id
-        attention_mask = input_ids.new_ones(input_ids.shape, dtype=torch.long)
+        # Create embeddings
+        x = self.input_embeddings(x)
         
-        # keep track of which sequences are already finished
-        unfinished_sequences = input_ids.new(input_ids.shape[0]).fill_(1)
-        cur_len = input_ids.shape[-1]
+        # Create attention masks
+        attn_mask = self._make_causal_mask(x)
+        padding_mask = None  # We'll handle padding in the causal mask
+        
+        # Run through transformer decoder
+        output = self.model(
+            x,
+            context,
+            tgt_mask=attn_mask,
+            memory_mask=None,
+            tgt_key_padding_mask=padding_mask,
+            memory_key_padding_mask=None
+        )
+        
+        # Project to vocabulary
+        return self.output_embeddings(output)
 
-        while True:
-            # prepare model inputs
-            model_inputs = {"input_ids": input_ids, "attention_mask": attention_mask}
-
-            # forward pass to get next token
-            outputs = self.forward(model_inputs, context)
-            next_token_logits = outputs[:, -1, :]
-
-            # without pre-processing distribution
-            # next_tokens_scores = logits_processor(input_ids, next_token_logits)
-            next_tokens_scores = next_token_logits
-            next_tokens = torch.argmax(next_tokens_scores, dim=-1)
-
-            # finished sentences should have their next token be a padding token
-            next_tokens = next_tokens * unfinished_sequences + self.pad_token_id * (1 - unfinished_sequences)
-
-            # update generated ids, model inputs, and length for next step
-            input_ids = torch.cat([input_ids, next_tokens[:, None]], dim=-1)
-            attention_mask = torch.cat([attention_mask, unfinished_sequences[:, None]], dim=-1)
-            cur_len = cur_len + 1
-
-            # if eos_token was found in one sentence, set sentence to finished
-            unfinished_sequences = unfinished_sequences.mul((next_tokens != self.eos_token_id).long())
-
-            # stop when each sentence is finished, or if we exceed the maximum length
-            if unfinished_sequences.max() == 0 or cur_len == self.max_length:
+    def generate(self, context):
+        batch_size = context.size(0)
+        current_token = torch.full((batch_size, 1), self.bos_token_id, dtype=torch.long, device=context.device)
+        
+        for _ in range(self.max_length - 1):
+            logits = self.forward(current_token, context)
+            next_token = logits[:, -1:].argmax(dim=-1)
+            current_token = torch.cat([current_token, next_token], dim=1)
+            
+            if (next_token == self.eos_token_id).all():
                 break
-
-        return input_ids
+                
+        return current_token
