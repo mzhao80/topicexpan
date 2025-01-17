@@ -1,0 +1,155 @@
+2025-01-16 20:08:42,646 - train - INFO - TopicExpan(
+  (doc_encoder): BertDocEncoder(
+    (model): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0-11): 12 x BertLayer(
+            (attention): BertAttention(
+              (self): BertSdpaSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (activation): Tanh()
+      )
+    )
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+  )
+  (phrase_decoder): TransformerPhraseDecoder(
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (output_embeddings): Linear(in_features=768, out_features=30522, bias=False)
+    (model): TransformerDecoder(
+      (layers): ModuleList(
+        (0): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (multihead_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (linear1): Linear(in_features=768, out_features=2048, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (linear2): Linear(in_features=2048, out_features=768, bias=True)
+          (norm1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (norm3): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (dropout3): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+  )
+  (topic_encoder): GCNTopicEncoder(
+    (downward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (upward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (sideward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+  )
+  (interaction): BilinearInteraction()
+  (linear_combiner): Linear(in_features=1152, out_features=768, bias=True)
+)
+Trainable parameters: 142868480
+2025-01-16 20:08:46,590 - trainer - INFO - ================================================================================
+2025-01-16 20:08:46,591 - trainer - INFO - Starting epoch 1 at 2025-01-16 20:08:46
+2025-01-16 20:11:03,682 - trainer - INFO - [2025-01-16 20:11:03] Starting validation for epoch: 1
+2025-01-16 20:11:12,423 - trainer - INFO - Epoch 1 completed at 2025-01-16 20:11:12
+2025-01-16 20:11:12,423 - trainer - INFO -     epoch          : 1
+2025-01-16 20:11:12,423 - trainer - INFO -     elapsed time   : 145.83211708068848
+2025-01-16 20:11:12,423 - trainer - INFO -     loss           : 549.9467186305834
+2025-01-16 20:11:12,423 - trainer - INFO -     sim_loss       : 43.97499644238016
+2025-01-16 20:11:12,423 - trainer - INFO -     gen_loss       : 505.9717214833135
+2025-01-16 20:11:12,423 - trainer - INFO -     val_loss       : 215.3834991455078
+2025-01-16 20:11:12,423 - trainer - INFO -     val_sim_loss   : 13.498662948608398
+2025-01-16 20:11:12,424 - trainer - INFO -     val_gen_loss   : 201.8848419189453
+2025-01-16 20:11:12,424 - trainer - INFO -     val_perplexity : 28.8406925201416
+2025-01-16 20:11:12,424 - trainer - INFO -     val_accuracy   : 0.0
+2025-01-16 20:11:12,424 - trainer - INFO - ================================================================================
+2025-01-16 20:11:12,424 - trainer - INFO - Starting epoch 2 at 2025-01-16 20:11:12
+2025-01-16 20:13:28,402 - trainer - INFO - [2025-01-16 20:13:28] Starting validation for epoch: 2
+2025-01-16 20:13:38,119 - trainer - INFO - Epoch 2 completed at 2025-01-16 20:13:38
+2025-01-16 20:13:38,119 - trainer - INFO -     epoch          : 2
+2025-01-16 20:13:38,119 - trainer - INFO -     elapsed time   : 145.69463849067688
+2025-01-16 20:13:38,119 - trainer - INFO -     loss           : 435.2310227103855
+2025-01-16 20:13:38,119 - trainer - INFO -     sim_loss       : 41.469887194426164
+2025-01-16 20:13:38,119 - trainer - INFO -     gen_loss       : 393.76113593060035
+2025-01-16 20:13:38,119 - trainer - INFO -     val_loss       : 189.85049438476562
+2025-01-16 20:13:38,119 - trainer - INFO -     val_sim_loss   : 14.055694580078125
+2025-01-16 20:13:38,119 - trainer - INFO -     val_gen_loss   : 175.7947998046875
+2025-01-16 20:13:38,119 - trainer - INFO -     val_perplexity : 25.113544464111328
+2025-01-16 20:13:38,119 - trainer - INFO -     val_accuracy   : 0.0
+2025-01-16 20:13:38,119 - trainer - INFO - ================================================================================
+2025-01-16 20:13:38,119 - trainer - INFO - Starting epoch 3 at 2025-01-16 20:13:38
+2025-01-16 20:15:54,011 - trainer - INFO - [2025-01-16 20:15:54] Starting validation for epoch: 3
+2025-01-16 20:16:02,724 - trainer - INFO - Epoch 3 completed at 2025-01-16 20:16:02
+2025-01-16 20:16:02,724 - trainer - INFO -     epoch          : 3
+2025-01-16 20:16:02,724 - trainer - INFO -     elapsed time   : 144.60413908958435
+2025-01-16 20:16:02,724 - trainer - INFO -     loss           : 371.2866214254628
+2025-01-16 20:16:02,724 - trainer - INFO -     sim_loss       : 37.80092612556789
+2025-01-16 20:16:02,724 - trainer - INFO -     gen_loss       : 333.48569621210515
+2025-01-16 20:16:02,724 - trainer - INFO -     val_loss       : 182.12294006347656
+2025-01-16 20:16:02,724 - trainer - INFO -     val_sim_loss   : 17.47732162475586
+2025-01-16 20:16:02,724 - trainer - INFO -     val_gen_loss   : 164.64561462402344
+2025-01-16 20:16:02,724 - trainer - INFO -     val_perplexity : 23.520803451538086
+2025-01-16 20:16:02,724 - trainer - INFO -     val_accuracy   : 0.0
+2025-01-16 20:16:02,724 - trainer - INFO - ================================================================================
+2025-01-16 20:16:02,724 - trainer - INFO - Starting epoch 4 at 2025-01-16 20:16:02
+2025-01-16 20:18:19,038 - trainer - INFO - [2025-01-16 20:18:19] Starting validation for epoch: 4
+2025-01-16 20:18:27,359 - trainer - INFO - Epoch 4 completed at 2025-01-16 20:18:27
+2025-01-16 20:18:27,359 - trainer - INFO -     epoch          : 4
+2025-01-16 20:18:27,359 - trainer - INFO -     elapsed time   : 144.63437461853027
+2025-01-16 20:18:27,359 - trainer - INFO -     loss           : 339.9781752876614
+2025-01-16 20:18:27,359 - trainer - INFO -     sim_loss       : 33.13300186654796
+2025-01-16 20:18:27,359 - trainer - INFO -     gen_loss       : 306.8451728820801
+2025-01-16 20:18:27,359 - trainer - INFO -     val_loss       : 180.37496948242188
+2025-01-16 20:18:27,359 - trainer - INFO -     val_sim_loss   : 17.467784881591797
+2025-01-16 20:18:27,359 - trainer - INFO -     val_gen_loss   : 162.9071807861328
+2025-01-16 20:18:27,359 - trainer - INFO -     val_perplexity : 23.2724552154541
+2025-01-16 20:18:27,359 - trainer - INFO -     val_accuracy   : 0.0
+2025-01-16 20:18:27,360 - trainer - INFO - ================================================================================
+2025-01-16 20:18:27,360 - trainer - INFO - Starting epoch 5 at 2025-01-16 20:18:27

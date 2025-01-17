@@ -5,3 +5,211 @@ Loading and preprocessing data...
 Creating corpus.txt...
 Initializing KeyBERT model...
 Extracting phrases from documents...
+Saving doc2phrases.txt...
+Creating topic hierarchy...
+{'0': {'parent': 'root', 'children': ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33'], 'terms': []}}
+Saving topics.txt...
+Saving topic hierarchy...
+Creating topic features...
+Saving topic features...
+Creating topic triples...
+Preprocessing complete! Files have been created in the congress_full/ directory.
+Making topic triples human-readable at Thu Jan 16 20:06:54 EST 2025
+Generating dataset binary at Thu Jan 16 20:07:03 EST 2025
+Loading topic node base features (topic name embeddings) ...
+Finish loading topic embeddings of size (35, 384)
+Start saving pickle data
+Save pickled dataset to congress_full/all.pickle
+Creating save directories at Thu Jan 16 20:07:23 EST 2025
+Checking for checkpoint at Thu Jan 16 20:07:23 EST 2025
+No checkpoint found. Starting training from scratch.
+Starting training at Thu Jan 16 20:07:23 EST 2025
+Tokenizing documents and phrases using bert-base-uncased tokenizer, please wait...
+TopicExpan(
+  (doc_encoder): BertDocEncoder(
+    (model): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0-11): 12 x BertLayer(
+            (attention): BertAttention(
+              (self): BertSdpaSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (activation): Tanh()
+      )
+    )
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+  )
+  (phrase_decoder): TransformerPhraseDecoder(
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (output_embeddings): Linear(in_features=768, out_features=30522, bias=False)
+    (model): TransformerDecoder(
+      (layers): ModuleList(
+        (0): TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (multihead_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (linear1): Linear(in_features=768, out_features=2048, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (linear2): Linear(in_features=2048, out_features=768, bias=True)
+          (norm1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (norm3): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (dropout3): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+  )
+  (topic_encoder): GCNTopicEncoder(
+    (downward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (upward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (sideward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+  )
+  (interaction): BilinearInteraction()
+  (linear_combiner): Linear(in_features=1152, out_features=768, bias=True)
+)
+Trainable parameters: 142868480
+================================================================================
+Starting epoch 1 at 2025-01-16 20:08:46
+[2025-01-16 20:08:51] Train Epoch: 1 [0/733 (0%)] Loss: 717.915039 [46.822815 + 671.092224]
+[2025-01-16 20:09:18] Train Epoch: 1 [144/733 (20%)] Loss: 615.152283 [46.306286 + 568.846008]
+[2025-01-16 20:09:45] Train Epoch: 1 [288/733 (39%)] Loss: 553.909241 [44.129807 + 509.779419]
+[2025-01-16 20:10:11] Train Epoch: 1 [432/733 (59%)] Loss: 494.078003 [44.427906 + 449.650085]
+[2025-01-16 20:10:38] Train Epoch: 1 [576/733 (79%)] Loss: 503.818756 [43.856628 + 459.962128]
+[2025-01-16 20:11:03] Train Epoch: 1 [720/733 (98%)] Loss: 176.772263 [10.814924 + 165.957336]
+[2025-01-16 20:11:03] Starting validation for epoch: 1
+Validation Epoch: 1 [0/46 (0%)] Loss: 215.383499
+Epoch 1 completed at 2025-01-16 20:11:12
+    epoch          : 1
+    elapsed time   : 145.83211708068848
+    loss           : 549.9467186305834
+    sim_loss       : 43.97499644238016
+    gen_loss       : 505.9717214833135
+    val_loss       : 215.3834991455078
+    val_sim_loss   : 13.498662948608398
+    val_gen_loss   : 201.8848419189453
+    val_perplexity : 28.8406925201416
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 2 at 2025-01-16 20:11:12
+[2025-01-16 20:11:16] Train Epoch: 2 [0/733 (0%)] Loss: 420.785645 [43.535263 + 377.250366]
+[2025-01-16 20:11:42] Train Epoch: 2 [144/733 (20%)] Loss: 473.295532 [43.885860 + 429.409668]
+[2025-01-16 20:12:09] Train Epoch: 2 [288/733 (39%)] Loss: 411.989136 [46.710548 + 365.278595]
+[2025-01-16 20:12:36] Train Epoch: 2 [432/733 (59%)] Loss: 487.933197 [42.407036 + 445.526154]
+[2025-01-16 20:13:03] Train Epoch: 2 [576/733 (79%)] Loss: 466.857178 [41.302902 + 425.554291]
+[2025-01-16 20:13:28] Train Epoch: 2 [720/733 (98%)] Loss: 149.802460 [10.705803 + 139.096664]
+[2025-01-16 20:13:28] Starting validation for epoch: 2
+Validation Epoch: 2 [0/46 (0%)] Loss: 189.850494
+Epoch 2 completed at 2025-01-16 20:13:38
+    epoch          : 2
+    elapsed time   : 145.69463849067688
+    loss           : 435.2310227103855
+    sim_loss       : 41.469887194426164
+    gen_loss       : 393.76113593060035
+    val_loss       : 189.85049438476562
+    val_sim_loss   : 14.055694580078125
+    val_gen_loss   : 175.7947998046875
+    val_perplexity : 25.113544464111328
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 3 at 2025-01-16 20:13:38
+[2025-01-16 20:13:41] Train Epoch: 3 [0/733 (0%)] Loss: 397.493896 [42.543427 + 354.950470]
+[2025-01-16 20:14:08] Train Epoch: 3 [144/733 (20%)] Loss: 331.611053 [35.139164 + 296.471893]
+[2025-01-16 20:14:35] Train Epoch: 3 [288/733 (39%)] Loss: 403.474884 [37.394550 + 366.080322]
+[2025-01-16 20:15:02] Train Epoch: 3 [432/733 (59%)] Loss: 332.603516 [37.106693 + 295.496826]
+[2025-01-16 20:15:28] Train Epoch: 3 [576/733 (79%)] Loss: 394.222168 [34.282551 + 359.939606]
+[2025-01-16 20:15:53] Train Epoch: 3 [720/733 (98%)] Loss: 143.784012 [10.547977 + 133.236038]
+[2025-01-16 20:15:54] Starting validation for epoch: 3
+Validation Epoch: 3 [0/46 (0%)] Loss: 182.122940
+Epoch 3 completed at 2025-01-16 20:16:02
+    epoch          : 3
+    elapsed time   : 144.60413908958435
+    loss           : 371.2866214254628
+    sim_loss       : 37.80092612556789
+    gen_loss       : 333.48569621210515
+    val_loss       : 182.12294006347656
+    val_sim_loss   : 17.47732162475586
+    val_gen_loss   : 164.64561462402344
+    val_perplexity : 23.520803451538086
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 4 at 2025-01-16 20:16:02
+[2025-01-16 20:16:06] Train Epoch: 4 [0/733 (0%)] Loss: 343.161591 [33.550961 + 309.610626]
+[2025-01-16 20:16:33] Train Epoch: 4 [144/733 (20%)] Loss: 374.066376 [34.647919 + 339.418457]
+[2025-01-16 20:17:00] Train Epoch: 4 [288/733 (39%)] Loss: 340.047455 [34.831417 + 305.216034]
+[2025-01-16 20:17:27] Train Epoch: 4 [432/733 (59%)] Loss: 353.105560 [34.146538 + 318.959015]
+[2025-01-16 20:17:53] Train Epoch: 4 [576/733 (79%)] Loss: 314.601624 [37.349918 + 277.251709]
+[2025-01-16 20:18:18] Train Epoch: 4 [720/733 (98%)] Loss: 94.269592 [10.492344 + 83.777245]
+[2025-01-16 20:18:19] Starting validation for epoch: 4
+Validation Epoch: 4 [0/46 (0%)] Loss: 180.374969
+Epoch 4 completed at 2025-01-16 20:18:27
+    epoch          : 4
+    elapsed time   : 144.63437461853027
+    loss           : 339.9781752876614
+    sim_loss       : 33.13300186654796
+    gen_loss       : 306.8451728820801
+    val_loss       : 180.37496948242188
+    val_sim_loss   : 17.467784881591797
+    val_gen_loss   : 162.9071807861328
+    val_perplexity : 23.2724552154541
+    val_accuracy   : 0.0
+================================================================================
+Starting epoch 5 at 2025-01-16 20:18:27
+[2025-01-16 20:18:31] Train Epoch: 5 [0/733 (0%)] Loss: 318.007019 [35.587479 + 282.419525]
+[2025-01-16 20:18:57] Train Epoch: 5 [144/733 (20%)] Loss: 283.676483 [32.122551 + 251.553925]
+[2025-01-16 20:19:24] Train Epoch: 5 [288/733 (39%)] Loss: 353.787964 [41.058487 + 312.729492]
+[2025-01-16 20:19:51] Train Epoch: 5 [432/733 (59%)] Loss: 309.958191 [27.066929 + 282.891266]
+[2025-01-16 20:20:18] Train Epoch: 5 [576/733 (79%)] Loss: 309.060913 [27.600433 + 281.460480]
