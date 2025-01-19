@@ -78,7 +78,7 @@ def clean_text(text):
     
     return text
 
-def extract_phrases(text, keybert_model):
+def extract_phrases(docs, keybert_model, is_llm):
     """Extract meaningful phrases from text using KeyBERT
     
     Args:
@@ -89,17 +89,21 @@ def extract_phrases(text, keybert_model):
         list of extracted phrases
     """   
     # Use KeyBERT to extract keyphrases
-    keyphrases = keybert_model.extract_keywords(
-        text,
-        keyphrase_ngram_range=(2,5),
-        stop_words='english',
-        top_n=20,
-        use_mmr=True,
-        diversity=0.5,
-        seed_keywords=seed_keywords
-    )
+    if is_llm:
+        return keybert_model.extract_keywords(docs)
+    else:
+        keyphrases = keybert_model.extract_keywords(
+            docs,
+            keyphrase_ngram_range=(2,5),
+            stop_words='english',
+            top_n=20,
+            use_mmr=True,
+            diversity=0.5,
+            seed_keywords=seed_keywords
+        )
+        return [phrase for phrase, score in keyphrases if score > 0.3]
     
-    return [phrase for phrase, score in keyphrases if score > 0.3]
+    
 
 def get_bert_embedding(text, model):
     """Get BERT embedding for a piece of text"""
@@ -228,6 +232,8 @@ def main():
     model = SentenceTransformer('all-MiniLM-L6-v2', device=device)
     keybert_model = KeyBERT(model=model)
     is_llm = False
+
+    #llm = OpenAI(model="gpt-4o-mini")
     #keybert_model = KeyLLM(llm)
     #is_llm = True
     
