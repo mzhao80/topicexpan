@@ -228,12 +228,12 @@ def main():
     print(f"Device: {device}")
     from sentence_transformers import SentenceTransformer
     model = SentenceTransformer('all-MiniLM-L6-v2', device=device)
-    keybert_model = KeyBERT(model=model)
-    is_llm = False
+    #keybert_model = KeyBERT(model=model)
+    #is_llm = False
 
-    #llm = OpenAI(model="gpt-4o-mini")
-    #keybert_model = KeyLLM(llm)
-    #is_llm = True
+    llm = OpenAI(model="gpt-4o-mini")
+    keybert_model = KeyLLM(llm)
+    is_llm = True
     
     # skip this next section if doc2phrases.txt already exists
     if os.path.exists(os.path.join(args.data_dir, 'doc2phrases.txt')):
