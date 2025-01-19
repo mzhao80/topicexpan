@@ -20,6 +20,42 @@ try:
 except LookupError:
     nltk.download('stopwords')
 
+seed_keywords = [
+    "agriculture and food",
+    "animals",
+    "armed forces and national security",
+    "arts, culture, religion",
+    "civil rights and liberties, minority issues",
+    "commerce",
+    "crime and law enforcement",
+    "economics and public finance",
+    "education",
+    "emergency management",
+    "energy",
+    "environmental protection",
+    "families",
+    "finance and financial sector",
+    "foreign trade and international finance",
+    "geographic areas, entities, and committees",
+    "government operations and politics",
+    "health",
+    "housing and community development",
+    "immigration",
+    "international affairs",
+    "labor and employment",
+    "law",
+    "native americans",
+    "private legislation",
+    "public lands and natural resources",
+    "science, technology, communications",
+    "social sciences and history",
+    "social welfare",
+    "sports and recreation",
+    "taxation",
+    "transportation and public works",
+    "water resources development",
+]
+
 def clean_text(text):
     # Replace Madam Speaker, Mr. President, Madam President with Mr. Speaker
     text = re.sub(r'Mr\. President', 'Mr. Speaker', text)
@@ -57,17 +93,14 @@ def extract_phrases(text, keybert_model):
     # Use KeyBERT to extract keyphrases
     keyphrases = keybert_model.extract_keywords(
         text,
-        keyphrase_ngram_range=(1, 3),
+        keyphrase_ngram_range=(1,10),
         stop_words='english',
         use_mmr=True,
-        nr_candidates=100,
-        top_n=20
+        diversity=0.7,
+        seed_keywords=seed_keywords
     )
     
-    # Extract just the phrases (without scores)
-    phrases = [phrase for phrase, score in keyphrases]
-    
-    return phrases
+    return [phrase for phrase, score in keyphrases if score > 0.3]
 
 def get_bert_embedding(text, model):
     """Get BERT embedding for a piece of text"""
@@ -93,43 +126,7 @@ def create_topic_features(topics, model):
     
     return features
 
-def create_topic_hierarchy():
-    policy_areas = [
-        "agriculture_and_food",
-        "animals",
-        "armed_forces_and_national_security",
-        "arts_culture_religion",
-        "civil_rights_and_liberties_minority_issues",
-        "commerce",
-        "crime_and_law_enforcement",
-        "economics_and_public_finance",
-        "education",
-        "emergency_management",
-        "energy",
-        "environmental_protection",
-        "families",
-        "finance_and_financial_sector",
-        "foreign_trade_and_international_finance",
-        "geographic_areas_entities_and_committees",
-        "government_operations_and_politics",
-        "health",
-        "housing_and_community_development",
-        "immigration",
-        "international_affairs",
-        "labor_and_employment",
-        "law",
-        "native_americans",
-        "private_legislation",
-        "public_lands_and_natural_resources",
-        "science_technology_communications",
-        "social_sciences_and_history",
-        "social_welfare",
-        "sports_and_recreation",
-        "taxation",
-        "transportation_and_public_works",
-        "water_resources_development",
-    ]
-
+def create_topic_hierarchy(policy_areas):
     # Create hierarchy using indices
     hierarchy = {
         '0': {'parent': 'root', 'children': [str(i) for i in range(1, len(policy_areas)+1)], 'terms': []}  # Skip politics
@@ -216,7 +213,7 @@ def main():
     valid_speeches['speech'] = valid_speeches['speech'].apply(clean_text)
 
     # cut valid speeches to first 1000
-    # valid_speeches = valid_speeches[:1000]
+    valid_speeches = valid_speeches[:1000]
     
     with open(os.path.join(args.data_dir, 'corpus.txt'), 'w', encoding='utf-8') as f:
         for idx, text in tqdm(enumerate(valid_speeches['speech']), 
@@ -257,7 +254,7 @@ def main():
     
     # Create topic hierarchy and get policy areas list
     print("Creating topic hierarchy...")
-    hierarchy, policy_areas = create_topic_hierarchy()
+    hierarchy, policy_areas = create_topic_hierarchy(seed_keywords)
     
     # Save topics.txt
     print("Saving topics.txt...")
@@ -308,10 +305,6 @@ def main():
             phrases = parts[1:]
             doc2phrases_map[doc_id] = phrases
     
-    # Lists to store similarity scores
-    all_topic_sims = []
-    all_phrase_sims = []
-    
     with open(os.path.join(args.data_dir, 'topic_triples.txt'), 'w', encoding='utf-8') as f:
         for doc_idx, row in tqdm(valid_speeches.iterrows(), 
                                 total=len(valid_speeches),
@@ -342,9 +335,6 @@ def main():
             best_topic_idx = np.argmax(topic_sims)
             best_topic_sim = topic_sims[best_topic_idx]
             
-            # Store best topic similarity
-            # all_topic_sims.append(best_topic_sim)
-            
             # Skip if the best topic similarity is too low
             if best_topic_sim < 0.3:  # Adjust this threshold as needed
                 continue
@@ -371,7 +361,6 @@ def main():
                     
                 sim = np.dot(phrase_vec, topic_vec) / (phrase_norm * topic_norm)
                 phrase_sims.append((phrase_idx, sim))
-                #all_phrase_sims.append(sim)  # Store phrase similarity
             
             # Sort by similarity score
             phrase_sims.sort(key=lambda x: x[1], reverse=True)
