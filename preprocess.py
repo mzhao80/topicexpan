@@ -232,8 +232,8 @@ def main():
     #keybert_model = KeyBERT(model=model)
     #is_llm = False
 
-    client = openai.OpenAI(model="gpt-4o-mini")
-    llm = keybert.llm.OpenAI(client)
+    client = openai.OpenAI()
+    llm = keybert.llm.OpenAI(client, model="gpt-4o-mini")
     keybert_model = KeyLLM(llm)
     is_llm = True
     
