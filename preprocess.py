@@ -101,10 +101,9 @@ def extract_phrases(docs, keybert_model, is_llm):
             diversity=0.5,
             seed_keywords=seed_keywords
         )
-        print(keyphrases[0])
-        return [phrase for phrase, score in keyphrases if score > 0.3]
+        return [[phrase for phrase, score in output if score > 0.3] for output in keyphrases]
     
-    
+
 
 def get_bert_embedding(text, model):
     """Get BERT embedding for a piece of text"""
