@@ -22,3 +22,4 @@ seaborn
 flash-attn --no-build-isolation
 packaging
 ninja
+openai

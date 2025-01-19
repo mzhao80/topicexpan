@@ -3,11 +3,9 @@ import pandas as pd
 import numpy as np
 import os
 import re
-from collections import defaultdict
-import json
-from gensim.models import KeyedVectors
 from tqdm import tqdm
-from keybert import KeyBERT
+from keybert.llm import OpenAI
+from keybert import KeyLLM, KeyBERT
 from nltk.corpus import stopwords
 import nltk
 import argparse
@@ -229,6 +227,9 @@ def main():
     from sentence_transformers import SentenceTransformer
     model = SentenceTransformer('all-MiniLM-L6-v2', device=device)
     keybert_model = KeyBERT(model=model)
+    is_llm = False
+    #keybert_model = KeyLLM(llm)
+    #is_llm = True
     
     # skip this next section if doc2phrases.txt already exists
     if os.path.exists(os.path.join(args.data_dir, 'doc2phrases.txt')):
@@ -238,11 +239,12 @@ def main():
         doc2phrases = {}
         
         # Process each document
-        for idx, text in tqdm(enumerate(valid_speeches['speech']), 
-                            total=len(valid_speeches),
-                            desc="Extracting phrases"):
-            phrases = extract_phrases(text, keybert_model)
-            doc2phrases[idx] = phrases
+        doc2phrases = extract_phrases(valid_speeches['speech'].tolist(), keybert_model, is_llm)
+        #for idx, text in tqdm(enumerate(valid_speeches['speech']), 
+        #                    total=len(valid_speeches),
+        #                    desc="Extracting phrases"):
+        #    phrases = extract_phrases(text, keybert_model, is_llm)
+        #    doc2phrases[idx] = phrases
         
         # Save doc2phrases.txt
         print("Saving doc2phrases.txt...")
