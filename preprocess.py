@@ -11,6 +11,7 @@ import nltk
 import argparse
 import torch
 import matplotlib.pyplot as plt
+import openai
 
 # Download stopwords if not already downloaded
 try:
@@ -231,7 +232,8 @@ def main():
     #keybert_model = KeyBERT(model=model)
     #is_llm = False
 
-    llm = OpenAI(model="gpt-4o-mini")
+    client = openai.OpenAI(model="gpt-4o-mini")
+    llm = keybert.llm.OpenAI(client)
     keybert_model = KeyLLM(llm)
     is_llm = True
     
