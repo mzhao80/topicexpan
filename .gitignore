@@ -10,3 +10,4 @@ congress/speeches_114.txt
 *.DS_Store
 .DS_Store
 congress-save/models/*
+congress_full-save/models/*
