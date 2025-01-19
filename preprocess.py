@@ -246,7 +246,7 @@ def main():
         # Save doc2phrases.txt
         print("Saving doc2phrases.txt...")
         with open(os.path.join(args.data_dir, 'doc2phrases.txt'), 'w', encoding='utf-8') as f:
-            for doc_id in tqdm(range(len(doc2phrases))), 
+            for doc_id in tqdm(range(len(doc2phrases)), 
                             total=len(doc2phrases),
                             desc="Writing phrases"):
                 phrases = doc2phrases[doc_id]
