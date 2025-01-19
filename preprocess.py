@@ -101,6 +101,7 @@ def extract_phrases(docs, keybert_model, is_llm):
             diversity=0.5,
             seed_keywords=seed_keywords
         )
+        print(keyphrases[0])
         return [phrase for phrase, score in keyphrases if score > 0.3]
     
     
@@ -215,8 +216,8 @@ def main():
     # apply clean_text to valid_speeeches
     valid_speeches['speech'] = valid_speeches['speech'].apply(clean_text)
 
-    # cut valid speeches to first 2000
-    valid_speeches = valid_speeches[:2000]
+    # cut valid speeches to first 1000
+    valid_speeches = valid_speeches[:1000]
     
     with open(os.path.join(args.data_dir, 'corpus.txt'), 'w', encoding='utf-8') as f:
         for idx, text in tqdm(enumerate(valid_speeches['speech']), 
@@ -242,15 +243,8 @@ def main():
         print("doc2phrases.txt already exists, skipping phrase extraction")
     else:
         print("Extracting phrases from documents...")
-        doc2phrases = {}
-        
         # Process each document
         doc2phrases = extract_phrases(valid_speeches['speech'].tolist(), keybert_model, is_llm)
-        #for idx, text in tqdm(enumerate(valid_speeches['speech']), 
-        #                    total=len(valid_speeches),
-        #                    desc="Extracting phrases"):
-        #    phrases = extract_phrases(text, keybert_model, is_llm)
-        #    doc2phrases[idx] = phrases
         
         # Save doc2phrases.txt
         print("Saving doc2phrases.txt...")
