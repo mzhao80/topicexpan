@@ -93,10 +93,11 @@ def extract_phrases(text, keybert_model):
     # Use KeyBERT to extract keyphrases
     keyphrases = keybert_model.extract_keywords(
         text,
-        keyphrase_ngram_range=(1,10),
+        keyphrase_ngram_range=(2,5),
         stop_words='english',
+        top_n=20,
         use_mmr=True,
-        diversity=0.7,
+        diversity=0.5,
         seed_keywords=seed_keywords
     )
     
@@ -212,8 +213,8 @@ def main():
     # apply clean_text to valid_speeeches
     valid_speeches['speech'] = valid_speeches['speech'].apply(clean_text)
 
-    # cut valid speeches to first 1000
-    valid_speeches = valid_speeches[:1000]
+    # cut valid speeches to first 2000
+    valid_speeches = valid_speeches[:2000]
     
     with open(os.path.join(args.data_dir, 'corpus.txt'), 'w', encoding='utf-8') as f:
         for idx, text in tqdm(enumerate(valid_speeches['speech']), 
@@ -224,6 +225,7 @@ def main():
     # Initialize KeyBERT with GPU support
     print("Initializing KeyBERT model...")
     device = "cuda" if torch.cuda.is_available() else "cpu"
+    print(f"Device: {device}")
     from sentence_transformers import SentenceTransformer
     model = SentenceTransformer('all-MiniLM-L6-v2', device=device)
     keybert_model = KeyBERT(model=model)
@@ -368,7 +370,7 @@ def main():
             # Get the top phrase that exceeds similarity threshold
             top_phrases = []
             for ph_idx, sim in phrase_sims:
-                if sim > 0.3:  # Adjust this threshold as needed
+                if sim > 0.5:
                     top_phrases.append((ph_idx, sim))
             # get top phrase by second index
             if top_phrases:
