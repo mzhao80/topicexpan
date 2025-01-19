@@ -102,8 +102,6 @@ def extract_phrases(docs, keybert_model, is_llm):
             seed_keywords=seed_keywords
         )
         return [[phrase for phrase, score in output if score > 0.3] for output in keyphrases]
-    
-
 
 def get_bert_embedding(text, model):
     """Get BERT embedding for a piece of text"""
@@ -248,7 +246,7 @@ def main():
         # Save doc2phrases.txt
         print("Saving doc2phrases.txt...")
         with open(os.path.join(args.data_dir, 'doc2phrases.txt'), 'w', encoding='utf-8') as f:
-            for doc_id in tqdm(sorted(doc2phrases.keys()), 
+            for doc_id in tqdm(range(len(doc2phrases))), 
                             total=len(doc2phrases),
                             desc="Writing phrases"):
                 phrases = doc2phrases[doc_id]
