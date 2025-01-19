@@ -1,20 +1,21 @@
-Document: 77	Topic: private legislation	Phrase: urge colleagues support resolution establishing rules 118th congress
-Document: 81	Topic: private legislation	Phrase: jurisdictional concepts related
-Document: 96	Topic: private legislation	Phrase: small american taxpayer ought make sure pay fair share issue
-Document: 109	Topic: economics and public finance	Phrase: protect wealthy disadvantage poor need tax fair need skilled auditors
-Document: 146	Topic: government operations and politics	Phrase: house republicans protecting sophisticated tax
-Document: 149	Topic: private legislation	Phrase: proceedings
-Document: 154	Topic: private legislation	Phrase: oath constitution
-Document: 198	Topic: private legislation	Phrase: united states congress body
-Document: 200	Topic: taxation	Phrase: victims disaster don need hassled government especially new taxes
-Document: 216	Topic: geographic areas, entities, and committees	Phrase: united states principles
-Document: 279	Topic: taxation	Phrase: protect tax evading secrets wealthiest percent tax breaks hardworking
-Document: 323	Topic: immigration	Phrase: proud recognize korean american day korean immigrants
-Document: 337	Topic: agriculture and food	Phrase: congress gets america track advocates agriculture advances kansas conservative values
-Document: 438	Topic: civil rights and liberties, minority issues	Phrase: defending innocent lives policy issue legislation protects babies born
-Document: 458	Topic: government operations and politics	Phrase: bring longest standing political dispute
-Document: 537	Topic: armed forces and national security	Phrase: answer children shooters access guns congressional year 2023
-Document: 685	Topic: civil rights and liberties, minority issues	Phrase: civil service
-Document: 691	Topic: civil rights and liberties, minority issues	Phrase: today recognize national religious freedom day
-Document: 708	Topic: civil rights and liberties, minority issues	Phrase: patriotic americans abortion consigned
-Document: 783	Topic: civil rights and liberties, minority issues	Phrase: understand nation divided topic abortion protect living
+Document: 81	Topic: private legislation	Phrase: particular aspects legislative process
+Document: 127	Topic: taxation	Phrase: class irs
+Document: 137	Topic: social welfare	Phrase: federal government assistance
+Document: 144	Topic: private legislation	Phrase: concern legislation passed year
+Document: 146	Topic: government operations and politics	Phrase: trump administration
+Document: 200	Topic: taxation	Phrase: government especially new taxes
+Document: 237	Topic: taxation	Phrase: party want use taxpayer
+Document: 337	Topic: agriculture and food	Phrase: new executive orders pertaining agriculture
+Document: 691	Topic: civil rights and liberties, minority issues	Phrase: amendment protects
+Document: 769	Topic: private legislation	Phrase: legislation signed
+Document: 1095	Topic: public lands and natural resources	Phrase: invite federal lands drilling
+Document: 1096	Topic: environmental protection	Phrase: environmental standards
+Document: 1098	Topic: public lands and natural resources	Phrase: lands leased
+Document: 1188	Topic: private legislation	Phrase: regulations afford
+Document: 1197	Topic: private legislation	Phrase: successful passing legislation
+Document: 1199	Topic: private legislation	Phrase: legislation important individuals heard rebecca
+Document: 1321	Topic: civil rights and liberties, minority issues	Phrase: lgbtq issues dedicated making difference
+Document: 1406	Topic: taxation	Phrase: effectively leads double taxation
+Document: 1417	Topic: emergency management	Phrase: public safety
+Document: 1552	Topic: private legislation	Phrase: legislation attack public health endanger
+Document: 1581	Topic: immigration	Phrase: homeland imposing
