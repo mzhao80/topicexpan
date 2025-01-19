@@ -45,42 +45,29 @@ def clean_text(text):
     return text
 
 def extract_phrases(text, keybert_model):
-    """Extract meaningful phrases from text using KeyBERT with improved filtering
+    """Extract meaningful phrases from text using KeyBERT
     
     Args:
         text: raw text string
         keybert_model: KeyBERT model for extraction
         
     Returns:
-        list of extracted phrases with their scores
-    """
-    # Use KeyBERT to extract keyphrases with stricter parameters
+        list of extracted phrases
+    """   
+    # Use KeyBERT to extract keyphrases
     keyphrases = keybert_model.extract_keywords(
         text,
-        keyphrase_ngram_range=(2, 4),  # Require at least 2 words
+        keyphrase_ngram_range=(1, 3),
         stop_words='english',
         use_mmr=True,
-        diversity=0.7,  # Increase diversity
-        nr_candidates=50,  # Reduce candidates
-        top_n=10  # Take fewer top phrases
+        nr_candidates=100,
+        top_n=20
     )
     
-    # Filter phrases
-    filtered_phrases = []
-    for phrase, score in keyphrases:
-        words = phrase.split()
-        # Skip if any word is in stopwords
-        if any(word in stop_words for word in words):
-            continue
-        # Skip if phrase is too generic
-        if len(words) == 1 or (len(words) == 2 and words[0] in ['mr', 'mrs', 'ms']):
-            continue
-        # Skip if score is too low
-        if score < 0.3:
-            continue
-        filtered_phrases.append((phrase, score))
+    # Extract just the phrases (without scores)
+    phrases = [phrase for phrase, score in keyphrases]
     
-    return filtered_phrases
+    return phrases
 
 def get_bert_embedding(text, model):
     """Get BERT embedding for a piece of text"""
@@ -151,8 +138,10 @@ def create_topic_hierarchy():
     
     return hierarchy, policy_areas
 
-def compute_topic_similarity(doc_text, topic_vec, model, min_similarity=0.3):
-    """Compute similarity between a document and a topic with minimum threshold"""
+stop_words = set(stopwords.words('english'))
+
+def compute_topic_similarity(doc_text, topic_vec, model):
+    """Compute similarity between a document and a topic"""
     # Get document embedding
     doc_vec = get_bert_embedding(doc_text, model)
     
@@ -164,27 +153,7 @@ def compute_topic_similarity(doc_text, topic_vec, model, min_similarity=0.3):
         return 0.0
         
     similarity = np.dot(doc_vec, topic_vec) / (doc_norm * topic_norm)
-    # Apply minimum similarity threshold
-    return max(0, similarity) if similarity >= min_similarity else 0.0
-
-def compute_phrase_topic_similarity(phrase, topic_vec, model, embedding_cache):
-    """Compute similarity between a phrase and a topic"""
-    # Get phrase embedding from cache or compute it
-    if phrase in embedding_cache:
-        phrase_vec = embedding_cache[phrase]
-    else:
-        phrase_vec = get_bert_embedding(phrase, model)
-        embedding_cache[phrase] = phrase_vec
-    
-    # Compute cosine similarity
-    phrase_norm = np.linalg.norm(phrase_vec)
-    topic_norm = np.linalg.norm(topic_vec)
-    
-    if phrase_norm == 0 or topic_norm == 0:
-        return 0.0
-    
-    similarity = np.dot(phrase_vec, topic_vec) / (phrase_norm * topic_norm)
-    return similarity
+    return max(0, similarity)  # Ensure non-negative
 
 def save_vectors_word2vec_format(fname, vectors, vector_size):
     """Save vectors in word2vec format"""
@@ -217,8 +186,6 @@ def plot_similarity_distributions(topic_similarities, phrase_similarities, outpu
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, 'similarity_distributions.png'))
     plt.close()
-
-stop_words = set(stopwords.words('english'))
 
 def main():
     # Parse command line arguments
@@ -257,11 +224,11 @@ def main():
                             desc="Writing corpus"):
             f.write(f"{idx}\t{text}\n")
     
-    # Initialize KeyBERT with better model
+    # Initialize KeyBERT with GPU support
     print("Initializing KeyBERT model...")
     device = "cuda" if torch.cuda.is_available() else "cpu"
     from sentence_transformers import SentenceTransformer
-    model = SentenceTransformer('all-mpnet-base-v2', device=device)  # Using a stronger model
+    model = SentenceTransformer('all-MiniLM-L6-v2', device=device)
     keybert_model = KeyBERT(model=model)
     
     # skip this next section if doc2phrases.txt already exists
@@ -345,51 +312,79 @@ def main():
     all_topic_sims = []
     all_phrase_sims = []
     
-    doc2topics = {}
-    doc2phrases = {}
-    
     with open(os.path.join(args.data_dir, 'topic_triples.txt'), 'w', encoding='utf-8') as f:
-        for idx, row in tqdm(valid_speeches.iterrows(), 
-                             total=len(valid_speeches),
-                             desc="Computing document-topic similarities"):
-            doc_text = row['speech']
-            
-            # Extract meaningful phrases with scores
-            phrases_with_scores = extract_phrases(doc_text, keybert_model)
-            if not phrases_with_scores:
-                continue
-            
-            # Find best matching topic
-            max_similarity = 0
-            best_topic = None
-            best_topic_vec = None
-            
-            for topic, topic_vec in topic_features.items():
-                similarity = compute_topic_similarity(doc_text, topic_vec, model)
-                if similarity > max_similarity:
-                    max_similarity = similarity
-                    best_topic = topic
-                    best_topic_vec = topic_vec
-            
-            if not best_topic or max_similarity < 0.3:
+        for doc_idx, row in tqdm(valid_speeches.iterrows(), 
+                                total=len(valid_speeches),
+                                desc="Computing document-topic similarities"):
+            if doc_idx not in doc2phrases_map:
                 continue
                 
-            # For each phrase, compute similarity with the best topic
-            phrase_topic_pairs = []
-            for phrase, phrase_score in phrases_with_scores:
-                topic_sim = compute_phrase_topic_similarity(phrase, best_topic_vec, model, embedding_cache)
-                # Combine phrase extraction score with topic similarity
-                combined_score = (phrase_score + topic_sim) / 2
-                if combined_score >= 0.3:  # Only keep good matches
-                    phrase_topic_pairs.append((phrase, combined_score))
+            phrases = doc2phrases_map[doc_idx]
             
-            # Sort by combined score and take top 3
-            phrase_topic_pairs.sort(key=lambda x: x[1], reverse=True)
-            top_phrases = phrase_topic_pairs[:3]
+            # First find the most relevant topic for this document
+            doc_text = row['speech']
+            doc_vec = get_bert_embedding(doc_text, model)
+            doc_norm = np.linalg.norm(doc_vec)
             
-            # Write triples to file
-            for idx, (phrase, _) in enumerate(top_phrases):
-                f.write(f"{idx}\t{best_topic}\t{phrase}\n")
+            # Compute similarity with each topic
+            topic_sims = []
+            for topic_idx, topic in enumerate(policy_areas):
+                topic_vec = topic_features[topic]
+                topic_norm = np.linalg.norm(topic_vec)
+                
+                if topic_norm == 0:
+                    topic_sims.append(0)
+                    continue
+                    
+                sim = np.dot(doc_vec, topic_vec) / (doc_norm * topic_norm)
+                topic_sims.append(sim)
+                
+            best_topic_idx = np.argmax(topic_sims)
+            best_topic_sim = topic_sims[best_topic_idx]
+            
+            # Store best topic similarity
+            # all_topic_sims.append(best_topic_sim)
+            
+            # Skip if the best topic similarity is too low
+            if best_topic_sim < 0.3:  # Adjust this threshold as needed
+                continue
+                
+            # Now find the most relevant phrase for this topic
+            topic_vec = topic_features[policy_areas[best_topic_idx]]
+            topic_norm = np.linalg.norm(topic_vec)
+            
+            # Compute similarity between each phrase and the best topic
+            phrase_sims = []
+            for phrase_idx, phrase in enumerate(phrases):
+                # Get phrase embedding
+                if phrase in embedding_cache:
+                    phrase_vec = embedding_cache[phrase]
+                else:
+                    phrase_vec = get_bert_embedding(phrase, model)
+                    embedding_cache[phrase] = phrase_vec
+                
+                # Compute cosine similarity
+                phrase_norm = np.linalg.norm(phrase_vec)
+                if phrase_norm == 0:
+                    phrase_sims.append((phrase_idx, 0))
+                    continue
+                    
+                sim = np.dot(phrase_vec, topic_vec) / (phrase_norm * topic_norm)
+                phrase_sims.append((phrase_idx, sim))
+                #all_phrase_sims.append(sim)  # Store phrase similarity
+            
+            # Sort by similarity score
+            phrase_sims.sort(key=lambda x: x[1], reverse=True)
+            
+            # Get the top phrase that exceeds similarity threshold
+            top_phrases = []
+            for ph_idx, sim in phrase_sims:
+                if sim > 0.3:  # Adjust this threshold as needed
+                    top_phrases.append((ph_idx, sim))
+            # get top phrase by second index
+            if top_phrases:
+                top_phrase = max(top_phrases, key = lambda x: x[1])            
+                f.write(f"{doc_idx}\t{best_topic_idx+1}\t{top_phrase[0]}\n")
     
     # Plot similarity distributions
     #plot_similarity_distributions(all_topic_sims, all_phrase_sims, args.data_dir)
