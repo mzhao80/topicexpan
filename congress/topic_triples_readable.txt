@@ -8,14 +8,3 @@ Document: 237	Topic: taxation	Phrase: party want use taxpayer
 Document: 337	Topic: agriculture and food	Phrase: new executive orders pertaining agriculture
 Document: 691	Topic: civil rights and liberties, minority issues	Phrase: amendment protects
 Document: 769	Topic: private legislation	Phrase: legislation signed
-Document: 1095	Topic: public lands and natural resources	Phrase: invite federal lands drilling
-Document: 1096	Topic: environmental protection	Phrase: environmental standards
-Document: 1098	Topic: public lands and natural resources	Phrase: lands leased
-Document: 1188	Topic: private legislation	Phrase: regulations afford
-Document: 1197	Topic: private legislation	Phrase: successful passing legislation
-Document: 1199	Topic: private legislation	Phrase: legislation important individuals heard rebecca
-Document: 1321	Topic: civil rights and liberties, minority issues	Phrase: lgbtq issues dedicated making difference
-Document: 1406	Topic: taxation	Phrase: effectively leads double taxation
-Document: 1417	Topic: emergency management	Phrase: public safety
-Document: 1552	Topic: private legislation	Phrase: legislation attack public health endanger
-Document: 1581	Topic: immigration	Phrase: homeland imposing
