@@ -253,15 +253,38 @@ class CrossAttentionInteraction(nn.Module):
 class ContextCombiner(nn.Module):
     def __init__(self, doc_dim, topic_dim):
         super().__init__()
+        self.doc_dim = doc_dim
+        self.topic_dim = topic_dim
+        
+        # Cross attention for doc-topic interaction
+        self.cross_attn = nn.MultiheadAttention(doc_dim, num_heads=8, batch_first=True)
+        
+        # FFN for combining contexts
         self.linear1 = nn.Linear(doc_dim + topic_dim, doc_dim)
         self.linear2 = nn.Linear(doc_dim, doc_dim)
         self.norm1 = nn.LayerNorm(doc_dim)
         self.norm2 = nn.LayerNorm(doc_dim)
         self.dropout = nn.Dropout(0.1)
         
-    def forward(self, topic_ctx, doc_ctx, doc_mask=None):
-        # Combine contexts
-        combined = torch.cat([topic_ctx, doc_ctx], dim=-1)
+    def forward(self, topic_ctx, doc_ctx):
+        """
+        topic_ctx: (batch_size, topic_dim)
+        doc_ctx: (batch_size, seq_len, doc_dim)
+        """
+        batch_size = doc_ctx.shape[0]
+        
+        # Expand topic context to match doc context sequence length
+        topic_ctx = topic_ctx.unsqueeze(1)  # (batch_size, 1, topic_dim)
+        
+        # Cross attention between doc and topic
+        attn_out, _ = self.cross_attn(
+            query=doc_ctx,
+            key=topic_ctx,
+            value=topic_ctx
+        )
+        
+        # Combine with original doc context
+        combined = torch.cat([attn_out, doc_ctx], dim=-1)
         
         # Two-layer feed-forward with residual
         out = self.linear1(combined)
