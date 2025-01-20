@@ -214,10 +214,18 @@ class CrossAttentionInteraction(nn.Module):
         self.head_dim = doc_dim // num_heads
         assert self.head_dim * num_heads == doc_dim, "doc_dim must be divisible by num_heads"
         
+        # Initialize weights with small values
         self.doc_proj = nn.Linear(doc_dim, doc_dim)
         self.topic_k = nn.Linear(topic_dim, doc_dim)
         self.topic_v = nn.Linear(topic_dim, doc_dim)
         self.output_proj = nn.Linear(doc_dim, 1)
+        
+        # Initialize with smaller weights
+        nn.init.xavier_uniform_(self.doc_proj.weight, gain=0.1)
+        nn.init.xavier_uniform_(self.topic_k.weight, gain=0.1)
+        nn.init.xavier_uniform_(self.topic_v.weight, gain=0.1)
+        nn.init.xavier_uniform_(self.output_proj.weight, gain=0.1)
+        
         self.norm1 = nn.LayerNorm(doc_dim)
         self.norm2 = nn.LayerNorm(doc_dim)
         
@@ -247,12 +255,19 @@ class CrossAttentionInteraction(nn.Module):
         scores = torch.matmul(q, k.transpose(-2, -1)) / math.sqrt(self.head_dim)
         attn = F.softmax(scores, dim=-1)
         
+        # Debug attention scores
+        print(f"[DEBUG] Attention scores min/max/mean: {attn.min().item():.3f}/{attn.max().item():.3f}/{attn.mean().item():.3f}")
+        
         # Combine heads
         out = torch.matmul(attn, v)
         out = out.transpose(1, 2).contiguous().view(batch_size, num_topics, self.doc_dim)
         
         # Project to similarity scores
         sim_scores = self.output_proj(out).squeeze(-1)  # [batch_size, num_topics]
+        
+        # Debug similarity scores
+        print(f"[DEBUG] Similarity scores min/max/mean: {sim_scores.min().item():.3f}/{sim_scores.max().item():.3f}/{sim_scores.mean().item():.3f}")
+        
         return sim_scores
 
 class ContextCombiner(nn.Module):

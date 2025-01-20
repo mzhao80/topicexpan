@@ -8,15 +8,23 @@ def infonce_loss(output, target, temperature=0.1):
     target: a (batch_size,) tensor of correct class indices
     """
     print(f"[DEBUG] InfoNCE input shapes - output: {output.shape}, target: {target.shape}")
-    print(f"[DEBUG] Target values: {target}")
+    print(f"[DEBUG] Raw similarity scores min/max/mean: {output.min().item():.3f}/{output.max().item():.3f}/{output.mean().item():.3f}")
     
+    # Apply temperature scaling
     output = output / temperature
-    output = F.log_softmax(output, dim=-1)  # Use log_softmax for numerical stability
-    print(f"[DEBUG] After log_softmax shape: {output.shape}")
+    print(f"[DEBUG] After temperature scaling min/max/mean: {output.min().item():.3f}/{output.max().item():.3f}/{output.mean().item():.3f}")
     
-    # Gather the scores for the target topics
-    loss = F.nll_loss(output, target)
-    print(f"[DEBUG] Loss value: {loss.item()}")
+    # Get target scores before softmax
+    target_scores = output[torch.arange(output.size(0)), target]
+    print(f"[DEBUG] Target scores min/max/mean: {target_scores.min().item():.3f}/{target_scores.max().item():.3f}/{target_scores.mean().item():.3f}")
+    
+    # Apply log_softmax
+    log_probs = F.log_softmax(output, dim=-1)
+    print(f"[DEBUG] After log_softmax min/max/mean: {log_probs.min().item():.3f}/{log_probs.max().item():.3f}/{log_probs.mean().item():.3f}")
+    
+    # Compute NLL loss
+    loss = F.nll_loss(log_probs, target)
+    print(f"[DEBUG] Loss value: {loss.item():.3f}")
     
     return loss
 
