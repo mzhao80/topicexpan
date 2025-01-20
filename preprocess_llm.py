@@ -99,11 +99,6 @@ def extract_phrases(docs, topics, client):
         batch_phrases = []
         
         for doc, topic in zip(batch_docs, batch_topics):
-            # Truncate document if too long
-            doc_words = doc.split()
-            if len(doc_words) > 500:
-                doc = ' '.join(doc_words[:500]) + "..."
-            
             prompt = f"""Extract one or more top key phrases from this congressional speech that are most relevant to the topic '{topic}'. 
             
             Speech: {doc}
@@ -172,7 +167,7 @@ def main():
     valid_speeches['speech'] = valid_speeches['speech'].apply(clean_text)
 
     # cut valid speeches
-    valid_speeches = valid_speeches[:50]
+    valid_speeches = valid_speeches[:1000]
     
     with open(os.path.join(args.data_dir, 'corpus.txt'), 'w', encoding='utf-8') as f:
         for idx, text in tqdm(enumerate(valid_speeches['speech']), 
