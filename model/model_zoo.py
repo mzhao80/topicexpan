@@ -217,11 +217,16 @@ class CrossAttentionInteraction(nn.Module):
         self.doc_proj = nn.Linear(doc_dim, doc_dim)
         self.topic_k = nn.Linear(topic_dim, doc_dim)
         self.topic_v = nn.Linear(topic_dim, doc_dim)
-        self.output_proj = nn.Linear(doc_dim, doc_dim)
+        self.output_proj = nn.Linear(doc_dim, 1)  # Project to scalar score
         self.norm1 = nn.LayerNorm(doc_dim)
         self.norm2 = nn.LayerNorm(doc_dim)
         
     def forward(self, doc, topic):
+        """
+        doc: (batch_size, num_docs, doc_dim)
+        topic: (batch_size, num_topics, topic_dim)
+        returns: (batch_size, num_docs, num_topics)
+        """
         batch_size = doc.shape[0]
         
         # Layer norm
@@ -237,13 +242,13 @@ class CrossAttentionInteraction(nn.Module):
         scores = torch.matmul(q, k.transpose(-2, -1)) / math.sqrt(self.head_dim)
         attn = F.softmax(scores, dim=-1)
         
-        # Combine heads
+        # Combine heads and get similarity scores
         out = torch.matmul(attn, v)
-        out = out.transpose(1, 2).contiguous().view(batch_size, -1, self.doc_dim)  # Use self.doc_dim
+        out = out.transpose(1, 2).contiguous().view(batch_size, -1, self.doc_dim)
         
-        # Output projection
-        out = self.output_proj(out)
-        return out
+        # Project to similarity scores
+        sim_scores = self.output_proj(out).squeeze(-1)  # (batch_size, num_docs, num_topics)
+        return sim_scores
 
 class ContextCombiner(nn.Module):
     def __init__(self, doc_dim, topic_dim):
