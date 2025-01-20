@@ -43,6 +43,8 @@ class TopicExpan(BaseModel):
         self.interaction = BilinearInteraction(doc_dim, topic_dim, num_topics=num_topics, bias=False)
         self.linear_combiner = nn.Linear(doc_dim + topic_dim, doc_dim)
 
+        self.options = options
+
 
     def to_device(self, device):
         self.to(device)
