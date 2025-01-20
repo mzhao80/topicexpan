@@ -17,10 +17,10 @@
         "type": "DocTopicPhraseDataLoader",
         "args": {
             "directory": "congress",
-            "batch_size": 8,
+            "batch_size": 16,
             "shuffle": true,
-            "validation_split": 0.01,
-            "num_workers": 4,
+            "validation_split": 0.1,
+            "num_workers": 8,
             "alpha": 0.5
         }
     },
@@ -28,18 +28,17 @@
         "type": "DocDataLoader",
         "args": {
             "directory": "congress",
-            "batch_size": 8,
+            "batch_size": 16,
             "shuffle": false,
             "validation_split": 0.0,
-            "num_workers": 4,
+            "num_workers": 8,
             "alpha": 0.5
         }
     },
     "optimizer": {
         "type": "AdamW",
         "args": {
-            "lr": 5e-05,
-            "weight_decay": 5e-06,
+            "lr": 1e-04,
             "amsgrad": true
         }
     },
@@ -54,10 +53,10 @@
     "trainer": {
         "epochs": 30,
         "save_dir": "congress-save",
-        "save_period": 5,
+        "save_period": 4,
         "verbosity": 2,
-        "monitor": "max val_accuracy",
-        "early_stop": 5,
+        "monitor": ["max val_accuracy", "min val_perplexity"],
+        "early_stop": 3,
         "tensorboard": true
     },
     "expansion": {
