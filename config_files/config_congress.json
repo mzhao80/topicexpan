@@ -62,8 +62,8 @@
     },
     "expansion": {
         "filter_type": "nscore",
-        "topk": 2000,
-        "tau": 0.8,
-        "num_clusters": 10
+        "topk": 10000,
+        "tau": 0.2,
+        "num_clusters": 4
     }
 }
