@@ -7,10 +7,10 @@ def infonce_loss(output, target, temperature=0.1):
     output: a (batch_size, num_classes) tensor
     target: a (batch_size, ) tensor of dtype long
     """
-    output = torch.softmax(output/temperature, dim=0)
-    output = torch.gather(output, dim=1, index=target[:, None])
+    output = torch.softmax(output/temperature, dim=-1)
+    output = output[torch.arange(output.size(0)), target]
     loss = - torch.log(output + 1e-12)
-    return loss.sum()
+    return loss.mean()
 
 def nll_loss(output, target):
     """
