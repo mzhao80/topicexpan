@@ -233,7 +233,7 @@ def main():
     #is_llm = False
 
     client = openai.OpenAI()
-    llm = OpenAI(client, model="gpt-4o-mini", chat=True)
+    llm = OpenAI(client, model="gpt-4o-mini", chat=True, verbose=True)
     keybert_model = KeyLLM(llm)
     is_llm = True
     
