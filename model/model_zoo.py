@@ -295,13 +295,14 @@ class TransformerPhraseDecoder(BaseModel):
         sequences = start_token
         
         # Store finished sequences and their scores
-        finished_sequences = []
-        finished_scores = []
+        finished_sequences = [[] for _ in range(batch_size)]
+        finished_scores = [[] for _ in range(batch_size)]
         
         for step in range(self.max_length - 1):
             # Get logits for next token
             logits = self.forward(sequences, context)
             vocab_size = logits.shape[-1]
+            curr_batch_size = sequences.size(0) // (beam_size if step > 0 else 1)
             
             # Get log probabilities
             log_probs = F.log_softmax(logits[:, -1:], dim=-1)
@@ -317,7 +318,7 @@ class TransformerPhraseDecoder(BaseModel):
             else:
                 # Calculate scores for each beam and token
                 scores = scores.unsqueeze(-1) + log_probs
-                scores = scores.view(batch_size, -1)
+                scores = scores.view(curr_batch_size, -1)
                 
                 # Apply length penalty
                 length_penalty_score = ((5 + step + 1) / 6) ** length_penalty
@@ -329,21 +330,28 @@ class TransformerPhraseDecoder(BaseModel):
                 token_indices = indices % vocab_size
                 
                 # Update sequences
-                reordering = (beam_indices + torch.arange(batch_size, device=device).unsqueeze(1) * beam_size).view(-1)
+                reordering = (beam_indices + torch.arange(curr_batch_size, device=device).unsqueeze(1) * beam_size).view(-1)
                 sequences = sequences[reordering]
                 sequences = torch.cat([sequences, token_indices.view(-1, 1)], dim=-1)
             
             # Check for completed sequences
             eos_mask = sequences[:, -1] == self.eos_token_id
             if eos_mask.any():
-                finished_sequences.extend(sequences[eos_mask].tolist())
-                finished_scores.extend(scores.view(-1)[eos_mask].tolist())
+                # Get batch indices for the finished sequences
+                curr_batch_size = sequences.size(0) // beam_size
+                batch_indices = torch.arange(curr_batch_size, device=device).repeat_interleave(beam_size)
                 
-                # If all sequences are finished
-                if len(finished_sequences) >= beam_size * batch_size:
-                    break
+                # Add finished sequences to their respective batch lists
+                for idx in range(sequences.size(0)):
+                    if eos_mask[idx]:
+                        batch_idx = batch_indices[idx]
+                        finished_sequences[batch_idx].append(sequences[idx].tolist())
+                        finished_scores[batch_idx].append(scores.view(-1)[idx].item())
                 
                 # Remove finished sequences
+                if eos_mask.all():
+                    break
+                    
                 non_finished_mask = ~eos_mask
                 sequences = sequences[non_finished_mask]
                 scores = scores.view(-1)[non_finished_mask]
@@ -352,26 +360,24 @@ class TransformerPhraseDecoder(BaseModel):
                 if sequences.size(0) == 0:  # All sequences finished
                     break
         
-        # If we have no finished sequences, use the current sequences
-        if not finished_sequences:
-            finished_sequences = sequences.tolist()
-            finished_scores = scores.tolist()
+        # Handle any unfinished sequences
+        if sequences.size(0) > 0:
+            curr_batch_size = sequences.size(0) // beam_size
+            batch_indices = torch.arange(curr_batch_size, device=device).repeat_interleave(beam_size)
+            for idx in range(sequences.size(0)):
+                batch_idx = batch_indices[idx]
+                finished_sequences[batch_idx].append(sequences[idx].tolist())
+                finished_scores[batch_idx].append(scores.view(-1)[idx].item())
         
         # Select the best sequence for each batch
         results = []
-        scores = []
-        for b in range(batch_size):
-            batch_seqs = []
-            batch_scores = []
-            for seq, score in zip(finished_sequences, finished_scores):
-                if len(batch_seqs) < beam_size:
-                    batch_seqs.append(seq)
-                    batch_scores.append(score)
-            
-            # Sort by score and take the best one
-            best_idx = np.argmax(batch_scores)
-            results.append(torch.tensor(batch_seqs[best_idx], device=device))
-            scores.append(batch_scores[best_idx])
+        for batch_seqs, batch_scores in zip(finished_sequences, finished_scores):
+            if not batch_seqs:  # If no sequences finished, use a default sequence
+                results.append(torch.tensor([self.bos_token_id, self.eos_token_id], device=device))
+            else:
+                # Sort by score and take the best one
+                best_idx = np.argmax(batch_scores)
+                results.append(torch.tensor(batch_seqs[best_idx], device=device))
         
         # Pad sequences to same length
         max_len = max(len(seq) for seq in results)
