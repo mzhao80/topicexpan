@@ -52,18 +52,28 @@ def main(config):
     optimizer_grouped_parameters = [
         {
             "params": [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay)],
-            "weight_decay": config['optimizer']['args']['weight_decay'],
+            "weight_decay": 0.01,
         },
-        {"params": [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)], "weight_decay": 0.0},
+        {
+            "params": [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)],
+            "weight_decay": 0.0,
+        },
     ]
-    optimizer = AdamW(optimizer_grouped_parameters, lr=config['optimizer']['args']['lr'], eps=1e-8)
+    optimizer = AdamW(optimizer_grouped_parameters, lr=1e-5)
 
     trainer = Trainer(model, criterions, metrics, optimizer,
                       config=config,
-                      data_loader=data_loader,
-                      valid_data_loader=None)
+                      data_loader=data_loader)
 
-    trainer.infer(config['expansion'])
+    if config.resume is not None:
+        trainer.model.load_state_dict(torch.load(config.resume)['state_dict'])
+
+    # Remove existing output file to start fresh
+    if os.path.exists('discovered_topics.json'):
+        os.remove('discovered_topics.json')
+        
+    # Start recursive expansion
+    trainer.infer(config['expansion'], max_depth=3)
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser(description='TopicExpan')
