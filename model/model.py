@@ -13,44 +13,44 @@ class TopicExpan(BaseModel):
     """
     def __init__(self, pad_token_id, bos_token_id, eos_token_id, 
                  model_name, doc_embed_dim, topic_embed_dim, 
-                 gcn_encoder_num_layers, tfm_decoder_num_layers, 
-                 tfm_decoder_num_heads, tfm_decoder_max_length,
-                 topic_hierarchy, topic_node_feats, topic_mask_feats,
-                 novel_topic_hierarchy, beam_search=None, **kwargs):
+                 gcn_encoder_num_layers=2, tfm_decoder_num_layers=8, 
+                 tfm_decoder_num_heads=12, tfm_decoder_max_length=16,
+                 **options):
         super(TopicExpan, self).__init__()
 
-        self.doc_encoder = BertDocEncoder(model_name)
+        self.doc_encoder = BertDocEncoder(options["model_name"])
         # Enable gradient checkpointing for memory efficiency
         self.doc_encoder.model.gradient_checkpointing_enable()
 
         self.phrase_decoder = TransformerPhraseDecoder(
                                 self.doc_encoder.input_embeddings, 
                                 pad_token_id, bos_token_id, eos_token_id,
-                                tfm_decoder_num_layers, 
-                                tfm_decoder_num_heads, 
-                                tfm_decoder_max_length,
+                                options["tfm_decoder_num_layers"], 
+                                options["tfm_decoder_num_heads"], 
+                                options["tfm_decoder_max_length"],
                                 use_flash_attention=True)  # Enable flash attention
 
-        self.topic_hier = topic_hierarchy
-        self.novel_topic_hier = novel_topic_hierarchy
+        self.topic_hier = options["topic_hierarchy"]
+        self.novel_topic_hier = options["novel_topic_hierarchy"]
         self.vid2pid = {vid: pid for vid, pid in enumerate(self.topic_hier)}
         
-        # Get beam search parameters from config or use defaults
-        beam_search = beam_search or {}
-        self.beam_size = beam_search.get("beam_size", 5)
-        self.length_penalty = beam_search.get("length_penalty", 1.0)
+        # Get beam search parameters from options or use defaults
+        beam_search_config = options.get("beam_search", {})
+        self.beam_size = beam_search_config.get("beam_size", 5)
+        self.length_penalty = beam_search_config.get("length_penalty", 1.0)
 
-        # Initialize topic encoder
         self.topic_encoder = GCNTopicEncoder(
-                                topic_hierarchy,
-                                topic_node_feats,
-                                topic_mask_feats,
-                                gcn_encoder_num_layers)
+                                options["topic_hierarchy"], 
+                                options["topic_node_feats"], 
+                                options["topic_mask_feats"],
+                                options["gcn_encoder_num_layers"])
+
+        doc_dim, topic_dim = options["doc_embed_dim"], options["topic_embed_dim"]
+        num_topics = options["topic_node_feats"].shape[0]
+        assert options["topic_embed_dim"] == options["topic_node_feats"].shape[1]
         
-        num_topics = len(topic_hierarchy)
-        
-        self.interaction = BilinearInteraction(doc_embed_dim, topic_embed_dim, num_topics=num_topics, bias=False)
-        self.linear_combiner = nn.Linear(doc_embed_dim + topic_embed_dim, doc_embed_dim)
+        self.interaction = BilinearInteraction(doc_dim, topic_dim, num_topics=num_topics, bias=False)
+        self.linear_combiner = nn.Linear(doc_dim + topic_dim, doc_dim)
 
     def to_device(self, device):
         self.to(device)

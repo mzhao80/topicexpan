@@ -38,26 +38,14 @@ def main(config):
     topic_node_feats = data_loader.dataset.topic_node_feats
     topic_mask_feats = data_loader.dataset.topic_mask_feats
     novel_topic_hierarhcy = data_loader.dataset.novel_topic_hier
-    
-    # Get model configuration
-    model_config = config['arch']['args']
-    
-    model = config.init_obj('arch', module_arch,
-                    model_name=model_config['model_name'],
-                    doc_embed_dim=model_config['doc_embed_dim'],
-                    topic_embed_dim=model_config['topic_embed_dim'],
-                    gcn_encoder_num_layers=model_config['gcn_encoder_num_layers'],
-                    tfm_decoder_num_layers=model_config['tfm_decoder_num_layers'],
-                    tfm_decoder_num_heads=model_config['tfm_decoder_num_heads'],
-                    tfm_decoder_max_length=model_config['tfm_decoder_max_length'],
-                    topic_hierarchy=topic_hierarchy,
-                    topic_node_feats=topic_node_feats,
-                    topic_mask_feats=topic_mask_feats,
-                    pad_token_id=data_loader.dataset.bert_tokenizer.pad_token_id,
-                    bos_token_id=data_loader.dataset.bert_tokenizer.bos_token_id,
-                    eos_token_id=data_loader.dataset.bert_tokenizer.eos_token_id,
-                    novel_topic_hierarchy=novel_topic_hierarhcy,
-                    beam_search=model_config.get('beam_search', {}))
+    model = config.init_obj('arch', module_arch, \
+                    topic_hierarchy=topic_hierarchy, \
+                    topic_node_feats=topic_node_feats, \
+                    topic_mask_feats=topic_mask_feats, \
+                    pad_token_id=data_loader.dataset.bert_tokenizer.pad_token_id, \
+                    bos_token_id=data_loader.dataset.bert_tokenizer.bos_token_id, \
+                    eos_token_id=data_loader.dataset.bert_tokenizer.eos_token_id, \
+                    novel_topic_hierarchy=novel_topic_hierarhcy)
 
     logger.info(model)
 
