@@ -8,8 +8,8 @@
             "doc_embed_dim": 384,
             "topic_embed_dim": 384,
             "gcn_encoder_num_layers": 2,
-            "tfm_decoder_num_layers": 1,
-            "tfm_decoder_num_heads": 16,
+            "tfm_decoder_num_layers": 4,
+            "tfm_decoder_num_heads": 8,
             "tfm_decoder_max_length": 10
         }
     },
