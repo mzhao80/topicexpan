@@ -11,10 +11,8 @@
             "tfm_decoder_num_layers": 8,
             "tfm_decoder_num_heads": 12,
             "tfm_decoder_max_length": 16,
-            "beam_search": {
-                "beam_size": 5,
-                "length_penalty": 1.0
-            }
+            "beam_size": 5,
+            "length_penalty": 1.0
         }
     },
     "data_loader_for_training": {
