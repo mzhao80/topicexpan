@@ -249,18 +249,26 @@ class TransformerPhraseDecoder(BaseModel):
         mask = mask.float().masked_fill(mask == 0, float('-inf')).masked_fill(mask == 1, float(0.0))
         return mask.to(x.device)
 
-    def forward(self, x, context):
-        # Create embeddings
-        x = self.input_embeddings(x)
+    def forward(self, x, decoder_context=None):
+        # Handle BERT-style dictionary input
+        if isinstance(x, dict):
+            input_ids = x['input_ids']
+            attention_mask = x.get('attention_mask', None)
+            token_type_ids = x.get('token_type_ids', None)
+            x = self.input_embeddings(input_ids=input_ids, 
+                                    attention_mask=attention_mask,
+                                    token_type_ids=token_type_ids)
+        else:
+            x = self.input_embeddings(x)
         
         # Create attention masks
         attn_mask = self._make_causal_mask(x)
-        padding_mask = None  # We'll handle padding in the causal mask
+        padding_mask = None  # We'll handle padding in the loss function
         
         # Run through transformer decoder
         output = self.model(
             x,
-            context,
+            decoder_context,
             tgt_mask=attn_mask,
             memory_mask=None,
             tgt_key_padding_mask=padding_mask,
@@ -268,7 +276,9 @@ class TransformerPhraseDecoder(BaseModel):
         )
         
         # Project to vocabulary
-        return self.output_embeddings(output)
+        output = self.output_embeddings(output)
+        
+        return output
 
     def generate(self, context):
         batch_size = context.size(0)
