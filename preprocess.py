@@ -244,7 +244,8 @@ def main():
         print("Extracting phrases from documents...")
         # Process each document
         doc2phrases = extract_phrases(valid_speeches['speech'].tolist(), keybert_model, is_llm)
-        
+        print(doc2phrases)
+
         # Save doc2phrases.txt
         print("Saving doc2phrases.txt...")
         with open(os.path.join(args.data_dir, 'doc2phrases.txt'), 'w', encoding='utf-8') as f:
