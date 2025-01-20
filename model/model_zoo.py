@@ -10,7 +10,7 @@ from torch.nn import init, TransformerDecoderLayer, TransformerDecoder
 import dgl
 import dgl.function as fn
 from dgl.nn.pytorch.conv import GraphConv
-from transformers import AutoModel, AutoConfig
+from transformers import AutoModel, AutoConfig, BertConfig, BertModel
 from base import BaseModel
 
 """
@@ -223,78 +223,109 @@ class BilinearInteraction(nn.Module):
 """
     4. Topic-conditional Phrase Generator
 """
-class TransformerPhraseDecoder(BaseModel):
-    def __init__(self, input_embeddings, pad_token_id, bos_token_id, eos_token_id, num_layers, num_heads, max_length, use_flash_attention=False):
+class TransformerPhraseDecoder(nn.Module):
+    def __init__(self, input_embeddings, pad_token_id, bos_token_id, eos_token_id, 
+                 num_layers=4, num_heads=8, max_length=10, use_flash_attention=True,
+                 beam_size=5, length_penalty=0.6):
         super().__init__()
-        self.vocab_size, self.hidden_size = input_embeddings.word_embeddings.weight.shape
-        self.input_embeddings = input_embeddings
-        self.output_embeddings = nn.Linear(self.hidden_size, self.vocab_size, bias=False)
-
-        model_layer = TransformerDecoderLayer(
-            d_model=self.hidden_size, 
-            nhead=num_heads, 
-            batch_first=True
-        )
-        self.model = TransformerDecoder(model_layer, num_layers=num_layers)
-
-        self.max_length = max_length
         self.pad_token_id = pad_token_id
         self.bos_token_id = bos_token_id
         self.eos_token_id = eos_token_id
-
-    def _make_causal_mask(self, x):
-        # Create causal mask for decoder
-        sz = x.size(1)
-        mask = (torch.triu(torch.ones(sz, sz)) == 1).transpose(0, 1)
-        mask = mask.float().masked_fill(mask == 0, float('-inf')).masked_fill(mask == 1, float(0.0))
-        return mask.to(x.device)
-
-    def forward(self, x, decoder_context=None):
-        # Handle BERT-style dictionary input
-        if isinstance(x, dict):
-            input_ids = x['input_ids']
-            token_type_ids = x.get('token_type_ids', None)
-            # Only pass input_ids and token_type_ids to embeddings
-            x = self.input_embeddings(
-                input_ids=input_ids,
-                token_type_ids=token_type_ids
-            )
-        else:
-            x = self.input_embeddings(x)
+        self.max_length = max_length
+        self.beam_size = beam_size
+        self.length_penalty = length_penalty
         
-        # Create attention masks
-        attn_mask = self._make_causal_mask(x)
-        # Use attention_mask from input if provided
-        if isinstance(x, dict) and 'attention_mask' in x:
-            padding_mask = ~x['attention_mask'].bool()
-        else:
-            padding_mask = None
+        # Use MiniLM configuration
+        config = AutoConfig.from_pretrained("microsoft/MiniLM-L12-H384-uncased")
+        config.num_hidden_layers = num_layers
+        config.num_attention_heads = num_heads
+        config.max_position_embeddings = max_length
+        config.use_flash_attention = use_flash_attention
+        config.vocab_size = input_embeddings.num_embeddings
         
-        # Run through transformer decoder
-        output = self.model(
-            x,
-            decoder_context,
-            tgt_mask=attn_mask,
-            memory_mask=None,
-            tgt_key_padding_mask=padding_mask,
-            memory_key_padding_mask=None
+        # Initialize with MiniLM architecture
+        self.decoder = AutoModel.from_pretrained(
+            "microsoft/MiniLM-L12-H384-uncased",
+            config=config,
+            add_pooling_layer=False
         )
         
-        # Project to vocabulary
-        output = self.output_embeddings(output)
-        
-        return output
-
-    def generate(self, context):
-        batch_size = context.size(0)
-        current_token = torch.full((batch_size, 1), self.bos_token_id, dtype=torch.long, device=context.device)
-        
-        for _ in range(self.max_length - 1):
-            logits = self.forward(current_token, context)
-            next_token = logits[:, -1:].argmax(dim=-1)
-            current_token = torch.cat([current_token, next_token], dim=1)
+        # Project input embeddings to MiniLM dimension if needed
+        if input_embeddings.embedding_dim != config.hidden_size:
+            self.input_proj = nn.Linear(input_embeddings.embedding_dim, config.hidden_size)
+            self.decoder.set_input_embeddings(nn.Embedding(input_embeddings.num_embeddings, config.hidden_size))
+            self.use_projection = True
+        else:
+            self.decoder.set_input_embeddings(input_embeddings)
+            self.use_projection = False
             
-            if (next_token == self.eos_token_id).all():
+        self.lm_head = nn.Linear(config.hidden_size, input_embeddings.num_embeddings, bias=False)
+        if not self.use_projection:
+            self.lm_head.weight = input_embeddings.weight
+        
+    def forward(self, input_ids, attention_mask=None):
+        if self.use_projection:
+            # Get original embeddings
+            orig_embeds = self.decoder.get_input_embeddings()(input_ids)
+            # Project to MiniLM dimension
+            embeds = self.input_proj(orig_embeds)
+            outputs = self.decoder(inputs_embeds=embeds, attention_mask=attention_mask)
+        else:
+            outputs = self.decoder(input_ids=input_ids, attention_mask=attention_mask)
+            
+        hidden_states = outputs[0]
+        lm_logits = self.lm_head(hidden_states)
+        return lm_logits
+
+    def generate(self, encoder_hidden_states, attention_mask=None):
+        batch_size = encoder_hidden_states.size(0)
+        device = encoder_hidden_states.device
+        
+        # Initialize beams with BOS token
+        beam_scores = torch.zeros((batch_size, self.beam_size), device=device)
+        beam_tokens = torch.full((batch_size, self.beam_size, 1), self.bos_token_id, device=device)
+        beam_indices = torch.arange(batch_size, device=device).view(-1, 1).repeat(1, self.beam_size)
+        
+        # Expand encoder outputs for beam search
+        encoder_hidden_states = encoder_hidden_states.unsqueeze(1).expand(
+            batch_size, self.beam_size, *encoder_hidden_states.shape[1:])
+        encoder_hidden_states = encoder_hidden_states.contiguous().view(
+            batch_size * self.beam_size, *encoder_hidden_states.shape[2:])
+        
+        for step in range(self.max_length - 1):
+            # Get logits for next token
+            logits = self.forward(beam_tokens.view(-1, step + 1))
+            next_token_logits = logits[:, -1, :]
+            
+            # Apply length penalty
+            if step > 0:
+                beam_scores = beam_scores.view(-1, 1) / ((5 + step) ** self.length_penalty / 6)
+            
+            # Get top-k next tokens and their scores
+            vocab_size = next_token_logits.size(-1)
+            next_scores = F.log_softmax(next_token_logits, dim=-1) + beam_scores.view(-1, 1)
+            next_scores = next_scores.view(batch_size, -1)  # (batch_size, beam_size * vocab_size)
+            next_scores, next_tokens = torch.topk(next_scores, self.beam_size, dim=1)
+            
+            # Convert token indices to beam indices and token indices
+            beam_indices = next_tokens // vocab_size
+            next_tokens = next_tokens % vocab_size
+            
+            # Update beam tokens
+            beam_tokens = torch.cat([
+                beam_tokens[torch.arange(batch_size).unsqueeze(1), beam_indices],
+                next_tokens.unsqueeze(-1)
+            ], dim=-1)
+            
+            # Update beam scores
+            beam_scores = next_scores
+            
+            # Check if all beams have generated EOS
+            if (beam_tokens == self.eos_token_id).any(dim=-1).all():
                 break
-                
-        return current_token
+        
+        # Select best beam for each batch
+        best_beam_indices = beam_scores.argmax(dim=-1)
+        output_tokens = beam_tokens[torch.arange(batch_size), best_beam_indices]
+        
+        return output_tokens

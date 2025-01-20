@@ -8,9 +8,11 @@
             "doc_embed_dim": 384,
             "topic_embed_dim": 384,
             "gcn_encoder_num_layers": 2,
-            "tfm_decoder_num_layers": 4,
-            "tfm_decoder_num_heads": 8,
-            "tfm_decoder_max_length": 10
+            "tfm_decoder_num_layers": 8,
+            "tfm_decoder_num_heads": 12,
+            "tfm_decoder_max_length": 10,
+            "beam_size": 5,
+            "length_penalty": 0.6
         }
     },
     "data_loader_for_training": {
