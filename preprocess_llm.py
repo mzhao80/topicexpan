@@ -93,7 +93,7 @@ def extract_topics_and_phrases(docs, client):
     phrases = []
     batch_size = 5  # Process in small batches to avoid rate limits
     
-    for i in tqdm(range(0, len(docs), batch_size), desc="Extracting topics and phrases"):
+    for i in tqdm(range(0, len(docs)), desc="Extracting topics and phrases"):
         batch_docs = docs[i:i + batch_size]
         batch_topics = []
         batch_phrases = []
@@ -104,12 +104,12 @@ def extract_topics_and_phrases(docs, client):
             "role": "system", 
             "content": """You are a helpful assistant that analyzes congressional speeches.
             For each speech, provide:
-            1. A short topic phrase (1-5 words) describing the main political issue discussed in the speech
-            2. Key phrases exactly quoted from the speech that best represent this topic
+            1. A short topic phrase (1-5 words) describing the main political issue discussed in the speech.
+            2. A key phrase or list of key phrases (2-10 words each) exactly quoted from the speech that best represent this topic, without quotation marks.
             
-            Format your response exactly as:
-            TOPIC: <topic>
-            PHRASES: <phrase1> | <phrase2> | <phrase3>"""
+            Format your response exactly as follows on two lines:
+            <topic>
+            <phrase1> | <phrase2> | <phrase3>"""
         })
         
         # Add user messages for each document
@@ -130,29 +130,21 @@ def extract_topics_and_phrases(docs, client):
         # Parse responses
         for choice in response.choices:
             content = choice.message.content.strip()
+            if i == 0:
+                print(content)
             # Split into topic and phrases sections
             try:
                 topic_line, phrases_line = content.split('\n')
-                topic = topic_line.replace('TOPIC:', '').strip().lower()
-                if not topic:
-                    topic = "unknown"
+                topic = topic_line.strip()
                 # Split phrases by | and clean
-                phrase_list = [p.strip() for p in phrases_line.replace('PHRASES:', '').split('|')]
-                phrase_list = [p for p in phrase_list if p]  # Remove empty phrases
+                phrase_list = [p.strip() for p in phrases_line.split('|')]
             except Exception as e:
                 print(f"Error parsing response for batch starting at {i}: {str(e)}")
                 print(f"Response content: {content}")
-                topic = "unknown"
                 phrase_list = []
             
             batch_topics.append(topic)
             batch_phrases.append(phrase_list)
-        
-        # If we got fewer responses than documents, pad with unknowns
-        while len(batch_topics) < len(batch_docs):
-            print(f"Warning: Got {len(batch_topics)} responses for {len(batch_docs)} documents in batch starting at {i}")
-            batch_topics.append("unknown")
-            batch_phrases.append([])
         
         topics.extend(batch_topics)
         phrases.extend(batch_phrases)
@@ -198,7 +190,7 @@ def main():
     valid_speeches['speech'] = valid_speeches['speech'].apply(clean_text)
 
     # cut valid speeches
-    valid_speeches = valid_speeches[:1000]
+    valid_speeches = valid_speeches[:50]
     
     with open(os.path.join(args.data_dir, 'corpus.txt'), 'w', encoding='utf-8') as f:
         for idx, text in tqdm(enumerate(valid_speeches['speech']), 
@@ -214,7 +206,7 @@ def main():
     print("Generating topics and extracting phrases...")
     doc_topics, doc2phrases = extract_topics_and_phrases(valid_speeches['speech'].tolist(), client)
     
-    # Map topics to indices and ensure we have a topic for every document
+    # Map topics to indices
     topic_to_topic_idx = {keyword: idx+1 for idx, keyword in enumerate(seed_keywords)}
     topic_to_topic_idx['politics'] = 0
     topic_idx = len(topic_to_topic_idx)
@@ -224,8 +216,6 @@ def main():
     assert len(doc_topics) == len(valid_speeches), f"Got {len(doc_topics)} topics but have {len(valid_speeches)} speeches"
     
     for topic in doc_topics:
-        if not topic:  # Handle empty topics
-            topic = "unknown"
         if topic not in topic_to_topic_idx:
             topic_to_topic_idx[topic] = topic_idx
             topic_idx += 1
