@@ -1,50 +1,50 @@
-0	Pledge of Allegiance	representatives-elect	Clerk	United States	Republic	liberty	justice	nation	God
-1	Clerk	Chair	House	order	decorum	Members-elect	Speaker	parliamentary law	remarks	cooperation
-2	Kevin McCarthy	Speaker of the House	nomination	Republican majority	history	unity	leadership	conservative values	American people	government reform	energy independence	border crisis	opioid crisis	representation	diversity	trust	House of Representatives	Majority-making	election	conservative fighter	legislative progress.
-3	Hakeem Jeffries	Speaker	House	Democratic Caucus	voting rights	voter suppression	Jim Crow	democracy	John Lewis Voting Rights Advancement Act	leadership	election	sacred responsibility.
-4	Byron Donalds	nomination	House of Representatives	Black Speaker	racism	political rhetoric	change	Kevin McCarthy	broken system	Congress	courage	personal conviction	dynamic process	people's business.
-5	votes	Hakeem Jeffries	Kevin McCarthy	Byron Donalds	Donald J. Trump	Speaker election	Clerk	Florida	tally	majority
-6	Kevin McCarthy	Speaker of the House	nomination	team	fears	rights	sacrifice	Constitution	service	priorities	leadership	communities	energy policy	border security	spending	term limits	Congress	Republican Conference.
-7	Hakeem Jeffries	Speaker of the House	House Democrats	national security	healthcare	LGBTQ+ rights	gun violence	reproductive freedom	manufacturing	clean energy	equal pay	childcare	paid family leave	voting rights	veterans' healthcare	democracy	January 6 insurrection.
-8	Byron Donalds	Speaker of the House	nomination	change	Republican Party	Democratic Party	administration	economy	national debt	border security	crisis	inflation	American Dream	leadership	government	energy independence	crime	immigration	American middle class	existential crisis	political engagement	recovery	institutions.
-9	votes	Hakeem Jeffries	Kevin McCarthy	Byron Donalds	Kevin Hern	Donald J. Trump	Speaker election	House of Representatives	tally	total votes
-10	Kevin McCarthy	Speaker of the House	House Freedom Caucus	Republican Conference	leadership	motion to vacate the chair	accountability	legislation	American people	majority	Biden administration	southern border	energy independence	inflation	crime	law enforcement	change	118th Congress.
-11	Hakeem Jeffries	Speaker of the House	Democrats	leadership	American Rescue Plan	infrastructure law	insulin	gun safety legislation	PACT Act	veterans	CHIPS and Science Act	Inflation Reduction Act	climate crisis	House Democrats	American people	118th Congress	nomination.
-12	Byron Donalds	Speaker of the House	privilege	responsibility	United States	representation	Congress	legislative process	consolidation of power	Speaker	Committee on Rules	debate	discussion	collegiality	legislation	equal representation	broken system	change	amendments	empowerment.
-13	equal representation	legislation	single-subject legislation	germaneness	open rule process	collaboration	commonsense amendments	border security	energy dominance	inflation rate	leadership	earmarks	corruption	transparency	unanimous consent	community development	vision	Speaker of the House	Byron Donalds	integrity	intellect
-14	nomination	Speaker of the House	Kevin Hern	leadership	Congress	Republican Party	unity	principles	American Dream	small business owner	results	change	committee assignments	conservative	debate	momentum	action
-15	votes	Hakeem Jeffries	Kevin McCarthy	Byron Donalds	Kevin Hern	Speaker	election	tally	Congress	Clerk	Arizona	present	majority
-16	Kevin McCarthy	Speaker of the House	American Dream	opportunity	American people	Commitment to America	economy	safety	freedom	government accountability	immigration	naturalized citizen	congressional seat	leadership	Arizona	values	inflation	border protection	representation	car wash story	118th Congress.
-17	Hakeem Jeffries	Speaker of the House	House Democrats	leadership	American Dream	character	New York	Social Security	Medicare	priorities	Democratic Caucus	nomination	governing party.
-18	Byron Donalds	Speaker of the House	nomination	Florida	campaign trail	Democratic Party	Republican-controlled House	American people	leadership	negotiation	support
-19	Kevin Hern	Speaker of the House	Republican	unification	leadership	voting	Kevin McCarthy
-20	votes	Hakeem Jeffries	Kevin McCarthy	Byron Donalds	Kevin Hern	Speaker	election	majority	Clerk	Arkansas	tallies
-21	Kevin McCarthy	Speaker of the House	nomination	fiscal discipline	spending cuts	balanced budget amendment	Republican Party	pro-growth agenda	national debt	economic policy	House Republicans	1923	government spending	American energy	Trump tax cuts.
-22	Hakeem Jeffries	Speaker of the House	House of Representatives	African American leadership	democracy	governance	dysfunction	Nancy Pelosi	nomination	political history	leadership qualities	commitment	communities	Constitution	118th Congress
-23	Donald Trump	Speaker of the House	taxes	regulations	economy	bipartisanship	veterans	trade	foreign policy	corruption	leadership	McCarthy	House of Representatives	prosperity	opportunity
-24	nomination	Speaker of the House	United States	national debt	crisis	immigration	education	military	freedoms	Republican Party	transformational change	leadership	Kevin Hern	budget	Republican Study Committee	caucus	elected representatives
-25	votes	tallies	Hakeem Jeffries	Kevin McCarthy	Byron Donalds	Kevin Hern	Donald Trump	Speaker	election	majority
-26	Chair	Journal	House	Representatives-elect	Pledge of Allegiance	Clerk	Flag	United States	Republic	nation	God	liberty	justice	Point of Order
-27	Lynn Yates	retirement	public service	Maryland's Second District	Congressional caseworker	Social Security	Medicare	conservationist	outdoor activities	Towson University	community service	gratitude	compassionate service
-28	Tom Minnery	family values	Citizen magazine	Focus on the Family	Government and Public Policy	Family Policy Alliance	pro-family advocacy	church elder	legacy	Christmas Eve	godly citizens	civic awards
-29	D.C. statehood	Washington	D.C. Admission Act	voting representation	local self-government	Congress	taxation without representation	federal district	Admissions Clause	23rd Amendment	population	resources	democracy	civil rights	equality	representation	autonomy.
-30	Denise Roy-Palmer	Wentworth Economic Development Corporation	WEDCO	economic development	small businesses	Eastern Lakes Region	Strafford County	Carroll County	community service	job creation	loans	New Hampshire	economic initiatives	retirement	advocacy	business success
-31	Mrs. Thomas	90th birthday	January 7	1933	Yellowpine Texas	nursing career	Texas College	Alpha Kappa Alpha Sorority	Provident School of Nursing	Dr. Andrew L. Thomas	Project Seventy-Five	minority students in healthcare	Michael Reese Hospital	nursing education	La Rabida Children's Hospital	Outstanding Nurse of the Year	John Stroger Hospital	Nurse Coordinator	family	children	grandchildren	community	First Congressional District of Illinois	health	happiness
-32	United States	Sepak Takraw Team	gold medals	2022 ISTAF World Cup	Daejeon	South Korea	Division 1	3x3	4x4 tournaments	COVID-19 pandemic	Jeremy Nathan Mirken	athletes	Hmong	Karen	Karenni	Minnesota	Fourth Congressional District	Kick Volleyball	Southeast Asia	Gao Chang	younger generations	recognition	victory
-33	David Axelrod	University of Chicago	Institute of Politics	IOP	public service	Pritzker Fellows Program	Career Development	Speaker Series	Civic Engagement	mentorship	political strategist	Barack Obama	Affordable Care Act	Heidi Heitkamp	leadership	civic life	training	interns	politics	public policy.
-34	Brother Fred Wolfe	City of Mobile	pastor	mentor	spiritual guidance	stories	University of South Carolina	Master of Divinity	Southern Baptist Theological Seminary	Cottage Hill Baptist Church	church attendance	baptisms	faithful service	community legacy	mourning	well done	good and faithful servant.
-35	Loudoun County Chamber of Commerce	5-Star Accreditation	U.S. Chamber of Commerce	Northern Virginia	business and community leaders	economic development	COVID response campaign	Chamber of the Year	Tony Howard	industry certifications	professional excellence	operational excellence	governance policies	financial controls	public policy	programming	community impact	best in class performance.
-36	Prior Lake Police Chief	Steve Frazer	retirement	public service	public safety	community service	Minnesota's Second Congressional District	law enforcement	St. Paul Police Department	Roseville Police Department	Ramsey County Sheriffs Office	officer morale	officer training	de-escalation.
-37	Pledge of Allegiance	House of Representatives	Mr. Wilson	South Carolina	United States	flag	republic	liberty	justice	unity
-38	debate	majority leader	Mr. Scalise	Mr. McGovern	resolution	General Leave	time	yielding
-39	H. Res. 5	Rules Adoption	118th Congress	section analysis	spending reduction	accountability	pay-as-you-go	cut-as-you-go	tax rate increases	committee oversight	ethics reform	Holman Rule	budget authority	major legislation	macroeconomic effects	remote witness appearance	transparency	legislative documents	committee jurisdiction	contested elections	bipartisan task force	exercising facilities	Congressional Budget Office	standing rules.
-40	rules of the House	Congress	broken system	inflation	spending	omnibus spending bill	proxy voting	committee meetings	border crisis	legislation	amendments	representation	American people	people's House
-41	House Democrats	leadership	Hakeem Jeffries	Tom Cole	Congress	Republican Party	MAGA faction	inflation	Office of Congressional Ethics	women's access to abortion	big oil	President Trump	billionaires	Freedom Caucus	negotiations	ethics	January 6 insurrection	extremism	rules package	Speaker removal	tax cuts	social safety net	committee chairs	conspiracy theories	governance	American people.
-42	Congress	Rules Committee	118th Congress	remote voting	committee proceedings	oversight	Biden administration	budgetary rules	spending	inflation	tax increases	national debt limit	accountability	Republican priorities	Select Committee	Chinese Communist Party	fiscal responsibility	legislative process.
-43	Congressional Budget Office	H.R. 23	Family and Small Business Taxpayer Protection Act	IRS funding	national debt	budgetary effects	statutory pay-as-you-go	outlays	receipts	funding rescission	CBO guidelines	administrative funding.
-44	abortion	bodily autonomy	Women's Health Protection Act	House Democrats	ballot box	freedom	medical decisions	Congress	Supreme Court	Dobbs decision
-45	Mr. Cole	Rules Committee	Congress	tax-and-spend	transparency	accountability	voting procedures	inflation	lawlessness	Republican majority	agenda	fiscal prosperity	American century
-46	healthcare decisions	abortion care	House Republicans	women's rights	reproductive care	anti-choice	Women's Health Protection Act	extremism	constituents
-47	rules committee	oversight	legislation	pandemic procedures	transparency	fiscal sanity	federal budget	spending	inflation	House Republicans
-48	COVID	American deaths	Congress	remote procedures	saved lives	Members	staff	Ms. Jayapal
-49	MAGA extremists	freedoms	bills	abortion	healthcare	women's economic freedom	bodily autonomy	tax cuts	congressional workers	unionize	witness disclosure	conflicts of interest	climate change	pandemic relief	Democrats	Republicans	vote no
+0	pledge of allegiance	join in the pledge of allegiance	led the pledge of allegiance
+1	order and decorum	preserve order and decorum	address any remarks through the chair	refrain from engaging in personalities	respecting and upholding order and decorum
+2	nominate kevin mccarthy	speaker of the house	leading republican nominee
+3	protecting the right to vote	voter suppression	john lewis voting rights advancement act	expanding democracy
+4	byron donalds	nomination of byron donalds	more byron donalds	man of personal conviction
+5	votes cast	hakeem jeffries	kevin mccarthy	byron donalds	donald j. trump	speaker not elected
+6	nominate kevin mccarthy	speaker of the house	my friend	my colleague	right the wrongs	safeguard our constitution	freedoms of americans	sacrificed for	support and defend
+7	nominate hakeem jeffries	speaker of the house	stand united behind our leader	historic dysfunction	deliver basic services	responsibility to serve our constituents	house democrats will stand together	elect a speaker who stands with them
+8	nomination of byron donalds	speaker of the house	change from the policies of the left	bring that under control	exchange of ideas	expression of support	restore american energy independence
+9	votes cast	hakeem jeffries	kevin mccarthy	byron donalds	speaker has not been elected
+10	nominate kevin mccarthy	speaker of the house	overwhelming support	hold the speaker accountable	motion to vacate the chair	protect that speaker's gavel	republican majority	implement that change
+11	hakeem jeffries for speaker	leadership of hakeem jeffries	democrats united	nomination of hakeem jeffries	representative-elect from the state of new york
+12	consolidation of power	diminish voices	equal representation	control legislation	disintegration of relationships
+13	equal representation	single-subject legislation	open rule process	equal voice	collaborate and craft legislation	restore the process
+14	nominate the gentleman from oklahoma	speaker of the house	evaluating what life after kevin mccarthy looks like	need a leader	unite our party	deliver on the promises	small business owner	lived the american dream
+15	speaker has not been elected	total number of votes cast	honorable hakeem jeffries	honorable kevin mccarthy	honorable byron donalds	honorable kevin hern
+16	nominate kevin mccarthy	speaker of the house	republican majority	commitment to america	fight for the american dream	cares about the american people	laying out a plan	opportunity for all	strong economy	nation that is safe	future built on freedom	government that is accountable
+17	hakeem jeffries for speaker	hakeem jeffries is the lead vote-getter	character of hakeem jeffries	opportunity to lead	democratic caucus	governing party in this chamber
+18	nominate byron donalds	speaker of the house	incredible representation	support him
+19	nominate kevin hern	speaker of the house	elect a republican	casting my vote for kevin hern
+20	speaker has not been elected	total number of votes cast	hakeem jeffries of the state of new york	kevin mccarthy of the state of california	byron donalds of the state of florida	kevin hern of the state of oklahoma	voting present	majority of the votes cast
+21	nominate kevin mccarthy	speaker of the house	leader mccarthy	fiscal discipline	domestic national debt	republican commitment to america
+22	nominate hakeem jeffries	first african american	first person of color	speaker of the house	dedicated	talented	passionate	committed public servant	lead vote-getter
+23	trump for speaker	trump presidency	veterans' accountability measures	confront china	american people first	didn't start any new wars	deeply corrupt	leadership positions and chairmanships
+24	placing a name in nomination	position of the speaker	people's representatives	selection of the speaker
+25	votes cast	hakeem jeffries	kevin mccarthy	byron donalds	kevin hern	donald j. trump	speaker has not been elected
+26	pledge of allegiance	i pledge allegiance	flag of the united states	one nation under god	liberty and justice for all
+27	exceptional service	public service	dedicated conservationist	compassionate congressional caseworkers	helping constituents	commitment to public service
+28	family values	champions of family values	pro-family policy advocates	focus on the family	citizen magazine	government and public policy	tom's life and legacy
+29	d.c. statehood bill	voting representation in congress	full local self-government	equality of citizenship	taxed without representation	washington	douglass commonwealth	constitutional authority	admissions clause	district clause	23rd amendment	population and resources	support for statehood	commitment to democracy	d.c. residents voted for statehood
+30	local economic development	local businesses	economic driver	small businesses	planning and resources	jobs created	direct lending	funding	competitive marketplace	community initiatives	economic development committees	tools and guidance	business friendly
+31	mrs. thomas's 90th birthday	community contributions	access to care	champion the cause	outstanding nurse of the year	greatest neighbor
+32	united states sepak takraw team	winning gold medals	2022 istaf world cup	victory for the united states
+33	civic life	leadership development	public service internships	civic engagement program	thoughtful dialogue	political leaders	public service
+34	legacy of faithful service	massive impact	numerous church establishments	grew by thousands of members	5	500 baptisms	spiritual guidance	mentor	wise sayings
+35	loudoun county chamber of commerce	5-star accreditation	largest and most effective chamber	premier network of business and community leaders	effective advocate	local	national and international recognition	chamber of the year	performance and community impact	industry leading programs	business advocacy	u.s. chamber of commerce	quality of its programs	highest endorsement for a local chamber's performance	best in class performance	commitment to excellence
+36	public service	public safety	law enforcement record	officer morale	officer training	de-escalation
+37	pledge of allegiance	flag of the united states	one nation under god	liberty and justice for all
+38	purpose of debate only	yielded for the purpose of debate	consideration of this resolution
+39	adopting the rules	adoption of the rules	rules of the 118th congress	changes to the standing rules	two minute votes	committee authorization and oversight plans
+40	rules package	conduct business	washington is broken	bills appear by dark of night	dark of night	written in rooms behind closed doors	reopening the people's house	proxy voting	members of congress have to show up
+41	republican party has been hijacked	extremist maga faction	not interested in governing	deeply flawed rules package	gut the office of congressional ethics	attack women's access to abortion	big oil companies to pollute	interfere in ongoing criminal investigations	billionaires and big corporations	avoid paying their taxes
+42	house rules	fiscal responsibility	out-of-control spending	rules resolution	return to normal operating procedures	eliminate proxy voting	conduct oversight	accountability for the biden administration	address spending problem	inflationary crisis
+43	irs funding bill	add $114 billion to the national debt	reduce the national debt	additional funding for administrative activities	rescind unobligated funds	decrease outlays by $71 billion	decrease receipts by $186 billion
+44	abortion rights	bodily autonomy	make decisions about their own bodies	women's health protection act	guarantee abortion rights	rights of every person	decisions about their health and lives
+45	tax-and-spend politics	fiscal prosperity	governing agenda	transparent	accountable
+46	freedom to make healthcare decisions	criminalize abortion care	women's rights to reproductive care	anti-choice	women's right to abortion care	women's health protection act
+47	proper oversight	legislative reform	transparent process	mandatory 72-hour rule	fiscally responsible budget
+48	covid	remote procedures	saved lives	member-elect died
+49	abortion access	women's economic freedom	bodily autonomy	criminalizes abortion

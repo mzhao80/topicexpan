@@ -1,0 +1,334 @@
+Document: 0	Topic: pledge of allegiance participation	Phrase: pledge of allegiance
+Document: 0	Topic: pledge of allegiance participation	Phrase: join in the pledge of allegiance
+Document: 0	Topic: pledge of allegiance participation	Phrase: led the pledge of allegiance
+Document: 1	Topic: order and decorum in congress	Phrase: order and decorum
+Document: 1	Topic: order and decorum in congress	Phrase: preserve order and decorum
+Document: 1	Topic: order and decorum in congress	Phrase: address any remarks through the chair
+Document: 1	Topic: order and decorum in congress	Phrase: refrain from engaging in personalities
+Document: 1	Topic: order and decorum in congress	Phrase: respecting and upholding order and decorum
+Document: 2	Topic: nomination of kevin mccarthy	Phrase: nominate kevin mccarthy
+Document: 2	Topic: nomination of kevin mccarthy	Phrase: speaker of the house
+Document: 2	Topic: nomination of kevin mccarthy	Phrase: leading republican nominee
+Document: 3	Topic: voting rights protection	Phrase: protecting the right to vote
+Document: 3	Topic: voting rights protection	Phrase: voter suppression
+Document: 3	Topic: voting rights protection	Phrase: john lewis voting rights advancement act
+Document: 3	Topic: voting rights protection	Phrase: expanding democracy
+Document: 4	Topic: nomination of byron donalds	Phrase: byron donalds
+Document: 4	Topic: nomination of byron donalds	Phrase: nomination of byron donalds
+Document: 4	Topic: nomination of byron donalds	Phrase: more byron donalds
+Document: 4	Topic: nomination of byron donalds	Phrase: man of personal conviction
+Document: 5	Topic: speaker election results	Phrase: votes cast
+Document: 5	Topic: speaker election results	Phrase: hakeem jeffries
+Document: 5	Topic: speaker election results	Phrase: kevin mccarthy
+Document: 5	Topic: speaker election results	Phrase: byron donalds
+Document: 5	Topic: speaker election results	Phrase: donald j. trump
+Document: 5	Topic: speaker election results	Phrase: speaker not elected
+Document: 6	Topic: nomination of kevin mccarthy as speaker	Phrase: nominate kevin mccarthy
+Document: 6	Topic: nomination of kevin mccarthy as speaker	Phrase: speaker of the house
+Document: 6	Topic: nomination of kevin mccarthy as speaker	Phrase: my friend
+Document: 6	Topic: nomination of kevin mccarthy as speaker	Phrase: my colleague
+Document: 6	Topic: nomination of kevin mccarthy as speaker	Phrase: right the wrongs
+Document: 6	Topic: nomination of kevin mccarthy as speaker	Phrase: safeguard our constitution
+Document: 6	Topic: nomination of kevin mccarthy as speaker	Phrase: freedoms of americans
+Document: 6	Topic: nomination of kevin mccarthy as speaker	Phrase: sacrificed for
+Document: 6	Topic: nomination of kevin mccarthy as speaker	Phrase: support and defend
+Document: 7	Topic: nomination of hakeem jeffries	Phrase: nominate hakeem jeffries
+Document: 7	Topic: nomination of hakeem jeffries	Phrase: speaker of the house
+Document: 7	Topic: nomination of hakeem jeffries	Phrase: stand united behind our leader
+Document: 7	Topic: nomination of hakeem jeffries	Phrase: historic dysfunction
+Document: 7	Topic: nomination of hakeem jeffries	Phrase: deliver basic services
+Document: 7	Topic: nomination of hakeem jeffries	Phrase: responsibility to serve our constituents
+Document: 7	Topic: nomination of hakeem jeffries	Phrase: house democrats will stand together
+Document: 7	Topic: nomination of hakeem jeffries	Phrase: elect a speaker who stands with them
+Document: 8	Topic: nomination of byron donalds for speaker	Phrase: nomination of byron donalds
+Document: 8	Topic: nomination of byron donalds for speaker	Phrase: speaker of the house
+Document: 8	Topic: nomination of byron donalds for speaker	Phrase: change from the policies of the left
+Document: 8	Topic: nomination of byron donalds for speaker	Phrase: bring that under control
+Document: 8	Topic: nomination of byron donalds for speaker	Phrase: exchange of ideas
+Document: 8	Topic: nomination of byron donalds for speaker	Phrase: expression of support
+Document: 8	Topic: nomination of byron donalds for speaker	Phrase: restore american energy independence
+Document: 9	Topic: speaker of the house election	Phrase: votes cast
+Document: 9	Topic: speaker of the house election	Phrase: hakeem jeffries
+Document: 9	Topic: speaker of the house election	Phrase: kevin mccarthy
+Document: 9	Topic: speaker of the house election	Phrase: byron donalds
+Document: 9	Topic: speaker of the house election	Phrase: speaker has not been elected
+Document: 10	Topic: election of speaker of the house	Phrase: nominate kevin mccarthy
+Document: 10	Topic: election of speaker of the house	Phrase: speaker of the house
+Document: 10	Topic: election of speaker of the house	Phrase: overwhelming support
+Document: 10	Topic: election of speaker of the house	Phrase: hold the speaker accountable
+Document: 10	Topic: election of speaker of the house	Phrase: motion to vacate the chair
+Document: 10	Topic: election of speaker of the house	Phrase: protect that speaker's gavel
+Document: 10	Topic: election of speaker of the house	Phrase: republican majority
+Document: 10	Topic: election of speaker of the house	Phrase: implement that change
+Document: 11	Topic: nomination of hakeem jeffries	Phrase: hakeem jeffries for speaker
+Document: 11	Topic: nomination of hakeem jeffries	Phrase: leadership of hakeem jeffries
+Document: 11	Topic: nomination of hakeem jeffries	Phrase: democrats united
+Document: 11	Topic: nomination of hakeem jeffries	Phrase: nomination of hakeem jeffries
+Document: 11	Topic: nomination of hakeem jeffries	Phrase: representative-elect from the state of new york
+Document: 12	Topic: power consolidation in congress	Phrase: consolidation of power
+Document: 12	Topic: power consolidation in congress	Phrase: diminish voices
+Document: 12	Topic: power consolidation in congress	Phrase: equal representation
+Document: 12	Topic: power consolidation in congress	Phrase: control legislation
+Document: 12	Topic: power consolidation in congress	Phrase: disintegration of relationships
+Document: 13	Topic: equal representation and legislative process	Phrase: equal representation
+Document: 13	Topic: equal representation and legislative process	Phrase: single-subject legislation
+Document: 13	Topic: equal representation and legislative process	Phrase: open rule process
+Document: 13	Topic: equal representation and legislative process	Phrase: equal voice
+Document: 13	Topic: equal representation and legislative process	Phrase: collaborate and craft legislation
+Document: 13	Topic: equal representation and legislative process	Phrase: restore the process
+Document: 14	Topic: nomination of speaker of the house	Phrase: nominate the gentleman from oklahoma
+Document: 14	Topic: nomination of speaker of the house	Phrase: speaker of the house
+Document: 14	Topic: nomination of speaker of the house	Phrase: evaluating what life after kevin mccarthy looks like
+Document: 14	Topic: nomination of speaker of the house	Phrase: need a leader
+Document: 14	Topic: nomination of speaker of the house	Phrase: unite our party
+Document: 14	Topic: nomination of speaker of the house	Phrase: deliver on the promises
+Document: 14	Topic: nomination of speaker of the house	Phrase: small business owner
+Document: 14	Topic: nomination of speaker of the house	Phrase: lived the american dream
+Document: 15	Topic: speaker of the house election	Phrase: speaker has not been elected
+Document: 15	Topic: speaker of the house election	Phrase: total number of votes cast
+Document: 15	Topic: speaker of the house election	Phrase: honorable hakeem jeffries
+Document: 15	Topic: speaker of the house election	Phrase: honorable kevin mccarthy
+Document: 15	Topic: speaker of the house election	Phrase: honorable byron donalds
+Document: 15	Topic: speaker of the house election	Phrase: honorable kevin hern
+Document: 16	Topic: nomination of kevin mccarthy	Phrase: nominate kevin mccarthy
+Document: 16	Topic: nomination of kevin mccarthy	Phrase: speaker of the house
+Document: 16	Topic: nomination of kevin mccarthy	Phrase: republican majority
+Document: 16	Topic: nomination of kevin mccarthy	Phrase: commitment to america
+Document: 16	Topic: nomination of kevin mccarthy	Phrase: fight for the american dream
+Document: 16	Topic: nomination of kevin mccarthy	Phrase: cares about the american people
+Document: 16	Topic: nomination of kevin mccarthy	Phrase: laying out a plan
+Document: 16	Topic: nomination of kevin mccarthy	Phrase: opportunity for all
+Document: 16	Topic: nomination of kevin mccarthy	Phrase: strong economy
+Document: 16	Topic: nomination of kevin mccarthy	Phrase: nation that is safe
+Document: 16	Topic: nomination of kevin mccarthy	Phrase: future built on freedom
+Document: 16	Topic: nomination of kevin mccarthy	Phrase: government that is accountable
+Document: 17	Topic: nomination of hakeem jeffries	Phrase: hakeem jeffries for speaker
+Document: 17	Topic: nomination of hakeem jeffries	Phrase: hakeem jeffries is the lead vote-getter
+Document: 17	Topic: nomination of hakeem jeffries	Phrase: character of hakeem jeffries
+Document: 17	Topic: nomination of hakeem jeffries	Phrase: opportunity to lead
+Document: 17	Topic: nomination of hakeem jeffries	Phrase: democratic caucus
+Document: 17	Topic: nomination of hakeem jeffries	Phrase: governing party in this chamber
+Document: 18	Topic: nomination of byron donalds	Phrase: nominate byron donalds
+Document: 18	Topic: nomination of byron donalds	Phrase: speaker of the house
+Document: 18	Topic: nomination of byron donalds	Phrase: incredible representation
+Document: 18	Topic: nomination of byron donalds	Phrase: support him
+Document: 19	Topic: nomination of kevin hern	Phrase: nominate kevin hern
+Document: 19	Topic: nomination of kevin hern	Phrase: speaker of the house
+Document: 19	Topic: nomination of kevin hern	Phrase: elect a republican
+Document: 19	Topic: nomination of kevin hern	Phrase: casting my vote for kevin hern
+Document: 20	Topic: speaker of the house election	Phrase: speaker has not been elected
+Document: 20	Topic: speaker of the house election	Phrase: total number of votes cast
+Document: 20	Topic: speaker of the house election	Phrase: hakeem jeffries of the state of new york
+Document: 20	Topic: speaker of the house election	Phrase: kevin mccarthy of the state of california
+Document: 20	Topic: speaker of the house election	Phrase: byron donalds of the state of florida
+Document: 20	Topic: speaker of the house election	Phrase: kevin hern of the state of oklahoma
+Document: 20	Topic: speaker of the house election	Phrase: voting present
+Document: 20	Topic: speaker of the house election	Phrase: majority of the votes cast
+Document: 21	Topic: nomination of kevin mccarthy	Phrase: nominate kevin mccarthy
+Document: 21	Topic: nomination of kevin mccarthy	Phrase: speaker of the house
+Document: 21	Topic: nomination of kevin mccarthy	Phrase: leader mccarthy
+Document: 21	Topic: nomination of kevin mccarthy	Phrase: fiscal discipline
+Document: 21	Topic: nomination of kevin mccarthy	Phrase: domestic national debt
+Document: 21	Topic: nomination of kevin mccarthy	Phrase: republican commitment to america
+Document: 22	Topic: nomination of hakeem jeffries	Phrase: nominate hakeem jeffries
+Document: 22	Topic: nomination of hakeem jeffries	Phrase: first african american
+Document: 22	Topic: nomination of hakeem jeffries	Phrase: first person of color
+Document: 22	Topic: nomination of hakeem jeffries	Phrase: speaker of the house
+Document: 22	Topic: nomination of hakeem jeffries	Phrase: dedicated
+Document: 22	Topic: nomination of hakeem jeffries	Phrase: talented
+Document: 22	Topic: nomination of hakeem jeffries	Phrase: passionate
+Document: 22	Topic: nomination of hakeem jeffries	Phrase: committed public servant
+Document: 22	Topic: nomination of hakeem jeffries	Phrase: lead vote-getter
+Document: 23	Topic: trump's leadership and speaker nomination	Phrase: trump for speaker
+Document: 23	Topic: trump's leadership and speaker nomination	Phrase: trump presidency
+Document: 23	Topic: trump's leadership and speaker nomination	Phrase: veterans' accountability measures
+Document: 23	Topic: trump's leadership and speaker nomination	Phrase: confront china
+Document: 23	Topic: trump's leadership and speaker nomination	Phrase: american people first
+Document: 23	Topic: trump's leadership and speaker nomination	Phrase: didn't start any new wars
+Document: 23	Topic: trump's leadership and speaker nomination	Phrase: deeply corrupt
+Document: 23	Topic: trump's leadership and speaker nomination	Phrase: leadership positions and chairmanships
+Document: 24	Topic: nomination for speaker of the house	Phrase: placing a name in nomination
+Document: 24	Topic: nomination for speaker of the house	Phrase: position of the speaker
+Document: 24	Topic: nomination for speaker of the house	Phrase: people's representatives
+Document: 24	Topic: nomination for speaker of the house	Phrase: selection of the speaker
+Document: 25	Topic: speaker of the house election	Phrase: votes cast
+Document: 25	Topic: speaker of the house election	Phrase: hakeem jeffries
+Document: 25	Topic: speaker of the house election	Phrase: kevin mccarthy
+Document: 25	Topic: speaker of the house election	Phrase: byron donalds
+Document: 25	Topic: speaker of the house election	Phrase: kevin hern
+Document: 25	Topic: speaker of the house election	Phrase: donald j. trump
+Document: 25	Topic: speaker of the house election	Phrase: speaker has not been elected
+Document: 26	Topic: pledge of allegiance	Phrase: pledge of allegiance
+Document: 26	Topic: pledge of allegiance	Phrase: i pledge allegiance
+Document: 26	Topic: pledge of allegiance	Phrase: flag of the united states
+Document: 26	Topic: pledge of allegiance	Phrase: one nation under god
+Document: 26	Topic: pledge of allegiance	Phrase: liberty and justice for all
+Document: 27	Topic: recognition of public service	Phrase: exceptional service
+Document: 27	Topic: recognition of public service	Phrase: public service
+Document: 27	Topic: recognition of public service	Phrase: dedicated conservationist
+Document: 27	Topic: recognition of public service	Phrase: compassionate congressional caseworkers
+Document: 27	Topic: recognition of public service	Phrase: helping constituents
+Document: 27	Topic: recognition of public service	Phrase: commitment to public service
+Document: 28	Topic: family values advocacy	Phrase: family values
+Document: 28	Topic: family values advocacy	Phrase: champions of family values
+Document: 28	Topic: family values advocacy	Phrase: pro-family policy advocates
+Document: 28	Topic: family values advocacy	Phrase: focus on the family
+Document: 28	Topic: family values advocacy	Phrase: citizen magazine
+Document: 28	Topic: family values advocacy	Phrase: government and public policy
+Document: 28	Topic: family values advocacy	Phrase: tom's life and legacy
+Document: 29	Topic: d.c. statehood and representation	Phrase: d.c. statehood bill
+Document: 29	Topic: d.c. statehood and representation	Phrase: voting representation in congress
+Document: 29	Topic: d.c. statehood and representation	Phrase: full local self-government
+Document: 29	Topic: d.c. statehood and representation	Phrase: equality of citizenship
+Document: 29	Topic: d.c. statehood and representation	Phrase: taxed without representation
+Document: 29	Topic: d.c. statehood and representation	Phrase: washington
+Document: 29	Topic: d.c. statehood and representation	Phrase: douglass commonwealth
+Document: 29	Topic: d.c. statehood and representation	Phrase: constitutional authority
+Document: 29	Topic: d.c. statehood and representation	Phrase: admissions clause
+Document: 29	Topic: d.c. statehood and representation	Phrase: district clause
+Document: 29	Topic: d.c. statehood and representation	Phrase: 23rd amendment
+Document: 29	Topic: d.c. statehood and representation	Phrase: population and resources
+Document: 29	Topic: d.c. statehood and representation	Phrase: support for statehood
+Document: 29	Topic: d.c. statehood and representation	Phrase: commitment to democracy
+Document: 29	Topic: d.c. statehood and representation	Phrase: d.c. residents voted for statehood
+Document: 30	Topic: local economic development	Phrase: local economic development
+Document: 30	Topic: local economic development	Phrase: local businesses
+Document: 30	Topic: local economic development	Phrase: economic driver
+Document: 30	Topic: local economic development	Phrase: small businesses
+Document: 30	Topic: local economic development	Phrase: planning and resources
+Document: 30	Topic: local economic development	Phrase: jobs created
+Document: 30	Topic: local economic development	Phrase: direct lending
+Document: 30	Topic: local economic development	Phrase: funding
+Document: 30	Topic: local economic development	Phrase: competitive marketplace
+Document: 30	Topic: local economic development	Phrase: community initiatives
+Document: 30	Topic: local economic development	Phrase: economic development committees
+Document: 30	Topic: local economic development	Phrase: tools and guidance
+Document: 30	Topic: local economic development	Phrase: business friendly
+Document: 31	Topic: celebrating community contributions	Phrase: mrs. thomas's 90th birthday
+Document: 31	Topic: celebrating community contributions	Phrase: community contributions
+Document: 31	Topic: celebrating community contributions	Phrase: access to care
+Document: 31	Topic: celebrating community contributions	Phrase: champion the cause
+Document: 31	Topic: celebrating community contributions	Phrase: outstanding nurse of the year
+Document: 31	Topic: celebrating community contributions	Phrase: greatest neighbor
+Document: 32	Topic: united states sepak takraw team victory	Phrase: united states sepak takraw team
+Document: 32	Topic: united states sepak takraw team victory	Phrase: winning gold medals
+Document: 32	Topic: united states sepak takraw team victory	Phrase: 2022 istaf world cup
+Document: 32	Topic: united states sepak takraw team victory	Phrase: victory for the united states
+Document: 33	Topic: civic engagement and leadership development	Phrase: civic life
+Document: 33	Topic: civic engagement and leadership development	Phrase: leadership development
+Document: 33	Topic: civic engagement and leadership development	Phrase: public service internships
+Document: 33	Topic: civic engagement and leadership development	Phrase: civic engagement program
+Document: 33	Topic: civic engagement and leadership development	Phrase: thoughtful dialogue
+Document: 33	Topic: civic engagement and leadership development	Phrase: political leaders
+Document: 33	Topic: civic engagement and leadership development	Phrase: public service
+Document: 34	Topic: legacy of fred wolfe	Phrase: legacy of faithful service
+Document: 34	Topic: legacy of fred wolfe	Phrase: massive impact
+Document: 34	Topic: legacy of fred wolfe	Phrase: numerous church establishments
+Document: 34	Topic: legacy of fred wolfe	Phrase: grew by thousands of members
+Document: 34	Topic: legacy of fred wolfe	Phrase: 5
+Document: 34	Topic: legacy of fred wolfe	Phrase: 500 baptisms
+Document: 34	Topic: legacy of fred wolfe	Phrase: spiritual guidance
+Document: 34	Topic: legacy of fred wolfe	Phrase: mentor
+Document: 34	Topic: legacy of fred wolfe	Phrase: wise sayings
+Document: 35	Topic: loudoun county chamber recognition	Phrase: loudoun county chamber of commerce
+Document: 35	Topic: loudoun county chamber recognition	Phrase: 5-star accreditation
+Document: 35	Topic: loudoun county chamber recognition	Phrase: largest and most effective chamber
+Document: 35	Topic: loudoun county chamber recognition	Phrase: premier network of business and community leaders
+Document: 35	Topic: loudoun county chamber recognition	Phrase: effective advocate
+Document: 35	Topic: loudoun county chamber recognition	Phrase: local
+Document: 35	Topic: loudoun county chamber recognition	Phrase: national and international recognition
+Document: 35	Topic: loudoun county chamber recognition	Phrase: chamber of the year
+Document: 35	Topic: loudoun county chamber recognition	Phrase: performance and community impact
+Document: 35	Topic: loudoun county chamber recognition	Phrase: industry leading programs
+Document: 35	Topic: loudoun county chamber recognition	Phrase: business advocacy
+Document: 35	Topic: loudoun county chamber recognition	Phrase: u.s. chamber of commerce
+Document: 35	Topic: loudoun county chamber recognition	Phrase: quality of its programs
+Document: 35	Topic: loudoun county chamber recognition	Phrase: highest endorsement for a local chamber's performance
+Document: 35	Topic: loudoun county chamber recognition	Phrase: best in class performance
+Document: 35	Topic: loudoun county chamber recognition	Phrase: commitment to excellence
+Document: 36	Topic: police leadership and service	Phrase: public service
+Document: 36	Topic: police leadership and service	Phrase: public safety
+Document: 36	Topic: police leadership and service	Phrase: law enforcement record
+Document: 36	Topic: police leadership and service	Phrase: officer morale
+Document: 36	Topic: police leadership and service	Phrase: officer training
+Document: 36	Topic: police leadership and service	Phrase: de-escalation
+Document: 37	Topic: pledge of allegiance	Phrase: pledge of allegiance
+Document: 37	Topic: pledge of allegiance	Phrase: flag of the united states
+Document: 37	Topic: pledge of allegiance	Phrase: one nation under god
+Document: 37	Topic: pledge of allegiance	Phrase: liberty and justice for all
+Document: 38	Topic: house resolution debate	Phrase: purpose of debate only
+Document: 38	Topic: house resolution debate	Phrase: yielded for the purpose of debate
+Document: 38	Topic: house resolution debate	Phrase: consideration of this resolution
+Document: 39	Topic: adoption of congressional rules	Phrase: adopting the rules
+Document: 39	Topic: adoption of congressional rules	Phrase: adoption of the rules
+Document: 39	Topic: adoption of congressional rules	Phrase: rules of the 118th congress
+Document: 39	Topic: adoption of congressional rules	Phrase: changes to the standing rules
+Document: 39	Topic: adoption of congressional rules	Phrase: two minute votes
+Document: 39	Topic: adoption of congressional rules	Phrase: committee authorization and oversight plans
+Document: 40	Topic: house rules reform	Phrase: rules package
+Document: 40	Topic: house rules reform	Phrase: conduct business
+Document: 40	Topic: house rules reform	Phrase: washington is broken
+Document: 40	Topic: house rules reform	Phrase: bills appear by dark of night
+Document: 40	Topic: house rules reform	Phrase: dark of night
+Document: 40	Topic: house rules reform	Phrase: written in rooms behind closed doors
+Document: 40	Topic: house rules reform	Phrase: reopening the people's house
+Document: 40	Topic: house rules reform	Phrase: proxy voting
+Document: 40	Topic: house rules reform	Phrase: members of congress have to show up
+Document: 41	Topic: republican extremism and governance issues	Phrase: republican party has been hijacked
+Document: 41	Topic: republican extremism and governance issues	Phrase: extremist maga faction
+Document: 41	Topic: republican extremism and governance issues	Phrase: not interested in governing
+Document: 41	Topic: republican extremism and governance issues	Phrase: deeply flawed rules package
+Document: 41	Topic: republican extremism and governance issues	Phrase: gut the office of congressional ethics
+Document: 41	Topic: republican extremism and governance issues	Phrase: attack women's access to abortion
+Document: 41	Topic: republican extremism and governance issues	Phrase: big oil companies to pollute
+Document: 41	Topic: republican extremism and governance issues	Phrase: interfere in ongoing criminal investigations
+Document: 41	Topic: republican extremism and governance issues	Phrase: billionaires and big corporations
+Document: 41	Topic: republican extremism and governance issues	Phrase: avoid paying their taxes
+Document: 42	Topic: house rules and fiscal responsibility	Phrase: house rules
+Document: 42	Topic: house rules and fiscal responsibility	Phrase: fiscal responsibility
+Document: 42	Topic: house rules and fiscal responsibility	Phrase: out-of-control spending
+Document: 42	Topic: house rules and fiscal responsibility	Phrase: rules resolution
+Document: 42	Topic: house rules and fiscal responsibility	Phrase: return to normal operating procedures
+Document: 42	Topic: house rules and fiscal responsibility	Phrase: eliminate proxy voting
+Document: 42	Topic: house rules and fiscal responsibility	Phrase: conduct oversight
+Document: 42	Topic: house rules and fiscal responsibility	Phrase: accountability for the biden administration
+Document: 42	Topic: house rules and fiscal responsibility	Phrase: address spending problem
+Document: 42	Topic: house rules and fiscal responsibility	Phrase: inflationary crisis
+Document: 43	Topic: irs funding and national debt	Phrase: irs funding bill
+Document: 43	Topic: irs funding and national debt	Phrase: add $114 billion to the national debt
+Document: 43	Topic: irs funding and national debt	Phrase: reduce the national debt
+Document: 43	Topic: irs funding and national debt	Phrase: additional funding for administrative activities
+Document: 43	Topic: irs funding and national debt	Phrase: rescind unobligated funds
+Document: 43	Topic: irs funding and national debt	Phrase: decrease outlays by $71 billion
+Document: 43	Topic: irs funding and national debt	Phrase: decrease receipts by $186 billion
+Document: 44	Topic: abortion rights and bodily autonomy	Phrase: abortion rights
+Document: 44	Topic: abortion rights and bodily autonomy	Phrase: bodily autonomy
+Document: 44	Topic: abortion rights and bodily autonomy	Phrase: make decisions about their own bodies
+Document: 44	Topic: abortion rights and bodily autonomy	Phrase: women's health protection act
+Document: 44	Topic: abortion rights and bodily autonomy	Phrase: guarantee abortion rights
+Document: 44	Topic: abortion rights and bodily autonomy	Phrase: rights of every person
+Document: 44	Topic: abortion rights and bodily autonomy	Phrase: decisions about their health and lives
+Document: 45	Topic: fiscal responsibility and governance	Phrase: tax-and-spend politics
+Document: 45	Topic: fiscal responsibility and governance	Phrase: fiscal prosperity
+Document: 45	Topic: fiscal responsibility and governance	Phrase: governing agenda
+Document: 45	Topic: fiscal responsibility and governance	Phrase: transparent
+Document: 45	Topic: fiscal responsibility and governance	Phrase: accountable
+Document: 46	Topic: women's reproductive rights	Phrase: freedom to make healthcare decisions
+Document: 46	Topic: women's reproductive rights	Phrase: criminalize abortion care
+Document: 46	Topic: women's reproductive rights	Phrase: women's rights to reproductive care
+Document: 46	Topic: women's reproductive rights	Phrase: anti-choice
+Document: 46	Topic: women's reproductive rights	Phrase: women's right to abortion care
+Document: 46	Topic: women's reproductive rights	Phrase: women's health protection act
+Document: 47	Topic: oversight and legislative reform	Phrase: proper oversight
+Document: 47	Topic: oversight and legislative reform	Phrase: legislative reform
+Document: 47	Topic: oversight and legislative reform	Phrase: transparent process
+Document: 47	Topic: oversight and legislative reform	Phrase: mandatory 72-hour rule
+Document: 47	Topic: oversight and legislative reform	Phrase: fiscally responsible budget
+Document: 48	Topic: impact of covid-19 on congress	Phrase: covid
+Document: 48	Topic: impact of covid-19 on congress	Phrase: remote procedures
+Document: 48	Topic: impact of covid-19 on congress	Phrase: saved lives
+Document: 48	Topic: impact of covid-19 on congress	Phrase: member-elect died
+Document: 49	Topic: abortion access and women's rights	Phrase: abortion access
+Document: 49	Topic: abortion access and women's rights	Phrase: women's economic freedom
+Document: 49	Topic: abortion access and women's rights	Phrase: bodily autonomy
+Document: 49	Topic: abortion access and women's rights	Phrase: criminalizes abortion

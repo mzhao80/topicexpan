@@ -32,3 +32,43 @@
 31	taxation
 32	transportation and public works
 33	water resources development
+34	pledge of allegiance participation
+35	order and decorum in congress
+36	nomination of kevin mccarthy
+37	voting rights protection
+38	nomination of byron donalds
+39	speaker election results
+40	nomination of kevin mccarthy as speaker
+41	nomination of hakeem jeffries
+42	nomination of byron donalds for speaker
+43	speaker of the house election
+44	election of speaker of the house
+45	power consolidation in congress
+46	equal representation and legislative process
+47	nomination of speaker of the house
+48	nomination of kevin hern
+49	trump's leadership and speaker nomination
+50	nomination for speaker of the house
+51	pledge of allegiance
+52	recognition of public service
+53	family values advocacy
+54	d.c. statehood and representation
+55	local economic development
+56	celebrating community contributions
+57	united states sepak takraw team victory
+58	civic engagement and leadership development
+59	legacy of fred wolfe
+60	loudoun county chamber recognition
+61	police leadership and service
+62	house resolution debate
+63	adoption of congressional rules
+64	house rules reform
+65	republican extremism and governance issues
+66	house rules and fiscal responsibility
+67	irs funding and national debt
+68	abortion rights and bodily autonomy
+69	fiscal responsibility and governance
+70	women's reproductive rights
+71	oversight and legislative reform
+72	impact of covid-19 on congress
+73	abortion access and women's rights
