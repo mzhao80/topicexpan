@@ -19,12 +19,12 @@ class TopicExpan(BaseModel):
         self.doc_encoder.model.gradient_checkpointing_enable()
 
         self.phrase_decoder = TransformerPhraseDecoder(
-                                self.doc_encoder.model.embeddings,
-                                pad_token_id, bos_token_id, eos_token_id,
-                                options["tfm_decoder_num_layers"], 
-                                options["tfm_decoder_num_heads"], 
-                                options["tfm_decoder_max_length"],
-                                use_flash_attention=True)  # Enable flash attention
+                                    self.doc_encoder.input_embeddings, 
+                                    pad_token_id, bos_token_id, eos_token_id,
+                                    options["tfm_decoder_num_layers"], 
+                                    options["tfm_decoder_num_heads"], 
+                                    options["tfm_decoder_max_length"],
+                                    use_flash_attention=True)  # Enable flash attention
 
         self.topic_hier = options["topic_hierarchy"]
         self.novel_topic_hier = options["novel_topic_hierarchy"]

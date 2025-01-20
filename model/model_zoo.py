@@ -10,7 +10,7 @@ from torch.nn import init, TransformerDecoderLayer, TransformerDecoder
 import dgl
 import dgl.function as fn
 from dgl.nn.pytorch.conv import GraphConv
-from transformers import AutoModel, AutoConfig, GPT2Model, GPT2Config
+from transformers import AutoModel, AutoConfig
 from base import BaseModel
 
 """
@@ -223,97 +223,78 @@ class BilinearInteraction(nn.Module):
 """
     4. Topic-conditional Phrase Generator
 """
-class TransformerPhraseDecoder(nn.Module):
-    def __init__(self, embeddings, pad_token_id, bos_token_id, eos_token_id, 
-                 num_layers=6, num_heads=8, max_length=32, dropout=0.1, use_flash_attention=True):
+class TransformerPhraseDecoder(BaseModel):
+    def __init__(self, input_embeddings, pad_token_id, bos_token_id, eos_token_id, num_layers, num_heads, max_length, use_flash_attention=False):
         super().__init__()
-        self.embeddings = embeddings
+        self.vocab_size, self.hidden_size = input_embeddings.word_embeddings.weight.shape
+        self.input_embeddings = input_embeddings
+        self.output_embeddings = nn.Linear(self.hidden_size, self.vocab_size, bias=False)
+
+        model_layer = TransformerDecoderLayer(
+            d_model=self.hidden_size, 
+            nhead=num_heads, 
+            batch_first=True
+        )
+        self.model = TransformerDecoder(model_layer, num_layers=num_layers)
+
+        self.max_length = max_length
         self.pad_token_id = pad_token_id
         self.bos_token_id = bos_token_id
         self.eos_token_id = eos_token_id
-        self.max_length = max_length
-        
-        # Get hidden size from BERT embeddings
-        hidden_size = embeddings.word_embeddings.embedding_dim
-        intermediate_size = hidden_size * 4  # Increased from default
-        
-        decoder_config = GPT2Config(
-            vocab_size=embeddings.word_embeddings.num_embeddings,
-            n_positions=max_length,
-            n_ctx=max_length,
-            n_embd=hidden_size,
-            n_layer=num_layers,
-            n_head=num_heads,
-            n_inner=intermediate_size,  # Increased FFN size
-            activation_function='gelu',  # Changed to GELU
-            resid_pdrop=dropout,
-            embd_pdrop=dropout,
-            attn_pdrop=dropout,
-            use_cache=True
-        )
-        
-        self.decoder = GPT2Model(decoder_config)
-        self.output_projection = nn.Linear(hidden_size, embeddings.word_embeddings.num_embeddings, bias=False)
-        self.output_projection.weight = embeddings.word_embeddings.weight  # Weight tying
-        
-    def forward(self, input_ids, encoder_hidden_states):
-        attention_mask = (input_ids != self.pad_token_id).float()[:, None, None, :]
-        outputs = self.decoder(
-            input_ids=input_ids,
-            attention_mask=attention_mask,
-            encoder_hidden_states=encoder_hidden_states,
-            use_cache=True
-        )
-        hidden_states = outputs[0]
-        logits = self.output_projection(hidden_states)
-        return logits
 
-    def generate(self, encoder_hidden_states, num_beams=4, temperature=0.7):
-        batch_size = encoder_hidden_states.size(0)
-        device = encoder_hidden_states.device
+    def _make_causal_mask(self, x):
+        # Create causal mask for decoder
+        sz = x.size(1)
+        mask = (torch.triu(torch.ones(sz, sz)) == 1).transpose(0, 1)
+        mask = mask.float().masked_fill(mask == 0, float('-inf')).masked_fill(mask == 1, float(0.0))
+        return mask.to(x.device)
+
+    def forward(self, x, decoder_context=None):
+        # Handle BERT-style dictionary input
+        if isinstance(x, dict):
+            input_ids = x['input_ids']
+            token_type_ids = x.get('token_type_ids', None)
+            # Only pass input_ids and token_type_ids to embeddings
+            x = self.input_embeddings(
+                input_ids=input_ids,
+                token_type_ids=token_type_ids
+            )
+        else:
+            x = self.input_embeddings(x)
         
-        # Initialize with BOS token
-        input_ids = torch.full((batch_size, 1), self.bos_token_id, device=device)
-        beam_scores = torch.zeros(batch_size, num_beams, device=device)
-        beam_input_ids = input_ids.unsqueeze(1).expand(batch_size, num_beams, 1)
-        beam_encoder_hidden_states = encoder_hidden_states.unsqueeze(1).expand(
-            batch_size, num_beams, *encoder_hidden_states.shape[1:])
+        # Create attention masks
+        attn_mask = self._make_causal_mask(x)
+        # Use attention_mask from input if provided
+        if isinstance(x, dict) and 'attention_mask' in x:
+            padding_mask = ~x['attention_mask'].bool()
+        else:
+            padding_mask = None
         
-        for step in range(self.max_length - 1):
-            beam_input_ids_flat = beam_input_ids.view(-1, beam_input_ids.size(-1))
-            beam_encoder_states_flat = beam_encoder_hidden_states.view(
-                -1, *beam_encoder_hidden_states.shape[2:])
+        # Run through transformer decoder
+        output = self.model(
+            x,
+            decoder_context,
+            tgt_mask=attn_mask,
+            memory_mask=None,
+            tgt_key_padding_mask=padding_mask,
+            memory_key_padding_mask=None
+        )
+        
+        # Project to vocabulary
+        output = self.output_embeddings(output)
+        
+        return output
+
+    def generate(self, context):
+        batch_size = context.size(0)
+        current_token = torch.full((batch_size, 1), self.bos_token_id, dtype=torch.long, device=context.device)
+        
+        for _ in range(self.max_length - 1):
+            logits = self.forward(current_token, context)
+            next_token = logits[:, -1:].argmax(dim=-1)
+            current_token = torch.cat([current_token, next_token], dim=1)
             
-            # Get logits for next token
-            logits = self.forward(beam_input_ids_flat, beam_encoder_states_flat)
-            next_token_logits = logits[:, -1, :] / temperature
-            
-            # Apply softmax and get top-k next tokens
-            next_token_scores = F.log_softmax(next_token_logits, dim=-1)
-            next_token_scores = next_token_scores.view(batch_size, num_beams, -1)
-            vocab_size = next_token_scores.shape[-1]
-            
-            # Add beam scores
-            next_token_scores = next_token_scores + beam_scores.unsqueeze(-1)
-            next_token_scores = next_token_scores.view(batch_size, -1)
-            
-            # Get top-k beams
-            next_scores, next_tokens = torch.topk(next_token_scores, num_beams, dim=1)
-            next_beams = next_tokens // vocab_size
-            next_tokens = next_tokens % vocab_size
-            
-            # Update beam input ids
-            beam_input_ids = torch.cat([
-                beam_input_ids[torch.arange(batch_size).unsqueeze(1), next_beams],
-                next_tokens.unsqueeze(-1)
-            ], dim=-1)
-            
-            # Update beam scores
-            beam_scores = next_scores
-            
-            # Check if all beams are finished
-            if (beam_input_ids == self.eos_token_id).any(dim=-1).all():
+            if (next_token == self.eos_token_id).all():
                 break
-        
-        # Return highest scoring beam
-        return beam_input_ids[:, 0]
+                
+        return current_token
