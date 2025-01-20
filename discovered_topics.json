@@ -1,0 +1,95 @@
+{
+  "root -> politics": [
+    {
+      "name": "speaker of the house",
+      "size": 10,
+      "phrases": [
+        {
+          "doc_id": 0,
+          "text": "speaker of the house"
+        },
+        {
+          "doc_id": 21,
+          "text": "speaker of the house"
+        },
+        {
+          "doc_id": 26,
+          "text": "speaker of the house"
+        },
+        {
+          "doc_id": 27,
+          "text": "speaker of the house"
+        },
+        {
+          "doc_id": 29,
+          "text": "speaker of the house"
+        },
+        {
+          "doc_id": 30,
+          "text": "speaker of the house"
+        },
+        {
+          "doc_id": 31,
+          "text": "speaker of the house"
+        },
+        {
+          "doc_id": 33,
+          "text": "speaker of the house"
+        },
+        {
+          "doc_id": 35,
+          "text": "speaker of the house"
+        },
+        {
+          "doc_id": 37,
+          "text": "speaker of the house"
+        }
+      ]
+    },
+    {
+      "name": "speaker of the house",
+      "size": 0,
+      "phrases": []
+    },
+    {
+      "name": "speaker of the house",
+      "size": 0,
+      "phrases": []
+    },
+    {
+      "name": "speaker of the house",
+      "size": 0,
+      "phrases": []
+    },
+    {
+      "name": "speaker of the house",
+      "size": 0,
+      "phrases": []
+    },
+    {
+      "name": "speaker of the house",
+      "size": 0,
+      "phrases": []
+    },
+    {
+      "name": "speaker of the house",
+      "size": 0,
+      "phrases": []
+    },
+    {
+      "name": "speaker of the house",
+      "size": 0,
+      "phrases": []
+    },
+    {
+      "name": "speaker of the house",
+      "size": 0,
+      "phrases": []
+    },
+    {
+      "name": "speaker of the house",
+      "size": 0,
+      "phrases": []
+    }
+  ]
+}
