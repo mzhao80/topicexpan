@@ -290,63 +290,78 @@ class TransformerPhraseDecoder(BaseModel):
         device = context.device
         
         # Initialize beam state
-        start_token = torch.full((batch_size, 1), self.bos_token_id, dtype=torch.long, device=device)
-        scores = torch.zeros(batch_size, 1, device=device)
-        sequences = start_token
+        sequences = torch.full((batch_size, 1), self.bos_token_id, dtype=torch.long, device=device)
+        sequence_scores = torch.zeros(batch_size, 1, device=device)
         
         # Store finished sequences and their scores
         finished_sequences = [[] for _ in range(batch_size)]
         finished_scores = [[] for _ in range(batch_size)]
         
         for step in range(self.max_length - 1):
+            num_effective_batch = sequences.size(0)
+            
             # Get logits for next token
-            logits = self.forward(sequences, context)
-            vocab_size = logits.shape[-1]
-            curr_batch_size = sequences.size(0) // (beam_size if step > 0 else 1)
+            logits = self.forward(sequences, context)  # [batch_size * beam_size, seq_len, vocab_size]
+            curr_logits = logits[:, -1, :]  # [batch_size * beam_size, vocab_size]
             
             # Get log probabilities
-            log_probs = F.log_softmax(logits[:, -1:], dim=-1)
+            log_probs = F.log_softmax(curr_logits, dim=-1)  # [batch_size * beam_size, vocab_size]
+            vocab_size = log_probs.size(-1)
             
             if step == 0:
-                # For first step, only use the first beam
-                scores = scores.unsqueeze(-1) + log_probs[:, 0]
-                scores, indices = scores.view(batch_size, -1).topk(beam_size, dim=-1)
-                sequences = sequences.repeat(1, beam_size).view(batch_size * beam_size, -1)
-                next_tokens = indices % vocab_size
+                # For first step, only use first beam
+                sequence_scores = sequence_scores + log_probs  # [batch_size, vocab_size]
+                scores, indices = sequence_scores.topk(beam_size, dim=-1)  # [batch_size, beam_size]
+                
+                # Convert indices to next tokens and beam indices
+                beam_indices = torch.zeros_like(indices)
+                next_tokens = indices
+                
+                # Update sequences
+                sequences = sequences.repeat(1, beam_size).view(-1, sequences.size(-1))  # [batch_size * beam_size, seq_len]
                 sequences = torch.cat([sequences, next_tokens.view(-1, 1)], dim=-1)
+                sequence_scores = scores.view(-1, 1)
+                
+                # Update context for beam size
                 context = context.repeat_interleave(beam_size, dim=0)
             else:
-                # Calculate scores for each beam and token
-                scores = scores.unsqueeze(-1) + log_probs
-                scores = scores.view(curr_batch_size, -1)
+                # Calculate scores for each beam and vocab item
+                sequence_scores = sequence_scores.unsqueeze(-1) + log_probs  # [batch_size * beam_size, vocab_size]
+                
+                # Reshape scores for topk
+                num_beams = num_effective_batch // batch_size
+                sequence_scores = sequence_scores.view(batch_size, num_beams * vocab_size)
                 
                 # Apply length penalty
                 length_penalty_score = ((5 + step + 1) / 6) ** length_penalty
-                scores = scores / length_penalty_score
+                scores = sequence_scores / length_penalty_score
                 
-                # Select top-k
-                scores, indices = scores.topk(beam_size, dim=-1)
-                beam_indices = indices // vocab_size
-                token_indices = indices % vocab_size
+                # Select top beams and their tokens
+                scores, indices = scores.topk(beam_size, dim=-1)  # [batch_size, beam_size]
+                beam_indices = indices // vocab_size  # [batch_size, beam_size]
+                next_tokens = indices % vocab_size  # [batch_size, beam_size]
                 
-                # Update sequences
-                reordering = (beam_indices + torch.arange(curr_batch_size, device=device).unsqueeze(1) * beam_size).view(-1)
-                sequences = sequences[reordering]
-                sequences = torch.cat([sequences, token_indices.view(-1, 1)], dim=-1)
+                # Compute offsets for gather operation
+                beam_indices = beam_indices + (torch.arange(batch_size, device=device) * num_beams).unsqueeze(-1)
+                
+                # Gather sequences
+                sequences = sequences.view(-1, sequences.size(-1))  # [batch_size * beam_size, seq_len]
+                sequences = sequences[beam_indices.view(-1)]  # [batch_size * beam_size, seq_len]
+                sequences = torch.cat([sequences, next_tokens.view(-1, 1)], dim=-1)
+                
+                # Update scores
+                sequence_scores = scores.view(-1, 1)
             
             # Check for completed sequences
             eos_mask = sequences[:, -1] == self.eos_token_id
+            
             if eos_mask.any():
-                # Get batch indices for the finished sequences
-                curr_batch_size = sequences.size(0) // beam_size
-                batch_indices = torch.arange(curr_batch_size, device=device).repeat_interleave(beam_size)
-                
                 # Add finished sequences to their respective batch lists
                 for idx in range(sequences.size(0)):
                     if eos_mask[idx]:
-                        batch_idx = batch_indices[idx]
+                        batch_idx = idx // beam_size
                         finished_sequences[batch_idx].append(sequences[idx].tolist())
-                        finished_scores[batch_idx].append(scores.view(-1)[idx].item())
+                        finished_scores[batch_idx].append(sequence_scores[idx].item())
                 
                 # Remove finished sequences
                 if eos_mask.all():
@@ -354,7 +369,7 @@ class TransformerPhraseDecoder(BaseModel):
                     
                 non_finished_mask = ~eos_mask
                 sequences = sequences[non_finished_mask]
-                scores = scores.view(-1)[non_finished_mask]
+                sequence_scores = sequence_scores[non_finished_mask]
                 context = context[non_finished_mask]
                 
                 if sequences.size(0) == 0:  # All sequences finished
@@ -362,12 +377,10 @@ class TransformerPhraseDecoder(BaseModel):
         
         # Handle any unfinished sequences
         if sequences.size(0) > 0:
-            curr_batch_size = sequences.size(0) // beam_size
-            batch_indices = torch.arange(curr_batch_size, device=device).repeat_interleave(beam_size)
             for idx in range(sequences.size(0)):
-                batch_idx = batch_indices[idx]
+                batch_idx = idx // beam_size
                 finished_sequences[batch_idx].append(sequences[idx].tolist())
-                finished_scores[batch_idx].append(scores.view(-1)[idx].item())
+                finished_scores[batch_idx].append(sequence_scores[idx].item())
         
         # Select the best sequence for each batch
         results = []
