@@ -44,7 +44,7 @@ class TopicExpan(BaseModel):
         self.interaction = CrossAttentionInteraction(doc_dim, topic_dim, num_heads=8)
         
         # Enhanced context combiner
-        self.context_combiner = ContextCombiner(doc_dim, topic_dim)
+        self.ctx_combiner = ContextCombiner(doc_dim, topic_dim)
         self.linear_combiner = nn.Linear(doc_dim + topic_dim, doc_dim)
 
 
@@ -66,7 +66,7 @@ class TopicExpan(BaseModel):
         
         # Part 2 : Topic-conditional Phrase Generation (w/ Teacher Forcing)
         topic_context = topic_encoder_output[topic_indices, :]
-        decoder_context = self.context_combiner(topic_context, doc_encoder_output)
+        decoder_context = self.ctx_combiner(topic_context, doc_encoder_output)
         decoder_output = self.phrase_decoder(decoder_input, decoder_context)
         gen_score = F.log_softmax(decoder_output, dim=-1)
 
@@ -103,7 +103,7 @@ class TopicExpan(BaseModel):
         topic_encoder_output = self.topic_encoder.encode()[topic_indices, :]
         
         doc_encoder_output = self.doc_encoder(encoder_input)
-        decoder_context = self.context_combiner(topic_encoder_output, doc_encoder_output)
+        decoder_context = self.ctx_combiner(topic_encoder_output, doc_encoder_output)
         output_ids = self.phrase_decoder.generate(decoder_context)
         return output_ids
 
@@ -113,7 +113,7 @@ class TopicExpan(BaseModel):
         topic_encoder_output = topic_encoder_output[topic_indices, :]
 
         doc_encoder_output = self.doc_encoder(encoder_input)
-        decoder_context = self.context_combiner(topic_encoder_output, doc_encoder_output)
+        decoder_context = self.ctx_combiner(topic_encoder_output, doc_encoder_output)
         output_ids = self.phrase_decoder.generate(decoder_context)
         return output_ids
 
@@ -123,11 +123,11 @@ class TopicExpan(BaseModel):
         doc_encoder_output = self.doc_encoder(encoder_input)
         doc_encoder_mask = encoder_input['attention_mask']
 
-        decoder_context = self.context_combiner(topic_encoder_output, doc_encoder_output)
+        decoder_context = self.ctx_combiner(topic_encoder_output, doc_encoder_output)
         decoder_output = self.phrase_decoder(decoder_input, decoder_context)
         gen_score = F.log_softmax(decoder_output, dim=-1)
         return gen_score
 
-    def context_combiner(self, topic_context, doc_context, doc_mask=None):
+    def ctx_combiner(self, topic_context, doc_context, doc_mask=None):
         """Combine topic and document contexts for the decoder"""
-        return self.context_combiner(topic_context, doc_context)
+        return self.ctx_combiner(topic_context, doc_context)
