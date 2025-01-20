@@ -250,22 +250,12 @@ class TransformerPhraseDecoder(BaseModel):
         return mask.to(x.device)
 
     def forward(self, x, context):
-        # Get input_ids from dict if it's a dict
-        if isinstance(x, dict):
-            input_ids = x['input_ids']
-            attention_mask = x.get('attention_mask')
-            token_type_ids = x.get('token_type_ids', None)
-        else:
-            input_ids = x
-            attention_mask = None
-            token_type_ids = None
-            
         # Create embeddings
-        x = self.input_embeddings(input_ids, token_type_ids=token_type_ids)
+        x = self.input_embeddings(x)
         
         # Create attention masks
         attn_mask = self._make_causal_mask(x)
-        padding_mask = attention_mask if attention_mask is not None else None
+        padding_mask = None  # We'll handle padding in the causal mask
         
         # Run through transformer decoder
         output = self.model(
