@@ -233,12 +233,12 @@ class TransformerPhraseDecoder(nn.Module):
         self.eos_token_id = eos_token_id
         self.max_length = max_length
         
-        # Increased hidden size and added dropout
-        hidden_size = embeddings.embedding_dim
+        # Get hidden size from BERT embeddings
+        hidden_size = embeddings.word_embeddings.embedding_dim
         intermediate_size = hidden_size * 4  # Increased from default
         
         decoder_config = GPT2Config(
-            vocab_size=embeddings.num_embeddings,
+            vocab_size=embeddings.word_embeddings.num_embeddings,
             n_positions=max_length,
             n_ctx=max_length,
             n_embd=hidden_size,
@@ -253,8 +253,8 @@ class TransformerPhraseDecoder(nn.Module):
         )
         
         self.decoder = GPT2Model(decoder_config)
-        self.output_projection = nn.Linear(hidden_size, embeddings.num_embeddings, bias=False)
-        self.output_projection.weight = self.embeddings.weight  # Weight tying
+        self.output_projection = nn.Linear(hidden_size, embeddings.word_embeddings.num_embeddings, bias=False)
+        self.output_projection.weight = embeddings.word_embeddings.weight  # Weight tying
         
     def forward(self, input_ids, encoder_hidden_states):
         attention_mask = (input_ids != self.pad_token_id).float()[:, None, None, :]
