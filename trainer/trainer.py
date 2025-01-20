@@ -113,11 +113,12 @@ class Trainer(BaseTrainer):
                 # output and target are of shape (batch_size, num_classes)
                 for met in self.metric_ftns:
                     if len(gen_target) == 0: continue
-                    if met.__name__ == 'accuracy':
+                    if met.__name__ == 'embedding_sim':
                         gen_output = self.model.gen(encoder_input, topic_ids)
-                        str_output = self.dataset.bert_tokenizer.batch_decode(gen_output, skip_special_tokens=True)
-                        str_target = self.dataset.bert_tokenizer.batch_decode(gen_target, skip_special_tokens=True)
-                        met_val = met(str_output, str_target)
+                        # Get attention masks
+                        output_mask = (gen_output != self.dataset.bert_tokenizer.pad_token_id).float()
+                        target_mask = (gen_target != self.dataset.bert_tokenizer.pad_token_id).float()
+                        met_val = met(gen_output, gen_target, output_mask, target_mask)
                     else:
                         met_val = met(gen_score, gen_target)
                     self.valid_metrics.update(met.__name__, met_val)

@@ -51,7 +51,14 @@ def main(config):
 
     # get function handles of loss and metrics
     criterions = {crt: getattr(module_loss, criterion) for crt, criterion in config['loss'].items()}
-    metrics = [getattr(module_metric, met) for met in config['metrics']]
+    
+    # Initialize metrics
+    metrics = []
+    for met in config['metrics']:
+        if met == "embedding_sim":
+            metrics.append(module_metric.EmbeddingSimilarity())
+        else:
+            metrics.append(getattr(module_metric, met))
 
     # build optimizer, learning rate scheduler. delete every lines containing lr_scheduler for disabling scheduler
     no_decay = ["bias", "LayerNorm.weight"]
