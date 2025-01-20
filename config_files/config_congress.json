@@ -39,6 +39,7 @@
         "type": "AdamW",
         "args": {
             "lr": 1e-04,
+            "weight_decay": 0,
             "amsgrad": true
         }
     },
