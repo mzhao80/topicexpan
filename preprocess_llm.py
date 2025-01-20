@@ -79,54 +79,76 @@ def clean_text(text):
     
     return text
 
-def extract_phrases(docs, topics, client):
-    """Extract meaningful phrases from text using llm
+def extract_topics_and_phrases(docs, client):
+    """Extract both topics and relevant phrases from documents using llm in batches
     
     Args:
         docs: list of strings
-        topics: list of topics, each corresponding to the same-indexed doc
         client: OpenAI client
         
     Returns:
-        list of extracted phrases for each document
+        tuple of (topics, phrases) where each is a list corresponding to the documents
     """
-    keyphrases = []
+    topics = []
+    phrases = []
     batch_size = 5  # Process in small batches to avoid rate limits
     
-    for i in tqdm(range(0, len(docs), batch_size), desc="Extracting keyphrases"):
+    for i in tqdm(range(0, len(docs), batch_size), desc="Extracting topics and phrases"):
         batch_docs = docs[i:i + batch_size]
-        batch_topics = topics[i:i + batch_size]
+        batch_topics = []
         batch_phrases = []
         
-        for doc, topic in zip(batch_docs, batch_topics):
-            prompt = f"""Extract one or more top key phrases from this congressional speech that are most relevant to the topic '{topic}'. 
+        messages = []
+        # Create system message once
+        messages.append({
+            "role": "system", 
+            "content": """You are a helpful assistant that analyzes congressional speeches.
+            For each speech, provide:
+            1. A short topic phrase (1-5 words) describing the main political issue discussed in the speech
+            2. Key phrases exactly quoted from the speech that best represent this topic
             
-            Speech: {doc}
-            
-            Output the phrases as a comma-separated list. For example: healthcare reform, medicare expansion, drug pricing
-            Phrases: """
-            
-            try:
-                response = client.chat.completions.create(
-                    model="gpt-4o-mini",
-                    messages=[
-                        {"role": "system", "content": "You are a helpful assistant that extracts specific, policy-relevant key phrases from congressional speeches. Each phrase should be 1-5 words long, exacly from the text of the speech, and directly related to the given topic."},
-                        {"role": "user", "content": prompt}
-                    ]
-                )
-                
-                # Split response into phrases and clean them
-                phrases = [phrase.strip().lower() for phrase in 
-                          response.choices[0].message.content.strip().split(',')]     
-                batch_phrases.append(phrases)
-                
-            except Exception as e:
-                print(f"Error processing document {i}: {str(e)}")
-                batch_phrases.append([])  # Add empty list for failed document
-                
-        keyphrases.extend(batch_phrases)
+            Format your response exactly as:
+            TOPIC: <topic>
+            PHRASES: <phrase1> | <phrase2> | <phrase3>"""
+        })
         
-    return keyphrases
+        # Add user messages for each document
+        for doc in batch_docs:
+            prompt = f"""Analyze this congressional speech and extract its main topic and key topical phrases:
+
+            Speech: {doc}
+
+            Response:"""
+            messages.append({"role": "user", "content": prompt})
+        
+        # Get responses for the batch
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=messages
+        )
+        
+        # Parse responses
+        for choice in response.choices:
+            content = choice.message.content.strip()
+            # Split into topic and phrases sections
+            try:
+                topic_line, phrases_line = content.split('\n')
+                topic = topic_line.replace('TOPIC:', '').strip().lower()
+                # Split phrases by | and clean
+                phrase_list = [p.strip() for p in phrases_line.replace('PHRASES:', '').split('|')]
+                phrase_list = [p for p in phrase_list if p]  # Remove empty phrases
+            except:
+                # Fallback if format is incorrect
+                topic = "unknown"
+                phrase_list = []
+            
+            batch_topics.append(topic)
+            batch_phrases.append(phrase_list)
+        
+        topics.extend(batch_topics)
+        phrases.extend(batch_phrases)
+    
+    return topics, phrases
 
 def save_vectors_word2vec_format(fname, vectors, vector_size):
     """Save vectors in word2vec format"""
@@ -179,41 +201,20 @@ def main():
     print("Initializing OpenAI client...")
     client = openai.OpenAI()
     
-    # First, generate topics for each document
-    print("Generating topics for documents...")
-    doc_topics = []
+    # Generate topics and extract phrases in one pass
+    print("Generating topics and extracting phrases...")
+    doc_topics, doc2phrases = extract_topics_and_phrases(valid_speeches['speech'].tolist(), client)
+    
+    # Map topics to indices
     topic_to_topic_idx = {keyword: idx+1 for idx, keyword in enumerate(seed_keywords)}
     topic_to_topic_idx['politics'] = 0
     topic_idx = len(topic_to_topic_idx)
     doc_idx_to_topic_idx = []
     
-    def get_topic_for_text(text):
-        prompt = f"""Given the following congressional speech, provide a short topic phrase (1-5 words) that best describes the main political issue being discussed. The topic should be specific.
-
-            Speech: {text}
-
-            Topic: """
-        
-        response = client.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=[
-                {"role": "system", "content": "You are a helpful assistant that identifies the main topic of congressional speeches. Respond with only the topic phrase, nothing else."},
-                {"role": "user", "content": prompt}
-            ]
-        )
-        return response.choices[0].message.content.strip().lower()
-
-    for idx, row in tqdm(valid_speeches.iterrows(), 
-                        total=len(valid_speeches),
-                        desc="Generating topics"):
-        topic = get_topic_for_text(row['speech'])
-        doc_topics.append(topic)
-        
-        # Add new topic if we haven't seen it before
+    for topic in doc_topics:
         if topic not in topic_to_topic_idx:
             topic_to_topic_idx[topic] = topic_idx
             topic_idx += 1
-            
         doc_idx_to_topic_idx.append(topic_to_topic_idx[topic])
     
     # Save topics.txt
@@ -221,10 +222,6 @@ def main():
     with open(os.path.join(args.data_dir, 'topics.txt'), 'w', encoding='utf-8') as f:
         for topic, idx in sorted(topic_to_topic_idx.items(), key=lambda x: x[1]):
             f.write(f"{idx}\t{topic}\n")
-    
-    # Now extract phrases using the generated topics
-    print("Extracting phrases from documents...")
-    doc2phrases = extract_phrases(valid_speeches['speech'].tolist(), doc_topics, client)
     
     # Save doc2phrases.txt
     print("Saving doc2phrases.txt...")
