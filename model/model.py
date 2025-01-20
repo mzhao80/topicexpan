@@ -40,7 +40,11 @@ class TopicExpan(BaseModel):
         num_topics = options["topic_node_feats"].shape[0]
         assert options["topic_embed_dim"] == options["topic_node_feats"].shape[1]
         
-        self.interaction = BilinearInteraction(doc_dim, topic_dim, num_topics=num_topics, bias=False)
+        # Replace bilinear with cross-attention
+        self.interaction = CrossAttentionInteraction(doc_dim, topic_dim, num_heads=8)
+        
+        # Enhanced context combiner
+        self.context_combiner = ContextCombiner(doc_dim, topic_dim)
         self.linear_combiner = nn.Linear(doc_dim + topic_dim, doc_dim)
 
 

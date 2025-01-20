@@ -34,6 +34,20 @@ class BertDocEncoder(BaseModel):
 """
     2. Topic Encoder
 """
+class GCNLayer(nn.Module):
+    def __init__(self, in_dim, hidden_dim, norm='right'):
+        super().__init__()
+        self.conv = GraphConv(in_dim, hidden_dim, norm=norm, allow_zero_in_degree=True)
+        self.norm = nn.LayerNorm(hidden_dim)
+        
+    def forward(self, g, x):
+        identity = x
+        out = self.conv(g, x)
+        out = out + identity  # residual connection
+        out = self.norm(out)  # layer normalization
+        out = F.gelu(out)     # non-linearity
+        return out
+
 class GCNTopicEncoder(BaseModel):
     def __init__(self, topic_hier, topic_node_feats, topic_mask_feats, topic_num_layers): 
         super(GCNTopicEncoder, self).__init__()
@@ -41,7 +55,6 @@ class GCNTopicEncoder(BaseModel):
         in_dim, hidden_dim, out_dim = topic_embed_dim, topic_embed_dim, topic_embed_dim
 
         self.num_layers = topic_num_layers
-        self.activation = F.leaky_relu
         
         # Convert to tensors and move to GPU if available
         device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -55,13 +68,19 @@ class GCNTopicEncoder(BaseModel):
         self.upward_adjmat = self.upward_adjmat.to(device)
         self.sideward_adjmat = self.sideward_adjmat.to(device)
 
-        self.downward_layers, self.upward_layers, self.sideward_layers = nn.ModuleList(), nn.ModuleList(), nn.ModuleList()
-
-        for layers in [self.downward_layers, self.upward_layers, self.sideward_layers]:
-            layers.append(GraphConv(in_dim, hidden_dim, norm='right', allow_zero_in_degree=True))
-            for l in range(self.num_layers - 2):
-                layers.append(GraphConv(hidden_dim, hidden_dim, norm='right', allow_zero_in_degree=True))
-            layers.append(GraphConv(hidden_dim, out_dim, norm='right', allow_zero_in_degree=True))
+        # Create GCN layers with residual connections
+        self.downward_layers = nn.ModuleList([GCNLayer(in_dim if i == 0 else hidden_dim, 
+                                                      out_dim if i == topic_num_layers-1 else hidden_dim) 
+                                            for i in range(topic_num_layers)])
+        self.upward_layers = nn.ModuleList([GCNLayer(in_dim if i == 0 else hidden_dim,
+                                                    out_dim if i == topic_num_layers-1 else hidden_dim)
+                                          for i in range(topic_num_layers)])
+        self.sideward_layers = nn.ModuleList([GCNLayer(in_dim if i == 0 else hidden_dim,
+                                                      out_dim if i == topic_num_layers-1 else hidden_dim)
+                                            for i in range(topic_num_layers)])
+        
+        # Output layer norm
+        self.output_norm = nn.LayerNorm(out_dim)
         
         # Move model to GPU
         self.to(device)
@@ -137,8 +156,9 @@ class GCNTopicEncoder(BaseModel):
             
             # Combine the outputs
             h = downward_h + upward_h + sideward_h
-            h = self.activation(h)
+            h = F.gelu(h)
             
+        h = self.output_norm(h)
         return h
 
     def encode(self, use_mask=True):
@@ -186,6 +206,72 @@ class GCNTopicEncoder(BaseModel):
 """
     3. Topic-Document Similarity Predictor
 """
+class CrossAttentionInteraction(nn.Module):
+    def __init__(self, doc_dim, topic_dim, num_heads=8):
+        super().__init__()
+        self.num_heads = num_heads
+        self.head_dim = doc_dim // num_heads
+        assert self.head_dim * num_heads == doc_dim, "doc_dim must be divisible by num_heads"
+        
+        self.doc_proj = nn.Linear(doc_dim, doc_dim)
+        self.topic_k = nn.Linear(topic_dim, doc_dim)
+        self.topic_v = nn.Linear(topic_dim, doc_dim)
+        self.output_proj = nn.Linear(doc_dim, doc_dim)
+        self.norm1 = nn.LayerNorm(doc_dim)
+        self.norm2 = nn.LayerNorm(doc_dim)
+        
+    def forward(self, doc, topic):
+        batch_size = doc.shape[0]
+        
+        # Layer norm
+        doc = self.norm1(doc)
+        topic = self.norm2(topic)
+        
+        # Project queries, keys, values
+        q = self.doc_proj(doc).view(batch_size, -1, self.num_heads, self.head_dim).transpose(1, 2)
+        k = self.topic_k(topic).view(batch_size, -1, self.num_heads, self.head_dim).transpose(1, 2)
+        v = self.topic_v(topic).view(batch_size, -1, self.num_heads, self.head_dim).transpose(1, 2)
+        
+        # Scaled dot-product attention
+        scores = torch.matmul(q, k.transpose(-2, -1)) / math.sqrt(self.head_dim)
+        attn = F.softmax(scores, dim=-1)
+        
+        # Combine heads
+        out = torch.matmul(attn, v)
+        out = out.transpose(1, 2).contiguous().view(batch_size, -1, doc_dim)
+        
+        # Output projection
+        out = self.output_proj(out)
+        return out
+
+class ContextCombiner(nn.Module):
+    def __init__(self, doc_dim, topic_dim):
+        super().__init__()
+        self.linear1 = nn.Linear(doc_dim + topic_dim, doc_dim)
+        self.linear2 = nn.Linear(doc_dim, doc_dim)
+        self.norm1 = nn.LayerNorm(doc_dim)
+        self.norm2 = nn.LayerNorm(doc_dim)
+        self.dropout = nn.Dropout(0.1)
+        
+    def forward(self, topic_ctx, doc_ctx, doc_mask=None):
+        # Combine contexts
+        combined = torch.cat([topic_ctx, doc_ctx], dim=-1)
+        
+        # Two-layer feed-forward with residual
+        out = self.linear1(combined)
+        out = F.gelu(out)
+        out = self.dropout(out)
+        out = self.norm1(out)
+        
+        residual = out
+        out = self.linear2(out)
+        out = F.gelu(out)
+        out = self.dropout(out)
+        out = residual + out
+        out = self.norm2(out)
+        
+        return out
+
 class BilinearInteraction(nn.Module):
     def __init__(self, doc_dim, topic_dim, num_topics=None, bias=True):
         super(BilinearInteraction, self).__init__()
