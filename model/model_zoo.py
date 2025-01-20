@@ -209,6 +209,7 @@ class GCNTopicEncoder(BaseModel):
 class CrossAttentionInteraction(nn.Module):
     def __init__(self, doc_dim, topic_dim, num_heads=8):
         super().__init__()
+        self.doc_dim = doc_dim  # Store doc_dim as instance variable
         self.num_heads = num_heads
         self.head_dim = doc_dim // num_heads
         assert self.head_dim * num_heads == doc_dim, "doc_dim must be divisible by num_heads"
@@ -238,7 +239,7 @@ class CrossAttentionInteraction(nn.Module):
         
         # Combine heads
         out = torch.matmul(attn, v)
-        out = out.transpose(1, 2).contiguous().view(batch_size, -1, doc_dim)
+        out = out.transpose(1, 2).contiguous().view(batch_size, -1, self.doc_dim)  # Use self.doc_dim
         
         # Output projection
         out = self.output_proj(out)
