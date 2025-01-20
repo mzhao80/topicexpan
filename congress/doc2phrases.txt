@@ -1,50 +1,1000 @@
-0	Byron Donalds is a man of personal conviction	We need more Byron Donalds	This institution is broken
-1	Hakeem Jeffries 212 votes	Kevin McCarthy 201 votes	Byron Donalds 19 votes
-2	I vouch for my friend that Kevin will do as he has promised	This Congress will be different	He is not Paul Ryan
-3	212 House Democrats stand united	Historic dysfunction is imperiling our national security	They said no to protecting the planet and investing in clean energy
-4	Byron Donalds for Speaker	American public wanted a change	We must restore energy independence
-5	Hakeem Jeffries has received 212	Kevin McCarthy has received 201	No Speaker has been elected
-6	Kevin McCarthy fully understands that being Speaker of the House will not be easy	The American people are begging for leadership	We must secure our southern border	We must unleash our energy sector and become energy independent	We must curb inflation by reducing spending	Let's elect Kevin McCarthy as Speaker of the House
-7	Vote after vote, Democrats stand united	passed the American Rescue Plan	tackle the climate crisis
-8	The consolidation of power into the hands of the Speaker	Debate and the discussion have been all but eliminated	We need to fix this broken system
-9	equal representation for the districts that elected them	restore the rules so that this place can function properly	commonsense amendments that would restore the process and give each of us an equal voice
-10	We need a leader that is not of the broken system	America is tired of rhetoric, and they want results	Congress is broken and fundamentally needs change
-11	Hakeem Jeffries received 212 votes	Kevin McCarthy received 200 votes	No Member-elect having received a majority
-12	Kevin McCarthy is the man to lead us	Kevin understands this as well as anyone	A government accountable to the people
-13	Hakeem Jeffries is the lead vote-getter	Importance of character for leadership	Safeguarding priorities like Social Security and Medicare
-14	Byron has done something that leaders should do more of	We are dysfunctional	This discussion does not mean that we are dysfunctional
-15	Let's elect a Republican who can unify	Kevin McCarthy does not have the votes	I am casting my vote for Kevin Hern
-16	Hakeem Jeffries has received 212 votes	Kevin McCarthy has received 200 votes	A Speaker has not been elected
-17	Kevin McCarthy will unleash a pro-growth agenda	we are at a critical point in this Nation's fiscal health	he has brought these foundational traits of leadership
-18	Hakeem Jeffries	first African American	dysfunction on the other side
-19	I rise to nominate Donald Trump	Taxes were cut, regulations were slashed	The government has been deeply corrupt
-20	we have a window of opportunity to save the Republic	we need a leader who has true conservative convictions	we need a businessman as the Speaker of the House
-21	Hakeem Jeffries 212 votes	Kevin McCarthy 200 votes	Byron Donalds 12 votes
-22	The CLERK led the Pledge of Allegiance	one nation under God, indivisible	with liberty and justice for all
-23	Ms. Lynn Yates, on her well-deserved retirement	exceptional service to the constituents	dedicated conservationist and caseworker
-24	Tom will be remembered most for his devotion	greatest champions of family values	leading voice for family values
-25	This bill would give D.C. residents the voting representation	denied voting representation in Congress	moral obligation and the constitutional authority to pass this bill
+0	Byron Donalds is a man of personal conviction	old, grotesquely racist rhetoric	Congress can serve the American people
+1	Hakeem Jeffries has received 212 votes	Kevin McCarthy has received 201 votes	Speaker has not been elected
+2	Kevin McCarthy is different	We are a team	America gives us this chance to change
+3	212 House Democrats stand united	historic dysfunction that we are seeing	failing to deliver the votes for the American people
+4	5 million more Republicans who cast their ballots	A change from the policies of the left	It is time that we reassert ourselves
+5	Hakeem Jeffries has received 212	Kevin McCarthy has received 201	No Member-elect having received a majority
+6	Kevin McCarthy fully understands that being Speaker of the House will not be easy	The motion to vacate the chair... allows us, the Republican Conference, to hold the Speaker accountable	We must secure our southern border	We must place America and its people first
+7	Vote after vote, Democrats stand united	Democrats are unified to tackle the climate crisis	under the leadership of Hakeem Jeffries
+8	Byron Donalds as Speaker of the House	Process that we use has been dramatically broken	Empower you and you and you
+9	equal representation for the districts that elected them	restore the rules so that this place can function properly	an open rule process, again, so that each individual here can participate
+10	equal representation	broken system	time to get to work
+11	Hakeem Jeffries received 212 votes	Kevin McCarthy received 200 votes	Speaker not elected due to no majority
+12	Kevin McCarthy is the man to lead us	He cares about the American people	Let's get to work to ensure that everyone has the same opportunity
+13	Hakeem Jeffries is the character of a leader	Safeguarding priorities like Social Security and Medicare	Hakeem Jeffries is the lead vote-getter in this Chamber
+14	Byron has done something that leaders should do more of	Discussions and dialogue have actually been good for the American people	No Democrat will ever hold the gavel to a Republican-controlled House
+15	Let’s elect a Republican who can unify our Conference	Kevin McCarthy does not have the votes	I am casting my vote for Kevin Hern
+16	Hakeem Jeffries has received 212 votes	Kevin McCarthy has received 200 votes	No Member-elect having received a majority
+17	nominate Kevin McCarthy as Speaker of the House	return to fiscal discipline	reign in runaway government spending	unleash a pro-growth agenda
+18	the first African American to lead any political party	the dysfunction laid bare on the other side	a leader committed to our communities, our Constitution, and our country
+19	I rise to nominate Donald Trump	The economy was roaring	We need to confront China
+20	the greatest country in the history of the world	$32 trillion in national debt	we need a leader who has proven to do that
+21	Hakeem Jeffries received 212 votes	Kevin McCarthy received 200 votes	No Speaker has been elected
+22	The Chair has examined the Journal	Representatives-elect are invited	I pledge allegiance to the Flag
+23	Ms. Lynn Yates' exceptional service	dedicated conservationist and compassionate caseworker	helped thousands of constituents
+24	Tom will be remembered most for his devotion to his family	greatest champions of family values	a leading voice for family values
+25	Voting representation in Congress	Full local self-government	No taxation without representation
 26	Denise has been a tireless advocate	established WEDCO as a powerful economic driver	over 800 jobs created during her tenure
-27	Mrs. Iris Darcine Bowie (Andrew) Thomas R.N.	champion the cause of providing quality medical services	first Black supervisor in nursing education
-28	United States Sepak Takraw Team on winning gold medals	2022 International Sepaktakraw Federation World Cup	inspire younger generations of Sepak Takraw players
-29	decade of dedicated and distinguished service	Director of its Institute of Politics	inspire, challenge, and train young people
-30	Brother Fred had so many wise sayings	His pastoral career took him to numerous church establishments	Legacy of faithful service to his community
-31	5-Star Accreditation status	largest and most effective Chamber	commitment to excellence in community service
-32	Chief Frazer's dedication to public safety	vital to Minnesota's Second Congressional District	formalized officer training with a focus on de-escalation
-33	Mr. WILSON of South Carolina led the Pledge of Allegiance	I pledge allegiance to the Flag of the United States of America	one nation under God, indivisible, with liberty and justice for all
-34	I yield the customary 30 minutes	all time is yielded for the purpose of debate only
-35	Adoption of the Rules of the One Hundred Seventeenth Congress	Changes to the Standing Rules	Ethics Reform
-36	Washington is broken	Reopening the people's House	Make Congress work for families
-37	extremist MAGA faction	gut the Office of Congressional Ethics	a ransom note to America
-38	eliminate proxy voting	restore fiscal sanity	investigate weaponization of government
-39	GOP's IRS funding bill will add $114 billion to the national debt	Decrease outlays by $71 billion	Decrease receipts by $186 billion
-40	Guarantee abortion rights for everyone	Right to access abortion	Bodily autonomy and freedom
-41	tax-and-spend politics	accountable and accessible to the public	tackle inflation and lawlessness
-42	Americans feel strongly that they should have the freedom to make their own healthcare decisions	House Republicans weren't listening	sixty-one percent of this country strongly support a women's right to abortion care
-43	weaponizing our rules	pandemic procedures	restore some fiscal sanity
-44	over a million Americans died of COVID	saved lives of Members and staff	let's not diminish what the point of all that was about
-45	criminalizes abortion	undermining women's economic freedom	works for the wealthiest few
-46	this package criminalizes abortion	undermining women's economic freedom	works for the wealthiest few
-47	criminalizes abortion	undermining women's economic freedom	gives wealthy corporations more tax cuts
-48	criminalizes abortion	attacking our freedoms	works for the wealthiest few
-49	criminalizes abortion	attacking access and healthcare	works for the wealthiest few
+27	Mrs. Iris Darcine Bowie (Andrew) Thomas R.N.	90th birthday celebration	tireless advocate for healthcare access
+28	United States Sepak Takraw Team	winning gold medals	inspire younger generations
+29	Mr. Axelrod founded the IOP	Inspire, challenge, and train young people	A guiding inspiration to students and alumni
+30	Brother Fred had so many wise sayings	God called Brother Fred to ministry	Under the guidance of his 25 years
+31	5-Star Accreditation status	largest and most effective Chamber	commitment to excellence
+32	Chief Frazer's dedication to public safety	34 years of public service	focus on de-escalation training
+33	Mr. WILSON of South Carolina led the Pledge of Allegiance	one nation under God	with liberty and justice for all
+34	I thank my good friend	I yield the customary 30 minutes	all time is yielded for the purpose of debate only
+35	Adopting the Rules of the One Hundred Seventeenth Congress	Initiatives to Reduce Spending and Improve Accountability	Restoring Legislative Branch Accountability
+36	Washington is broken	Change the way that Washington works	Make Congress work for families again
+37	put people over politics	fight against inflation	extremist MAGA faction	gut the Office of Congressional Ethics	make it easier for billionaires to avoid paying taxes	ransom note to America	the insurrectionists are in charge	a new subcommittee to push QAnon conspiracies
+38	eliminates proxy voting and puts an end to remote committee proceedings	restore the CutGo rule	ensure we will hold the Biden administration accountable
+39	GOP's IRS funding bill will add $114 billion to the national debt	Estimated budgetary effects of H.R. 23	Rescind unobligated funds provided by section 10301
+40	Americans across the country sent a resounding message	support the right to access abortion	guarantee abortion rights for everyone
+41	the American public spoke with a clear voice	path away from tax-and-spend politics	this majority will implement voting procedures
+42	Americans feel strongly that they should have the freedom to make their own healthcare decisions	rules will make their extreme agenda a reality	61 percent of this country strongly support a women's right to abortion care
+43	ends the ludicrous pandemic procedures	creates a more transparent process	restore some fiscal sanity
+44	over a million Americans died of COVID	These remote procedures undoubtedly saved lives	let's not diminish what the point of all that was about
+45	criminalizes abortion	undermining women's economic freedom	attacking our freedoms
+46	single purpose rule	protect all Members	stricter germaneness interpretation
+47	this rules package is the best rules package	worries about the future of the United States Congress	I wholeheartedly support it
+48	"This rules package...strip people...of their reproductive freedom"	"voters...believe in reproductive freedom and abortion access"	"the right to make decisions about their life and their health"
+49	At least 72 hours for Members and the public	Requiring every bill to deal with only a single subject	Proof of Republican unity
+50	Women were denied healthcare	anti-women, anti-choice, anti-freedom	make abortion access a Federal right
+51	returns to the historical norm of in-person meetings	true 72-hour rule will end that abusive practice	reckless spending that has cost $31 trillion in debt
+52	complete surrender to the demands of the most extreme Republicans	sets us on a path of division and default	undermine that economic recovery at every turn
+53	This rules package is the most conservative and transparent	Members will now be forced to vote in person	This package includes a new requirement for single-issue bills
+54	You are welcome	most open and transparent rule	secret 3-page addendum
+55	Our residents have all the obligations of citizenship	these rules take away floor privileges of the D.C. Mayor	Congress has undemocratic plenary authority over D.C.
+56	72 hours to read a bill	restore the people's House	single-person motion to vacate
+57	the 72-hour rule	adds $114 billion to the debt	so much for transparency
+58	single-Member threshold for filing a motion to vacate	perpetuate same disorder, division, and dysfunction	weaponization of the Federal Government
+59	the Thomas Jefferson motion to vacate the Chair	restore the people's voice	hold the Speaker accountable
+60	extreme proposal that is in front of us	seniors will be sold out	small minority within the Republican Party
+61	restores financial sanity	implements fiscal and budgetary restraints	American people are tired of it
+62	defund the IRS	evading taxes	super-rich tax cheats
+63	the most effective tool we have	make ends meet	largest tax cut for working families
+64	expanded child tax credit	highest rates of childhood poverty	proven solution to an issue
+65	will anybody on the other side share	secret 3-page addendum	what else was decided on
+66	anti-Latino	attacks abortion rights	inhumane treatment of Latino migrants
+67	There is no addendum to this package	Everything in the House rules package is posted	We made one addition as a Conference
+68	there is this signed agreement with the House Freedom Caucus	it would be nice if there was a little bit more transparency and openness	reporting by multiple sources tell us
+69	Women's health freedoms	attack abortion rights	extreme MAGA Republican political activities	transparency and openness	devastating effects on this institution	repay wealthy donors	assault on a woman's bodily autonomy	medical decisions between professionals and patients	loss of public access for hunters and anglers	tax breaks to the ultra-rich
+70	backroom politics	secret deals	transparency and openness
+71	they are not single issues	not in the benefit of this House	not facilitating our work
+72	the last time House Republicans were in charge	this rules package puts politics first	end the extremism and put people over politics
+73	ensure that the institution is set on a path of success	hold the Biden administration accountable	prevent reckless spending spree
+74	attacks women's health freedoms	non-transparent negotiations	support the ultra-rich
+75	Ordering the previous question on House Resolution 5	Adoption of House Resolution 5	Votes will be taken in the following order
+76	morning-hour debate	convene earlier	equally allocated time
+77	privileges of the floor	introduction of bills and resolutions	conduct of votes by electronic device
+78	The bill shall be debatable for 1 hour	equally divided and controlled by the majority leader	The Chair recognizes the gentleman from Nebraska
+79	repeals the vast majority of the Internal Revenue Service funding	increased audit capacity	87,000 new IRS employees
+80	87,000 IRS agents	adds $114 billion to the Federal deficit	bad for middle-class families and small businesses
+81	unpaid taxes that were legally due	two-tier tax system	fairness in the distribution of responsibilities
+82	$80 billion in IRS funding	restoring IRS enforcement capability	hiring new specialized enforcement staff
+83	87,000 new IRS agents targeting their enterprises	weaponizing their agency	rescinds new IRS funding
+84	protect Donald Trump and his tax cheating cronies act	richest 1 percent avoid paying $160 billion	audit rates for corporations are down by half
+85	at least $20 billion of the revenue	increased audits on taxpayers	protect lower- and middle-income American taxpayers
+86	Rescinds the additional funding for the already inflated IRS	87,000 additional agents	Attack small businesses	Government who is actively working against them
+87	protect wealthy tax cheats	rescind funding passed in the Inflation Reduction Act	crack down on large corporations and high-income people
+88	We're going after tax evaders, not honest Americans	The investment is designed to support honest, compliant taxpayers	Additional resources will be focused on large corporate and high net-worth taxpayers
+89	When the IRS doesn't have the funding it needs	very wealthy tax cheats are able to avoid paying	unnecessary and destructive delays in getting help
+90	putting the American people ahead	padding the coffers of the IRS	hiring an army of IRS agents
+91	the people at the bottom are audited more	people at the top	precisely the point we are attempting to make
+92	this bill is a bad bill	others pay their fair share	against small business
+93	Democrats voted against guardrails	supercharging the IRS with 87,000 new agents	raise audits on the middle class
+94	repeal the $80 billion Democrats gave the IRS	target American working-class families	increased enforcement and, yes, audits by the IRS
+95	the IRS is going to hire 87,000 new agents	protect wealthy tax cheats	audit rates have plummeted for wealthy individuals
+96	Not all of the 87,000 people will work on enforcement	IRS will target high-income tax evaders	Confirming not all hires are for audits
+97	shielding the wealthiest people	cutting what you call entitlements	earned benefits they pay for
+98	American taxpayers against an unchecked, supercharged IRS	failed to include any safeguards	focus on processing these returns
+99	customer service is not occurring	resources are absolutely not about increasing audit scrutiny	the IRS has fewer front-line, experienced examiners
+100	audit rates will not rise	focus on high-end noncompliance	improve taxpayer service and technology
+101	this legislation will shield tax cheats	systematically defunded the IRS	audit rate for millionaires dropped 70 percent
+102	Blocking the Biden administration from unleashing 87,000 new IRS agents	Protecting taxpayers and small businesses	Not more government overreach and hardship
+103	Republican budget cuts have left the IRS with 2,284 fewer skilled auditors	The GOP plan would aid and abet a flood of tax cheating	Republicans love that our massive tax gap keeps growing
+104	nobody earning less than $400,000 will pay an additional penny	lead to more audits and enforcement measures	710,000 more audits
+105	We need a tax system that is fair	Protect the wealthy	Disadvantage the poor
+106	the IRS will not raise audit rates	return audit rates to the levels	CBO estimates that portions of the Administration's proposal
+107	more unnecessary taxes for the American people	supercharging the IRS	increase reckless spending
+108	the United States is losing $1 trillion in unpaid taxes	lacks the resources to catch tax cheats	putting tax-evading profits over people
+109	a bloated and weaponized IRS	$80 billion to hire 87,000 new IRS agents	empower American families, support small businesses
+110	allowing people at the very top to pay their fair share	weaponizing billionaires not to pay their fair share
+111	lack of resources for the IRS	failed to collect over $500 trillion	historically, African Americans have been disproportionately audited
+112	customer service	technology needs to be improved	historic spending provisions
+113	protect wealthy tax cheats from following the law	resources it needs to serve the American people	ensure all taxpayers and corporations follow the law
+114	87,000 new IRS agents	target middle- and lower-income taxpayers	innocent until proven guilty
+115	starve the IRS	fewer agents today than it had in 1953	trust that it works fairly
+116	almost $10 billion in additional funding	eliminates over $70 billion of wasteful and egregious aggression	we need to modernize IRS and relieve the undue burden
+117	the biggest corporations and the wealthiest individuals paid their fair share	fighting inflation	this bill will add $114 billion to the national deficit
+118	87,000 new bureaucrats and agents	squeeze more money out of middle- and lower-income families	an IRS that works for taxpayers
+119	cut the necessary investments to make the IRS more responsive	protect wealthy tax cheats	total nonsense, a fantasy, a fabrication
+120	hiring 87,000 new IRS agents	increase the number of audits	target everyday Americans
+121	This tax cheat act would gut IRS funding	protect Republicans' wealthy corporate investors	politics above people
+122	we are going, in one bill, from 78,000 employees	adding an additional 83,000	you have to figure it is going to be an increase of five or six times
+123	answer the phones	new recruiting class	step in the right direction
+124	rewarding tax cheats	$200 billion in uncollected taxes	additional debt for everyone else
+125	defund the $80 billion from the Inflation Reduction Act	defund the hiring of 87,000 new IRS agents	small business owners and middle-class, hardworking Americans
+126	$80 billion is over 10 years	87,000 is over 10 years	$8 billion a year for replacement
+127	wealthy tax cheats who defraud the government	$400 billion each year	made significant investments to crack down on tax cheats
+128	CBO projects the proposal would make the IRS' budget more than 90 percent larger	H.R. 23 rescinds that funding	increase in spending on the IRS's enforcement activities
+129	$80 billion on 87,000 IRS agents	audit, and harass America's small businesses	unprecedented crisis with terrorists and illegal immigrants
+130	Mr. Gomez carried that child around this Chamber	the child grew by 2 inches	during those 4 days of utter chaos
+131	ultrawealthy were actually paying their fair share	paid zero Federal income tax	tax system that benefits everybody
+132	87,000 new IRS agents	Squeezes American taxpayers	Small business owners like myself
+133	billionaire tax cheats happy days are here again	provide those workers to help Americans	help the millions of Americans who most depend on federal government assistance
+134	doubling the size of the IRS	spending $80 billion	target hardworking taxpayers
+135	increase the national debt by $1.6 trillion	staff to put the Service back into the Internal Revenue Service	honest taxpayers feel like suckers
+136	taxpayers who want to do the right thing	overpaying because of the complexity in the tax code	customer service issues that everyone knows are a concern at the IRS
+137	Joe Biden overpaid his taxes	the IRS wisely made sure	the proper refund
+138	tax cheaters	pay their fair share	properly funding the IRS
+139	this is a substantial investment in technology	tax compliance in a representative democracy	fear-mongering that you are hearing tonight
+140	customer service at the IRS is significantly underperforming	impacts of COVID on customer service	funding that I think will ultimately get in the way
+141	this bill will only help tax cheats avoid paying their fair share	wealthy tax cheats like Donald Trump	Republicans want to make sure the IRS remains underfunded
+142	hard-working families pay 99 percent of the taxes	protect sophisticated tax cheats	investments to replace retiring taxpayer service workers
+143	$72 billion of the $79.6 billion appropriated	widen the already massive tax gap	relieve the wealthiest 1 percent
+144	bill was ordered to be engrossed	Motion to Recommit	previous question is ordered
+145	Motion to recommit on H.R. 23	Passage of H.R. 23	Electronic vote conducted
+146	agreeing to the motion to recommit	rescind certain balances	offered by the gentleman from Michigan
+147	Dave Williams	voice for Pennsylvania agriculture	important work of our farmers
+148	National Law Enforcement Appreciation Day is an opportunity	morale across law enforcement has decreased	show their appreciation to our law enforcement
+149	H.R. 40, the Commission to Study and Develop Reparation Proposals	disparities exist	legacy of slavery lingers heavily	impact of slavery and continuing discrimination	recommendations concerning any form of apology and compensation
+150	we put on our badges and uniforms	men and women from sea to shining sea	we love you and respect you
+151	LeBron James called out sports media bias	Cowboys owner Jerry Jones blocking integration	Media asks about Irving but not Jones
+152	It is time we do something	the people of Texas are taking the brunt	stop funding a Department of Homeland Security
+153	end the healthcare mandate	unscientific, illogical, and unconstitutional mandates	double standard
+154	Captain Davis served with honor and distinction	Legacy of service to our country	Distinguished Flying Cross and many medals
+155	Betsy Russell, 37 years of remarkable reporting	Eye on Boise blog	led to prison reform and changes in state policy
+156	George exemplified integrity and resilience	Earning 5 battle stars	His actions at home and abroad
+157	Senior Advisor to the Sergeant at Arms Don Kellaher	45 years in service to the House	played a key role in ensuring safety
+158	Mr. Andersen spent 37 years committed to developing U.S. commerce	A testament to his hard work	His unwavering commitment to providing the highest level of service
+159	Delphine Metcalf-Foster VA Clinic	lifetime of service to others	advocate for and assist fellow veterans
+160	Wayne was a dedicated farmer and member of the agricultural community	His life was indeed one of service	He was a loving husband, father, grandfather, brother, mentor, and friend
+161	Mr. Claud "Rob" Wheatly, III	long and illustrious career	milestone as an attorney
+162	Bill has dedicated his life to making a positive impact	exemplary public servant	remarkable career of service
+163	Captain Mantell heroically pursued the object	paid the ultimate sacrifice	received the Distinguished Flying Cross for heroism
+164	eliminate the congressional review period	impose significant costs on D.C.	cumbersome and complicated process
+165	Norma Michael	fresh fruits and vegetables	Sharing is Caring Neighborhood Block Garden
+166	gold medal that the Building Construction Technology Team	first time that a South Carolina technical college has won	prepares students for successful careers
+167	Clean Water SRF Parity Act	nonprofit cooperatives and publicly regulated utilities	federal funding for State Revolving Fund program
+168	Bill revolutionized the turkey and hog industry	Largest family-owned protein production companies	Donated millions to North Carolina State University
+169	Dr. Trevino led a remarkable life	opened the Trevino Eye Clinic	first Hispanic President of USTA Texas
+170	when I cosponsor a bill, it does not necessarily mean that I agree with every part of it	support moving the bill forward through the legislative process	the effect of cosponsoring a bill is to signal to the relevant committee chair(s)
+171	outstanding season	victory at the College Football Playoff	second consecutive title
+172	Cathy Morgan Richardson	beloved pillar of the community	legacy of love
+173	Gary Lee Dillahunty	Congressional Veteran Commendation	honorable service
+174	Lieutenant General Rudder has made a significant impact	his career lasted over 38 years	awarded the Japanese Order of the Rising Sun
+175	tireless advocate for education	spearheaded efforts to bolster school security	a testament to the value of education
+176	Neil M. Larimer	honorable service	continued service to his community
+177	Alabama's Outstanding Young Farm Family	nation's top young farm family	farming and community involvement
+178	time equally allocated	recognition between the parties	limited to 5 minutes
+179	words matter	we must recognize that there is more than one path to the American Dream	embracing socialist policies and views would destroy that
+180	help the rich and the powerful avoid taxes	depriving the middle class	starve the Federal Government of the revenue
+181	Walter Raymond Bowers	served in the Pacific theater	commitment to our Lord Jesus
+182	My mom was a fighter	She pushed us to use our experiences	I simply want to say, I love you
+183	stop IRS agents from going after small businesses	support our law enforcement	save the lives of unborn children
+184	selling off American oil to the Chinese Communist Party	direct threat to our national security	our insurance card
+185	first-ever Alleghany High School girls' team to win a State title	impressive time of 18 minutes and 59 seconds	testament that with hard work and determination, you can achieve your dreams
+186	illegal immigrants	taxpayers are paying for bills	secure our sovereign border
+187	Pella Marching Dutch	participated in the Rose Bowl Parade	representing Iowa in the Rose Parade
+188	University of Georgia	Georgia Bulldogs	number one State for college football
+189	Mark Butler's service to the State of Georgia	Georgia's ninth Commissioner of Labor	Implemented programs to improve agency relationships
+190	I rise today to recognize and honor my friend	Jon has dedicated his entire life	I look forward to seeing all that he can accomplish
+191	C. Peter Magrath Award for Community Engagement	nationally recognized for the resources and expertise	Programs like these are critical to ensuring economic development opportunities
+192	first Major League Soccer player to win the World Cup	plays for Georgia's Atlanta United	named the MLS Newcomer of the Year
+193	We need to be running... at least those two sets of pumps	this is a disservice to all water users	a much stronger and much smarter water policy
+194	for the protection and the defense	uphold the right to life	defend life in America
+195	I pledge allegiance to the Flag of the United States	one nation under God	liberty and justice for all
+196	exempt payments from the Fire Victim Trust from being taxed	victims of disaster don't need to be hassled by government	getting this bill passed and signed into law is very important
+197	shared border and shared values	hinders binational movement	stifles trade and diminishes life quality
+198	Speaker McCarthy has a proven record of accomplishments	Commitment to America	economy that is strong, a Nation that is safe
+199	Don Nottoli and celebrate his retirement	a lifetime of service to the Sacramento community	our community is a much better place
+200	Why not in America?	Resources necessary for production	Strengthen our domestic supply chain
+201	protect small businesses from IRS overreach	families are struggling	promote prosperity for all Americans
+202	Congratulations to the 2023 college football national champions	Georgia Bulldogs defeated the TCU Horned Frogs	Marking the largest margin of victory in bowl game history
+203	Denny Kellington is a hero	saving the life of Damar Hamlin	performing CPR for 9 minutes
+204	Ron Butler's induction into the 2023 Texas Bankers Hall of Fame	Outstanding leadership and service in the banking community	Dedicated family man and community servant
+205	The resolution shall be debatable for 1 hour	equally divided and controlled by the majority leader	The Chair recognizes the gentleman from Oklahoma
+206	urgent threat to the United States	Select Committee on Strategic Competition	restore safe and secure supply chains
+207	Human rights violations	strategic competition with the United States	bipartisan manner with nonpartisan staff
+208	one of the greatest worries about the future	the threat posed by Communist China is serious	a bipartisan committee that could look at all aspects
+209	support this select committee on China	an American strategy, not a Democratic or Republican strategy	understanding the origins of COVID
+210	establishing a bipartisan Select Committee	the Chinese Communist Party represents an even greater test	it is time to reclaim our economic independence
+211	I rise in support of the creation	the urgent reality of the Chinese Communist Party	the distinction between the party and the people
+212	Defending against these advances is one of the most significant geopolitical challenges	examining the threats from the Chinese Communist Party	sanctions against Chinese companies that threaten U.S. national security
+213	engage Communist China into the world economy	not lived up to their obligations	close the de minimis loophole
+214	control and dominance in the South China Sea	China's actions represent a threat	largest standing Navy, greater than the United States
+215	a whole-of-government approach	the true intentions behind the formation	promote a rules-based international order
+216	intellectual property theft	deceptive trade practices	acquisition of farmland
+217	anti-China rhetoric	threats to Asian Americans	legitimate concerns with actions of China
+218	China has a plan to replace us	Economic power in the trade space	Threatens global peace and security
+219	human rights violations	bipartisan concern	focus on the Chinese Communist Party
+220	bipartisan Select Committee	policy dispute between our government	rampant intellectual property theft	manipulation of the facts in Wuhan	collapse of the rule of law	genocide of the Uyghurs	severe vulnerability of the world's global supply chain
+221	anti-Asian hate	xenophobic rhetoric	violence against the Asian people
+222	heavy reliance on China	national security risk	dependencies on vital medications
+223	comprehensive engagement of the very important challenge	competition between democracy versus autocracy	autocratic practices and human rights violations
+224	worst genocide since World War II	threats to Taiwan	cornering of critical supply chains
+225	CCP has launched against the United States	Steal hundreds of billions of dollars	Hold the CCP accountable	Mitigating Chairman Xi's One Belt, One Road initiative	Increase domestic production to offset our GDP-to-national-debt ratio
+226	profiteering over human rights	the China fantasy	the brutal nature of the Communist regime
+227	high standard of human rights	hold China accountable	potential to do substantive work
+228	urgent generational threat to the United States' interests	dangerously fragile supply chains	steal American intellectual property	build spy networks and propaganda machines
+229	defense of those who defend the unborn	stand up for what they believe is life	protect those who stand for what is right
+230	Select Subcommittee on the Weaponization of the Federal Government	immediate consideration	House Resolution 12
+231	The resolution shall be debatable for 1 hour	controlled by the majority leader and the minority leader	recognize the gentleman from Oklahoma
+232	Establishing the Select Subcommittee on the Weaponization of the Federal Government	Investigating abuses of civil liberties	Bring abuses by the Federal Government into the light
+233	this committee is nothing more than a deranged ploy	undermining the Department of Justice	this will become another shameful, disgraceful moment
+234	Parents labeled as terrorists	FBI paid Twitter to censor	First Amendment under attack
+235	January 6 panel names six House GOP lawmakers who asked for pardons	parents as terrorists	requested pardons for U.S. service members	blanket pardon for members of Congress	not seek a Presidential pardon	deceptive editing of testimony
+236	open-ended investigation into conspiracy theories	unchecked authority to undermine ongoing criminal investigations	destroy democracy subcommittee
+237	Unelected, unaccountable Federal bureaucrats have abused their positions	FBI conducted a raid on former President Trump's Mar-a-Lago residence	Department of Homeland Security formed a dystopian disinformation board
+238	we cannot delay accountability any longer	expose the abuses committed by the unelected, unaccountable Federal bureaucracy	prevent similar abuses from happening in the future
+239	Republicans seized on revelations	Distinctions between the two cases	Weaponization of the Federal Government
+240	Unlike in Trump's case	Biden doesn't appear to have tried to assert ownership	Trump is being investigated to see whether he infringed the Espionage Act
+241	The primary purpose of this special subcommittee is to interfere	shocking abuse of power	Republican committee to obstruct justice
+242	troubling evidence to begin our investigation	violating Americans' constitutional rights	improper use of government authority
+243	It's going to be dirty	Republicans gear up for attack on Hunter Biden	the Republican committee to obstruct justice
+244	All the MAGA Republicans seem to want to do	Create a forum for settling scores	Partisan, political, MAGA-driven investigations
+245	H. Res. 12 is a dangerous government attempt	shield MAGA extremists from legal consequences	power for the sake of power is truly dangerous
+246	deep state exists	political cover and a political weapon	control our land and our lifestyle
+247	investigate and uncover corruption	bring light to the shadows	support this critical piece of oversight
+248	expanded the select committee's authority	ongoing criminal investigations	undermine the rule of law
+249	Republicans claim... investigate the so-called weaponization	undermine the legitimate investigation of President Trump's incitement	will do deep damage to our national security
+250	the authoritarian left has used the full might and authority	the Federal Government has been weaponized	pressure private companies to censor conservatives
+251	H. Res. 12	MAGA extremist Republicans	disrupt the flow of justice
+252	FBI spied on everyday Americans' civil rights	security state believes itself to be above the Constitution	intelligence community abused their power to spy on Presidential candidates
+253	the government's massive surveillance apparatus	we owe it to the American people	putting the deep state on notice
+254	truth finding	dangerous implications	government’s massive surveillance apparatus
+255	MAGA Republicans	interfere in ongoing criminal investigations	blatant assault on our democracy
+256	the power of the government	weaponization of government against parents	targeting Scott Smith and other parents
+257	authority to basically investigate ongoing criminal investigations	unprecedented	oversight committees are equipped and ready
+258	censorship and meddling by former intelligence community experts	Americans are completely fed up	preventing media stories from actually coming to light
+259	protected free speech be upheld	not libel, not slander	many good Americans standing up
+260	this is unprecedented	this is a witch hunt	designed basically to protect those under investigation
+261	the misuse of these powers to effect political outcomes	watched the IRS target individuals	the use of the FBI and our intelligence agencies to suppress political viewpoints
+262	This was all done after 13 Speaker votes	This is really, really unprecedented	This is unacceptable
+263	civil rights	intimidation by the Federal Government	overwhelming power and abuse of power
+264	the very words expressed by those opposed to this committee demonstrate the dire need	gone 4 years without oversight	if they are reluctant, then they are disqualified
+265	Republicans who did not ask for a pardon	did not have their phones seized by the FBI
+266	Select Subcommittee on the Weaponization of the Federal Government	two-tiered justice system	alphabet agencies have been dangerously weaponized	investigate our Government agencies' atrocious behavior	deliver transparency, answers, and accountability
+267	Perry won't agree to stay off new House committee	weaponize investigative powers	Americans are innocent until proven guilty
+268	they don't need Congress to bend and break	an unprecedented attack on our Nation's law enforcement	a colossal waste of time
+269	Select Subcommittee on the Weaponization of the Federal Government	investigate the abuse of Americans' civil liberties	confidence in their government
+270	a blatant assault on our democracy	undermine the hard work of our law enforcement	political stunt to further advance dangerous conspiracy theories
+271	Do you solemnly swear or affirm	support and defend the Constitution	faithfully discharge the duties of the office
+272	Agreeing to House Resolution 11	Agreeing to House Resolution 12	15-minute vote	5-minute vote
+273	H. Res. 12	establishing a Select Subcommittee	yeas and nays were ordered
+274	thank the men and women who keep us safe	National Law Enforcement Appreciation Day	protecting and preventing crime creates a safer world
+275	cut funding from the Internal Revenue Service	tax-cheating corporations and wealthy Americans	protect the tax-evading secrets of the wealthiest 1 percent
+276	2023 College Football National Champions	Georgia Bulldogs	largest bowl win in FBS history
+277	210,000 people crossing the border	national scandal	massive increase in illegal immigration
+278	keeping our communities safe	enact commonsense reforms	support our law enforcement
+279	TCU Horned Frogs	memorable college football season	ultimate underdog story
+280	$100 billion to our national debt	aid the ultra-wealthy	ballooning of our debt	threats to the fiscal integrity
+281	bullying of Communist China	rise of veteran suicide	Congressional Gold Medal for Lyndon Baines Johnson
+282	Practicing kindness in our daily lives	Integral role in building family and community life	Stories of compassion and friendship
+283	Honorable Benjamin L. Cardin	President pro tempore	Duties of the Chair
+284	xenophobic rhetoric that enflames violence bias	hate crimes against Asian Americans increased by 339 percent	we must make it clear that xenophobia, hate crimes, and stigma against Asian Americans have no place in our nation
+285	Harry K. Stewart	Golden Beaver Management Award	Sacramento-San Joaquin River Delta
+286	Alisa Korn's continued effort to improve communities	her distinguished career	lasting change in the Grand Traverse area
+287	today is historic in Columbia	largest number of Republican elected officials	success of the Republican party
+288	Lewis M. Fields	true patriot	sacrifices and fighting to preserve freedoms
+289	legacy of over 60 years of public service	served on the Fairfield City Council	commitment to the students of Fairfield
+290	Mary Ellen Conoline's work and dedication	Outstanding nurse anesthetist	Career path in healthcare	Over 40 years of service
+291	Joel Franck for his retirement	5 decades of work in radio broadcasting	News Director at WTCM in Traverse City
+292	George's legacy will live on through the positive impact he had	extraordinary life and commitment to serving his community	dedicated civil servant who will be missed
+293	Councilwoman Mary Sue Rich	new community center	enhancing the quality of life
+294	a stalwart community leader and advocate	compassion for others	dedication to public service
+295	Raymond was a landlord with heart	He helped residents through the pandemic	His generosity of spirit and deeply felt joyfulness will stay with us always
+296	George devoted his energy and passions	A tireless champion of business	Co-founder of Old Waverly Golf Club
+297	Howie has served The Arc for over 40 years	Chief Executive Officer in 2009	His dedication to serving those with disabilities
+298	Mr. Burke has played an instrumental role in revolutionizing Vacaville's infrastructure	sincere commitment to improving his community	26-year career devoted to serving the people of Vacaville
+299	Dale Clarmont for his 35 years of service	community a safer place	prioritized his community's safety and well-being
+300	Bud was instrumental in the renewal of Beale Street	awarded a Beale Street Brass Note in 2011	well-deserved Vision Award
+301	Mr. Pendergraph's advocacy for community members	revolutionize Wheatland's infrastructure	improving the resources and services
+302	substantial help paying for food, housing, health care	increases affordable housing funding by 8 percent	lowers food insecurity with an additional $13.4 billion
+303	H.R. 26 seeks to limit access	politicizes abortion care	attacks on abortion providers are on the rise
+304	all-female division	promoting women and girls' sports	significant development in equity
+305	Brig. Gen. Gant is the first African American female	promoted to the rank of general officer	historic achievements and leadership
+306	Deputy Johnson led a dutiful life of public service	No deputy was prouder to put on the uniform	He would do anything, for anybody, at any time
+307	Holland Barrett White	vulnerable populations	revolutionize Pittsburg's infrastructure	Community Services Ad-Hoc Committee	systemic injustice and racism	My Brother's Keeper Initiative	internet access for all
+308	Members from lists submitted by the majority and minority leaders	time equally allocated between the parties	debate continue beyond 11:50 a.m.
+309	afford prescription drugs	good-paying job	addressing gun violence
+310	Political violence rises in our country	condemn political violence in all forms	hateful rhetoric fuels it
+311	droughts and floods	exacerbated by climate change	protect our communities and farmland
+312	income-driven repayment plans	structural problems that plague our postsecondary education financing	blanket loan cancellation to the tune of $400 billion
+313	Born-Alive Abortion Survivors Protection Act	violence against pro-life institutions	sanctity of human life
+314	access to abortion care was on the ballot	rejected attempts to restrict their access	criminalize abortion nationwide with no exceptions
+315	humanize the Palestinian people	deadly in memory for Palestinians	human dignity and their right to be able to freely live
+316	Rainfall above average	Flooding in Folsom and Lincoln	Emergency declaration for most counties
+317	Bill Steiner devoted his career to making Orange County a better place	He founded the Orangewood Children's Home	His organizations will have an untold impact on countless children
+318	Happy 61st birthday, Villa Park	known as the Hidden Jewel	an outsized impact on our community
+319	Korean Americans have made their mark	First Korean immigrants arrived on January 13, 1903	Fight for freedom and opportunity for all Americans
+320	inflation	border	lawlessness of our Federal agencies	failed policies of the current administration	commitment to America
+321	maternal deaths increase by 29 percent	I almost died	do not take us back to the days before Roe v. Wade
+322	farmers have gathered each January	largest indoor agricultural exposition	backbone of our Nation, the hardworking men and women of American agriculture
+323	Restoring Normalcy in America Act	prolong the pandemic	destructive, unconstitutional vaccine mandates
+324	criminalizing a medical choice	extremist views criminalizing abortion	putting guns in the hands of people
+325	pro-life pregnancy centers provide women with critical care	800,000 lives saved by providing a compassionate alternative	over 100 pro-life facilities and churches were attacked
+326	I am humbled and grateful that you sent me here	our country and Nation have challenges	making America more secure, safer, and stronger
+327	underfunding of the IRS	prevent crime in the suites	cryptocurrency means hidden money
+328	The best city to visit in the United States	Southern charm, knockout food and drinks	Commend our tourism and hospitality industry
+329	Amber Kuehn and her team	Hilton Head Island Sea Turtle Patrol	over 500 volunteers
+330	Mayor Stephen Murray	raising money and raising awareness	assist their sister city
+331	I rise today to honor Sara Cathey	lost over 125 pounds to donate her kidney	she was a perfect match
+332	the Charleston RiverDogs	clinching their second consecutive league championship	created lasting memories for our community
+333	Commitment to the Big First	concerns about inflation	hold the Biden administration accountable	fight unconstitutional executive orders	commonsense solutions to the complex problems
+334	Sheriff John D'Agostini's success	Successful policing as community extension	Stand for constitutional rights
+335	Robert devoted his professional life to God	He was responsible for initiating one of the first successful diabetic care programs	Robert's impact on our State will be felt for generations
+336	Brian and Ed jumped into action immediately	performed lifesaving CPR and deployed an AED	you are both heroes
+337	Camden County Sheriff's Office did not act alone	found the man after he had been missing for 3 days	quick action of our wonderful law enforcement
+338	Terry College's first-place win	National Black MBA Association Undergraduate Business Case Competition	Hands-on student consulting experience
+339	I pledge allegiance to the Flag	one nation under God	liberty and justice for all
+340	Family and Small Business Taxpayer Protection Act	rescinding billions of dollars in funding	promises made, promises kept
+341	Brian was a man of faith	Commendations for his service	The world is a better place
+342	commonsense immigration policies	cease construction of the border wall	repair our broken immigration system
+343	gun violence	addiction	high-quality education	united and determined to make a difference
+344	dairy farmers	nutritious and delicious milk	Pennsylvania dairy industry
+345	this resolution is nothing but a political move	attacks are on the rise	everyone has the freedom to access reproductive healthcare
+346	the unborn	Born-Alive Abortion Survivors Protection Act	preserve the most basic right to life
+347	over 11,000 instances reported	Stop Human Trafficking in School Zones Act	greatest threats to human rights
+348	President's unwillingness to secure our border	migratory crisis unlike any other	Biden administration is directly responsible
+349	The Supreme Court's decision to overturn Roe v. Wade was dehumanizing and dangerous	control over their own bodies	protect reproductive freedoms in its constitution	Republicans seek to control women's bodies	reproductive freedoms are restored as the law of the land	abortion care is legal, safe, and accessible
+350	Born-Alive Abortion Survivors Protection Act	every life is a gift	protect our future generations
+351	Republicans are choosing to spend the first week of Congress attacking women's reproductive healthcare	Vast majority of Americans believe that women should have the right to choose	Ensure these personal decisions are kept between women, their doctors, and their families
+352	crisis pregnancy centers	accurate health information	maternal and infant health outcomes
+353	Chief Justin McIntire	gunned down in the line of duty	selfless service as a police officer
+354	declaring an emergency gives the President overreaching authority	this declaration has enabled the emergency use of vaccines	this gross overreach of authority must end
+355	Mr. Wilbun served in the United States military	he built a career as a landscaper	our prayers go out to all of his loved ones
+356	Violence, property damage, threats, and intimidation tactics must be condemned	Very little accountability for the violent attacks	Protect the rights of these pro-life groups
+357	In every State where abortion rights were on the ballot	voters rejected attempts to restrict or ban abortion	the new Republican majority is catering to demands of extreme Members
+358	Jim is a self-made man	Governor raising awareness about human trafficking	Fighting for school choice and government efficiency
+359	shaft the taxpayers and increase the budget deficit	roll back the 87,000 additional personnel for the IRS	guarantee that taxpayers will have to wait weeks for their phone calls
+360	condemns the recent attacks on pro-life facilities	over 100 attacks on pro-life organizations	acts of violence and intimidation are unacceptable
+361	Acts of violence against abortion providers	Stalking of doctors and nurses	Assaulting patients accessing healthcare
+362	the people's House has finally been reopened	excitement, awe, and inspiration	responsibility we have in this House
+363	acts of violence against pregnancy centers	intimidation of those individuals	President Biden and his administration failed to condemn
+364	The concurrent resolution shall be debatable for 1 hour	equally divided and controlled by the majority leader and minority leader	The Chair recognizes the gentleman from Ohio
+365	threats of force, obstruction, and property damage	activists targeted a pro-life center	nothing happened to the activists
+366	violence is never the answer in a political dispute	a glaring omission to H. Con. Res. 3	condemn all acts of violence
+367	Over 100 churches and pro-life facilities have been attacked	Republicans condemn violence every time	Highlighting what has happened in the last 7 months
+368	pro-life facilities, groups, and churches	increase in targeted violence	clear violations of Federal and State laws
+369	condemns those of their favorite organizations	murders of the 11 people killed	should condemn all murders and serious violence
+370	the DOJ has the ability	why they haven't	prosecute people who vandalize
+371	pro-abortion radicals have waged horrific attacks	pro-life institutions are on the front line	nobody should be in fear for their safety
+372	11 murders, 42 bombings, 196 arsons	strip women of their constitutional right	violence and disruption against abortion providers
+373	pro-life pregnancy centers that provide care	under attack by radical abortion activists	violence on pregnancy centers
+374	H. Con. Res. 3 condemns violence against anti-abortion organizations	violence against abortion providers that has gone largely unaddressed	real solutions to rising violence against abortion providers
+375	Pregnancy centers and pro-life organizations across the country soon became the target of their rage	Leftwing extremists have shown us time and time again	This resolution makes it clear that violence needs to stop
+376	denying abortion care to women	threats that abortion providers face daily	use their power to control women's bodies
+377	condemning the recent attacks on pro-life groups	instances of extremism committed against churches	hold accountable those who committed these offenses
+378	I strongly oppose violence and destruction	crisis pregnancy centers often engage in deceptive advertising	Stop Anti-Abortion Disinformation Act
+379	tax on pregnancy counseling centers	dangerous speech to those who want to legalize 8-month abortions	lack of urgency by law enforcement to protect the speech
+380	This resolution ignores the long-documented history of violence	controlling a woman's inherent right to bodily autonomy	the American people are overwhelmingly in support of protecting reproductive freedom
+381	kindness and empathy	surge of violent attacks	critical support to mothers
+382	Condemn the violence on the streets	Violence that abortion providers face	Women deserve access to all forms of health services
+383	attempted arson attack	condemn these heinous acts	protecting the unborn
+384	the loss of reproductive rights	support the legal right to abortion	significant increases in stalking, invasions, and assault
+385	attacks on churches and pro-life pregnancy centers are unconscionable	firebombing pro-life pregnancy centers and assassination attempts	this violent campaign of national scope
+386	voting on this resolution is an embarrassment	rights taken away	denied healthcare
+387	pregnancy centers served roughly 2 million women	protect facilities that help pregnant women	pro-murder extremists	firebombed and vandalized across the country
+388	all forms of political violence	well-documented violence against reproductive healthcare	anti-abortion protesters tried to chain themselves
+389	11 murders	42 bombings	196 arsons	opposing violence
+390	Hate speech quickly becomes hate violence	Where were my colleagues every single time a doctor, a patient, a nurse, or a security officer was threatened	We condemn all of them, and our GOP colleagues should do so, as well
+391	condemns the epidemic of attacks	despicable act	Jane's Revenge vandals	acts of domestic terrorism	volunteers at pregnancy centers
+392	"stop playing politics with women's bodies"	"criminalization of abortion access"	"failing to condemn a history of violence"
+393	condemn all violence	one-sided resolution	fight for civil rights
+394	condemn the growing level of political violence	attacks against anti-choice groups	threats targeting women's health clinics
+395	condemns all acts of political violence	condemns attacks on healthcare facilities	affirms freedom to access reproductive healthcare
+396	condemn all violence	violent attacks on pro-life centers	sparked by the Supreme Court's Dobbs decision
+397	Abortion is healthcare and a fundamental human right	Everyone should condemn it	This resolution seeks to deny necessary medical care
+398	nearly 100 recorded acts of violence	attacks on pro-life facilities	supporting and assisting pregnant women
+399	This resolution does not do that at all	Condemning all acts of violence	MAGA Republicans' plans for a total nationwide ban on abortion
+400	Congress condemns recent attacks	pro-life facilities, groups, and churches	Biden administration, use the FACE Act
+401	prohibit a health care practitioner from failing	survive an abortion or attempted abortion	immediate consideration in the House
+402	The bill shall be debatable for 1 hour	equally dividing the control by the majority leader	The Chair recognizes the gentleman from Ohio
+403	Life is precious, life is sacred	protect those kids who are born alive	work to save the kid's life
+404	This legislation would do nothing to enhance protections	Directly interfere with a doctor's medical judgment	A nationwide ban on abortion
+405	this bill has passed multiple times	bipartisan support	worked tirelessly on this good piece of legislation
+406	this commonsense legislation will require healthcare providers	every single baby born in the United States receives lifesaving medical care	children are not the only victims of born-alive abortions
+407	women's freedom to make her own reproductive healthcare decisions	criminalize abortion care	extreme MAGA Republican agenda
+408	you should be able to take the life of an unborn child	this bill seeks to stop	life is precious and life is sacred
+409	This bill establishes criminal penalties	We are talking about children	Protecting these children is a good thing
+410	Abortion care is healthcare	Politicians have no business making unsound medical decisions	Deny parents a say in how their child spends final moments
+411	render medical aid to the most innocent amongst us	this is about the sanctity of life	the basic dignity of a human child
+412	Politicians should not be in the business	Attack abortion rights and spread disinformation	This bill is deliberately misleading
+413	babies deserve a chance to live	right to life	we need to love those babies just a little more
+414	this legislation purports to address something that does not happen	control women's reproductive freedom	a woman must have the right to make health decisions
+415	practitioners who are present for an attempted abortion	culture of life	a child born alive has a right to live
+416	H.R. 26 is a clear attack on health care providers	This bill undermines medical professionals' training	A woman must have the right to make health decisions
+417	infanticide	saving the lives of living and breathing innocent newborns	H.R. 26 is legislation that should receive wide support
+418	the American people want women	vote it down	reject the extreme Republican agenda
+419	if a baby is born alive outside the womb	how could you then kill that baby	this bill takes care of that
+420	it is illegal and always has been illegal	endangers some infants by stating that	we oppose this bill
+421	extremist, dangerous, and unnecessary	criminalize doctors with up to 5 years	waging a war on reproductive healthcare
+422	it is an assault on the health, rights, equality, and dignity of American women	women having miscarriages are being turned away	providers and patients are afraid of misleading bills	oppose this bill and others like it
+423	mean-spirited solution in search of a problem	rob families of the ability to make difficult decisions	perpetuate disinformation about how abortion care actually works
+424	babies who survive an abortion receive care	prohibits healthcare practitioners from turning a blind eye	failure to care for an unborn child is infanticide
+425	Providers are already required, by law, to provide appropriate medical care	Infanticide is murder	This is nothing more than a part of the effort to make abortion illegal nationally
+426	every life is precious	saving the lives of babies	commonsense support of life
+427	individual freedom	decisions about one's own body	assault on our autonomy
+428	This legislation seeks to end egregious child abuse	preserving the life of that child	a humane, pro-child, human rights legislation
+429	H.R. 26 is presented within the context	stripped millions of women of their status	policing the bodies of women
+430	How did we get to where we are today?	Protect life that survives the heinous practice of abortion	The party of death that believes in abortion up until the moment of birth
+431	It is about control	Take away their freedoms	Limit their bodily autonomy	Nationwide abortion ban	Attack and erode the rights of women
+432	We are the party of life	Treat all babies with excellent care	Federal crime for abortionists to kill
+433	My faith informs my actions	Reject the idea that if I embrace the sanctity of life	Protect families from unnecessary government intrusion
+434	Defending innocent lives should not be a policy issue	A baby who survives an abortion should receive medical attention	Killing a baby who is born alive, regardless of an attempted abortion, is murder
+435	the intentional taking of the life of an unborn child	affects only a woman	two lives involved here
+436	Every woman in this country should have the ability to make her own healthcare decisions	the American people believe strongly	this extreme agenda of anti-choice legislation
+437	deter doctors from providing abortion care	reject these extreme measures	access to reproductive care
+438	babies who are born alive should be protected	require appropriate medical care for children	impose strong criminal penalties for the failure to provide care
+439	This legislation would do nothing to enhance protections	It could place the lives and health of newborn infants at risk	This legislation is just another step in the Republicans' plan to criminalize abortion
+440	Protecting the most innocent	The most vulnerable's right to life	Experiment in freedom
+441	The question is on the engrossment and third reading of the bill	Motion to Recommit	House Resolution 5
+442	Adoption of the motion to recommit	Passage of H.R. 26	Remaining electronic votes
+443	vote on the motion to recommit	prohibit a health care practitioner	child who survives an abortion
+444	Frank Emond was a true patriot	endured the tragedy of Pearl Harbor	conducting the band in "The Stars and Stripes Forever"
+445	Rick Deasy's impressive career	FLETC's COVID-19 response	Impact on our Nation
+446	founders of Delta Sigma Theta	fight for voting rights	working together for progress
+447	Damar Hamlin's collapse	power of prayer	we are one Nation under God
+448	Thank you to our firefighters	our emergency crews	our first responders and local leaders
+449	Mr. Holmes' determination to improve our Commonwealth	stepping down as the current chair	commitment to civic engagement and elevating the voices
+450	weaken the Office of Congressional Ethics	independent, nonpartisan office	limit investigations of Republican Members
+451	criminalize abortion care	health of women at risk	fight for reproductive freedom
+452	OCE is a critical independent ethics watchdog	gutted the OCE as their first act	turning the Office of Congressional Ethics into a zombie
+453	Dr. Farnitano has dedicated his career	promoting public health and well-being	significant impact on our community
+454	historic achievement	celebrate this historic achievement	bring about the longest-standing political dispute
+455	Paul, Aimee, and Heath took action	Saved Steve's life from a shark	Honored by the Red Cross and Carnegie Commission
+456	Ed Hannon's dedication to volunteerism	44 years of dedicated volunteer service	critical services in Jefferson County
+457	The primary driver of U.S. sovereign debt is our demographics	Structural deficit close to $2 trillion a year	Medicare and Social Security are the primary drivers of the deficit
+458	This is how the airlines repay the support	failure of government	underinvest in the infrastructure
+459	mandatory spending driving debt	need to limit discretionary spending	government funding bureaucracies undermining prosperity
+460	celebrate the life of Rowland Hill Geddie, Jr.	served in the U.S. Army	prosecuted thousands of criminal cases
+461	dedicated his life to helping others	head of the Colorado Coalition for the Homeless	instrumental in creating the Denver Housing First Collaborative
+462	Arthur A. Murphy's commitment to increase diverse representation	Active member of the NAACP	Chairman of the Jasper County Democratic Party
+463	anti-abortion	reproductive health policies	condemn violence
+464	25th Anniversary at CBS 42	Emmy Award-winning journalist	Commitment to impactful storytelling
+465	Petty Officer Third Class Will Martin Jr.	Communities of Honor and Excellence	American Legion Commander
+466	2022 NCAA Division One National Championship	first team ever to win after being two goals down	Coach Margueritte Aozasa
+467	James Madison "Jim" Thomas	Marine veteran	Public servant	Community pillar	Dedicated family man
+468	lifelong Arizonan	civic leader	first African American member of the Flagstaff City Council
+469	John was a cherished member of the Warsaw community	devoted decades of his life to civic and community service	selfless individual who was always ready to get involved
+470	legendary economic development leader	devoted local philanthropist	influential community leader
+471	bright spirit and brilliant mind	youngest person ever elected	championing projects like the COMET bus system
+472	extraordinary public servant	dedication and devotion to community planning	thriving, vibrant place it is today	historical documentation of the county's trajectory	creating more diverse, equitable, and accessible communities
+473	Mr. CRAWFORD led the Pledge of Allegiance	one nation under God	liberty and justice for all
+474	70 incredible years of business	hard work and dedication	family-owned and operated
+475	brave pioneers paved the way	celebrate the strength of Korean-American communities	honor the shared heritage of Korean Americans
+476	100th anniversary of Shinglehouse American Legion Post 530	community engagement and support	veterans affairs and rehabilitation
+477	protected rich donors from paying their fair share in taxes	criminalizing women's healthcare	did nothing to tackle inflation
+478	incredible work on behalf of the people	shaping the next generation of leaders	putting children over politics
+479	leading industries that continues to grow	backbone of our Nation's infrastructure	responsible for $520 billion in economic output
+480	affirm the results of the free, fair, and credible Presidential election	denounce a would-be autocrat	undermining democratic institutions at home and abroad
+481	The bill shall be debatable for 1 hour	equally divided and controlled by the majority leader	The Chair recognizes the gentlewoman from Washington
+482	H.R. 22	Strategic Petroleum Reserve	national security threat	energy supply disruptions	selling to China	gas prices rose	record inflation	cutting red tape	American energy production	clean, affordable energy
+483	H.R. 22 is an irresponsible policy change	Lifting the export ban damaged our economic security	Republicans denying their own history
+484	Republicans understand that energy policy is foundational	we have watched as Democrats' energy policy was an experiment	protect our people at times of crisis
+485	America should not be exporting our crude oil	exports of American crude oil to China increased	the future is in clean energy
+486	Under 1 million barrels were bought by UNIPEC	Lowest level it has been in decades	Playing politics with the Strategic Petroleum Reserve
+487	bipartisan policy solutions	Banning Oil Exports to Foreign Adversaries Act	preventing the sale or export of oil from the SPR
+488	Prohibiting our strategic reserves from being sold to China	War on American oil	Jeopardizing our ability to respond to supply disruptions
+489	allows an American oil company to buy oil	it is fine for them to see SPR oil	we need to ban the exports of natural gas
+490	selling that oil to China	war against domestic energy production	drawing down the Strategic Petroleum Reserve
+491	bipartisan bill	close a loophole	strengthen our national security
+492	President Biden drained over 200 million barrels	canceled pipelines, reducing drilling	we won't refill it because it is too expensive
+493	prevent aid to China and lower U.S. energy costs	failure to include U.S. producers in the export prohibition	drive prices up and transfer wealth from U.S. consumers
+494	selling millions of barrels of petroleum	continuous assault on American energy	increase our dependency on foreign energy
+495	the reason we are here today	playing political games	decisive action to lower prices
+496	nothing strategic about an empty Strategic Petroleum Reserve	sold our valuable Strategic Petroleum Reserve to China	highest energy prices in a generation
+497	Exports of oil from the SPR were not a problem before 2015	Republicans lifted the export ban	We shouldn't be exporting our strategic oil reserves to China
+498	Biden administration's war on American energy	America was increasingly dominant in energy production	President Biden sold off a strategic asset
+499	energy exports have a security impact	sale from the Strategic Petroleum Reserve	SPR is a critical foreign policy tool
+500	the President chose to use this country's strategic reserve	weaken our national security	directly strengthened our number one geopolitical adversary, China
+501	The idea of the utilization of the petroleum reserve is a national security issue	this bill will result in unwarranted and unnecessary restraint	block the Russians from absolutely crippling us
+502	President Biden is draining our Strategic Petroleum Reserve	our oil reserve is now at the lowest point	stops the Biden administration from selling any more of our emergency supply
+503	raiding SPR	crushing American energy	selling our strategic reserves to China
+504	only 2 percent of the oil that is exported to China	the Republicans created this problem	destroy jobs at American refineries
+505	selling our Strategic Petroleum Reserve	Chinese Communist Party threatens free nations	time to refill our strategic reserves
+506	American strategic petroleum reserves	Chinese Communist Party	Protecting America's Strategic Petroleum Reserve from China Act
+507	we should never sell one ounce of our Strategic Petroleum Reserve to the communist country of China	declared war on American energy	policies of this administration
+508	The SPR was not intended to be used as a political tool	reining in the administration's misuse	enhance America's leadership in natural gas and oil production
+509	the oil industry would support this bill	prevent them from selling to China	only 2 percent of the oil sold to China
+510	You voted and rammed through things	drain more than 250 million barrels	puts our national security at risk
+511	holding China accountable	recover our energy independence	protecting American energy
+512	They care about defending the Chinese and the CCP	Unleashing American energy	Protecting America
+513	China should not be the beneficiary	foolhardy abuse of the SPR	put America first
+514	98 percent of the oil that is exported to China	you lifted the ban to build up their petroleum reserves	stopped the ban on export
+515	America needs to be energy independent	Increase domestic production of energy	Protect our reserves
+516	Republicans lifted the ban on crude oil exports	President Biden's usage of the SPR	Republicans stand here criticizing President Biden
+517	Unleash American energy production	Stop the Biden administration from wasting our strategic reserves	Important to our national security
+518	sad day for democracy	find common ground	get to work
+519	University of Georgia's dominating victory	first team to win back-to-back titles	outstanding players from Georgia's 14th District
+520	Sherri Jackson is an award-winning journalist	trusted voice of the CBS 42 family	celebrating her 25th anniversary
+521	streamline the immigration process	best citizens we have in America	pay about 6 percent of the taxes
+522	Damar Hamlin's inspiring story	congratulate him on your recovery	generosity and fundamental goodness of the American people
+523	Damar Hamlin's fighting spirit	miraculous recovery has reminded us	power of prayer
+524	Lee was a dedicated public servant	He served in World War II	He founded a successful business
+525	A racist mass shooter murdered innocent people	A blinding blizzard took the lives	Our community is grateful Damar is recovering
+526	ban gas stoves	rely on natural gas	reduce carbon emissions
+527	I want to make it clear that I am here to solve problems	committed to working across the aisle	address the challenges that come with that growth	support immigration reform that includes a pathway to citizenship
+528	classified documents were discovered at President Biden's think tank	raises serious national security concerns	should be immediately investigated by Congress and the DOJ
+529	inflation has come down for six straight months	gasoline prices are down almost $2	President Biden's leadership has led to increased wages
+530	The rent is too damn high	struggling to keep a roof over their heads	corporate landlords suppressing and oppressing tenants
+531	lowering food, energy, or prescription drug costs	increasing good-paying jobs	protecting access to reproductive healthcare
+532	America's economic independence	prohibiting selling oil to China	protecting our workers and companies
+533	access to guns	Year of the Child	stop the gun violence
+534	Protecting America's Strategic Petroleum Reserve from China Act	end our country's 40-year-long crude oil export ban	prevent all our adversaries and not just China
+535	Happy anniversary to my partner and best friend	January 19 is my son's third birthday	Davis has been the greatest gift to both of our lives
+536	Nearly 100,000 eastern North Carolinians do not have access to affordable healthcare	12 States have declined to expand coverage	cosponsoring H.R. 31, the COVER Now Act
+537	cap the costs of insulin for children	expanded earned income tax credit	child tax credit
+538	Women want the right to make their own reproductive decisions	Inserts politics into private family decisions	Stand up for women's reproductive rights
+539	safe staffing ratios	nursing shortages	aggressive hiring plan	19.1 percent wage increase	solidarity with nurses
+540	Korean American Day	120th anniversary of Korean-American immigrants	contributions made by generations of Korean Americans
+541	Women in Kentucky no longer have access to safe and legal abortions	Attacks against women's rights are on the horizon	Decisions are best left between a woman and her doctor
+542	an all-of-the-above energy strategy	strategic competition with the Chinese Communist Party	President Biden's failed policies
+543	Anushree Jumde, a cherished member of my district staff	joined Attorney General Tim Griffin's team	dedicated to serving the people of central Arkansas
+544	promote and preserve the life and legacy of Dr. King	community outreach and education	outstanding outreach projects
+545	Hank Browne, who passed away last month	active member of our community	impact of Hank Browne on our community
+546	Nicholas Covington	Logan Simon	Wade Simon
+547	Mary Smith's 19 years as an alderwoman	Compassion, insight, and wisdom	Beloved member of the Conway community
+548	2022 Roy L. Shafer Leading Edge Award	overcame significant adversarial impacts	rebounded from a 6-month facility closure
+549	Paul Browning's retirement	Joseph Browning's promotion	dedication and service to the community
+550	A conscience agenda is one that I believe can be embraced by all people of good will	It is time for this country to show some appreciation for them	Great nations don't hide from their history
+551	25,000 new employees	replace retired employees	inappropriate increase
+552	over 200,000 people coming here	number of deportations which we used to have	the breakdown of the family in America
+553	Kahne Loftus exemplifies deep humility	hard work	selfless service to others
+554	Dr. Ubalde's dedication to the youth	Improved community education system	Fostered financial stability in schools
+555	MAJ Catob's distinguished service	Legislative Liaison for the National Guard	Impact on Military Construction funding
+556	The Chair will lead the House	The SPEAKER pro tempore led the Pledge of Allegiance	one nation under God, indivisible
+557	Honorable Christopher A. Coons appointed	Duties of the Chair	Patty Murray, President pro tempore
+558	Project Querencia has completed over 170 projects	helped over 38,000 people	provided more than 6,000 appreciation packages
+559	D.C. the authority to prosecute all crimes	create a local prosecutor's office	2002 advisory referendum approved by 82 percent
+560	Laura has been a tireless advocate for change	her commitment to bipartisan solutions	Laura dedicated herself to leaving a positive imprint
+561	Gloria Oliveros' unwavering dedication	more than 30 years of public service	invaluable member of the team
+562	Jimmy Holley's devoted service of 44 years	changed my home state	legacy of service and humility
+563	Donald selflessly served North Carolina as a paramedic	longest-serving Rowan County EMS employee	pioneering the county's shift to modern paramedicine
+564	Tanks and Hauled Water Program	dedicated work on behalf of families	critical in providing underserved and low-income families
+565	Nicole's movement is to make these parents feel loved	provide presents during the holiday season	helped over 760 parents since Nicole initiated this movement
+566	Mr. Steve Foshee is retiring	contribution he has made	providing reliable, high-speed internet
+567	Anna became a champion for speaking out against antisemitism	educate communities about the history of antisemitism	helping lead our community to recovery
+568	Navy Cross for E. Royce Williams	greatest overwater aerial dogfight	forgotten hero of the Forgotten War
+569	Dr. Dan touched the lives of countless individuals	championing the region's modeling and simulation industry	a legacy of kindness, generosity, and inspiration
+570	revoking the real estate leasing authority	SEC has consistently stumbled through leasing mistakes	wasteful and redundant to have the SEC involved
+571	Howdy Homemade Ice Cream	Jobs for individuals with special needs	Meaningful employment opportunities
+572	highest earning Dairy Queen store in the country	invested leadership and dedicated staff	commitment to the city of Manchester
+573	The Chair will lead the House	I pledge allegiance to the Flag	one nation under God
+574	Dr. Berman dedicated his life to improving health	a world-renowned leader in public health	determined to make the world a better place
+575	Mr. Skelton dedicated his life to bringing joy	He served 22 years in the U.S. Army	His devotion and sacrifice to our Nation will be remembered
+576	Assistant Police Chief Jay Powell	exemplary public service	profound condolences to family and colleagues
+577	Laura Stagno's service to Alabama's First Congressional District	one of the sharpest minds on the Hill	a huge asset to Alabama's First Congressional District
+578	Gary Kraus	retirement from the Calistoga City Council	advocate for local support of the environment
+579	a nationally recognized expert in early childhood education	his contributions to education and community	securing $15 million annually from grants
+580	Willie O'Ree became the first Black player	champion for diversity in the sport	Hockey is for Everyone initiative
+581	Pastors Chuck and Charlyn Singleton	40 years of dedication	commitment to the city of Fontana
+582	Sadie helped inspire countless youth	service to Alabama's First Congressional District	lasting impact across rural America
+583	Mr. Stanley took on the role at a crucial time	instrumental in helping lead Napa's businesses	commitment to helping our Napa community
+584	Julie Jacobson's lifetime of devoted service	incredible improvements in our communities	her impact on the Worcester community cannot be understated
+585	I pledge allegiance to the Flag of the United States	one nation under God	with liberty and justice for all
+586	Mr. Smith, Nebraska	Mr. Graves, Louisiana	Board of Regents of the Smithsonian Institution
+587	House stands adjourned until noon on Tuesday next	morning-hour debate	legislative business
+588	Benjamin L. Cardin appointed to perform duties of the Chair	Mrs. Murray's communication to the Senate	Acting President pro tempore assumed by Mr. Cardin
+589	certificate of appointment	fill the unexpired term	resignation of former Senator Benjamin Sasse
+590	thoughts of the Senate are with the people of Monterey Park	prevalence of guns in our country	raising the debt ceiling has consistently been a bipartisan responsibility
+591	Pete Ricketts	oath prescribed by law	administered to him by the Vice President
+592	Senate returned to our full 100-person strength	Nebraska's new junior Senator took the oath of office	The American people want and need this 118th Congress to work differently
+593	I want to begin by welcoming our newest Senator	They have made major investments	I hope the time of the new Senator will be productive
+594	the deadly repercussions did not	excess deaths among young adults	we must be the barrier between the American people and tyranny
+595	unprecedented humanitarian and security crisis at the southern border	migration surges at different times	law enforcement officials who have taken an oath	overwhelmed by the sheer numbers	asylum system being abused	drug smugglers have an opening	need to strengthen border security	a safe and secure border
+596	inflation and supply chain issues	big spending and little else	government control and spending
+597	the Senator from Utah (Mr. Lee)	the Senator from Alaska (Ms. Murkowski)	the Senator from Idaho (Mr. Risch)
+598	Alfie Alvarado-Ramos dedication	career marked by many well-earned accolades	served for over 29 years
+599	Bobby Silverstein a champion for people who experience disabilities	helped develop legislation to improve the lives of individuals with disabilities	made a profound impact on countless families across the country
+600	Chairman Mason's lifelong commitment to serving veterans	Champion for veterans, servicemembers, and their families	Delivered thousands of veterans appeals on earned benefits
+601	Ms. Spector's scientific expertise	improve data management	promote Federal partnerships
+602	the Vaster basketball team had a remarkable season	Vaster defeated bigger and better teams	the Vaster players held their heads high
+603	The 1973 State overall championship final	overcoming great odds	extraordinary effort and drive	a source of pride for Arkansans
+604	Jimmy devoted his life to protecting others	lifelong commitment to serving people	leader in raising awareness about human trafficking
+605	improve the safety and economic security	scientific expertise has informed the committee	enhance tornado forecasting
+606	Mr. Bibby has been a positive force	housing affordability and safety a top priority	over $50 billion in rental assistance
+607	Colonel Clements' long tenure	loyalty and respect	community-centered approach
+608	a true Montana hero	veteran of the U.S. Army	dedicated to improving lives
+609	Commander Verdi has served with distinction	his commitment to the job	a cop's cop
+610	Dr. Scott Robison	more than 40 years educating Hoosier children	innovative leader	pioneered practices such as in-district school choice
+611	Commissioner Pare's retirement	Strengthen the Providence public safety response team	Dedicated public servant
+612	ensure that those communities deemed to be under the greatest threat	align the definition in law for at-risk communities	help more communities access Federal grants
+613	prohibit new oil or natural gas leases	protecting the west coast from additional oil spills	block all new offshore drilling
+614	Federal grant program	comprehensive supportive services	homelessness crisis
+615	ensure communities deemed to be under the greatest threat	redefine at-risk community eligibility	end practice of outdated, incomplete list
+616	establish a new Federal grant program	increase capacity for comprehensive supportive services	address our country's homelessness crisis
+617	prohibit new oil or natural gas leases	critically important to protecting the west coast	ban offshore drilling and protect the Pacific coast
+618	The Honorable Joe Manchin III	James Madison Memorial Fellowship Foundation
+619	unanimous consent	Senate recess until 10 a.m.	morning business for Senators
+620	Lisa Marie passed on January 12	an ambassador of American music	heartfelt celebration of her life
+621	local officials like Ms. Cook are the backbone of America	instrumental in maintaining and improving the infrastructure	future generations of Hope residents will have a legacy
+622	Marzette `Marzy' Bedford- Billinghurst	dedication and reliability	equitable and inclusive workplaces	unyielding devotion to her crucial work
+623	denying entry to refugees at the Southern Border	current tragedy at the Southern Border	protect those who need protection
+624	H.R. 22	Protecting America's Strategic Petroleum Reserve	selling oil from the Strategic Petroleum Reserve to China
+625	``Gateway of Little Egypt''	organized January 24, 1823	95 percent are family-owned farms
+626	extraordinary entrepreneur, corporate leader	launching The Mack Wilbourn Legacy Foundation	transforming, inspiring, and providing opportunities
+627	Coach Bowman served in the U.S. Army	Beloved local mail carrier	Inducted into the Rosecrans Athletic Boosters Hall of Fame
+628	Dr. Ferdinand has devoted his life to eliminating health disparities	Recognized as a 2023 Living Legend	A true advocate for patient care
+629	pioneer in developing the modern Republican party	dedicated service to the citizens of New Orleans	advocate for the developmentally disabled
+630	faith and community leader	committed to helping those in need	dedicated family man
+631	Willa ``Willie'' Cash	community mother of Detroit	dedicated family independence specialist
+632	Sheriff Sauve has committed his career	nearly 40 years in law enforcement	a true leader in the County
+633	longtime public servant and advocate for agriculture	outstanding ambassador for the First Congressional District	congratulations and best wishes on his retirement
+634	Fiftieth Anniversary of the creation of DeGray Lake	vital in the economy of Southwest Arkansas	provides recreational opportunities such as swimming, hiking trails, camping
+635	empowering African American children and families	celebrating the 85th Anniversary	largest and most prominent African American family organization
+636	unconstitutional Horseracing Integrity and Safety Authority	unlawful delegation of lawmaking power	need for more oversight from the Federal Trade Commission
+637	Mrs. Ann Windley	decades of service	President's Volunteer Service Award
+638	approximately 26,000 Soviet troops stormed Azerbaijan	innocent Azerbaijanis and peaceful protestors	the Azerbaijani people continued to fight for their freedom
+639	Coldwell Banker Town & Country Real Estate	50 years in business	trusted, household name in the Blair County community
+640	Katelyn and Casie Dale	Congressional App Challenge winners	designed an app called "Lighthouse"
+641	strength, resilience, and heart of Oxford	gunman had opened fire at Oxford High School	Oxford was fundamentally changed	countless acts of kindness and bravery	neighbors reach out to help neighbors	fierce advocates for gun safety and mental health
+642	Isadore Thomas, Sr.	life and service	Big Doe
+643	Rosemary was one of few female leaders	Opened her own business	Graduated from college in her 60s
+644	recognize the 75th anniversary of the incorporation	Baytown is situated on the Texas Gulf Coast	innovator in the petrochemical industry
+645	Sheriff Bieber has been committed to serving	transparency was one of his top priorities	dedicated service that Sheriff Bieber's commitment to his community
+646	expedite the appointment of local D.C. judges	judicial vacancy crisis in the local D.C. courts	protect public safety and promote justice
+647	Mayor Wise has honorably served the citizens of Sheridan	Improve Sheridan's infrastructure	Focused his energy on working closely with Sheridan's police and fire departments
+648	a true icon of Memphis' distinct place	founder of OUTMemphis	his signature white wedding dress
+649	<recognize Members from lists submitted>	<time equally allocated between the parties>	<debate continue beyond 1:50 p.m.>
+650	I swore an oath to first do no harm	Protect our citizens	Stand for life
+651	Parents have the right to choose the school	Congress must act to protect these parents	Let's work to recover the education that was lost
+652	Andy was a loving father	three-sport athlete	Skippers' Fish Camp success
+653	First Bryan Baptist Church has been an important cornerstone	celebrating its 235th anniversary	one of the oldest African-American Baptist churches
+654	Tom's excellent leadership	chairman of the board	investing in an all-of-the-above approach
+655	Bebe was born in Lenoir City, Tennessee	Maintaining her faith was always a strong focus	Bebe was the first recipient of Saint Patrick's of the Bishop's Award
+656	school choice options and programs	empowering parents and students	best education possible
+657	a patriot, and a dear friend	a bastion of liberty and peace	courage to bring these issues to the front
+658	Pete McClymont's contributions to the Nebraska beef industry	lifelong commitment to growing the Nebraska cattle business	Nebraska's first nickname was "The Beef State"
+659	a decorated Navy veteran	a tireless advocate for Arizona	an expert on trade
+660	objective, skills-based assessments	Chance to Compete Act of 2023	bipartisan legislative reforms
+661	skills-based assessments	modernize the hiring process	improve agency managers' ability
+662	eliminate the bureaucratic snares	archaic hiring process	skills-based hiring reforms
+663	I urge everyone to support passage	an auspicious way for us to begin	I salute the chairman for his wisdom
+664	this is a commonsense bill	hiring applicants for Federal positions	relevant skills to do the job
+665	skills- and competency-based hiring	eliminate degree requirements	expand the pipeline of candidates
+666	Chance to Compete Act	skills-based assessment	equitable and inclusive workforce
+667	I pledge allegiance to the Flag of the United States	one nation under God	liberty and justice for all
+668	inflation reached 40-year highs	causing everyday prices to skyrocket	nearly half are carrying debt from month to month
+669	Captain Benton tragically lost his life	Served our country faithfully for over 25 years	He never stopped serving our country
+670	The Second Amendment... under attack	reclassify firearms... as short-barreled rifles	make criminals of tens of millions of law-abiding Americans
+671	the Chair will postpone further proceedings	motions to suspend the rules	House will resume proceedings
+672	Transparency and public participation are vital	Federal agencies frequently use settlement agreements	This legislation seeks to correct that problem
+673	Federal agencies required to submit settlement details	Database of settlement agreements	Improve transparency surrounding agreements
+674	Open government principles are key	Increase the transparency of the Federal Government	Public resource to be overseen by the OMB
+675	H.R. 300	increase the transparency of executive agencies	hold the government accountable
+676	H.R. 300 would make public certain information	increase transparency of executive agencies	allow the public to hold the government accountable
+677	access if you don't have transparency	a people who mean to be their own governors	secret, sweetheart settlements
+678	broad support three separate times	time the Senate acted	necessary bipartisan legislation
+679	federal settlement agreements cannot continue to be shrouded in secrecy	increased transparency and better intergovernmental collaboration	require federal agencies to publicly publish their documents
+680	Votes will be taken in the following order	Motions to suspend the rules and pass	H.R. 159; and H.R. 300
+681	merit-based reforms to the civil service hiring system	replace degree-based hiring with skills-based hiring	yeas and nays were ordered
+682	require the publication of settlement agreements	amend chapter 3 of title 5	motion to suspend the rules
+683	Cecil was a beloved member	awarded the World War II Victory Medal	he will be dearly missed
+684	violates local and Federal law	threatens public health	life-threatening decision
+685	students participating in school choice programs perform better	President Biden is erecting unreasonable barriers	ending Democrats' anticharter school crusade
+686	Lieutenant Colonel Harold Brown	Tuskegee Airman	dedicated to service beyond self
+687	Religious Freedom Day commemorates the Virginia Statute	protects freedom of religion	beacon of light in the world
+688	educate students to flourish	National School Choice Week	72 percent of voters support school choice
+689	food insecure child	10 million	Healthy Meals, Healthy Kids Act
+690	New York State's disastrous congestion pricing tax	hurting middle-class and working-class families	cost them an additional $5,000 a year to commute
+691	American workers and businesses	Difficult economic times	Support American industry
+692	gift of life	devastating consequences of Roe	protect the unborn
+693	Margaret Marie Peters	94th birthday	witnessed many changes in this great country
+694	School administrators prioritize indoctrinating students	Schools are clearly failing to prepare our children	Parents have the right to know
+695	another cost of the huge number of illegal immigrants	shortage of over 4 million rental units	driving up rents because of all the people coming in
+696	Abortion is one of the greatest tragedies	more than 60 million unborn lives have been taken	we are changing hearts and minds	the born-alive act to protect babies	the Defund Planned Parenthood Act	it is just wrong to force them to spend their tax dollars
+697	March for Life	dignity of every individual	protect the preborn
+698	the overturning of the Roe v. Wade decision	I believe that abortion as a matter of convenience is flatout wrong	pro-life pregnancy centers throughout our Nation	Action at the State and local level will only grow in importance
+699	comprehensive services for women in need	support the rights and dignity of our youngest Americans	fight for children in foster care
+700	the treacherous ruling that paved the way for the murder	we cannot forget the millions of lives lost	defend the sanctity of human life
+701	Second Chance at Life Act	chemical abortion process may be reversed	provide information at least 24 hours in advance
+702	64 million American souls	Protect the sanctity of these lives	Chemical abortions can be reversed
+703	millions of babies lost	decision has been overturned	defend the voiceless
+704	over 63 million unborn children have lost their lives	modern-day slaughter of the innocent	treat the unborn as problems to be solved	embrace the intrinsic worth and value of every human life
+705	giving a voice to the voiceless	culture of death	unalienable rights of life	1 million unborn children	advanced the normalizing of this culture	Dobbs decision	respect life at every stage	Born-Alive Abortion Survivors Protection Act	Life and Conception Act	protect the most basic of rights
+706	changing hearts and minds	turning back into the culture of life	champion of life
+707	over the loss of tens of millions of innocent lives	I am heartened by the Supreme Court's reversal	protect the most innocent among us
+708	Heartbeat Protection Act	prohibit abortions	exceptions of rape, incest, and life of the mother
+709	Where is the outrage?	Protecting life is our highest calling	Nearly 1 million unborn children are expected to die
+710	we are here to speak up for the unborn	fight and hear the unborn	urged the Supreme Court to overturn Roe v. Wade
+711	We cannot forget the duty to defend the inalienable right to life	The devastating impact that Roe v. Wade caused on families	Life is sacred, that life is a gift from God
+712	lives lost during the Roe era must serve as a reminder	I am pro-life, I am pro-family, and I am pro-child	the fight for life is not over
+713	over 73 million lives were cut short	call upon the churches to educate	we need more help from the mute clergy
+714	protect and defend the sanctity of life	right to life	March for Life	amazing shift in numbers
+715	give a voice to the voiceless unborn children	standing up for life	strong support of the right to life
+716	Ron Klain helped craft the American Rescue Plan	helped implement the President's vaccine plan	key to passing the CHIPS and Science Act
+717	Congratulations to Senator Murray	First time as President pro tempore	Chair of Appropriations
+718	rockiest start of any new majority	consumed by chaos	better for average Americans	their first order of business	war on women	national sales tax	bending to the demands	consequences will be severe	default means interest rates will spike	serious-minded conversations on the big issues	risk of default	fault lies entirely in the hands of the radical GOP
+719	Illegal immigration apprehensions clocked an alltime high	2 years of a functionally open borders policy	Two-thirds of the country disapprove of President Biden's handling
+720	pro-lifers marched in a post-Roe America	the Supreme Court's decision marked the righting of a constitutional wrong	every child enjoys the right to life
+721	brave men and women in Ukraine have defied the odds	investments from the United States and our allies	Help Ukraine win this war
+722	Biden has drawn a redline	reckless runaway spending	Congress needs to negotiate
+723	the Dobbs ruling is one of the most irresponsible and dangerous decisions	women denied urgent care because doctors and nurses are afraid	overturning Roe v. Wade has unleashed a healthcare crisis
+724	When does life begin?	Every child is valuable	The most basic science
+725	pro-life Americans came to Washington	fate of the lives of millions	compassionate legislation to protect unborn children	FDA rubberstamped the reckless distribution	who counts as one of us?	every unborn child is protected
+726	the right to life	March for Life's route ended	compassionate legislation to protect unborn children
+727	the dignity of work	protect people's pensions	the rights and lives of millions
+728	the first March for Life after the Supreme Court's Dobbs decision	recognizing the unborn lives saved	protect the sanctity of life
+729	I would have voted in support	inclement weather in Maine	flight to be canceled
+730	Foxcroft Academy for 200 years	Commitment to excellence and opportunity	A pioneering spirit in education
+731	Judge Hudson who recently retired	nearly five decades of service	champion for law enforcement and first responders
+732	Excerpt honoring Senator Patrick Leahy	Excerpt honoring Tim Rieser	Published in New Republic
+733	more American energy	energy prices go up	costs and caused pain for families
+734	Corruption threatens United States national security	the need for us to coordinate efforts	U.S. leadership in fighting global corruption
+735	more than 20 million households	energy prices go up	Strategic Petroleum Reserve is for us
+736	Corruption threatens United States national security	Combating Global Corruption Act	U.S. leadership in fighting global corruption
+737	the Senate completes its business today	adjourned until 10 a.m.	Senators permitted to speak
+738	requests for committees to meet	approval of the Majority and Minority Leaders	authorized to meet during today's session
+739	Captain Simpson's dedication to duty	Fire Chief Life Saving Award	Exemplary 25 years of service
+740	German-made Leopard tanks to defend Ukraine	President Biden to send American-made M1 Abrams tanks	Call on President Biden to give Ukraine what it needs
+741	public servant and champion for equity	promote economic justice	a crucial voice for women and communities
+742	the founder and CEO of Franklin Corp.	a philanthropist, establishing a $1 million endowment	a past president and board member of various organizations
+743	11 people lost their lives	participate in a vigil	unable to be in Washington for votes
+744	a long-time resident of Detroit	an advocate for the immigrant community	outstanding contributions to the communities
+745	Tom will be remembered most for his devotion to family and to God	greatest champions of family values	active pro-family policy advocate
+746	QOVF has expanded to over 10,000 volunteer members	ceremoniously bestowed awards earned by servicemembers	Thank you for your service, sacrifice, and valor
+747	Justice Manella's expertise in the legal field	Unwavering and exceptional public service	A true role model and inspiration
+748	Celia exemplifies Idaho's spirit and respect for agriculture	first woman to lead the Idaho State Department of Agriculture	agriculture exports worth over a billion dollars more
+749	Arianne is set to be a fantastic addition	dedication to her city was imbued	ensure equal access to our judicial system
+750	Lourdes Alvarado-Ramos	distinguished service in the military	Director of Veterans Affairs
+751	Pursuant to the order of the House	time equally allocated between the parties	limited to 5 minutes
+752	Chicago icon	Radio station WXRT	Power of music
+753	Abrams tanks	assure NATO can check aggression	Russia's cruel and unprovoked war
+754	When political ideology stands in the way of students' success	The education bureaucracy failed these students	These students deserve to be rewarded for their hard work
+755	Dual enrollment programs are a great way	students are benefiting from extensive State expansion	three times more likely to graduate from college
+756	a bachelor's degree is the only path	fewer young people are choosing to learn skilled trades	applications for technical jobs dropped by almost 50 percent
+757	food shortages	skilled trades	protecting food resources
+758	state-of-the-art poultry science building	contributes an annual $21.5 billion	vital to not only the State of Georgia
+759	Georgia is a leader in green building	LEED-certified green buildings	healthier, more sustainable future
+760	nearly 6 million 20-foot containers	5 percent increase in container handling	Port of Savannah achieved 4 of its top 5 months
+761	Deputy Cordero gave his life serving our community	tragically shot and killed in the line of duty	our community will remember Deputy Cordero as a selfless public servant
+762	Deputy Darnell Calhoun was fatally shot	devoted to our community	he lived to serve
+763	I was very encouraged with today's reports	this game of chicken with the global economy	you actually have to reduce spending
+764	protect and strengthen crop insurance	defend and support small businesses	reauthorize the farm bill
+765	the national debt	spent $1.7 trillion dollars	this crisis was intentionally created
+766	consequences of such a default could be catastrophic	default could add $130,000 to the cost of an average 30-year mortgage	House Republicans hold our economy hostage
+767	Treasury Secretary Yellen has warned leadership	66 million Americans that receive Social Security	Republicans continue to hold our economy hostage
+768	pragmatic, solution-oriented leadership	a fighter for every single Iowan	high inflation, educating our kids, protecting our communities
+769	Colonel Jason M. Brock who served 32 years	honored as the Tennessee Second District's Veteran of the Month	served in multiple operations including Enduring Freedom
+770	Joe and Dale Longmire on selling Midway IGA	community has been very good	best fried chicken I have ever had
+771	Extreme MAGA Republicans have an economic plan that will hurt working families	We created 11 million jobs	They want to gut Social Security, eliminate Medicare
+772	the alleged FairTax Act	impose an effective 30 percent national sales tax	a handout to the rich
+773	Harvey Drahos exemplifies courage, selfless service, and love for others	He vowed to help people	He dedicated 53 years of active community service
+774	Alfie on an exemplary and distinguished career	serving the American people	recognized as the leading State veterans affairs department	empowered the next generation of soldiers	selfless service to our veterans
+775	Take a Deep Dive Into Literacy	Inspire students and families	Reading is fundamental
+776	Congress is not a kangaroo court	defend our Constitution and our rights	we have to become the adults in the room
+777	I pledge allegiance to the Flag of the United States	one nation under God	indivisible, with liberty and justice for all
+778	This system is essential to safe flight operations	The Notice to Air Missions Improvement Act	We must not wait for another tragedy
+779	protect a living soul that survived a traumatic event	we must protect an innocent child	I humbly take a knee and ask that you change your vote
+780	a bipartisan piece of legislation	mutually beneficial partnership	maintain a leadership role in AI research
+781	Momentive Technologies is a global leader	indispensable components in a broad range of goods	invested heavily in its Ohio operations
+782	Raising the debt ceiling is a routine matter	tank the economy and destroy millions of jobs	deal with the devil in exchange for power
+783	I rise today in support of the people of Iran	Iranians have been protesting and calling for the downfall	expressed unequivocal support for the Iranian people's desire
+784	raised Social Security benefits by 8.7 percent	attempting to force cuts to Social Security	vital lifeline for Americans
+785	Detroit was renowned for having one of the worst public transportation networks	businesses are beginning to hire more people	there needs to be a strong emphasis on infrastructure goals
+786	Biden and Democrats shamefully support	nearly 5 million crossings of illegal aliens	threats to American families at greater risk
+787	Big Pharma cheating taxpayers	jacking up the price tag	only the manufacturers will profit
+788	The Chair will postpone further proceedings today	motions to suspend the rules	resume proceedings on postponed questions
+789	streamline and consolidate the collection of certain disaster information	minimize overlaps in their assessments	establish a Federal working group led by FEMA
+790	streamline and consolidate information collection	remove information collection barriers	a single agency is sufficient
+791	streamline and consolidate the collection of disaster information	improve disaster recovery efforts	Federal working group led by FEMA
+792	streamlining the Federal Government's fragmented approach	this bipartisan bill passed the House	help disaster survivors
+793	this was clearly intended to terrorize women	I stand before you to condemn violence again	restore civility and decency in every corner
+794	H.R. 259 requires agencies to update a central website	increase transparency for post-disaster Federal assistance	allow the American taxpayers to see where their hard-earned dollars are going
+795	create a new online system for tracking Federal disaster projects	increase transparency	simplify the data collection process
+796	H.R. 259 would provide an innovative and comprehensive approach	single online repository to report information	transparency to the
+797	commonsense transparency measure	bipartisan bill	support it
+798	greater sense of where their money is going	enable taxpayers	coordinate post-disaster recovery efforts
+799	revokes the Securities and Exchange Commission's leasing authority	brings them in line with current leasing practices	ensure that the SEC... continues to use the GSA
+800	H.R. 388 revokes the Securities and Exchange Commission's leasing authority	SEC has a history of egregious real estate practices	ensures that the SEC...continues to use the GSA
+801	revokes the independent real estate leasing authority	SEC has a history of egregious real estate practices	update its 2016 report on independent real estate leasing authority
+802	the SEC has a history of egregious real estate practices	SEC's history of leasing conduct	return the SEC's leasing authority to GSA
+803	H.R. 388 ensures that the SEC is going to work with the GSA	improve oversight, reduce costs	protect taxpayers against wasteful spending
+804	reliable and functional	large ground stop of aircraft	improve the utility, stability, resiliency	cybersecurity of the FAA's NOTAM system
+805	This bill directs the FAA to create a task force	The FAA grounded all airline domestic departures	A clear need to reexamine and modernize the safety-critical systems
+806	NOTAMs provide current, up-to-the-minute data	all U.S. domestic flights were grounded	create a task force at the FAA
+807	critical issues with NOTAMs	outdated NOTAM system	improve many aspects of aviation safety
+808	real-time alerts to pilots	outage with consequences so far-reaching	modernizing the cybersecurity of air travel
+809	H.R. 346	U.S. remains the gold standard in aviation safety	urge my colleagues to do the same
+810	H.R. 346 takes a very important step	remain intact, remain operational, and remain safe	I urge all Members to support it
+811	advocating for small businesses on international trade issues	calling out the negative impacts of regulations	ensuring that Main Street America has someone fighting for their interests
+812	H.R. 399	Office of Advocacy	international trade regulations
+813	H.R. 399 gives the Small Business Administration's Office of Advocacy the authority	represent small business interests before foreign governments	small businesses are in good hands with Chairman Williams
+814	strong voice in the international regulatory arena	small businesses’ views are drowned out	advocating on their behalf in international discussions
+815	Office of Advocacy to represent small businesses	Small businesses need a strong voice	Competing in the international market
+816	H.R. 399 will allow Main Street to have one more voice	facing unprecedented economic headwinds	help alleviate some of these large challenges
+817	H.R. 399 will allow Main Street to have one more voice	represent the views and interests	contribute to regulatory and trade initiatives
+818	a comprehensive analysis to evaluate the effectiveness	finding starting capital can be one of the hardest challenges	provide Congress with much-needed insight
+819	H.R. 449	improve SBA's data reporting	assist over 5,700 small businesses
+820	Microloan program helps America's entrepreneurs	Increase transparency by requiring reporting	Support small businesses everywhere
+821	increase access to capital	greater transparency around how taxpayer dollars	help enhance microloans in rural areas
+822	increase the publicly available information	support the smallest of small businesses	improve the data and information available
+823	comprehensive data and information on the effectiveness	accessing capital remains a top challenge	ensure these programs and tools are operating at a high level
+824	Small businesses are the engines of our economy	Investing in Main Street Act	attract private equity investments to small businesses
+825	H.R. 400	Small Business Investment Company program	bridge the gap between capital needs
+826	H.R. 400, the Investing in Main Street Act	backbone of the U.S. economy	access to additional capital
+827	H.R. 400	15 percent investment cap	SBICs improve access to capital
+828	Increase the amount that may be invested	Small businesses are the backbone of the economy	Improve the livelihood of many small businesses
+829	H.R. 400 raises the investment cap	economic growth in our local communities	job creation
+830	update the program to match other Federal rules	increase the amount of investment	support H.R. 400
+831	commending the bravery, courage, and resolve	demonstrating in more than 133 cities	risking their safety to speak out
+832	gross human rights abuses against protesters	brave Iranian people continue to protest	support for the brave Iranians
+833	bravery, courage, and resolve of the women and men of Iran	risk of their own safety to speak out	support the people of Iran	we stand with them in their time of struggle for freedom	freedom will always win over tyranny
+834	the largest state sponsor of terrorism	vile human rights abuses	the senseless murder of 22-year-old Mahsa Amini
+835	brave women and men in Iran	risking their lives to speak out	brutal crackdown on its own citizens	human rights abuses must stop	international community must stand with the Iranian people
+836	no sanctions relief	no nuclear negotiations	regime that is detaining, torturing, and killing
+837	supporting the brave women and men	fundamental human rights are under attack	Iranian regime has reportedly used live ammunition
+838	fresh new sanctions	speak with one voice	access to tools needed to circumvent government surveillance
+839	Freedom now for Iran and the Iranian people	courageous persons who have gone to the streets	unbelievable brutal fighting and killing
+840	supporting the bravery, courage, and resolve	fight for democracy	facing human rights violations
+841	the leading state sponsor of terrorism	powerful women	courageous freedom fighters
+842	brave Iranian freedom fighters	commitment is with them	fight against the brutal Iranian regime
+843	I commend your bravery	We mourn your losses	We stand as a united voice
+844	H.R. 346	establish a task force	improvements for notices to air missions
+845	to amend the Small Business Investment Act	increase the amount that may be invested	small business investment companies
+846	commending the bravery, courage, and resolve	risking their safety	speak out against the Iranian regime's human rights abuses
+847	I would have voted "yea"	commending the bravery, courage, and resolve	speak out against the Iranian regime's human rights abuses
+848	I would have voted "yea"	unable to attend today's legislative session	regret to inform you
+849	record-breaking completion rates	4-year completion rate increased	retention rate of students remains strong
+850	Cassady chose me as her modern-day leader	empowering young girls like Cassady	the importance of Black history
+851	I take great pride in my service	Work hard to earn their trust	Be a strong voice for the citizens
+852	Governor DeSantis blocked a new advanced placement course	It sounds like indoctrination	Let's eradicate that position
+853	women, life, and freedom	barbaric forces of immorality	call for us to condemn their actions
+854	Honor the memories of the 11 lives we lost	Senseless murders pierced the peace	Work together to make our country a peaceful one
+855	reduce the fallout from flood events	simultaneous flood emergency and drought emergency	we could store more of this rainfall
+856	People, not politicians, should have the freedom	Extreme MAGA Supreme Court has reversed Roe	The American people want more freedom, not less
+857	transparency and accountability in the legislative process	restore in-person work	those days are over
+858	faith-based, family-loving, hardworking individuals	liberty gives rise to prosperity	preserve, protect, and defend this Constitution
+859	Mike Lawler from New York	bipartisan, pragmatic fashion	broad range of experience
+860	school choice	quality education	parents have a say
+861	Education is the civil rights issue of our time	School choice is such an important issue	Every child gets the education they deserve
+862	Education is the civil rights issue of our time	Every child has access to a quality education	Empower communities, parents, and students
+863	Congresswoman Anna Paulina Luna	First Mexican-American woman in Congress	Experience with big government policies
+864	the politicization of what is happening at our southern border	the exploitation of children	modern-day slavery
+865	Representative Kevin Kiley from California	Significant work in school choice legislation	National Legislator of the Year
+866	We are going to take care of them	Federal responsibility	Grant this aid to the residents
+867	Extraordinary class of Republican Members	Fateful days for our country	Hard work ahead in the 118th Congress
+868	Randy has been a dedicated public servant	he helped to champion the county's community warning system	the legacy of Randy's work will continue to protect residents
+869	the Senate stand adjourned until 10 a.m.	morning hour be deemed expired	consideration of the Klobuchar-Grassley resolution
+870	three requests for committees to meet	approval of the Majority and Minority Leaders	authorized to meet during today's session
+871	"equip Ukraine with long-requested tanks"	"lead by example in delivering lethal aid"	"Germany will supply Ukraine with an initial 14 Leopard 2 tanks"	"time is of the essence"	"expand the capacity of our defense industrial base"
+872	Thirty people were shot in Chicago	Streets, neighborhoods, and cities across our country	Homicides this year are up 17 percent
+873	Speaker McCarthy has an obligation	avoid a first-ever default	consequences of default are not theoretical
+874	Democrats acted as if they had a mandate	Both parties will have to work together	Areas where we can agree or are close enough to work together
+875	A Republican national sales tax reigns supreme	This so-called FairTax is truly foul legislation	It would be a devastating blow
+876	Upton Sinclair	A. Philip Randolph	Mother Jones	John Penn
+877	Dr. Edelman is a veteran	championed many student causes	created a veterans success center
+878	American Cures Act	funding increases for medical research	NIH budget growth	bipartisan effort in funding	combating devastating diseases
+879	millions of people showing up at the border	Japanese writing on rescue beacons	174 different countries entering the U.S.
+880	When you say that you are not going to negotiate on the debt ceiling	the Federal Government is going to continue to rack up more and more debt	it needs to be addressed by two people: Speaker McCarthy and the President of the United States
+881	record numbers of apprehensions	Biden administration's response	need to enforce immigration laws
+882	I have gathered some really strong voices	Share in the concerns that I have	New vice chair of the Republican conference
+883	synthetic opioid trafficking	national security risk	record levels of migrant encounters
+884	over 4 million illegal immigrants	fentanyl epidemic	national security risk
+885	illegal crossings	overwhelmed communities	incentive for illegal immigration
+886	the crisis at the border	humanitarian crisis	cartels making $800 million a year	bipartisan delegation	immigration reform bill	310,000 people illegally cross	respect our laws and don't pay cartels	fix the immigration laws	better security at the border	bipartisan solution is possible
+887	human trafficking victims	$16 million a month	4.5 million border apprehensions
+888	94 Executive actions undermine border patrol	Lawless border policy	Human trafficking is a $13 billion-a-year business
+889	Our Nation owes, we should pay the bills	Americans want to protect Social Security and Medicare	It is a bedrock promise to all of us
+890	Bipartisan Safer Communities Act	mass shootings	flooding with weapons of mass destruction
+891	a trailblazing figure in the media and entertainment industry	pivotal role in the growth of Spanish-language television and radio	commitment to public service and Latino civic engagement
+892	public servant and cattle veterinarian	dedicated his whole life to serving agricultural families	Cope tackled life head-on
+893	S. Res. 13	unanimous consent	immediate consideration
+894	Palouse Animal Wellness and Surgery	Small Business of the Month	Idaho entrepreneurs and community service
+895	one of its greatest champions of culture	a legacy worthy to be celebrated	fighting for the rights of our musicians
+896	LeRoy dedicated his life to the service	served in the United States Army	awarded the Lifetime Achievement Award
+897	Alfie is celebrating her retirement	lifetime of service	established new programs and services
+898	Sheriff Wiegert's unwavering service for the past 31 years	$35 million project to build the new sheriffs office	committed to ensuring that the department expand
+899	Guam-Northern Marianas Employer Support of the Guard and Reserve	connecting our islands' National Guard and Reserve members	supportive employers are critical to maintaining the strength
+900	Had I been present, I would have voted yes	strong bipartisan support to make our federal government more efficient	commending the bravery, courage, and resolve of the Women and Men of Iran
+901	Chief Hughes is retiring	more than 32 years of service	his favorite part of being with the Sartell Police Department
+902	I would have voted YES	due to the shooting in Half Moon Bay	unable to be present during Roll Call votes
+903	Former California State Senator Robert "Bob" Wieckowski	12 years serving in the California State Legislature	Launched his "Made in California Jobs Initiative"
+904	30 years of service	compassionate, professional, and dedicated	built a strong, trusting relationship
+905	Jack Gibson's 28 years of service	dedicated service to the Marin Water	a key advocate for cooperative efforts
+906	"the 80th anniversary of the sinking"	"sacrificed their own lives"	"real brotherhood for all time"
+907	Carol's dedication to our community	first female president of Curative Workshop	her legacy and the difference she made
+908	Esther has dedicated 40 years to helping ensure the financial well-being	Esther earned an MBA from the University of Missouri-Kansas City	Esther's leadership capabilities have helped shape our country's monetary policy
+909	pro bono work is a professional responsibility	National Celebration of Pro Bono	justice gap has long existed
+910	Brady Glen White	United States Senate Youth Program	$10,000 undergraduate college scholarship
+911	Northern Mariana Islands declined by 12.2 percent	bolster our nation's strategic interests	climate change factors in the decision to leave
+912	Dick Church Jr.	dedicated public servant	longest-serving Mayor in Miamisburg's history
+913	Bill Quirk served our community	Retired after 10 years	Impact on energy and climate change
+914	Eva M. Appiah's promotion	Distinguished career in the Air Force	Inspiration for young women
+915	Dr. Lily P. Hussein	longest serving physician	dedication to fighting cancer	aligned with her belief	embodies the best of America
+916	Dianne Reese for receiving the New Holstein Chamber of Commerce's	longest serving physician in that hospital's	a true asset to our community
+917	recognize Members from lists	time equally allocated between the parties	debate continue beyond 11:50 a.m.
+918	bipartisan Career and Technical Education Caucus	Strengthening Career and Technical Education 21st Century Act	Scouting has been an important part of each of our lives
+919	D.C. Council is determined to advance a severely misguided bill	crime continues to soar at an alarming rate	this bill does not make us safer
+920	gun-grabbing tactic	unconstitutional rule pertaining to firearms	assault on Americans' Second Amendment freedoms
+921	over a quarter of a million illegal aliens	highest monthly total on record	securing the border and putting Americans first
+922	storm damage impacting Alabama's Seventh Congressional District	devastating tornadoes that struck our State	critical Federal resources	expedited a major disaster declaration	increase in disaster assistance to Alabama	resilient people in Alabama's Seventh Congressional District	build back better and stronger
+923	over 251,000 illegal migrant encounters	Secretary Mayorkas has repeatedly claimed that the border is secure	record-breaking 98 people on the terrorist watch list
+924	Riverheads High School football team	10th State title in history	49-27 victory over George Wythe
+925	Mother Willa Cash	compassionate leader in our community	dedicated public servant for 26 years
+926	water shutoff moratorium ended	vulnerability of Detroit's most vulnerable residents	guarantee water as a human right
+927	human rights and women's equality	risking their lives to stop the massive policing	fighting for freedom for their sisters
+928	Judge Murphy devoted his life to service	His stellar reputation extended beyond Georgia	A strong role model for the community
+929	transform Spanish language media	fought for Latino representation	visionary entrepreneur and leader
+930	Biden administration has surrendered control	illegal migrants, drug smugglers, and human traffickers	4.7 million illegal immigrants have been apprehended
+931	One in five U.S. adults live with mental illness	Lack of investment in mental health services	We need further action on gun reform
+932	divert flood control and improve groundwater recharge	Recent storms have dumped over 32 trillion gallons	More needs to be done to deal with the displaced farmworkers
+933	$100 million in additional aid	Dairy producers are a key part	Impact of the pandemic on producers
+934	Chief Kerri Donis for 27 years of her fearless leadership	first woman to hold the position as the department's chief	created programs like Girls Empowerment Camp
+935	strategic production response act	public lands and waters to drilling	environmental justice communities	clean air, clean water, and healthy local environments	environmental justice for all act	unchecked, unmonitored and unprotected actions
+936	40 mass shootings in 26 days	a safer America is possible	ending gun violence is not an issue of can't
+937	40 mass shootings in the first 26 days	an assault weapons ban	prayers that the American people won't notice
+938	commonsense Republicans and Democrats	Extremism is out, and real results are in	Congress is at our best when we put policy first
+939	highest hip-hop score in program history	another national championship title	decorated dance team and crew
+940	Social Security is not an entitlement	Congress holds the American economy hostage	We cannot let this persist
+941	Azerbaijan to force Artsakh's ethnic Armenian population out	Humanitarian crisis is brewing	Ethnic cleansing attempt by Azerbaijan
+942	Republicans say they want to negotiate	playing Russian roulette with our economy	we will end up with a clean debt limit
+943	4.7 million people cross illegally	record levels of fentanyl	we must know who is entering our country
+944	sanctions on some of the world's worst human rights abusers	stripping them of their rights	Woman, Life, Freedom is not just a chant
+945	$5 billion for the purchase of electric schoolbuses	California has only gotten 7.33 percent	We need our Federal Government to be a partner
+946	easy access to unregulated firearms	40 separate mass shootings	save lives
+947	Mr. WILSON of South Carolina led the Pledge of Allegiance	I pledge allegiance to the Flag of the United States of America	one nation under God, indivisible, with liberty and justice for all
+948	increased flexibility on these pumping regulations	Central Valley farmers	critical water storage infrastructure
+949	national strategy put forward will serve as our guide	ambitious yet achievable plan to end hunger	create a healthier, hunger-free future for all
+950	Biden decided to second-guess law enforcement	complete lack of knowledge of policing	standing with our law enforcement officers
+951	Larry fought for the little guy	Paved the way for more lawyers	Devoted to giving the powerless a chance
+952	Major Katie Lunning	Critical Care Air Transport Team nurse	Distinguished Flying Cross
+953	Abortion is healthcare	Freedom to make decisions	National abortion ban
+954	Evelyn Holmes-Smith	Alabama State Championship	three-time State champion
+955	By pursuing an economic scheme that raises their taxes	A $2 trillion tax cut for the 1 percent	Strengthen the middle class by creating good-paying jobs
+956	Robert Malley has met with the Iranian Ambassador	Biden refuses to close the door	an absurd Iran nuclear agreement
+957	the killing of a 29-year-old African-American man	police officers have been fired	justice is rendered
+958	School choice is about giving families the freedom	fund the students, not the systems	every parent in America wants to give their child the best education
+959	the ongoing censorship of conservative voices	leftist bias and discrimination on social media	discrimination against conservatives and Republicans
+960	Alan serves as pastor for students and families	Alan has dedicated his life as a minister	We are inspired by his determination and faith
+961	the highest number of encounters ever recorded	more than 4.5 million migrant encounters	secure our border
+962	Chief Dekmar has protected and defended our communities	Serving nearly 30 years as police chief	Unwavering dedication to ensuring safety
+963	H.R. 21	oil and gas production	Federal lands jurisdiction
+964	bill is considered read the first time	General debate shall be confined	Chair recognizes the gentlewoman from Washington
+965	preserving the Strategic Petroleum Reserve	restore America's energy security	facing the worst energy crisis in decades
+966	reckless and extreme bill	helping Big Oil friends	fight Putin's price hike
+967	more oil supply shortages	higher gasoline prices for Americans	significantly weaken a critical energy security tool
+968	Republicans' decades-old drill-baby-drill mentality	fossil fuel companies control over 26 million acres	doubling down on our fossil fuel dependency
+969	H.R. 21 would require replenishing the Strategic Petroleum Reserve	President Biden has hobbled our Nation's energy production	Unleashing American energy is the solution to our Nation's energy crisis
+970	this bill is yet another effort to open our public lands	oil companies already control huge amounts	this bill asks us to give them even more land
+971	America's Strategic Petroleum Reserve is to be used in cases of national emergency	draining our SPR to its lowest level since 1983	my constituents are struggling to afford to fill up their tanks
+972	this bill would cause higher gas prices	open up areas to drilling and pollution	exacerbate climate pollution and the costly related impacts
+973	this administration has drained our Strategic Petroleum Reserve	at its lowest level in 40 years	ensure any nonemergency release is accompanied by a plan
+974	This legislation is bad policy	increase the price of gas at the pump	destroy our environment	help the rich get richer	increase our resilience on fossil fuels	line the pockets of your fossil fuel friends
+975	stop selling a national security tool to China	protect against emergency supply disruptions	reestablish American energy dominance
+976	It doesn't reflect the reality of how oil and gas production works	We should pass legislation to require the government to replenish it	The response to this effort certainly should not be to make it harder
+977	the President sold an unprecedented amount	a political tool to attempt to lower gas prices	accessible to the most vulnerable citizens
+978	higher gas prices for hardworking families	jeopardize our energy security	protect Big Oil
+979	protect the strategic reserve	used only for emergencies	lower prices at the gas pump
+980	73 percent of Americans think that the Republican leadership has the wrong priorities	making it more difficult for families to afford gas at the pump	rewarding Big Oil with record profits	tying releases from the Strategic Petroleum Reserve to this notion of expanding leasing	exacerbation of the climate crisis	over 9,000 leases available right now where drilling is not taking place	maximize their profits and continue to gouge the American consumers
+981	Gas prices were $2.33 a gallon	Energy crisis did not cause by Ukraine war	Unleash American energy
+982	abuse of our Strategic Petroleum Reserve	waged a war against our energy independence	limits the President's ability to abuse the SPR
+983	Big Oil sits on more than 9,000 unused permits	Congress should find the political courage	strengthen our energy independence without another sweetheart deal
+984	drained the reserve by almost 40 percent	maintain our Strategic Petroleum Reserve	ensure that the administration has a plan
+985	H.R. 21 is unnecessary	devastating consequences for hardworking American families	could be subjected to unnecessary oil and gas drilling
+986	President Biden...sold off an unprecedented 250 million barrels	dangerously low on oil	prevent further abuse of the SPR
+987	energy security is national security	drained 250 million barrels	commit to replenishing the SPR
+988	nonemergency drawdown of the SPR	depleted by an alarming 40 percent	requires the Secretary of Energy to submit a plan
+989	releasing crude oil from the Strategic Petroleum Reserve	gas prices have gone down	address an affordability issue
+990	the President has told their job doesn't matter	failed policies from day one	return the SPR to its rightful use
+991	SPR strategy worked	gas prices have fallen	made money for American taxpayers
+992	gas prices are up 40 cents	Our reserve is drained	We need to pass this bill
+993	drained our Strategic Petroleum Reserve	replenish our reserve	unleash American energy
+994	artificially reduced gas prices	drained the reserve	vulnerable gas prices
+995	Putin's unprovoked invasion of Ukraine	releasing oil from our strategic reserves	delaying critical action and increase prices
+996	Putin's unprovoked invasion created the worst global energy crisis	H.R. 21 would make it harder to take such action quickly	Essential that the SPR can continue to address supply disruptions
+997	Putin's unprovoked invasion of Ukraine	worst global energy crisis in decades	stabilize global oil supply and gasoline prices
+998	Putin's unprovoked invasion of Ukraine	stabilizing global oil supply	essential to maintaining supply during crises
+999	Putin's unprovoked invasion of Ukraine	worst global energy crisis	maintain supply during crises

@@ -33,47 +33,848 @@
 32	transportation and public works
 33	water resources development
 34	Nomination of Byron Donalds
-35	Speaker election results
-36	Nomination of Kevin McCarthy
-37	Hakeem Jeffries for Speaker
+35	Speaker Election Results
+36	Nomination of Speaker of the House
+37	Hakeem Jeffries nomination
 38	Change in Leadership
-39	Election of Speaker of the House
-40	Leadership and Accountability in Congress
-41	Nomination of Hakeem Jeffries
-42	Reform of Legislative Process
-43	Equal representation and legislative reform
-44	Leadership Transition
-45	American Dream and Leadership
-46	Hakeem Jeffries nomination for Speaker
-47	Byron Donalds for Speaker
-48	Leadership in the House
-49	Voting results for Speaker
-50	Leadership and Fiscal Responsibility
-51	Donald Trump for Speaker
-52	Transformation in Leadership
-53	Pledge of Allegiance
-54	Retirement and Public Service
+39	Voting Results for Speaker
+40	Leadership in the House
+41	Democratic Leadership and Unity
+42	Byron Donalds for Speaker
+43	Equal representation and legislative process reform
+44	Leadership and Accountability
+45	Vote tally for Speaker election
+46	Leadership and the American Dream
+47	Kevin Hern nomination
+48	Voting results for Speaker
+49	Kevin McCarthy for Speaker
+50	Donald Trump as Speaker
+51	Leadership and Fiscal Responsibility
+52	Speaker election results
+53	Pledge of Allegiance and Proceedings
+54	Recognition of Public Service
 55	Honoring Tom Minnery
 56	D.C. Statehood
-57	Economic development advocacy
-58	Celebrating Mrs. Thomas's 90th Birthday
-59	Sepak Takraw Team Victory
+57	Local Economic Development
+58	Celebrating a Remarkable Life
+59	Sepak Takraw team victory
 60	David Axelrod's Service
-61	Remembering Fred Wolfe
-62	Loudoun Chamber of Commerce Recognition
-63	Celebrating Police Chief's Retirement
-64	Procedural Resolution
-65	Congressional Rules and Procedures
-66	House Rules Reform
-67	Congressional Rules Package
-68	House Rules and Accountability
-69	Budgetary Impact of IRS Funding Bill
-70	Abortion rights
-71	New direction in governance
-72	Congressional Rules and Oversight
-73	COVID-19 Remote Procedures
-74	Attacks on Reproductive Rights
-75	Abortion and Rights
-76	Abortion and Workers' Rights
-77	Abortion and Economic Freedom
-78	Abortion Rights and Economic Justice
+61	Brother Fred Wolfe's Legacy
+62	Loudoun County Chamber Recognition
+63	Recognition of Chief Frazer's Service
+64	Pledge of Allegiance
+65	Procedural resolution debate
+66	House Rules Adoption for 118th Congress
+67	Congressional Rules and Accountability
+68	Leadership and Governance Issues
+69	House Rules and Governance
+70	IRS Funding and Budget Impact
+71	Abortion rights
+72	New Congressional Direction
+73	Congressional Rules and Oversight
+74	COVID-19 Remote Procedures
+75	Attacks on Women's Rights
+76	Rules Reform and Legislative Process
+77	Congressional rules package
+78	Reproductive rights
+79	Republican Unity and Governance
+80	Abortion Rights
+81	Rules Package and Fiscal Responsibility
+82	Rules Package Opposition
+83	House Rules and Accountability
+84	House Rules and Transparency
+85	D.C. voting rights
+86	House Rules Package
+87	Rules Package Transparency
+88	Rules Package and Governance Issues
+89	Institutional Change in Congress
+90	tax fairness and IRS funding
+91	child tax credit expansion
+92	Child Tax Credit Expansion
+93	Transparency in Negotiations
+94	Anti-Latino policies
+95	House Rules Package Clarity
+96	Transparency in Congressional Agreements
+97	Women's Health and Rights
+98	Transparency in House Rules
+99	Rules and Transparency in Congress
+100	Government shutdown and extremism
+101	Rules of the 118th Congress
+102	Congressional Voting Procedures
+103	House Session Procedures
+104	Congressional Policies and Procedures
+105	Legislative Procedure
+106	IRS Funding and Audits
+107	Tax Compliance and Equity
+108	IRS Funding and Reform
+109	IRS Funding and Small Business Protection
+110	Tax Fairness and Enforcement
+111	Tax Audits on Middle-Income Families
+112	IRS Funding and Staffing
+113	IRS Funding and Tax Enforcement
+114	IRS Funding and Oversight
+115	IRS Audits and Income Inequality
+116	IRS Funding and Fairness
+117	IRS Audits on Middle Class
+118	IRS Funding and Enforcement
+119	Protecting Wealthy Interests
+120	IRS Oversight and Taxpayer Protection
+121	IRS Funding and Services
+122	Taxpayer Protection and IRS Funding
+123	Taxpayer Protection Act Critique
+124	Taxpayer Protection and IRS Oversight
+125	IRS Funding and Tax Cheating
+126	IRS Audits and Taxes
+127	Tax fairness and auditing
+128	IRS Funding and Tax Compliance
+129	Tax Policy and IRS Funding
+130	Tax Evasion and IRS Resources
+131	Taxpayer Protection and IRS Reform
+132	Tax fairness and billionaire contributions
+133	Government Reform and IRS Support
+134	Family and Small Business Taxpayer Protection
+135	IRS Funding and Resource Allocation
+136	Inflation Reduction and Tax Fairness
+137	IRS Budget and Enforcement
+138	IRS Funding and Tax Fairness
+139	IRS Expansion and Tax Audits
+140	Cutting IRS Funding
+141	IRS Expansion Concerns
+142	IRS staffing and compliance
+143	Tax Avoidance and the National Deficit
+144	Defunding IRS Expansion
+145	IRS staffing and budget
+146	Tax Compliance and Enforcement
+147	IRS Funding Expansion
+148	congressional chaos
+149	Tax fairness and equity
+150	Taxpayer Protection and IRS Hiring
+151	Billionaire tax cheats and IRS funding
+152	IRS Expansion and Taxation
+153	National Debt and IRS Staffing
+154	IRS Efficiency and Taxpayer Service
+155	IRS audits and taxpayer fairness
+156	Tax fairness and IRS funding
+157	IRS Customer Service Reform
+158	Tax Enforcement and Equity
+159	House Bill Procedure
+160	Voting Procedure for H.R. 23
+161	Motion to recommit H.R. 23
+162	Agriculture Advocacy
+163	National Law Enforcement Appreciation Day
+164	Reparations for African Americans
+165	Law Enforcement Support
+166	Media Bias in Sports
+167	Border Security and Immigration
+168	Vaccine Mandates
+169	Honoring Captain Thomas Davis
+170	Betsy Russell's Retirement
+171	Honoring a WWII Veteran
+172	Honoring Congressional Staff
+173	Honoring Matthew David Andersen
+174	Naming veterans clinic after Delphine Metcalf-Foster
+175	Honoring Wayne Kirby's Life
+176	Honoring a Legal Career
+177	Public Service and Tribute
+178	Honor of Captain Mantell
+179	District of Columbia Home Rule
+180	Community Gardening Initiative
+181	Recognition of Technical Education Achievement
+182	Clean Water Funding Legislation
+183	Honoring Bill Prestage
+184	Honoring Dr. Alfredo Trevino
+185	Legislative Cosponsorship Clarification
+186	University of Georgia Football Championship
+187	Honoring Community Leader
+188	Veteran Recognition
+189	Honoring Lieutenant General Rudder
+190	Legacy of Ricardo Molina Sr.
+191	Honoring Military Service
+192	Recognition of Young Farmers
+193	House Debate Procedures
+194	Work vs. Labor Debate
+195	Taxation and Fiscal Responsibility
+196	Honoring a Veteran's Service
+197	Honoring a Mother's Legacy
+198	Reversing Biden Administration Policies
+199	Protecting American Energy
+200	High School Sports Achievement
+201	Border security concerns
+202	Recognition of Pella Marching Dutch
+203	College Football Championship
+204	Recognizing Jon Burns' Leadership
+205	University of Georgia's Community Engagement
+206	Recognition of Thiago Almada
+207	Water Management in California
+208	Protection of the Unborn
+209	Disaster relief and tax exemption
+210	Border Cooperation and Trade
+211	Republican Leadership and Agenda
+212	Domestic mineral supply chain
+213	South Texas Priorities
+214	Recognition of Heroism
+215	Honoring Ron Butler's Achievement
+216	Chinese Communist Party Threat
+217	China's Global Influence and Human Rights
+218	Bipartisan Approach to China
+219	Select Committee on China
+220	Bipartisan Strategy Against China
+221	Strategic Competition with China
+222	China's Threat to National Security
+223	Great power competition with China
+224	Threat of the Chinese Communist Party
+225	China's Influence and Xenophobia
+226	Strategic competition with China
+227	China Select Committee Concerns
+228	China's Threat to Security
+229	Economic warfare with China
+230	Human rights and trade with China
+231	Bipartisan accountability for China
+232	China's Threat to America
+233	Abortion and Violence
+234	Establishment of Investigative Subcommittee
+235	Select Subcommittee Establishment
+236	Weaponization of Government
+237	January 6th Committee and Pardons
+238	Investigating Law Enforcement Agencies
+239	Government Accountability
+240	Trump and Biden Document Investigations
+241	Biden and Trump Document Cases
+242	Abuse of Power
+243	Civil rights and government oversight
+244	Hunter Biden Investigations
+245	MAGA Extremism and Investigations
+246	Extremist Politics in Justice System
+247	Weaponization of Government Investigations
+248	Government Oversight and Corruption
+249	Select Committee Investigations
+250	Deep State Investigations
+251	Insurrection Protection Committee
+252	Abuse of Government Power
+253	Government Surveillance Abuse
+254	Government Surveillance and National Security
+255	MAGA Republican Investigations
+256	Government Overreach and Parental Rights
+257	New Oversight Committee Authority
+258	Targeting of MAGA Republicans
+259	Free speech and its protection
+260	Committee Creation Concerns
+261	Government Oversight and Power Abuse
+262	Legislative Integrity
+263	Abuse of Federal Power
+264	Oversight and Accountability
+265	Congressional Oversight and Accountability
+266	January 6 Investigations
+267	Oversight and Corruption
+268	Oath of office
+269	House Resolutions Voting Process
+270	Select Subcommittee on Weaponization
+271	Law Enforcement Appreciation
+272	IRS Funding Cuts
+273	Immigration crisis
+274	Community Safety Reform
+275	College Football Recognition
+276	National debt and fiscal responsibility
+277	China's Bullying and Veteran Support
+278	Kindness and Community
+279	Appointment of Acting Chair
+280	Opposition to Select Committee on China
+281	Recognition of Infrastructure Leadership
+282	Community service recognition
+283	State Government and Republican Leadership
+284	Honoring a Great American
+285	Honoring Mayor Harry Price
+286	Recognition of Nurse Anesthetist
+287	Retirement of a Broadcasting Legend
+288	Honoring Community Service
+289	Community service and development
+290	Legacy of Noreen Kokoruda
+291	Community Service and Legacy
+292	Honorary tribute to George Bryan
+293	Public Service and Infrastructure
+294	Public Service and Law Enforcement
+295	Honoring a Community Leader
+296	Community Service and Infrastructure
+297	Consolidated Appropriations Act, 2023
+298	Reproductive health care access
+299	Inclusion in Sports
+300	Promotion of Antoinette R. Gant
+301	Tribute to Deputy Sonny Johnson
+302	Honoring Public Service
+303	kitchen table issues
+304	Political Violence and Condemnation
+305	Climate Change and Water Issues
+306	Postsecondary Education Reform
+307	Abortion and Pro-Life Legislation
+308	Abortion rights opposition
+309	Palestinian Human Rights
+310	Extreme Weather and Flooding
+311	Honoring Bill Steiner's Legacy
+312	Villa Park's Incorporation Anniversary
+313	Korean American Day
+314	Congressional Purpose and Mission
+315	Abortion and Maternal Health
+316	Pennsylvania Farm Show
+317	COVID-19 policies and accountability
+318	Abortion and Gun Violence
+319	Condemnation of Violence Against Pro-Life Facilities
+320	Congressional Introduction and Responsibilities
+321	Taxation and IRS Funding
+322	Charleston's Tourism Success
+323	Sea Turtle Conservation
+324	Beaufort and Ostroh Sister City Efforts
+325	Heroic act of organ donation
+326	Charleston RiverDogs Championship
+327	Political Accountability and Local Representation
+328	Leadership in Law Enforcement
+329	Celebrating a Community Leader
+330	Honoring Lifesaving Actions
+331	Law enforcement recognition
+332	Terry College Achievement
+333	Taxpayer Protection and Accountability
+334	Remembering Brian Clint Worley
+335	Border security crisis
+336	Pennsylvania's Democratic Leadership
+337	National Milk Day
+338	Opposition to H. Con. Res. 3
+339	Abortion and the Unborn
+340	Human Trafficking Awareness
+341	Border Security Crisis
+342	Reproductive Rights
+343	sanctity of life
+344	Reproductive Healthcare Rights
+345	Reproductive health misinformation
+346	Police officer memorial
+347	Pandemic Authority Overreach
+348	Commemoration of James Thomas Wilbun
+349	Condemnation of Violence
+350	Abortion rights protection
+351	Governor Jim Pillen's Inauguration
+352	Taxpayer Impact of GOP Policies
+353	Pro-life facility attacks
+354	Abortion-related violence
+355	Open Capitol and Public Engagement
+356	Intimidation of Pro-Life Institutions
+357	Congressional Procedure
+358	Violence against Reproductive Healthcare Providers
+359	Condemnation of Political Violence
+360	political violence and hypocrisy
+361	Enforcement of the FACE Act
+362	pro-life violence condemnation
+363	Violence against Abortion Providers
+364	Attacks on Pro-Life Facilities
+365	Violence against abortion providers
+366	Violence against Pro-Life Organizations
+367	Abortion Rights and Violence
+368	Attacks on Pro-Life Organizations
+369	Violence and Misinformation in Abortion Care
+370	Attacks on Pregnancy Centers
+371	Reproductive rights and healthcare
+372	Support for Pregnancy Care Centers
+373	Violence Against Pregnancy Centers
+374	Reproductive Rights Debate
+375	Reproductive Rights Crisis
+376	Support for Pro-Life Centers
+377	Political violence against reproductive rights
+378	Violence and Abortion Rights
+379	Violence against healthcare providers
+380	Abortion rights and violence
+381	Reproductive rights and violence
+382	Political violence and reproductive healthcare
+383	Political violence in healthcare
+384	Political Violence and Abortion
+385	Political Violence and Reproductive Healthcare
+386	Condemning Violence Against Pro-Life Facilities
+387	Abortion and Child Protection
+388	Procedural House Bill Debate
+389	Born-Alive Abortion Survivors Protection Act
+390	Abortion and Infant Care
+391	Support for H.R. 26
+392	Reproductive healthcare rights
+393	abortion rights debate
+394	Born-Alive Abortion Survivors Protection
+395	Abortion and Infants' Rights
+396	Abortion rights and healthcare
+397	Protection of Born-Alive Infants
+398	Reproductive Rights and Medical Decision-Making
+399	Born-Alive Infant Care
+400	Abortion Rights and Healthcare Decisions
+401	Born-Alive Abortion Protection
+402	Born-Alive Infants Protection Act
+403	Assault on Women's Healthcare
+404	Protection of Infants Born Alive
+405	Abortion Legislation
+406	Freedom and Women's Autonomy
+407	Reproductive freedom opposition
+408	Defending Life After Abortion
+409	Abortion Rights and Women's Autonomy
+410	Parental and maternal rights
+411	Abortion and its implications
+412	Access to abortion care
+413	Born-Alive Abortion Legislation
+414	Legislation Impact on Healthcare
+415	Right to Life
+416	Motion to recommit on H.R. 26
+417	Honoring a Hero
+418	Delta Sigma Theta Founders' Day
+419	national unity and faith
+420	Emergency response and gratitude
+421	Lifetime achievement and community service
+422	Ethics in Congress
+423	Changes to Congressional Ethics Office
+424	Honoring Public Health Service
+425	25th Anniversary of Good Friday Agreement
+426	Heroism in Emergency Response
+427	Volunteer Fire and Rescue Service
+428	Fiscal Crisis and Debt
+429	Airline Delays and Infrastructure
+430	Fiscal Responsibility and Spending Reform
+431	Rowland Hill Geddie, Jr.
+432	Honoring John Parvensky
+433	Community Leadership and Activism
+434	Recognition of Sherri Jackson
+435	Honoring Veteran Will Martin, Jr.
+436	UCLA Women's Soccer Championship
+437	Honoring a community leader
+438	Honoring Mel Hannah's Legacy
+439	Community Service Legacy
+440	Life and Legacy of Harry Martin
+441	Community Service and Leadership
+442	Honoring a Public Servant
+443	Huletts-on-Lake-George
+444	Centennial Celebration of American Legion
+445	Republican Majority Criticism
+446	School Board Member Recognition
+447	Steel Industry Growth
+448	Support for Global Democracies
+449	Protecting Energy Resources from China
+450	Opposition to Energy Export Bill
+451	Protecting Strategic Petroleum Reserve
+452	Strategic Petroleum Reserve Policy
+453	Energy Security Strategy
+454	Energy Security and Oil Exports
+455	Energy Exports and Pricing
+456	Stop Oil Sales to China
+457	Banning Oil Exports to Adversaries
+458	Energy Policy and Export Restrictions
+459	Protecting the Strategic Petroleum Reserve
+460	Opposition to H.R. 22
+461	Strategic Petroleum Reserve Sales
+462	U.S. Oil Export Policy
+463	American Energy Policy
+464	energy security and exports
+465	energy security and domestic oil production
+466	energy security and presidential authority
+467	energy security and oil reserves
+468	energy security and domestic production
+469	Energy Exports and National Security
+470	Energy Security and National Policy
+471	Energy Security and China
+472	Strategic Petroleum Reserve and China
+473	Strategic Petroleum Reserve Misuse
+474	Oil Industry Influence
+475	Petroleum reserve management
+476	American energy independence
+477	Protection of Strategic Petroleum Reserve
+478	Energy independence
+479	Energy Independence and Strategic Reserves
+480	Congressional Dysfunction
+481	Sports achievement recognition
+482	Honoring a News Anchor
+483	Immigration and Indian Community
+484	Damar Hamlin's Recovery
+485	Honoring C. Lee Butler
+486	Community Resilience
+487	Energy Policy and Natural Gas
+488	Bipartisan Cooperation for District Needs
+489	National security and classified documents
+490	Economic recovery under Biden
+491	Housing affordability crisis
+492	congressional service priorities
+493	Energy independence and security
+494	Child safety and gun violence
+495	Energy Independence and Strategic Petroleum Reserve
+496	Personal milestones and family appreciation
+497	Healthcare access in North Carolina
+498	Bipartisanship and Healthcare
+499	Healthcare Staffing and Nurses' Rights
+500	Korean American contributions
+501	Energy independence and policy
+502	Recognition of Anushree Jumde
+503	Arkansas Martin Luther King, Jr. Commission
+504	Commemorating Hank Browne
+505	Welding Students Recognition
+506	Service Recognition
+507	Recognition of Museum Achievement
+508	Slavery Remembrance and Conscience Agenda
+509	Immigration Crisis
+510	Honoring Young Philanthropy
+511	Dr. Tony Ubalde's Retirement
+512	National Guard Service and Advocacy
+513	Appointment of Acting President pro tempore
+514	Community Service Initiative
+515	Home Rule for D.C.
+516	Tribute to Laura Pantelakos
+517	Honoring Long-Term EMS Service
+518	Water access and community support
+519	Supporting Single Parents
+520	Leadership and Service in Electricity
+521	Antisemitism Awareness
+522	Recognition of Military Heroism
+523	Dr. Daniel Holsenbeck's Legacy
+524	Securities and Exchange Commission Leasing Authority
+525	Inclusive Employment Opportunities
+526	Recognition of Community Business
+527	Honoring Dr. Stephen Berman
+528	Honoring a Veteran's Legacy
+529	Honoring Assistant Police Chief
+530	Honoring Legislative Contributions
+531	Honoring public service
+532	Honoring Dr. Willie James Epps
+533	Recognition of Willie O'Ree
+534	Community Service Recognition
+535	Honoring a Civic Leader
+536	Community Leadership and Service
+537	Appointment to Smithsonian Board
+538	House adjournment schedule
+539	Senate Appointments
+540	Appointment to Senate Position
+541	Gun Violence and Debt Ceiling
+542	Senate Oath of Office
+543	New Senator's Introduction
+544	New Senator Welcome
+545	COVID-19 lockdown impacts
+546	Economic Challenges in Tennessee
+547	Absence of Senators
+548	Recognition of Veteran Affairs Leader
+549	Legacy of Disability Advocacy
+550	Veterans Affairs Leadership
+551	Recognition of Scientific Contributions
+552	Vaster High School Basketball Team
+553	Vaster High School basketball team
+554	Legacy of James "Jimmy" Deal
+555	Recognition of Contributions to Safety
+556	Housing affordability and leadership
+557	Colonel Clements' Retirement
+558	Recognition of Dr. Daniel Edelman
+559	Retirement of Police Commander
+560	Education Leadership
+561	Public Safety Leadership
+562	Community Wildfire Protection Act
+563	West Coast Ocean Protection
+564	Fighting Homelessness
+565	Community Wildfire Protection
+566	Homelessness Support Legislation
+567	Offshore Oil and Gas Ban
+568	Appointment of Senate Trustee
+569	Senate Scheduling and Recess
+570	Lisa Marie Presley Tribute
+571	Honoring Local Leadership
+572	Honoring Federal Service Legacy
+573	Support for Refugees
+574	Protecting Oil Reserves from China
+575	Marion County's 200th Anniversary
+576	Mack Wilbourn's Legacy
+577	Tribute to Coach Ed Bowman
+578	Honoring a Healthcare Hero
+579	Legacy of Congressman Arthur Ravenel
+580	Tribute to Reverend Lewis Gunter
+581	Willa Cash Tribute
+582	Honoring a Dedicated Sheriff
+583	Recognition of Lee Klein's Retirement
+584	DeGray Lake anniversary
+585	Jack and Jill of America Anniversary
+586	Opposition to Horseracing Integrity Act
+587	Honor for Public Service
+588	Black January Killings Anniversary
+589	Recognition of Business Achievement
+590	Recognition of Young Innovators
+591	Community resilience after tragedy
+592	Celebrating Women's Achievements
+593	75th Anniversary of Baytown
+594	Honoring a Law Enforcement Career
+595	Judicial appointments in D.C.
+596	Local Leadership and Service
+597	Tribute to Vincent Astor
+598	<house debate procedures>
+599	Protection of Human Life
+600	National School Choice Week
+601	Honoring Andy Morris, Jr.
+602	Recognition of First Bryan Baptist Church
+603	Recognition of Tom Fanning
+604	Honoring the Life of Bebe Flynn
+605	Honoring Russell Pearce
+606	Nebraska Beef Industry Contributions
+607	Honoring James Thomas Kolbe
+608	Federal Workforce and Hiring Reform
+609	Federal Hiring Reform
+610	Bipartisan Legislation Support
+611	Federal hiring reform
+612	Civil service hiring reform
+613	Inflation and Economic Struggles
+614	Honoring Captain Johnathan Benton
+615	Second Amendment Rights
+616	Parliamentary Procedure
+617	Settlement Agreement Transparency
+618	Transparency in Government
+619	Government Transparency
+620	Government Transparency and Accountability
+621	Legislative Procedures
+622	Civil service reform
+623	Tribute to Cecil Abarr
+624	Smoking in House Offices
+625	School Choice Advocacy
+626	Honoring a Hero's Life
+627	National Religious Freedom Day
+628	School choice empowerment
+629	Childhood Hunger and Food Insecurity
+630	Opposition to Congestion Pricing
+631	Economic revitalization
+632	Abortion and the Right to Life
+633	Celebrating a Constituent's Birthday
+634	National School Choice
+635	Immigration and Housing Costs
+636	Abortion and Pro-Life Advocacy
+637	Abortion Rights and Pro-Life Advocacy
+638	Child welfare and support
+639	Abortion information and support
+640	Remembering Lives Lost
+641	Abortion and Roe v. Wade
+642	Abortion and Right to Life
+643	Culture of Life
+644	Protection of Unborn Life
+645	Protecting the Unborn
+646	Abortion and Public Opinion
+647	Ron Klain's Achievements
+648	Senate Leadership Recognition
+649	House Republicans' Challenges
+650	Border security issues
+651	Abortion Rights and Pro-Life Movement
+652	Ukraine war and U.S. support
+653	debt ceiling crisis
+654	When Life Begins
+655	Right to Life Movement
+656	Dignity of Work and Social Security
+657	Right to Life Advocacy
+658	Assistant Secretary of Defense Nomination
+659	Foxcroft Academy's Bicentennial Celebration
+660	Recognition of Judge David Hudson
+661	Recognition of Senator Patrick Leahy
+662	Combating Global Corruption
+663	Energy crisis and inflation
+664	Corruption as National Security
+665	Senate Scheduling
+666	Committee Meetings Authorization
+667	Recognition of Captain Charles Simpson
+668	Support for Ukraine's Defense
+669	Tribute to Lisa Renee Ransom
+670	Honoring Hassell Franklin
+671	Mass shooting response
+672	Recognition of Edith Morisseau
+673	Honoring Family Values Advocate
+674	Quilts of Valor Foundation
+675	Honoring Justice Nora Manella
+676	Retirement of Celia Gould
+677	Recognition of Judge Arianne Slay
+678	Honoring Veterans' Service
+679	House Rules and Debates
+680	Legacy of Lin Brehmer
+681	Education Inequality
+682	Dual Enrollment Programs
+683	Skills Gap in Workforce
+684	Food Security Concerns
+685	Poultry Industry Development
+686	Green building initiatives
+687	Georgia Ports Authority Achievements
+688	Honoring Fallen Law Enforcement Officer
+689	Honoring Fallen Law Enforcement Officers
+690	Debt Ceiling Issues
+691	Agricultural and Economic Advocacy
+692	National Debt and Accountability
+693	National debt and its implications
+694	Debt Ceiling Crisis
+695	Bipartisan Leadership and Community Service
+696	Longmire Brothers' Retirement
+697	Economic policies and their impact
+698	Tax Reform and Inequality
+699	Honoring a World War II Veteran
+700	Honoring Veterans Affairs Leadership
+701	Celebrate Literacy Week
+702	Congressional Integrity and Due Process
+703	Notice to Air Missions Reform
+704	United States-Israel AI Partnership
+705	Economic development and industry recognition
+706	Debt Ceiling and Social Security
+707	Support for Iranian Freedom
+708	Social Security and Economic Security
+709	Infrastructure and Transportation Challenges
+710	Immigration and Border Security
+711	Big Pharma Pricing and Accountability
+712	Disaster Management Coordination
+713	Federal Disaster Assistance Reform
+714	Disaster Recovery Improvement
+715	Disaster Assistance Reform
+716	Violence against Abortion Clinics
+717	Transparency in Disaster Assistance
+718	Post-Disaster Assistance Transparency
+719	Post-disaster assistance transparency
+720	Post-disaster funding transparency
+721	SEC Leasing Authority Reform
+722	Revocation of SEC Leasing Authority
+723	Real Estate Leasing Authority
+724	Revoking SEC Leasing Authority
+725	Aviation Safety and NOTAM System
+726	NOTAM System Improvement
+727	Aviation Safety Improvement
+728	Aviation safety improvements
+729	Aviation Safety and Cybersecurity
+730	Aviation safety standards
+731	Small Business Advocacy
+732	Small Business Advocacy in International Trade
+733	Microloan Program Transparency
+734	Microloan Program Improvements
+735	Microloan Program Support
+736	Small business support
+737	Investing in Small Businesses
+738	small business support
+739	Small Business Investment Reform
+740	Small business investment
+741	Small Business Investment Enhancement
+742	Iran human rights abuses
+743	Iranian Human Rights Violations
+744	Iranian Protests and Human Rights
+745	Human rights in Iran
+746	Support for Iranian Protests
+747	Iranian regime's human rights abuses
+748	Human rights abuses in Iran
+749	Bipartisan Support for Iranian Freedom
+750	Iranian Freedom and Human Rights
+751	Iranian Women's Rights and Freedom
+752	Iranian Women's Fight for Freedom
+753	Support for Iranian Freedom Fighters
+754	Task force for air mission notices
+755	Small Business Investment Act
+756	Support for Iranian Protesters
+757	Voting attendance explanation
+758	University of Georgia Achievements
+759	Black History Month
+760	Representation of Pennsylvania's 15th District
+761	Attacks on African-American Culture
+762	Support for Iranian Protestors
+763	Gun violence in America
+764	Flooding and Water Management
+765	Government Accountability and Legislative Process
+766	Texas Congressional District Values
+767	New Member Introduction
+768	School Choice and Education Reform
+769	School choice and education reform
+770	Education Reform and School Choice
+771	Congressional Representative Introduction
+772	Border Security and Human Trafficking
+773	Introduction of New Member
+774	Disaster relief for wildfire victims
+775	New Republican Members
+776	Senate adjournment schedule
+777	Violent Crime Increase
+778	Debt ceiling negotiations
+779	Bipartisan Collaboration in Congress
+780	Republican National Sales Tax
+781	Labor History and Recognition
+782	Honoring a Montana Hero
+783	Investing in Medical Research
+784	Border and Debt Ceiling
+785	border security crisis
+786	Border Security Concerns
+787	Border Security and Immigration Issues
+788	Border Security and Immigration Crisis
+789	Social Security and Medicare
+790	Gun violence prevention
+791	Walter Ulloa's Legacy
+792	Tribute to Dr. Robert Cope
+793	Senate Resolution Consideration
+794	Small Business Recognition
+795	Tribute to Barbara Lacen Keller
+796	Honoring a Life of Service
+797	Retirement of Alfie Alvarado-Ramos
+798	Retirement of Sheriff Wiegert
+799	Support for Military Employment
+800	Missed Votes and Legislative Support
+801	Honoring Police Chief Jim Hughes
+802	Voting record acknowledgment
+803	Honoring Chief Joel Johnson's Service
+804	Service and Advocacy in Water Management
+805	Four Chaplains Sunday
+806	Honoring Carol Bush's Legacy
+807	Celebrating Esther George's Career
+808	Pro bono legal services
+809	Youth Leadership and Advocacy
+810	Northern Mariana Islands Population Stabilization
+811	Honoring Bill Quirk's Public Service
+812	Promotion of Chief Master Sergeant
+813	Honoring a Medical Trailblazer
+814	Local Leadership Recognition
+815	Bipartisan Caucus Participation
+816	Crime and Public Safety
+817	Lawlessness at the Southern Border
+818	Disaster Recovery in Alabama
+819	High School Football Championship
+820	Remembering Mother Willa Cash
+821	Water Affordability Crisis
+822	Iranian Protests for Human Rights
+823	Honoring Judge Harold Murphy
+824	Legacy of Walter F. Ulloa
+825	Mental health crisis and gun violence
+826	Flood Management and Water Storage
+827	Dairy Farming Support
+828	Honoring Kerri Donis
+829	Environmental Justice and Big Oil
+830	Gun Violence Prevention
+831	Gun violence and mass shootings
+832	Unity and Bipartisan Action
+833	UNLV Rebel Girls championship
+834	Humanitarian crisis in Artsakh
+835	Debt Ceiling Negotiations
+836	Clean School Bus Program
+837	Ending Hunger and Promoting Nutrition
+838	Law enforcement and policing
+839	Honoring Larry Rogers, Sr.
+840	Honoring a Heroic Nurse
+841	Recognition of Athletic Achievement
+842	Economic inequality and taxation
+843	Iran nuclear deal concerns
+844	Police Violence and Accountability
+845	Censorship of Conservative Voices
+846	Honoring Chief Lou Dekmar
+847	Energy production regulations
+848	Energy security and production
+849	Opposition to H.R. 21
+850	Energy Security and Gas Prices
+851	energy security and independence
+852	Energy independence and production
+853	H.R. 21 and Big Oil's Influence
+854	Higher Gas Prices and Climate Impact
+855	Energy Security and Strategic Petroleum Reserve
+856	Energy policy and environmental impact
+857	Energy security and policy
+858	Energy production and policy
+859	Strategic Petroleum Reserve Usage
+860	Energy Policy and Big Oil
+861	Energy Security Legislation
+862	Big Oil and Gas Prices
+863	Energy Crisis and Gas Prices
+864	Energy security and independence
+865	Energy Independence and Accountability
+866	Strategic Petroleum Reserve Management
+867	Energy Security and SPR Usage
+868	energy security and the Strategic Petroleum Reserve
+869	Strategic Petroleum Reserve Accountability
+870	Strategic Petroleum Reserve usage
+871	energy security and fossil fuel policy
+872	energy policy and economic relief
+873	Gas prices and Strategic Petroleum Reserve
+874	Strategic Petroleum Reserve Concerns
+875	Strategic Petroleum Reserve and Supply
+876	Energy Security and Supply
+877	Energy supply and pricing
+878	Energy Crisis Response
+879	Energy supply crisis
