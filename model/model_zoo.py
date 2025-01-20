@@ -323,16 +323,16 @@ class TransformerPhraseDecoder(BaseModel):
                 context = context.repeat_interleave(beam_size, dim=0)
             else:
                 num_beams = sequences.size(0) // batch_size
+                vocab_size = log_probs.size(-1)
                 
                 # Calculate scores for each beam and vocab item
                 sequence_scores = sequence_scores.unsqueeze(-1)  # [batch_size * beam_size, 1, 1]
-                
-                # Reshape log_probs to match sequence scores
                 log_probs = log_probs.unsqueeze(1)  # [batch_size * beam_size, 1, vocab_size]
                 
                 # Add current scores to log probs
                 scores = sequence_scores + log_probs  # [batch_size * beam_size, 1, vocab_size]
-                scores = scores.view(batch_size, num_beams * vocab_size)  # [batch_size, beam_size * vocab_size]
+                scores = scores.view(batch_size, num_beams, vocab_size)  # [batch_size, beam_size, vocab_size]
+                scores = scores.view(batch_size, -1)  # [batch_size, beam_size * vocab_size]
                 
                 # Apply length penalty
                 length_penalty_score = ((5 + step + 1) / 6) ** length_penalty

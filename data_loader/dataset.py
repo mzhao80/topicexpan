@@ -158,9 +158,8 @@ class DocTopicPhraseDataset(DatasetBase):
 
         model_name = "sentence-transformers/all-MiniLM-L6-v2"
         self.bert_tokenizer = AutoTokenizer.from_pretrained(model_name)
-        self.bert_tokenizer._bos_token = '[unused99]'
-        self.bert_tokenizer._eos_token = '[unused100]'
-        self.bert_tokenizer.add_tokens(['[unused99]', '[unused100]'], special_tokens=True)
+        self.bert_tokenizer.bos_token = self.bert_tokenizer.cls_token
+        self.bert_tokenizer.eos_token = self.bert_tokenizer.sep_token
         
         self.topic_invhier = {topicID: [] for topicID in self.topicID2topicRank}
         for topicID, childIDs in self.topic_fullhier.items():
@@ -209,8 +208,6 @@ class DocTopicPhraseDataset(DatasetBase):
         self.tokenized_phs = {}
         for k, v in self.doc2phrases.items():
             tokenized_phs = self.bert_tokenizer(v, return_tensors="pt", padding=True, truncation=True, max_length=8)
-            tokenized_phs['input_ids'][tokenized_phs['input_ids'] == 101] = self.bert_tokenizer.bos_token_id
-            tokenized_phs['input_ids'][tokenized_phs['input_ids'] == 102] = self.bert_tokenizer.eos_token_id
             self.tokenized_phs[k] = tokenized_phs
 
     def __len__(self):
