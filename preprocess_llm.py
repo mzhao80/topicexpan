@@ -5,13 +5,8 @@ import numpy as np
 import os
 import re
 from tqdm import tqdm
-from keybert.llm import OpenAI
-from keybert import KeyLLM, KeyBERT
-from nltk.corpus import stopwords
-import nltk
 import argparse
 import torch
-import matplotlib.pyplot as plt
 import openai
 from sentence_transformers import SentenceTransformer
 

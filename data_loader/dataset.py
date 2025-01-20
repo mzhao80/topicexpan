@@ -156,7 +156,7 @@ class DocTopicPhraseDataset(DatasetBase):
         self.topic_mask_feats = np.array(self.topic_feats['unknown'])        # As masked node feats, it uses 'unknown' word vector 
         # self.topic_mask_feats = np.zeros(self.topic_node_feats.shape[1])   # As masked node feats, it uses 0 vector 
 
-        model_name = "bert-base-uncased"
+        model_name = "sentence-transformers/all-MiniLM-L6-v2"
         self.bert_tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.bert_tokenizer._bos_token = '[unused99]'
         self.bert_tokenizer._eos_token = '[unused100]'

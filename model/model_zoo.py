@@ -17,7 +17,7 @@ from base import BaseModel
     1. Document Encoder
 """
 class BertDocEncoder(BaseModel):
-    def __init__(self, model_name="bert-base-uncased"):
+    def __init__(self, model_name="sentence-transformers/all-MiniLM-L6-v2"):
         super().__init__()
         self.model_name = model_name
         self.model = AutoModel.from_pretrained(model_name)

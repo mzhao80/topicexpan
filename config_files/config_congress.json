@@ -4,8 +4,8 @@
     "arch": {
         "type": "TopicExpan",
         "args": {
-            "model_name": "bert-base-uncased",
-            "doc_embed_dim": 768,
+            "model_name": "all-MiniLM-L6-v2",
+            "doc_embed_dim": 384,
             "topic_embed_dim": 384,
             "gcn_encoder_num_layers": 2,
             "tfm_decoder_num_layers": 1,
