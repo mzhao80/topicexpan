@@ -8,6 +8,7 @@ from sklearn.metrics.pairwise import euclidean_distances
 from gensim.models import KeyedVectors
 import os, pickle
 import time
+from sentence_transformers import SentenceTransformer
 
 class Trainer(BaseTrainer):
     """
@@ -209,45 +210,41 @@ class Trainer(BaseTrainer):
         
             vid2tnames, vid2tinfos = self._cluster_phrases(vid2phrases, config['num_clusters'])
         
-            # Step 3. Phrase clustering
-            f = open('new_topic_nodes.txt', 'w')
+            # Step 3. Output discovered topics
+            import json
+            output = {}
             for vid, pid in self.model.vid2pid.items():
-                f.write('VID : ' + str(vid) + '\n')
-
-                tid, target_path = str(pid), ['*', dataset.topics[str(pid)]]
-                while len(dataset.topic_invhier[tid]) > 0:
+                # Get parent topic path
+                tid, path = str(pid), []
+                while True:
+                    path.append(dataset.topics[tid])
+                    if len(dataset.topic_invhier[tid]) == 0:
+                        break
                     tid = dataset.topic_invhier[tid][0]
-                    target_path.append(dataset.topics[tid])
-                target_path.append('root')
-                f.write('TARGET PATH : ' + ' -> '.join(target_path[::-1]) + '\n')
-
-                f.write('KNOWN TOPIC NAME :\n')
-                gt_topic_ids = dataset.topic_hier[pid]
-                for gt_topic_id in gt_topic_ids:
-                    f.write("(%3d) %s\n" % (gt_topic_id, dataset.topics[str(gt_topic_id)]))
-                f.write('\n')
-
-                f.write('NOVEL TOPIC NAME :\n')
-                gt_topic_ids = dataset.novel_topic_hier[pid]
-                for gt_topic_id in gt_topic_ids:
-                    f.write("(%3d) %s\n" % (gt_topic_id, dataset.topics[str(gt_topic_id)]))
-                f.write('\n')
-
-                f.write('FOUND TOPIC NAME :\n')
-                for topic_idx, topic_name in enumerate(vid2tnames[vid]):
-                    f.write("(%3d) %s\n" % (topic_idx, topic_name))
-                f.write('\n')
-
+                path.append('root')
+                path = ' -> '.join(path[::-1])
+                
+                # Format discovered topics
+                topics = []
                 for topic_idx, topic_name, topic_phrases, topic_size in vid2tinfos[vid]:
-                    f.write("Topic %3d : %s\n" % (topic_idx, topic_name))
-                    topic_phrases = sorted(topic_phrases, key=lambda x: x[2])
-                    for doc_id, topic_phrase, _ in topic_phrases:
-                        f.write("  [%5d] %s\n" % (doc_id, topic_phrase))
-                f.write('\n')
-            f.close()
+                    # Sort phrases by relevance score
+                    sorted_phrases = sorted(topic_phrases, key=lambda x: x[2])
+                    phrases = [{"doc_id": doc_id, "text": phrase} for doc_id, phrase, _ in sorted_phrases]
+                    topics.append({
+                        "name": topic_name,
+                        "size": topic_size,
+                        "phrases": phrases
+                    })
+                
+                output[path] = topics
+            
+            # Write as JSON for easier parsing
+            with open('discovered_topics.json', 'w') as f:
+                json.dump(output, f, indent=2)
         
     def _cluster_phrases(self, vid2phrases, num_clusters):
-        glove_embeds = KeyedVectors.load_word2vec_format(os.path.join(self.config['embed_dir'], 'glove.6B.300d.txt'), binary=False, no_header=True)
+        model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+        model = model.to(self.device)
         
         vid2tnames = {vid: [] for vid in vid2phrases}
         vid2tinfos = {vid: [] for vid in vid2phrases}
@@ -256,26 +253,22 @@ class Trainer(BaseTrainer):
                 vid2tnames[vid].append('Phrase-Not-Found')
                 continue
 
-            vid_docids, vid_phrases, vid_feats = [], [], []
+            vid_docids, vid_phrases = [], []
             for doc_id, phrase in phrases:
-                vid_feat = []
-                for word in phrase.split():
-                    if word in glove_embeds:
-                        vid_feat.append(glove_embeds[word])
-
-                if len(vid_feat) == 0: continue 
-
-                vid_feats.append(np.array(vid_feat).mean(axis=0))
                 vid_phrases.append(phrase)
                 vid_docids.append(doc_id)
             
-            if len(vid_feats) == 0:
+            if len(vid_phrases) == 0:
                 vid2tnames[vid].append('Phrase-Not-Found')
                 continue
 
+            # Compute embeddings using all-MiniLM-L6-v2
+            with torch.no_grad():
+                vid_feats = model.encode(vid_phrases, convert_to_tensor=True)
+                vid_feats = vid_feats.cpu().numpy()
+
             # Perform k-means clustering
             kmeans = KMeans(n_clusters=num_clusters, random_state=0)
-            vid_feats = np.stack(vid_feats, axis=0)
             labels = kmeans.fit(vid_feats).labels_
 
             topic_relevance = euclidean_distances(kmeans.cluster_centers_, vid_feats).min(axis=0)
