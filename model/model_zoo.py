@@ -225,7 +225,7 @@ class CrossAttentionInteraction(nn.Module):
         """
         doc: (batch_size, num_docs, doc_dim)
         topic: (batch_size, num_topics, topic_dim)
-        returns: (batch_size, num_docs, num_topics)
+        returns: (batch_size, num_topics)
         """
         batch_size = doc.shape[0]
         
@@ -246,8 +246,8 @@ class CrossAttentionInteraction(nn.Module):
         out = torch.matmul(attn, v)
         out = out.transpose(1, 2).contiguous().view(batch_size, -1, self.doc_dim)
         
-        # Project to similarity scores
-        sim_scores = self.output_proj(out).squeeze(-1)  # (batch_size, num_docs, num_topics)
+        # Project to similarity scores and squeeze doc dimension since we only have one doc per batch
+        sim_scores = self.output_proj(out).squeeze(-1).squeeze(1)  # (batch_size, num_topics)
         return sim_scores
 
 class ContextCombiner(nn.Module):

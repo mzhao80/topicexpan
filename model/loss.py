@@ -4,13 +4,20 @@ import torch.nn.functional as F
 
 def infonce_loss(output, target, temperature=0.1):
     """
-    output: a (batch_size, num_classes) tensor
-    target: a (batch_size, ) tensor of dtype long
+    output: a (batch_size, num_classes) tensor of similarity scores
+    target: a (batch_size,) tensor of target class indices
     """
-    output = torch.softmax(output/temperature, dim=-1)
-    output = output[torch.arange(output.size(0)), target]
-    loss = - torch.log(output + 1e-12)
-    return loss.mean()
+    # Apply temperature scaling and softmax
+    output = output / temperature
+    log_probs = F.log_softmax(output, dim=-1)
+    
+    # Get the predicted probability for the target class
+    target_log_probs = log_probs[torch.arange(output.size(0)), target]
+    
+    # InfoNCE loss is the negative log probability of the target class
+    loss = -target_log_probs.mean()
+    
+    return loss
 
 def nll_loss(output, target):
     """
