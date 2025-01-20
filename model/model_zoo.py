@@ -298,8 +298,6 @@ class TransformerPhraseDecoder(BaseModel):
         finished_scores = [[] for _ in range(batch_size)]
         
         for step in range(self.max_length - 1):
-            num_effective_batch = sequences.size(0)
-            
             # Get logits for next token
             logits = self.forward(sequences, context)  # [batch_size * beam_size, seq_len, vocab_size]
             curr_logits = logits[:, -1, :]  # [batch_size * beam_size, vocab_size]
@@ -313,8 +311,7 @@ class TransformerPhraseDecoder(BaseModel):
                 sequence_scores = sequence_scores + log_probs  # [batch_size, vocab_size]
                 scores, indices = sequence_scores.topk(beam_size, dim=-1)  # [batch_size, beam_size]
                 
-                # Convert indices to next tokens and beam indices
-                beam_indices = torch.zeros_like(indices)
+                # Convert indices to next tokens
                 next_tokens = indices
                 
                 # Update sequences
@@ -325,21 +322,23 @@ class TransformerPhraseDecoder(BaseModel):
                 # Update context for beam size
                 context = context.repeat_interleave(beam_size, dim=0)
             else:
+                num_beams = sequences.size(0) // batch_size
+                
                 # Calculate scores for each beam and vocab item
-                sequence_scores = sequence_scores.unsqueeze(-1) + log_probs  # [batch_size * beam_size, vocab_size]
+                sequence_scores = sequence_scores.unsqueeze(-1)  # [batch_size * beam_size, 1]
+                vocab_scores = log_probs  # [batch_size * beam_size, vocab_size]
+                
+                # Compute length penalty
+                length_penalty_score = ((5 + step + 1) / 6) ** length_penalty
                 
                 # Reshape scores for topk
-                num_beams = num_effective_batch // batch_size
-                sequence_scores = sequence_scores.view(batch_size, num_beams * vocab_size)
-                
-                # Apply length penalty
-                length_penalty_score = ((5 + step + 1) / 6) ** length_penalty
-                scores = sequence_scores / length_penalty_score
+                curr_scores = (sequence_scores + vocab_scores) / length_penalty_score  # [batch_size * beam_size, vocab_size]
+                curr_scores = curr_scores.view(batch_size, num_beams * vocab_size)
                 
                 # Select top beams and their tokens
-                scores, indices = scores.topk(beam_size, dim=-1)  # [batch_size, beam_size]
+                scores, indices = curr_scores.topk(beam_size, dim=-1)  # [batch_size, beam_size]
                 beam_indices = indices // vocab_size  # [batch_size, beam_size]
-                next_tokens = indices % vocab_size  # [batch_size, beam_size]
+                token_indices = indices % vocab_size  # [batch_size, beam_size]
                 
                 # Compute offsets for gather operation
                 beam_indices = beam_indices + (torch.arange(batch_size, device=device) * num_beams).unsqueeze(-1)
@@ -347,7 +346,7 @@ class TransformerPhraseDecoder(BaseModel):
                 # Gather sequences
                 sequences = sequences.view(-1, sequences.size(-1))  # [batch_size * beam_size, seq_len]
                 sequences = sequences[beam_indices.view(-1)]  # [batch_size * beam_size, seq_len]
-                sequences = torch.cat([sequences, next_tokens.view(-1, 1)], dim=-1)
+                sequences = torch.cat([sequences, token_indices.view(-1, 1)], dim=-1)
                 
                 # Update scores
                 sequence_scores = scores.view(-1, 1)
