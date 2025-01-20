@@ -214,8 +214,8 @@ def main():
     # apply clean_text to valid_speeeches
     valid_speeches['speech'] = valid_speeches['speech'].apply(clean_text)
 
-    # cut valid speeches to first 1000
-    valid_speeches = valid_speeches[:1000]
+    # cut valid speeches to first 50
+    valid_speeches = valid_speeches[:50]
     
     with open(os.path.join(args.data_dir, 'corpus.txt'), 'w', encoding='utf-8') as f:
         for idx, text in tqdm(enumerate(valid_speeches['speech']), 
