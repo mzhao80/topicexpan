@@ -98,7 +98,11 @@ class TopicExpan(BaseModel):
         doc_encoder_mask = encoder_input['attention_mask']
 
         decoder_context = self.context_combiner(topic_encoder_output, doc_encoder_output, doc_encoder_mask)
-        output_ids = self.phrase_decoder.generate(decoder_context)
+        output_ids = self.phrase_decoder.generate(
+            decoder_context,
+            beam_size=self.options.get("beam_size", 5),
+            length_penalty=self.options.get("length_penalty", 1.0)
+        )
         return output_ids
 
     def inductive_gen(self, encoder_input, topic_indices):
