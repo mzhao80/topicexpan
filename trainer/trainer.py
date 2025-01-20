@@ -42,6 +42,15 @@ class Trainer(BaseTrainer):
         for batch_idx, batch_data in enumerate(self.data_loader):
             doc_ids, doc_infos, topic_ids, phrase_infos = batch_data
             
+            # Debug: Check input shapes and values
+            if batch_idx == 0:  # Only print for first batch
+                print("\n[DEBUG] Batch Information:")
+                print(f"Document IDs shape: {doc_ids.shape}")
+                print(f"Topic IDs shape: {topic_ids.shape}")
+                print(f"Unique topics in batch: {topic_ids.unique().tolist()}")
+                print(f"Input sequence lengths: {doc_infos['attention_mask'].sum(1).tolist()}")
+                print(f"Target phrase lengths: {phrase_infos['attention_mask'].sum(1).tolist()}")
+            
             encoder_input = {k: v.to(self.device) for k, v in doc_infos.items()}
             decoder_input = {k: v[:, :-1].to(self.device) for k, v in phrase_infos.items()}
             
@@ -51,21 +60,53 @@ class Trainer(BaseTrainer):
             self.optimizer.zero_grad()
             
             sim_score, gen_score = self.model(encoder_input, decoder_input, topic_ids)
+            
+            # Debug: Check model outputs
+            if batch_idx == 0:  # Only print for first batch
+                print("\n[DEBUG] Model Outputs:")
+                print(f"Similarity scores shape: {sim_score.shape}")
+                print(f"Score range: [{sim_score.min():.3f}, {sim_score.max():.3f}]")
+                print(f"Generation logits shape: {gen_score.shape}")
+                
+                # Print predicted vs actual topics
+                pred_topics = sim_score.argmax(dim=1)
+                print("\nTopic Prediction Sample:")
+                for i in range(min(3, len(pred_topics))):
+                    print(f"Pred: {pred_topics[i].item()} | True: {sim_target[i].item()}")
+                
+                # Print sample phrase
+                if hasattr(self.dataset, 'bert_tokenizer'):
+                    gen_tokens = gen_score[0].argmax(dim=1)
+                    generated = self.dataset.bert_tokenizer.decode(gen_tokens)
+                    target = self.dataset.bert_tokenizer.decode(gen_target[0])
+                    print("\nPhrase Generation Sample:")
+                    print(f"Generated: {generated}")
+                    print(f"Target: {target}")
+            
             sim_loss = self.criterions['sim'](sim_score, sim_target)
             gen_loss = self.criterions['gen'](gen_score, gen_target)
             loss = sim_loss + gen_loss
+            
+            # Debug: Check loss values
+            if batch_idx % 100 == 0:
+                print(f"\n[DEBUG] Batch {batch_idx} Losses:")
+                print(f"Similarity Loss: {sim_loss.item():.3f}")
+                print(f"Generation Loss: {gen_loss.item():.3f}")
+                print(f"Total Loss: {loss.item():.3f}")
 
             loss.backward()
             self.optimizer.step()
 
             self.writer.set_step((epoch - 1) * self.len_epoch + batch_idx)
+            self.train_metrics.update('loss', loss.item())
             self.train_metrics.update('sim_loss', sim_loss.item())
             self.train_metrics.update('gen_loss', gen_loss.item())
-            self.train_metrics.update('loss', loss.item())
 
             if batch_idx % self.log_step == 0:
-                current_time = time.strftime("%Y-%m-%d %H:%M:%S")
-                self.logger.debug(f'[{current_time}] Train Epoch: {epoch} {self._progress(batch_idx)} Loss: {loss.item():.6f} [{sim_loss.item():.6f} + {gen_loss.item():.6f}]')
+                self.logger.debug('Train Epoch: {} {} Loss: {:.6f}'.format(
+                    epoch,
+                    self._progress(batch_idx),
+                    loss.item()))
 
             if batch_idx == self.len_epoch:
                 break
