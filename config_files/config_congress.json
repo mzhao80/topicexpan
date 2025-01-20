@@ -57,7 +57,7 @@
         "save_period": 4,
         "verbosity": 2,
         "monitor": "max val_embedding_sim",
-        "early_stop": 3,
+        "early_stop": 8,
         "tensorboard": true
     },
     "expansion": {
