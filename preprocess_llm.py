@@ -134,16 +134,25 @@ def extract_topics_and_phrases(docs, client):
             try:
                 topic_line, phrases_line = content.split('\n')
                 topic = topic_line.replace('TOPIC:', '').strip().lower()
+                if not topic:
+                    topic = "unknown"
                 # Split phrases by | and clean
                 phrase_list = [p.strip() for p in phrases_line.replace('PHRASES:', '').split('|')]
                 phrase_list = [p for p in phrase_list if p]  # Remove empty phrases
-            except:
-                # Fallback if format is incorrect
+            except Exception as e:
+                print(f"Error parsing response for batch starting at {i}: {str(e)}")
+                print(f"Response content: {content}")
                 topic = "unknown"
                 phrase_list = []
             
             batch_topics.append(topic)
             batch_phrases.append(phrase_list)
+        
+        # If we got fewer responses than documents, pad with unknowns
+        while len(batch_topics) < len(batch_docs):
+            print(f"Warning: Got {len(batch_topics)} responses for {len(batch_docs)} documents in batch starting at {i}")
+            batch_topics.append("unknown")
+            batch_phrases.append([])
         
         topics.extend(batch_topics)
         phrases.extend(batch_phrases)
@@ -205,17 +214,25 @@ def main():
     print("Generating topics and extracting phrases...")
     doc_topics, doc2phrases = extract_topics_and_phrases(valid_speeches['speech'].tolist(), client)
     
-    # Map topics to indices
+    # Map topics to indices and ensure we have a topic for every document
     topic_to_topic_idx = {keyword: idx+1 for idx, keyword in enumerate(seed_keywords)}
     topic_to_topic_idx['politics'] = 0
     topic_idx = len(topic_to_topic_idx)
     doc_idx_to_topic_idx = []
     
+    # Ensure we have a topic for every document
+    assert len(doc_topics) == len(valid_speeches), f"Got {len(doc_topics)} topics but have {len(valid_speeches)} speeches"
+    
     for topic in doc_topics:
+        if not topic:  # Handle empty topics
+            topic = "unknown"
         if topic not in topic_to_topic_idx:
             topic_to_topic_idx[topic] = topic_idx
             topic_idx += 1
         doc_idx_to_topic_idx.append(topic_to_topic_idx[topic])
+    
+    # Verify we have a topic index for every document
+    assert len(doc_idx_to_topic_idx) == len(valid_speeches), f"Got {len(doc_idx_to_topic_idx)} topic indices but have {len(valid_speeches)} speeches"
     
     # Save topics.txt
     print("Saving topics.txt...")
