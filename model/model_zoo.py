@@ -223,107 +223,78 @@ class BilinearInteraction(nn.Module):
 """
     4. Topic-conditional Phrase Generator
 """
-class TransformerPhraseDecoder(nn.Module):
+class TransformerPhraseDecoder(BaseModel):
     def __init__(self, input_embeddings, pad_token_id, bos_token_id, eos_token_id, num_layers, num_heads, max_length, use_flash_attention=False):
         super().__init__()
         self.vocab_size, self.hidden_size = input_embeddings.word_embeddings.weight.shape
         self.input_embeddings = input_embeddings
         self.output_embeddings = nn.Linear(self.hidden_size, self.vocab_size, bias=False)
-        
-        # Add layer normalization and dropout
-        self.layer_norm = nn.LayerNorm(self.hidden_size)
-        self.dropout = nn.Dropout(0.1)
-        
-        # Enhanced decoder layer with additional parameters
+
         model_layer = TransformerDecoderLayer(
-            d_model=self.hidden_size,
-            nhead=num_heads,
-            dim_feedforward=4 * self.hidden_size,  # Increased FFN capacity
-            dropout=0.1,
-            activation='gelu',  # Changed to GELU
-            batch_first=True,
-            norm_first=True  # Pre-norm architecture
+            d_model=self.hidden_size, 
+            nhead=num_heads, 
+            batch_first=True
         )
         self.model = TransformerDecoder(model_layer, num_layers=num_layers)
-        
+
         self.max_length = max_length
         self.pad_token_id = pad_token_id
         self.bos_token_id = bos_token_id
         self.eos_token_id = eos_token_id
-        
-    def forward(self, x, decoder_context=None):
-        # Get input embeddings and apply dropout
-        x = self.input_embeddings(x)
-        x = self.dropout(x)
-        
+
+    def _make_causal_mask(self, x):
         # Create causal mask for decoder
-        causal_mask = self._make_causal_mask(x)
-        padding_mask = (x != self.pad_token_id)
+        sz = x.size(1)
+        mask = (torch.triu(torch.ones(sz, sz)) == 1).transpose(0, 1)
+        mask = mask.float().masked_fill(mask == 0, float('-inf')).masked_fill(mask == 1, float(0.0))
+        return mask.to(x.device)
+
+    def forward(self, x, decoder_context=None):
+        # Handle BERT-style dictionary input
+        if isinstance(x, dict):
+            input_ids = x['input_ids']
+            token_type_ids = x.get('token_type_ids', None)
+            # Only pass input_ids and token_type_ids to embeddings
+            x = self.input_embeddings(
+                input_ids=input_ids,
+                token_type_ids=token_type_ids
+            )
+        else:
+            x = self.input_embeddings(x)
         
-        # Apply transformer decoder
-        if decoder_context is not None:
-            decoder_context = self.layer_norm(decoder_context)
-        hidden_states = self.model(
+        # Create attention masks
+        attn_mask = self._make_causal_mask(x)
+        # Use attention_mask from input if provided
+        if isinstance(x, dict) and 'attention_mask' in x:
+            padding_mask = ~x['attention_mask'].bool()
+        else:
+            padding_mask = None
+        
+        # Run through transformer decoder
+        output = self.model(
             x,
             decoder_context,
-            tgt_mask=causal_mask,
-            tgt_key_padding_mask=padding_mask
+            tgt_mask=attn_mask,
+            memory_mask=None,
+            tgt_key_padding_mask=padding_mask,
+            memory_key_padding_mask=None
         )
         
         # Project to vocabulary
-        hidden_states = self.dropout(hidden_states)
-        logits = self.output_embeddings(hidden_states)
-        return logits
-    
-    def generate(self, context, num_beams=4, temperature=0.7):
+        output = self.output_embeddings(output)
+        
+        return output
+
+    def generate(self, context):
         batch_size = context.size(0)
-        device = context.device
+        current_token = torch.full((batch_size, 1), self.bos_token_id, dtype=torch.long, device=context.device)
         
-        # Initialize beam search
-        beam_scores = torch.zeros(batch_size, num_beams, device=device)
-        beam_tokens = torch.full((batch_size, num_beams, 1), self.bos_token_id, device=device)
-        beam_indices = torch.arange(batch_size, device=device).unsqueeze(-1).repeat(1, num_beams)
-        
-        for step in range(self.max_length - 1):
-            beam_size = beam_tokens.size(1)
-            input_tokens = beam_tokens.view(batch_size * beam_size, -1)
+        for _ in range(self.max_length - 1):
+            logits = self.forward(current_token, context)
+            next_token = logits[:, -1:].argmax(dim=-1)
+            current_token = torch.cat([current_token, next_token], dim=1)
             
-            # Get logits for next token
-            logits = self(input_tokens, context.repeat_interleave(beam_size, dim=0))
-            next_token_logits = logits[:, -1, :] / temperature
-            
-            # Apply softmax and get top-k next tokens
-            next_token_scores = F.log_softmax(next_token_logits, dim=-1)
-            next_token_scores = next_token_scores.view(batch_size, beam_size, -1)
-            
-            vocab_size = next_token_scores.size(-1)
-            beam_scores = beam_scores.unsqueeze(-1) + next_token_scores
-            
-            # Reshape for top-k selection
-            beam_scores = beam_scores.view(batch_size, -1)
-            next_scores, next_tokens = torch.topk(beam_scores, num_beams, dim=-1)
-            
-            # Update beam tokens and scores
-            next_beam_indices = next_tokens // vocab_size
-            next_tokens = next_tokens % vocab_size
-            
-            # Construct next iteration's beam tokens
-            new_beam_tokens = []
-            for batch_idx in range(batch_size):
-                batch_beam_tokens = []
-                for beam_idx in range(num_beams):
-                    prev_beam_idx = next_beam_indices[batch_idx, beam_idx]
-                    batch_beam_tokens.append(torch.cat([
-                        beam_tokens[batch_idx, prev_beam_idx],
-                        next_tokens[batch_idx, beam_idx].unsqueeze(0)
-                    ]))
-                new_beam_tokens.append(torch.stack(batch_beam_tokens))
-            beam_tokens = torch.stack(new_beam_tokens)
-            beam_scores = next_scores
-            
-            # Check for early stopping
-            if (beam_tokens == self.eos_token_id).any(dim=-1).all():
+            if (next_token == self.eos_token_id).all():
                 break
-        
-        # Return the highest scoring sequence for each batch
-        return beam_tokens[:, 0, :]
+                
+        return current_token

@@ -1,18 +1,16 @@
 {
     "name": "TopicExpan",
     "embed_dir": "~/Downloads/topicexpan/glove",
-    "model": {
+    "arch": {
         "type": "TopicExpan",
         "args": {
             "model_name": "sentence-transformers/all-MiniLM-L6-v2",
             "doc_embed_dim": 384,
             "topic_embed_dim": 384,
+            "gcn_encoder_num_layers": 2,
             "tfm_decoder_num_layers": 8,
             "tfm_decoder_num_heads": 12,
-            "tfm_decoder_max_length": 32,
-            "gcn_encoder_num_layers": 2,
-            "label_smoothing": 0.1,
-            "use_flash_attention": true
+            "tfm_decoder_max_length": 16
         }
     },
     "data_loader_for_training": {
@@ -59,7 +57,7 @@
         "save_period": 5,
         "verbosity": 2,
         "monitor": "min val_gen_loss",
-        "early_stop": 10,
+        "early_stop": 15,
         "tensorboard": true
     },
     "expansion": {
