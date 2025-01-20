@@ -207,68 +207,58 @@ class GCNTopicEncoder(BaseModel):
     3. Topic-Document Similarity Predictor
 """
 class CrossAttentionInteraction(nn.Module):
-    def __init__(self, doc_dim, topic_dim, num_heads=8):
+    def __init__(self, hidden_size):
         super().__init__()
-        self.doc_dim = doc_dim
-        self.num_heads = num_heads
-        self.head_dim = doc_dim // num_heads
-        assert self.head_dim * num_heads == doc_dim, "doc_dim must be divisible by num_heads"
+        self.hidden_size = hidden_size
+        # Initialize with smaller values to prevent saturation
+        self.query = nn.Linear(hidden_size, hidden_size)
+        self.key = nn.Linear(hidden_size, hidden_size)
+        self.value = nn.Linear(hidden_size, hidden_size)
         
-        # Initialize weights with small values
-        self.doc_proj = nn.Linear(doc_dim, doc_dim)
-        self.topic_k = nn.Linear(topic_dim, doc_dim)
-        self.topic_v = nn.Linear(topic_dim, doc_dim)
-        self.output_proj = nn.Linear(doc_dim, 1)
+        # Initialize weights with smaller values
+        nn.init.xavier_uniform_(self.query.weight, gain=0.1)
+        nn.init.xavier_uniform_(self.key.weight, gain=0.1)
+        nn.init.xavier_uniform_(self.value.weight, gain=0.1)
         
-        # Initialize with smaller weights
-        nn.init.xavier_uniform_(self.doc_proj.weight, gain=0.1)
-        nn.init.xavier_uniform_(self.topic_k.weight, gain=0.1)
-        nn.init.xavier_uniform_(self.topic_v.weight, gain=0.1)
-        nn.init.xavier_uniform_(self.output_proj.weight, gain=0.1)
+        # Add layer norm for better training dynamics
+        self.layer_norm = nn.LayerNorm(hidden_size)
         
-        self.norm1 = nn.LayerNorm(doc_dim)
-        self.norm2 = nn.LayerNorm(doc_dim)
-        
-    def forward(self, doc, topic):
+    def forward(self, doc_tensor, topic_encoder_output):
         """
-        doc: (batch_size, 1, doc_dim)
-        topic: (1, num_topics, topic_dim)
-        returns: (batch_size, num_topics)
+        doc_tensor: [batch_size, hidden_size]
+        topic_encoder_output: [num_topics, hidden_size]
         """
-        batch_size = doc.shape[0]
-        num_topics = topic.shape[1]
+        batch_size = doc_tensor.size(0)
+        num_topics = topic_encoder_output.size(0)
         
-        # Expand doc and topic to match
-        doc = doc.expand(-1, num_topics, -1)  # [batch_size, num_topics, doc_dim]
-        topic = topic.expand(batch_size, -1, -1)  # [batch_size, num_topics, topic_dim]
+        # Apply layer norm
+        doc_tensor = self.layer_norm(doc_tensor)
+        topic_encoder_output = self.layer_norm(topic_encoder_output)
         
-        # Layer norm
-        doc = self.norm1(doc)
-        topic = self.norm2(topic)
+        # Project inputs
+        q = self.query(doc_tensor)  # [batch_size, hidden_size]
+        k = self.key(topic_encoder_output)  # [num_topics, hidden_size]
+        v = self.value(topic_encoder_output)  # [num_topics, hidden_size]
         
-        # Project queries, keys, values
-        q = self.doc_proj(doc).view(batch_size, num_topics, self.num_heads, self.head_dim).transpose(1, 2)
-        k = self.topic_k(topic).view(batch_size, num_topics, self.num_heads, self.head_dim).transpose(1, 2)
-        v = self.topic_v(topic).view(batch_size, num_topics, self.num_heads, self.head_dim).transpose(1, 2)
+        # Compute attention scores
+        attention_scores = torch.matmul(q, k.transpose(0, 1))  # [batch_size, num_topics]
+        attention_scores = attention_scores / math.sqrt(self.hidden_size)  # Scale scores
         
-        # Scaled dot-product attention
-        scores = torch.matmul(q, k.transpose(-2, -1)) / math.sqrt(self.head_dim)
-        attn = F.softmax(scores, dim=-1)
+        # Apply softmax row-wise (over topics)
+        attention_weights = F.softmax(attention_scores, dim=-1)  # [batch_size, num_topics]
         
-        # Debug attention scores
-        print(f"[DEBUG] Attention scores min/max/mean: {attn.min().item():.3f}/{attn.max().item():.3f}/{attn.mean().item():.3f}")
+        print(f"[DEBUG] Raw attention scores min/max/mean: {attention_scores.min().item():.3f}/{attention_scores.max().item():.3f}/{attention_scores.mean().item():.3f}")
+        print(f"[DEBUG] Attention weights min/max/mean: {attention_weights.min().item():.3f}/{attention_weights.max().item():.3f}/{attention_weights.mean().item():.3f}")
         
-        # Combine heads
-        out = torch.matmul(attn, v)
-        out = out.transpose(1, 2).contiguous().view(batch_size, num_topics, self.doc_dim)
+        # Compute similarity scores using cosine similarity
+        doc_norm = F.normalize(doc_tensor, p=2, dim=1)  # [batch_size, hidden_size]
+        topic_norm = F.normalize(topic_encoder_output, p=2, dim=1)  # [num_topics, hidden_size]
+        sim_score = torch.matmul(doc_norm, topic_norm.transpose(0, 1))  # [batch_size, num_topics]
         
-        # Project to similarity scores
-        sim_scores = self.output_proj(out).squeeze(-1)  # [batch_size, num_topics]
+        print(f"[DEBUG] Similarity scores min/max/mean: {sim_score.min().item():.3f}/{sim_score.max().item():.3f}/{sim_score.mean().item():.3f}")
+        print(f"[DEBUG] sim_score shape: {sim_score.shape}")
         
-        # Debug similarity scores
-        print(f"[DEBUG] Similarity scores min/max/mean: {sim_scores.min().item():.3f}/{sim_scores.max().item():.3f}/{sim_scores.mean().item():.3f}")
-        
-        return sim_scores
+        return sim_score
 
 class ContextCombiner(nn.Module):
     def __init__(self, doc_dim, topic_dim):
