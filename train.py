@@ -39,10 +39,7 @@ def main(config):
     topic_mask_feats = data_loader.dataset.topic_mask_feats
     novel_topic_hierarhcy = data_loader.dataset.novel_topic_hier
     
-    # Get model configuration
-    model_args = config['arch']['args']
-    
-    # Initialize model with all parameters
+    # Only pass the parameters that aren't in the config file
     model = config.init_obj('arch', module_arch,
                     topic_hierarchy=topic_hierarchy,
                     topic_node_feats=topic_node_feats,
@@ -50,8 +47,7 @@ def main(config):
                     pad_token_id=data_loader.dataset.bert_tokenizer.pad_token_id,
                     bos_token_id=data_loader.dataset.bert_tokenizer.bos_token_id,
                     eos_token_id=data_loader.dataset.bert_tokenizer.eos_token_id,
-                    novel_topic_hierarchy=novel_topic_hierarhcy,
-                    **model_args)  # Pass all model args from config
+                    novel_topic_hierarchy=novel_topic_hierarhcy)
 
     logger.info(model)
 

@@ -13,21 +13,22 @@ class TopicExpan(BaseModel):
     """
     def __init__(self, pad_token_id, bos_token_id, eos_token_id, 
                  topic_hierarchy, topic_node_feats, topic_mask_feats,
-                 novel_topic_hierarchy, model_name, doc_embed_dim, topic_embed_dim,
-                 gcn_encoder_num_layers, tfm_decoder_num_layers, tfm_decoder_num_heads,
-                 tfm_decoder_max_length, beam_search=None, **kwargs):
+                 novel_topic_hierarchy, **options):
         super(TopicExpan, self).__init__()
 
-        self.doc_encoder = BertDocEncoder(model_name)
+        # Get model parameters from options
+        args = options.get("args", {})
+        
+        self.doc_encoder = BertDocEncoder(args["model_name"])
         # Enable gradient checkpointing for memory efficiency
         self.doc_encoder.model.gradient_checkpointing_enable()
 
         self.phrase_decoder = TransformerPhraseDecoder(
                                 self.doc_encoder.input_embeddings, 
                                 pad_token_id, bos_token_id, eos_token_id,
-                                tfm_decoder_num_layers, 
-                                tfm_decoder_num_heads, 
-                                tfm_decoder_max_length,
+                                args["tfm_decoder_num_layers"], 
+                                args["tfm_decoder_num_heads"], 
+                                args["tfm_decoder_max_length"],
                                 use_flash_attention=True)  # Enable flash attention
 
         self.topic_hier = topic_hierarchy
@@ -35,7 +36,7 @@ class TopicExpan(BaseModel):
         self.vid2pid = {vid: pid for vid, pid in enumerate(self.topic_hier)}
         
         # Get beam search parameters from config or use defaults
-        beam_search = beam_search or {}
+        beam_search = args.get("beam_search", {})
         self.beam_size = beam_search.get("beam_size", 5)
         self.length_penalty = beam_search.get("length_penalty", 1.0)
 
@@ -44,12 +45,14 @@ class TopicExpan(BaseModel):
                                 topic_hierarchy,
                                 topic_node_feats,
                                 topic_mask_feats,
-                                gcn_encoder_num_layers)
+                                args["gcn_encoder_num_layers"])
         
+        doc_dim = args["doc_embed_dim"]
+        topic_dim = args["topic_embed_dim"]
         num_topics = len(topic_hierarchy)
         
-        self.interaction = BilinearInteraction(doc_embed_dim, topic_embed_dim, num_topics=num_topics, bias=False)
-        self.linear_combiner = nn.Linear(doc_embed_dim + topic_embed_dim, doc_embed_dim)
+        self.interaction = BilinearInteraction(doc_dim, topic_dim, num_topics=num_topics, bias=False)
+        self.linear_combiner = nn.Linear(doc_dim + topic_dim, doc_dim)
 
     def to_device(self, device):
         self.to(device)
