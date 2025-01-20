@@ -253,17 +253,22 @@ class TransformerPhraseDecoder(BaseModel):
         # Handle BERT-style dictionary input
         if isinstance(x, dict):
             input_ids = x['input_ids']
-            attention_mask = x.get('attention_mask', None)
             token_type_ids = x.get('token_type_ids', None)
-            x = self.input_embeddings(input_ids=input_ids, 
-                                    attention_mask=attention_mask,
-                                    token_type_ids=token_type_ids)
+            # Only pass input_ids and token_type_ids to embeddings
+            x = self.input_embeddings(
+                input_ids=input_ids,
+                token_type_ids=token_type_ids
+            )
         else:
             x = self.input_embeddings(x)
         
         # Create attention masks
         attn_mask = self._make_causal_mask(x)
-        padding_mask = None  # We'll handle padding in the loss function
+        # Use attention_mask from input if provided
+        if isinstance(x, dict) and 'attention_mask' in x:
+            padding_mask = ~x['attention_mask'].bool()
+        else:
+            padding_mask = None
         
         # Run through transformer decoder
         output = self.model(
