@@ -53,3 +53,6 @@ def accuracy(output, target):
         if output_str == target_str:
             correct += 1
     return correct / len(target)
+
+# Create module-level instance
+embedding_sim = EmbeddingSimilarity()
