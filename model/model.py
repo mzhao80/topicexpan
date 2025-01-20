@@ -40,11 +40,7 @@ class TopicExpan(BaseModel):
         num_topics = options["topic_node_feats"].shape[0]
         assert options["topic_embed_dim"] == options["topic_node_feats"].shape[1]
         
-        # Replace bilinear with cross-attention
-        self.interaction = CrossAttentionInteraction(doc_dim, topic_dim, num_heads=8)
-        
-        # Enhanced context combiner
-        self.context_combiner = ContextCombiner(doc_dim, topic_dim)
+        self.interaction = BilinearInteraction(doc_dim, topic_dim, num_topics=num_topics, bias=False)
         self.linear_combiner = nn.Linear(doc_dim + topic_dim, doc_dim)
 
 
@@ -61,18 +57,10 @@ class TopicExpan(BaseModel):
         mask_sum = encoder_input['attention_mask'].sum(dim=1, keepdim=True).clamp(min=1e-9)
         doc_tensor = (doc_encoder_output * encoder_input['attention_mask'][:, :, None]).sum(dim=1) 
         doc_tensor = doc_tensor / mask_sum
-        
-        # Debug prints for similarity computation
-        print(f"[DEBUG] doc_tensor shape: {doc_tensor.shape}")
-        print(f"[DEBUG] topic_encoder_output shape: {topic_encoder_output.shape}")
-        
-        sim_score = self.interaction(doc_tensor[:, None, :], topic_encoder_output[None, :, :])  # Add batch dims
-        sim_score = sim_score.squeeze(1)  # Remove extra dim
-        print(f"[DEBUG] sim_score shape: {sim_score.shape}")
+        sim_score = self.interaction(doc_tensor, topic_encoder_output) 
         
         # Part 2 : Topic-conditional Phrase Generation (w/ Teacher Forcing)
-        topic_context = topic_encoder_output[topic_indices, :]
-        decoder_context = self.context_combiner(topic_context, doc_encoder_output)
+        decoder_context = self.context_combiner(topic_encoder_output[topic_indices, :], doc_encoder_output, encoder_input['attention_mask'])
         decoder_output = self.phrase_decoder(decoder_input, decoder_context)
         gen_score = F.log_softmax(decoder_output, dim=-1)
 
@@ -87,9 +75,8 @@ class TopicExpan(BaseModel):
         doc_tensor = (doc_encoder_output * encoder_input['attention_mask'][:, :, None]).sum(dim=1) 
         doc_tensor = doc_tensor / mask_sum
         
-        sim_score = self.interaction(doc_tensor[:, None, :], topic_encoder_output[None, :, :])  # Add batch dims
-        sim_score = sim_score.squeeze(1)  # Remove extra dim
-        return sim_score
+        score = self.interaction(doc_tensor, topic_encoder_output) 
+        return score
 
     def inductive_sim(self, encoder_input):
         topic_encoder_output = self.topic_encoder.inductive_encode() 
@@ -100,16 +87,17 @@ class TopicExpan(BaseModel):
         doc_tensor = (doc_encoder_output * encoder_input['attention_mask'][:, :, None]).sum(dim=1) 
         doc_tensor = doc_tensor / mask_sum
 
-        sim_score = self.interaction(doc_tensor[:, None, :], topic_encoder_output[None, :, :])  # Add batch dims
-        sim_score = sim_score.squeeze(1)  # Remove extra dim
-        return sim_score
+        score = self.interaction(doc_tensor, topic_encoder_output)
+        return score
 
     # Step 2. Topic-conditional Phrase Generation
     def gen(self, encoder_input, topic_indices):
         topic_encoder_output = self.topic_encoder.encode()[topic_indices, :]
         
         doc_encoder_output = self.doc_encoder(encoder_input)
-        decoder_context = self.context_combiner(topic_encoder_output, doc_encoder_output)
+        doc_encoder_mask = encoder_input['attention_mask']
+
+        decoder_context = self.context_combiner(topic_encoder_output, doc_encoder_output, doc_encoder_mask)
         output_ids = self.phrase_decoder.generate(decoder_context)
         return output_ids
 
@@ -119,7 +107,9 @@ class TopicExpan(BaseModel):
         topic_encoder_output = topic_encoder_output[topic_indices, :]
 
         doc_encoder_output = self.doc_encoder(encoder_input)
-        decoder_context = self.context_combiner(topic_encoder_output, doc_encoder_output)
+        doc_encoder_mask = encoder_input['attention_mask']
+
+        decoder_context = self.context_combiner(topic_encoder_output, doc_encoder_output, doc_encoder_mask)
         output_ids = self.phrase_decoder.generate(decoder_context)
         return output_ids
 
@@ -129,15 +119,15 @@ class TopicExpan(BaseModel):
         doc_encoder_output = self.doc_encoder(encoder_input)
         doc_encoder_mask = encoder_input['attention_mask']
 
-        decoder_context = self.context_combiner(topic_encoder_output, doc_encoder_output)
+        decoder_context = self.context_combiner(topic_encoder_output, doc_encoder_output, doc_encoder_mask)
         decoder_output = self.phrase_decoder(decoder_input, decoder_context)
         gen_score = F.log_softmax(decoder_output, dim=-1)
         return gen_score
 
-    def gen_score(self, encoder_input, decoder_input, topic_encoder_output):
-        # Part 2 : Topic-conditional Phrase Generation (w/ Teacher Forcing)
-        doc_encoder_output = self.doc_encoder(encoder_input)
-        decoder_context = self.context_combiner(topic_encoder_output, doc_encoder_output)
-        decoder_output = self.phrase_decoder(decoder_input, decoder_context)
-        gen_score = F.log_softmax(decoder_output, dim=-1)
-        return gen_score
+    def context_combiner(self, topic_context, doc_context, doc_mask):        
+        scores = self.interaction.compute_attn_scores(doc_context, topic_context)
+        scores = torch.exp(scores.clamp(max=20)) * doc_mask  # Clamp to prevent overflow
+        scores_sum = scores.sum(dim=1, keepdim=True).clamp(min=1e-9)
+        scores = scores / scores_sum
+        context = (doc_context * scores.unsqueeze(dim=2))
+        return context
