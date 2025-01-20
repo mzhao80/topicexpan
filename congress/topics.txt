@@ -32,43 +32,48 @@
 31	taxation
 32	transportation and public works
 33	water resources development
-34	pledge of allegiance participation
-35	order and decorum in congress
-36	nomination of kevin mccarthy
-37	voting rights protection
-38	nomination of byron donalds
-39	speaker election results
-40	nomination of kevin mccarthy as speaker
-41	nomination of hakeem jeffries
-42	nomination of byron donalds for speaker
-43	speaker of the house election
-44	election of speaker of the house
-45	power consolidation in congress
-46	equal representation and legislative process
-47	nomination of speaker of the house
-48	nomination of kevin hern
-49	trump's leadership and speaker nomination
-50	nomination for speaker of the house
-51	pledge of allegiance
-52	recognition of public service
-53	family values advocacy
-54	d.c. statehood and representation
-55	local economic development
-56	celebrating community contributions
-57	united states sepak takraw team victory
-58	civic engagement and leadership development
-59	legacy of fred wolfe
-60	loudoun county chamber recognition
-61	police leadership and service
-62	house resolution debate
-63	adoption of congressional rules
-64	house rules reform
-65	republican extremism and governance issues
-66	house rules and fiscal responsibility
-67	irs funding and national debt
-68	abortion rights and bodily autonomy
-69	fiscal responsibility and governance
-70	women's reproductive rights
-71	oversight and legislative reform
-72	impact of covid-19 on congress
-73	abortion access and women's rights
+34	Nomination of Byron Donalds
+35	Speaker election results
+36	Nomination of Kevin McCarthy
+37	Hakeem Jeffries for Speaker
+38	Change in Leadership
+39	Election of Speaker of the House
+40	Leadership and Accountability in Congress
+41	Nomination of Hakeem Jeffries
+42	Reform of Legislative Process
+43	Equal representation and legislative reform
+44	Leadership Transition
+45	American Dream and Leadership
+46	Hakeem Jeffries nomination for Speaker
+47	Byron Donalds for Speaker
+48	Leadership in the House
+49	Voting results for Speaker
+50	Leadership and Fiscal Responsibility
+51	Donald Trump for Speaker
+52	Transformation in Leadership
+53	Pledge of Allegiance
+54	Retirement and Public Service
+55	Honoring Tom Minnery
+56	D.C. Statehood
+57	Economic development advocacy
+58	Celebrating Mrs. Thomas's 90th Birthday
+59	Sepak Takraw Team Victory
+60	David Axelrod's Service
+61	Remembering Fred Wolfe
+62	Loudoun Chamber of Commerce Recognition
+63	Celebrating Police Chief's Retirement
+64	Procedural Resolution
+65	Congressional Rules and Procedures
+66	House Rules Reform
+67	Congressional Rules Package
+68	House Rules and Accountability
+69	Budgetary Impact of IRS Funding Bill
+70	Abortion rights
+71	New direction in governance
+72	Congressional Rules and Oversight
+73	COVID-19 Remote Procedures
+74	Attacks on Reproductive Rights
+75	Abortion and Rights
+76	Abortion and Workers' Rights
+77	Abortion and Economic Freedom
+78	Abortion Rights and Economic Justice

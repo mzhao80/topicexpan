@@ -1,50 +1,50 @@
-0	pledge of allegiance	join in the pledge of allegiance	led the pledge of allegiance
-1	order and decorum	preserve order and decorum	address any remarks through the chair	refrain from engaging in personalities	respecting and upholding order and decorum
-2	nominate kevin mccarthy	speaker of the house	leading republican nominee
-3	protecting the right to vote	voter suppression	john lewis voting rights advancement act	expanding democracy
-4	byron donalds	nomination of byron donalds	more byron donalds	man of personal conviction
-5	votes cast	hakeem jeffries	kevin mccarthy	byron donalds	donald j. trump	speaker not elected
-6	nominate kevin mccarthy	speaker of the house	my friend	my colleague	right the wrongs	safeguard our constitution	freedoms of americans	sacrificed for	support and defend
-7	nominate hakeem jeffries	speaker of the house	stand united behind our leader	historic dysfunction	deliver basic services	responsibility to serve our constituents	house democrats will stand together	elect a speaker who stands with them
-8	nomination of byron donalds	speaker of the house	change from the policies of the left	bring that under control	exchange of ideas	expression of support	restore american energy independence
-9	votes cast	hakeem jeffries	kevin mccarthy	byron donalds	speaker has not been elected
-10	nominate kevin mccarthy	speaker of the house	overwhelming support	hold the speaker accountable	motion to vacate the chair	protect that speaker's gavel	republican majority	implement that change
-11	hakeem jeffries for speaker	leadership of hakeem jeffries	democrats united	nomination of hakeem jeffries	representative-elect from the state of new york
-12	consolidation of power	diminish voices	equal representation	control legislation	disintegration of relationships
-13	equal representation	single-subject legislation	open rule process	equal voice	collaborate and craft legislation	restore the process
-14	nominate the gentleman from oklahoma	speaker of the house	evaluating what life after kevin mccarthy looks like	need a leader	unite our party	deliver on the promises	small business owner	lived the american dream
-15	speaker has not been elected	total number of votes cast	honorable hakeem jeffries	honorable kevin mccarthy	honorable byron donalds	honorable kevin hern
-16	nominate kevin mccarthy	speaker of the house	republican majority	commitment to america	fight for the american dream	cares about the american people	laying out a plan	opportunity for all	strong economy	nation that is safe	future built on freedom	government that is accountable
-17	hakeem jeffries for speaker	hakeem jeffries is the lead vote-getter	character of hakeem jeffries	opportunity to lead	democratic caucus	governing party in this chamber
-18	nominate byron donalds	speaker of the house	incredible representation	support him
-19	nominate kevin hern	speaker of the house	elect a republican	casting my vote for kevin hern
-20	speaker has not been elected	total number of votes cast	hakeem jeffries of the state of new york	kevin mccarthy of the state of california	byron donalds of the state of florida	kevin hern of the state of oklahoma	voting present	majority of the votes cast
-21	nominate kevin mccarthy	speaker of the house	leader mccarthy	fiscal discipline	domestic national debt	republican commitment to america
-22	nominate hakeem jeffries	first african american	first person of color	speaker of the house	dedicated	talented	passionate	committed public servant	lead vote-getter
-23	trump for speaker	trump presidency	veterans' accountability measures	confront china	american people first	didn't start any new wars	deeply corrupt	leadership positions and chairmanships
-24	placing a name in nomination	position of the speaker	people's representatives	selection of the speaker
-25	votes cast	hakeem jeffries	kevin mccarthy	byron donalds	kevin hern	donald j. trump	speaker has not been elected
-26	pledge of allegiance	i pledge allegiance	flag of the united states	one nation under god	liberty and justice for all
-27	exceptional service	public service	dedicated conservationist	compassionate congressional caseworkers	helping constituents	commitment to public service
-28	family values	champions of family values	pro-family policy advocates	focus on the family	citizen magazine	government and public policy	tom's life and legacy
-29	d.c. statehood bill	voting representation in congress	full local self-government	equality of citizenship	taxed without representation	washington	douglass commonwealth	constitutional authority	admissions clause	district clause	23rd amendment	population and resources	support for statehood	commitment to democracy	d.c. residents voted for statehood
-30	local economic development	local businesses	economic driver	small businesses	planning and resources	jobs created	direct lending	funding	competitive marketplace	community initiatives	economic development committees	tools and guidance	business friendly
-31	mrs. thomas's 90th birthday	community contributions	access to care	champion the cause	outstanding nurse of the year	greatest neighbor
-32	united states sepak takraw team	winning gold medals	2022 istaf world cup	victory for the united states
-33	civic life	leadership development	public service internships	civic engagement program	thoughtful dialogue	political leaders	public service
-34	legacy of faithful service	massive impact	numerous church establishments	grew by thousands of members	5	500 baptisms	spiritual guidance	mentor	wise sayings
-35	loudoun county chamber of commerce	5-star accreditation	largest and most effective chamber	premier network of business and community leaders	effective advocate	local	national and international recognition	chamber of the year	performance and community impact	industry leading programs	business advocacy	u.s. chamber of commerce	quality of its programs	highest endorsement for a local chamber's performance	best in class performance	commitment to excellence
-36	public service	public safety	law enforcement record	officer morale	officer training	de-escalation
-37	pledge of allegiance	flag of the united states	one nation under god	liberty and justice for all
-38	purpose of debate only	yielded for the purpose of debate	consideration of this resolution
-39	adopting the rules	adoption of the rules	rules of the 118th congress	changes to the standing rules	two minute votes	committee authorization and oversight plans
-40	rules package	conduct business	washington is broken	bills appear by dark of night	dark of night	written in rooms behind closed doors	reopening the people's house	proxy voting	members of congress have to show up
-41	republican party has been hijacked	extremist maga faction	not interested in governing	deeply flawed rules package	gut the office of congressional ethics	attack women's access to abortion	big oil companies to pollute	interfere in ongoing criminal investigations	billionaires and big corporations	avoid paying their taxes
-42	house rules	fiscal responsibility	out-of-control spending	rules resolution	return to normal operating procedures	eliminate proxy voting	conduct oversight	accountability for the biden administration	address spending problem	inflationary crisis
-43	irs funding bill	add $114 billion to the national debt	reduce the national debt	additional funding for administrative activities	rescind unobligated funds	decrease outlays by $71 billion	decrease receipts by $186 billion
-44	abortion rights	bodily autonomy	make decisions about their own bodies	women's health protection act	guarantee abortion rights	rights of every person	decisions about their health and lives
-45	tax-and-spend politics	fiscal prosperity	governing agenda	transparent	accountable
-46	freedom to make healthcare decisions	criminalize abortion care	women's rights to reproductive care	anti-choice	women's right to abortion care	women's health protection act
-47	proper oversight	legislative reform	transparent process	mandatory 72-hour rule	fiscally responsible budget
-48	covid	remote procedures	saved lives	member-elect died
-49	abortion access	women's economic freedom	bodily autonomy	criminalizes abortion
+0	Byron Donalds is a man of personal conviction	We need more Byron Donalds	This institution is broken
+1	Hakeem Jeffries 212 votes	Kevin McCarthy 201 votes	Byron Donalds 19 votes
+2	I vouch for my friend that Kevin will do as he has promised	This Congress will be different	He is not Paul Ryan
+3	212 House Democrats stand united	Historic dysfunction is imperiling our national security	They said no to protecting the planet and investing in clean energy
+4	Byron Donalds for Speaker	American public wanted a change	We must restore energy independence
+5	Hakeem Jeffries has received 212	Kevin McCarthy has received 201	No Speaker has been elected
+6	Kevin McCarthy fully understands that being Speaker of the House will not be easy	The American people are begging for leadership	We must secure our southern border	We must unleash our energy sector and become energy independent	We must curb inflation by reducing spending	Let's elect Kevin McCarthy as Speaker of the House
+7	Vote after vote, Democrats stand united	passed the American Rescue Plan	tackle the climate crisis
+8	The consolidation of power into the hands of the Speaker	Debate and the discussion have been all but eliminated	We need to fix this broken system
+9	equal representation for the districts that elected them	restore the rules so that this place can function properly	commonsense amendments that would restore the process and give each of us an equal voice
+10	We need a leader that is not of the broken system	America is tired of rhetoric, and they want results	Congress is broken and fundamentally needs change
+11	Hakeem Jeffries received 212 votes	Kevin McCarthy received 200 votes	No Member-elect having received a majority
+12	Kevin McCarthy is the man to lead us	Kevin understands this as well as anyone	A government accountable to the people
+13	Hakeem Jeffries is the lead vote-getter	Importance of character for leadership	Safeguarding priorities like Social Security and Medicare
+14	Byron has done something that leaders should do more of	We are dysfunctional	This discussion does not mean that we are dysfunctional
+15	Let's elect a Republican who can unify	Kevin McCarthy does not have the votes	I am casting my vote for Kevin Hern
+16	Hakeem Jeffries has received 212 votes	Kevin McCarthy has received 200 votes	A Speaker has not been elected
+17	Kevin McCarthy will unleash a pro-growth agenda	we are at a critical point in this Nation's fiscal health	he has brought these foundational traits of leadership
+18	Hakeem Jeffries	first African American	dysfunction on the other side
+19	I rise to nominate Donald Trump	Taxes were cut, regulations were slashed	The government has been deeply corrupt
+20	we have a window of opportunity to save the Republic	we need a leader who has true conservative convictions	we need a businessman as the Speaker of the House
+21	Hakeem Jeffries 212 votes	Kevin McCarthy 200 votes	Byron Donalds 12 votes
+22	The CLERK led the Pledge of Allegiance	one nation under God, indivisible	with liberty and justice for all
+23	Ms. Lynn Yates, on her well-deserved retirement	exceptional service to the constituents	dedicated conservationist and caseworker
+24	Tom will be remembered most for his devotion	greatest champions of family values	leading voice for family values
+25	This bill would give D.C. residents the voting representation	denied voting representation in Congress	moral obligation and the constitutional authority to pass this bill
+26	Denise has been a tireless advocate	established WEDCO as a powerful economic driver	over 800 jobs created during her tenure
+27	Mrs. Iris Darcine Bowie (Andrew) Thomas R.N.	champion the cause of providing quality medical services	first Black supervisor in nursing education
+28	United States Sepak Takraw Team on winning gold medals	2022 International Sepaktakraw Federation World Cup	inspire younger generations of Sepak Takraw players
+29	decade of dedicated and distinguished service	Director of its Institute of Politics	inspire, challenge, and train young people
+30	Brother Fred had so many wise sayings	His pastoral career took him to numerous church establishments	Legacy of faithful service to his community
+31	5-Star Accreditation status	largest and most effective Chamber	commitment to excellence in community service
+32	Chief Frazer's dedication to public safety	vital to Minnesota's Second Congressional District	formalized officer training with a focus on de-escalation
+33	Mr. WILSON of South Carolina led the Pledge of Allegiance	I pledge allegiance to the Flag of the United States of America	one nation under God, indivisible, with liberty and justice for all
+34	I yield the customary 30 minutes	all time is yielded for the purpose of debate only
+35	Adoption of the Rules of the One Hundred Seventeenth Congress	Changes to the Standing Rules	Ethics Reform
+36	Washington is broken	Reopening the people's House	Make Congress work for families
+37	extremist MAGA faction	gut the Office of Congressional Ethics	a ransom note to America
+38	eliminate proxy voting	restore fiscal sanity	investigate weaponization of government
+39	GOP's IRS funding bill will add $114 billion to the national debt	Decrease outlays by $71 billion	Decrease receipts by $186 billion
+40	Guarantee abortion rights for everyone	Right to access abortion	Bodily autonomy and freedom
+41	tax-and-spend politics	accountable and accessible to the public	tackle inflation and lawlessness
+42	Americans feel strongly that they should have the freedom to make their own healthcare decisions	House Republicans weren't listening	sixty-one percent of this country strongly support a women's right to abortion care
+43	weaponizing our rules	pandemic procedures	restore some fiscal sanity
+44	over a million Americans died of COVID	saved lives of Members and staff	let's not diminish what the point of all that was about
+45	criminalizes abortion	undermining women's economic freedom	works for the wealthiest few
+46	this package criminalizes abortion	undermining women's economic freedom	works for the wealthiest few
+47	criminalizes abortion	undermining women's economic freedom	gives wealthy corporations more tax cuts
+48	criminalizes abortion	attacking our freedoms	works for the wealthiest few
+49	criminalizes abortion	attacking access and healthcare	works for the wealthiest few
