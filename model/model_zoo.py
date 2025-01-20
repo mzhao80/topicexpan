@@ -209,7 +209,7 @@ class GCNTopicEncoder(BaseModel):
 class CrossAttentionInteraction(nn.Module):
     def __init__(self, doc_dim, topic_dim, num_heads=8):
         super().__init__()
-        self.doc_dim = doc_dim  # Store doc_dim as instance variable
+        self.doc_dim = doc_dim
         self.num_heads = num_heads
         self.head_dim = doc_dim // num_heads
         assert self.head_dim * num_heads == doc_dim, "doc_dim must be divisible by num_heads"
@@ -217,37 +217,42 @@ class CrossAttentionInteraction(nn.Module):
         self.doc_proj = nn.Linear(doc_dim, doc_dim)
         self.topic_k = nn.Linear(topic_dim, doc_dim)
         self.topic_v = nn.Linear(topic_dim, doc_dim)
-        self.output_proj = nn.Linear(doc_dim, 1)  # Project to scalar score
+        self.output_proj = nn.Linear(doc_dim, 1)
         self.norm1 = nn.LayerNorm(doc_dim)
         self.norm2 = nn.LayerNorm(doc_dim)
         
     def forward(self, doc, topic):
         """
-        doc: (batch_size, num_docs, doc_dim)
-        topic: (batch_size, num_topics, topic_dim)
-        returns: (batch_size, num_docs, num_topics)
+        doc: (batch_size, 1, doc_dim)
+        topic: (1, num_topics, topic_dim)
+        returns: (batch_size, num_topics)
         """
         batch_size = doc.shape[0]
+        num_topics = topic.shape[1]
+        
+        # Expand doc and topic to match
+        doc = doc.expand(-1, num_topics, -1)  # [batch_size, num_topics, doc_dim]
+        topic = topic.expand(batch_size, -1, -1)  # [batch_size, num_topics, topic_dim]
         
         # Layer norm
         doc = self.norm1(doc)
         topic = self.norm2(topic)
         
         # Project queries, keys, values
-        q = self.doc_proj(doc).view(batch_size, -1, self.num_heads, self.head_dim).transpose(1, 2)
-        k = self.topic_k(topic).view(batch_size, -1, self.num_heads, self.head_dim).transpose(1, 2)
-        v = self.topic_v(topic).view(batch_size, -1, self.num_heads, self.head_dim).transpose(1, 2)
+        q = self.doc_proj(doc).view(batch_size, num_topics, self.num_heads, self.head_dim).transpose(1, 2)
+        k = self.topic_k(topic).view(batch_size, num_topics, self.num_heads, self.head_dim).transpose(1, 2)
+        v = self.topic_v(topic).view(batch_size, num_topics, self.num_heads, self.head_dim).transpose(1, 2)
         
         # Scaled dot-product attention
         scores = torch.matmul(q, k.transpose(-2, -1)) / math.sqrt(self.head_dim)
         attn = F.softmax(scores, dim=-1)
         
-        # Combine heads and get similarity scores
+        # Combine heads
         out = torch.matmul(attn, v)
-        out = out.transpose(1, 2).contiguous().view(batch_size, -1, self.doc_dim)
+        out = out.transpose(1, 2).contiguous().view(batch_size, num_topics, self.doc_dim)
         
         # Project to similarity scores
-        sim_scores = self.output_proj(out).squeeze(-1)  # (batch_size, num_docs, num_topics)
+        sim_scores = self.output_proj(out).squeeze(-1)  # [batch_size, num_topics]
         return sim_scores
 
 class ContextCombiner(nn.Module):
