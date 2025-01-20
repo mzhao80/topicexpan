@@ -10,9 +10,7 @@
             "gcn_encoder_num_layers": 2,
             "tfm_decoder_num_layers": 8,
             "tfm_decoder_num_heads": 12,
-            "tfm_decoder_max_length": 16,
-            "beam_size": 5,
-            "length_penalty": 1.0
+            "tfm_decoder_max_length": 16
         }
     },
     "data_loader_for_training": {
