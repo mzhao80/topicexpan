@@ -288,73 +288,93 @@ class TransformerPhraseDecoder(BaseModel):
     def generate(self, context, beam_size=5, length_penalty=1.0):
         batch_size = context.size(0)
         device = context.device
+        print(f"Initial context shape: {context.shape}")
         
         # Initialize beam state
         sequences = torch.full((batch_size, 1), self.bos_token_id, dtype=torch.long, device=device)
         sequence_scores = torch.zeros(batch_size, 1, device=device)
+        print(f"Initial sequences shape: {sequences.shape}")
         
         # Store finished sequences and their scores
         finished_sequences = [[] for _ in range(batch_size)]
         finished_scores = [[] for _ in range(batch_size)]
         
         for step in range(self.max_length - 1):
+            num_effective_batch = sequences.size(0)
+            print(f"\nStep {step}:")
+            print(f"Current sequences shape: {sequences.shape}")
+            print(f"Current context shape: {context.shape}")
+            
             # Get logits for next token
-            logits = self.forward(sequences, context)  # [batch_size * beam_size, seq_len, vocab_size]
-            curr_logits = logits[:, -1, :]  # [batch_size * beam_size, vocab_size]
+            logits = self.forward(sequences, context)
+            print(f"Logits shape: {logits.shape}")
+            curr_logits = logits[:, -1, :]
+            print(f"Current logits shape: {curr_logits.shape}")
             
             # Get log probabilities
-            log_probs = F.log_softmax(curr_logits, dim=-1)  # [batch_size * beam_size, vocab_size]
+            log_probs = F.log_softmax(curr_logits, dim=-1)
             vocab_size = log_probs.size(-1)
+            print(f"Log probs shape: {log_probs.shape}, Vocab size: {vocab_size}")
             
             if step == 0:
                 # For first step, only use first beam
-                sequence_scores = sequence_scores + log_probs  # [batch_size, vocab_size]
-                scores, indices = sequence_scores.topk(beam_size, dim=-1)  # [batch_size, beam_size]
+                sequence_scores = sequence_scores + log_probs
+                print(f"First step sequence scores shape: {sequence_scores.shape}")
+                scores, indices = sequence_scores.topk(beam_size, dim=-1)
+                print(f"First step topk scores shape: {scores.shape}, indices shape: {indices.shape}")
                 
-                # Convert indices to next tokens
+                # Convert indices to next tokens and beam indices
+                beam_indices = torch.zeros_like(indices)
                 next_tokens = indices
                 
                 # Update sequences
-                sequences = sequences.repeat(1, beam_size).view(-1, sequences.size(-1))  # [batch_size * beam_size, seq_len]
+                sequences = sequences.repeat(1, beam_size).view(-1, sequences.size(-1))
                 sequences = torch.cat([sequences, next_tokens.view(-1, 1)], dim=-1)
                 sequence_scores = scores.view(-1, 1)
+                print(f"After first step - sequences: {sequences.shape}, scores: {sequence_scores.shape}")
                 
                 # Update context for beam size
                 context = context.repeat_interleave(beam_size, dim=0)
+                print(f"Updated context shape: {context.shape}")
             else:
-                num_beams = sequences.size(0) // batch_size
-                
                 # Calculate scores for each beam and vocab item
-                sequence_scores = sequence_scores.unsqueeze(-1)  # [batch_size * beam_size, 1]
-                vocab_scores = log_probs  # [batch_size * beam_size, vocab_size]
-                
-                # Compute length penalty
-                length_penalty_score = ((5 + step + 1) / 6) ** length_penalty
+                sequence_scores = sequence_scores.unsqueeze(-1)
+                print(f"Expanded scores shape: {sequence_scores.shape}")
+                sequence_scores = sequence_scores + log_probs
+                print(f"After adding log probs shape: {sequence_scores.shape}")
                 
                 # Reshape scores for topk
-                curr_scores = (sequence_scores + vocab_scores) / length_penalty_score  # [batch_size * beam_size, vocab_size]
-                curr_scores = curr_scores.view(batch_size, num_beams * vocab_size)
+                num_beams = num_effective_batch // batch_size
+                print(f"num_effective_batch: {num_effective_batch}, batch_size: {batch_size}, num_beams: {num_beams}")
+                print(f"Attempting to reshape scores from {sequence_scores.shape} to [{batch_size}, {num_beams * vocab_size}]")
+                sequence_scores = sequence_scores.view(batch_size, -1)
+                print(f"After reshape scores shape: {sequence_scores.shape}")
+                
+                # Apply length penalty
+                length_penalty_score = ((5 + step + 1) / 6) ** length_penalty
+                scores = sequence_scores / length_penalty_score
                 
                 # Select top beams and their tokens
-                scores, indices = curr_scores.topk(beam_size, dim=-1)  # [batch_size, beam_size]
-                beam_indices = indices // vocab_size  # [batch_size, beam_size]
-                token_indices = indices % vocab_size  # [batch_size, beam_size]
+                scores, indices = scores.topk(beam_size, dim=-1)
+                beam_indices = indices // vocab_size
+                next_tokens = indices % vocab_size
+                print(f"Beam indices shape: {beam_indices.shape}, next tokens shape: {next_tokens.shape}")
                 
                 # Compute offsets for gather operation
                 beam_indices = beam_indices + (torch.arange(batch_size, device=device) * num_beams).unsqueeze(-1)
                 
                 # Gather sequences
-                sequences = sequences.view(-1, sequences.size(-1))  # [batch_size * beam_size, seq_len]
-                sequences = sequences[beam_indices.view(-1)]  # [batch_size * beam_size, seq_len]
-                sequences = torch.cat([sequences, token_indices.view(-1, 1)], dim=-1)
-                
-                # Update scores
+                sequences = sequences.view(-1, sequences.size(-1))
+                sequences = sequences[beam_indices.view(-1)]
+                sequences = torch.cat([sequences, next_tokens.view(-1, 1)], dim=-1)
                 sequence_scores = scores.view(-1, 1)
+                print(f"After update - sequences: {sequences.shape}, scores: {sequence_scores.shape}")
             
             # Check for completed sequences
             eos_mask = sequences[:, -1] == self.eos_token_id
             
             if eos_mask.any():
+                print(f"Found {eos_mask.sum().item()} completed sequences")
                 # Add finished sequences to their respective batch lists
                 for idx in range(sequences.size(0)):
                     if eos_mask[idx]:
@@ -370,10 +390,11 @@ class TransformerPhraseDecoder(BaseModel):
                 sequences = sequences[non_finished_mask]
                 sequence_scores = sequence_scores[non_finished_mask]
                 context = context[non_finished_mask]
+                print(f"After removing finished - sequences: {sequences.shape}, scores: {sequence_scores.shape}, context: {context.shape}")
                 
                 if sequences.size(0) == 0:  # All sequences finished
                     break
-        
+
         # Handle any unfinished sequences
         if sequences.size(0) > 0:
             for idx in range(sequences.size(0)):
