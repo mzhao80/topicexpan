@@ -284,7 +284,7 @@ def main():
         fout.write(f"{len(topic_features) + 1} {vector_size}\n")
         # Write each topic vector
         for topic_id in range(len(topic_features)):
-            vector = topic_features[str(topic_id)]
+            vector = topic_features[topic_id]
             vector_str = ' '.join(map(str, vector))
             fout.write(f"{topic_id} {vector_str}\n")
         # Write unknown topic vector
