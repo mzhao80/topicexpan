@@ -1,23 +1,24 @@
 {
     "name": "TopicExpan",
     "embed_dir": "~/Downloads/topicexpan/glove",
+    "n_gpu": 1,
     "arch": {
         "type": "TopicExpan",
         "args": {
-            "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+            "model_name": "bert-base-uncased",
             "doc_embed_dim": 384,
             "topic_embed_dim": 384,
             "gcn_encoder_num_layers": 2,
-            "tfm_decoder_num_layers": 4,
-            "tfm_decoder_num_heads": 8,
-            "tfm_decoder_max_length": 10
+            "tfm_decoder_num_layers": 8,
+            "tfm_decoder_num_heads": 12,
+            "tfm_decoder_max_length": 32
         }
     },
     "data_loader_for_training": {
         "type": "DocTopicPhraseDataLoader",
         "args": {
             "directory": "congress",
-            "batch_size": 16,
+            "batch_size": 32,
             "shuffle": true,
             "validation_split": 0.1,
             "num_workers": 8,
@@ -28,7 +29,7 @@
         "type": "DocDataLoader",
         "args": {
             "directory": "congress",
-            "batch_size": 16,
+            "batch_size": 32,
             "shuffle": false,
             "validation_split": 0.0,
             "num_workers": 8,
@@ -38,9 +39,20 @@
     "optimizer": {
         "type": "AdamW",
         "args": {
-            "lr": 1e-04,
-            "weight_decay": 0,
+            "lr": 1e-4,
+            "weight_decay": 0.01,
+            "betas": [0.9, 0.999],
             "amsgrad": true
+        }
+    },
+    "lr_scheduler": {
+        "type": "OneCycleLR",
+        "args": {
+            "max_lr": 1e-4,
+            "epochs": 20,
+            "steps_per_epoch": 3133,
+            "pct_start": 0.3,
+            "anneal_strategy": "cos"
         }
     },
     "loss": {
@@ -52,13 +64,14 @@
         "embedding_sim"
     ],
     "trainer": {
-        "epochs": 30,
-        "save_dir": "congress-save",
+        "epochs": 60,
+        "save_dir": "congress-save/",
         "save_period": 4,
         "verbosity": 2,
         "monitor": "max val_embedding_sim",
-        "early_stop": 8,
-        "tensorboard": true
+        "early_stop": 15,
+        "tensorboard": true,
+        "accumulation_steps": 2
     },
     "expansion": {
         "filter_type": "nscore",
