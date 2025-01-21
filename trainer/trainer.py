@@ -312,10 +312,14 @@ class Trainer(BaseTrainer):
                             # Generate phrases for potential subtopics
                             generated_phrases = []
                             print(f"Generating phrases for {child_name}...")
+                            batch_size = 1
+                            max_length = self.model.decoder.max_length
+                            device = next(self.model.parameters()).device
+                            attention_mask = torch.ones(batch_size, max_length, device=device)
                             for i in range(20):  # Generate multiple phrases to cluster
                                 # Add sequence length dimension: [batch_size, seq_len, hidden_size]
                                 phrase_embed = parent_embed.unsqueeze(0).unsqueeze(1)  
-                                phrase_output = self.model.phrase_decoder.generate(phrase_embed)
+                                phrase_output = self.model.phrase_decoder.generate(phrase_embed, attention_mask)
                                 phrase = dataset.bert_tokenizer.decode(phrase_output[0], skip_special_tokens=True)
                                 print(f"Generated phrase {i+1}: {phrase}")
                                 if len(phrase.strip()) > 0:

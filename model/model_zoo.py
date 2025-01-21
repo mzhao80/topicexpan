@@ -337,6 +337,10 @@ class TransformerPhraseDecoder(BaseModel):
         context_proj = self.context_proj(context)  # [batch, seq, hidden]
         context_norm = self.context_norm(context_proj)
         
+        # If context is single token, expand it
+        if context.size(1) == 1:
+            context_norm = context_norm.expand(-1, attention_mask.size(1), -1)
+        
         # Generation parameters
         min_tokens = 3  # Minimum tokens after CLS
         max_tokens = 10  # Maximum total tokens
@@ -350,43 +354,47 @@ class TransformerPhraseDecoder(BaseModel):
             decoder_output = self.forward(current_token, context_norm)  # [batch, seq, vocab]
             next_token_logits = decoder_output[:, -1, :]  # [batch, vocab]
             
-            # Calculate attention scores with document tokens
-            attn_scores = torch.matmul(next_token_logits, context_norm.transpose(-1, -2))  # [batch, seq]
-            attn_scores = attn_scores.masked_fill(~attention_mask.bool(), -float('inf'))
-            attn_probs = F.softmax(attn_scores, dim=-1)
-            
-            # Get document token probabilities
-            doc_token_ids = attention_mask.new_zeros(attention_mask.size(0), attention_mask.size(1), dtype=torch.long)
-            for i in range(attention_mask.size(0)):
-                doc_token_ids[i, :attention_mask[i].sum()] = torch.arange(attention_mask[i].sum(), device=attention_mask.device)
-            doc_token_probs = torch.zeros_like(next_token_logits)  # [batch, vocab]
-            doc_token_probs.scatter_add_(-1, doc_token_ids, attn_probs)
+            # For single token context, use direct token probabilities
+            if context.size(1) == 1:
+                next_token_probs = F.softmax(next_token_logits, dim=-1)
+            else:
+                # Calculate attention scores with document tokens
+                attn_scores = torch.matmul(next_token_logits, context_norm.transpose(-1, -2))  # [batch, seq]
+                attn_scores = attn_scores.masked_fill(~attention_mask.bool(), -float('inf'))
+                attn_probs = F.softmax(attn_scores, dim=-1)
+                
+                # Get document token probabilities
+                doc_token_ids = attention_mask.new_zeros(attention_mask.size(0), attention_mask.size(1), dtype=torch.long)
+                for i in range(attention_mask.size(0)):
+                    doc_token_ids[i, :attention_mask[i].sum()] = torch.arange(attention_mask[i].sum(), device=attention_mask.device)
+                next_token_probs = torch.zeros_like(next_token_logits)  # [batch, vocab]
+                next_token_probs.scatter_add_(-1, doc_token_ids, attn_probs)
             
             # Apply repetition penalty
             for i in range(batch_size):
                 # Penalize seen tokens
                 for token_id in set(current_token[i].tolist()):
-                    doc_token_probs[i, token_id] /= repetition_penalty
+                    next_token_probs[i, token_id] /= repetition_penalty
                 
                 # Penalize completing seen trigrams
                 if current_token.size(1) >= 2:
                     prev_tokens = current_token[i, -2:].tolist()
-                    for token_id in range(doc_token_probs.size(-1)):
+                    for token_id in range(next_token_probs.size(-1)):
                         if tuple(prev_tokens + [token_id]) in generated_ngrams[i]:
-                            doc_token_probs[i, token_id] /= (repetition_penalty * 2)
+                            next_token_probs[i, token_id] /= (repetition_penalty * 2)
             
             # Mask invalid tokens
-            doc_token_probs = doc_token_probs.masked_fill(~self.valid_tokens, 0)
-            doc_token_probs = doc_token_probs.masked_fill(torch.isnan(doc_token_probs), 0)
+            next_token_probs = next_token_probs.masked_fill(~self.valid_tokens, 0)
+            next_token_probs = next_token_probs.masked_fill(torch.isnan(next_token_probs), 0)
             
             # Mask special tokens except SEP when appropriate
-            doc_token_probs[:, self.pad_token_id] = 0
-            doc_token_probs[:, self.bos_token_id] = 0
+            next_token_probs[:, self.pad_token_id] = 0
+            next_token_probs[:, self.bos_token_id] = 0
             if step < min_tokens:
-                doc_token_probs[:, self.eos_token_id] = 0
+                next_token_probs[:, self.eos_token_id] = 0
             
-            # Sample next token from document tokens
-            next_token = torch.multinomial(doc_token_probs, num_samples=1)
+            # Sample next token
+            next_token = torch.multinomial(next_token_probs, num_samples=1)
             
             # Update n-gram tracking
             for i in range(batch_size):
