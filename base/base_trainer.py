@@ -71,24 +71,41 @@ class BaseTrainer:
         Full training logic
         """
         not_improved_count = 0
+        best_val_loss = float('inf')
+        
         for epoch in range(self.start_epoch, self.epochs + 1):
             start_time = time.time()
-            result = self._train_epoch(epoch)
-            val_result = self._valid_epoch(epoch)
-
-            # save logged informations into log dict
-            log = {'epoch': epoch}
-            log.update(result)
             
-            # Add validation results without extra val_ prefix
-            for k, v in val_result.items():
-                log[k] = v
+            # Print epoch start
+            self.logger.info('='*80)
+            self.logger.info(f'Starting epoch {epoch} at {time.strftime("%Y-%m-%d %H:%M:%S")}')
+            
+            # Train and validate
+            train_log = self._train_epoch(epoch)
+            val_log = self._valid_epoch(epoch)
+            
+            # Update learning rate
+            if self.lr_scheduler is not None:
+                self.lr_scheduler.step()
 
-            # print logged informations to the screen
+            # Combine logs and add val_ prefix to validation metrics
+            log = {
+                'epoch': epoch,
+                'elapsed_time': time.time() - start_time
+            }
+            # Add training metrics
+            for key, value in train_log.items():
+                log[f'train_{key}'] = value
+            # Add validation metrics
+            for key, value in val_log.items():
+                log[f'val_{key}'] = value
+
+            # Print logged informations to the screen
+            self.logger.info(f'Epoch {epoch} completed at {time.strftime("%Y-%m-%d %H:%M:%S")}')
             for key, value in log.items():
                 self.logger.info('    {:15s}: {}'.format(str(key), value))
 
-            # evaluate model performance according to configured metric, save best checkpoint as model_best
+            # evaluate model performance according to configured metric
             best = False
             if self.mnt_mode != 'off':
                 try:
