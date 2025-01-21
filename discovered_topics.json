@@ -73,75 +73,71 @@
           "name": "speaker of the house",
           "phrases": [
             [
-              "speaker of the house",
-              -0.6121368408203125
-            ],
-            [
-              "speaker of the house",
-              -0.6121368408203125
-            ],
-            [
-              "speaker of the house",
-              -0.6121368408203125
-            ],
-            [
-              "speaker of the house",
-              -0.6121368408203125
-            ],
-            [
-              "speaker of the house",
-              -0.6121368408203125
-            ],
-            [
-              "speaker of the house",
-              -0.6121368408203125
-            ],
-            [
-              "kevin mccarthy",
-              -0.8080991506576538
-            ],
-            [
-              "kevin mccarthy",
-              -0.8080991506576538
+              "nominate kevin mccarthy",
+              -0.7220037579536438
             ],
             [
               "nominate kevin mccarthy",
-              -0.8146390914916992
+              -0.7220037579536438
             ],
             [
-              "- of the house",
-              -0.8219677805900574
+              "nominate kevin mccarthy",
+              -0.7220037579536438
             ],
             [
-              "hakeem jeffries",
-              -0.8677164316177368
+              "speaker of the house",
+              -0.7263968586921692
             ],
             [
-              "hakeem jeffries",
-              -0.8677164316177368
+              "speaker of the house",
+              -0.7263968586921692
             ],
             [
-              "first of byron donalds",
-              -0.8828231692314148
+              "speaker of the house",
+              -0.7263968586921692
             ],
             [
-              "american and the donalds",
-              -0.9104390144348145
+              "kevin mccarthy",
+              -0.7523404955863953
             ],
             [
-              "pledge of allegiance",
-              -0.919172465801239
+              "trump for the united states",
+              -0.7933658957481384
             ],
             [
-              "public service",
-              -0.9399082660675049
+              "byron donalds",
+              -0.79807448387146
             ],
             [
-              "votes cast",
-              -0.9570097923278809
+              "byron donalds",
+              -0.79807448387146
+            ],
+            [
+              "hakeem jeffries for",
+              -0.8433794379234314
+            ],
+            [
+              "hakeem jeffries for",
+              -0.8433794379234314
+            ],
+            [
+              "speaker has not been elected",
+              -0.8750091791152954
+            ],
+            [
+              "one nation under god",
+              -0.9454167485237122
+            ],
+            [
+              "economic",
+              -0.9789918065071106
+            ],
+            [
+              "women ' s health most american",
+              -1.0143041610717773
             ]
           ],
-          "quality_score": 0.6176933614831221
+          "quality_score": 0.5224783044112356
         }
       ]
     },
