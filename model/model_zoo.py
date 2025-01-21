@@ -278,8 +278,16 @@ class TransformerPhraseDecoder(BaseModel):
             token = self.tokenizer.convert_ids_to_tokens(i)
             # Allow token if it's ASCII or a special token
             is_special = token.startswith('[') and token.endswith(']')
-            is_ascii = all(ord(c) < 128 for c in token)
-            self.valid_tokens[i] = is_special or is_ascii
+            # Only allow word pieces that start with ## or are full words
+            is_valid_wordpiece = not token.startswith('##') or token == '[UNK]'
+            # Check if token is ASCII and not punctuation/special chars
+            is_ascii = all(ord(c) < 128 and c.isalnum() for c in token.replace('##', ''))
+            self.valid_tokens[i] = (is_special or (is_ascii and is_valid_wordpiece))
+
+        # Always allow special tokens
+        self.valid_tokens[self.pad_token_id] = True
+        self.valid_tokens[self.bos_token_id] = True
+        self.valid_tokens[self.eos_token_id] = True
 
     def _make_causal_mask(self, x):
         sz = x.size(1)
@@ -341,10 +349,11 @@ class TransformerPhraseDecoder(BaseModel):
         context = self.context_norm(self.context_proj(context))
         
         # Initialize sampling parameters
-        temperature = 0.8
+        temperature = 0.7  # Lower temperature for more focused sampling
         top_p = 0.9
         min_tokens = 3  # Minimum number of tokens to generate after CLS
         max_tokens = 10  # Maximum tokens to generate including CLS and SEP
+        repetition_penalty = 1.2  # Penalize repeated tokens
         
         # Move valid_tokens to correct device and expand for batch
         valid_tokens = self.valid_tokens.to(context.device)
@@ -354,21 +363,21 @@ class TransformerPhraseDecoder(BaseModel):
         print(f"Valid tokens shape: {valid_tokens.shape}")
         print(f"Number of valid tokens: {valid_tokens.sum().item()}")
         
-        generated_tokens = []
-        
         for step in range(max_tokens - 2):  # -2 to account for CLS and SEP
             # Get logits from decoder
             logits = self.forward(current_token, context)
             next_token_logits = logits[:, -1, :] / temperature
+            
+            # Apply repetition penalty
+            for i in range(batch_size):
+                for token_id in set(current_token[i].tolist()):
+                    next_token_logits[i, token_id] /= repetition_penalty
             
             # Debug shapes
             if step == 0:
                 print(f"\nStep {step} shapes:")
                 print(f"Logits shape: {logits.shape}")
                 print(f"Next token logits shape: {next_token_logits.shape}")
-            
-            # Apply masks and filters
-            next_token_logits = next_token_logits.clone()  # Create a copy for modification
             
             # Mask out invalid tokens
             next_token_logits = next_token_logits.masked_fill(~valid_tokens, -float('inf'))
@@ -393,30 +402,11 @@ class TransformerPhraseDecoder(BaseModel):
             indices_to_remove = sorted_indices_to_remove.scatter(1, sorted_indices, sorted_indices_to_remove)
             next_token_logits = next_token_logits.masked_fill(indices_to_remove, -float('inf'))
             
-            # Convert to probabilities with numerical stability
-            next_token_logits = next_token_logits - next_token_logits.max(dim=-1, keepdim=True)[0]  # Subtract max for stability
+            # Convert to probabilities
             next_token_probs = F.softmax(next_token_logits, dim=-1)
             
-            # Check for any invalid probabilities
-            if torch.any(torch.isnan(next_token_probs)) or torch.any(next_token_probs < 0):
-                print(f"\n[WARNING] Invalid probabilities detected at step {step}")
-                print(f"NaN count: {torch.isnan(next_token_probs).sum().item()}")
-                print(f"Negative count: {(next_token_probs < 0).sum().item()}")
-                # Set small positive probability for valid tokens
-                next_token_probs = next_token_probs.masked_fill(torch.isnan(next_token_probs), 0.0)
-                next_token_probs = next_token_probs.masked_fill(next_token_probs < 0, 0.0)
-                next_token_probs = next_token_probs + 1e-9  # Add small constant
-                next_token_probs = next_token_probs / next_token_probs.sum(dim=-1, keepdim=True)  # Renormalize
-            
             # Sample next token
-            try:
-                next_token = torch.multinomial(next_token_probs, num_samples=1)
-            except RuntimeError as e:
-                print(f"\n[ERROR] Sampling failed: {e}")
-                print(f"Prob stats: min={next_token_probs.min().item()}, max={next_token_probs.max().item()}")
-                print(f"Sum: {next_token_probs.sum(dim=-1)}")
-                # Fallback to argmax
-                next_token = next_token_probs.argmax(dim=-1, keepdim=True)
+            next_token = torch.multinomial(next_token_probs, num_samples=1)
             
             # Debug first token
             if step == 0:
@@ -425,7 +415,6 @@ class TransformerPhraseDecoder(BaseModel):
                 print(f"Selected tokens: {[self.tokenizer.convert_ids_to_tokens(t.item()) for t in next_token]}")
             
             current_token = torch.cat([current_token, next_token], dim=1)
-            generated_tokens.append(next_token)
             
             # Stop if SEP token is generated
             if (next_token == self.eos_token_id).any():
@@ -448,7 +437,7 @@ class TransformerPhraseDecoder(BaseModel):
         for b in range(min(2, batch_size)):  # Show first 2 examples
             tokens = [self.tokenizer.convert_ids_to_tokens(t.item()) for t in current_token[b]]
             print(f"Sample {b}: {' '.join(tokens)}")
-    
+        
         return current_token
 
 """
