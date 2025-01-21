@@ -16,25 +16,37 @@ class Trainer(BaseTrainer):
     Trainer class
     """
     def __init__(self, model, criterions, metric_ftns, optimizer, config, data_loader,
-                 valid_data_loader=None):
-        super().__init__(model, criterions, metric_ftns, optimizer, config)
+                 valid_data_loader=None, test_data_loader=None, dataset=None):
+        super().__init__(model, optimizer, config)
         self.config = config
         self.data_loader = data_loader
-        self.dataset = data_loader.dataset
-
-        self.len_epoch = len(self.data_loader)
         self.valid_data_loader = valid_data_loader
+        self.test_data_loader = test_data_loader
+        self.dataset = dataset
         self.do_validation = self.valid_data_loader is not None
-        self.log_step = int(len(data_loader.dataset) / data_loader.batch_size * 0.2)
-
-        self.train_metrics = MetricTracker('loss', 'sim_loss', 'gen_loss', writer=self.writer)
-        self.valid_metrics = MetricTracker('loss', 'sim_loss', 'gen_loss', *[m.__name__ for m in self.metric_ftns], writer=self.writer)
+        self.log_step = int(np.sqrt(data_loader.batch_size))
+        self.criterions = criterions
+        self.mnt_mode = config['trainer'].get('monitor', 'off')
+        self.mnt_metric = config['trainer'].get('monitor_metric', 'val_loss')
+        self.mnt_best = float('inf')
+        self.early_stop = config['trainer'].get('early_stop', float('inf'))
+        self.save_period = config['trainer'].get('save_period', 1)
+        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         
-        # Setup logging
-        os.makedirs('logs', exist_ok=True)
-        current_time = time.strftime("%Y%m%d-%H%M%S")
-        self.log_file = os.path.join('logs', f'training_log_{current_time}.txt')
-        self.log_info(f"Starting training at {current_time}")
+        # Initialize learning rate scheduler if specified in config
+        scheduler_config = config['trainer'].get('lr_scheduler', None)
+        if scheduler_config is not None:
+            scheduler_type = scheduler_config.get('type', 'StepLR')
+            if scheduler_type == 'StepLR':
+                self.lr_scheduler = torch.optim.lr_scheduler.StepLR(
+                    optimizer,
+                    step_size=scheduler_config.get('step_size', 50),
+                    gamma=scheduler_config.get('gamma', 0.1)
+                )
+            else:
+                self.lr_scheduler = None
+        else:
+            self.lr_scheduler = None
 
     def log_info(self, message):
         """Log message to both console and file"""
@@ -102,7 +114,7 @@ class Trainer(BaseTrainer):
         val_metrics = self._valid_epoch(epoch)
         
         # Update learning rate
-        if self.lr_scheduler is not None:
+        if hasattr(self, 'lr_scheduler') and self.lr_scheduler is not None:
             self.lr_scheduler.step()
 
         # Add all metrics to log

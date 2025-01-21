@@ -54,19 +54,17 @@ class TopicExpan(BaseModel):
     def forward(self, encoder_input, decoder_input=None, topic_ids=None):
 
         # Get document embeddings
-        doc_embed = self.doc_encoder(encoder_input)[:, 0]  # Use CLS token
-        doc_embed = F.normalize(doc_embed, p=2, dim=-1)  # L2 normalize
+        doc_embed = self.doc_encoder(encoder_input)[:, 0]  
+        doc_embed = F.normalize(doc_embed, p=2, dim=-1)  
         
         # Get topic embeddings from GCN
         topic_embed = self.topic_encoder.encode()
-        topic_embed = F.normalize(topic_embed, p=2, dim=-1)  # L2 normalize
+        topic_embed = F.normalize(topic_embed, p=2, dim=-1)  
         
         # Calculate similarity scores with temperature scaling
         sim_scores = self.interaction(doc_embed, topic_embed)
         # Scale with fixed temperature for training stability
-        sim_scores = sim_scores * 10.0  # Fixed scaling to match typical logit ranges
-        
-        print(f"sim_scores shape: {sim_scores.shape}")
+        sim_scores = sim_scores * 10.0  
         
         if decoder_input is not None and topic_ids is not None:
             # Get topic embeddings for selected topics
@@ -78,11 +76,8 @@ class TopicExpan(BaseModel):
                 topic_context
             ], dim=-1))
             
-            print(f"decoder_context shape: {decoder_context.shape}")
-            
             # Generate phrases
             gen_scores = self.phrase_decoder(decoder_input, decoder_context)
-            print(f"gen_scores shape: {gen_scores.shape}")
             return sim_scores, gen_scores
         
         return sim_scores
@@ -102,12 +97,12 @@ class TopicExpan(BaseModel):
     # Step 2. Topic-conditional Phrase Generation
     def gen(self, encoder_input, topic_ids):
         # Get document embeddings
-        doc_embed = self.doc_encoder(encoder_input)[:, 0]  # Use CLS token
-        doc_embed = F.normalize(doc_embed, p=2, dim=-1)  # L2 normalize
+        doc_embed = self.doc_encoder(encoder_input)[:, 0]  
+        doc_embed = F.normalize(doc_embed, p=2, dim=-1)  
         
         # Get topic embeddings
         topic_embed = self.topic_encoder.encode()
-        topic_embed = F.normalize(topic_embed, p=2, dim=-1)  # L2 normalize
+        topic_embed = F.normalize(topic_embed, p=2, dim=-1)  
         topic_context = topic_embed[topic_ids]
         
         # Combine document and topic embeddings
@@ -145,7 +140,7 @@ class TopicExpan(BaseModel):
 
     def context_combiner(self, topic_context, doc_context, doc_mask):        
         scores = self.interaction.compute_attn_scores(doc_context, topic_context)
-        scores = torch.exp(scores.clamp(max=20)) * doc_mask  # Clamp to prevent overflow
+        scores = torch.exp(scores.clamp(max=20)) * doc_mask  
         scores_sum = scores.sum(dim=1, keepdim=True).clamp(min=1e-9)
         scores = scores / scores_sum
         context = (doc_context * scores.unsqueeze(dim=2))
