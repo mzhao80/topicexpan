@@ -331,34 +331,36 @@ class TransformerPhraseDecoder(BaseModel):
         
         # Initialize sampling parameters
         temperature = 0.7  # Lower temperature for more focused sampling
-        top_p = 0.9
+        top_p = 0.9  # Nucleus sampling threshold
         min_tokens = 3  # Minimum number of tokens to generate after CLS
         max_tokens = 10  # Maximum tokens to generate including CLS and SEP
-        repetition_penalty = 1.2  # Penalize repeated tokens
+        repetition_penalty = 2.0  # Increased penalty to prevent repetition
         
         # Move valid_tokens to correct device and expand for batch
         valid_tokens = self.valid_tokens.to(context.device)
         valid_tokens = valid_tokens.unsqueeze(0).expand(batch_size, -1)
         
-        # Debug print
-        print(f"Valid tokens shape: {valid_tokens.shape}")
-        print(f"Number of valid tokens: {valid_tokens.sum().item()}")
+        # Track generated tokens for repetition penalty
+        generated_ngrams = [{} for _ in range(batch_size)]  # Track n-grams
         
         for step in range(max_tokens - 2):  # -2 to account for CLS and SEP
             # Get logits from decoder
             logits = self.forward(current_token, context)
             next_token_logits = logits[:, -1, :] / temperature
             
-            # Apply repetition penalty
+            # Apply repetition penalty based on n-grams
             for i in range(batch_size):
+                # Get last 3 tokens for trigram check
+                last_tokens = current_token[i, -3:].tolist() if current_token.size(1) >= 3 else []
+                if tuple(last_tokens) in generated_ngrams[i]:
+                    # Heavily penalize completing a seen trigram
+                    for token_id in range(next_token_logits.size(-1)):
+                        if tuple(last_tokens + [token_id]) in generated_ngrams[i]:
+                            next_token_logits[i, token_id] /= (repetition_penalty * 2)
+                
+                # Standard token repetition penalty
                 for token_id in set(current_token[i].tolist()):
                     next_token_logits[i, token_id] /= repetition_penalty
-            
-            # Debug shapes
-            if step == 0:
-                print(f"\nStep {step} shapes:")
-                print(f"Logits shape: {logits.shape}")
-                print(f"Next token logits shape: {next_token_logits.shape}")
             
             # Mask out invalid tokens
             next_token_logits = next_token_logits.masked_fill(~valid_tokens, -float('inf'))
@@ -366,7 +368,7 @@ class TransformerPhraseDecoder(BaseModel):
             
             # Mask out PAD, CLS tokens (prefer SEP for ending)
             next_token_logits[:, self.pad_token_id] = -float('inf')
-            next_token_logits[:, self.bos_token_id] = -float('inf')  # Never generate CLS after first token
+            next_token_logits[:, self.bos_token_id] = -float('inf')
             
             # Keep at least min_tokens before allowing EOS
             if step < min_tokens:
@@ -389,11 +391,14 @@ class TransformerPhraseDecoder(BaseModel):
             # Sample next token
             next_token = torch.multinomial(next_token_probs, num_samples=1)
             
-            # Debug first token
-            if step == 0:
-                print(f"\nFirst token generation:")
-                print(f"Selected token IDs: {next_token.tolist()}")
-                print(f"Selected tokens: {[self.tokenizer.convert_ids_to_tokens(t.item()) for t in next_token]}")
+            # Update n-gram tracking
+            for i in range(batch_size):
+                # Add new trigrams to tracking
+                if current_token.size(1) >= 2:
+                    prev_tokens = current_token[i, -2:].tolist()
+                    new_token = next_token[i].item()
+                    trigram = tuple(prev_tokens + [new_token])
+                    generated_ngrams[i][trigram] = generated_ngrams[i].get(trigram, 0) + 1
             
             current_token = torch.cat([current_token, next_token], dim=1)
             
@@ -406,18 +411,17 @@ class TransformerPhraseDecoder(BaseModel):
             # Find first SEP token
             sep_pos = (current_token[b] == self.eos_token_id).nonzero()
             if len(sep_pos) > 0:
-                # Keep only up to first SEP, pad the rest
+                # Keep only up to first SEP
                 current_token[b, sep_pos[0]+1:] = self.pad_token_id
             else:
-                # If no SEP, append it
-                current_token = torch.cat([current_token, torch.full((batch_size, 1), self.eos_token_id, device=context.device)], dim=1)
-        
-        # Debug final output
-        print(f"\nFinal generation:")
-        print(f"Output shape: {current_token.shape}")
-        for b in range(min(2, batch_size)):  # Show first 2 examples
-            tokens = [self.tokenizer.convert_ids_to_tokens(t.item()) for t in current_token[b]]
-            print(f"Sample {b}: {' '.join(tokens)}")
+                # If no SEP, append it and pad rest
+                if current_token.size(1) < max_tokens:
+                    current_token = torch.cat([
+                        current_token, 
+                        torch.full((batch_size, 1), self.eos_token_id, device=context.device),
+                        torch.full((batch_size, max_tokens - current_token.size(1) - 1), 
+                                 self.pad_token_id, device=context.device)
+                    ], dim=1)
         
         return current_token
 

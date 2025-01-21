@@ -62,16 +62,6 @@ class Trainer(BaseTrainer):
         for batch_idx, batch_data in enumerate(self.data_loader):
             doc_ids, doc_infos, topic_ids, phrase_infos = batch_data
             
-            # Debug: Check input shapes and values
-            if batch_idx == 0:  # Only print for first batch
-                debug_info = "\n[DEBUG] Batch Information:"
-                debug_info += f"\nDocument IDs shape: {doc_ids.shape}"
-                debug_info += f"\nTopic IDs shape: {topic_ids.shape}"
-                debug_info += f"\nUnique topics in batch: {topic_ids.unique().tolist()}"
-                debug_info += f"\nInput sequence lengths: {doc_infos['attention_mask'].sum(1).tolist()}"
-                debug_info += f"\nTarget phrase lengths: {phrase_infos['attention_mask'].sum(1).tolist()}"
-                self.log_info(debug_info)
-            
             encoder_input = {k: v.to(self.device) for k, v in doc_infos.items()}
             # Keep CLS token in both input and target
             decoder_input = {k: v[:, :-1].to(self.device) for k, v in phrase_infos.items()}
@@ -182,66 +172,84 @@ class Trainer(BaseTrainer):
         :return: A log that contains information about validation
         """
         self.model.eval()
-        self.valid_metrics.reset()
-        
+        total_val_loss = 0
+        total_val_sim_loss = 0
+        total_val_gen_loss = 0
+        total_val_perplexity = 0
+        total_val_embedding_sim = 0
+        n_val_steps = 0
+
         with torch.no_grad():
             for batch_idx, batch_data in enumerate(self.valid_data_loader):
                 doc_ids, doc_infos, topic_ids, phrase_infos = batch_data
-        
+                
                 encoder_input = {k: v.to(self.device) for k, v in doc_infos.items()}
                 decoder_input = {k: v[:, :-1].to(self.device) for k, v in phrase_infos.items()}
+                decoder_target = phrase_infos['input_ids'][:, 1:].to(self.device)
+                topic_ids = topic_ids.to(self.device)
 
-                sim_target = topic_ids.to(self.device)
-                gen_target = phrase_infos['input_ids'][:, :-1].to(self.device)  # Keep CLS, remove last token for target
-
-                # Get model outputs
                 sim_score, gen_score = self.model(encoder_input, decoder_input, topic_ids)
                 
-                # Calculate losses
-                sim_loss = self.criterions['sim'](sim_score, sim_target)
-                gen_loss = self.criterions['gen'](gen_score, gen_target)
-                loss = sim_loss + gen_loss
-
-                self.writer.set_step((epoch - 1) * len(self.valid_data_loader) + batch_idx, 'valid')
-                self.valid_metrics.update('sim_loss', sim_loss.item()) 
-                self.valid_metrics.update('gen_loss', gen_loss.item())
-                self.valid_metrics.update('loss', loss.item())      
+                sim_loss = self.criterions['sim'](sim_score, topic_ids)
+                gen_loss = self.criterions['gen'](gen_score.view(-1, gen_score.size(-1)), decoder_target.view(-1))
                 
-                # Evaluate generation quality
-                if batch_idx == 0:  # Only for first batch
-                    # Generate phrases
-                    gen_output = self.model.gen(encoder_input, topic_ids)
-                    
-                    # Get attention masks
-                    output_mask = (gen_output != self.dataset.bert_tokenizer.pad_token_id).float()
-                    target_mask = (gen_target != self.dataset.bert_tokenizer.pad_token_id).float()
-                    
-                    # Calculate metrics
-                    for met in self.metric_ftns:
-                        if met.__name__ == 'embedding_sim':
-                            met_val = met(gen_output, gen_target, output_mask, target_mask)
-                        else:
-                            met_val = met(gen_score, gen_target)
-                        self.valid_metrics.update(met.__name__, met_val)
-                    
-                    # Log sample generations
-                    if hasattr(self.dataset, 'bert_tokenizer'):
-                        gen_info = "\nGeneration Samples:"
-                        for i in range(min(3, len(gen_output))):
-                            generated = self.dataset.bert_tokenizer.decode(gen_output[i])
-                            target = self.dataset.bert_tokenizer.decode(gen_target[i])
-                            gen_info += f"\nTopic {topic_ids[i].item()}:"
-                            gen_info += f"\nGenerated: {generated}"
-                            gen_info += f"\nTarget: {target}\n"
-                        self.log_info(gen_info)
+                # Calculate total loss with weights
+                sim_weight = 0.3
+                gen_weight = 0.7
+                loss = sim_weight * sim_loss + gen_weight * gen_loss
 
-                if batch_idx % self.log_step == 0:
-                    self.log_info('Validation Epoch: {} {} Loss: {:.6f}'.format(
-                        epoch,
-                        self._progress_validation(batch_idx),
-                        loss.item()))
+                # Calculate perplexity from generation loss
+                perplexity = torch.exp(gen_loss)
+                
+                # Calculate embedding similarity
+                with torch.no_grad():
+                    embedding_sim = F.cosine_similarity(
+                        gen_score.mean(dim=1), 
+                        decoder_target.float().mean(dim=1)
+                    ).mean()
 
-        return self.valid_metrics.result()
+                batch_size = doc_ids.size(0)
+                total_val_loss += loss.item() * batch_size
+                total_val_sim_loss += sim_loss.item() * batch_size
+                total_val_gen_loss += gen_loss.item() * batch_size
+                total_val_perplexity += perplexity.item() * batch_size
+                total_val_embedding_sim += embedding_sim.item() * batch_size
+                n_val_steps += batch_size
+
+                # Print validation samples
+                if batch_idx == 0:
+                    self._print_validation_samples(topic_ids, gen_score, decoder_target)
+
+        # Calculate averages
+        val_loss = total_val_loss / n_val_steps
+        val_sim_loss = total_val_sim_loss / n_val_steps
+        val_gen_loss = total_val_gen_loss / n_val_steps
+        val_perplexity = total_val_perplexity / n_val_steps
+        val_embedding_sim = total_val_embedding_sim / n_val_steps
+
+        return {
+            'val_loss': val_loss,
+            'val_sim_loss': val_sim_loss,
+            'val_gen_loss': val_gen_loss,
+            'val_perplexity': val_perplexity,
+            'val_embedding_sim': val_embedding_sim
+        }
+
+    def _print_validation_samples(self, topic_ids, gen_scores, targets):
+        """Print validation generation samples for debugging"""
+        with torch.no_grad():
+            # Get predictions
+            gen_tokens = gen_scores.argmax(dim=-1)  # [batch, seq_len]
+            
+            debug_info = "\nGeneration Samples:"
+            for i in range(min(3, len(gen_tokens))):
+                generated = self.dataset.bert_tokenizer.decode(gen_tokens[i])
+                target = self.dataset.bert_tokenizer.decode(targets[i])
+                debug_info += f"\nTopic {topic_ids[i].item()}:"
+                debug_info += f"\nGenerated: {generated}"
+                debug_info += f"\nTarget: {target}\n"
+            
+            self.log_info(debug_info)
 
     def _progress(self, batch_idx):
         base = '[{}/{} ({:.0f}%)]'
