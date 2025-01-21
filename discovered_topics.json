@@ -2,135 +2,168 @@
   "politics": [
     {
       "name": "agriculture and food",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "animals",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "armed forces and national security",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "arts culture religion",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "civil rights and liberties minority issues",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "commerce",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "crime and law enforcement",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "economics and public finance",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "education",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "emergency management",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "energy",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "environmental protection",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "families",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "finance and financial sector",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "foreign trade and international finance",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "geographic areas entities and committees",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "government operations and politics",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "health",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "housing and community development",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "immigration",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "international affairs",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "labor and employment",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "law",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "native americans",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "private legislation",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "public lands and natural resources",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "science technology communications",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "social sciences and history",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "social welfare",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "sports and recreation",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "taxation",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "transportation and public works",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     },
     {
       "name": "water resources development",
-      "quality_score": 1.0
+      "quality_score": 1.0,
+      "subtopics": []
     }
   ]
 }
