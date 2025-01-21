@@ -52,30 +52,19 @@ class TopicExpan(BaseModel):
         return self
 
     def forward(self, encoder_input, decoder_input=None, topic_ids=None):
-        # Debug prints
-        print("\n[DEBUG] TopicExpan forward:")
-        print(f"encoder_input keys: {encoder_input.keys()}")
-        if decoder_input is not None:
-            print(f"decoder_input keys: {decoder_input.keys()}")
-        if topic_ids is not None:
-            print(f"topic_ids shape: {topic_ids.shape}")
 
         # Get document embeddings
         doc_embed = self.doc_encoder(encoder_input)[:, 0]  # Use CLS token
         doc_embed = F.normalize(doc_embed, p=2, dim=-1)  # L2 normalize
         
-        print(f"doc_embed shape: {doc_embed.shape}")
-        
         # Get topic embeddings from GCN
         topic_embed = self.topic_encoder.encode()
         topic_embed = F.normalize(topic_embed, p=2, dim=-1)  # L2 normalize
         
-        print(f"topic_embed shape: {topic_embed.shape}")
-        
         # Calculate similarity scores with temperature scaling
         sim_scores = self.interaction(doc_embed, topic_embed)
-        # Scale with learned temperature parameter
-        sim_scores = sim_scores * F.softplus(self.temperature)  # Use softplus to ensure positive temperature
+        # Scale with fixed temperature for training stability
+        sim_scores = sim_scores * 10.0  # Fixed scaling to match typical logit ranges
         
         print(f"sim_scores shape: {sim_scores.shape}")
         

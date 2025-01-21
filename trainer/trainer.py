@@ -53,8 +53,8 @@ class Trainer(BaseTrainer):
         self.train_metrics.reset()
         
         # Loss weights - give more weight to generation loss
-        sim_weight = 1.0
-        gen_weight = 1.0
+        sim_weight = 0.3
+        gen_weight = 0.7
         
         # Gradient clipping norm
         max_grad_norm = 1.0
@@ -112,11 +112,13 @@ class Trainer(BaseTrainer):
             # Apply loss weights and ensure they're positive
             loss = sim_weight * sim_loss + gen_weight * gen_loss
             
-            # Debug: Check loss values
+            # Debug: Check loss values and predictions
             if batch_idx % 100 == 0:
                 debug_info = "\n[DEBUG] Loss Values:"
-                debug_info += f"\nSimilarity Loss: {sim_loss.item():.4f}"
-                debug_info += f"\nGeneration Loss: {gen_loss.item():.4f}"
+                debug_info += f"\nSimilarity Loss (raw): {sim_loss.item():.4f}"
+                debug_info += f"\nGeneration Loss (raw): {gen_loss.item():.4f}"
+                debug_info += f"\nWeighted Sim Loss: {(sim_weight * sim_loss).item():.4f}"
+                debug_info += f"\nWeighted Gen Loss: {(gen_weight * gen_loss).item():.4f}"
                 debug_info += f"\nTotal Loss: {loss.item():.4f}"
                 
                 # Print sample predictions
@@ -129,6 +131,15 @@ class Trainer(BaseTrainer):
                     # Generation perplexity
                     gen_perplexity = torch.exp(gen_loss)
                     debug_info += f"\nGeneration Perplexity: {gen_perplexity.item():.4f}"
+                    
+                    # Print sample generations
+                    debug_info += "\n\nSample Generations:"
+                    for i in range(min(3, len(gen_score))):
+                        gen_tokens = gen_score[i].argmax(dim=1)
+                        generated = self.dataset.bert_tokenizer.decode(gen_tokens)
+                        target = self.dataset.bert_tokenizer.decode(gen_target[i])
+                        debug_info += f"\nGenerated {i}: {generated}"
+                        debug_info += f"\nTarget {i}:   {target}\n"
                 
                 self.log_info(debug_info)
 

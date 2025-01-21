@@ -296,16 +296,10 @@ class TransformerPhraseDecoder(BaseModel):
         return mask
 
     def forward(self, input_ids, context):
-        # Debug input shapes
-        print(f"\n[DEBUG] TransformerPhraseDecoder forward:")
         if isinstance(input_ids, dict):
-            print(f"input_ids shape: {input_ids['input_ids'].shape}")
             x = self.input_embeddings(input_ids['input_ids'])  # [batch, seq_len, embed_dim]
         else:
-            print(f"input_ids shape: {input_ids.shape}")
             x = self.input_embeddings(input_ids)  # [batch, seq_len, embed_dim]
-        
-        print(f"context shape: {context.shape}")
 
         # Create attention mask
         tgt_mask = self._make_causal_mask(x).to(x.device)
@@ -313,11 +307,6 @@ class TransformerPhraseDecoder(BaseModel):
         # Ensure context has sequence dimension
         if context.dim() == 2:
             context = context.unsqueeze(1)  # [batch, 1, hidden_size]
-        
-        print(f"After processing:")
-        print(f"x shape: {x.shape}")
-        print(f"context shape: {context.shape}")
-        print(f"tgt_mask shape: {tgt_mask.shape}")
         
         # Forward through transformer
         output = self.model(
@@ -330,20 +319,12 @@ class TransformerPhraseDecoder(BaseModel):
         # Project to vocabulary
         output = self.output_layer(output)
         
-        print(f"Final output shape: {output.shape}")
-        
         return output
 
     def generate(self, context):
         batch_size = context.size(0)
         # Always start with CLS token
         current_token = torch.full((batch_size, 1), self.bos_token_id, dtype=torch.long, device=context.device)
-        
-        # Debug print
-        print(f"\n[DEBUG] Generation start:")
-        print(f"Batch size: {batch_size}")
-        print(f"Context shape: {context.shape}")
-        print(f"Initial token shape: {current_token.shape}")
         
         # Project and normalize context
         context = self.context_norm(self.context_proj(context))

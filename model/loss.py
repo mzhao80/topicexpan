@@ -4,16 +4,24 @@ import torch.nn.functional as F
 
 def infonce_loss(output, target, temperature=0.1):
     """
+    InfoNCE loss for similarity prediction
     output: a (batch_size, num_classes) tensor
     target: a (batch_size, ) tensor of dtype long
     """
-    output = torch.softmax(output/temperature, dim=0)
-    output = torch.gather(output, dim=1, index=target[:, None])
-    loss = - torch.log(output + 1e-12)
-    return loss.sum()
+    # Apply temperature scaling
+    output = output / temperature
+    
+    # Convert to log probabilities
+    log_probs = F.log_softmax(output, dim=-1)
+    
+    # Get the loss for the correct class
+    target_loss = torch.gather(log_probs, dim=-1, index=target.unsqueeze(-1))
+    
+    return -target_loss.mean()
 
 def nll_loss(output, target):
     """
+    Cross entropy loss for generation
     output: a (batch_size * sequence_length, vocab_size) tensor or (batch_size, sequence_length, vocab_size)
     target: a (batch_size * sequence_length) tensor or (batch_size, sequence_length)
     """
@@ -27,4 +35,12 @@ def nll_loss(output, target):
     if output.dim() == 2:
         output = F.log_softmax(output, dim=-1)
     
-    return F.nll_loss(output, target, ignore_index=0, reduction="mean")
+    # Compute loss only on non-padding tokens
+    loss = F.nll_loss(output, target, ignore_index=0, reduction="none")
+    
+    # Normalize by number of non-padding tokens
+    non_pad_mask = (target != 0)
+    num_tokens = non_pad_mask.sum().item()
+    if num_tokens > 0:
+        return loss.sum() / num_tokens
+    return loss.sum()  # Return 0 if all padding
