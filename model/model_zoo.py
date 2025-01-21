@@ -289,9 +289,23 @@ class TransformerPhraseDecoder(BaseModel):
         batch_size = context.size(0)
         current_token = torch.full((batch_size, 1), self.bos_token_id, dtype=torch.long, device=context.device)
         
+        # Initialize with temperature and top-k sampling
+        temperature = 0.7
+        top_k = 50
+        
         for _ in range(self.max_length - 1):
+            # Get logits from decoder
             logits = self.forward(current_token, context)
-            next_token = logits[:, -1:].argmax(dim=-1)
+            next_token_logits = logits[:, -1, :] / temperature
+            
+            # Apply top-k filtering
+            top_k_logits, top_k_indices = torch.topk(next_token_logits, k=top_k)
+            next_token_probs = F.softmax(top_k_logits, dim=-1)
+            
+            # Sample from filtered distribution
+            next_token_idx = torch.multinomial(next_token_probs, num_samples=1)
+            next_token = top_k_indices.gather(-1, next_token_idx)
+            
             current_token = torch.cat([current_token, next_token], dim=1)
             
             if (next_token == self.eos_token_id).all():
