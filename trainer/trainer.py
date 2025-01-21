@@ -99,7 +99,7 @@ class Trainer(BaseTrainer):
         avg_gen_loss = epoch_gen_loss / n_steps
         
         # Run validation
-        val_metrics = self._valid_epoch()
+        val_metrics = self._valid_epoch(epoch)
         
         # Update learning rate
         if self.lr_scheduler is not None:
@@ -122,9 +122,6 @@ class Trainer(BaseTrainer):
     def _valid_epoch(self, epoch):
         """
         Validate after training an epoch
-
-        :param epoch: Integer, current training epoch.
-        :return: A log that contains information about validation
         """
         self.model.eval()
         total_val_loss = 0
@@ -157,12 +154,9 @@ class Trainer(BaseTrainer):
                 perplexity = torch.exp(gen_loss)
                 
                 # Calculate embedding similarity between predicted and target sequences
-                # First get the predicted token embeddings
                 pred_tokens = gen_score.argmax(dim=-1)  # [batch, seq]
-                pred_embeds = self.model.phrase_decoder.input_embeddings.word_embeddings(pred_tokens)  # [batch, seq, hidden]
-                
-                # Get target token embeddings
-                target_embeds = self.model.phrase_decoder.input_embeddings.word_embeddings(decoder_target)  # [batch, seq, hidden]
+                pred_embeds = self.model.phrase_decoder.input_embeddings.word_embeddings(pred_tokens)
+                target_embeds = self.model.phrase_decoder.input_embeddings.word_embeddings(decoder_target)
                 
                 # Calculate mean embeddings
                 pred_mean = pred_embeds.mean(dim=1)  # [batch, hidden]
@@ -179,9 +173,11 @@ class Trainer(BaseTrainer):
                 total_val_embedding_sim += embedding_sim.item() * batch_size
                 n_val_steps += batch_size
 
-                # Print validation samples
-                if batch_idx == 0:
-                    self._print_validation_samples(topic_ids, gen_score, decoder_target)
+                if batch_idx % self.log_step == 0:
+                    self.log_info('Validation Epoch: {} {} Loss: {:.6f}'.format(
+                        epoch,
+                        self._progress_validation(batch_idx),
+                        loss.item()))
 
         # Calculate averages
         val_loss = total_val_loss / n_val_steps
@@ -289,21 +285,17 @@ class Trainer(BaseTrainer):
                             
                             # Generate phrases for potential subtopics
                             generated_phrases = []
-                            print(f"Generating phrases for {child_name}...")
                             for i in range(20):  # Generate multiple phrases to cluster
                                 # Add sequence length dimension: [batch_size, seq_len, hidden_size]
                                 phrase_embed = parent_embed.unsqueeze(0).unsqueeze(1)  
                                 phrase_output = self.model.phrase_decoder.generate(phrase_embed)
                                 phrase = dataset.bert_tokenizer.decode(phrase_output[0], skip_special_tokens=True)
-                                print(f"Generated phrase {i+1}: {phrase}")
                                 if len(phrase.strip()) > 0:
                                     generated_phrases.append(phrase.strip())
                             
-                            print(f"Found {len(generated_phrases)} valid phrases")
                             # Cluster phrases into subtopics
                             if len(generated_phrases) >= 5:
                                 subtopics = self._cluster_phrases(generated_phrases, parent_embed)
-                                print(f"Generated {len(subtopics)} subtopics")
                                 
                                 # Add child with its subtopics
                                 child_entry = {
