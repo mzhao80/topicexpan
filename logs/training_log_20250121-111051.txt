@@ -1,0 +1,2492 @@
+Starting training at 20250121-111051
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [34, 36, 37, 38, 41, 42, 43, 44, 46, 47, 48, 49, 54, 55, 60, 62, 64, 66, 68, 70, 71]
+Input sequence lengths: [512, 512, 512, 236, 356, 512, 512, 512, 64, 137, 234, 125, 512, 512, 512, 356, 204, 236, 512, 258, 449, 87, 512, 512, 512, 512, 81, 512, 234, 512, 512, 137]
+Target phrase lengths: [5, 6, 8, 7, 5, 6, 4, 6, 8, 7, 4, 5, 5, 8, 8, 4, 8, 8, 4, 6, 7, 8, 6, 4, 5, 7, 5, 6, 7, 4, 8, 7]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-0.118, 0.194]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 69 | True: 36
+Pred: 55 | True: 42
+Pred: 55 | True: 44
+
+Phrase Generation Sample:
+Generated: [unused593] rolling graphics 410 410 [unused593] rolling [unused593] rolling
+Target: nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 112.975
+Generation Loss: 1713.511
+Weighted Loss: 1233.350
+Train Epoch: 1 [0/334 (0%)] Loss: 1233.350342
+Train Epoch: 1 [64/334 (19%)] Loss: 963.509277
+Train Epoch: 1 [128/334 (38%)] Loss: 931.375122
+Train Epoch: 1 [192/334 (57%)] Loss: 1002.026489
+Train Epoch: 1 [256/334 (77%)] Loss: 968.553040
+[2025-01-21 11:10:56] Starting validation for epoch: 1
+
+Generation Samples:
+Topic 52:
+Generated: [CLS] stylisticzman vocal [SEP]
+Target: commitment to public service [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS] financingtour thriving [SEP]
+Target: nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 52:
+Generated: [CLS] cola lensliga [SEP]
+Target: public service [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 1 [0/10 (0%)] Loss: 1159.068359
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [35, 36, 38, 39, 41, 44, 49, 51, 52, 53, 54, 55, 57, 58, 61, 63, 65, 70, 71]
+Input sequence lengths: [485, 356, 512, 121, 512, 78, 485, 334, 512, 512, 145, 512, 453, 236, 512, 512, 512, 512, 512, 512, 92, 449, 512, 512, 159, 512, 236, 512, 512, 512, 449, 512]
+Target phrase lengths: [5, 5, 6, 5, 6, 6, 8, 4, 4, 8, 8, 5, 8, 5, 4, 5, 4, 4, 5, 5, 5, 4, 8, 6, 5, 8, 8, 4, 6, 7, 4, 5]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-0.723, 1.041]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 60 | True: 57
+Pred: 55 | True: 55
+Pred: 65 | True: 65
+
+Phrase Generation Sample:
+Generated: [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: winning gold medals [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 49.823
+Generation Loss: 1227.724
+Weighted Loss: 874.354
+Train Epoch: 2 [0/334 (0%)] Loss: 874.353760
+Train Epoch: 2 [64/334 (19%)] Loss: 841.794617
+Train Epoch: 2 [128/334 (38%)] Loss: 788.764404
+Train Epoch: 2 [192/334 (57%)] Loss: 881.430054
+Train Epoch: 2 [256/334 (77%)] Loss: 842.655884
+[2025-01-21 11:11:01] Starting validation for epoch: 2
+
+Generation Samples:
+Topic 40:
+Generated: [CLS] enveloped 158kota [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] costello treatedship [SEP]
+Target: lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+Topic 73:
+Generated: [CLS] petersiot blitz [SEP]
+Target: criminalizes abortion [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 2 [0/10 (0%)] Loss: 1096.077271
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 39, 40, 41, 43, 45, 47, 49, 52, 54, 55, 57, 58, 60, 62, 64, 65, 66, 68, 70, 72]
+Input sequence lengths: [512, 512, 512, 91, 512, 512, 204, 512, 485, 125, 121, 512, 512, 87, 268, 512, 512, 125, 453, 512, 512, 268, 512, 512, 512, 512, 236, 512, 512, 125, 268, 356]
+Target phrase lengths: [4, 7, 6, 4, 8, 6, 8, 6, 8, 7, 4, 8, 4, 6, 8, 4, 7, 8, 8, 4, 4, 8, 8, 4, 4, 4, 8, 4, 6, 4, 8, 4]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.297, 1.558]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 66 | True: 66
+Pred: 65 | True: 65
+Pred: 40 | True: 47
+
+Phrase Generation Sample:
+Generated: [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: house rules [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 30.684
+Generation Loss: 1226.484
+Weighted Loss: 867.744
+Train Epoch: 3 [0/334 (0%)] Loss: 867.743896
+Train Epoch: 3 [64/334 (19%)] Loss: 984.172485
+Train Epoch: 3 [128/334 (38%)] Loss: 836.621948
+Train Epoch: 3 [192/334 (57%)] Loss: 754.563660
+Train Epoch: 3 [256/334 (77%)] Loss: 817.326050
+[2025-01-21 11:11:05] Starting validation for epoch: 3
+
+Generation Samples:
+Topic 38:
+Generated: [CLS]lized neared reporter [SEP]
+Target: byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS] auto andffen [SEP]
+Target: government that is accountable [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 52:
+Generated: [CLS] surgeon restaurantock [SEP]
+Target: public service [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 3 [0/10 (0%)] Loss: 1016.883179
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [34, 36, 40, 41, 43, 46, 47, 48, 49, 51, 53, 54, 55, 56, 58, 59, 60, 63, 66, 67, 70, 71]
+Input sequence lengths: [512, 512, 449, 92, 81, 512, 78, 512, 356, 512, 64, 512, 512, 512, 512, 236, 512, 512, 449, 512, 512, 334, 356, 125, 512, 512, 512, 356, 512, 512, 366, 449]
+Target phrase lengths: [3, 6, 7, 6, 8, 6, 7, 5, 4, 8, 7, 4, 8, 5, 5, 6, 6, 5, 7, 4, 5, 7, 5, 6, 4, 5, 6, 4, 6, 4, 3, 6]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.175, 1.887]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 54 | True: 54
+Pred: 54 | True: 63
+Pred: 60 | True: 56
+
+Phrase Generation Sample:
+Generated: [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: washington [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 28.504
+Generation Loss: 1069.804
+Weighted Loss: 757.414
+Train Epoch: 4 [0/334 (0%)] Loss: 757.413513
+Train Epoch: 4 [64/334 (19%)] Loss: 794.493896
+Train Epoch: 4 [128/334 (38%)] Loss: 783.978516
+Train Epoch: 4 [192/334 (57%)] Loss: 757.893250
+Train Epoch: 4 [256/334 (77%)] Loss: 745.916687
+[2025-01-21 11:11:10] Starting validation for epoch: 4
+
+Generation Samples:
+Topic 52:
+Generated: [CLS]nz the maison [SEP]
+Target: compassionate congressional caseworkers [SEP] [PAD] [PAD] [PAD]
+
+Topic 61:
+Generated: [CLS] leukemia phase effective [SEP]
+Target: officer training [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 46:
+Generated: [CLS]uising 2007 collision [SEP]
+Target: open rule process [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 4 [0/10 (0%)] Loss: 1001.361267
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 39, 41, 42, 43, 44, 48, 50, 51, 52, 54, 56, 57, 59, 60, 61, 64, 65, 66, 67, 69, 70, 71]
+Input sequence lengths: [366, 449, 512, 236, 512, 512, 159, 388, 512, 512, 512, 125, 512, 159, 512, 121, 159, 512, 453, 449, 512, 512, 485, 512, 512, 512, 78, 449, 512, 512, 81, 125]
+Target phrase lengths: [5, 5, 5, 8, 6, 7, 4, 4, 8, 5, 7, 5, 4, 7, 6, 4, 5, 8, 8, 8, 4, 7, 7, 4, 8, 4, 6, 4, 8, 4, 5, 6]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.124, 1.843]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 59 | True: 59
+Pred: 56 | True: 56
+Pred: 47 | True: 44
+
+Phrase Generation Sample:
+Generated: [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: wise sayings [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 27.605
+Generation Loss: 1083.154
+Weighted Loss: 766.489
+Train Epoch: 5 [0/334 (0%)] Loss: 766.489197
+Train Epoch: 5 [64/334 (19%)] Loss: 703.840210
+Train Epoch: 5 [128/334 (38%)] Loss: 750.448425
+Train Epoch: 5 [192/334 (57%)] Loss: 650.910095
+Train Epoch: 5 [256/334 (77%)] Loss: 686.409241
+[2025-01-21 11:11:14] Starting validation for epoch: 5
+
+Generation Samples:
+Topic 36:
+Generated: [CLS] present cast puts [SEP]
+Target: government that is accountable [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 45:
+Generated: [CLS] premier to washed [SEP]
+Target: diminish voices [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] gesellschaft receivers dropping [SEP]
+Target: talented [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 5 [0/10 (0%)] Loss: 957.529968
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [35, 36, 37, 38, 39, 40, 41, 43, 47, 53, 54, 57, 59, 60, 61, 62, 63, 64, 65, 66, 68, 69]
+Input sequence lengths: [512, 512, 334, 145, 512, 204, 512, 512, 512, 512, 268, 485, 159, 145, 512, 334, 512, 87, 388, 512, 512, 121, 512, 366, 366, 334, 234, 512, 512, 125, 512, 453]
+Target phrase lengths: [8, 4, 4, 8, 6, 8, 4, 7, 6, 6, 8, 5, 7, 8, 3, 6, 8, 6, 3, 5, 6, 6, 4, 5, 7, 8, 4, 4, 5, 6, 7, 8]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.367, 1.744]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 64 | True: 64
+Pred: 54 | True: 54
+Pred: 53 | True: 53
+
+Phrase Generation Sample:
+Generated: [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: reopening the people ' [SEP] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 37.912
+Generation Loss: 1004.834
+Weighted Loss: 714.758
+Train Epoch: 6 [0/334 (0%)] Loss: 714.757568
+Train Epoch: 6 [64/334 (19%)] Loss: 713.665466
+Train Epoch: 6 [128/334 (38%)] Loss: 631.788147
+Train Epoch: 6 [192/334 (57%)] Loss: 672.727722
+Train Epoch: 6 [256/334 (77%)] Loss: 626.650513
+[2025-01-21 11:11:33] Starting validation for epoch: 6
+
+Generation Samples:
+Topic 68:
+Generated: [CLS]rg foremost newfound [SEP]
+Target: bodily autonomy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 52:
+Generated: [CLS] outrage designing cleared [SEP]
+Target: compassionate congressional caseworkers [SEP] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] bart damaging klaus [SEP]
+Target: lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+Validation Epoch: 6 [0/10 (0%)] Loss: 899.913147
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 40, 41, 42, 43, 46, 47, 48, 50, 53, 54, 57, 60, 62, 63, 66, 67, 68, 69, 70, 71]
+Input sequence lengths: [512, 204, 512, 87, 123, 512, 123, 512, 512, 512, 81, 512, 512, 125, 388, 512, 512, 512, 512, 512, 512, 485, 512, 512, 388, 334, 512, 512, 388, 236, 449, 512]
+Target phrase lengths: [5, 5, 6, 6, 8, 4, 7, 5, 4, 6, 6, 6, 5, 6, 3, 5, 8, 6, 8, 4, 5, 5, 7, 6, 4, 4, 6, 4, 8, 6, 4, 7]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.487, 1.684]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 60 | True: 60
+Pred: 68 | True: 68
+Pred: 60 | True: 67
+
+Phrase Generation Sample:
+Generated: [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: industry leading programs [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 28.128
+Generation Loss: 846.561
+Weighted Loss: 601.031
+Train Epoch: 7 [0/334 (0%)] Loss: 601.031372
+Train Epoch: 7 [64/334 (19%)] Loss: 639.469116
+Train Epoch: 7 [128/334 (38%)] Loss: 558.249451
+Train Epoch: 7 [192/334 (57%)] Loss: 673.348145
+Train Epoch: 7 [256/334 (77%)] Loss: 650.237000
+[2025-01-21 11:11:38] Starting validation for epoch: 7
+
+Generation Samples:
+Topic 59:
+Generated: [CLS] leadaghan bill [SEP]
+Target: spiritual guidance [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 73:
+Generated: [CLS] panicked copyright earthquake [SEP]
+Target: criminalizes abortion [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 58:
+Generated: [CLS] teaching & hidden [SEP]
+Target: political leaders [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 7 [0/10 (0%)] Loss: 871.042358
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [35, 36, 37, 38, 39, 40, 41, 42, 43, 46, 48, 51, 54, 55, 56, 59, 60, 61, 62, 63, 65, 68]
+Input sequence lengths: [356, 453, 366, 512, 204, 121, 512, 512, 87, 356, 449, 512, 125, 512, 356, 145, 512, 234, 234, 512, 512, 512, 512, 453, 204, 78, 512, 159, 512, 512, 121, 81]
+Target phrase lengths: [4, 7, 5, 5, 5, 4, 5, 6, 8, 4, 4, 6, 8, 6, 5, 8, 3, 4, 8, 6, 6, 6, 8, 8, 8, 7, 4, 4, 8, 7, 7, 8]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.253, 1.682]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 55 | True: 55
+Pred: 41 | True: 41
+Pred: 59 | True: 59
+
+Phrase Generation Sample:
+Generated: of [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: small businesses [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 28.839
+Generation Loss: 943.071
+Weighted Loss: 668.801
+Train Epoch: 8 [0/334 (0%)] Loss: 668.801147
+Train Epoch: 8 [64/334 (19%)] Loss: 636.245178
+Train Epoch: 8 [128/334 (38%)] Loss: 572.282532
+Train Epoch: 8 [192/334 (57%)] Loss: 547.197388
+Train Epoch: 8 [256/334 (77%)] Loss: 581.985779
+[2025-01-21 11:11:42] Starting validation for epoch: 8
+
+Generation Samples:
+Topic 38:
+Generated: [CLS] isis interpreted raped [SEP]
+Target: byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS] moss campos eastbound [SEP]
+Target: nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 68:
+Generated: [CLS] 1st watery rush [SEP]
+Target: bodily autonomy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 8 [0/10 (0%)] Loss: 871.341248
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 38, 39, 40, 41, 42, 43, 44, 46, 49, 51, 53, 55, 59, 60, 62, 67, 68, 69, 70]
+Input sequence lengths: [512, 334, 204, 512, 512, 512, 123, 512, 512, 512, 512, 236, 78, 356, 87, 512, 388, 125, 512, 512, 512, 121, 258, 125, 512, 512, 512, 121, 236, 366, 125, 356]
+Target phrase lengths: [7, 8, 8, 5, 6, 8, 8, 5, 4, 4, 4, 8, 7, 5, 8, 5, 8, 6, 8, 5, 5, 4, 4, 4, 8, 5, 4, 5, 6, 7, 6, 5]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.172, 1.636]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 60 | True: 60
+Pred: 49 | True: 53
+Pred: 68 | True: 68
+
+Phrase Generation Sample:
+Generated: of of the [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: largest and most effective chamber [SEP] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 31.220
+Generation Loss: 844.984
+Weighted Loss: 600.855
+Train Epoch: 9 [0/334 (0%)] Loss: 600.854980
+Train Epoch: 9 [64/334 (19%)] Loss: 590.963867
+Train Epoch: 9 [128/334 (38%)] Loss: 544.926270
+Train Epoch: 9 [192/334 (57%)] Loss: 573.942749
+Train Epoch: 9 [256/334 (77%)] Loss: 547.042358
+[2025-01-21 11:11:47] Starting validation for epoch: 9
+
+Generation Samples:
+Topic 41:
+Generated: [CLS]idadania mildred [SEP]
+Target: talented [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 52:
+Generated: [CLS] beaming zoe dukes [SEP]
+Target: compassionate congressional caseworkers [SEP] [PAD] [PAD] [PAD]
+
+Topic 45:
+Generated: [CLS] rotor hummed surroundings [SEP]
+Target: diminish voices [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 9 [0/10 (0%)] Loss: 838.256470
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 37, 38, 41, 42, 43, 46, 49, 51, 53, 55, 56, 57, 58, 59, 60, 61, 63, 64, 67, 68, 70, 71, 72]
+Input sequence lengths: [512, 91, 366, 258, 453, 512, 204, 449, 512, 125, 512, 512, 234, 512, 512, 512, 512, 159, 123, 512, 125, 512, 449, 78, 204, 334, 92, 356, 512, 236, 159, 485]
+Target phrase lengths: [8, 4, 5, 6, 6, 5, 8, 5, 8, 6, 6, 5, 4, 5, 4, 6, 8, 4, 7, 4, 5, 5, 4, 6, 4, 4, 5, 4, 5, 5, 4, 5]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.475, 1.607]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 66 | True: 67
+Pred: 72 | True: 72
+Pred: 59 | True: 59
+
+Phrase Generation Sample:
+Generated: of of of the [SEP] the [SEP] [SEP] [SEP]
+Target: add $ 114 billion to the [SEP] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 29.088
+Generation Loss: 647.794
+Weighted Loss: 462.182
+Train Epoch: 10 [0/334 (0%)] Loss: 462.182068
+Train Epoch: 10 [64/334 (19%)] Loss: 512.877075
+Train Epoch: 10 [128/334 (38%)] Loss: 503.189636
+Train Epoch: 10 [192/334 (57%)] Loss: 550.134888
+Train Epoch: 10 [256/334 (77%)] Loss: 531.399963
+[2025-01-21 11:11:51] Starting validation for epoch: 10
+
+Generation Samples:
+Topic 66:
+Generated: [CLS] ballroom tailored advocacy lead [SEP]
+Target: rules resolution [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 44:
+Generated: [CLS] intellectuals replicate garlic berlin [SEP]
+Target: nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 68:
+Generated: [CLS] [unused762] absorbing 1733 delivering [SEP]
+Target: bodily autonomy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 10 [0/10 (0%)] Loss: 802.441162
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [35, 36, 38, 39, 41, 42, 43, 47, 48, 49, 51, 53, 54, 56, 60, 61, 62, 64, 65, 66, 67, 68, 69, 70, 72]
+Input sequence lengths: [125, 388, 512, 121, 145, 512, 159, 92, 512, 258, 512, 512, 453, 449, 512, 81, 512, 236, 91, 204, 334, 512, 87, 123, 388, 512, 512, 512, 512, 512, 512, 453]
+Target phrase lengths: [7, 4, 6, 5, 6, 4, 7, 5, 6, 4, 8, 6, 7, 5, 8, 6, 4, 5, 4, 8, 7, 4, 6, 7, 3, 5, 8, 6, 7, 4, 8, 8]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.336, 1.709]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 43 | True: 43
+Pred: 69 | True: 69
+Pred: 54 | True: 54
+
+Phrase Generation Sample:
+Generated: of of the the [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: speaker has not been elected [SEP] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 18.840
+Generation Loss: 742.628
+Weighted Loss: 525.491
+Train Epoch: 11 [0/334 (0%)] Loss: 525.491333
+Train Epoch: 11 [64/334 (19%)] Loss: 464.635559
+Train Epoch: 11 [128/334 (38%)] Loss: 509.056335
+Train Epoch: 11 [192/334 (57%)] Loss: 527.216797
+Train Epoch: 11 [256/334 (77%)] Loss: 516.186951
+[2025-01-21 11:12:09] Starting validation for epoch: 11
+
+Generation Samples:
+Topic 43:
+Generated: [CLS] plasma wrote technologies seville [SEP]
+Target: byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS] sasonne expression proportions [SEP]
+Target: nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] [unused838] bodily contribute requiring [SEP]
+Target: lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+Validation Epoch: 11 [0/10 (0%)] Loss: 805.752258
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [34, 35, 36, 37, 38, 40, 41, 42, 43, 45, 47, 49, 51, 53, 54, 55, 57, 59, 61, 63, 64, 67, 69, 72]
+Input sequence lengths: [485, 512, 512, 453, 234, 512, 512, 512, 388, 512, 258, 334, 91, 512, 512, 92, 512, 159, 512, 123, 125, 512, 512, 512, 64, 356, 78, 512, 78, 145, 512, 366]
+Target phrase lengths: [7, 6, 7, 8, 7, 6, 4, 5, 4, 8, 4, 7, 4, 6, 4, 6, 4, 4, 4, 7, 4, 5, 5, 8, 8, 4, 5, 8, 7, 8, 4, 7]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.386, 1.572]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 57 | True: 57
+Pred: 67 | True: 67
+Pred: 36 | True: 36
+
+Phrase Generation Sample:
+Generated: [SEP] of the house of [SEP] [SEP] [SEP] [SEP]
+Target: victory for the united states [SEP] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 40.839
+Generation Loss: 682.852
+Weighted Loss: 490.249
+Train Epoch: 12 [0/334 (0%)] Loss: 490.248535
+Train Epoch: 12 [64/334 (19%)] Loss: 444.962311
+Train Epoch: 12 [128/334 (38%)] Loss: 430.943176
+Train Epoch: 12 [192/334 (57%)] Loss: 496.802216
+Train Epoch: 12 [256/334 (77%)] Loss: 443.732452
+[2025-01-21 11:12:14] Starting validation for epoch: 12
+
+Generation Samples:
+Topic 40:
+Generated: [CLS] [unused82] debtsises [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 65:
+Generated: [CLS] wanna jess monaco [SEP]
+Target: attack women ' s access to [SEP] [PAD] [PAD]
+
+Topic 73:
+Generated: [CLS] semi auditioned girls [SEP]
+Target: criminalizes abortion [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 12 [0/10 (0%)] Loss: 786.594543
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [34, 35, 36, 37, 38, 39, 41, 42, 43, 45, 46, 47, 48, 53, 54, 55, 59, 60, 61, 63, 65, 66, 69, 70, 71]
+Input sequence lengths: [512, 512, 366, 512, 512, 334, 234, 145, 512, 356, 512, 449, 512, 512, 366, 258, 512, 512, 512, 159, 125, 121, 121, 512, 125, 388, 64, 236, 81, 123, 512, 268]
+Target phrase lengths: [5, 6, 3, 6, 5, 4, 4, 7, 8, 4, 5, 6, 5, 8, 5, 4, 5, 8, 6, 4, 7, 7, 5, 5, 6, 3, 5, 5, 6, 8, 5, 8]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.407, 1.722]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 36 | True: 36
+Pred: 60 | True: 60
+Pred: 59 | True: 59
+
+Phrase Generation Sample:
+Generated: [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: opportunity for all [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 28.751
+Generation Loss: 579.172
+Weighted Loss: 414.046
+Train Epoch: 13 [0/334 (0%)] Loss: 414.046112
+Train Epoch: 13 [64/334 (19%)] Loss: 447.757416
+Train Epoch: 13 [128/334 (38%)] Loss: 462.185486
+Train Epoch: 13 [192/334 (57%)] Loss: 433.808716
+Train Epoch: 13 [256/334 (77%)] Loss: 443.787476
+[2025-01-21 11:12:18] Starting validation for epoch: 13
+
+Generation Samples:
+Topic 65:
+Generated: [CLS]dron champagne ecosystem [SEP]
+Target: attack women ' s access to [SEP] [PAD] [PAD]
+
+Topic 59:
+Generated: [CLS] gut toni california [SEP]
+Target: massive impact [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 64:
+Generated: [CLS]0 palmanal [SEP]
+Target: written in rooms behind closed doors [SEP] [PAD] [PAD]
+
+Validation Epoch: 13 [0/10 (0%)] Loss: 806.287170
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [35, 36, 37, 38, 41, 42, 43, 44, 45, 48, 50, 52, 53, 55, 57, 62, 63, 65, 66, 69, 71, 72]
+Input sequence lengths: [234, 334, 512, 512, 145, 449, 512, 512, 356, 512, 87, 512, 356, 512, 512, 453, 512, 512, 512, 388, 512, 512, 512, 512, 91, 512, 512, 356, 125, 485, 81, 512]
+Target phrase lengths: [8, 8, 8, 8, 7, 4, 4, 6, 4, 6, 8, 4, 5, 8, 5, 8, 8, 7, 5, 8, 6, 5, 4, 6, 6, 5, 7, 4, 5, 7, 6, 8]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.284, 1.751]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 37 | True: 37
+Pred: 53 | True: 53
+Pred: 45 | True: 45
+
+Phrase Generation Sample:
+Generated: speaker and and and [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: john lewis voting rights advancement act [SEP] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 33.570
+Generation Loss: 611.390
+Weighted Loss: 438.044
+Train Epoch: 14 [0/334 (0%)] Loss: 438.043671
+Train Epoch: 14 [64/334 (19%)] Loss: 454.415344
+Train Epoch: 14 [128/334 (38%)] Loss: 479.797272
+Train Epoch: 14 [192/334 (57%)] Loss: 373.110046
+Train Epoch: 14 [256/334 (77%)] Loss: 419.496399
+[2025-01-21 11:12:23] Starting validation for epoch: 14
+
+Generation Samples:
+Topic 47:
+Generated: [CLS] nato red altering [SEP]
+Target: nominate the gentleman from oklahoma [SEP] [PAD] [PAD] [PAD]
+
+Topic 46:
+Generated: [CLS]edging 29 inspectors [SEP]
+Target: collaborate and craft legislation [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 46:
+Generated: [CLS] lacrosse fourteen reissue [SEP]
+Target: open rule process [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 14 [0/10 (0%)] Loss: 800.903015
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 38, 40, 41, 42, 43, 46, 47, 48, 49, 51, 53, 54, 55, 56, 59, 60, 61, 63, 64, 65, 66, 67]
+Input sequence lengths: [512, 334, 512, 356, 512, 449, 512, 512, 123, 125, 512, 81, 512, 512, 512, 512, 512, 512, 453, 512, 512, 366, 512, 453, 512, 159, 453, 512, 512, 125, 512, 78]
+Target phrase lengths: [8, 6, 5, 5, 7, 5, 6, 4, 7, 6, 7, 6, 4, 6, 6, 7, 5, 6, 7, 5, 8, 3, 4, 7, 3, 4, 5, 4, 6, 4, 5, 5]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.515, 1.876]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 64 | True: 64
+Pred: 53 | True: 53
+Pred: 67 | True: 67
+
+Phrase Generation Sample:
+Generated: [SEP] ' of the house ' [SEP] [SEP] [SEP]
+Target: reopening the people ' [SEP] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 23.249
+Generation Loss: 534.537
+Weighted Loss: 381.151
+Train Epoch: 15 [0/334 (0%)] Loss: 381.150787
+Train Epoch: 15 [64/334 (19%)] Loss: 396.013336
+Train Epoch: 15 [128/334 (38%)] Loss: 414.778748
+Train Epoch: 15 [192/334 (57%)] Loss: 374.539246
+Train Epoch: 15 [256/334 (77%)] Loss: 383.178619
+[2025-01-21 11:12:27] Starting validation for epoch: 15
+
+Generation Samples:
+Topic 73:
+Generated: [CLS]roved surroundythe 1976 [SEP]
+Target: criminalizes abortion [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] dissolved cordoba ambiguity finances [SEP]
+Target: talented [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 44:
+Generated: [CLS] bendsomylf revelations [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 15 [0/10 (0%)] Loss: 789.567261
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [34, 36, 37, 39, 41, 43, 46, 47, 49, 53, 55, 56, 60, 61, 63, 66, 67, 70]
+Input sequence lengths: [512, 512, 123, 512, 512, 64, 137, 356, 512, 234, 512, 159, 356, 512, 512, 121, 512, 512, 512, 453, 512, 125, 159, 512, 512, 449, 356, 512, 334, 159, 512, 236]
+Target phrase lengths: [5, 8, 7, 6, 5, 5, 7, 4, 8, 8, 4, 5, 4, 5, 5, 4, 3, 5, 8, 7, 5, 4, 4, 8, 3, 4, 5, 8, 7, 4, 6, 8]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.561, 1.881]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 40 | True: 36
+Pred: 41 | True: 41
+Pred: 43 | True: 43
+
+Phrase Generation Sample:
+Generated: speaker kevin mccarthy [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 39.233
+Generation Loss: 479.811
+Weighted Loss: 347.637
+Train Epoch: 16 [0/334 (0%)] Loss: 347.637421
+Train Epoch: 16 [64/334 (19%)] Loss: 356.301941
+Train Epoch: 16 [128/334 (38%)] Loss: 387.818390
+Train Epoch: 16 [192/334 (57%)] Loss: 467.876221
+Train Epoch: 16 [256/334 (77%)] Loss: 444.016388
+[2025-01-21 11:12:45] Starting validation for epoch: 16
+
+Generation Samples:
+Topic 66:
+Generated: [CLS] oceans quentin manpower migrate [SEP]
+Target: rules resolution [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS] ding write 1755 bulbs [SEP]
+Target: government that is accountable [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 59:
+Generated: [CLS] dt appetite planted forums [SEP]
+Target: spiritual guidance [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 16 [0/10 (0%)] Loss: 792.621338
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [35, 36, 39, 40, 41, 44, 47, 50, 51, 54, 55, 56, 59, 60, 66, 67, 69, 70, 71, 72]
+Input sequence lengths: [512, 512, 512, 449, 512, 512, 512, 236, 236, 512, 512, 512, 512, 512, 145, 356, 121, 92, 512, 512, 512, 356, 366, 512, 91, 512, 388, 449, 512, 236, 512, 388]
+Target phrase lengths: [4, 8, 4, 6, 5, 3, 8, 6, 8, 6, 5, 8, 5, 6, 7, 4, 5, 6, 8, 8, 8, 4, 5, 6, 4, 8, 4, 4, 5, 8, 6, 4]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.282, 1.976]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 54 | True: 54
+Pred: 63 | True: 67
+Pred: 47 | True: 44
+
+Phrase Generation Sample:
+Generated: speaker and [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: douglass commonwealth [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 43.340
+Generation Loss: 547.081
+Weighted Loss: 395.959
+Train Epoch: 17 [0/334 (0%)] Loss: 395.958557
+Train Epoch: 17 [64/334 (19%)] Loss: 369.673309
+Train Epoch: 17 [128/334 (38%)] Loss: 393.784119
+Train Epoch: 17 [192/334 (57%)] Loss: 400.603027
+Train Epoch: 17 [256/334 (77%)] Loss: 371.122009
+[2025-01-21 11:12:50] Starting validation for epoch: 17
+
+Generation Samples:
+Topic 65:
+Generated: [CLS] speaker messedential spoil temperament [SEP]
+Target: attack women ' s access to [SEP] [PAD] [PAD]
+
+Topic 38:
+Generated: [CLS]shiplayer gap limerick looming [SEP]
+Target: byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 40:
+Generated: [CLS] sep [unused672]nage poorly lights [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 17 [0/10 (0%)] Loss: 748.610962
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [39, 40, 41, 42, 43, 46, 47, 49, 50, 51, 52, 54, 55, 65, 66, 67, 68, 69, 70, 71]
+Input sequence lengths: [449, 78, 512, 512, 512, 512, 512, 121, 512, 512, 123, 449, 512, 356, 512, 512, 356, 512, 512, 512, 512, 512, 236, 204, 512, 268, 512, 78, 236, 356, 388, 123]
+Target phrase lengths: [6, 7, 8, 5, 8, 4, 4, 5, 6, 7, 8, 7, 5, 5, 8, 7, 5, 8, 5, 5, 8, 4, 8, 4, 6, 8, 4, 5, 8, 5, 3, 7]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.330, 1.979]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 64 | True: 71
+Pred: 51 | True: 51
+Pred: 54 | True: 54
+
+Phrase Generation Sample:
+Generated: speaker the [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: fiscally responsible budget [SEP] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 28.466
+Generation Loss: 543.411
+Weighted Loss: 388.927
+Train Epoch: 18 [0/334 (0%)] Loss: 388.927124
+Train Epoch: 18 [64/334 (19%)] Loss: 373.713562
+Train Epoch: 18 [128/334 (38%)] Loss: 317.655121
+Train Epoch: 18 [192/334 (57%)] Loss: 350.462036
+Train Epoch: 18 [256/334 (77%)] Loss: 349.130005
+[2025-01-21 11:12:54] Starting validation for epoch: 18
+
+Generation Samples:
+Topic 36:
+Generated: [CLS] tracking frowns currentsross [SEP]
+Target: nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] cpc existed sweater investigation [SEP]
+Target: historic dysfunction [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 40:
+Generated: [CLS]ra expression coliseumkley [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 18 [0/10 (0%)] Loss: 801.324524
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [35, 37, 39, 40, 41, 42, 43, 44, 45, 47, 50, 51, 54, 58, 59, 60, 62, 65, 66, 68, 69, 71, 73]
+Input sequence lengths: [512, 512, 512, 512, 121, 512, 78, 512, 512, 121, 512, 512, 388, 512, 145, 512, 366, 388, 512, 204, 512, 234, 512, 449, 512, 512, 87, 209, 366, 125, 512, 123]
+Target phrase lengths: [4, 4, 6, 4, 5, 8, 5, 6, 5, 4, 4, 7, 4, 6, 8, 8, 7, 3, 6, 4, 8, 7, 6, 6, 6, 7, 6, 4, 3, 7, 5, 7]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.385, 1.994]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 45 | True: 45
+Pred: 58 | True: 58
+Pred: 65 | True: 65
+
+Phrase Generation Sample:
+Generated: [SEP] representation [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: equal representation [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 31.431
+Generation Loss: 460.675
+Weighted Loss: 331.902
+Train Epoch: 19 [0/334 (0%)] Loss: 331.902069
+Train Epoch: 19 [64/334 (19%)] Loss: 369.696930
+Train Epoch: 19 [128/334 (38%)] Loss: 332.159485
+Train Epoch: 19 [192/334 (57%)] Loss: 360.104919
+Train Epoch: 19 [256/334 (77%)] Loss: 342.567078
+[2025-01-21 11:12:59] Starting validation for epoch: 19
+
+Generation Samples:
+Topic 38:
+Generated: [CLS] 5ul [unused918] [SEP]
+Target: byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 73:
+Generated: [CLS] number technically nonsense [SEP]
+Target: criminalizes abortion [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 44:
+Generated: [CLS] libraries licked bruce [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 19 [0/10 (0%)] Loss: 731.011719
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [35, 36, 39, 40, 41, 43, 44, 45, 47, 48, 52, 55, 58, 59, 60, 61, 63, 64, 65, 66, 68]
+Input sequence lengths: [204, 204, 512, 145, 512, 125, 121, 125, 356, 356, 512, 512, 125, 512, 512, 366, 512, 512, 512, 123, 512, 512, 512, 81, 512, 366, 159, 512, 512, 512, 512, 512]
+Target phrase lengths: [8, 8, 5, 8, 8, 5, 5, 6, 4, 4, 6, 6, 7, 6, 5, 6, 4, 4, 5, 8, 5, 7, 5, 6, 8, 7, 4, 8, 7, 8, 7, 7]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.357, 1.900]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 68 | True: 68
+Pred: 68 | True: 68
+Pred: 50 | True: 47
+
+Phrase Generation Sample:
+Generated: speaker - of their - and [SEP] [SEP] [SEP]
+Target: make decisions about their own bodies [SEP] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 31.460
+Generation Loss: 504.185
+Weighted Loss: 362.367
+Train Epoch: 20 [0/334 (0%)] Loss: 362.367096
+Train Epoch: 20 [64/334 (19%)] Loss: 294.901001
+Train Epoch: 20 [128/334 (38%)] Loss: 326.644440
+Train Epoch: 20 [192/334 (57%)] Loss: 330.778290
+Train Epoch: 20 [256/334 (77%)] Loss: 307.962158
+[2025-01-21 11:13:04] Starting validation for epoch: 20
+
+Generation Samples:
+Topic 66:
+Generated: [CLS] anti describing 1947 lifespanrgo [SEP]
+Target: rules resolution [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 44:
+Generated: [CLS] bottledguard [unused981] ya nyu [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 40:
+Generated: [CLS] gardinerlda disrupt lyonsrified [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 20 [0/10 (0%)] Loss: 785.778015
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [34, 36, 38, 40, 41, 43, 51, 52, 54, 55, 58, 60, 61, 62, 63, 64, 65, 66, 71, 72]
+Input sequence lengths: [512, 512, 449, 512, 512, 512, 512, 512, 159, 512, 356, 512, 512, 512, 258, 512, 91, 512, 123, 87, 123, 92, 449, 64, 512, 356, 125, 512, 159, 512, 258, 91]
+Target phrase lengths: [4, 6, 7, 4, 4, 7, 5, 5, 4, 8, 4, 4, 5, 7, 6, 5, 4, 8, 8, 8, 7, 7, 4, 8, 4, 5, 7, 4, 7, 7, 4, 6]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.423, 2.024]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 41 | True: 41
+Pred: 65 | True: 65
+Pred: 71 | True: 71
+
+Phrase Generation Sample:
+Generated: speaker to [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: democratic caucus [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 21.976
+Generation Loss: 417.046
+Weighted Loss: 298.525
+Train Epoch: 21 [0/334 (0%)] Loss: 298.524811
+Train Epoch: 21 [64/334 (19%)] Loss: 310.188080
+Train Epoch: 21 [128/334 (38%)] Loss: 302.533600
+Train Epoch: 21 [192/334 (57%)] Loss: 312.177734
+Train Epoch: 21 [256/334 (77%)] Loss: 339.104675
+[2025-01-21 11:13:15] Starting validation for epoch: 21
+
+Generation Samples:
+Topic 51:
+Generated: [CLS] americanberger cabbage tinted [SEP]
+Target: liberty and justice for all [SEP] [PAD] [PAD] [PAD]
+
+Topic 45:
+Generated: [CLS] statutory brothers knives suggesting [SEP]
+Target: diminish voices [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 52:
+Generated: [CLS] forkit scarcely watford [SEP]
+Target: compassionate congressional caseworkers [SEP] [PAD] [PAD] [PAD]
+
+Validation Epoch: 21 [0/10 (0%)] Loss: 763.781372
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [34, 36, 37, 41, 42, 43, 44, 47, 49, 52, 53, 54, 55, 56, 62, 63, 64, 65, 66, 67, 69, 70]
+Input sequence lengths: [234, 512, 512, 512, 512, 87, 334, 449, 512, 512, 236, 512, 512, 388, 334, 512, 125, 512, 123, 512, 356, 356, 512, 512, 512, 123, 512, 356, 512, 512, 64, 512]
+Target phrase lengths: [4, 5, 6, 5, 5, 6, 7, 5, 6, 8, 6, 4, 7, 3, 4, 6, 7, 4, 7, 8, 4, 3, 7, 7, 8, 8, 7, 4, 7, 8, 7, 8]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.245, 2.073]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 37 | True: 37
+Pred: 41 | True: 41
+Pred: 47 | True: 47
+
+Phrase Generation Sample:
+Generated: speaker democracy [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: expanding democracy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 34.184
+Generation Loss: 466.671
+Weighted Loss: 336.925
+Train Epoch: 22 [0/334 (0%)] Loss: 336.924561
+Train Epoch: 22 [64/334 (19%)] Loss: 302.362854
+Train Epoch: 22 [128/334 (38%)] Loss: 291.841919
+Train Epoch: 22 [192/334 (57%)] Loss: 306.612274
+Train Epoch: 22 [256/334 (77%)] Loss: 303.081451
+[2025-01-21 11:13:20] Starting validation for epoch: 22
+
+Generation Samples:
+Topic 44:
+Generated: [CLS] natalersant [SEP]
+Target: republican majority [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 43:
+Generated: [CLS] cavaliers liturgical preserved [SEP]
+Target: byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 52:
+Generated: [CLS] temporarily 150 service [SEP]
+Target: compassionate congressional caseworkers [SEP] [PAD] [PAD] [PAD]
+
+Validation Epoch: 22 [0/10 (0%)] Loss: 745.323853
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [35, 36, 37, 38, 40, 41, 42, 43, 45, 49, 51, 52, 53, 54, 55, 56, 58, 60, 62, 65, 66, 67, 72, 73]
+Input sequence lengths: [512, 234, 512, 92, 512, 91, 512, 512, 125, 512, 512, 512, 512, 512, 334, 512, 209, 512, 449, 145, 512, 512, 512, 356, 87, 91, 512, 512, 453, 92, 512, 512]
+Target phrase lengths: [8, 8, 5, 7, 5, 4, 5, 6, 7, 7, 4, 6, 6, 6, 6, 8, 4, 5, 4, 7, 8, 5, 6, 5, 6, 4, 8, 4, 8, 5, 4, 6]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.475, 2.101]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 65 | True: 65
+Pred: 37 | True: 37
+Pred: 54 | True: 54
+
+Phrase Generation Sample:
+Generated: speaker the of of the ethics [SEP] [SEP] [SEP]
+Target: gut the office of congressional ethics [SEP] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 15.723
+Generation Loss: 400.184
+Weighted Loss: 284.846
+Train Epoch: 23 [0/334 (0%)] Loss: 284.845947
+Train Epoch: 23 [64/334 (19%)] Loss: 247.654053
+Train Epoch: 23 [128/334 (38%)] Loss: 311.264221
+Train Epoch: 23 [192/334 (57%)] Loss: 277.749023
+Train Epoch: 23 [256/334 (77%)] Loss: 277.893188
+[2025-01-21 11:13:24] Starting validation for epoch: 23
+
+Generation Samples:
+Topic 59:
+Generated: [CLS] options [unused528] jagger [SEP]
+Target: spiritual guidance [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS]aries heaving [SEP]
+Target: nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] smuggling fiji feldman [SEP]
+Target: lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+Validation Epoch: 23 [0/10 (0%)] Loss: 768.559387
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [34, 35, 36, 39, 40, 41, 43, 44, 45, 47, 48, 54, 56, 57, 58, 60, 62, 64, 66, 68, 70]
+Input sequence lengths: [512, 512, 81, 512, 512, 449, 64, 453, 87, 123, 512, 512, 485, 512, 204, 449, 512, 145, 512, 236, 121, 512, 512, 123, 512, 512, 512, 125, 512, 512, 512, 123]
+Target phrase lengths: [6, 4, 5, 6, 4, 4, 7, 6, 6, 8, 5, 6, 8, 5, 8, 5, 6, 7, 8, 8, 5, 3, 5, 8, 4, 7, 5, 8, 8, 4, 6, 7]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.566, 2.183]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 60 | True: 60
+Pred: 54 | True: 54
+Pred: 48 | True: 48
+
+Phrase Generation Sample:
+Generated: speaker - the accreditation [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: 5 - star accreditation [SEP] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 31.773
+Generation Loss: 344.892
+Weighted Loss: 250.956
+Train Epoch: 24 [0/334 (0%)] Loss: 250.956146
+Train Epoch: 24 [64/334 (19%)] Loss: 292.009613
+Train Epoch: 24 [128/334 (38%)] Loss: 259.662262
+Train Epoch: 24 [192/334 (57%)] Loss: 288.497650
+Train Epoch: 24 [256/334 (77%)] Loss: 312.043976
+[2025-01-21 11:13:29] Starting validation for epoch: 24
+
+Generation Samples:
+Topic 51:
+Generated: [CLS] overwhelming debt subsidies [SEP]
+Target: liberty and justice for all [SEP] [PAD] [PAD] [PAD]
+
+Topic 59:
+Generated: [CLS] paddington coe chairman [SEP]
+Target: massive impact [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] restoration chesterfield cast [SEP]
+Target: democrats united [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 24 [0/10 (0%)] Loss: 741.214539
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 38, 39, 40, 41, 42, 43, 47, 48, 49, 53, 54, 55, 56, 58, 59, 64, 66, 67, 69]
+Input sequence lengths: [334, 125, 512, 512, 512, 512, 388, 512, 512, 512, 512, 125, 449, 512, 512, 512, 81, 512, 512, 512, 121, 356, 512, 512, 512, 137, 125, 512, 512, 512, 512, 366]
+Target phrase lengths: [4, 6, 4, 5, 5, 6, 3, 6, 7, 6, 4, 5, 8, 6, 4, 6, 6, 8, 7, 6, 4, 5, 7, 5, 4, 7, 6, 8, 7, 8, 7, 5]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.333, 2.102]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 53 | True: 53
+Pred: 43 | True: 43
+Pred: 49 | True: 49
+
+Phrase Generation Sample:
+Generated: speaker values [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: family values [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 30.014
+Generation Loss: 343.598
+Weighted Loss: 249.522
+Train Epoch: 25 [0/334 (0%)] Loss: 249.522446
+Train Epoch: 25 [64/334 (19%)] Loss: 267.625031
+Train Epoch: 25 [128/334 (38%)] Loss: 272.805084
+Train Epoch: 25 [192/334 (57%)] Loss: 247.753418
+Train Epoch: 25 [256/334 (77%)] Loss: 290.658112
+[2025-01-21 11:13:33] Starting validation for epoch: 25
+
+Generation Samples:
+Topic 44:
+Generated: [CLS] opportunity strands reaches [SEP]
+Target: republican majority [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 50:
+Generated: [CLS]stockea amplitude [SEP]
+Target: position of the speaker [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 40:
+Generated: [CLS] nominee types of [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 25 [0/10 (0%)] Loss: 772.618469
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 38, 40, 41, 42, 43, 44, 47, 49, 50, 54, 58, 59, 60, 61, 64, 66, 70, 72]
+Input sequence lengths: [512, 512, 512, 512, 159, 125, 512, 512, 512, 512, 123, 512, 258, 137, 453, 512, 512, 512, 512, 512, 91, 512, 512, 512, 512, 366, 512, 512, 366, 236, 512, 512]
+Target phrase lengths: [5, 6, 6, 4, 7, 4, 5, 6, 4, 4, 7, 5, 6, 7, 7, 4, 5, 4, 5, 8, 6, 6, 6, 8, 6, 5, 4, 8, 3, 8, 6, 4]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.191, 2.111]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 49 | True: 49
+Pred: 50 | True: 47
+Pred: 60 | True: 60
+
+Phrase Generation Sample:
+Generated: speaker people ' [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: american people first [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 41.247
+Generation Loss: 329.964
+Weighted Loss: 243.349
+Train Epoch: 26 [0/334 (0%)] Loss: 243.349106
+Train Epoch: 26 [64/334 (19%)] Loss: 284.766388
+Train Epoch: 26 [128/334 (38%)] Loss: 228.356262
+Train Epoch: 26 [192/334 (57%)] Loss: 265.299103
+Train Epoch: 26 [256/334 (77%)] Loss: 248.392593
+[2025-01-21 11:13:44] Starting validation for epoch: 26
+
+Generation Samples:
+Topic 51:
+Generated: [CLS] formulated weaknesses scrap spontaneously [SEP]
+Target: liberty and justice for all [SEP] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] created manuelusly bill [SEP]
+Target: lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+Topic 66:
+Generated: [CLS] thames rani pressures somewhere [SEP]
+Target: rules resolution [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 26 [0/10 (0%)] Loss: 789.299316
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 37, 38, 39, 41, 43, 44, 48, 52, 54, 55, 58, 59, 60, 61, 63, 64, 65, 66, 67, 69, 70, 71]
+Input sequence lengths: [121, 234, 366, 512, 512, 449, 81, 512, 512, 356, 512, 512, 512, 366, 123, 236, 512, 125, 356, 512, 159, 512, 512, 512, 388, 512, 512, 453, 512, 512, 512, 258]
+Target phrase lengths: [7, 7, 5, 6, 5, 4, 8, 8, 8, 4, 5, 5, 8, 6, 4, 8, 4, 6, 4, 5, 4, 4, 8, 4, 8, 6, 5, 6, 4, 8, 5, 6]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.192, 1.727]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 39 | True: 39
+Pred: 37 | True: 37
+Pred: 59 | True: 59
+
+Phrase Generation Sample:
+Generated: kevinkeem jeffries [SEP] [SEP] [SEP] [SEP]
+Target: hakeem jeffries [SEP] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 38.179
+Generation Loss: 353.805
+Weighted Loss: 259.117
+Train Epoch: 27 [0/334 (0%)] Loss: 259.117096
+Train Epoch: 27 [64/334 (19%)] Loss: 242.807343
+Train Epoch: 27 [128/334 (38%)] Loss: 246.525436
+Train Epoch: 27 [192/334 (57%)] Loss: 249.263199
+Train Epoch: 27 [256/334 (77%)] Loss: 248.662567
+[2025-01-21 11:13:49] Starting validation for epoch: 27
+
+Generation Samples:
+Topic 68:
+Generated: [CLS]odies authors robert [SEP]
+Target: bodily autonomy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 58:
+Generated: [CLS] proxy fuse tense [SEP]
+Target: political leaders [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 52:
+Generated: [CLS] lending 1848 jorge [SEP]
+Target: commitment to public service [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 27 [0/10 (0%)] Loss: 793.958496
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 38, 39, 40, 41, 43, 46, 49, 51, 53, 54, 55, 60, 61, 63, 64, 68, 70, 72]
+Input sequence lengths: [453, 123, 159, 204, 512, 159, 453, 512, 78, 125, 512, 512, 78, 204, 512, 204, 512, 236, 512, 356, 334, 512, 512, 512, 334, 258, 512, 512, 159, 121, 91, 512]
+Target phrase lengths: [8, 8, 7, 8, 8, 4, 6, 5, 7, 8, 6, 5, 5, 4, 7, 6, 5, 8, 8, 4, 4, 4, 4, 6, 6, 4, 6, 6, 4, 5, 6, 5]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.783, 1.744]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 41 | True: 41
+Pred: 43 | True: 43
+Pred: 61 | True: 61
+
+Phrase Generation Sample:
+Generated: speaker a speaker of of with [SEP] [SEP] [SEP]
+Target: elect a speaker who stands with [SEP] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 25.299
+Generation Loss: 323.498
+Weighted Loss: 234.038
+Train Epoch: 28 [0/334 (0%)] Loss: 234.038406
+Train Epoch: 28 [64/334 (19%)] Loss: 238.080872
+Train Epoch: 28 [128/334 (38%)] Loss: 229.555267
+Train Epoch: 28 [192/334 (57%)] Loss: 271.267792
+Train Epoch: 28 [256/334 (77%)] Loss: 244.120071
+[2025-01-21 11:13:54] Starting validation for epoch: 28
+
+Generation Samples:
+Topic 46:
+Generated: [CLS] [unused165] star spine [SEP]
+Target: open rule process [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] curt partisans literally [SEP]
+Target: talented [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 66:
+Generated: [CLS]openkos studies [SEP]
+Target: rules resolution [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 28 [0/10 (0%)] Loss: 774.402344
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [35, 38, 40, 41, 43, 45, 48, 51, 53, 54, 55, 56, 57, 60, 63, 64, 66, 72]
+Input sequence lengths: [512, 145, 92, 512, 137, 512, 453, 512, 268, 512, 512, 91, 145, 453, 356, 512, 125, 449, 512, 512, 512, 485, 512, 512, 453, 512, 81, 334, 512, 92, 512, 512]
+Target phrase lengths: [7, 7, 5, 8, 4, 8, 7, 8, 8, 5, 5, 4, 6, 7, 5, 5, 6, 5, 4, 8, 4, 8, 6, 5, 7, 4, 6, 6, 4, 5, 4, 5]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.968, 1.753]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 63 | True: 63
+Pred: 35 | True: 35
+Pred: 51 | True: 51
+
+Phrase Generation Sample:
+Generated: speaker authorization and oversight [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: committee authorization and oversight plans [SEP] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 44.851
+Generation Loss: 333.851
+Weighted Loss: 247.151
+Train Epoch: 29 [0/334 (0%)] Loss: 247.150742
+Train Epoch: 29 [64/334 (19%)] Loss: 193.059814
+Train Epoch: 29 [128/334 (38%)] Loss: 217.060669
+Train Epoch: 29 [192/334 (57%)] Loss: 239.908661
+Train Epoch: 29 [256/334 (77%)] Loss: 245.991684
+[2025-01-21 11:13:58] Starting validation for epoch: 29
+
+Generation Samples:
+Topic 44:
+Generated: [CLS] marketplace tufts. [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS] flavour vault bill [SEP]
+Target: government that is accountable [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 46:
+Generated: [CLS] opportunity flooded easing [SEP]
+Target: open rule process [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 29 [0/10 (0%)] Loss: 790.491028
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 37, 38, 39, 43, 44, 45, 46, 49, 50, 51, 53, 54, 55, 58, 59, 60, 61, 64, 66, 67, 69]
+Input sequence lengths: [512, 388, 78, 512, 512, 512, 512, 512, 366, 512, 512, 356, 512, 512, 512, 123, 512, 512, 512, 512, 334, 512, 121, 512, 258, 512, 512, 159, 234, 123, 512, 512]
+Target phrase lengths: [4, 3, 5, 7, 6, 4, 6, 6, 5, 4, 7, 4, 4, 5, 4, 8, 8, 4, 8, 8, 6, 8, 5, 6, 6, 5, 8, 5, 4, 7, 5, 5]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.574, 1.657]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 54 | True: 54
+Pred: 69 | True: 69
+Pred: 51 | True: 51
+
+Phrase Generation Sample:
+Generated: speaker commonwealth [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: douglass commonwealth [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 30.480
+Generation Loss: 292.273
+Weighted Loss: 213.735
+Train Epoch: 30 [0/334 (0%)] Loss: 213.734833
+Train Epoch: 30 [64/334 (19%)] Loss: 226.424911
+Train Epoch: 30 [128/334 (38%)] Loss: 199.859329
+Train Epoch: 30 [192/334 (57%)] Loss: 203.198120
+Train Epoch: 30 [256/334 (77%)] Loss: 220.426254
+[2025-01-21 11:14:03] Starting validation for epoch: 30
+
+Generation Samples:
+Topic 43:
+Generated: [CLS] cast serbia favored [SEP]
+Target: votes cast [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] decisions machpipe [SEP]
+Target: democrats united [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 68:
+Generated: [CLS] illustration difference outstanding [SEP]
+Target: bodily autonomy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 30 [0/10 (0%)] Loss: 778.539185
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 37, 38, 41, 42, 43, 45, 48, 51, 52, 53, 54, 55, 58, 59, 60, 63, 66, 67, 68, 72]
+Input sequence lengths: [512, 92, 366, 512, 512, 512, 512, 512, 334, 258, 91, 356, 512, 512, 512, 512, 125, 81, 125, 123, 366, 204, 512, 356, 453, 512, 512, 512, 512, 366, 234, 512]
+Target phrase lengths: [6, 5, 5, 7, 6, 4, 5, 6, 8, 6, 4, 4, 8, 4, 4, 6, 7, 5, 7, 8, 3, 8, 5, 4, 5, 5, 6, 6, 6, 5, 7, 6]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.569, 1.406]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 63 | True: 63
+Pred: 51 | True: 51
+Pred: 59 | True: 59
+
+Phrase Generation Sample:
+Generated: rules of the rules [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: adoption of the rules [SEP] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 28.914
+Generation Loss: 282.316
+Weighted Loss: 206.295
+Train Epoch: 31 [0/334 (0%)] Loss: 206.295410
+Train Epoch: 31 [64/334 (19%)] Loss: 216.583801
+Train Epoch: 31 [128/334 (38%)] Loss: 230.905457
+Train Epoch: 31 [192/334 (57%)] Loss: 175.975510
+Train Epoch: 31 [256/334 (77%)] Loss: 232.913345
+[2025-01-21 11:14:14] Starting validation for epoch: 31
+
+Generation Samples:
+Topic 58:
+Generated: [CLS] abortion auto hannibal [SEP]
+Target: civic engagement program [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 52:
+Generated: [CLS] refrain mina fontaine [SEP]
+Target: compassionate congressional caseworkers [SEP] [PAD] [PAD] [PAD]
+
+Topic 50:
+Generated: [CLS] family seventy ceasefire [SEP]
+Target: position of the speaker [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 31 [0/10 (0%)] Loss: 774.699951
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [34, 36, 38, 39, 40, 41, 42, 43, 47, 48, 51, 53, 55, 59, 60, 61, 63, 64, 65, 67, 68, 69]
+Input sequence lengths: [512, 512, 512, 512, 512, 512, 159, 512, 125, 78, 512, 512, 204, 121, 258, 512, 81, 512, 512, 512, 512, 512, 512, 334, 356, 512, 123, 512, 388, 366, 512, 64]
+Target phrase lengths: [6, 4, 8, 7, 6, 5, 4, 5, 6, 7, 6, 8, 8, 4, 6, 6, 6, 8, 6, 6, 5, 6, 5, 7, 5, 8, 8, 8, 3, 3, 5, 7]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-1.841, 1.765]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 60 | True: 60
+Pred: 36 | True: 36
+Pred: 63 | True: 63
+
+Phrase Generation Sample:
+Generated: nominate - and accreditation [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: 5 - star accreditation [SEP] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 34.551
+Generation Loss: 258.401
+Weighted Loss: 191.246
+Train Epoch: 32 [0/334 (0%)] Loss: 191.245575
+Train Epoch: 32 [64/334 (19%)] Loss: 185.479233
+Train Epoch: 32 [128/334 (38%)] Loss: 179.826752
+Train Epoch: 32 [192/334 (57%)] Loss: 220.243973
+Train Epoch: 32 [256/334 (77%)] Loss: 193.416092
+[2025-01-21 11:14:18] Starting validation for epoch: 32
+
+Generation Samples:
+Topic 41:
+Generated: [CLS] squash 1992 adoption [SEP]
+Target: historic dysfunction [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 52:
+Generated: [CLS] decisions [unused688] rules [SEP]
+Target: commitment to public service [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] fission rulesste [SEP]
+Target: lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+Validation Epoch: 32 [0/10 (0%)] Loss: 803.561523
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 40, 41, 42, 43, 45, 47, 48, 49, 51, 53, 54, 55, 58, 59, 62, 64, 65, 66, 68, 69, 70, 73]
+Input sequence lengths: [512, 512, 125, 512, 512, 512, 125, 123, 356, 87, 512, 268, 512, 78, 81, 512, 209, 204, 236, 209, 512, 512, 512, 512, 512, 334, 366, 356, 388, 512, 512, 512]
+Target phrase lengths: [5, 5, 4, 8, 4, 4, 7, 7, 4, 6, 8, 8, 6, 7, 8, 4, 4, 4, 8, 7, 6, 4, 7, 5, 8, 4, 5, 4, 4, 4, 5, 5]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.036, 1.301]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 40 | True: 36
+Pred: 64 | True: 64
+Pred: 44 | True: 43
+
+Phrase Generation Sample:
+Generated: speaker kevin mccarthy [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 39.259
+Generation Loss: 249.005
+Weighted Loss: 186.081
+Train Epoch: 33 [0/334 (0%)] Loss: 186.081009
+Train Epoch: 33 [64/334 (19%)] Loss: 175.289749
+Train Epoch: 33 [128/334 (38%)] Loss: 185.127518
+Train Epoch: 33 [192/334 (57%)] Loss: 186.066681
+Train Epoch: 33 [256/334 (77%)] Loss: 183.207642
+[2025-01-21 11:14:23] Starting validation for epoch: 33
+
+Generation Samples:
+Topic 64:
+Generated: [CLS] chichester pressured decisions [SEP]
+Target: written in rooms behind closed doors [SEP] [PAD] [PAD]
+
+Topic 43:
+Generated: [CLS] handlenight apologies [SEP]
+Target: votes cast [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 46:
+Generated: [CLS] order reigned officer [SEP]
+Target: collaborate and craft legislation [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 33 [0/10 (0%)] Loss: 749.274292
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 38, 41, 43, 44, 46, 49, 51, 52, 54, 56, 58, 59, 64, 67, 69, 70, 71]
+Input sequence lengths: [78, 512, 512, 512, 512, 512, 125, 512, 512, 512, 512, 512, 125, 366, 258, 512, 512, 453, 78, 449, 512, 449, 258, 258, 125, 388, 449, 512, 453, 512, 366, 236]
+Target phrase lengths: [7, 6, 6, 6, 3, 5, 7, 3, 4, 7, 6, 5, 8, 7, 4, 5, 4, 8, 7, 5, 6, 6, 6, 4, 6, 4, 4, 6, 7, 4, 6, 7]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.148, 1.338]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 34 | True: 51
+Pred: 58 | True: 58
+Pred: 38 | True: 38
+
+Phrase Generation Sample:
+Generated: speaker of the united states [SEP] [SEP] [SEP] [SEP]
+Target: flag of the united states [SEP] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 36.829
+Generation Loss: 237.757
+Weighted Loss: 177.479
+Train Epoch: 34 [0/334 (0%)] Loss: 177.478714
+Train Epoch: 34 [64/334 (19%)] Loss: 173.160233
+Train Epoch: 34 [128/334 (38%)] Loss: 195.924896
+Train Epoch: 34 [192/334 (57%)] Loss: 188.006180
+Train Epoch: 34 [256/334 (77%)] Loss: 199.123199
+[2025-01-21 11:14:28] Starting validation for epoch: 34
+
+Generation Samples:
+Topic 52:
+Generated: [CLS] leadership ' 114 [SEP]
+Target: commitment to public service [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 44:
+Generated: [CLS]anohid han [SEP]
+Target: republican majority [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 59:
+Generated: [CLS] will rutgers guidance [SEP]
+Target: massive impact [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 34 [0/10 (0%)] Loss: 775.375122
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [34, 36, 41, 43, 44, 45, 46, 47, 48, 53, 54, 55, 59, 60, 63, 64, 66, 68, 70, 71]
+Input sequence lengths: [64, 512, 512, 512, 512, 125, 512, 236, 512, 512, 449, 512, 81, 512, 512, 123, 512, 366, 512, 334, 512, 204, 125, 356, 512, 512, 334, 512, 236, 512, 512, 512]
+Target phrase lengths: [8, 4, 5, 6, 4, 7, 5, 8, 4, 5, 7, 8, 6, 5, 5, 8, 6, 5, 4, 4, 6, 4, 7, 4, 7, 7, 4, 7, 7, 3, 5, 8]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.138, 1.393]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 34 | True: 34
+Pred: 46 | True: 46
+Pred: 66 | True: 66
+
+Phrase Generation Sample:
+Generated: pledge in the pledge of allegiance [SEP] [SEP] [SEP]
+Target: join in the pledge of allegiance [SEP] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 22.131
+Generation Loss: 228.680
+Weighted Loss: 166.715
+Train Epoch: 35 [0/334 (0%)] Loss: 166.715424
+Train Epoch: 35 [64/334 (19%)] Loss: 177.612701
+Train Epoch: 35 [128/334 (38%)] Loss: 161.264603
+Train Epoch: 35 [192/334 (57%)] Loss: 175.294708
+Train Epoch: 35 [256/334 (77%)] Loss: 156.002945
+[2025-01-21 11:14:32] Starting validation for epoch: 35
+
+Generation Samples:
+Topic 41:
+Generated: [CLS]ched introductory framework [SEP]
+Target: talented [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 43:
+Generated: [CLS] decreasegan saul [SEP]
+Target: byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 58:
+Generated: [CLS] bach portrayedinho [SEP]
+Target: civic engagement program [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 35 [0/10 (0%)] Loss: 764.634583
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [34, 35, 36, 38, 40, 41, 43, 44, 46, 48, 49, 51, 56, 57, 60, 61, 64, 65, 67, 68, 70, 73]
+Input sequence lengths: [485, 512, 236, 268, 512, 92, 512, 78, 64, 512, 209, 204, 512, 512, 123, 81, 125, 512, 512, 159, 159, 209, 512, 512, 512, 449, 92, 145, 512, 453, 512, 512]
+Target phrase lengths: [8, 5, 5, 8, 7, 5, 8, 7, 7, 6, 4, 5, 4, 6, 8, 8, 4, 6, 6, 5, 4, 4, 5, 4, 8, 5, 7, 8, 4, 8, 6, 8]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.007, 1.258]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 57 | True: 57
+Pred: 47 | True: 46
+Pred: 73 | True: 70
+
+Phrase Generation Sample:
+Generated: united states sepak takra [SEP] [SEP] [SEP]
+Target: united states sepak takra [SEP] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 22.123
+Generation Loss: 222.660
+Weighted Loss: 162.499
+Train Epoch: 36 [0/334 (0%)] Loss: 162.499115
+Train Epoch: 36 [64/334 (19%)] Loss: 171.646454
+Train Epoch: 36 [128/334 (38%)] Loss: 190.513443
+Train Epoch: 36 [192/334 (57%)] Loss: 167.696243
+Train Epoch: 36 [256/334 (77%)] Loss: 177.353516
+[2025-01-21 11:14:43] Starting validation for epoch: 36
+
+Generation Samples:
+Topic 58:
+Generated: [CLS] colours chamber lissa [SEP]
+Target: civic engagement program [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 51:
+Generated: [CLS] geo dorothea commonwealth [SEP]
+Target: liberty and justice for all [SEP] [PAD] [PAD] [PAD]
+
+Topic 58:
+Generated: [CLS] d discouraged officer [SEP]
+Target: political leaders [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 36 [0/10 (0%)] Loss: 765.441406
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 39, 41, 44, 46, 47, 48, 49, 51, 53, 55, 58, 59, 60, 61, 62, 63, 65, 66, 68, 69, 71, 72]
+Input sequence lengths: [121, 512, 334, 512, 512, 453, 92, 366, 512, 388, 512, 159, 81, 356, 512, 121, 512, 512, 512, 512, 512, 449, 512, 512, 91, 87, 334, 512, 512, 204, 512, 512]
+Target phrase lengths: [5, 6, 8, 4, 6, 8, 5, 5, 6, 3, 5, 5, 5, 4, 8, 4, 8, 7, 4, 7, 6, 4, 8, 5, 4, 8, 4, 6, 4, 8, 5, 6]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.364, 1.069]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 39 | True: 39
+Pred: 36 | True: 36
+Pred: 53 | True: 53
+
+Phrase Generation Sample:
+Generated: ha not elected [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: speaker not elected [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 25.825
+Generation Loss: 211.741
+Weighted Loss: 155.966
+Train Epoch: 37 [0/334 (0%)] Loss: 155.966492
+Train Epoch: 37 [64/334 (19%)] Loss: 163.351654
+Train Epoch: 37 [128/334 (38%)] Loss: 153.503006
+Train Epoch: 37 [192/334 (57%)] Loss: 155.306259
+Train Epoch: 37 [256/334 (77%)] Loss: 166.288742
+[2025-01-21 11:14:48] Starting validation for epoch: 37
+
+Generation Samples:
+Topic 73:
+Generated: [CLS] mccarthyggyrled [SEP]
+Target: criminalizes abortion [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 43:
+Generated: [CLS]hem folly commemorating [SEP]
+Target: byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 58:
+Generated: [CLS] fairness ' tammy [SEP]
+Target: political leaders [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 37 [0/10 (0%)] Loss: 781.074890
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 37, 39, 40, 41, 42, 43, 47, 49, 51, 53, 54, 55, 56, 60, 62, 64, 65, 67, 68, 69, 70, 73]
+Input sequence lengths: [512, 356, 512, 137, 512, 449, 234, 356, 209, 512, 512, 512, 512, 236, 512, 512, 356, 512, 388, 334, 512, 334, 204, 512, 512, 92, 512, 121, 512, 512, 87, 512]
+Target phrase lengths: [6, 4, 5, 7, 5, 4, 4, 5, 7, 5, 6, 6, 8, 6, 4, 4, 4, 7, 3, 7, 5, 4, 8, 8, 7, 6, 5, 5, 5, 6, 8, 8]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.426, 1.210]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 49 | True: 49
+Pred: 55 | True: 55
+Pred: 40 | True: 36
+
+Phrase Generation Sample:
+Generated: trump ' accountability measures [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: veterans ' accountability measures [SEP] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 27.371
+Generation Loss: 190.503
+Weighted Loss: 141.564
+Train Epoch: 38 [0/334 (0%)] Loss: 141.563568
+Train Epoch: 38 [64/334 (19%)] Loss: 145.956940
+Train Epoch: 38 [128/334 (38%)] Loss: 186.362335
+Train Epoch: 38 [192/334 (57%)] Loss: 158.791992
+Train Epoch: 38 [256/334 (77%)] Loss: 163.762787
+[2025-01-21 11:14:53] Starting validation for epoch: 38
+
+Generation Samples:
+Topic 65:
+Generated: [CLS] atmosphere outstandingqa [SEP]
+Target: attack women ' s access to [SEP] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] nominee donald burnham [SEP]
+Target: historic dysfunction [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 68:
+Generated: [CLS]valent standing performance [SEP]
+Target: bodily autonomy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 38 [0/10 (0%)] Loss: 775.809570
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 38, 41, 42, 43, 51, 52, 54, 56, 57, 59, 63, 64, 66, 68, 70]
+Input sequence lengths: [512, 366, 512, 512, 92, 453, 512, 512, 449, 512, 512, 125, 512, 453, 512, 125, 204, 449, 137, 92, 512, 512, 258, 512, 485, 512, 453, 512, 236, 485, 512, 123]
+Target phrase lengths: [5, 6, 8, 4, 7, 8, 4, 6, 4, 4, 6, 5, 8, 7, 8, 7, 8, 5, 7, 5, 5, 5, 6, 6, 5, 8, 5, 8, 8, 8, 4, 4]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.350, 0.670]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 52 | True: 52
+Pred: 59 | True: 59
+Pred: 66 | True: 66
+
+Phrase Generation Sample:
+Generated: dedicated [SEP]ist [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: dedicated conservationist [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 37.033
+Generation Loss: 195.264
+Weighted Loss: 147.795
+Train Epoch: 39 [0/334 (0%)] Loss: 147.794678
+Train Epoch: 39 [64/334 (19%)] Loss: 147.947220
+Train Epoch: 39 [128/334 (38%)] Loss: 155.126389
+Train Epoch: 39 [192/334 (57%)] Loss: 154.574814
+Train Epoch: 39 [256/334 (77%)] Loss: 154.469498
+[2025-01-21 11:14:57] Starting validation for epoch: 39
+
+Generation Samples:
+Topic 61:
+Generated: [CLS] placing rehabilitation fallen [SEP]
+Target: officer training [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 65:
+Generated: [CLS] expertuh hubert [SEP]
+Target: attack women ' s access to [SEP] [PAD] [PAD]
+
+Topic 66:
+Generated: [CLS] renovations gaston bless [SEP]
+Target: rules resolution [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 39 [0/10 (0%)] Loss: 776.310852
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 39, 40, 41, 42, 44, 45, 47, 51, 52, 53, 54, 57, 59, 60, 64, 68, 69, 70, 71]
+Input sequence lengths: [453, 388, 512, 512, 485, 512, 268, 512, 512, 236, 512, 366, 512, 512, 121, 512, 512, 512, 366, 512, 236, 512, 512, 204, 512, 334, 512, 78, 92, 449, 334, 453]
+Target phrase lengths: [7, 3, 5, 7, 7, 6, 8, 4, 6, 5, 6, 3, 5, 6, 4, 3, 8, 6, 3, 5, 6, 8, 4, 8, 5, 7, 6, 7, 5, 4, 6, 7]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.728, 0.731]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 41 | True: 41
+Pred: 69 | True: 69
+Pred: 40 | True: 40
+
+Phrase Generation Sample:
+Generated: speaker to serve our constituents [SEP] [SEP] [SEP] [SEP]
+Target: responsibility to serve our constituents [SEP] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 35.876
+Generation Loss: 193.711
+Weighted Loss: 146.360
+Train Epoch: 40 [0/334 (0%)] Loss: 146.360428
+Train Epoch: 40 [64/334 (19%)] Loss: 151.217804
+Train Epoch: 40 [128/334 (38%)] Loss: 135.887009
+Train Epoch: 40 [192/334 (57%)] Loss: 154.106964
+Train Epoch: 40 [256/334 (77%)] Loss: 145.055389
+[2025-01-21 11:15:02] Starting validation for epoch: 40
+
+Generation Samples:
+Topic 47:
+Generated: [CLS] ' nightnem [SEP]
+Target: nominate the gentleman from oklahoma [SEP] [PAD] [PAD] [PAD]
+
+Topic 58:
+Generated: [CLS] economic articulatedstock [SEP]
+Target: civic engagement program [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 58:
+Generated: [CLS] companies talon businesses [SEP]
+Target: political leaders [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 40 [0/10 (0%)] Loss: 750.831909
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [34, 35, 36, 37, 38, 40, 41, 42, 47, 48, 53, 54, 55, 56, 57, 61, 63, 64, 65, 67, 69, 70]
+Input sequence lengths: [512, 234, 485, 512, 512, 512, 512, 356, 512, 512, 64, 512, 159, 449, 388, 512, 145, 453, 81, 512, 453, 512, 236, 512, 512, 64, 334, 512, 453, 485, 356, 512]
+Target phrase lengths: [5, 8, 5, 8, 8, 6, 5, 4, 4, 5, 5, 7, 4, 8, 4, 4, 7, 8, 5, 6, 7, 6, 8, 5, 5, 7, 6, 8, 7, 7, 4, 5]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.831, 0.890]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 50 | True: 47
+Pred: 42 | True: 37
+Pred: 42 | True: 57
+
+Phrase Generation Sample:
+Generated: speaker a leader [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: need a leader [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 29.366
+Generation Loss: 190.164
+Weighted Loss: 141.925
+Train Epoch: 41 [0/334 (0%)] Loss: 141.924820
+Train Epoch: 41 [64/334 (19%)] Loss: 133.215332
+Train Epoch: 41 [128/334 (38%)] Loss: 153.599747
+Train Epoch: 41 [192/334 (57%)] Loss: 136.413651
+Train Epoch: 41 [256/334 (77%)] Loss: 136.070740
+[2025-01-21 11:15:13] Starting validation for epoch: 41
+
+Generation Samples:
+Topic 66:
+Generated: [CLS]izing wrist focus [SEP]
+Target: rules resolution [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] alleyyla soloists [SEP]
+Target: lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS]oris ears essay [SEP]
+Target: historic dysfunction [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 41 [0/10 (0%)] Loss: 787.094360
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 38, 39, 41, 42, 43, 44, 46, 49, 51, 53, 54, 56, 60, 61, 64, 65, 66, 69, 70, 73]
+Input sequence lengths: [388, 123, 512, 512, 512, 449, 125, 209, 453, 512, 123, 512, 512, 236, 512, 512, 334, 121, 512, 78, 512, 512, 334, 512, 236, 512, 512, 512, 268, 512, 512, 159]
+Target phrase lengths: [8, 8, 5, 5, 4, 7, 6, 7, 6, 6, 7, 6, 4, 7, 8, 8, 6, 6, 5, 5, 5, 6, 6, 8, 5, 8, 6, 8, 8, 6, 7, 4]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.743, 0.795]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 34 | True: 69
+Pred: 43 | True: 43
+Pred: 47 | True: 46
+
+Phrase Generation Sample:
+Generated: fiscal - and - spend politics [SEP] [SEP] [SEP]
+Target: tax - and - spend politics [SEP] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 37.378
+Generation Loss: 178.721
+Weighted Loss: 136.318
+Train Epoch: 42 [0/334 (0%)] Loss: 136.317719
+Train Epoch: 42 [64/334 (19%)] Loss: 126.956825
+Train Epoch: 42 [128/334 (38%)] Loss: 134.538193
+Train Epoch: 42 [192/334 (57%)] Loss: 134.994705
+Train Epoch: 42 [256/334 (77%)] Loss: 138.015488
+[2025-01-21 11:15:17] Starting validation for epoch: 42
+
+Generation Samples:
+Topic 38:
+Generated: [CLS] ' about bragg [SEP]
+Target: byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 66:
+Generated: [CLS] fabrics ideas package [SEP]
+Target: rules resolution [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 44:
+Generated: [CLS] best additional protect [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 42 [0/10 (0%)] Loss: 764.068176
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [34, 35, 36, 37, 38, 39, 40, 41, 43, 45, 47, 48, 49, 55, 58, 59, 60, 64, 65, 66, 68]
+Input sequence lengths: [366, 512, 512, 145, 512, 234, 512, 125, 512, 512, 204, 121, 123, 512, 512, 512, 512, 512, 512, 204, 512, 204, 258, 356, 64, 512, 512, 512, 512, 512, 81, 512]
+Target phrase lengths: [3, 5, 6, 7, 5, 7, 5, 5, 4, 4, 8, 7, 8, 6, 4, 8, 3, 6, 6, 4, 7, 6, 4, 4, 8, 4, 4, 4, 4, 5, 6, 7]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.803, 0.994]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 59 | True: 59
+Pred: 36 | True: 36
+Pred: 36 | True: 36
+
+Phrase Generation Sample:
+Generated: grew [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: mentor [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 32.912
+Generation Loss: 143.721
+Weighted Loss: 110.479
+Train Epoch: 43 [0/334 (0%)] Loss: 110.478577
+Train Epoch: 43 [64/334 (19%)] Loss: 122.042007
+Train Epoch: 43 [128/334 (38%)] Loss: 136.215683
+Train Epoch: 43 [192/334 (57%)] Loss: 124.222946
+Train Epoch: 43 [256/334 (77%)] Loss: 130.267944
+[2025-01-21 11:15:22] Starting validation for epoch: 43
+
+Generation Samples:
+Topic 36:
+Generated: [CLS] 500 citizen voted [SEP]
+Target: government that is accountable [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS]vid states consideration [SEP]
+Target: nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 50:
+Generated: [CLS] american ravens twinned [SEP]
+Target: position of the speaker [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 43 [0/10 (0%)] Loss: 709.803589
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [34, 36, 38, 41, 43, 45, 46, 49, 50, 51, 53, 54, 55, 60, 63, 66, 67, 69, 71, 73]
+Input sequence lengths: [512, 449, 258, 356, 209, 334, 512, 512, 512, 64, 512, 512, 453, 512, 512, 512, 512, 125, 512, 388, 512, 512, 512, 78, 512, 209, 512, 512, 512, 512, 356, 268]
+Target phrase lengths: [4, 6, 6, 4, 4, 6, 6, 8, 4, 7, 4, 4, 6, 5, 5, 4, 4, 7, 6, 4, 6, 7, 5, 7, 6, 4, 5, 8, 7, 5, 4, 8]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.790, 0.670]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 60 | True: 60
+Pred: 39 | True: 71
+Pred: 47 | True: 38
+
+Phrase Generation Sample:
+Generated: local advocate [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: effective advocate [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 35.686
+Generation Loss: 162.908
+Weighted Loss: 124.741
+Train Epoch: 44 [0/334 (0%)] Loss: 124.741180
+Train Epoch: 44 [64/334 (19%)] Loss: 114.909714
+Train Epoch: 44 [128/334 (38%)] Loss: 126.092499
+Train Epoch: 44 [192/334 (57%)] Loss: 122.339569
+Train Epoch: 44 [256/334 (77%)] Loss: 124.607697
+[2025-01-21 11:15:27] Starting validation for epoch: 44
+
+Generation Samples:
+Topic 44:
+Generated: [CLS]60 charcoal house [SEP]
+Target: nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 43:
+Generated: [CLS] hello escape activities [SEP]
+Target: votes cast [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS] ensemble wise hushed [SEP]
+Target: nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 44 [0/10 (0%)] Loss: 804.257019
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [34, 35, 36, 41, 42, 43, 47, 48, 49, 51, 52, 54, 56, 58, 59, 60, 66, 69]
+Input sequence lengths: [512, 449, 512, 512, 512, 125, 512, 92, 512, 268, 512, 512, 453, 388, 512, 449, 512, 512, 512, 512, 145, 64, 123, 512, 512, 512, 123, 366, 81, 512, 512, 92]
+Target phrase lengths: [8, 4, 7, 5, 7, 7, 6, 7, 5, 8, 4, 4, 6, 4, 5, 5, 7, 6, 5, 6, 6, 7, 7, 5, 3, 5, 4, 5, 8, 8, 4, 5]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.801, 0.389]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 66 | True: 66
+Pred: 41 | True: 56
+Pred: 42 | True: 42
+
+Phrase Generation Sample:
+Generated: conduct - of - control spending [SEP] [SEP] [SEP]
+Target: out - of - control spending [SEP] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 52.397
+Generation Loss: 150.057
+Weighted Loss: 120.759
+Train Epoch: 45 [0/334 (0%)] Loss: 120.758904
+Train Epoch: 45 [64/334 (19%)] Loss: 106.855721
+Train Epoch: 45 [128/334 (38%)] Loss: 123.648689
+Train Epoch: 45 [192/334 (57%)] Loss: 116.195671
+Train Epoch: 45 [256/334 (77%)] Loss: 114.288528
+[2025-01-21 11:15:31] Starting validation for epoch: 45
+
+Generation Samples:
+Topic 50:
+Generated: [CLS]ize victory their [SEP]
+Target: position of the speaker [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 40:
+Generated: [CLS] citizenunder congress [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 44:
+Generated: [CLS] equal haveida [SEP]
+Target: nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 45 [0/10 (0%)] Loss: 791.268738
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 37, 38, 41, 42, 43, 45, 46, 47, 48, 49, 51, 52, 54, 56, 58, 60, 61, 66, 67, 71]
+Input sequence lengths: [125, 512, 159, 512, 512, 81, 512, 78, 512, 512, 512, 512, 512, 512, 258, 512, 512, 512, 125, 512, 449, 512, 449, 512, 512, 123, 449, 512, 512, 125, 234, 512]
+Target phrase lengths: [5, 4, 7, 8, 4, 6, 6, 7, 6, 4, 5, 6, 5, 5, 6, 4, 8, 7, 7, 5, 4, 5, 5, 6, 5, 8, 4, 4, 8, 6, 4, 5]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.841, 0.739]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 44 | True: 43
+Pred: 66 | True: 66
+Pred: 42 | True: 61
+
+Phrase Generation Sample:
+Generated: speaker mccarthyn [SEP] the [SEP] [SEP] [SEP] [SEP]
+Target: kevin hern [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 46.947
+Generation Loss: 141.175
+Weighted Loss: 112.906
+Train Epoch: 46 [0/334 (0%)] Loss: 112.906242
+Train Epoch: 46 [64/334 (19%)] Loss: 115.985588
+Train Epoch: 46 [128/334 (38%)] Loss: 109.661293
+Train Epoch: 46 [192/334 (57%)] Loss: 117.016609
+Train Epoch: 46 [256/334 (77%)] Loss: 112.124359
+[2025-01-21 11:15:42] Starting validation for epoch: 46
+
+Generation Samples:
+Topic 44:
+Generated: [CLS] changeed lewis [SEP]
+Target: republican majority [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] best. cast [SEP]
+Target: historic dysfunction [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 40:
+Generated: [CLS] leadership victory leader [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 46 [0/10 (0%)] Loss: 770.278992
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [35, 36, 37, 39, 40, 41, 43, 44, 45, 46, 49, 54, 55, 56, 59, 60, 64, 68, 69]
+Input sequence lengths: [512, 356, 234, 512, 512, 449, 356, 512, 388, 512, 453, 512, 512, 512, 268, 512, 512, 512, 137, 356, 204, 145, 366, 125, 512, 512, 125, 512, 512, 121, 366, 512]
+Target phrase lengths: [6, 5, 4, 5, 5, 8, 4, 5, 4, 8, 8, 5, 4, 6, 8, 8, 5, 5, 4, 4, 8, 6, 3, 7, 6, 5, 8, 8, 8, 7, 5, 5]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-3.611, 0.331]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 44 | True: 46
+Pred: 43 | True: 55
+Pred: 43 | True: 37
+
+Phrase Generation Sample:
+Generated: equal - subject legislation [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: single - subject legislation [SEP] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 50.150
+Generation Loss: 130.981
+Weighted Loss: 106.732
+Train Epoch: 47 [0/334 (0%)] Loss: 106.731567
+Train Epoch: 47 [64/334 (19%)] Loss: 97.805130
+Train Epoch: 47 [128/334 (38%)] Loss: 99.093262
+Train Epoch: 47 [192/334 (57%)] Loss: 107.331406
+Train Epoch: 47 [256/334 (77%)] Loss: 109.981934
+[2025-01-21 11:15:47] Starting validation for epoch: 47
+
+Generation Samples:
+Topic 41:
+Generated: [CLS] numerous lewis bodily [SEP]
+Target: lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+Topic 50:
+Generated: [CLS] purposenea government [SEP]
+Target: position of the speaker [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 46:
+Generated: [CLS] thomas rules straw [SEP]
+Target: collaborate and craft legislation [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 47 [0/10 (0%)] Loss: 772.965576
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 37, 38, 39, 40, 42, 43, 44, 47, 49, 50, 51, 53, 54, 59, 60, 62, 63, 66, 67, 69, 70, 71, 72]
+Input sequence lengths: [512, 87, 388, 512, 512, 334, 234, 366, 449, 512, 512, 91, 512, 92, 512, 512, 91, 512, 512, 236, 388, 512, 512, 512, 125, 121, 512, 512, 512, 236, 512, 512]
+Target phrase lengths: [4, 6, 8, 4, 5, 6, 4, 5, 4, 4, 4, 4, 6, 6, 6, 5, 4, 6, 6, 7, 4, 5, 5, 4, 6, 5, 6, 4, 8, 8, 5, 7]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-3.284, 0.597]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 66 | True: 66
+Pred: 43 | True: 62
+Pred: 44 | True: 69
+
+Phrase Generation Sample:
+Generated: fiscal rules [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: house rules [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 38.695
+Generation Loss: 125.422
+Weighted Loss: 99.404
+Train Epoch: 48 [0/334 (0%)] Loss: 99.403725
+Train Epoch: 48 [64/334 (19%)] Loss: 90.311958
+Train Epoch: 48 [128/334 (38%)] Loss: 115.128616
+Train Epoch: 48 [192/334 (57%)] Loss: 107.693764
+Train Epoch: 48 [256/334 (77%)] Loss: 107.747169
+[2025-01-21 11:15:51] Starting validation for epoch: 48
+
+Generation Samples:
+Topic 58:
+Generated: [CLS] confrontkulamary [SEP]
+Target: political leaders [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 50:
+Generated: [CLS] respecting decisions faa [SEP]
+Target: position of the speaker [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 38:
+Generated: [CLS]ben incense control [SEP]
+Target: byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 48 [0/10 (0%)] Loss: 788.494812
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [35, 36, 38, 40, 41, 42, 49, 50, 51, 53, 54, 55, 60, 61, 63, 65, 66, 67, 68, 69, 70, 71]
+Input sequence lengths: [145, 92, 512, 512, 512, 512, 236, 512, 334, 512, 356, 512, 512, 512, 512, 512, 512, 512, 258, 512, 512, 512, 512, 449, 204, 453, 512, 512, 388, 159, 512, 268]
+Target phrase lengths: [8, 5, 5, 4, 4, 6, 8, 5, 4, 8, 4, 4, 4, 6, 5, 8, 6, 4, 6, 8, 8, 5, 6, 4, 5, 6, 8, 5, 4, 5, 6, 8]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.432, 0.479]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 44 | True: 35
+Pred: 43 | True: 51
+Pred: 40 | True: 36
+
+Phrase Generation Sample:
+Generated: address and upholding order and [SEP] [SEP] [SEP]
+Target: respecting and upholding order and [SEP] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 34.235
+Generation Loss: 127.447
+Weighted Loss: 99.484
+Train Epoch: 49 [0/334 (0%)] Loss: 99.483566
+Train Epoch: 49 [64/334 (19%)] Loss: 97.099045
+Train Epoch: 49 [128/334 (38%)] Loss: 102.417343
+Train Epoch: 49 [192/334 (57%)] Loss: 88.518539
+Train Epoch: 49 [256/334 (77%)] Loss: 104.489388
+[2025-01-21 11:15:56] Starting validation for epoch: 49
+
+Generation Samples:
+Topic 44:
+Generated: [CLS] d conduct referencing [SEP]
+Target: nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] population nominee transferred [SEP]
+Target: historic dysfunction [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 61:
+Generated: [CLS] americans committeecala [SEP]
+Target: officer training [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 49 [0/10 (0%)] Loss: 783.735291
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 38, 40, 42, 43, 44, 45, 46, 51, 54, 55, 56, 57, 62, 63, 65, 66, 67, 68, 70, 71, 72]
+Input sequence lengths: [449, 512, 512, 512, 449, 356, 91, 258, 512, 485, 123, 512, 356, 92, 512, 512, 512, 512, 512, 87, 512, 204, 512, 512, 137, 512, 512, 258, 512, 356, 512, 236]
+Target phrase lengths: [4, 4, 5, 4, 4, 5, 4, 4, 6, 8, 8, 4, 4, 5, 8, 5, 8, 6, 8, 6, 5, 5, 5, 7, 7, 6, 6, 6, 6, 4, 5, 8]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.705, 0.450]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 56 | True: 56
+Pred: 66 | True: 66
+Pred: 44 | True: 44
+
+Phrase Generation Sample:
+Generated: greatest neighbor [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: greatest neighbor [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 25.647
+Generation Loss: 109.989
+Weighted Loss: 84.686
+Train Epoch: 50 [0/334 (0%)] Loss: 84.686241
+Train Epoch: 50 [64/334 (19%)] Loss: 91.349297
+Train Epoch: 50 [128/334 (38%)] Loss: 95.720795
+Train Epoch: 50 [192/334 (57%)] Loss: 98.219139
+Train Epoch: 50 [256/334 (77%)] Loss: 93.712547
+[2025-01-21 11:16:01] Starting validation for epoch: 50
+
+Generation Samples:
+Topic 47:
+Generated: [CLS] waves advocates adds [SEP]
+Target: nominate the gentleman from oklahoma [SEP] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS] marketplace folkll [SEP]
+Target: nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 44:
+Generated: [CLS] driver dialogue their [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 50 [0/10 (0%)] Loss: 782.033508
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [34, 35, 36, 37, 39, 41, 42, 43, 44, 46, 52, 54, 55, 59, 61, 63, 64, 66, 67, 68]
+Input sequence lengths: [64, 512, 356, 512, 512, 512, 125, 512, 512, 512, 159, 512, 512, 145, 159, 234, 204, 366, 121, 512, 512, 512, 512, 356, 512, 512, 125, 512, 512, 512, 453, 512]
+Target phrase lengths: [7, 6, 4, 5, 5, 4, 4, 6, 8, 8, 4, 5, 6, 8, 4, 4, 6, 7, 6, 5, 5, 3, 5, 5, 5, 5, 6, 7, 6, 5, 6, 4]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.681, 0.547]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 34 | True: 34
+Pred: 63 | True: 63
+Pred: 55 | True: 55
+
+Phrase Generation Sample:
+Generated: pledge the pledge of allegiance [SEP] [SEP] [SEP] [SEP]
+Target: led the pledge of allegiance [SEP] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 51.619
+Generation Loss: 112.820
+Weighted Loss: 94.460
+Train Epoch: 51 [0/334 (0%)] Loss: 94.459595
+Train Epoch: 51 [64/334 (19%)] Loss: 90.444603
+Train Epoch: 51 [128/334 (38%)] Loss: 85.038391
+Train Epoch: 51 [192/334 (57%)] Loss: 89.428909
+Train Epoch: 51 [256/334 (77%)] Loss: 99.776810
+[2025-01-21 11:16:12] Starting validation for epoch: 51
+
+Generation Samples:
+Topic 41:
+Generated: [CLS] di upland ua [SEP]
+Target: democrats united [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 52:
+Generated: [CLS] decisions myles cast [SEP]
+Target: public service [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 46:
+Generated: [CLS] spendingbreaker their [SEP]
+Target: open rule process [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 51 [0/10 (0%)] Loss: 762.372681
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 42, 43, 44, 46, 47, 49, 50, 51, 53, 54, 55, 60, 63, 66, 68, 70, 71, 72, 73]
+Input sequence lengths: [512, 512, 204, 512, 91, 512, 125, 512, 512, 512, 512, 512, 512, 512, 512, 123, 512, 512, 209, 91, 356, 334, 236, 512, 449, 512, 512, 512, 125, 512, 92, 356]
+Target phrase lengths: [8, 6, 4, 6, 4, 3, 7, 5, 6, 4, 5, 6, 7, 5, 7, 7, 5, 8, 7, 4, 4, 7, 7, 5, 6, 8, 4, 4, 7, 8, 7, 4]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.212, 0.476]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 44 | True: 66
+Pred: 36 | True: 36
+Pred: 68 | True: 68
+
+Phrase Generation Sample:
+Generated: fiscal for the biden administration [SEP] [SEP] [SEP]
+Target: accountability for the biden administration [SEP] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 42.401
+Generation Loss: 111.098
+Weighted Loss: 90.489
+Train Epoch: 52 [0/334 (0%)] Loss: 90.489067
+Train Epoch: 52 [64/334 (19%)] Loss: 87.309387
+Train Epoch: 52 [128/334 (38%)] Loss: 82.001335
+Train Epoch: 52 [192/334 (57%)] Loss: 97.508430
+Train Epoch: 52 [256/334 (77%)] Loss: 87.897583
+[2025-01-21 11:16:16] Starting validation for epoch: 52
+
+Generation Samples:
+Topic 73:
+Generated: [CLS] leadership rashid discipline [SEP]
+Target: criminalizes abortion [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS] additional saved clements [SEP]
+Target: nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] greatest acceleration mandatory [SEP]
+Target: democrats united [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Validation Epoch: 52 [0/10 (0%)] Loss: 727.189087
+
+[DEBUG] Batch Information:
+Document IDs shape: torch.Size([32])
+Topic IDs shape: torch.Size([32])
+Unique topics in batch: [36, 37, 38, 40, 41, 42, 43, 44, 47, 48, 49, 50, 51, 53, 54, 55, 56, 60, 61, 63, 66, 67, 68, 71]
+Input sequence lengths: [204, 81, 512, 512, 453, 453, 512, 92, 137, 512, 449, 512, 512, 512, 125, 234, 512, 449, 512, 512, 449, 449, 512, 356, 159, 512, 512, 512, 512, 334, 512, 204]
+Target phrase lengths: [4, 6, 5, 8, 6, 8, 8, 5, 4, 4, 4, 4, 5, 4, 5, 4, 8, 5, 6, 7, 4, 7, 7, 5, 4, 6, 4, 6, 6, 6, 4, 8]
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-2.516, 0.490]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 43 | True: 68
+Pred: 48 | True: 48
+Pred: 43 | True: 54
+
+Phrase Generation Sample:
+Generated: women rights [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: abortion rights [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Batch 0 Losses:
+Similarity Loss: 47.098
+Generation Loss: 103.894
+Weighted Loss: 86.855
+Train Epoch: 53 [0/334 (0%)] Loss: 86.854797
+Train Epoch: 53 [64/334 (19%)] Loss: 80.042862
+Train Epoch: 53 [128/334 (38%)] Loss: 89.525307
+Train Epoch: 53 [192/334 (57%)] Loss: 90.911049
+Train Epoch: 53 [256/334 (77%)] Loss: 85.533813
+[2025-01-21 11:16:21] Starting validation for epoch: 53
+
+Generation Samples:
+Topic 52:
+Generated: [CLS] pro bodilyam [SEP]
+Target: public service [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS] equality vh1 filter [SEP]
+Target: nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 47:
+Generated: [CLS] speaker officer about [SEP]
+Target: nominate the gentleman from oklahoma [SEP] [PAD] [PAD] [PAD]
+
+Validation Epoch: 53 [0/10 (0%)] Loss: 794.077087
