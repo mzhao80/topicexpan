@@ -52,7 +52,7 @@
         "embedding_sim"
     ],
     "trainer": {
-        "epochs": 60,
+        "epochs": 200,
         "save_dir": "congress-save",
         "save_period": 5,
         "verbosity": 2,

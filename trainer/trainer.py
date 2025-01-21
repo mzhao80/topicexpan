@@ -51,6 +51,13 @@ class Trainer(BaseTrainer):
         """
         self.model.train()
         self.train_metrics.reset()
+        
+        # Loss weights - give more weight to generation loss
+        sim_weight = 0.3
+        gen_weight = 0.7
+        
+        # Gradient clipping norm
+        max_grad_norm = 1.0
 
         for batch_idx, batch_data in enumerate(self.data_loader):
             doc_ids, doc_infos, topic_ids, phrase_infos = batch_data
@@ -100,17 +107,23 @@ class Trainer(BaseTrainer):
             
             sim_loss = self.criterions['sim'](sim_score, sim_target)
             gen_loss = self.criterions['gen'](gen_score, gen_target)
-            loss = sim_loss + gen_loss
+            
+            # Apply loss weights
+            loss = sim_weight * sim_loss + gen_weight * gen_loss
             
             # Debug: Check loss values
             if batch_idx % 100 == 0:
                 debug_info = f"\n[DEBUG] Batch {batch_idx} Losses:"
                 debug_info += f"\nSimilarity Loss: {sim_loss.item():.3f}"
                 debug_info += f"\nGeneration Loss: {gen_loss.item():.3f}"
-                debug_info += f"\nTotal Loss: {loss.item():.3f}"
+                debug_info += f"\nWeighted Loss: {loss.item():.3f}"
                 self.log_info(debug_info)
 
             loss.backward()
+            
+            # Clip gradients
+            torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_grad_norm)
+            
             self.optimizer.step()
 
             self.writer.set_step((epoch - 1) * self.len_epoch + batch_idx)

@@ -10,7 +10,7 @@ from torch.nn import init, TransformerDecoderLayer, TransformerDecoder
 import dgl
 import dgl.function as fn
 from dgl.nn.pytorch.conv import GraphConv
-from transformers import AutoModel, AutoConfig
+from transformers import AutoModel, AutoConfig, AutoTokenizer
 from base import BaseModel
 
 """
@@ -245,6 +245,16 @@ class TransformerPhraseDecoder(BaseModel):
         self.pad_token_id = pad_token_id
         self.bos_token_id = bos_token_id
         self.eos_token_id = eos_token_id
+        
+        # Create valid token mask (only allow ASCII characters and special tokens)
+        self.valid_tokens = torch.zeros(self.vocab_size, dtype=torch.bool)
+        tokenizer = self.input_embeddings.tokenizer
+        for i in range(self.vocab_size):
+            token = tokenizer.convert_ids_to_tokens(i)
+            # Allow token if it's ASCII or a special token
+            is_special = token.startswith('[') and token.endswith(']')
+            is_ascii = all(ord(c) < 128 for c in token)
+            self.valid_tokens[i] = is_special or is_ascii
 
     def _make_causal_mask(self, x):
         # Create causal mask for decoder
@@ -299,8 +309,8 @@ class TransformerPhraseDecoder(BaseModel):
         context = self.context_norm(self.context_proj(context))
         
         # Initialize sampling parameters
-        temperature = 0.8  # Slightly higher temperature for more diversity
-        top_p = 0.9  # Use nucleus sampling
+        temperature = 0.8
+        top_p = 0.9
         min_tokens = 3  # Minimum number of tokens to generate
         
         generated_tokens = []
@@ -309,6 +319,12 @@ class TransformerPhraseDecoder(BaseModel):
             # Get logits from decoder
             logits = self.forward(current_token, context)
             next_token_logits = logits[:, -1, :] / temperature
+            
+            # Mask out PAD token (prefer SEP for ending)
+            next_token_logits[:, self.pad_token_id] = float('-inf')
+            
+            # Apply vocabulary filtering
+            next_token_logits[~self.valid_tokens] = float('-inf')
             
             # Apply nucleus sampling
             sorted_logits, sorted_indices = torch.sort(next_token_logits, descending=True)
@@ -331,8 +347,82 @@ class TransformerPhraseDecoder(BaseModel):
             current_token = torch.cat([current_token, next_token], dim=1)
             generated_tokens.append(next_token)
             
-            # Stop if all sequences have generated EOS token
-            if step >= min_tokens and (next_token == self.eos_token_id).all():
+            # Stop if SEP token is generated
+            if (next_token == self.eos_token_id).any():
+                # Replace everything after SEP with SEP
+                for b in range(batch_size):
+                    if next_token[b] == self.eos_token_id:
+                        current_token[b, -1] = self.eos_token_id
                 break
         
+        # Post-process: ensure sequences start with CLS and end with SEP
+        for b in range(batch_size):
+            # Find first SEP token
+            sep_pos = (current_token[b] == self.eos_token_id).nonzero()
+            if len(sep_pos) > 0:
+                # Keep only up to first SEP
+                current_token[b, sep_pos[0]+1:] = self.eos_token_id
+            else:
+                # If no SEP, append it
+                current_token[b, -1] = self.eos_token_id
+    
         return current_token
+
+"""
+    5. Topic Expansion Model
+"""
+class TopicExpansionModel(BaseModel):
+    def __init__(self, bert_model_name, num_topics, max_length, use_flash_attention=False):
+        super().__init__()
+        self.bert = AutoModel.from_pretrained(bert_model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(bert_model_name)
+        self.num_topics = num_topics
+        
+        # Add topic embeddings with normalization
+        self.topic_embeddings = nn.Parameter(torch.randn(num_topics, self.bert.config.hidden_size))
+        self.topic_norm = nn.LayerNorm(self.bert.config.hidden_size)
+        
+        # Add similarity temperature parameter (learnable)
+        self.sim_temperature = nn.Parameter(torch.ones(1))
+        
+        # Initialize decoder
+        self.decoder = TransformerPhraseDecoder(
+            input_embeddings=self.bert.embeddings,
+            pad_token_id=self.tokenizer.pad_token_id,
+            bos_token_id=self.tokenizer.cls_token_id,
+            eos_token_id=self.tokenizer.sep_token_id,
+            num_layers=6,
+            num_heads=12,
+            max_length=max_length,
+            use_flash_attention=use_flash_attention
+        )
+
+    def forward(self, encoder_input, decoder_input=None, topic_ids=None):
+        # Get document embeddings
+        encoder_output = self.bert(**encoder_input).last_hidden_state[:, 0]  # Use CLS token
+        
+        # Normalize topic embeddings
+        normalized_topics = self.topic_norm(self.topic_embeddings)
+        normalized_docs = F.normalize(encoder_output, dim=-1)
+        
+        # Calculate similarity scores with temperature
+        sim_scores = torch.matmul(normalized_docs, normalized_topics.t())
+        sim_scores = sim_scores / self.sim_temperature
+        
+        if decoder_input is not None and topic_ids is not None:
+            # Get topic embeddings for the target topics
+            topic_context = normalized_topics[topic_ids]
+            
+            # Generate phrases
+            gen_scores = self.decoder(decoder_input, topic_context)
+            return sim_scores, gen_scores
+        
+        return sim_scores
+
+    def gen(self, encoder_input, topic_ids):
+        # Get normalized topic embeddings
+        normalized_topics = self.topic_norm(self.topic_embeddings)
+        topic_context = normalized_topics[topic_ids]
+        
+        # Generate phrases
+        return self.decoder.generate(topic_context)
