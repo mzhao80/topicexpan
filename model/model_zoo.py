@@ -428,26 +428,26 @@ class TransformerPhraseDecoder(BaseModel):
             # Stop if SEP token is generated
             if (next_token == self.eos_token_id).any():
                 break
+        
+        # Post-process: ensure sequences end with SEP and handle padding
+        for b in range(batch_size):
+            # Find first SEP token
+            sep_pos = (current_token[b] == self.eos_token_id).nonzero()
+            if len(sep_pos) > 0:
+                # Keep only up to first SEP, pad the rest
+                current_token[b, sep_pos[0]+1:] = self.pad_token_id
+            else:
+                # If no SEP, append it
+                current_token = torch.cat([current_token, torch.full((batch_size, 1), self.eos_token_id, device=context.device)], dim=1)
+        
+        # Debug final output
+        print(f"\nFinal generation:")
+        print(f"Output shape: {current_token.shape}")
+        for b in range(min(2, batch_size)):  # Show first 2 examples
+            tokens = [self.tokenizer.convert_ids_to_tokens(t.item()) for t in current_token[b]]
+            print(f"Sample {b}: {' '.join(tokens)}")
     
-    # Post-process: ensure sequences end with SEP and handle padding
-    for b in range(batch_size):
-        # Find first SEP token
-        sep_pos = (current_token[b] == self.eos_token_id).nonzero()
-        if len(sep_pos) > 0:
-            # Keep only up to first SEP, pad the rest
-            current_token[b, sep_pos[0]+1:] = self.pad_token_id
-        else:
-            # If no SEP, append it
-            current_token = torch.cat([current_token, torch.full((batch_size, 1), self.eos_token_id, device=context.device)], dim=1)
-    
-    # Debug final output
-    print(f"\nFinal generation:")
-    print(f"Output shape: {current_token.shape}")
-    for b in range(min(2, batch_size)):  # Show first 2 examples
-        tokens = [self.tokenizer.convert_ids_to_tokens(t.item()) for t in current_token[b]]
-        print(f"Sample {b}: {' '.join(tokens)}")
-    
-    return current_token
+        return current_token
 
 """
     5. Topic Expansion Model
