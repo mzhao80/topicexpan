@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn.parameter import Parameter
-from torch.nn import init, TransformerDecoderLayer, TransformerDecoder
+from torch.nn import init, TransformerEncoderLayer
 
 import dgl
 import dgl.function as fn
@@ -259,9 +259,9 @@ class TransformerPhraseDecoder(nn.Module):
         self.context_proj = nn.Linear(384, self.hidden_size)  # 384 is MiniLM hidden size
         self.topic_attention = nn.MultiheadAttention(self.hidden_size, num_heads, batch_first=True)
         
-        # Transformer layers
+        # Transformer layers (using encoder layers since we have separate cross-attention)
         self.layers = nn.ModuleList([
-            TransformerDecoderLayer(
+            TransformerEncoderLayer(
                 d_model=self.hidden_size,
                 nhead=num_heads,
                 dim_feedforward=4*self.hidden_size,
@@ -303,9 +303,15 @@ class TransformerPhraseDecoder(nn.Module):
             value=context
         )[0]
         
+        # Create attention mask to prevent attending to padding tokens
+        if isinstance(x, dict) and 'attention_mask' in x:
+            padding_mask = ~x['attention_mask'].bool()
+        else:
+            padding_mask = None
+            
         # Pass through transformer layers
         for layer in self.layers:
-            x = layer(x)
+            x = layer(x, src_key_padding_mask=padding_mask)
             
         # Project to vocabulary
         x = self.output_layer(x)
