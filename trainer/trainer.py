@@ -17,21 +17,13 @@ class Trainer(BaseTrainer):
     """
     def __init__(self, model, criterions, metric_ftns, optimizer, config, data_loader,
                  valid_data_loader=None, test_data_loader=None, dataset=None):
-        super().__init__(model, optimizer, config)
-        self.config = config
+        super().__init__(model, criterions, metric_ftns, optimizer, config)
         self.data_loader = data_loader
         self.valid_data_loader = valid_data_loader
         self.test_data_loader = test_data_loader
         self.dataset = dataset
         self.do_validation = self.valid_data_loader is not None
         self.log_step = int(np.sqrt(data_loader.batch_size))
-        self.criterions = criterions
-        self.mnt_mode = config['trainer'].get('monitor', 'off')
-        self.mnt_metric = config['trainer'].get('monitor_metric', 'val_loss')
-        self.mnt_best = float('inf')
-        self.early_stop = config['trainer'].get('early_stop', float('inf'))
-        self.save_period = config['trainer'].get('save_period', 1)
-        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         
         # Initialize learning rate scheduler if specified in config
         scheduler_config = config['trainer'].get('lr_scheduler', None)
