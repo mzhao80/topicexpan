@@ -73,7 +73,7 @@ def main(config):
         os.remove('discovered_topics.json')
         
     # Start recursive expansion
-    trainer.infer(config['expansion'], max_depth=3)
+    trainer.infer(config=config['expansion'])
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser(description='TopicExpan')

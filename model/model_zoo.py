@@ -165,23 +165,13 @@ class GCNTopicEncoder(BaseModel):
         parent2virtualh = {}
         virtual_id = self.num_topics
         topic_node_feats = torch.cat([self.topic_node_feats, self.topic_mask_feats[None, :]], dim=0)
-
-        # First encode the prewritten hierarchy
-        for parent_id, children in self.topic_hier.items():
-            if len(children) > 0:  # Only process parents that have children
-                downward_adjmat, upward_adjmat, sideward_adjmat = self._generate_adjmat(
-                    self.topic_hier, 
-                    self.num_topics + 1,
-                    parent_id, 
-                    virtual_id
-                )
-                downward_adjmat = downward_adjmat.to(topic_node_feats.device)
-                upward_adjmat = upward_adjmat.to(topic_node_feats.device)
-                sideward_adjmat = sideward_adjmat.to(topic_node_feats.device)
-                
-                h = self.forward(downward_adjmat, upward_adjmat, sideward_adjmat, topic_node_feats)
-                parent2virtualh[parent_id] = h[virtual_id, :]
-
+        for parent_id in self.topic_hier:
+            downward_adjmat, upward_adjmat, sideward_adjmat = self._generate_adjmat(self.topic_hier, self.num_topics+1, parent_id, virtual_id)
+            downward_adjmat = downward_adjmat.to(topic_node_feats.device)
+            upward_adjmat = upward_adjmat.to(topic_node_feats.device)
+            sideward_adjmat = sideward_adjmat.to(topic_node_feats.device)
+            h = self.forward(downward_adjmat, upward_adjmat, sideward_adjmat, topic_node_feats)
+            parent2virtualh[parent_id] = h[virtual_id, :]
         return parent2virtualh
 
     def inductive_target(self, vid2pid, novel_topic_hier):
