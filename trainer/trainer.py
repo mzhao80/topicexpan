@@ -313,7 +313,7 @@ class Trainer(BaseTrainer):
                             generated_phrases = []
                             print(f"Generating phrases for {child_name}...")
                             batch_size = 1
-                            max_length = self.model.decoder.max_length
+                            max_length = self.model.phrase_decoder.max_length
                             device = next(self.model.parameters()).device
                             attention_mask = torch.ones(batch_size, max_length, device=device)
                             for i in range(20):  # Generate multiple phrases to cluster
