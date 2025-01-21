@@ -71,45 +71,50 @@ class BaseTrainer:
         Full training logic
         """
         not_improved_count = 0
+        best_val_loss = float('inf')
+        
         for epoch in range(self.start_epoch, self.epochs + 1):
-            self.logger.info('='*80)
-            self.logger.info(f'Starting epoch {epoch} at {time.strftime("%Y-%m-%d %H:%M:%S")}')
+            # Log epoch start
+            current_time = time.strftime("%Y-%m-%d %H:%M:%S")
+            self.logger.info(f"\n================================================================================")
+            self.logger.info(f"Starting epoch {epoch} at {current_time}")
             
-            start = time.time()
+            # Train for one epoch
             result = self._train_epoch(epoch)
-
-            # save logged informations into log dict
-            log = {'epoch': epoch, 'elapsed time': time.time() - start}
+            
+            # Save logged informations into log dict
+            log = {'epoch': epoch}
             log.update(result)
-
-            # print logged informations to the screen
-            self.logger.info(f'Epoch {epoch} completed at {time.strftime("%Y-%m-%d %H:%M:%S")}')
+            
+            # Log epoch completion
+            current_time = time.strftime("%Y-%m-%d %H:%M:%S")
+            self.logger.info(f"Epoch {epoch} completed at {current_time}")
             for key, value in log.items():
-                self.logger.info('    {:15s}: {}'.format(str(key), value))
-
-            # evaluate model performance according to configured metric, save best checkpoint as model_best
+                self.logger.info(f"    {key:<15}: {value}")
+            
+            # Evaluate model performance according to configured metric
             best = False
             if self.mnt_mode != 'off':
                 try:
-                    # check whether model performance improved or not, according to specified metric(mnt_metric)
-                    improved = (self.mnt_mode == 'min' and log[self.mnt_metric] <= self.mnt_best) or \
-                               (self.mnt_mode == 'max' and log[self.mnt_metric] >= self.mnt_best)
+                    # check whether model performance improved or not, according to specified metric(s)
+                    improved = (self.mnt_mode == 'min' and log[self.mnt_metric] <= best_val_loss) or \
+                             (self.mnt_mode == 'max' and log[self.mnt_metric] >= best_val_loss)
                 except KeyError:
                     self.logger.warning("Warning: Metric '{}' is not found. "
-                                        "Model performance monitoring is disabled.".format(self.mnt_metric))
+                                "Model performance monitoring is disabled.".format(self.mnt_metric))
                     self.mnt_mode = 'off'
                     improved = False
 
                 if improved:
-                    self.mnt_best = log[self.mnt_metric]
+                    best_val_loss = log[self.mnt_metric]
                     not_improved_count = 0
                     best = True
                 else:
                     not_improved_count += 1
 
                 if not_improved_count > self.early_stop:
-                    self.logger.info("Validation performance didn\'t improve for {} epochs. "
-                                     "Training stops.".format(self.early_stop))
+                    self.logger.info("Validation performance didn't improve for {} epochs. "
+                           "Training stops.".format(self.early_stop))
                     break
 
             if epoch % self.save_period == 0:
