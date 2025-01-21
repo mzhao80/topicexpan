@@ -319,6 +319,7 @@ class TransformerPhraseDecoder(BaseModel):
         temperature = 0.8
         top_p = 0.9
         min_tokens = 3  # Minimum number of tokens to generate
+        max_tokens = 10  # Maximum tokens to generate
         
         # Move valid_tokens to correct device and expand for batch
         valid_tokens = self.valid_tokens.to(context.device)
@@ -330,7 +331,7 @@ class TransformerPhraseDecoder(BaseModel):
         
         generated_tokens = []
         
-        for step in range(self.max_length - 1):
+        for step in range(max_tokens - 1):
             # Get logits from decoder
             logits = self.forward(current_token, context)
             next_token_logits = logits[:, -1, :] / temperature
@@ -341,11 +342,19 @@ class TransformerPhraseDecoder(BaseModel):
                 print(f"Logits shape: {logits.shape}")
                 print(f"Next token logits shape: {next_token_logits.shape}")
             
-            # Mask out PAD token (prefer SEP for ending)
-            next_token_logits[:, self.pad_token_id] = float('-inf')
+            # Apply masks and filters
+            next_token_logits = next_token_logits.clone()  # Create a copy for modification
             
-            # Apply vocabulary filtering
-            next_token_logits = next_token_logits.masked_fill(~valid_tokens, float('-inf'))
+            # Mask out invalid tokens
+            next_token_logits = next_token_logits.masked_fill(~valid_tokens, -float('inf'))
+            next_token_logits = next_token_logits.masked_fill(torch.isnan(next_token_logits), -float('inf'))
+            
+            # Mask out PAD token (prefer SEP for ending)
+            next_token_logits[:, self.pad_token_id] = -float('inf')
+            
+            # Keep at least min_tokens before allowing EOS
+            if step < min_tokens:
+                next_token_logits[:, self.eos_token_id] = -float('inf')
             
             # Apply nucleus sampling
             sorted_logits, sorted_indices = torch.sort(next_token_logits, descending=True)
@@ -354,16 +363,34 @@ class TransformerPhraseDecoder(BaseModel):
             sorted_indices_to_remove[..., 1:] = sorted_indices_to_remove[..., :-1].clone()
             sorted_indices_to_remove[..., 0] = 0
             
-            # Keep at least min_tokens before allowing EOS
-            if step < min_tokens:
-                next_token_logits[:, self.eos_token_id] = float('-inf')
-            
+            # Apply the mask
             indices_to_remove = sorted_indices_to_remove.scatter(1, sorted_indices, sorted_indices_to_remove)
-            next_token_logits[indices_to_remove] = float('-inf')
+            next_token_logits = next_token_logits.masked_fill(indices_to_remove, -float('inf'))
             
-            # Sample from filtered distribution
+            # Convert to probabilities with numerical stability
+            next_token_logits = next_token_logits - next_token_logits.max(dim=-1, keepdim=True)[0]  # Subtract max for stability
             next_token_probs = F.softmax(next_token_logits, dim=-1)
-            next_token = torch.multinomial(next_token_probs, num_samples=1)
+            
+            # Check for any invalid probabilities
+            if torch.any(torch.isnan(next_token_probs)) or torch.any(next_token_probs < 0):
+                print(f"\n[WARNING] Invalid probabilities detected at step {step}")
+                print(f"NaN count: {torch.isnan(next_token_probs).sum().item()}")
+                print(f"Negative count: {(next_token_probs < 0).sum().item()}")
+                # Set small positive probability for valid tokens
+                next_token_probs = next_token_probs.masked_fill(torch.isnan(next_token_probs), 0.0)
+                next_token_probs = next_token_probs.masked_fill(next_token_probs < 0, 0.0)
+                next_token_probs = next_token_probs + 1e-9  # Add small constant
+                next_token_probs = next_token_probs / next_token_probs.sum(dim=-1, keepdim=True)  # Renormalize
+            
+            # Sample next token
+            try:
+                next_token = torch.multinomial(next_token_probs, num_samples=1)
+            except RuntimeError as e:
+                print(f"\n[ERROR] Sampling failed: {e}")
+                print(f"Prob stats: min={next_token_probs.min().item()}, max={next_token_probs.max().item()}")
+                print(f"Sum: {next_token_probs.sum(dim=-1)}")
+                # Fallback to argmax
+                next_token = next_token_probs.argmax(dim=-1, keepdim=True)
             
             # Debug first token
             if step == 0:
