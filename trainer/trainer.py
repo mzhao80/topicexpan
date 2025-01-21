@@ -234,129 +234,139 @@ class Trainer(BaseTrainer):
                 parent_name = dataset.topics[parent_id]
                 children = dataset.topic_fullhier[parent_id]
                 
-                # Skip if we've already processed this parent's children
-                if parent_name in output and len(output[parent_name]) > 0:
-                    continue
-                
                 # Initialize parent in output if not exists
                 if parent_name not in output:
                     output[parent_name] = []
                 
-                # Add each child as a discovered topic
+                # Add each child as a discovered topic and recursively expand
                 for child_id in children:
                     child_name = dataset.topics[child_id]
                     if child_name not in seen_topics:
                         seen_topics.add(child_name)
-                        output[parent_name].append({
-                            "name": child_name,
-                            "quality_score": 1.0  # Prewritten topics get max quality score
-                        })
+                        
+                        # Generate subtopics for this child using GCN embeddings
+                        child_rank = dataset.topicID2topicRank[child_id]
+                        child_embed = topic_embeddings[child_rank]
+                        
+                        # Generate phrases for potential subtopics
+                        generated_phrases = []
+                        for _ in range(20):  # Generate multiple phrases to cluster
+                            phrase_embed = child_embed.unsqueeze(0)  # Add batch dimension
+                            phrase_output = self.model.phrase_decoder.generate(phrase_embed)
+                            phrase = dataset.bert_tokenizer.decode(phrase_output[0], skip_special_tokens=True)
+                            if len(phrase.strip()) > 0:
+                                generated_phrases.append(phrase.strip())
+                        
+                        # Cluster phrases into subtopics
+                        if len(generated_phrases) >= 5:
+                            subtopics = self._cluster_phrases(generated_phrases, child_embed)
+                            
+                            # Add child with its subtopics
+                            child_entry = {
+                                "name": child_name,
+                                "quality_score": 1.0,  # Prewritten topics get max quality score
+                                "subtopics": []
+                            }
+                            
+                            # Add high quality subtopics
+                            for subtopic in subtopics:
+                                if subtopic["quality_score"] > 0.5:  # Only keep good subtopics
+                                    child_entry["subtopics"].append(subtopic)
+                            
+                            output[parent_name].append(child_entry)
+                        else:
+                            # Add child without subtopics if we couldn't generate enough phrases
+                            output[parent_name].append({
+                                "name": child_name,
+                                "quality_score": 1.0
+                            })
             
             # Write output
             with open('discovered_topics.json', 'w') as f:
                 json.dump(output, f, indent=2)
 
-    def _cluster_phrases(self, vid2phrases, num_clusters, min_cluster_size=5, parent_embedding=None):
+    def _cluster_phrases(self, phrases, parent_embed):
         """Cluster phrases into topics with improved diversity and relevance.
         
         Args:
-            vid2phrases: Dictionary mapping vertex IDs to phrases
-            num_clusters: Number of clusters to create
-            min_cluster_size: Minimum size for a valid cluster
-            parent_embedding: Optional parent topic embedding for hierarchical context
+            phrases: List of phrases to cluster
+            parent_embed: Parent topic embedding for hierarchical context
         """
         model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
         model = model.to(self.device)
         
-        vid2tnames = {vid: [] for vid in vid2phrases}
-        vid2tinfos = {vid: [] for vid in vid2phrases}
+        # Compute embeddings
+        with torch.no_grad():
+            feats = model.encode(phrases, convert_to_tensor=True)
+            feats = F.normalize(feats, p=2, dim=1)  # Normalize embeddings
+            
+            # If we have parent embedding, calculate relevance to parent
+            if parent_embed is not None:
+                parent_sim = torch.matmul(feats, parent_embed)
+                # Boost features based on parent similarity
+                feats = feats * F.sigmoid(parent_sim)
+            
+            feats = feats.cpu().numpy()
+
+        # Adaptive number of clusters based on data size
+        actual_num_clusters = min(5, len(phrases) // 5)
+        if actual_num_clusters < 2:
+            actual_num_clusters = 2
+
+        # Perform k-means clustering
+        kmeans = KMeans(n_clusters=actual_num_clusters, random_state=0)
+        labels = kmeans.fit(feats).labels_
+
+        # Calculate cluster centers and distances
+        centers = kmeans.cluster_centers_
+        centers = centers / np.linalg.norm(centers, axis=1, keepdims=True)
         
-        for vid, phrases in vid2phrases.items():
-            if len(phrases) < min_cluster_size:
-                vid2tnames[vid].append('Insufficient-Phrases')
+        # Calculate inter-cluster similarity to measure diversity
+        inter_sim = np.dot(centers, centers.T)
+        np.fill_diagonal(inter_sim, 0)
+        diversity_scores = 1 - inter_sim.max(axis=1)
+        
+        # Calculate phrase-to-center distances
+        distances = euclidean_distances(centers, feats)
+        relevance_scores = -distances.min(axis=0)  # Negative distance as relevance
+        
+        # Process each cluster
+        subtopics = []
+        for cluster_idx in range(actual_num_clusters):
+            cluster_mask = (labels == cluster_idx)
+            cluster_size = cluster_mask.sum()
+            
+            if cluster_size < 5:
                 continue
-
-            vid_docids, vid_phrases = [], []
-            for doc_id, phrase in phrases:
-                # Remove duplicates and very short phrases
-                if len(phrase.split()) < 2 or phrase in vid_phrases:
-                    continue
-                vid_phrases.append(phrase)
-                vid_docids.append(doc_id)
             
-            if len(vid_phrases) < min_cluster_size:
-                vid2tnames[vid].append('Insufficient-Unique-Phrases')
-                continue
-
-            # Compute embeddings
-            with torch.no_grad():
-                vid_feats = model.encode(vid_phrases, convert_to_tensor=True)
-                vid_feats = F.normalize(vid_feats, p=2, dim=1)  # Normalize embeddings
-                
-                # If we have parent embedding, calculate relevance to parent
-                if parent_embedding is not None:
-                    parent_sim = torch.matmul(vid_feats, parent_embedding.unsqueeze(1))
-                    # Boost features based on parent similarity
-                    vid_feats = vid_feats * F.sigmoid(parent_sim)
-                
-                vid_feats = vid_feats.cpu().numpy()
-
-            # Adaptive number of clusters based on data size
-            actual_num_clusters = min(num_clusters, len(vid_phrases) // min_cluster_size)
-            if actual_num_clusters < 2:
-                actual_num_clusters = 2
-
-            # Perform k-means clustering
-            kmeans = KMeans(n_clusters=actual_num_clusters, random_state=0)
-            labels = kmeans.fit(vid_feats).labels_
-
-            # Calculate cluster centers and distances
-            centers = kmeans.cluster_centers_
-            centers = centers / np.linalg.norm(centers, axis=1, keepdims=True)
+            # Get cluster phrases and their relevance scores
+            cluster_phrases_idx = cluster_mask.nonzero()[0]
+            cluster_distances = distances[cluster_idx][cluster_phrases_idx]
             
-            # Calculate inter-cluster similarity to measure diversity
-            inter_sim = np.dot(centers, centers.T)
-            np.fill_diagonal(inter_sim, 0)
-            diversity_scores = 1 - inter_sim.max(axis=1)
+            # Sort by distance to center
+            sorted_idx = cluster_distances.argsort()
+            cluster_phrases_idx = cluster_phrases_idx[sorted_idx]
             
-            # Calculate phrase-to-center distances
-            distances = euclidean_distances(centers, vid_feats)
-            relevance_scores = -distances.min(axis=0)  # Negative distance as relevance
+            # Select most representative phrase as topic name
+            # Prefer longer phrases among the top K most central phrases
+            top_k_phrases = [phrases[idx] for idx in cluster_phrases_idx[:5]]
+            topic_name = max(top_k_phrases, key=lambda x: len(x.split()))
             
-            # Process each cluster
-            for cluster_idx in range(actual_num_clusters):
-                cluster_mask = (labels == cluster_idx)
-                cluster_size = cluster_mask.sum()
-                
-                if cluster_size < min_cluster_size:
-                    continue
-                
-                # Get cluster phrases and their relevance scores
-                cluster_phrases_idx = cluster_mask.nonzero()[0]
-                cluster_distances = distances[cluster_idx][cluster_phrases_idx]
-                
-                # Sort by distance to center
-                sorted_idx = cluster_distances.argsort()
-                cluster_phrases_idx = cluster_phrases_idx[sorted_idx]
-                
-                # Select most representative phrase as topic name
-                # Prefer longer phrases among the top K most central phrases
-                top_k_phrases = [vid_phrases[idx] for idx in cluster_phrases_idx[:5]]
-                topic_name = max(top_k_phrases, key=lambda x: len(x.split()))
-                
-                # Collect phrases with their relevance scores
-                topic_phrases = []
-                for idx in cluster_phrases_idx:
-                    doc_id = vid_docids[idx]
-                    phrase = vid_phrases[idx]
-                    relevance = float(relevance_scores[idx])  # Convert to float for JSON serialization
-                    topic_phrases.append((doc_id, phrase, relevance))
-                
-                # Calculate cluster quality score
-                quality_score = float(diversity_scores[cluster_idx] * (cluster_size / len(vid_phrases)))
-                
-                topic_info = (cluster_idx, topic_name, topic_phrases, cluster_size, quality_score)
-                vid2tnames[vid].append(topic_name)
-                vid2tinfos[vid].append(topic_info)
+            # Collect phrases with their relevance scores
+            topic_phrases = []
+            for idx in cluster_phrases_idx:
+                phrase = phrases[idx]
+                relevance = float(relevance_scores[idx])  # Convert to float for JSON serialization
+                topic_phrases.append((phrase, relevance))
+            
+            # Calculate cluster quality score
+            quality_score = float(diversity_scores[cluster_idx] * (cluster_size / len(phrases)))
+            
+            subtopic = {
+                "name": topic_name,
+                "phrases": topic_phrases,
+                "quality_score": quality_score
+            }
+            subtopics.append(subtopic)
 
-        return vid2tnames, vid2tinfos
+        return subtopics
