@@ -61,7 +61,8 @@ class TopicExpan(BaseModel):
         
         # Part 2 : Topic-conditional Phrase Generation (w/ Teacher Forcing)
         decoder_context = self.context_combiner(topic_encoder_output[topic_indices, :], doc_encoder_output, encoder_input['attention_mask'])
-        decoder_output = self.phrase_decoder(decoder_input, decoder_context)
+        decoder_input_ids = decoder_input['input_ids']
+        decoder_output = self.phrase_decoder(decoder_input_ids, decoder_context)
         gen_score = F.log_softmax(decoder_output, dim=-1)
 
         return sim_score, gen_score

@@ -10,6 +10,7 @@ import os, pickle
 import time
 from sentence_transformers import SentenceTransformer
 import json
+from sklearn.metrics import silhouette_score
 
 class Trainer(BaseTrainer):
     """
@@ -346,7 +347,7 @@ class Trainer(BaseTrainer):
         return False
 
     def _cluster_phrases(self, phrases, parent_embedding, num_clusters=None):
-        """Cluster generated phrases based on their embeddings."""
+        """Cluster generated phrases to identify novel topics."""
         if not phrases:
             return []
             
@@ -354,42 +355,125 @@ class Trainer(BaseTrainer):
         phrase_texts = [p['phrase'] for p in phrases]
         confidences = [p['confidence'] for p in phrases]
         
-        # Get GloVe embeddings for phrases
-        phrase_embeddings = []
-        for phrase in phrase_texts:
-            # Split phrase into tokens and average their GloVe vectors
-            tokens = phrase.lower().split()
-            token_embeds = []
-            for token in tokens:
-                if token in self.glove:
-                    token_embeds.append(self.glove[token])
-            if token_embeds:
-                phrase_embeddings.append(np.mean(token_embeds, axis=0))
-            else:
-                # If no token has GloVe embedding, use zeros
-                phrase_embeddings.append(np.zeros(300))
-                
-        embeddings_array = np.array(phrase_embeddings)
+        # Get embeddings using sentence-transformers
+        model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+        model = model.to(self.device)
+        embeddings_array = model.encode(phrase_texts, convert_to_tensor=True)
         
-        # Determine number of clusters
+        # Normalize embeddings
+        embeddings_array = F.normalize(embeddings_array, p=2, dim=1)
+        
+        # Calculate similarity with parent topic
+        if parent_embedding is not None:
+            parent_embedding = F.normalize(parent_embedding, p=2, dim=0)
+            parent_sims = torch.matmul(embeddings_array, parent_embedding)
+        
+        # Determine number of clusters using silhouette analysis
         if num_clusters is None:
-            num_clusters = min(3, len(phrases))
+            max_clusters = min(8, len(phrases))
+            best_score = -1
+            best_k = 2
             
+            for k in range(2, max_clusters + 1):
+                kmeans = KMeans(n_clusters=k, random_state=42)
+                labels = kmeans.fit_predict(embeddings_array.cpu().numpy())
+                score = silhouette_score(embeddings_array.cpu().numpy(), labels)
+                if score > best_score:
+                    best_score = score
+                    best_k = k
+            
+            num_clusters = best_k
+        
         # Perform clustering
         kmeans = KMeans(n_clusters=num_clusters, random_state=42)
-        clusters = kmeans.fit_predict(embeddings_array)
+        clusters = kmeans.fit_predict(embeddings_array.cpu().numpy())
         
-        # Group phrases by cluster and sort by confidence
-        clustered_phrases = [[] for _ in range(num_clusters)]
-        for phrase, conf, cluster_idx in zip(phrase_texts, confidences, clusters):
-            clustered_phrases[cluster_idx].append((phrase, conf))
-            
-        # Sort phrases within each cluster by confidence
+        # Calculate cluster metrics
+        cluster_info = []
         for i in range(num_clusters):
-            clustered_phrases[i].sort(key=lambda x: x[1], reverse=True)
+            cluster_mask = clusters == i
+            cluster_phrases = [(phrase, conf) for phrase, conf, is_in_cluster in zip(phrase_texts, confidences, cluster_mask) if is_in_cluster]
             
-        # Filter clusters by size
-        min_cluster_size = 3
-        valid_clusters = [cluster for cluster in clustered_phrases if len(cluster) >= min_cluster_size]
+            if len(cluster_phrases) < 3:  # Skip small clusters
+                continue
+                
+            # Get cluster centroid
+            centroid = embeddings_array[cluster_mask].mean(dim=0)
+            
+            # Calculate cluster coherence (average similarity between phrases)
+            cluster_embeds = embeddings_array[cluster_mask]
+            similarities = torch.matmul(cluster_embeds, cluster_embeds.T)
+            coherence = (similarities.sum() - len(cluster_phrases)) / (len(cluster_phrases) * (len(cluster_phrases) - 1))
+            
+            # Calculate distinctiveness (distance to other clusters)
+            other_embeds = embeddings_array[~cluster_mask]
+            if len(other_embeds) > 0:
+                distinctiveness = 1 - torch.matmul(centroid, other_embeds.T).mean()
+            else:
+                distinctiveness = 1.0
+                
+            # Calculate parent relevance if parent embedding exists
+            if parent_embedding is not None:
+                parent_relevance = float(torch.matmul(centroid, parent_embedding))
+            else:
+                parent_relevance = 1.0
+                
+            # Sort phrases by confidence and similarity to centroid
+            phrase_scores = []
+            for phrase, conf in cluster_phrases:
+                phrase_embed = model.encode(phrase, convert_to_tensor=True)
+                phrase_embed = F.normalize(phrase_embed, p=2, dim=0)
+                centroid_sim = float(torch.matmul(phrase_embed, centroid))
+                combined_score = conf * centroid_sim
+                phrase_scores.append((phrase, combined_score))
+                
+            # Sort by score
+            phrase_scores.sort(key=lambda x: x[1], reverse=True)
+            
+            # Calculate overall cluster quality
+            quality = float(coherence * distinctiveness * parent_relevance)
+            
+            cluster_info.append({
+                'phrases': phrase_scores,
+                'coherence': float(coherence),
+                'distinctiveness': float(distinctiveness), 
+                'parent_relevance': parent_relevance,
+                'quality': quality,
+                'size': len(cluster_phrases)
+            })
         
-        return valid_clusters
+        # Sort clusters by quality
+        cluster_info.sort(key=lambda x: x['quality'], reverse=True)
+        
+        # Filter clusters
+        min_quality = 0.5
+        filtered_clusters = [c for c in cluster_info if c['quality'] > min_quality]
+        
+        return filtered_clusters
+
+    def _extract_topic_name(self, cluster):
+        """Extract a representative topic name from cluster phrases."""
+        # Get top phrases by score
+        top_phrases = cluster['phrases'][:5]
+        
+        # Find common substrings/concepts
+        phrase_texts = [p[0] for p in top_phrases]
+        
+        # Try to find most representative phrase based on:
+        # 1. Length (not too short, not too long)
+        # 2. Score
+        # 3. Simplicity (fewer words better)
+        best_phrase = None
+        best_score = -1
+        
+        for phrase, score in top_phrases:
+            words = phrase.split()
+            length_score = 1.0 if 2 <= len(words) <= 4 else 0.5
+            simplicity = 1.0 / len(words)
+            combined = score * length_score * simplicity
+            
+            if combined > best_score:
+                best_score = combined
+                best_phrase = phrase
+                
+        return best_phrase

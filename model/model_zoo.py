@@ -12,6 +12,7 @@ import dgl.function as fn
 from dgl.nn.pytorch.conv import GraphConv
 from transformers import AutoModel, AutoConfig, AutoTokenizer
 from base import BaseModel
+from sentence_transformers import SentenceTransformer
 
 """
     1. Document Encoder
@@ -34,22 +35,16 @@ class BertDocEncoder(BaseModel):
         return batch_output[0]
 
     def get_doc_embeddings(self, docs):
-        """Get embeddings for a list of documents."""
-        # Tokenize documents
-        encodings = self.tokenizer(
-            docs,
-            padding=True,
-            truncation=True,
-            max_length=512,
-            return_tensors='pt'
-        ).to(self.device)
+        """Get embeddings for a list of documents using all-MiniLM-L6-v2."""
+        model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+        model = model.to(self.device)
         
-        # Get document embeddings from BERT
-        with torch.no_grad():
-            outputs = self.model(**encodings)
-            # Use CLS token embedding as document representation
-            doc_embeds = outputs.last_hidden_state[:, 0]
-            
+        # Get document embeddings 
+        doc_embeds = model.encode(docs, convert_to_tensor=True)
+        
+        # Normalize embeddings
+        doc_embeds = F.normalize(doc_embeds, p=2, dim=1)
+        
         return doc_embeds
 
 """
