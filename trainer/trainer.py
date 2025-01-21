@@ -3,8 +3,8 @@ import torch
 import torch.nn.functional as F
 from base import BaseTrainer
 from utils import MetricTracker
-from sklearn.cluster import DBSCAN, KMeans, AgglomerativeClustering
-from sklearn.metrics.pairwise import euclidean_distances, cosine_similarity
+from sklearn.cluster import DBSCAN, KMeans
+from sklearn.metrics.pairwise import euclidean_distances
 from gensim.models import KeyedVectors
 import os, pickle
 import time
@@ -29,10 +29,6 @@ class Trainer(BaseTrainer):
 
         self.train_metrics = MetricTracker('loss', 'sim_loss', 'gen_loss', writer=self.writer)
         self.valid_metrics = MetricTracker('loss', 'sim_loss', 'gen_loss', *[m.__name__ for m in self.metric_ftns], writer=self.writer)
-
-        # Initialize sentence transformer for embeddings
-        self.sentence_transformer = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
-        self.sentence_transformer.to(self.device)
 
     def _train_epoch(self, epoch):
         """
@@ -298,16 +294,15 @@ class Trainer(BaseTrainer):
         if len(topic_embedding.shape) == 1:
             topic_embedding = topic_embedding.unsqueeze(0)
             
-        # Get document embeddings using MiniLM
-        doc_texts = [doc[:512] for doc in self.dataset.docs]  # Truncate long docs
-        doc_embeddings = self.sentence_transformer.encode(doc_texts, convert_to_tensor=True)
+        # Get document embeddings for similarity scoring
+        doc_embeddings = self.model.get_doc_embeddings(self.dataset.docs)
         
         # Calculate topic-document similarities
         sim_scores = F.cosine_similarity(topic_embedding.unsqueeze(1), doc_embeddings.unsqueeze(0), dim=2)
-        sim_scores = F.softmax(sim_scores, dim=1)
+        sim_scores = F.softmax(sim_scores, dim=1)  # Normalize across documents
         
         # Filter documents by similarity threshold
-        threshold = 0.1
+        threshold = 0.1  # Adjust as needed
         relevant_doc_indices = (sim_scores > threshold).nonzero()[:, 1]
         
         # Generate phrases from relevant documents
@@ -315,128 +310,86 @@ class Trainer(BaseTrainer):
         unique_phrases = set()
         
         for doc_idx in relevant_doc_indices:
-            # Get document text and embedding
-            doc_text = doc_texts[doc_idx]
+            # Get document embedding
             doc_embed = doc_embeddings[doc_idx].unsqueeze(0)
             
-            # Generate multiple phrases per document with different temperatures
-            for temp in [0.7, 0.8, 0.9]:
-                tokens = self.model.phrase_decoder.generate(
-                    topic_embedding,
-                    temperature=temp,
-                    top_p=0.9,
-                    repetition_penalty=1.2
-                )
-                phrase = self.dataset.bert_tokenizer.decode(tokens[0], skip_special_tokens=True).strip()
+            # Generate phrase
+            tokens = self.model.phrase_decoder.generate(topic_embedding)
+            phrase = self.dataset.bert_tokenizer.decode(tokens[0], skip_special_tokens=True).strip()
+            
+            # Filter phrases
+            if (len(phrase) > 3 and  # Avoid very short phrases
+                phrase not in unique_phrases and  # Avoid duplicates
+                not any(p in phrase for p in ['speaker of the house', 'hakeem jeffries', 'kevin mccarthy']) and  # Filter common irrelevant phrases
+                self._phrase_in_corpus(phrase)):  # Only keep phrases that appear in corpus
                 
-                # Filter phrases
-                if (len(phrase) > 3 and 
-                    phrase not in unique_phrases and
-                    not any(p in phrase for p in ['speaker of the house', 'hakeem jeffries', 'kevin mccarthy']) and
-                    self._is_valid_phrase(phrase, doc_text)):
-                    
-                    unique_phrases.add(phrase)
-                    generated_phrases.append({
-                        'phrase': phrase,
-                        'confidence': float(sim_scores[0, doc_idx]),
-                        'embedding': self.sentence_transformer.encode(phrase, convert_to_tensor=True)
-                    })
-                    
+                unique_phrases.add(phrase)
+                generated_phrases.append({
+                    'phrase': phrase,
+                    'confidence': float(sim_scores[0, doc_idx])
+                })
+                
             if len(generated_phrases) >= num_phrases:
                 break
                 
         return generated_phrases
-        
-    def _is_valid_phrase(self, phrase, doc_text):
-        """Check if phrase is valid."""
-        # Convert to lowercase for matching
+
+    def _phrase_in_corpus(self, phrase):
+        """Check if phrase appears in corpus."""
+        # Convert phrase to lowercase for case-insensitive matching
         phrase = phrase.lower()
-        doc_text = doc_text.lower()
         
-        # Basic checks
-        if len(phrase.split()) < 2:  # Require at least 2 words
-            return False
-            
-        if not all(len(word) > 1 for word in phrase.split()):  # No single-letter words
-            return False
-            
-        # Check if phrase or similar n-grams appear in document
-        doc_words = doc_text.split()
-        phrase_words = phrase.split()
-        n = len(phrase_words)
-        
-        for i in range(len(doc_words) - n + 1):
-            ngram = ' '.join(doc_words[i:i+n])
-            if phrase in ngram or ngram in phrase:
+        # Check each document
+        for doc in self.dataset.docs:
+            if phrase in doc.lower():
                 return True
-                
         return False
-        
+
     def _cluster_phrases(self, phrases, parent_embedding, num_clusters=None):
-        """Cluster generated phrases using hierarchical clustering."""
+        """Cluster generated phrases based on their embeddings."""
         if not phrases:
             return []
             
-        # Get embeddings and metadata
-        embeddings = torch.stack([p['embedding'] for p in phrases]).cpu().numpy()
+        # Extract phrases and confidences
         phrase_texts = [p['phrase'] for p in phrases]
         confidences = [p['confidence'] for p in phrases]
         
-        # Compute topic coherence for different numbers of clusters
-        max_clusters = min(5, len(phrases) // 3)
-        best_score = -float('inf')
-        best_clusters = None
-        best_n = None
+        # Get GloVe embeddings for phrases
+        phrase_embeddings = []
+        for phrase in phrase_texts:
+            # Split phrase into tokens and average their GloVe vectors
+            tokens = phrase.lower().split()
+            token_embeds = []
+            for token in tokens:
+                if token in self.glove:
+                    token_embeds.append(self.glove[token])
+            if token_embeds:
+                phrase_embeddings.append(np.mean(token_embeds, axis=0))
+            else:
+                # If no token has GloVe embedding, use zeros
+                phrase_embeddings.append(np.zeros(300))
+                
+        embeddings_array = np.array(phrase_embeddings)
         
-        for n in range(2, max_clusters + 1):
-            # Perform hierarchical clustering
-            clustering = AgglomerativeClustering(n_clusters=n)
-            clusters = clustering.fit_predict(embeddings)
+        # Determine number of clusters
+        if num_clusters is None:
+            num_clusters = min(3, len(phrases))
             
-            # Group phrases by cluster
-            clustered_phrases = [[] for _ in range(n)]
-            for phrase, conf, emb, cluster_idx in zip(phrase_texts, confidences, embeddings, clusters):
-                clustered_phrases[cluster_idx].append((phrase, conf, emb))
+        # Perform clustering
+        kmeans = KMeans(n_clusters=num_clusters, random_state=42)
+        clusters = kmeans.fit_predict(embeddings_array)
+        
+        # Group phrases by cluster and sort by confidence
+        clustered_phrases = [[] for _ in range(num_clusters)]
+        for phrase, conf, cluster_idx in zip(phrase_texts, confidences, clusters):
+            clustered_phrases[cluster_idx].append((phrase, conf))
             
-            # Calculate topic coherence score
-            score = self._calculate_topic_coherence(clustered_phrases)
+        # Sort phrases within each cluster by confidence
+        for i in range(num_clusters):
+            clustered_phrases[i].sort(key=lambda x: x[1], reverse=True)
             
-            if score > best_score:
-                best_score = score
-                best_clusters = clustered_phrases
-                best_n = n
-                
-        # Filter and sort clusters
-        valid_clusters = []
-        for cluster in best_clusters:
-            if len(cluster) >= 3:  # Minimum size threshold
-                # Sort phrases within cluster by confidence
-                cluster.sort(key=lambda x: x[1], reverse=True)
-                valid_clusters.append(cluster)
-                
+        # Filter clusters by size
+        min_cluster_size = 3
+        valid_clusters = [cluster for cluster in clustered_phrases if len(cluster) >= min_cluster_size]
+        
         return valid_clusters
-        
-    def _calculate_topic_coherence(self, clusters):
-        """Calculate topic coherence score for clusters."""
-        total_score = 0
-        
-        for cluster in clusters:
-            if len(cluster) < 3:
-                continue
-                
-            # Get phrase embeddings
-            cluster_embeddings = np.array([emb for _, _, emb in cluster])
-            
-            # Calculate average pairwise similarity
-            similarities = cosine_similarity(cluster_embeddings)
-            np.fill_diagonal(similarities, 0)
-            avg_similarity = similarities.mean()
-            
-            # Calculate distance to parent topic
-            parent_dist = np.mean([1 - cos_sim for _, _, emb in cluster])
-            
-            # Combine metrics
-            cluster_score = avg_similarity * (1 - parent_dist)
-            total_score += cluster_score
-            
-        return total_score / len(clusters) if clusters else 0
