@@ -10,6 +10,7 @@ import os, pickle
 import time
 from sentence_transformers import SentenceTransformer
 import json
+import math
 
 class Trainer(BaseTrainer):
     """
@@ -50,7 +51,11 @@ class Trainer(BaseTrainer):
         :return: A log that contains average loss and metric in this epoch.
         """
         self.model.train()
-        self.train_metrics.reset()
+        total_loss = 0
+        total_sim_loss = 0
+        total_gen_loss = 0
+        total_embedding_sim = 0
+        n_steps = 0
         
         # Loss weights - give more weight to generation loss
         sim_weight = 0.3
@@ -139,10 +144,11 @@ class Trainer(BaseTrainer):
             
             self.optimizer.step()
 
-            self.writer.set_step((epoch - 1) * self.len_epoch + batch_idx)
-            self.train_metrics.update('loss', loss.item())
-            self.train_metrics.update('sim_loss', sim_loss.item())
-            self.train_metrics.update('gen_loss', gen_loss.item())
+            batch_size = doc_ids.size(0)
+            total_loss += loss.item() * batch_size
+            total_sim_loss += sim_loss.item() * batch_size
+            total_gen_loss += gen_loss.item() * batch_size
+            n_steps += batch_size
 
             if batch_idx % self.log_step == 0:
                 self.log_info('Train Epoch: {} {} Loss: {:.6f}'.format(
@@ -153,15 +159,20 @@ class Trainer(BaseTrainer):
             if batch_idx == self.len_epoch:
                 break
 
-        log = self.train_metrics.result()
+        # Calculate averages
+        avg_loss = total_loss / n_steps
+        avg_sim_loss = total_sim_loss / n_steps
+        avg_gen_loss = total_gen_loss / n_steps
+        
+        # Calculate perplexity from average generation loss
+        perplexity = math.exp(avg_gen_loss)
 
-        if self.do_validation:
-            current_time = time.strftime("%Y-%m-%d %H:%M:%S")
-            self.log_info(f'[{current_time}] Starting validation for epoch: {epoch}')
-            val_log = self._valid_epoch(epoch)
-            log.update(**{'val_'+k : v for k, v in val_log.items()})
-
-        return log
+        return {
+            'loss': avg_loss,
+            'sim_loss': avg_sim_loss,
+            'gen_loss': avg_gen_loss,
+            'perplexity': perplexity
+        }
 
     def _valid_epoch(self, epoch):
         """
@@ -174,7 +185,6 @@ class Trainer(BaseTrainer):
         total_val_loss = 0
         total_val_sim_loss = 0
         total_val_gen_loss = 0
-        total_val_perplexity = 0
         total_val_embedding_sim = 0
         n_val_steps = 0
 
@@ -197,9 +207,6 @@ class Trainer(BaseTrainer):
                 gen_weight = 0.7
                 loss = sim_weight * sim_loss + gen_weight * gen_loss
 
-                # Calculate perplexity from generation loss
-                perplexity = torch.exp(gen_loss)
-                
                 # Calculate embedding similarity between predicted and target sequences
                 # First get the predicted token embeddings
                 pred_tokens = gen_score.argmax(dim=-1)  # [batch, seq]
@@ -219,7 +226,6 @@ class Trainer(BaseTrainer):
                 total_val_loss += loss.item() * batch_size
                 total_val_sim_loss += sim_loss.item() * batch_size
                 total_val_gen_loss += gen_loss.item() * batch_size
-                total_val_perplexity += perplexity.item() * batch_size
                 total_val_embedding_sim += embedding_sim.item() * batch_size
                 n_val_steps += batch_size
 
@@ -231,11 +237,13 @@ class Trainer(BaseTrainer):
         val_loss = total_val_loss / n_val_steps
         val_sim_loss = total_val_sim_loss / n_val_steps
         val_gen_loss = total_val_gen_loss / n_val_steps
-        val_perplexity = total_val_perplexity / n_val_steps
         val_embedding_sim = total_val_embedding_sim / n_val_steps
+        
+        # Calculate perplexity from average generation loss
+        val_perplexity = math.exp(val_gen_loss)
 
         return {
-            'loss': val_loss,  
+            'loss': val_loss,  # Remove val_ prefix
             'sim_loss': val_sim_loss,
             'gen_loss': val_gen_loss,
             'perplexity': val_perplexity,
