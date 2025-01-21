@@ -337,14 +337,14 @@ class TransformerPhraseDecoder(BaseModel):
         context_proj = self.context_proj(context)  # [batch, seq, hidden]
         context_norm = self.context_norm(context_proj)
         
-        # If context is single token, expand it
-        if context.size(1) == 1:
-            context_norm = context_norm.expand(-1, attention_mask.size(1), -1)
+        # Move valid_tokens to correct device
+        valid_tokens = self.valid_tokens.to(context.device)
         
         # Generation parameters
         min_tokens = 3  # Minimum tokens after CLS
         max_tokens = 10  # Maximum total tokens
         repetition_penalty = 2.0
+        temperature = 0.7  # Lower temperature for more focused sampling
         
         # Track generated n-grams for repetition penalty
         generated_ngrams = [{} for _ in range(batch_size)]
@@ -352,23 +352,17 @@ class TransformerPhraseDecoder(BaseModel):
         for step in range(max_tokens - 2):  # -2 for CLS and SEP
             # Get decoder output
             decoder_output = self.forward(current_token, context_norm)  # [batch, seq, vocab]
-            next_token_logits = decoder_output[:, -1, :]  # [batch, vocab]
+            next_token_logits = decoder_output[:, -1, :] / temperature  # [batch, vocab]
             
-            # For single token context, use direct token probabilities
-            if context.size(1) == 1:
-                next_token_probs = F.softmax(next_token_logits, dim=-1)
-            else:
-                # Calculate attention scores with document tokens
-                attn_scores = torch.matmul(next_token_logits, context_norm.transpose(-1, -2))  # [batch, seq]
-                attn_scores = attn_scores.masked_fill(~attention_mask.bool(), -float('inf'))
-                attn_probs = F.softmax(attn_scores, dim=-1)
-                
-                # Get document token probabilities
-                doc_token_ids = attention_mask.new_zeros(attention_mask.size(0), attention_mask.size(1), dtype=torch.long)
-                for i in range(attention_mask.size(0)):
-                    doc_token_ids[i, :attention_mask[i].sum()] = torch.arange(attention_mask[i].sum(), device=attention_mask.device)
-                next_token_probs = torch.zeros_like(next_token_logits)  # [batch, vocab]
-                next_token_probs.scatter_add_(-1, doc_token_ids, attn_probs)
+            # Calculate attention scores with document tokens
+            attn_scores = torch.matmul(next_token_logits, context_norm.transpose(-1, -2))  # [batch, seq]
+            attn_scores = attn_scores.masked_fill(~attention_mask.bool(), -float('inf'))
+            attn_probs = F.softmax(attn_scores, dim=-1)
+            
+            # Get document token probabilities
+            doc_token_ids = context['input_ids']  # [batch, seq]
+            next_token_probs = torch.zeros_like(next_token_logits)  # [batch, vocab]
+            next_token_probs.scatter_add_(-1, doc_token_ids, attn_probs)
             
             # Apply repetition penalty
             for i in range(batch_size):
@@ -384,7 +378,7 @@ class TransformerPhraseDecoder(BaseModel):
                             next_token_probs[i, token_id] /= (repetition_penalty * 2)
             
             # Mask invalid tokens
-            next_token_probs = next_token_probs.masked_fill(~self.valid_tokens, 0)
+            next_token_probs = next_token_probs.masked_fill(~valid_tokens, 0)
             next_token_probs = next_token_probs.masked_fill(torch.isnan(next_token_probs), 0)
             
             # Mask special tokens except SEP when appropriate
@@ -392,6 +386,9 @@ class TransformerPhraseDecoder(BaseModel):
             next_token_probs[:, self.bos_token_id] = 0
             if step < min_tokens:
                 next_token_probs[:, self.eos_token_id] = 0
+            
+            # Normalize probabilities
+            next_token_probs = F.softmax(next_token_probs, dim=-1)
             
             # Sample next token
             next_token = torch.multinomial(next_token_probs, num_samples=1)
