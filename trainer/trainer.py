@@ -16,29 +16,25 @@ class Trainer(BaseTrainer):
     Trainer class
     """
     def __init__(self, model, criterions, metric_ftns, optimizer, config, data_loader,
-                 valid_data_loader=None, test_data_loader=None, dataset=None):
+                 valid_data_loader=None):
         super().__init__(model, criterions, metric_ftns, optimizer, config)
+        self.config = config
         self.data_loader = data_loader
+        self.dataset = data_loader.dataset
+
+        self.len_epoch = len(self.data_loader)
         self.valid_data_loader = valid_data_loader
-        self.test_data_loader = test_data_loader
-        self.dataset = dataset
         self.do_validation = self.valid_data_loader is not None
-        self.log_step = int(np.sqrt(data_loader.batch_size))
+        self.log_step = int(len(data_loader.dataset) / data_loader.batch_size * 0.2)
+
+        self.train_metrics = MetricTracker('loss', 'sim_loss', 'gen_loss', writer=self.writer)
+        self.valid_metrics = MetricTracker('loss', 'sim_loss', 'gen_loss', *[m.__name__ for m in self.metric_ftns], writer=self.writer)
         
-        # Initialize learning rate scheduler if specified in config
-        scheduler_config = config['trainer'].get('lr_scheduler', None)
-        if scheduler_config is not None:
-            scheduler_type = scheduler_config.get('type', 'StepLR')
-            if scheduler_type == 'StepLR':
-                self.lr_scheduler = torch.optim.lr_scheduler.StepLR(
-                    optimizer,
-                    step_size=scheduler_config.get('step_size', 50),
-                    gamma=scheduler_config.get('gamma', 0.1)
-                )
-            else:
-                self.lr_scheduler = None
-        else:
-            self.lr_scheduler = None
+        # Setup logging
+        os.makedirs('logs', exist_ok=True)
+        current_time = time.strftime("%Y%m%d-%H%M%S")
+        self.log_file = os.path.join('logs', f'training_log_{current_time}.txt')
+        self.log_info(f"Starting training at {current_time}")
 
     def log_info(self, message):
         """Log message to both console and file"""
@@ -54,42 +50,99 @@ class Trainer(BaseTrainer):
         :return: A log that contains average loss and metric in this epoch.
         """
         self.model.train()
+        self.train_metrics.reset()
         
-        # Initialize metrics for this epoch
-        epoch_loss = 0
-        epoch_sim_loss = 0
-        epoch_gen_loss = 0
-        n_steps = 0
+        # Loss weights - give more weight to generation loss
+        sim_weight = 0.3
+        gen_weight = 0.7
         
+        # Gradient clipping norm
+        max_grad_norm = 1.0
+
         for batch_idx, batch_data in enumerate(self.data_loader):
             doc_ids, doc_infos, topic_ids, phrase_infos = batch_data
             
             encoder_input = {k: v.to(self.device) for k, v in doc_infos.items()}
+            # Keep CLS token in both input and target
             decoder_input = {k: v[:, :-1].to(self.device) for k, v in phrase_infos.items()}
-            decoder_target = phrase_infos['input_ids'][:, 1:].to(self.device)
-            topic_ids = topic_ids.to(self.device)
+            gen_target = phrase_infos['input_ids'][:, :-1].to(self.device)  # Keep CLS, remove last token for target
+            
+            sim_target = topic_ids.to(self.device)
 
             self.optimizer.zero_grad()
+            
             sim_score, gen_score = self.model(encoder_input, decoder_input, topic_ids)
             
-            sim_loss = self.criterions['sim'](sim_score, topic_ids)
-            gen_loss = self.criterions['gen'](gen_score.view(-1, gen_score.size(-1)), decoder_target.view(-1))
+            # Debug: Check model outputs
+            if batch_idx == 0:  # Only print for first batch
+                debug_info = "\n[DEBUG] Model Outputs:"
+                debug_info += f"\nScore range: [{sim_score.min():.3f}, {sim_score.max():.3f}]"
+                debug_info += f"\nGeneration logits shape: {gen_score.shape}"
+                
+                # Print predicted vs actual topics
+                pred_topics = sim_score.argmax(dim=1)
+                debug_info += "\n\nTopic Prediction Sample:"
+                for i in range(min(3, len(pred_topics))):
+                    debug_info += f"\nPred: {pred_topics[i].item()} | True: {sim_target[i].item()}"
+                
+                # Print sample phrase
+                if hasattr(self.dataset, 'bert_tokenizer'):
+                    gen_tokens = gen_score[0].argmax(dim=1)
+                    generated = self.dataset.bert_tokenizer.decode(gen_tokens)
+                    target = self.dataset.bert_tokenizer.decode(gen_target[0])
+                    debug_info += "\n\nPhrase Generation Sample:"
+                    debug_info += f"\nGenerated: {generated}"
+                    debug_info += f"\nTarget: {target}"
+                self.log_info(debug_info)
             
-            # Apply loss weights
-            sim_weight = 0.3
-            gen_weight = 0.7
+            sim_loss = self.criterions['sim'](sim_score, sim_target)
+            gen_loss = self.criterions['gen'](gen_score.view(-1, gen_score.size(-1)), gen_target.view(-1))
+            
+            # Apply loss weights and ensure they're positive
             loss = sim_weight * sim_loss + gen_weight * gen_loss
             
+            # Debug: Check loss values and predictions
+            if batch_idx % 100 == 0:
+                debug_info = "\n[DEBUG] Loss Values:"
+                debug_info += f"\nSimilarity Loss (raw): {sim_loss.item():.4f}"
+                debug_info += f"\nGeneration Loss (raw): {gen_loss.item():.4f}"
+                debug_info += f"\nWeighted Sim Loss: {(sim_weight * sim_loss).item():.4f}"
+                debug_info += f"\nWeighted Gen Loss: {(gen_weight * gen_loss).item():.4f}"
+                debug_info += f"\nTotal Loss: {loss.item():.4f}"
+                
+                # Print sample predictions
+                with torch.no_grad():
+                    # Topic prediction accuracy
+                    pred_topics = sim_score.argmax(dim=1)
+                    topic_acc = (pred_topics == sim_target).float().mean()
+                    debug_info += f"\nTopic Prediction Accuracy: {topic_acc.item():.4f}"
+                    
+                    # Generation perplexity
+                    gen_perplexity = torch.exp(gen_loss)
+                    debug_info += f"\nGeneration Perplexity: {gen_perplexity.item():.4f}"
+                    
+                    # Print sample generations
+                    debug_info += "\n\nSample Generations:"
+                    for i in range(min(3, len(gen_score))):
+                        gen_tokens = gen_score[i].argmax(dim=1)
+                        generated = self.dataset.bert_tokenizer.decode(gen_tokens)
+                        target = self.dataset.bert_tokenizer.decode(gen_target[i])
+                        debug_info += f"\nGenerated {i}: {generated}"
+                        debug_info += f"\nTarget {i}:   {target}\n"
+                
+                self.log_info(debug_info)
+
             loss.backward()
-            torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
-            self.optimizer.step()
             
-            # Update epoch metrics
-            batch_size = doc_ids.size(0)
-            epoch_loss += loss.item() * batch_size
-            epoch_sim_loss += sim_loss.item() * batch_size
-            epoch_gen_loss += gen_loss.item() * batch_size
-            n_steps += batch_size
+            # Clip gradients
+            torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_grad_norm)
+            
+            self.optimizer.step()
+
+            self.writer.set_step((epoch - 1) * self.len_epoch + batch_idx)
+            self.train_metrics.update('loss', loss.item())
+            self.train_metrics.update('sim_loss', sim_loss.item())
+            self.train_metrics.update('gen_loss', gen_loss.item())
 
             if batch_idx % self.log_step == 0:
                 self.log_info('Train Epoch: {} {} Loss: {:.6f}'.format(
@@ -97,35 +150,25 @@ class Trainer(BaseTrainer):
                     self._progress(batch_idx),
                     loss.item()))
 
-        # Calculate epoch averages
-        avg_loss = epoch_loss / n_steps
-        avg_sim_loss = epoch_sim_loss / n_steps
-        avg_gen_loss = epoch_gen_loss / n_steps
-        
-        # Run validation
-        val_metrics = self._valid_epoch(epoch)
-        
-        # Update learning rate
-        if hasattr(self, 'lr_scheduler') and self.lr_scheduler is not None:
-            self.lr_scheduler.step()
+            if batch_idx == self.len_epoch:
+                break
 
-        # Add all metrics to log
-        log = {
-            'loss': avg_loss,
-            'sim_loss': avg_sim_loss,
-            'gen_loss': avg_gen_loss,
-            'val_loss': val_metrics['val_loss'],
-            'val_sim_loss': val_metrics['val_sim_loss'], 
-            'val_gen_loss': val_metrics['val_gen_loss'],
-            'val_perplexity': val_metrics['val_perplexity'],
-            'val_embedding_sim': val_metrics['val_embedding_sim']
-        }
+        log = self.train_metrics.result()
+
+        if self.do_validation:
+            current_time = time.strftime("%Y-%m-%d %H:%M:%S")
+            self.log_info(f'[{current_time}] Starting validation for epoch: {epoch}')
+            val_log = self._valid_epoch(epoch)
+            log.update(**{'val_'+k : v for k, v in val_log.items()})
 
         return log
 
     def _valid_epoch(self, epoch):
         """
         Validate after training an epoch
+
+        :param epoch: Integer, current training epoch.
+        :return: A log that contains information about validation
         """
         self.model.eval()
         total_val_loss = 0
@@ -158,9 +201,12 @@ class Trainer(BaseTrainer):
                 perplexity = torch.exp(gen_loss)
                 
                 # Calculate embedding similarity between predicted and target sequences
+                # First get the predicted token embeddings
                 pred_tokens = gen_score.argmax(dim=-1)  # [batch, seq]
-                pred_embeds = self.model.phrase_decoder.input_embeddings.word_embeddings(pred_tokens)
-                target_embeds = self.model.phrase_decoder.input_embeddings.word_embeddings(decoder_target)
+                pred_embeds = self.model.phrase_decoder.input_embeddings.word_embeddings(pred_tokens)  # [batch, seq, hidden]
+                
+                # Get target token embeddings
+                target_embeds = self.model.phrase_decoder.input_embeddings.word_embeddings(decoder_target)  # [batch, seq, hidden]
                 
                 # Calculate mean embeddings
                 pred_mean = pred_embeds.mean(dim=1)  # [batch, hidden]
@@ -177,11 +223,9 @@ class Trainer(BaseTrainer):
                 total_val_embedding_sim += embedding_sim.item() * batch_size
                 n_val_steps += batch_size
 
-                if batch_idx % self.log_step == 0:
-                    self.log_info('Validation Epoch: {} {} Loss: {:.6f}'.format(
-                        epoch,
-                        self._progress_validation(batch_idx),
-                        loss.item()))
+                # Print validation samples
+                if batch_idx == 0:
+                    self._print_validation_samples(topic_ids, gen_score, decoder_target)
 
         # Calculate averages
         val_loss = total_val_loss / n_val_steps
@@ -191,11 +235,11 @@ class Trainer(BaseTrainer):
         val_embedding_sim = total_val_embedding_sim / n_val_steps
 
         return {
-            'val_loss': val_loss,
-            'val_sim_loss': val_sim_loss,
-            'val_gen_loss': val_gen_loss,
-            'val_perplexity': val_perplexity,
-            'val_embedding_sim': val_embedding_sim
+            'loss': val_loss,  
+            'sim_loss': val_sim_loss,
+            'gen_loss': val_gen_loss,
+            'perplexity': val_perplexity,
+            'embedding_sim': val_embedding_sim
         }
 
     def _print_validation_samples(self, topic_ids, gen_scores, targets):
@@ -289,17 +333,21 @@ class Trainer(BaseTrainer):
                             
                             # Generate phrases for potential subtopics
                             generated_phrases = []
+                            print(f"Generating phrases for {child_name}...")
                             for i in range(20):  # Generate multiple phrases to cluster
                                 # Add sequence length dimension: [batch_size, seq_len, hidden_size]
                                 phrase_embed = parent_embed.unsqueeze(0).unsqueeze(1)  
                                 phrase_output = self.model.phrase_decoder.generate(phrase_embed)
                                 phrase = dataset.bert_tokenizer.decode(phrase_output[0], skip_special_tokens=True)
+                                print(f"Generated phrase {i+1}: {phrase}")
                                 if len(phrase.strip()) > 0:
                                     generated_phrases.append(phrase.strip())
                             
+                            print(f"Found {len(generated_phrases)} valid phrases")
                             # Cluster phrases into subtopics
                             if len(generated_phrases) >= 5:
                                 subtopics = self._cluster_phrases(generated_phrases, parent_embed)
+                                print(f"Generated {len(subtopics)} subtopics")
                                 
                                 # Add child with its subtopics
                                 child_entry = {
