@@ -127,22 +127,29 @@ class TopicExpan(BaseModel):
         return gen_score
 
     def context_combiner(self, topic_context, doc_context, doc_mask):
+        # Ensure topic_context is 3D [batch, 1, hidden]
+        if len(topic_context.shape) == 2:
+            topic_context = topic_context.unsqueeze(1)
+            
         # Compute attention scores between doc and topic
-        scores = torch.matmul(doc_context, topic_context.unsqueeze(-1)).squeeze(-1)
-        scores = scores / (doc_context.size(-1) ** 0.5)  # Scale by sqrt(dim)
+        # doc_context: [batch, seq_len, hidden]
+        # topic_context: [batch, 1, hidden]
+        scores = torch.bmm(doc_context, topic_context.transpose(1, 2))  # [batch, seq_len, 1]
+        scores = scores.squeeze(-1) / (doc_context.size(-1) ** 0.5)  # Scale by sqrt(dim)
         
         # Apply mask and softmax
         mask = doc_mask.float()
         scores = scores.masked_fill(mask == 0, float('-inf'))
-        scores = F.softmax(scores, dim=1)
+        scores = F.softmax(scores, dim=1)  # [batch, seq_len]
         
         # Weight document context
-        weighted_context = doc_context * scores.unsqueeze(-1)
+        weighted_context = doc_context * scores.unsqueeze(-1)  # [batch, seq_len, hidden]
         
         # Combine with topic context
-        if len(topic_context.shape) == 2:
-            topic_context = topic_context.unsqueeze(1)
-        combined = torch.cat([weighted_context, topic_context.expand(-1, weighted_context.size(1), -1)], dim=-1)
+        combined = torch.cat([
+            weighted_context,  # [batch, seq_len, hidden]
+            topic_context.expand(-1, weighted_context.size(1), -1)  # [batch, seq_len, hidden]
+        ], dim=-1)
         
-        # Project to decoder dimension
+        # Project to decoder dimension [batch, seq_len, hidden]
         return self.linear_combiner(combined)

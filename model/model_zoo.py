@@ -283,8 +283,12 @@ class TransformerPhraseDecoder(nn.Module):
         if isinstance(x, dict):
             x = x['input_ids']
             
-        # Project context to decoder dimension
+        # Project context to decoder dimension and ensure 3D
+        # context shape should be [batch_size, seq_len, hidden_size]
         context = self.context_proj(context)
+        if len(context.shape) == 4:  # [batch, seq_len, seq_len, hidden]
+            # Average over one of the sequence dimensions
+            context = context.mean(dim=2)  
         
         # Get input embeddings and positions
         x = self.input_embeddings(x)
@@ -292,7 +296,12 @@ class TransformerPhraseDecoder(nn.Module):
         x = x + self.pos_encoder(positions).unsqueeze(0)
         
         # Apply topic attention
-        x, _ = self.topic_attention(x, context.unsqueeze(1), context.unsqueeze(1))
+        # Ensure context is 3D for attention
+        x = self.topic_attention(
+            query=x,
+            key=context,
+            value=context
+        )[0]
         
         # Pass through transformer layers
         for layer in self.layers:
