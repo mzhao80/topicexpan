@@ -43,6 +43,7 @@ class TopicExpan(BaseModel):
         
         self.interaction = BilinearInteraction(doc_dim, topic_dim, num_topics=num_topics, bias=False)
         self.linear_combiner = nn.Linear(doc_dim + topic_dim, doc_dim)
+        self.temperature = nn.Parameter(torch.tensor(1.0))  # Learned temperature parameter
 
 
     def to_device(self, device):
@@ -73,7 +74,8 @@ class TopicExpan(BaseModel):
         
         # Calculate similarity scores with temperature scaling
         sim_scores = self.interaction(doc_embed, topic_embed)
-        sim_scores = sim_scores / torch.sqrt(torch.tensor(doc_embed.size(-1), dtype=torch.float32, device=sim_scores.device))
+        # Scale with learned temperature parameter
+        sim_scores = sim_scores * F.softplus(self.temperature)  # Use softplus to ensure positive temperature
         
         print(f"sim_scores shape: {sim_scores.shape}")
         

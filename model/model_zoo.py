@@ -251,7 +251,9 @@ class TransformerPhraseDecoder(BaseModel):
         super().__init__()
         self.vocab_size, self.hidden_size = input_embeddings.word_embeddings.weight.shape
         self.input_embeddings = input_embeddings
+        # Tie output projection with input embeddings
         self.output_layer = nn.Linear(self.hidden_size, self.vocab_size, bias=False)
+        self.output_layer.weight = input_embeddings.word_embeddings.weight
         self.tokenizer = tokenizer
         
         # Add context projection and layer norm

@@ -53,8 +53,8 @@ class Trainer(BaseTrainer):
         self.train_metrics.reset()
         
         # Loss weights - give more weight to generation loss
-        sim_weight = 0.3
-        gen_weight = 0.7
+        sim_weight = 1.0
+        gen_weight = 1.0
         
         # Gradient clipping norm
         max_grad_norm = 1.0
@@ -107,17 +107,29 @@ class Trainer(BaseTrainer):
                 self.log_info(debug_info)
             
             sim_loss = self.criterions['sim'](sim_score, sim_target)
-            gen_loss = self.criterions['gen'](gen_score, gen_target)
+            gen_loss = self.criterions['gen'](gen_score.view(-1, gen_score.size(-1)), gen_target.view(-1))
             
-            # Apply loss weights
+            # Apply loss weights and ensure they're positive
             loss = sim_weight * sim_loss + gen_weight * gen_loss
             
             # Debug: Check loss values
             if batch_idx % 100 == 0:
-                debug_info = f"\n[DEBUG] Batch {batch_idx} Losses:"
-                debug_info += f"\nSimilarity Loss: {sim_loss.item():.3f}"
-                debug_info += f"\nGeneration Loss: {gen_loss.item():.3f}"
-                debug_info += f"\nWeighted Loss: {loss.item():.3f}"
+                debug_info = "\n[DEBUG] Loss Values:"
+                debug_info += f"\nSimilarity Loss: {sim_loss.item():.4f}"
+                debug_info += f"\nGeneration Loss: {gen_loss.item():.4f}"
+                debug_info += f"\nTotal Loss: {loss.item():.4f}"
+                
+                # Print sample predictions
+                with torch.no_grad():
+                    # Topic prediction accuracy
+                    pred_topics = sim_score.argmax(dim=1)
+                    topic_acc = (pred_topics == sim_target).float().mean()
+                    debug_info += f"\nTopic Prediction Accuracy: {topic_acc.item():.4f}"
+                    
+                    # Generation perplexity
+                    gen_perplexity = torch.exp(gen_loss)
+                    debug_info += f"\nGeneration Perplexity: {gen_perplexity.item():.4f}"
+                
                 self.log_info(debug_info)
 
             loss.backward()
