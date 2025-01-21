@@ -187,6 +187,28 @@ class GCNTopicEncoder(BaseModel):
 """
     3. Topic-Document Similarity Predictor
 """
+class Interaction(nn.Module):
+    def __init__(self, hidden_size):
+        super().__init__()
+        self.hidden_size = hidden_size
+        self.temperature = nn.Parameter(torch.ones(1))
+        self.interaction = nn.Sequential(
+            nn.Linear(hidden_size, hidden_size),
+            nn.GELU(),
+            nn.LayerNorm(hidden_size),
+            nn.Linear(hidden_size, hidden_size)
+        )
+    
+    def forward(self, doc_embed, topic_embed):
+        # Transform document embeddings
+        doc_embed = self.interaction(doc_embed)
+        
+        # Scale dot product by sqrt(dim) and learnable temperature
+        sim = torch.matmul(doc_embed, topic_embed.t()) 
+        sim = sim * F.softplus(self.temperature)
+        
+        return sim
+
 class BilinearInteraction(nn.Module):
     def __init__(self, doc_dim, topic_dim, num_topics=None, bias=True):
         super(BilinearInteraction, self).__init__()
@@ -304,6 +326,7 @@ class TransformerPhraseDecoder(BaseModel):
 
     def generate(self, context):
         batch_size = context.size(0)
+        # Always start with CLS token
         current_token = torch.full((batch_size, 1), self.bos_token_id, dtype=torch.long, device=context.device)
         
         # Debug print
@@ -318,8 +341,8 @@ class TransformerPhraseDecoder(BaseModel):
         # Initialize sampling parameters
         temperature = 0.8
         top_p = 0.9
-        min_tokens = 3  # Minimum number of tokens to generate
-        max_tokens = 10  # Maximum tokens to generate
+        min_tokens = 3  # Minimum number of tokens to generate after CLS
+        max_tokens = 10  # Maximum tokens to generate including CLS and SEP
         
         # Move valid_tokens to correct device and expand for batch
         valid_tokens = self.valid_tokens.to(context.device)
@@ -331,7 +354,7 @@ class TransformerPhraseDecoder(BaseModel):
         
         generated_tokens = []
         
-        for step in range(max_tokens - 1):
+        for step in range(max_tokens - 2):  # -2 to account for CLS and SEP
             # Get logits from decoder
             logits = self.forward(current_token, context)
             next_token_logits = logits[:, -1, :] / temperature
@@ -349,8 +372,9 @@ class TransformerPhraseDecoder(BaseModel):
             next_token_logits = next_token_logits.masked_fill(~valid_tokens, -float('inf'))
             next_token_logits = next_token_logits.masked_fill(torch.isnan(next_token_logits), -float('inf'))
             
-            # Mask out PAD token (prefer SEP for ending)
+            # Mask out PAD, CLS tokens (prefer SEP for ending)
             next_token_logits[:, self.pad_token_id] = -float('inf')
+            next_token_logits[:, self.bos_token_id] = -float('inf')  # Never generate CLS after first token
             
             # Keep at least min_tokens before allowing EOS
             if step < min_tokens:
@@ -403,34 +427,27 @@ class TransformerPhraseDecoder(BaseModel):
             
             # Stop if SEP token is generated
             if (next_token == self.eos_token_id).any():
-                # Replace everything after SEP with SEP
-                for b in range(batch_size):
-                    if next_token[b] == self.eos_token_id:
-                        current_token[b, -1] = self.eos_token_id
                 break
     
-        # Post-process: ensure sequences start with CLS and end with SEP
-        for b in range(batch_size):
-            # Find first SEP token
-            sep_pos = (current_token[b] == self.eos_token_id).nonzero()
-            if len(sep_pos) > 0:
-                # Keep only up to first SEP
-                current_token[b, sep_pos[0]+1:] = self.eos_token_id
-            else:
-                # If no SEP, append it
-                current_token[b, -1] = self.eos_token_id
-        
-            # Ensure starts with CLS
-            current_token[b, 0] = self.bos_token_id
+    # Post-process: ensure sequences end with SEP and handle padding
+    for b in range(batch_size):
+        # Find first SEP token
+        sep_pos = (current_token[b] == self.eos_token_id).nonzero()
+        if len(sep_pos) > 0:
+            # Keep only up to first SEP, pad the rest
+            current_token[b, sep_pos[0]+1:] = self.pad_token_id
+        else:
+            # If no SEP, append it
+            current_token = torch.cat([current_token, torch.full((batch_size, 1), self.eos_token_id, device=context.device)], dim=1)
     
-        # Debug final output
-        print(f"\nFinal generation:")
-        print(f"Output shape: {current_token.shape}")
-        for b in range(min(2, batch_size)):  # Show first 2 examples
-            tokens = [self.tokenizer.convert_ids_to_tokens(t.item()) for t in current_token[b]]
-            print(f"Sample {b}: {' '.join(tokens)}")
+    # Debug final output
+    print(f"\nFinal generation:")
+    print(f"Output shape: {current_token.shape}")
+    for b in range(min(2, batch_size)):  # Show first 2 examples
+        tokens = [self.tokenizer.convert_ids_to_tokens(t.item()) for t in current_token[b]]
+        print(f"Sample {b}: {' '.join(tokens)}")
     
-        return current_token
+    return current_token
 
 """
     5. Topic Expansion Model

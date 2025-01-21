@@ -73,10 +73,11 @@ class Trainer(BaseTrainer):
                 self.log_info(debug_info)
             
             encoder_input = {k: v.to(self.device) for k, v in doc_infos.items()}
+            # Keep CLS token in both input and target
             decoder_input = {k: v[:, :-1].to(self.device) for k, v in phrase_infos.items()}
+            gen_target = phrase_infos['input_ids'][:, :-1].to(self.device)  # Keep CLS, remove last token for target
             
             sim_target = topic_ids.to(self.device)
-            gen_target = phrase_infos['input_ids'][:, 1:].to(self.device)
 
             self.optimizer.zero_grad()
             
@@ -168,7 +169,7 @@ class Trainer(BaseTrainer):
                 decoder_input = {k: v[:, :-1].to(self.device) for k, v in phrase_infos.items()}
 
                 sim_target = topic_ids.to(self.device)
-                gen_target = phrase_infos['input_ids'][:, 1:].to(self.device)
+                gen_target = phrase_infos['input_ids'][:, :-1].to(self.device)  # Keep CLS, remove last token for target
 
                 # Get model outputs
                 sim_score, gen_score = self.model(encoder_input, decoder_input, topic_ids)

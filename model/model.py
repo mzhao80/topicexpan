@@ -50,34 +50,34 @@ class TopicExpan(BaseModel):
         self.topic_encoder.to_device(device)
         return self
 
-    def forward(self, encoder_input, decoder_input, topic_indices):
-        topic_encoder_output = self.topic_encoder.encode()
-        doc_encoder_output = self.doc_encoder(encoder_input)
+    def forward(self, encoder_input, decoder_input=None, topic_ids=None):
+        # Get document embeddings
+        doc_embed = self.doc_encoder(encoder_input)[:, 0]  # Use CLS token
+        doc_embed = F.normalize(doc_embed, p=2, dim=-1)  # L2 normalize
         
-        # Part 1 : Topic-Document Similarity Prediction
-        mask_sum = encoder_input['attention_mask'].sum(dim=1, keepdim=True).clamp(min=1e-9)
-        doc_tensor = (doc_encoder_output * encoder_input['attention_mask'][:, :, None]).sum(dim=1) 
-        doc_tensor = doc_tensor / mask_sum
-        sim_score = self.interaction(doc_tensor, topic_encoder_output) 
+        # Get topic embeddings from GCN
+        topic_embed = self.topic_encoder.encode()
+        topic_embed = F.normalize(topic_embed, p=2, dim=-1)  # L2 normalize
         
-        # Part 2 : Topic-conditional Phrase Generation (w/ Teacher Forcing)
-        decoder_context = self.context_combiner(topic_encoder_output[topic_indices, :], doc_encoder_output, encoder_input['attention_mask'])
-        decoder_output = self.phrase_decoder(decoder_input, decoder_context)
-        gen_score = F.log_softmax(decoder_output, dim=-1)
-
-        return sim_score, gen_score
-
-    # Part 1. Topic-Document Similarity Prediction
-    def sim(self, encoder_input):
-        topic_encoder_output = self.topic_encoder.encode() 
+        # Calculate similarity scores with temperature scaling
+        sim_scores = self.interaction(doc_embed, topic_embed)
+        sim_scores = sim_scores / torch.sqrt(torch.tensor(doc_embed.size(-1), dtype=torch.float32, device=sim_scores.device))
         
-        doc_encoder_output = self.doc_encoder(encoder_input)
-        mask_sum = encoder_input['attention_mask'].sum(dim=1, keepdim=True).clamp(min=1e-9)
-        doc_tensor = (doc_encoder_output * encoder_input['attention_mask'][:, :, None]).sum(dim=1) 
-        doc_tensor = doc_tensor / mask_sum
+        if decoder_input is not None and topic_ids is not None:
+            # Get topic embeddings for selected topics
+            topic_context = topic_embed[topic_ids]
+            
+            # Combine document and topic embeddings for decoder context
+            decoder_context = self.linear_combiner(torch.cat([
+                doc_embed,
+                topic_context
+            ], dim=-1))
+            
+            # Generate phrases
+            gen_scores = self.phrase_decoder(decoder_input, decoder_context)
+            return sim_scores, gen_scores
         
-        score = self.interaction(doc_tensor, topic_encoder_output) 
-        return score
+        return sim_scores
 
     def inductive_sim(self, encoder_input):
         topic_encoder_output = self.topic_encoder.inductive_encode() 
@@ -92,20 +92,30 @@ class TopicExpan(BaseModel):
         return score
 
     # Step 2. Topic-conditional Phrase Generation
-    def gen(self, encoder_input, topic_indices):
-        topic_encoder_output = self.topic_encoder.encode()[topic_indices, :]
+    def gen(self, encoder_input, topic_ids):
+        # Get document embeddings
+        doc_embed = self.doc_encoder(encoder_input)[:, 0]  # Use CLS token
+        doc_embed = F.normalize(doc_embed, p=2, dim=-1)  # L2 normalize
         
-        doc_encoder_output = self.doc_encoder(encoder_input)
-        doc_encoder_mask = encoder_input['attention_mask']
-
-        decoder_context = self.context_combiner(topic_encoder_output, doc_encoder_output, doc_encoder_mask)
+        # Get topic embeddings
+        topic_embed = self.topic_encoder.encode()
+        topic_embed = F.normalize(topic_embed, p=2, dim=-1)  # L2 normalize
+        topic_context = topic_embed[topic_ids]
+        
+        # Combine document and topic embeddings
+        decoder_context = self.linear_combiner(torch.cat([
+            doc_embed,
+            topic_context
+        ], dim=-1))
+        
+        # Generate phrases
         output_ids = self.phrase_decoder.generate(decoder_context)
         return output_ids
 
-    def inductive_gen(self, encoder_input, topic_indices):
+    def inductive_gen(self, encoder_input, topic_ids):
         topic_encoder_output = self.topic_encoder.inductive_encode() 
         topic_encoder_output = torch.stack([topic_encoder_output[pid] for vid, pid in self.vid2pid.items()])
-        topic_encoder_output = topic_encoder_output[topic_indices, :]
+        topic_encoder_output = topic_encoder_output[topic_ids, :]
 
         doc_encoder_output = self.doc_encoder(encoder_input)
         doc_encoder_mask = encoder_input['attention_mask']
@@ -115,8 +125,8 @@ class TopicExpan(BaseModel):
         return output_ids
 
     # generation with Teacher Forcing
-    def gen_with_tf(self, encoder_input, decoder_input, topic_indices):
-        topic_encoder_output = self.topic_encoder.encode()[topic_indices, :]
+    def gen_with_tf(self, encoder_input, decoder_input, topic_ids):
+        topic_encoder_output = self.topic_encoder.encode()[topic_ids, :]
         doc_encoder_output = self.doc_encoder(encoder_input)
         doc_encoder_mask = encoder_input['attention_mask']
 
