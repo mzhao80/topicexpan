@@ -10,9 +10,8 @@ from torch.nn import init, TransformerDecoderLayer, TransformerDecoder
 import dgl
 import dgl.function as fn
 from dgl.nn.pytorch.conv import GraphConv
-from transformers import AutoModel, AutoConfig, AutoTokenizer
+from transformers import AutoModel, AutoConfig
 from base import BaseModel
-from sentence_transformers import SentenceTransformer
 
 """
     1. Document Encoder
@@ -23,8 +22,6 @@ class BertDocEncoder(BaseModel):
         self.model_name = model_name
         self.model = AutoModel.from_pretrained(model_name)
         self.input_embeddings = self.model.embeddings
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-        self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         
     def forward(self, x):
         """
@@ -33,19 +30,6 @@ class BertDocEncoder(BaseModel):
         """
         batch_output = self.model(**x)
         return batch_output[0]
-
-    def get_doc_embeddings(self, docs):
-        """Get embeddings for a list of documents using all-MiniLM-L6-v2."""
-        model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
-        model = model.to(self.device)
-        
-        # Get document embeddings 
-        doc_embeds = model.encode(docs, convert_to_tensor=True)
-        
-        # Normalize embeddings
-        doc_embeds = F.normalize(doc_embeds, p=2, dim=1)
-        
-        return doc_embeds
 
 """
     2. Topic Encoder
@@ -245,63 +229,82 @@ class TransformerPhraseDecoder(BaseModel):
         self.vocab_size, self.hidden_size = input_embeddings.word_embeddings.weight.shape
         self.input_embeddings = input_embeddings
         self.output_embeddings = nn.Linear(self.hidden_size, self.vocab_size, bias=False)
-        self.context_proj = nn.Linear(self.hidden_size, self.hidden_size, bias=False)
-        self.pos_encoder = nn.Embedding(max_length, self.hidden_size)
-        self.layers = nn.ModuleList([TransformerDecoderLayer(d_model=self.hidden_size, nhead=num_heads, batch_first=True) for _ in range(num_layers)])
-        self.output_layer = nn.Linear(self.hidden_size, self.hidden_size, bias=False)
+
+        model_layer = TransformerDecoderLayer(
+            d_model=self.hidden_size, 
+            nhead=num_heads, 
+            batch_first=True
+        )
+        self.model = TransformerDecoder(model_layer, num_layers=num_layers)
 
         self.max_length = max_length
         self.pad_token_id = pad_token_id
         self.bos_token_id = bos_token_id
         self.eos_token_id = eos_token_id
 
-    def forward(self, x, context):
-        # Project context into decoder dimension
-        context = self.context_proj(context).unsqueeze(1).expand(-1, x.size(1), -1)
+    def _make_causal_mask(self, x):
+        # Create causal mask for decoder
+        sz = x.size(1)
+        mask = (torch.triu(torch.ones(sz, sz)) == 1).transpose(0, 1)
+        mask = mask.float().masked_fill(mask == 0, float('-inf')).masked_fill(mask == 1, float(0.0))
+        return mask.to(x.device)
+
+    def forward(self, x, decoder_context=None):
+        # Handle BERT-style dictionary input
+        if isinstance(x, dict):
+            input_ids = x['input_ids']
+            token_type_ids = x.get('token_type_ids', None)
+            # Only pass input_ids and token_type_ids to embeddings
+            x = self.input_embeddings(
+                input_ids=input_ids,
+                token_type_ids=token_type_ids
+            )
+        else:
+            x = self.input_embeddings(x)
         
-        # Add context as cross-attention key/value
-        x = self.input_embeddings(x)
-        x = self.pos_encoder(torch.arange(x.size(1), device=x.device)).unsqueeze(0).expand(x.size(0), -1, -1) + x
+        # Create attention masks
+        attn_mask = self._make_causal_mask(x)
+        # Use attention_mask from input if provided
+        if isinstance(x, dict) and 'attention_mask' in x:
+            padding_mask = ~x['attention_mask'].bool()
+        else:
+            padding_mask = None
         
-        # Combine input embeddings with context
-        x = x + context
+        # Run through transformer decoder
+        output = self.model(
+            x,
+            decoder_context,
+            tgt_mask=attn_mask,
+            memory_mask=None,
+            tgt_key_padding_mask=padding_mask,
+            memory_key_padding_mask=None
+        )
         
-        # Pass through transformer layers
-        for layer in self.layers:
-            x = layer(x)
-            
-        x = self.output_layer(x)
-        x = self.output_embeddings(x)
-        return x
+        # Project to vocabulary
+        output = self.output_embeddings(output)
+        
+        return output
 
     def generate(self, context):
         batch_size = context.size(0)
         current_token = torch.full((batch_size, 1), self.bos_token_id, dtype=torch.long, device=context.device)
         
-        # Initialize with nucleus sampling parameters
-        temperature = 0.8
-        top_p = 0.9
-        
-        generated_phrases = set()  # Track generated phrases to avoid duplicates
-        max_attempts = 30  # Maximum attempts to generate unique phrases
+        # Initialize with temperature and top-k sampling
+        temperature = 0.7
+        top_k = 50
         
         for _ in range(self.max_length - 1):
             # Get logits from decoder
             logits = self.forward(current_token, context)
             next_token_logits = logits[:, -1, :] / temperature
             
-            # Apply nucleus sampling
-            sorted_logits, sorted_indices = torch.sort(next_token_logits, descending=True)
-            cumulative_probs = torch.cumsum(F.softmax(sorted_logits, dim=-1), dim=-1)
-            sorted_indices_to_remove = cumulative_probs > top_p
-            sorted_indices_to_remove[..., 1:] = sorted_indices_to_remove[..., :-1].clone()
-            sorted_indices_to_remove[..., 0] = 0
-            indices_to_remove = sorted_indices_to_remove.scatter(1, sorted_indices, sorted_indices_to_remove)
-            next_token_logits[indices_to_remove] = float('-inf')
+            # Apply top-k filtering
+            top_k_logits, top_k_indices = torch.topk(next_token_logits, k=top_k)
+            next_token_probs = F.softmax(top_k_logits, dim=-1)
             
             # Sample from filtered distribution
-            next_token_probs = F.softmax(next_token_logits, dim=-1)
-            next_token = torch.multinomial(next_token_probs, num_samples=1)
+            next_token_idx = torch.multinomial(next_token_probs, num_samples=1)
+            next_token = top_k_indices.gather(-1, next_token_idx)
             
             current_token = torch.cat([current_token, next_token], dim=1)
             
