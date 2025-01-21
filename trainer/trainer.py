@@ -29,6 +29,19 @@ class Trainer(BaseTrainer):
 
         self.train_metrics = MetricTracker('loss', 'sim_loss', 'gen_loss', writer=self.writer)
         self.valid_metrics = MetricTracker('loss', 'sim_loss', 'gen_loss', *[m.__name__ for m in self.metric_ftns], writer=self.writer)
+        
+        # Setup logging
+        os.makedirs('logs', exist_ok=True)
+        current_time = time.strftime("%Y%m%d-%H%M%S")
+        self.log_file = os.path.join('logs', f'training_log_{current_time}.txt')
+        self.log_info(f"Starting training at {current_time}")
+        self.log_info(f"Model configuration:\n{json.dumps(config, indent=2)}")
+
+    def log_info(self, message):
+        """Log message to both console and file"""
+        print(message)
+        with open(self.log_file, 'a') as f:
+            f.write(message + '\n')
 
     def _train_epoch(self, epoch):
         """
@@ -45,12 +58,13 @@ class Trainer(BaseTrainer):
             
             # Debug: Check input shapes and values
             if batch_idx == 0:  # Only print for first batch
-                print("\n[DEBUG] Batch Information:")
-                print(f"Document IDs shape: {doc_ids.shape}")
-                print(f"Topic IDs shape: {topic_ids.shape}")
-                print(f"Unique topics in batch: {topic_ids.unique().tolist()}")
-                print(f"Input sequence lengths: {doc_infos['attention_mask'].sum(1).tolist()}")
-                print(f"Target phrase lengths: {phrase_infos['attention_mask'].sum(1).tolist()}")
+                debug_info = "\n[DEBUG] Batch Information:"
+                debug_info += f"\nDocument IDs shape: {doc_ids.shape}"
+                debug_info += f"\nTopic IDs shape: {topic_ids.shape}"
+                debug_info += f"\nUnique topics in batch: {topic_ids.unique().tolist()}"
+                debug_info += f"\nInput sequence lengths: {doc_infos['attention_mask'].sum(1).tolist()}"
+                debug_info += f"\nTarget phrase lengths: {phrase_infos['attention_mask'].sum(1).tolist()}"
+                self.log_info(debug_info)
             
             encoder_input = {k: v.to(self.device) for k, v in doc_infos.items()}
             decoder_input = {k: v[:, :-1].to(self.device) for k, v in phrase_infos.items()}
@@ -64,25 +78,26 @@ class Trainer(BaseTrainer):
             
             # Debug: Check model outputs
             if batch_idx == 0:  # Only print for first batch
-                print("\n[DEBUG] Model Outputs:")
-                print(f"Similarity scores shape: {sim_score.shape}")
-                print(f"Score range: [{sim_score.min():.3f}, {sim_score.max():.3f}]")
-                print(f"Generation logits shape: {gen_score.shape}")
+                debug_info = "\n[DEBUG] Model Outputs:"
+                debug_info += f"\nSimilarity scores shape: {sim_score.shape}"
+                debug_info += f"\nScore range: [{sim_score.min():.3f}, {sim_score.max():.3f}]"
+                debug_info += f"\nGeneration logits shape: {gen_score.shape}"
                 
                 # Print predicted vs actual topics
                 pred_topics = sim_score.argmax(dim=1)
-                print("\nTopic Prediction Sample:")
+                debug_info += "\n\nTopic Prediction Sample:"
                 for i in range(min(3, len(pred_topics))):
-                    print(f"Pred: {pred_topics[i].item()} | True: {sim_target[i].item()}")
+                    debug_info += f"\nPred: {pred_topics[i].item()} | True: {sim_target[i].item()}"
                 
                 # Print sample phrase
                 if hasattr(self.dataset, 'bert_tokenizer'):
                     gen_tokens = gen_score[0].argmax(dim=1)
                     generated = self.dataset.bert_tokenizer.decode(gen_tokens)
                     target = self.dataset.bert_tokenizer.decode(gen_target[0])
-                    print("\nPhrase Generation Sample:")
-                    print(f"Generated: {generated}")
-                    print(f"Target: {target}")
+                    debug_info += "\n\nPhrase Generation Sample:"
+                    debug_info += f"\nGenerated: {generated}"
+                    debug_info += f"\nTarget: {target}"
+                self.log_info(debug_info)
             
             sim_loss = self.criterions['sim'](sim_score, sim_target)
             gen_loss = self.criterions['gen'](gen_score, gen_target)
@@ -90,10 +105,11 @@ class Trainer(BaseTrainer):
             
             # Debug: Check loss values
             if batch_idx % 100 == 0:
-                print(f"\n[DEBUG] Batch {batch_idx} Losses:")
-                print(f"Similarity Loss: {sim_loss.item():.3f}")
-                print(f"Generation Loss: {gen_loss.item():.3f}")
-                print(f"Total Loss: {loss.item():.3f}")
+                debug_info = f"\n[DEBUG] Batch {batch_idx} Losses:"
+                debug_info += f"\nSimilarity Loss: {sim_loss.item():.3f}"
+                debug_info += f"\nGeneration Loss: {gen_loss.item():.3f}"
+                debug_info += f"\nTotal Loss: {loss.item():.3f}"
+                self.log_info(debug_info)
 
             loss.backward()
             self.optimizer.step()
@@ -104,7 +120,7 @@ class Trainer(BaseTrainer):
             self.train_metrics.update('gen_loss', gen_loss.item())
 
             if batch_idx % self.log_step == 0:
-                self.logger.debug('Train Epoch: {} {} Loss: {:.6f}'.format(
+                self.log_info('Train Epoch: {} {} Loss: {:.6f}'.format(
                     epoch,
                     self._progress(batch_idx),
                     loss.item()))
@@ -116,7 +132,7 @@ class Trainer(BaseTrainer):
 
         if self.do_validation:
             current_time = time.strftime("%Y-%m-%d %H:%M:%S")
-            self.logger.info(f'[{current_time}] Starting validation for epoch: {epoch}')
+            self.log_info(f'[{current_time}] Starting validation for epoch: {epoch}')
             val_log = self._valid_epoch(epoch)
             log.update(**{'val_'+k : v for k, v in val_log.items()})
 
@@ -131,18 +147,21 @@ class Trainer(BaseTrainer):
         """
         self.model.eval()
         self.valid_metrics.reset()
-            
+        
         with torch.no_grad():
             for batch_idx, batch_data in enumerate(self.valid_data_loader):
                 doc_ids, doc_infos, topic_ids, phrase_infos = batch_data
-            
+        
                 encoder_input = {k: v.to(self.device) for k, v in doc_infos.items()}
                 decoder_input = {k: v[:, :-1].to(self.device) for k, v in phrase_infos.items()}
 
                 sim_target = topic_ids.to(self.device)
                 gen_target = phrase_infos['input_ids'][:, 1:].to(self.device)
 
+                # Get model outputs
                 sim_score, gen_score = self.model(encoder_input, decoder_input, topic_ids)
+                
+                # Calculate losses
                 sim_loss = self.criterions['sim'](sim_score, sim_target)
                 gen_loss = self.criterions['gen'](gen_score, gen_target)
                 loss = sim_loss + gen_loss
@@ -152,28 +171,40 @@ class Trainer(BaseTrainer):
                 self.valid_metrics.update('gen_loss', gen_loss.item())
                 self.valid_metrics.update('loss', loss.item())      
                 
-                # output and target are of shape (batch_size, num_classes)
-                for met in self.metric_ftns:
-                    if len(gen_target) == 0: continue
-                    if met.__name__ == 'embedding_sim':
-                        gen_output = self.model.gen(encoder_input, topic_ids)
-                        # Get attention masks
-                        output_mask = (gen_output != self.dataset.bert_tokenizer.pad_token_id).float()
-                        target_mask = (gen_target != self.dataset.bert_tokenizer.pad_token_id).float()
-                        met_val = met(gen_output, gen_target, output_mask, target_mask)
-                    else:
-                        met_val = met(gen_score, gen_target)
-                    self.valid_metrics.update(met.__name__, met_val)
+                # Evaluate generation quality
+                if batch_idx == 0:  # Only for first batch
+                    # Generate phrases
+                    gen_output = self.model.gen(encoder_input, topic_ids)
+                    
+                    # Get attention masks
+                    output_mask = (gen_output != self.dataset.bert_tokenizer.pad_token_id).float()
+                    target_mask = (gen_target != self.dataset.bert_tokenizer.pad_token_id).float()
+                    
+                    # Calculate metrics
+                    for met in self.metric_ftns:
+                        if met.__name__ == 'embedding_sim':
+                            met_val = met(gen_output, gen_target, output_mask, target_mask)
+                        else:
+                            met_val = met(gen_score, gen_target)
+                        self.valid_metrics.update(met.__name__, met_val)
+                    
+                    # Log sample generations
+                    if hasattr(self.dataset, 'bert_tokenizer'):
+                        gen_info = "\nGeneration Samples:"
+                        for i in range(min(3, len(gen_output))):
+                            generated = self.dataset.bert_tokenizer.decode(gen_output[i])
+                            target = self.dataset.bert_tokenizer.decode(gen_target[i])
+                            gen_info += f"\nTopic {topic_ids[i].item()}:"
+                            gen_info += f"\nGenerated: {generated}"
+                            gen_info += f"\nTarget: {target}\n"
+                        self.log_info(gen_info)
 
                 if batch_idx % self.log_step == 0:
-                    self.logger.debug('Validation Epoch: {} {} Loss: {:.6f}'.format(
+                    self.log_info('Validation Epoch: {} {} Loss: {:.6f}'.format(
                         epoch,
                         self._progress_validation(batch_idx),
                         loss.item()))
 
-        # add histogram of model parameters to the tensorboard
-        for name, p in self.model.named_parameters():
-            self.writer.add_histogram(name, p, bins='auto')
         return self.valid_metrics.result()
 
     def _progress(self, batch_idx):

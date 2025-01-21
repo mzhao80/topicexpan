@@ -229,7 +229,11 @@ class TransformerPhraseDecoder(BaseModel):
         self.vocab_size, self.hidden_size = input_embeddings.word_embeddings.weight.shape
         self.input_embeddings = input_embeddings
         self.output_embeddings = nn.Linear(self.hidden_size, self.vocab_size, bias=False)
-
+        
+        # Add context projection and layer norm
+        self.context_proj = nn.Linear(self.hidden_size, self.hidden_size)
+        self.context_norm = nn.LayerNorm(self.hidden_size)
+        
         model_layer = TransformerDecoderLayer(
             d_model=self.hidden_size, 
             nhead=num_heads, 
@@ -254,7 +258,6 @@ class TransformerPhraseDecoder(BaseModel):
         if isinstance(x, dict):
             input_ids = x['input_ids']
             token_type_ids = x.get('token_type_ids', None)
-            # Only pass input_ids and token_type_ids to embeddings
             x = self.input_embeddings(
                 input_ids=input_ids,
                 token_type_ids=token_type_ids
@@ -262,9 +265,12 @@ class TransformerPhraseDecoder(BaseModel):
         else:
             x = self.input_embeddings(x)
         
+        # Project and normalize context
+        if decoder_context is not None:
+            decoder_context = self.context_norm(self.context_proj(decoder_context))
+        
         # Create attention masks
         attn_mask = self._make_causal_mask(x)
-        # Use attention_mask from input if provided
         if isinstance(x, dict) and 'attention_mask' in x:
             padding_mask = ~x['attention_mask'].bool()
         else:
@@ -289,26 +295,44 @@ class TransformerPhraseDecoder(BaseModel):
         batch_size = context.size(0)
         current_token = torch.full((batch_size, 1), self.bos_token_id, dtype=torch.long, device=context.device)
         
-        # Initialize with temperature and top-k sampling
-        temperature = 0.7
-        top_k = 50
+        # Project and normalize context
+        context = self.context_norm(self.context_proj(context))
         
-        for _ in range(self.max_length - 1):
+        # Initialize sampling parameters
+        temperature = 0.8  # Slightly higher temperature for more diversity
+        top_p = 0.9  # Use nucleus sampling
+        min_tokens = 3  # Minimum number of tokens to generate
+        
+        generated_tokens = []
+        
+        for step in range(self.max_length - 1):
             # Get logits from decoder
             logits = self.forward(current_token, context)
             next_token_logits = logits[:, -1, :] / temperature
             
-            # Apply top-k filtering
-            top_k_logits, top_k_indices = torch.topk(next_token_logits, k=top_k)
-            next_token_probs = F.softmax(top_k_logits, dim=-1)
+            # Apply nucleus sampling
+            sorted_logits, sorted_indices = torch.sort(next_token_logits, descending=True)
+            cumulative_probs = torch.cumsum(F.softmax(sorted_logits, dim=-1), dim=-1)
+            sorted_indices_to_remove = cumulative_probs > top_p
+            sorted_indices_to_remove[..., 1:] = sorted_indices_to_remove[..., :-1].clone()
+            sorted_indices_to_remove[..., 0] = 0
+            
+            # Keep at least min_tokens before allowing EOS
+            if step < min_tokens:
+                next_token_logits[:, self.eos_token_id] = float('-inf')
+            
+            indices_to_remove = sorted_indices_to_remove.scatter(1, sorted_indices, sorted_indices_to_remove)
+            next_token_logits[indices_to_remove] = float('-inf')
             
             # Sample from filtered distribution
-            next_token_idx = torch.multinomial(next_token_probs, num_samples=1)
-            next_token = top_k_indices.gather(-1, next_token_idx)
+            next_token_probs = F.softmax(next_token_logits, dim=-1)
+            next_token = torch.multinomial(next_token_probs, num_samples=1)
             
             current_token = torch.cat([current_token, next_token], dim=1)
+            generated_tokens.append(next_token)
             
-            if (next_token == self.eos_token_id).all():
+            # Stop if all sequences have generated EOS token
+            if step >= min_tokens and (next_token == self.eos_token_id).all():
                 break
-                
+        
         return current_token
