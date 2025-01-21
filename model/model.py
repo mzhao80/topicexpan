@@ -126,10 +126,23 @@ class TopicExpan(BaseModel):
         gen_score = F.log_softmax(decoder_output, dim=-1)
         return gen_score
 
-    def context_combiner(self, topic_context, doc_context, doc_mask):        
-        scores = self.interaction.compute_attn_scores(doc_context, topic_context)
-        scores = torch.exp(scores.clamp(max=20)) * doc_mask  # Clamp to prevent overflow
-        scores_sum = scores.sum(dim=1, keepdim=True).clamp(min=1e-9)
-        scores = scores / scores_sum
-        context = (doc_context * scores.unsqueeze(dim=2))
-        return context
+    def context_combiner(self, topic_context, doc_context, doc_mask):
+        # Compute attention scores between doc and topic
+        scores = torch.matmul(doc_context, topic_context.unsqueeze(-1)).squeeze(-1)
+        scores = scores / (doc_context.size(-1) ** 0.5)  # Scale by sqrt(dim)
+        
+        # Apply mask and softmax
+        mask = doc_mask.float()
+        scores = scores.masked_fill(mask == 0, float('-inf'))
+        scores = F.softmax(scores, dim=1)
+        
+        # Weight document context
+        weighted_context = doc_context * scores.unsqueeze(-1)
+        
+        # Combine with topic context
+        if len(topic_context.shape) == 2:
+            topic_context = topic_context.unsqueeze(1)
+        combined = torch.cat([weighted_context, topic_context.expand(-1, weighted_context.size(1), -1)], dim=-1)
+        
+        # Project to decoder dimension
+        return self.linear_combiner(combined)
