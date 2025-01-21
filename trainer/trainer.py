@@ -10,6 +10,7 @@ import os, pickle
 import time
 from sentence_transformers import SentenceTransformer
 import json
+from sklearn.metrics import silhouette_score
 
 class Trainer(BaseTrainer):
     """
@@ -250,18 +251,9 @@ class Trainer(BaseTrainer):
                             parent_embed = parent2virtualh[parent_rank]
                             
                             # Generate phrases for potential subtopics
-                            generated_phrases = []
-                            print(f"Generating phrases for {child_name}...")
-                            for i in range(20):  # Generate multiple phrases to cluster
-                                # Add sequence length dimension: [batch_size, seq_len, hidden_size]
-                                phrase_embed = parent_embed.unsqueeze(0).unsqueeze(1)  
-                                phrase_output = self.model.phrase_decoder.generate(phrase_embed)
-                                phrase = dataset.bert_tokenizer.decode(phrase_output[0], skip_special_tokens=True)
-                                print(f"Generated phrase {i+1}: {phrase}")
-                                if len(phrase.strip()) > 0:
-                                    generated_phrases.append(phrase.strip())
+                            generated_phrases = self._generate_phrases(parent_embed)
+                            print(f"Generated {len(generated_phrases)} phrases for {child_name}")
                             
-                            print(f"Found {len(generated_phrases)} valid phrases")
                             # Cluster phrases into subtopics
                             if len(generated_phrases) >= 5:
                                 subtopics = self._cluster_phrases(generated_phrases, parent_embed)
@@ -297,93 +289,191 @@ class Trainer(BaseTrainer):
             with open('discovered_topics.json', 'w') as f:
                 json.dump(output, f, indent=2)
 
-    def _cluster_phrases(self, phrases, parent_embed):
-        """Cluster phrases into topics with improved diversity and relevance.
+    def _generate_phrases(self, topic_embedding, num_phrases=20):
+        """Generate phrases for a given topic embedding."""
+        # Ensure topic embedding is properly shaped
+        if len(topic_embedding.shape) == 1:
+            topic_embedding = topic_embedding.unsqueeze(0)
+            
+        # Get document embeddings for similarity scoring
+        doc_embeddings = self.model.get_doc_embeddings(self.dataset.docs)
         
-        Args:
-            phrases: List of phrases to cluster
-            parent_embed: Parent topic embedding for hierarchical context
-        """
+        # Calculate topic-document similarities
+        sim_scores = F.cosine_similarity(topic_embedding.unsqueeze(1), doc_embeddings.unsqueeze(0), dim=2)
+        sim_scores = F.softmax(sim_scores, dim=1)  # Normalize across documents
+        
+        # Filter documents by similarity threshold
+        threshold = 0.1  # Adjust as needed
+        relevant_doc_indices = (sim_scores > threshold).nonzero()[:, 1]
+        
+        # Generate phrases from relevant documents
+        generated_phrases = []
+        unique_phrases = set()
+        
+        for doc_idx in relevant_doc_indices:
+            # Get document embedding
+            doc_embed = doc_embeddings[doc_idx].unsqueeze(0)
+            
+            # Generate phrase
+            tokens = self.model.phrase_decoder.generate(topic_embedding)
+            phrase = self.dataset.bert_tokenizer.decode(tokens[0], skip_special_tokens=True).strip()
+            
+            # Filter phrases
+            if (len(phrase) > 3 and  # Avoid very short phrases
+                phrase not in unique_phrases and  # Avoid duplicates
+                not any(p in phrase for p in ['speaker of the house', 'hakeem jeffries', 'kevin mccarthy']) and  # Filter common irrelevant phrases
+                self._phrase_in_corpus(phrase)):  # Only keep phrases that appear in corpus
+                
+                unique_phrases.add(phrase)
+                generated_phrases.append({
+                    'phrase': phrase,
+                    'confidence': float(sim_scores[0, doc_idx])
+                })
+                
+            if len(generated_phrases) >= num_phrases:
+                break
+                
+        return generated_phrases
+
+    def _phrase_in_corpus(self, phrase):
+        """Check if phrase appears in corpus."""
+        # Convert phrase to lowercase for case-insensitive matching
+        phrase = phrase.lower()
+        
+        # Check each document
+        for doc in self.dataset.docs:
+            if phrase in doc.lower():
+                return True
+        return False
+
+    def _cluster_phrases(self, phrases, parent_embedding, num_clusters=None):
+        """Cluster generated phrases to identify novel topics."""
+        if not phrases:
+            return []
+            
+        # Extract phrases and confidences
+        phrase_texts = [p['phrase'] for p in phrases]
+        confidences = [p['confidence'] for p in phrases]
+        
+        # Get embeddings using sentence-transformers
         model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
         model = model.to(self.device)
+        embeddings_array = model.encode(phrase_texts, convert_to_tensor=True)
         
-        # Compute embeddings
-        with torch.no_grad():
-            feats = model.encode(phrases, convert_to_tensor=True)
-            feats = F.normalize(feats, p=2, dim=1)  # Normalize embeddings
+        # Normalize embeddings
+        embeddings_array = F.normalize(embeddings_array, p=2, dim=1)
+        
+        # Calculate similarity with parent topic
+        if parent_embedding is not None:
+            parent_embedding = F.normalize(parent_embedding, p=2, dim=0)
+            parent_sims = torch.matmul(embeddings_array, parent_embedding)
+        
+        # Determine number of clusters using silhouette analysis
+        if num_clusters is None:
+            max_clusters = min(8, len(phrases))
+            best_score = -1
+            best_k = 2
             
-            # If we have parent embedding, calculate relevance to parent
-            if parent_embed is not None:
-                # Normalize parent embedding
-                parent_embed = F.normalize(parent_embed, p=2, dim=0)
-                # Calculate similarity scores [num_phrases]
-                parent_sim = torch.matmul(feats, parent_embed)
-                # Reshape for broadcasting [num_phrases, 1]
-                parent_sim = parent_sim.unsqueeze(1)
-                # Apply sigmoid and broadcast across embedding dimension
-                feats = feats * F.sigmoid(parent_sim)
+            for k in range(2, max_clusters + 1):
+                kmeans = KMeans(n_clusters=k, random_state=42)
+                labels = kmeans.fit_predict(embeddings_array.cpu().numpy())
+                score = silhouette_score(embeddings_array.cpu().numpy(), labels)
+                if score > best_score:
+                    best_score = score
+                    best_k = k
             
-            feats = feats.cpu().numpy()
-
-        # Adaptive number of clusters based on data size
-        actual_num_clusters = min(5, len(phrases) // 5)
-        if actual_num_clusters < 2:
-            actual_num_clusters = 2
-
-        # Perform k-means clustering
-        kmeans = KMeans(n_clusters=actual_num_clusters, random_state=0)
-        labels = kmeans.fit(feats).labels_
-
-        # Calculate cluster centers and distances
-        centers = kmeans.cluster_centers_
-        centers = centers / np.linalg.norm(centers, axis=1, keepdims=True)
+            num_clusters = best_k
         
-        # Calculate inter-cluster similarity to measure diversity
-        inter_sim = np.dot(centers, centers.T)
-        np.fill_diagonal(inter_sim, 0)
-        diversity_scores = 1 - inter_sim.max(axis=1)
+        # Perform clustering
+        kmeans = KMeans(n_clusters=num_clusters, random_state=42)
+        clusters = kmeans.fit_predict(embeddings_array.cpu().numpy())
         
-        # Calculate phrase-to-center distances
-        distances = euclidean_distances(centers, feats)
-        relevance_scores = -distances.min(axis=0)  # Negative distance as relevance
-        
-        # Process each cluster
-        subtopics = []
-        for cluster_idx in range(actual_num_clusters):
-            cluster_mask = (labels == cluster_idx)
-            cluster_size = cluster_mask.sum()
+        # Calculate cluster metrics
+        cluster_info = []
+        for i in range(num_clusters):
+            cluster_mask = clusters == i
+            cluster_phrases = [(phrase, conf) for phrase, conf, is_in_cluster in zip(phrase_texts, confidences, cluster_mask) if is_in_cluster]
             
-            if cluster_size < 5:
+            if len(cluster_phrases) < 3:  # Skip small clusters
                 continue
+                
+            # Get cluster centroid
+            centroid = embeddings_array[cluster_mask].mean(dim=0)
             
-            # Get cluster phrases and their relevance scores
-            cluster_phrases_idx = cluster_mask.nonzero()[0]
-            cluster_distances = distances[cluster_idx][cluster_phrases_idx]
+            # Calculate cluster coherence (average similarity between phrases)
+            cluster_embeds = embeddings_array[cluster_mask]
+            similarities = torch.matmul(cluster_embeds, cluster_embeds.T)
+            coherence = (similarities.sum() - len(cluster_phrases)) / (len(cluster_phrases) * (len(cluster_phrases) - 1))
             
-            # Sort by distance to center
-            sorted_idx = cluster_distances.argsort()
-            cluster_phrases_idx = cluster_phrases_idx[sorted_idx]
+            # Calculate distinctiveness (distance to other clusters)
+            other_embeds = embeddings_array[~cluster_mask]
+            if len(other_embeds) > 0:
+                distinctiveness = 1 - torch.matmul(centroid, other_embeds.T).mean()
+            else:
+                distinctiveness = 1.0
+                
+            # Calculate parent relevance if parent embedding exists
+            if parent_embedding is not None:
+                parent_relevance = float(torch.matmul(centroid, parent_embedding))
+            else:
+                parent_relevance = 1.0
+                
+            # Sort phrases by confidence and similarity to centroid
+            phrase_scores = []
+            for phrase, conf in cluster_phrases:
+                phrase_embed = model.encode(phrase, convert_to_tensor=True)
+                phrase_embed = F.normalize(phrase_embed, p=2, dim=0)
+                centroid_sim = float(torch.matmul(phrase_embed, centroid))
+                combined_score = conf * centroid_sim
+                phrase_scores.append((phrase, combined_score))
+                
+            # Sort by score
+            phrase_scores.sort(key=lambda x: x[1], reverse=True)
             
-            # Select most representative phrase as topic name
-            # Prefer longer phrases among the top K most central phrases
-            top_k_phrases = [phrases[idx] for idx in cluster_phrases_idx[:5]]
-            topic_name = max(top_k_phrases, key=lambda x: len(x.split()))
+            # Calculate overall cluster quality
+            quality = float(coherence * distinctiveness * parent_relevance)
             
-            # Collect phrases with their relevance scores
-            topic_phrases = []
-            for idx in cluster_phrases_idx:
-                phrase = phrases[idx]
-                relevance = float(relevance_scores[idx])  # Convert to float for JSON serialization
-                topic_phrases.append((phrase, relevance))
-            
-            # Calculate cluster quality score
-            quality_score = float(diversity_scores[cluster_idx] * (cluster_size / len(phrases)))
-            
-            subtopic = {
-                "name": topic_name,
-                "phrases": topic_phrases,
-                "quality_score": quality_score
-            }
-            subtopics.append(subtopic)
+            cluster_info.append({
+                'phrases': phrase_scores,
+                'coherence': float(coherence),
+                'distinctiveness': float(distinctiveness), 
+                'parent_relevance': parent_relevance,
+                'quality': quality,
+                'size': len(cluster_phrases)
+            })
+        
+        # Sort clusters by quality
+        cluster_info.sort(key=lambda x: x['quality'], reverse=True)
+        
+        # Filter clusters
+        min_quality = 0.5
+        filtered_clusters = [c for c in cluster_info if c['quality'] > min_quality]
+        
+        return filtered_clusters
 
-        return subtopics
+    def _extract_topic_name(self, cluster):
+        """Extract a representative topic name from cluster phrases."""
+        # Get top phrases by score
+        top_phrases = cluster['phrases'][:5]
+        
+        # Find common substrings/concepts
+        phrase_texts = [p[0] for p in top_phrases]
+        
+        # Try to find most representative phrase based on:
+        # 1. Length (not too short, not too long)
+        # 2. Score
+        # 3. Simplicity (fewer words better)
+        best_phrase = None
+        best_score = -1
+        
+        for phrase, score in top_phrases:
+            words = phrase.split()
+            length_score = 1.0 if 2 <= len(words) <= 4 else 0.5
+            simplicity = 1.0 / len(words)
+            combined = score * length_score * simplicity
+            
+            if combined > best_score:
+                best_score = combined
+                best_phrase = phrase
+                
+        return best_phrase
