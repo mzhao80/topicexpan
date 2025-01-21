@@ -83,10 +83,6 @@ class BaseTrainer:
             # Train and validate
             train_log = self._train_epoch(epoch)
             val_log = self._valid_epoch(epoch)
-            
-            # Update learning rate
-            if self.lr_scheduler is not None:
-                self.lr_scheduler.step()
 
             # Combine logs and add val_ prefix to validation metrics
             log = {
