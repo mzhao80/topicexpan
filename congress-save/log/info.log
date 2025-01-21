@@ -1559,3 +1559,1240 @@ Trainable parameters: 57994624
 2025-01-21 11:16:21,730 - trainer - INFO -     val_perplexity : 23.63766860961914
 2025-01-21 11:16:21,730 - trainer - INFO -     val_embedding_sim: 0.1520335078239441
 2025-01-21 11:16:21,730 - trainer - INFO - Validation performance didn't improve for 15 epochs. Training stops.
+2025-01-21 11:25:51,718 - train - INFO - TopicExpan(
+  (doc_encoder): BertDocEncoder(
+    (model): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 384, padding_idx=0)
+        (position_embeddings): Embedding(512, 384)
+        (token_type_embeddings): Embedding(2, 384)
+        (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0-5): 6 x BertLayer(
+            (attention): BertAttention(
+              (self): BertSdpaSelfAttention(
+                (query): Linear(in_features=384, out_features=384, bias=True)
+                (key): Linear(in_features=384, out_features=384, bias=True)
+                (value): Linear(in_features=384, out_features=384, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=384, out_features=384, bias=True)
+                (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=384, out_features=1536, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=1536, out_features=384, bias=True)
+              (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=384, out_features=384, bias=True)
+        (activation): Tanh()
+      )
+    )
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 384, padding_idx=0)
+      (position_embeddings): Embedding(512, 384)
+      (token_type_embeddings): Embedding(2, 384)
+      (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+  )
+  (phrase_decoder): TransformerPhraseDecoder(
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 384, padding_idx=0)
+      (position_embeddings): Embedding(512, 384)
+      (token_type_embeddings): Embedding(2, 384)
+      (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (output_embeddings): Linear(in_features=384, out_features=30522, bias=False)
+    (context_proj): Linear(in_features=384, out_features=384, bias=True)
+    (context_norm): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+    (model): TransformerDecoder(
+      (layers): ModuleList(
+        (0-7): 8 x TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=384, out_features=384, bias=True)
+          )
+          (multihead_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=384, out_features=384, bias=True)
+          )
+          (linear1): Linear(in_features=384, out_features=2048, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (linear2): Linear(in_features=2048, out_features=384, bias=True)
+          (norm1): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (norm3): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (dropout3): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+  )
+  (topic_encoder): GCNTopicEncoder(
+    (downward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (upward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (sideward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+  )
+  (interaction): BilinearInteraction()
+  (linear_combiner): Linear(in_features=768, out_features=384, bias=True)
+)
+Trainable parameters: 57994624
+2025-01-21 11:25:54,381 - trainer - INFO - ================================================================================
+2025-01-21 11:25:54,381 - trainer - INFO - Starting epoch 1 at 2025-01-21 11:25:54
+2025-01-21 11:28:40,589 - train - INFO - TopicExpan(
+  (doc_encoder): BertDocEncoder(
+    (model): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 384, padding_idx=0)
+        (position_embeddings): Embedding(512, 384)
+        (token_type_embeddings): Embedding(2, 384)
+        (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0-5): 6 x BertLayer(
+            (attention): BertAttention(
+              (self): BertSdpaSelfAttention(
+                (query): Linear(in_features=384, out_features=384, bias=True)
+                (key): Linear(in_features=384, out_features=384, bias=True)
+                (value): Linear(in_features=384, out_features=384, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=384, out_features=384, bias=True)
+                (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=384, out_features=1536, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=1536, out_features=384, bias=True)
+              (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=384, out_features=384, bias=True)
+        (activation): Tanh()
+      )
+    )
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 384, padding_idx=0)
+      (position_embeddings): Embedding(512, 384)
+      (token_type_embeddings): Embedding(2, 384)
+      (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+  )
+  (phrase_decoder): TransformerPhraseDecoder(
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 384, padding_idx=0)
+      (position_embeddings): Embedding(512, 384)
+      (token_type_embeddings): Embedding(2, 384)
+      (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (output_embeddings): Linear(in_features=384, out_features=30522, bias=False)
+    (context_proj): Linear(in_features=384, out_features=384, bias=True)
+    (context_norm): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+    (model): TransformerDecoder(
+      (layers): ModuleList(
+        (0-7): 8 x TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=384, out_features=384, bias=True)
+          )
+          (multihead_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=384, out_features=384, bias=True)
+          )
+          (linear1): Linear(in_features=384, out_features=2048, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (linear2): Linear(in_features=2048, out_features=384, bias=True)
+          (norm1): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (norm3): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (dropout3): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+  )
+  (topic_encoder): GCNTopicEncoder(
+    (downward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (upward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (sideward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+  )
+  (interaction): BilinearInteraction()
+  (linear_combiner): Linear(in_features=768, out_features=384, bias=True)
+)
+Trainable parameters: 57994624
+2025-01-21 11:28:42,918 - trainer - INFO - ================================================================================
+2025-01-21 11:28:42,918 - trainer - INFO - Starting epoch 1 at 2025-01-21 11:28:42
+2025-01-21 11:33:15,088 - train - INFO - TopicExpan(
+  (doc_encoder): BertDocEncoder(
+    (model): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 384, padding_idx=0)
+        (position_embeddings): Embedding(512, 384)
+        (token_type_embeddings): Embedding(2, 384)
+        (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0-5): 6 x BertLayer(
+            (attention): BertAttention(
+              (self): BertSdpaSelfAttention(
+                (query): Linear(in_features=384, out_features=384, bias=True)
+                (key): Linear(in_features=384, out_features=384, bias=True)
+                (value): Linear(in_features=384, out_features=384, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=384, out_features=384, bias=True)
+                (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=384, out_features=1536, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=1536, out_features=384, bias=True)
+              (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=384, out_features=384, bias=True)
+        (activation): Tanh()
+      )
+    )
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 384, padding_idx=0)
+      (position_embeddings): Embedding(512, 384)
+      (token_type_embeddings): Embedding(2, 384)
+      (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+  )
+  (phrase_decoder): TransformerPhraseDecoder(
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 384, padding_idx=0)
+      (position_embeddings): Embedding(512, 384)
+      (token_type_embeddings): Embedding(2, 384)
+      (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (output_layer): Linear(in_features=384, out_features=30522, bias=False)
+    (context_proj): Linear(in_features=384, out_features=384, bias=True)
+    (context_norm): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+    (model): TransformerDecoder(
+      (layers): ModuleList(
+        (0-7): 8 x TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=384, out_features=384, bias=True)
+          )
+          (multihead_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=384, out_features=384, bias=True)
+          )
+          (linear1): Linear(in_features=384, out_features=2048, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (linear2): Linear(in_features=2048, out_features=384, bias=True)
+          (norm1): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (norm3): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (dropout3): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+  )
+  (topic_encoder): GCNTopicEncoder(
+    (downward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (upward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (sideward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+  )
+  (interaction): BilinearInteraction()
+  (linear_combiner): Linear(in_features=768, out_features=384, bias=True)
+)
+Trainable parameters: 57994624
+2025-01-21 11:33:17,412 - trainer - INFO - ================================================================================
+2025-01-21 11:33:17,412 - trainer - INFO - Starting epoch 1 at 2025-01-21 11:33:17
+2025-01-21 11:33:22,458 - trainer - INFO - Epoch 1 completed at 2025-01-21 11:33:22
+2025-01-21 11:33:22,459 - trainer - INFO -     epoch          : 1
+2025-01-21 11:33:22,459 - trainer - INFO -     elapsed time   : 5.0457916259765625
+2025-01-21 11:33:22,459 - trainer - INFO -     loss           : -186.0404510498047
+2025-01-21 11:33:22,459 - trainer - INFO -     sim_loss       : 103.14251823425293
+2025-01-21 11:33:22,459 - trainer - INFO -     gen_loss       : -309.97600536346437
+2025-01-21 11:33:22,459 - trainer - INFO -     val_loss       : -271.89404487609863
+2025-01-21 11:33:22,459 - trainer - INFO -     val_sim_loss   : 55.4388427734375
+2025-01-21 11:33:22,459 - trainer - INFO -     val_gen_loss   : -327.33288764953613
+2025-01-21 11:33:22,459 - trainer - INFO -     val_perplexity : -19.720016479492188
+2025-01-21 11:33:22,459 - trainer - INFO -     val_embedding_sim: 0.06163272261619568
+2025-01-21 11:33:22,459 - trainer - INFO - ================================================================================
+2025-01-21 11:33:22,459 - trainer - INFO - Starting epoch 2 at 2025-01-21 11:33:22
+2025-01-21 11:33:26,327 - trainer - INFO - Epoch 2 completed at 2025-01-21 11:33:26
+2025-01-21 11:33:26,327 - trainer - INFO -     epoch          : 2
+2025-01-21 11:33:26,327 - trainer - INFO -     elapsed time   : 3.867727279663086
+2025-01-21 11:33:26,327 - trainer - INFO -     loss           : -446.7950927734375
+2025-01-21 11:33:26,327 - trainer - INFO -     sim_loss       : 103.08970260620117
+2025-01-21 11:33:26,327 - trainer - INFO -     gen_loss       : -682.460009765625
+2025-01-21 11:33:26,327 - trainer - INFO -     val_loss       : -360.1834659576416
+2025-01-21 11:33:26,327 - trainer - INFO -     val_sim_loss   : 55.436805725097656
+2025-01-21 11:33:26,327 - trainer - INFO -     val_gen_loss   : -415.6202640533447
+2025-01-21 11:33:26,327 - trainer - INFO -     val_perplexity : -25.247425079345703
+2025-01-21 11:33:26,327 - trainer - INFO -     val_embedding_sim: 0.07722928375005722
+2025-01-21 11:33:26,327 - trainer - INFO - ================================================================================
+2025-01-21 11:33:26,327 - trainer - INFO - Starting epoch 3 at 2025-01-21 11:33:26
+2025-01-21 11:33:30,174 - trainer - INFO - Epoch 3 completed at 2025-01-21 11:33:30
+2025-01-21 11:33:30,174 - trainer - INFO -     epoch          : 3
+2025-01-21 11:33:30,175 - trainer - INFO -     elapsed time   : 3.846780300140381
+2025-01-21 11:33:30,175 - trainer - INFO -     loss           : -548.9736419677735
+2025-01-21 11:33:30,175 - trainer - INFO -     sim_loss       : 103.09343910217285
+2025-01-21 11:33:30,175 - trainer - INFO -     gen_loss       : -828.4309509277343
+2025-01-21 11:33:30,175 - trainer - INFO -     val_loss       : -417.46892833709717
+2025-01-21 11:33:30,175 - trainer - INFO -     val_sim_loss   : 55.42972183227539
+2025-01-21 11:33:30,175 - trainer - INFO -     val_gen_loss   : -472.8986463546753
+2025-01-21 11:33:30,175 - trainer - INFO -     val_perplexity : -28.798437118530273
+2025-01-21 11:33:30,175 - trainer - INFO -     val_embedding_sim: 0.10232995450496674
+2025-01-21 11:33:30,175 - trainer - INFO - ================================================================================
+2025-01-21 11:33:30,175 - trainer - INFO - Starting epoch 4 at 2025-01-21 11:33:30
+2025-01-21 11:33:34,048 - trainer - INFO - Epoch 4 completed at 2025-01-21 11:33:34
+2025-01-21 11:33:34,049 - trainer - INFO -     epoch          : 4
+2025-01-21 11:33:34,049 - trainer - INFO -     elapsed time   : 3.8733811378479004
+2025-01-21 11:33:34,049 - trainer - INFO -     loss           : -641.108773803711
+2025-01-21 11:33:34,049 - trainer - INFO -     sim_loss       : 103.03101615905761
+2025-01-21 11:33:34,049 - trainer - INFO -     gen_loss       : -960.0258575439453
+2025-01-21 11:33:34,049 - trainer - INFO -     val_loss       : -471.51708984375
+2025-01-21 11:33:34,049 - trainer - INFO -     val_sim_loss   : 55.35968017578125
+2025-01-21 11:33:34,049 - trainer - INFO -     val_gen_loss   : -526.8767700195312
+2025-01-21 11:33:34,049 - trainer - INFO -     val_perplexity : -31.79959487915039
+2025-01-21 11:33:34,049 - trainer - INFO -     val_embedding_sim: 0.0743759348988533
+2025-01-21 11:33:34,049 - trainer - INFO - ================================================================================
+2025-01-21 11:33:34,049 - trainer - INFO - Starting epoch 5 at 2025-01-21 11:33:34
+2025-01-21 11:33:37,916 - trainer - INFO - Epoch 5 completed at 2025-01-21 11:33:37
+2025-01-21 11:33:37,916 - trainer - INFO -     epoch          : 5
+2025-01-21 11:33:37,916 - trainer - INFO -     elapsed time   : 3.866490125656128
+2025-01-21 11:33:37,916 - trainer - INFO -     loss           : -725.3343200683594
+2025-01-21 11:33:37,916 - trainer - INFO -     sim_loss       : 102.92963676452636
+2025-01-21 11:33:37,916 - trainer - INFO -     gen_loss       : -1080.3046020507813
+2025-01-21 11:33:37,916 - trainer - INFO -     val_loss       : -517.2770233154297
+2025-01-21 11:33:37,916 - trainer - INFO -     val_sim_loss   : 55.31756591796875
+2025-01-21 11:33:37,916 - trainer - INFO -     val_gen_loss   : -572.5945892333984
+2025-01-21 11:33:37,916 - trainer - INFO -     val_perplexity : -34.9989013671875
+2025-01-21 11:33:37,916 - trainer - INFO -     val_embedding_sim: 0.07094588130712509
+2025-01-21 11:33:44,469 - trainer - INFO - Saving checkpoint: congress-save/models/checkpoint-epoch5.pth ...
+2025-01-21 11:33:51,021 - trainer - INFO - Saving current best: model_best.pth ...
+2025-01-21 11:33:51,021 - trainer - INFO - ================================================================================
+2025-01-21 11:33:51,021 - trainer - INFO - Starting epoch 6 at 2025-01-21 11:33:51
+2025-01-21 11:33:54,953 - trainer - INFO - Epoch 6 completed at 2025-01-21 11:33:54
+2025-01-21 11:33:54,953 - trainer - INFO -     epoch          : 6
+2025-01-21 11:33:54,953 - trainer - INFO -     elapsed time   : 3.931112766265869
+2025-01-21 11:33:54,953 - trainer - INFO -     loss           : -803.4116302490235
+2025-01-21 11:33:54,953 - trainer - INFO -     sim_loss       : 102.75180358886719
+2025-01-21 11:33:54,953 - trainer - INFO -     gen_loss       : -1191.7674072265625
+2025-01-21 11:33:54,953 - trainer - INFO -     val_loss       : -558.4826641082764
+2025-01-21 11:33:54,953 - trainer - INFO -     val_sim_loss   : 55.269935607910156
+2025-01-21 11:33:54,953 - trainer - INFO -     val_gen_loss   : -613.7526226043701
+2025-01-21 11:33:54,953 - trainer - INFO -     val_perplexity : -37.490962982177734
+2025-01-21 11:33:54,953 - trainer - INFO -     val_embedding_sim: 0.05555592477321625
+2025-01-21 11:33:54,953 - trainer - INFO - ================================================================================
+2025-01-21 11:33:54,953 - trainer - INFO - Starting epoch 7 at 2025-01-21 11:33:54
+2025-01-21 11:33:58,816 - trainer - INFO - Epoch 7 completed at 2025-01-21 11:33:58
+2025-01-21 11:33:58,816 - trainer - INFO -     epoch          : 7
+2025-01-21 11:33:58,816 - trainer - INFO -     elapsed time   : 3.862797498703003
+2025-01-21 11:33:58,816 - trainer - INFO -     loss           : -874.2744110107421
+2025-01-21 11:33:58,816 - trainer - INFO -     sim_loss       : 102.52275619506835
+2025-01-21 11:33:58,816 - trainer - INFO -     gen_loss       : -1292.9017822265625
+2025-01-21 11:33:58,816 - trainer - INFO -     val_loss       : -598.2091226577759
+2025-01-21 11:33:58,816 - trainer - INFO -     val_sim_loss   : 55.188926696777344
+2025-01-21 11:33:58,816 - trainer - INFO -     val_gen_loss   : -653.3980264663696
+2025-01-21 11:33:58,817 - trainer - INFO -     val_perplexity : -39.93813705444336
+2025-01-21 11:33:58,817 - trainer - INFO -     val_embedding_sim: 0.07075679302215576
+2025-01-21 11:33:58,817 - trainer - INFO - ================================================================================
+2025-01-21 11:33:58,817 - trainer - INFO - Starting epoch 8 at 2025-01-21 11:33:58
+2025-01-21 11:34:02,689 - trainer - INFO - Epoch 8 completed at 2025-01-21 11:34:02
+2025-01-21 11:34:02,689 - trainer - INFO -     epoch          : 8
+2025-01-21 11:34:02,689 - trainer - INFO -     elapsed time   : 3.872079372406006
+2025-01-21 11:34:02,689 - trainer - INFO -     loss           : -939.8270446777344
+2025-01-21 11:34:02,689 - trainer - INFO -     sim_loss       : 102.29838066101074
+2025-01-21 11:34:02,689 - trainer - INFO -     gen_loss       : -1386.452294921875
+2025-01-21 11:34:02,689 - trainer - INFO -     val_loss       : -635.5187454223633
+2025-01-21 11:34:02,689 - trainer - INFO -     val_sim_loss   : 55.10154724121094
+2025-01-21 11:34:02,689 - trainer - INFO -     val_gen_loss   : -690.6203079223633
+2025-01-21 11:34:02,689 - trainer - INFO -     val_perplexity : -40.83884048461914
+2025-01-21 11:34:02,689 - trainer - INFO -     val_embedding_sim: 0.06660252809524536
+2025-01-21 11:34:02,689 - trainer - INFO - ================================================================================
+2025-01-21 11:34:02,689 - trainer - INFO - Starting epoch 9 at 2025-01-21 11:34:02
+2025-01-21 11:34:06,549 - trainer - INFO - Epoch 9 completed at 2025-01-21 11:34:06
+2025-01-21 11:34:06,549 - trainer - INFO -     epoch          : 9
+2025-01-21 11:34:06,549 - trainer - INFO -     elapsed time   : 3.8592369556427
+2025-01-21 11:34:06,549 - trainer - INFO -     loss           : -1001.0354431152343
+2025-01-21 11:34:06,549 - trainer - INFO -     sim_loss       : 101.77427291870117
+2025-01-21 11:34:06,549 - trainer - INFO -     gen_loss       : -1473.6681701660157
+2025-01-21 11:34:06,549 - trainer - INFO -     val_loss       : -668.7088270187378
+2025-01-21 11:34:06,549 - trainer - INFO -     val_sim_loss   : 54.96880340576172
+2025-01-21 11:34:06,549 - trainer - INFO -     val_gen_loss   : -723.677638053894
+2025-01-21 11:34:06,549 - trainer - INFO -     val_perplexity : -44.32826232910156
+2025-01-21 11:34:06,549 - trainer - INFO -     val_embedding_sim: 0.08928243815898895
+2025-01-21 11:34:06,549 - trainer - INFO - ================================================================================
+2025-01-21 11:34:06,549 - trainer - INFO - Starting epoch 10 at 2025-01-21 11:34:06
+2025-01-21 11:34:10,408 - trainer - INFO - Epoch 10 completed at 2025-01-21 11:34:10
+2025-01-21 11:34:10,408 - trainer - INFO -     epoch          : 10
+2025-01-21 11:34:10,408 - trainer - INFO -     elapsed time   : 3.8586230278015137
+2025-01-21 11:34:10,408 - trainer - INFO -     loss           : -1058.1934509277344
+2025-01-21 11:34:10,409 - trainer - INFO -     sim_loss       : 101.38613014221191
+2025-01-21 11:34:10,409 - trainer - INFO -     gen_loss       : -1555.1561706542968
+2025-01-21 11:34:10,409 - trainer - INFO -     val_loss       : -700.6395988464355
+2025-01-21 11:34:10,409 - trainer - INFO -     val_sim_loss   : 54.681724548339844
+2025-01-21 11:34:10,409 - trainer - INFO -     val_gen_loss   : -755.3213005065918
+2025-01-21 11:34:10,409 - trainer - INFO -     val_perplexity : -46.28450012207031
+2025-01-21 11:34:10,409 - trainer - INFO -     val_embedding_sim: 0.08186450600624084
+2025-01-21 11:34:16,946 - trainer - INFO - Saving checkpoint: congress-save/models/checkpoint-epoch10.pth ...
+2025-01-21 11:34:23,533 - trainer - INFO - Saving current best: model_best.pth ...
+2025-01-21 11:34:23,533 - trainer - INFO - ================================================================================
+2025-01-21 11:34:23,533 - trainer - INFO - Starting epoch 11 at 2025-01-21 11:34:23
+2025-01-21 11:34:27,457 - trainer - INFO - Epoch 11 completed at 2025-01-21 11:34:27
+2025-01-21 11:34:27,457 - trainer - INFO -     epoch          : 11
+2025-01-21 11:34:27,457 - trainer - INFO -     elapsed time   : 3.923597812652588
+2025-01-21 11:34:27,457 - trainer - INFO -     loss           : -1113.4131103515624
+2025-01-21 11:34:27,457 - trainer - INFO -     sim_loss       : 100.29055099487304
+2025-01-21 11:34:27,457 - trainer - INFO -     gen_loss       : -1633.571826171875
+2025-01-21 11:34:27,457 - trainer - INFO -     val_loss       : -731.6909408569336
+2025-01-21 11:34:27,457 - trainer - INFO -     val_sim_loss   : 54.351707458496094
+2025-01-21 11:34:27,457 - trainer - INFO -     val_gen_loss   : -786.0426254272461
+2025-01-21 11:34:27,457 - trainer - INFO -     val_perplexity : -48.05161666870117
+2025-01-21 11:34:27,457 - trainer - INFO -     val_embedding_sim: 0.09043010324239731
+2025-01-21 11:34:27,457 - trainer - INFO - ================================================================================
+2025-01-21 11:34:27,457 - trainer - INFO - Starting epoch 12 at 2025-01-21 11:34:27
+2025-01-21 11:34:31,315 - trainer - INFO - Epoch 12 completed at 2025-01-21 11:34:31
+2025-01-21 11:34:31,315 - trainer - INFO -     epoch          : 12
+2025-01-21 11:34:31,315 - trainer - INFO -     elapsed time   : 3.8574941158294678
+2025-01-21 11:34:31,315 - trainer - INFO -     loss           : -1163.8638702392577
+2025-01-21 11:34:31,315 - trainer - INFO -     sim_loss       : 99.34797554016113
+2025-01-21 11:34:31,315 - trainer - INFO -     gen_loss       : -1705.240411376953
+2025-01-21 11:34:31,315 - trainer - INFO -     val_loss       : -760.7771797180176
+2025-01-21 11:34:31,315 - trainer - INFO -     val_sim_loss   : 53.50743103027344
+2025-01-21 11:34:31,315 - trainer - INFO -     val_gen_loss   : -814.2846260070801
+2025-01-21 11:34:31,316 - trainer - INFO -     val_perplexity : -49.79088592529297
+2025-01-21 11:34:31,316 - trainer - INFO -     val_embedding_sim: 0.06593193113803864
+2025-01-21 11:34:31,316 - trainer - INFO - ================================================================================
+2025-01-21 11:34:31,316 - trainer - INFO - Starting epoch 13 at 2025-01-21 11:34:31
+2025-01-21 11:34:35,171 - trainer - INFO - Epoch 13 completed at 2025-01-21 11:34:35
+2025-01-21 11:34:35,171 - trainer - INFO -     epoch          : 13
+2025-01-21 11:34:35,171 - trainer - INFO -     elapsed time   : 3.8551599979400635
+2025-01-21 11:34:35,171 - trainer - INFO -     loss           : -1213.942886352539
+2025-01-21 11:34:35,171 - trainer - INFO -     sim_loss       : 97.86259651184082
+2025-01-21 11:34:35,171 - trainer - INFO -     gen_loss       : -1776.1452392578126
+2025-01-21 11:34:35,171 - trainer - INFO -     val_loss       : -790.9666328430176
+2025-01-21 11:34:35,171 - trainer - INFO -     val_sim_loss   : 53.09297180175781
+2025-01-21 11:34:35,171 - trainer - INFO -     val_gen_loss   : -844.0595893859863
+2025-01-21 11:34:35,171 - trainer - INFO -     val_perplexity : -50.53978729248047
+2025-01-21 11:34:35,172 - trainer - INFO -     val_embedding_sim: 0.11062753200531006
+2025-01-21 11:34:35,172 - trainer - INFO - ================================================================================
+2025-01-21 11:34:35,172 - trainer - INFO - Starting epoch 14 at 2025-01-21 11:34:35
+2025-01-21 11:34:39,053 - trainer - INFO - Epoch 14 completed at 2025-01-21 11:34:39
+2025-01-21 11:34:39,054 - trainer - INFO -     epoch          : 14
+2025-01-21 11:34:39,054 - trainer - INFO -     elapsed time   : 3.8817121982574463
+2025-01-21 11:34:39,054 - trainer - INFO -     loss           : -1262.364028930664
+2025-01-21 11:34:39,054 - trainer - INFO -     sim_loss       : 96.60563850402832
+2025-01-21 11:34:39,054 - trainer - INFO -     gen_loss       : -1844.7796203613282
+2025-01-21 11:34:39,054 - trainer - INFO -     val_loss       : -820.3282775878906
+2025-01-21 11:34:39,054 - trainer - INFO -     val_sim_loss   : 51.41381072998047
+2025-01-21 11:34:39,054 - trainer - INFO -     val_gen_loss   : -871.7420959472656
+2025-01-21 11:34:39,054 - trainer - INFO -     val_perplexity : -52.82157897949219
+2025-01-21 11:34:39,054 - trainer - INFO -     val_embedding_sim: 0.08358731120824814
+2025-01-21 11:34:39,054 - trainer - INFO - ================================================================================
+2025-01-21 11:34:39,054 - trainer - INFO - Starting epoch 15 at 2025-01-21 11:34:39
+2025-01-21 11:34:42,907 - trainer - INFO - Epoch 15 completed at 2025-01-21 11:34:42
+2025-01-21 11:34:42,907 - trainer - INFO -     epoch          : 15
+2025-01-21 11:34:42,907 - trainer - INFO -     elapsed time   : 3.853060722351074
+2025-01-21 11:34:42,907 - trainer - INFO -     loss           : -1309.5500793457031
+2025-01-21 11:34:42,907 - trainer - INFO -     sim_loss       : 94.80959854125976
+2025-01-21 11:34:42,907 - trainer - INFO -     gen_loss       : -1911.4185485839844
+2025-01-21 11:34:42,907 - trainer - INFO -     val_loss       : -848.0251502990723
+2025-01-21 11:34:42,907 - trainer - INFO -     val_sim_loss   : 51.61015319824219
+2025-01-21 11:34:42,908 - trainer - INFO -     val_gen_loss   : -899.6353187561035
+2025-01-21 11:34:42,908 - trainer - INFO -     val_perplexity : -55.12046813964844
+2025-01-21 11:34:42,908 - trainer - INFO -     val_embedding_sim: 0.08496900647878647
+2025-01-21 11:34:49,466 - trainer - INFO - Saving checkpoint: congress-save/models/checkpoint-epoch15.pth ...
+2025-01-21 11:34:56,063 - trainer - INFO - Saving current best: model_best.pth ...
+2025-01-21 11:34:56,063 - trainer - INFO - ================================================================================
+2025-01-21 11:34:56,063 - trainer - INFO - Starting epoch 16 at 2025-01-21 11:34:56
+2025-01-21 11:34:59,968 - trainer - INFO - Epoch 16 completed at 2025-01-21 11:34:59
+2025-01-21 11:34:59,968 - trainer - INFO -     epoch          : 16
+2025-01-21 11:34:59,968 - trainer - INFO -     elapsed time   : 3.9042742252349854
+2025-01-21 11:34:59,968 - trainer - INFO -     loss           : -1355.7198364257813
+2025-01-21 11:34:59,968 - trainer - INFO -     sim_loss       : 93.69368343353271
+2025-01-21 11:34:59,968 - trainer - INFO -     gen_loss       : -1976.8971130371094
+2025-01-21 11:34:59,968 - trainer - INFO -     val_loss       : -876.941577911377
+2025-01-21 11:34:59,968 - trainer - INFO -     val_sim_loss   : 49.48301696777344
+2025-01-21 11:34:59,968 - trainer - INFO -     val_gen_loss   : -926.4246101379395
+2025-01-21 11:34:59,968 - trainer - INFO -     val_perplexity : -56.536834716796875
+2025-01-21 11:34:59,968 - trainer - INFO -     val_embedding_sim: 0.10025257617235184
+2025-01-21 11:34:59,968 - trainer - INFO - ================================================================================
+2025-01-21 11:34:59,968 - trainer - INFO - Starting epoch 17 at 2025-01-21 11:34:59
+2025-01-21 11:35:03,828 - trainer - INFO - Epoch 17 completed at 2025-01-21 11:35:03
+2025-01-21 11:35:03,828 - trainer - INFO -     epoch          : 17
+2025-01-21 11:35:03,828 - trainer - INFO -     elapsed time   : 3.8594980239868164
+2025-01-21 11:35:03,828 - trainer - INFO -     loss           : -1399.5290405273438
+2025-01-21 11:35:03,828 - trainer - INFO -     sim_loss       : 91.9489673614502
+2025-01-21 11:35:03,828 - trainer - INFO -     gen_loss       : -2038.7339660644532
+2025-01-21 11:35:03,828 - trainer - INFO -     val_loss       : -904.1227703094482
+2025-01-21 11:35:03,828 - trainer - INFO -     val_sim_loss   : 48.87616729736328
+2025-01-21 11:35:03,828 - trainer - INFO -     val_gen_loss   : -952.998929977417
+2025-01-21 11:35:03,828 - trainer - INFO -     val_perplexity : -58.480506896972656
+2025-01-21 11:35:03,828 - trainer - INFO -     val_embedding_sim: 0.09093272686004639
+2025-01-21 11:35:03,828 - trainer - INFO - ================================================================================
+2025-01-21 11:35:03,828 - trainer - INFO - Starting epoch 18 at 2025-01-21 11:35:03
+2025-01-21 11:35:07,676 - trainer - INFO - Epoch 18 completed at 2025-01-21 11:35:07
+2025-01-21 11:35:07,676 - trainer - INFO -     epoch          : 18
+2025-01-21 11:35:07,676 - trainer - INFO -     elapsed time   : 3.8468751907348633
+2025-01-21 11:35:07,676 - trainer - INFO -     loss           : -1443.3840881347655
+2025-01-21 11:35:07,676 - trainer - INFO -     sim_loss       : 90.67951011657715
+2025-01-21 11:35:07,676 - trainer - INFO -     gen_loss       : -2100.83994140625
+2025-01-21 11:35:07,676 - trainer - INFO -     val_loss       : -931.7409744262695
+2025-01-21 11:35:07,676 - trainer - INFO -     val_sim_loss   : 48.016822814941406
+2025-01-21 11:35:07,676 - trainer - INFO -     val_gen_loss   : -979.7578201293945
+2025-01-21 11:35:07,676 - trainer - INFO -     val_perplexity : -58.806583404541016
+2025-01-21 11:35:07,676 - trainer - INFO -     val_embedding_sim: 0.11219871044158936
+2025-01-21 11:35:07,676 - trainer - INFO - ================================================================================
+2025-01-21 11:35:07,676 - trainer - INFO - Starting epoch 19 at 2025-01-21 11:35:07
+2025-01-21 11:35:11,529 - trainer - INFO - Epoch 19 completed at 2025-01-21 11:35:11
+2025-01-21 11:35:11,529 - trainer - INFO -     epoch          : 19
+2025-01-21 11:35:11,529 - trainer - INFO -     elapsed time   : 3.8530783653259277
+2025-01-21 11:35:11,529 - trainer - INFO -     loss           : -1486.7112182617188
+2025-01-21 11:35:11,530 - trainer - INFO -     sim_loss       : 90.07557640075683
+2025-01-21 11:35:11,530 - trainer - INFO -     gen_loss       : -2162.4770385742186
+2025-01-21 11:35:11,530 - trainer - INFO -     val_loss       : -955.0768737792969
+2025-01-21 11:35:11,530 - trainer - INFO -     val_sim_loss   : 49.493064880371094
+2025-01-21 11:35:11,530 - trainer - INFO -     val_gen_loss   : -1004.5699157714844
+2025-01-21 11:35:11,530 - trainer - INFO -     val_perplexity : -61.09429168701172
+2025-01-21 11:35:11,530 - trainer - INFO -     val_embedding_sim: 0.0806393101811409
+2025-01-21 11:35:11,530 - trainer - INFO - ================================================================================
+2025-01-21 11:35:11,530 - trainer - INFO - Starting epoch 20 at 2025-01-21 11:35:11
+2025-01-21 11:35:15,384 - trainer - INFO - Epoch 20 completed at 2025-01-21 11:35:15
+2025-01-21 11:35:15,384 - trainer - INFO -     epoch          : 20
+2025-01-21 11:35:15,385 - trainer - INFO -     elapsed time   : 3.854320526123047
+2025-01-21 11:35:15,385 - trainer - INFO -     loss           : -1528.5861572265626
+2025-01-21 11:35:15,385 - trainer - INFO -     sim_loss       : 88.28049430847167
+2025-01-21 11:35:15,385 - trainer - INFO -     gen_loss       : -2221.5290710449217
+2025-01-21 11:35:15,385 - trainer - INFO -     val_loss       : -981.4649772644043
+2025-01-21 11:35:15,385 - trainer - INFO -     val_sim_loss   : 49.12133026123047
+2025-01-21 11:35:15,385 - trainer - INFO -     val_gen_loss   : -1030.5863151550293
+2025-01-21 11:35:15,385 - trainer - INFO -     val_perplexity : -61.869293212890625
+2025-01-21 11:35:15,385 - trainer - INFO -     val_embedding_sim: 0.08316411077976227
+2025-01-21 11:35:21,934 - trainer - INFO - Saving checkpoint: congress-save/models/checkpoint-epoch20.pth ...
+2025-01-21 11:35:28,525 - trainer - INFO - Saving current best: model_best.pth ...
+2025-01-21 11:35:28,525 - trainer - INFO - ================================================================================
+2025-01-21 11:35:28,525 - trainer - INFO - Starting epoch 21 at 2025-01-21 11:35:28
+2025-01-21 11:35:32,432 - trainer - INFO - Epoch 21 completed at 2025-01-21 11:35:32
+2025-01-21 11:35:32,432 - trainer - INFO -     epoch          : 21
+2025-01-21 11:35:32,432 - trainer - INFO -     elapsed time   : 3.90647029876709
+2025-01-21 11:35:32,432 - trainer - INFO -     loss           : -1571.4513916015626
+2025-01-21 11:35:32,432 - trainer - INFO -     sim_loss       : 88.00603904724122
+2025-01-21 11:35:32,432 - trainer - INFO -     gen_loss       : -2282.6474731445314
+2025-01-21 11:35:32,432 - trainer - INFO -     val_loss       : -1010.8232536315918
+2025-01-21 11:35:32,432 - trainer - INFO -     val_sim_loss   : 45.342933654785156
+2025-01-21 11:35:32,432 - trainer - INFO -     val_gen_loss   : -1056.1662101745605
+2025-01-21 11:35:32,432 - trainer - INFO -     val_perplexity : -63.59596633911133
+2025-01-21 11:35:32,432 - trainer - INFO -     val_embedding_sim: 0.10119650512933731
+2025-01-21 11:35:32,433 - trainer - INFO - ================================================================================
+2025-01-21 11:35:32,433 - trainer - INFO - Starting epoch 22 at 2025-01-21 11:35:32
+2025-01-21 11:35:36,275 - trainer - INFO - Epoch 22 completed at 2025-01-21 11:35:36
+2025-01-21 11:35:36,275 - trainer - INFO -     epoch          : 22
+2025-01-21 11:35:36,275 - trainer - INFO -     elapsed time   : 3.842141628265381
+2025-01-21 11:35:36,275 - trainer - INFO -     loss           : -1614.409375
+2025-01-21 11:35:36,275 - trainer - INFO -     sim_loss       : 86.21554851531982
+2025-01-21 11:35:36,275 - trainer - INFO -     gen_loss       : -2343.248669433594
+2025-01-21 11:35:36,275 - trainer - INFO -     val_loss       : -1033.7981700897217
+2025-01-21 11:35:36,275 - trainer - INFO -     val_sim_loss   : 47.59626770019531
+2025-01-21 11:35:36,275 - trainer - INFO -     val_gen_loss   : -1081.394422531128
+2025-01-21 11:35:36,275 - trainer - INFO -     val_perplexity : -66.37871551513672
+2025-01-21 11:35:36,275 - trainer - INFO -     val_embedding_sim: 0.09707021713256836
+2025-01-21 11:35:36,275 - trainer - INFO - ================================================================================
+2025-01-21 11:35:36,275 - trainer - INFO - Starting epoch 23 at 2025-01-21 11:35:36
+2025-01-21 11:35:40,137 - trainer - INFO - Epoch 23 completed at 2025-01-21 11:35:40
+2025-01-21 11:35:40,137 - trainer - INFO -     epoch          : 23
+2025-01-21 11:35:40,137 - trainer - INFO -     elapsed time   : 3.8613057136535645
+2025-01-21 11:35:40,137 - trainer - INFO -     loss           : -1655.326434326172
+2025-01-21 11:35:40,137 - trainer - INFO -     sim_loss       : 86.10839748382568
+2025-01-21 11:35:40,137 - trainer - INFO -     gen_loss       : -2401.6556640625
+2025-01-21 11:35:40,137 - trainer - INFO -     val_loss       : -1059.4832763671875
+2025-01-21 11:35:40,137 - trainer - INFO -     val_sim_loss   : 47.115928649902344
+2025-01-21 11:35:40,137 - trainer - INFO -     val_gen_loss   : -1106.5992431640625
+2025-01-21 11:35:40,137 - trainer - INFO -     val_perplexity : -67.37611389160156
+2025-01-21 11:35:40,137 - trainer - INFO -     val_embedding_sim: 0.09225423634052277
+2025-01-21 11:35:40,137 - trainer - INFO - ================================================================================
+2025-01-21 11:35:40,137 - trainer - INFO - Starting epoch 24 at 2025-01-21 11:35:40
+2025-01-21 11:35:43,991 - trainer - INFO - Epoch 24 completed at 2025-01-21 11:35:43
+2025-01-21 11:35:43,991 - trainer - INFO -     epoch          : 24
+2025-01-21 11:35:43,991 - trainer - INFO -     elapsed time   : 3.8536946773529053
+2025-01-21 11:35:43,991 - trainer - INFO -     loss           : -1695.8412841796876
+2025-01-21 11:35:43,991 - trainer - INFO -     sim_loss       : 86.68351459503174
+2025-01-21 11:35:43,992 - trainer - INFO -     gen_loss       : -2459.7805358886717
+2025-01-21 11:35:43,992 - trainer - INFO -     val_loss       : -1086.747844696045
+2025-01-21 11:35:43,992 - trainer - INFO -     val_sim_loss   : 44.997535705566406
+2025-01-21 11:35:43,992 - trainer - INFO -     val_gen_loss   : -1131.745403289795
+2025-01-21 11:35:43,992 - trainer - INFO -     val_perplexity : -69.48394775390625
+2025-01-21 11:35:43,992 - trainer - INFO -     val_embedding_sim: 0.08610042929649353
+2025-01-21 11:35:43,992 - trainer - INFO - ================================================================================
+2025-01-21 11:35:43,992 - trainer - INFO - Starting epoch 25 at 2025-01-21 11:35:43
+2025-01-21 11:35:47,845 - trainer - INFO - Epoch 25 completed at 2025-01-21 11:35:47
+2025-01-21 11:35:47,845 - trainer - INFO -     epoch          : 25
+2025-01-21 11:35:47,845 - trainer - INFO -     elapsed time   : 3.853248357772827
+2025-01-21 11:35:47,845 - trainer - INFO -     loss           : -1737.752392578125
+2025-01-21 11:35:47,845 - trainer - INFO -     sim_loss       : 83.66232929229736
+2025-01-21 11:35:47,845 - trainer - INFO -     gen_loss       : -2518.358752441406
+2025-01-21 11:35:47,845 - trainer - INFO -     val_loss       : -1111.3408279418945
+2025-01-21 11:35:47,845 - trainer - INFO -     val_sim_loss   : 45.78282928466797
+2025-01-21 11:35:47,846 - trainer - INFO -     val_gen_loss   : -1157.123664855957
+2025-01-21 11:35:47,846 - trainer - INFO -     val_perplexity : -68.8338623046875
+2025-01-21 11:35:47,846 - trainer - INFO -     val_embedding_sim: 0.09966753423213959
+2025-01-21 11:35:54,397 - trainer - INFO - Saving checkpoint: congress-save/models/checkpoint-epoch25.pth ...
+2025-01-21 11:36:00,985 - trainer - INFO - Saving current best: model_best.pth ...
+2025-01-21 11:36:00,986 - trainer - INFO - ================================================================================
+2025-01-21 11:36:00,986 - trainer - INFO - Starting epoch 26 at 2025-01-21 11:36:00
+2025-01-21 11:36:04,889 - trainer - INFO - Epoch 26 completed at 2025-01-21 11:36:04
+2025-01-21 11:36:04,889 - trainer - INFO -     epoch          : 26
+2025-01-21 11:36:04,889 - trainer - INFO -     elapsed time   : 3.90309739112854
+2025-01-21 11:36:04,889 - trainer - INFO -     loss           : -1778.9022216796875
+2025-01-21 11:36:04,889 - trainer - INFO -     sim_loss       : 84.04135665893554
+2025-01-21 11:36:04,889 - trainer - INFO -     gen_loss       : -2577.306640625
+2025-01-21 11:36:04,889 - trainer - INFO -     val_loss       : -1135.5305442810059
+2025-01-21 11:36:04,889 - trainer - INFO -     val_sim_loss   : 45.95737838745117
+2025-01-21 11:36:04,889 - trainer - INFO -     val_gen_loss   : -1181.4879417419434
+2025-01-21 11:36:04,889 - trainer - INFO -     val_perplexity : -70.94747924804688
+2025-01-21 11:36:04,889 - trainer - INFO -     val_embedding_sim: 0.0869031548500061
+2025-01-21 11:36:04,890 - trainer - INFO - ================================================================================
+2025-01-21 11:36:04,890 - trainer - INFO - Starting epoch 27 at 2025-01-21 11:36:04
+2025-01-21 11:36:08,745 - trainer - INFO - Epoch 27 completed at 2025-01-21 11:36:08
+2025-01-21 11:36:08,745 - trainer - INFO -     epoch          : 27
+2025-01-21 11:36:08,745 - trainer - INFO -     elapsed time   : 3.854985237121582
+2025-01-21 11:36:08,745 - trainer - INFO -     loss           : -1819.5608215332031
+2025-01-21 11:36:08,745 - trainer - INFO -     sim_loss       : 82.94929428100586
+2025-01-21 11:36:08,745 - trainer - INFO -     gen_loss       : -2634.922326660156
+2025-01-21 11:36:08,745 - trainer - INFO -     val_loss       : -1163.6177368164062
+2025-01-21 11:36:08,745 - trainer - INFO -     val_sim_loss   : 44.41411590576172
+2025-01-21 11:36:08,745 - trainer - INFO -     val_gen_loss   : -1208.0317993164062
+2025-01-21 11:36:08,745 - trainer - INFO -     val_perplexity : -73.19631958007812
+2025-01-21 11:36:08,745 - trainer - INFO -     val_embedding_sim: 0.0931357741355896
+2025-01-21 11:36:08,745 - trainer - INFO - ================================================================================
+2025-01-21 11:36:08,745 - trainer - INFO - Starting epoch 28 at 2025-01-21 11:36:08
+2025-01-21 11:36:12,605 - trainer - INFO - Epoch 28 completed at 2025-01-21 11:36:12
+2025-01-21 11:36:12,606 - trainer - INFO -     epoch          : 28
+2025-01-21 11:36:12,606 - trainer - INFO -     elapsed time   : 3.8599982261657715
+2025-01-21 11:36:12,606 - trainer - INFO -     loss           : -1860.0933471679687
+2025-01-21 11:36:12,606 - trainer - INFO -     sim_loss       : 81.69160461425781
+2025-01-21 11:36:12,606 - trainer - INFO -     gen_loss       : -2692.286962890625
+2025-01-21 11:36:12,606 - trainer - INFO -     val_loss       : -1189.7371215820312
+2025-01-21 11:36:12,606 - trainer - INFO -     val_sim_loss   : 44.094749450683594
+2025-01-21 11:36:12,606 - trainer - INFO -     val_gen_loss   : -1233.8318481445312
+2025-01-21 11:36:12,606 - trainer - INFO -     val_perplexity : -74.95062255859375
+2025-01-21 11:36:12,606 - trainer - INFO -     val_embedding_sim: 0.0766286849975586
+2025-01-21 11:36:12,606 - trainer - INFO - ================================================================================
+2025-01-21 11:36:12,606 - trainer - INFO - Starting epoch 29 at 2025-01-21 11:36:12
+2025-01-21 11:36:16,453 - trainer - INFO - Epoch 29 completed at 2025-01-21 11:36:16
+2025-01-21 11:36:16,453 - trainer - INFO -     epoch          : 29
+2025-01-21 11:36:16,453 - trainer - INFO -     elapsed time   : 3.846794843673706
+2025-01-21 11:36:16,453 - trainer - INFO -     loss           : -1900.5028381347656
+2025-01-21 11:36:16,453 - trainer - INFO -     sim_loss       : 83.69301853179931
+2025-01-21 11:36:16,453 - trainer - INFO -     gen_loss       : -2750.872521972656
+2025-01-21 11:36:16,453 - trainer - INFO -     val_loss       : -1213.876781463623
+2025-01-21 11:36:16,453 - trainer - INFO -     val_sim_loss   : 44.105072021484375
+2025-01-21 11:36:16,453 - trainer - INFO -     val_gen_loss   : -1257.9818840026855
+2025-01-21 11:36:16,453 - trainer - INFO -     val_perplexity : -76.26789093017578
+2025-01-21 11:36:16,453 - trainer - INFO -     val_embedding_sim: 0.08152681589126587
+2025-01-21 11:36:16,454 - trainer - INFO - ================================================================================
+2025-01-21 11:36:16,454 - trainer - INFO - Starting epoch 30 at 2025-01-21 11:36:16
+2025-01-21 11:36:20,320 - trainer - INFO - Epoch 30 completed at 2025-01-21 11:36:20
+2025-01-21 11:36:20,320 - trainer - INFO -     epoch          : 30
+2025-01-21 11:36:20,320 - trainer - INFO -     elapsed time   : 3.8657801151275635
+2025-01-21 11:36:20,320 - trainer - INFO -     loss           : -1940.8516235351562
+2025-01-21 11:36:20,320 - trainer - INFO -     sim_loss       : 81.45773506164551
+2025-01-21 11:36:20,320 - trainer - INFO -     gen_loss       : -2807.5555908203123
+2025-01-21 11:36:20,320 - trainer - INFO -     val_loss       : -1240.3086853027344
+2025-01-21 11:36:20,320 - trainer - INFO -     val_sim_loss   : 43.210693359375
+2025-01-21 11:36:20,320 - trainer - INFO -     val_gen_loss   : -1283.5193786621094
+2025-01-21 11:36:20,320 - trainer - INFO -     val_perplexity : -78.78577423095703
+2025-01-21 11:36:20,320 - trainer - INFO -     val_embedding_sim: 0.09326311945915222
+2025-01-21 11:36:26,871 - trainer - INFO - Saving checkpoint: congress-save/models/checkpoint-epoch30.pth ...
+2025-01-21 11:36:34,288 - trainer - INFO - Saving current best: model_best.pth ...
+2025-01-21 11:36:34,288 - trainer - INFO - ================================================================================
+2025-01-21 11:36:34,288 - trainer - INFO - Starting epoch 31 at 2025-01-21 11:36:34
+2025-01-21 11:36:38,198 - trainer - INFO - Epoch 31 completed at 2025-01-21 11:36:38
+2025-01-21 11:36:38,198 - trainer - INFO -     epoch          : 31
+2025-01-21 11:36:38,198 - trainer - INFO -     elapsed time   : 3.9094297885894775
+2025-01-21 11:36:38,198 - trainer - INFO -     loss           : -1980.8645812988282
+2025-01-21 11:36:38,198 - trainer - INFO -     sim_loss       : 82.11081390380859
+2025-01-21 11:36:38,198 - trainer - INFO -     gen_loss       : -2864.996936035156
+2025-01-21 11:36:38,198 - trainer - INFO -     val_loss       : -1266.655897140503
+2025-01-21 11:36:38,198 - trainer - INFO -     val_sim_loss   : 42.852439880371094
+2025-01-21 11:36:38,198 - trainer - INFO -     val_gen_loss   : -1309.5083141326904
+2025-01-21 11:36:38,198 - trainer - INFO -     val_perplexity : -80.06739807128906
+2025-01-21 11:36:38,198 - trainer - INFO -     val_embedding_sim: 0.10465926676988602
+2025-01-21 11:36:38,198 - trainer - INFO - ================================================================================
+2025-01-21 11:36:38,198 - trainer - INFO - Starting epoch 32 at 2025-01-21 11:36:38
+2025-01-21 11:36:42,067 - trainer - INFO - Epoch 32 completed at 2025-01-21 11:36:42
+2025-01-21 11:36:42,067 - trainer - INFO -     epoch          : 32
+2025-01-21 11:36:42,067 - trainer - INFO -     elapsed time   : 3.868283987045288
+2025-01-21 11:36:42,067 - trainer - INFO -     loss           : -2020.8262451171875
+2025-01-21 11:36:42,067 - trainer - INFO -     sim_loss       : 80.20629978179932
+2025-01-21 11:36:42,067 - trainer - INFO -     gen_loss       : -2921.2688720703127
+2025-01-21 11:36:42,067 - trainer - INFO -     val_loss       : -1292.8532180786133
+2025-01-21 11:36:42,067 - trainer - INFO -     val_sim_loss   : 41.79969787597656
+2025-01-21 11:36:42,067 - trainer - INFO -     val_gen_loss   : -1334.6529006958008
+2025-01-21 11:36:42,067 - trainer - INFO -     val_perplexity : -80.92499542236328
+2025-01-21 11:36:42,067 - trainer - INFO -     val_embedding_sim: 0.0989282876253128
+2025-01-21 11:36:42,067 - trainer - INFO - ================================================================================
+2025-01-21 11:36:42,067 - trainer - INFO - Starting epoch 33 at 2025-01-21 11:36:42
+2025-01-21 11:36:45,929 - trainer - INFO - Epoch 33 completed at 2025-01-21 11:36:45
+2025-01-21 11:36:45,930 - trainer - INFO -     epoch          : 33
+2025-01-21 11:36:45,930 - trainer - INFO -     elapsed time   : 3.8620145320892334
+2025-01-21 11:36:45,930 - trainer - INFO -     loss           : -2061.950579833984
+2025-01-21 11:36:45,930 - trainer - INFO -     sim_loss       : 79.26586170196533
+2025-01-21 11:36:45,930 - trainer - INFO -     gen_loss       : -2979.6148315429687
+2025-01-21 11:36:45,930 - trainer - INFO -     val_loss       : -1317.4770965576172
+2025-01-21 11:36:45,930 - trainer - INFO -     val_sim_loss   : 42.95904541015625
+2025-01-21 11:36:45,930 - trainer - INFO -     val_gen_loss   : -1360.4362030029297
+2025-01-21 11:36:45,930 - trainer - INFO -     val_perplexity : -82.37413787841797
+2025-01-21 11:36:45,930 - trainer - INFO -     val_embedding_sim: 0.08034534007310867
+2025-01-21 11:36:45,930 - trainer - INFO - ================================================================================
+2025-01-21 11:36:45,930 - trainer - INFO - Starting epoch 34 at 2025-01-21 11:36:45
+2025-01-21 11:36:49,781 - trainer - INFO - Epoch 34 completed at 2025-01-21 11:36:49
+2025-01-21 11:36:49,781 - trainer - INFO -     epoch          : 34
+2025-01-21 11:36:49,781 - trainer - INFO -     elapsed time   : 3.850740432739258
+2025-01-21 11:36:49,781 - trainer - INFO -     loss           : -2102.1494384765624
+2025-01-21 11:36:49,781 - trainer - INFO -     sim_loss       : 78.07100639343261
+2025-01-21 11:36:49,781 - trainer - INFO -     gen_loss       : -3036.529736328125
+2025-01-21 11:36:49,781 - trainer - INFO -     val_loss       : -1346.4862594604492
+2025-01-21 11:36:49,781 - trainer - INFO -     val_sim_loss   : 40.05866622924805
+2025-01-21 11:36:49,781 - trainer - INFO -     val_gen_loss   : -1386.5449752807617
+2025-01-21 11:36:49,781 - trainer - INFO -     val_perplexity : -83.05432891845703
+2025-01-21 11:36:49,781 - trainer - INFO -     val_embedding_sim: 0.06155431643128395
+2025-01-21 11:36:49,782 - trainer - INFO - ================================================================================
+2025-01-21 11:36:49,782 - trainer - INFO - Starting epoch 35 at 2025-01-21 11:36:49
+2025-01-21 11:36:53,694 - trainer - INFO - Epoch 35 completed at 2025-01-21 11:36:53
+2025-01-21 11:36:53,695 - trainer - INFO -     epoch          : 35
+2025-01-21 11:36:53,695 - trainer - INFO -     elapsed time   : 3.912766456604004
+2025-01-21 11:36:53,695 - trainer - INFO -     loss           : -2142.778778076172
+2025-01-21 11:36:53,695 - trainer - INFO -     sim_loss       : 77.80232162475586
+2025-01-21 11:36:53,695 - trainer - INFO -     gen_loss       : -3094.456433105469
+2025-01-21 11:36:53,695 - trainer - INFO -     val_loss       : -1369.281644821167
+2025-01-21 11:36:53,695 - trainer - INFO -     val_sim_loss   : 43.07615661621094
+2025-01-21 11:36:53,695 - trainer - INFO -     val_gen_loss   : -1412.357816696167
+2025-01-21 11:36:53,695 - trainer - INFO -     val_perplexity : -86.69133758544922
+2025-01-21 11:36:53,695 - trainer - INFO -     val_embedding_sim: 0.10259759426116943
+2025-01-21 11:37:00,258 - trainer - INFO - Saving checkpoint: congress-save/models/checkpoint-epoch35.pth ...
+2025-01-21 11:37:06,873 - trainer - INFO - Saving current best: model_best.pth ...
+2025-01-21 11:37:06,874 - trainer - INFO - ================================================================================
+2025-01-21 11:37:06,874 - trainer - INFO - Starting epoch 36 at 2025-01-21 11:37:06
+2025-01-21 11:37:10,783 - trainer - INFO - Epoch 36 completed at 2025-01-21 11:37:10
+2025-01-21 11:37:10,784 - trainer - INFO -     epoch          : 36
+2025-01-21 11:37:10,784 - trainer - INFO -     elapsed time   : 3.9095311164855957
+2025-01-21 11:37:10,784 - trainer - INFO -     loss           : -2184.286730957031
+2025-01-21 11:37:10,784 - trainer - INFO -     sim_loss       : 77.34680061340332
+2025-01-21 11:37:10,784 - trainer - INFO -     gen_loss       : -3153.558239746094
+2025-01-21 11:37:10,784 - trainer - INFO -     val_loss       : -1396.4896430969238
+2025-01-21 11:37:10,784 - trainer - INFO -     val_sim_loss   : 41.32496643066406
+2025-01-21 11:37:10,784 - trainer - INFO -     val_gen_loss   : -1437.8145942687988
+2025-01-21 11:37:10,784 - trainer - INFO -     val_perplexity : -87.33863830566406
+2025-01-21 11:37:10,784 - trainer - INFO -     val_embedding_sim: 0.10073013603687286
+2025-01-21 11:37:10,784 - trainer - INFO - ================================================================================
+2025-01-21 11:37:10,784 - trainer - INFO - Starting epoch 37 at 2025-01-21 11:37:10
+2025-01-21 11:37:14,628 - trainer - INFO - Epoch 37 completed at 2025-01-21 11:37:14
+2025-01-21 11:37:14,628 - trainer - INFO -     epoch          : 37
+2025-01-21 11:37:14,628 - trainer - INFO -     elapsed time   : 3.843770742416382
+2025-01-21 11:37:14,628 - trainer - INFO -     loss           : -2223.3567626953127
+2025-01-21 11:37:14,628 - trainer - INFO -     sim_loss       : 77.26308059692383
+2025-01-21 11:37:14,628 - trainer - INFO -     gen_loss       : -3209.3368286132813
+2025-01-21 11:37:14,628 - trainer - INFO -     val_loss       : -1419.7557945251465
+2025-01-21 11:37:14,628 - trainer - INFO -     val_sim_loss   : 43.289920806884766
+2025-01-21 11:37:14,628 - trainer - INFO -     val_gen_loss   : -1463.045711517334
+2025-01-21 11:37:14,628 - trainer - INFO -     val_perplexity : -87.90691375732422
+2025-01-21 11:37:14,629 - trainer - INFO -     val_embedding_sim: 0.07766325026750565
+2025-01-21 11:37:14,629 - trainer - INFO - ================================================================================
+2025-01-21 11:37:14,629 - trainer - INFO - Starting epoch 38 at 2025-01-21 11:37:14
+2025-01-21 11:37:18,490 - trainer - INFO - Epoch 38 completed at 2025-01-21 11:37:18
+2025-01-21 11:37:18,490 - trainer - INFO -     epoch          : 38
+2025-01-21 11:37:18,490 - trainer - INFO -     elapsed time   : 3.8615331649780273
+2025-01-21 11:37:18,491 - trainer - INFO -     loss           : -2264.5408264160155
+2025-01-21 11:37:18,491 - trainer - INFO -     sim_loss       : 76.34947700500489
+2025-01-21 11:37:18,491 - trainer - INFO -     gen_loss       : -3267.779541015625
+2025-01-21 11:37:18,491 - trainer - INFO -     val_loss       : -1450.1892471313477
+2025-01-21 11:37:18,491 - trainer - INFO -     val_sim_loss   : 38.99394226074219
+2025-01-21 11:37:18,491 - trainer - INFO -     val_gen_loss   : -1489.1831436157227
+2025-01-21 11:37:18,491 - trainer - INFO -     val_perplexity : -89.48136138916016
+2025-01-21 11:37:18,491 - trainer - INFO -     val_embedding_sim: 0.08502323925495148
+2025-01-21 11:37:18,491 - trainer - INFO - ================================================================================
+2025-01-21 11:37:18,491 - trainer - INFO - Starting epoch 39 at 2025-01-21 11:37:18
+2025-01-21 11:37:22,340 - trainer - INFO - Epoch 39 completed at 2025-01-21 11:37:22
+2025-01-21 11:37:22,340 - trainer - INFO -     epoch          : 39
+2025-01-21 11:37:22,340 - trainer - INFO -     elapsed time   : 3.8492188453674316
+2025-01-21 11:37:22,340 - trainer - INFO -     loss           : -2304.8083374023436
+2025-01-21 11:37:22,341 - trainer - INFO -     sim_loss       : 76.81127166748047
+2025-01-21 11:37:22,341 - trainer - INFO -     gen_loss       : -3325.5025390625
+2025-01-21 11:37:22,341 - trainer - INFO -     val_loss       : -1474.651107788086
+2025-01-21 11:37:22,341 - trainer - INFO -     val_sim_loss   : 40.969871520996094
+2025-01-21 11:37:22,341 - trainer - INFO -     val_gen_loss   : -1515.6209564208984
+2025-01-21 11:37:22,341 - trainer - INFO -     val_perplexity : -92.06000518798828
+2025-01-21 11:37:22,341 - trainer - INFO -     val_embedding_sim: 0.11550602316856384
+2025-01-21 11:37:22,341 - trainer - INFO - ================================================================================
+2025-01-21 11:37:22,341 - trainer - INFO - Starting epoch 40 at 2025-01-21 11:37:22
+2025-01-21 11:37:26,190 - trainer - INFO - Epoch 40 completed at 2025-01-21 11:37:26
+2025-01-21 11:37:26,190 - trainer - INFO -     epoch          : 40
+2025-01-21 11:37:26,190 - trainer - INFO -     elapsed time   : 3.8485870361328125
+2025-01-21 11:37:26,190 - trainer - INFO -     loss           : -2345.038818359375
+2025-01-21 11:37:26,190 - trainer - INFO -     sim_loss       : 77.0888011932373
+2025-01-21 11:37:26,190 - trainer - INFO -     gen_loss       : -3383.0935791015627
+2025-01-21 11:37:26,190 - trainer - INFO -     val_loss       : -1498.8420295715332
+2025-01-21 11:37:26,190 - trainer - INFO -     val_sim_loss   : 42.892303466796875
+2025-01-21 11:37:26,190 - trainer - INFO -     val_gen_loss   : -1541.7343635559082
+2025-01-21 11:37:26,190 - trainer - INFO -     val_perplexity : -94.67070770263672
+2025-01-21 11:37:26,190 - trainer - INFO -     val_embedding_sim: 0.1063811331987381
+2025-01-21 11:37:32,748 - trainer - INFO - Saving checkpoint: congress-save/models/checkpoint-epoch40.pth ...
+2025-01-21 11:37:39,347 - trainer - INFO - Saving current best: model_best.pth ...
+2025-01-21 11:37:39,348 - trainer - INFO - ================================================================================
+2025-01-21 11:37:39,348 - trainer - INFO - Starting epoch 41 at 2025-01-21 11:37:39
+2025-01-21 11:37:43,244 - trainer - INFO - Epoch 41 completed at 2025-01-21 11:37:43
+2025-01-21 11:37:43,244 - trainer - INFO -     epoch          : 41
+2025-01-21 11:37:43,244 - trainer - INFO -     elapsed time   : 3.8959996700286865
+2025-01-21 11:37:43,244 - trainer - INFO -     loss           : -2385.9146728515625
+2025-01-21 11:37:43,244 - trainer - INFO -     sim_loss       : 75.7332260131836
+2025-01-21 11:37:43,244 - trainer - INFO -     gen_loss       : -3440.9067138671876
+2025-01-21 11:37:43,244 - trainer - INFO -     val_loss       : -1524.7807083129883
+2025-01-21 11:37:43,244 - trainer - INFO -     val_sim_loss   : 42.39923095703125
+2025-01-21 11:37:43,244 - trainer - INFO -     val_gen_loss   : -1567.1800003051758
+2025-01-21 11:37:43,244 - trainer - INFO -     val_perplexity : -94.17537689208984
+2025-01-21 11:37:43,244 - trainer - INFO -     val_embedding_sim: 0.0976472869515419
+2025-01-21 11:37:43,244 - trainer - INFO - ================================================================================
+2025-01-21 11:37:43,244 - trainer - INFO - Starting epoch 42 at 2025-01-21 11:37:43
+2025-01-21 11:37:47,096 - trainer - INFO - Epoch 42 completed at 2025-01-21 11:37:47
+2025-01-21 11:37:47,096 - trainer - INFO -     epoch          : 42
+2025-01-21 11:37:47,096 - trainer - INFO -     elapsed time   : 3.8515963554382324
+2025-01-21 11:37:47,096 - trainer - INFO -     loss           : -2427.26064453125
+2025-01-21 11:37:47,096 - trainer - INFO -     sim_loss       : 76.18685646057129
+2025-01-21 11:37:47,096 - trainer - INFO -     gen_loss       : -3500.1667602539064
+2025-01-21 11:37:47,096 - trainer - INFO -     val_loss       : -1549.9650421142578
+2025-01-21 11:37:47,096 - trainer - INFO -     val_sim_loss   : 43.83110427856445
+2025-01-21 11:37:47,097 - trainer - INFO -     val_gen_loss   : -1593.7960968017578
+2025-01-21 11:37:47,097 - trainer - INFO -     val_perplexity : -95.95436096191406
+2025-01-21 11:37:47,097 - trainer - INFO -     val_embedding_sim: 0.0856391042470932
+2025-01-21 11:37:47,097 - trainer - INFO - ================================================================================
+2025-01-21 11:37:47,097 - trainer - INFO - Starting epoch 43 at 2025-01-21 11:37:47
+2025-01-21 11:37:50,947 - trainer - INFO - Epoch 43 completed at 2025-01-21 11:37:50
+2025-01-21 11:37:50,947 - trainer - INFO -     epoch          : 43
+2025-01-21 11:37:50,947 - trainer - INFO -     elapsed time   : 3.850001811981201
+2025-01-21 11:37:50,947 - trainer - INFO -     loss           : -2468.268347167969
+2025-01-21 11:37:50,947 - trainer - INFO -     sim_loss       : 75.33574333190919
+2025-01-21 11:37:50,947 - trainer - INFO -     gen_loss       : -3558.384387207031
+2025-01-21 11:37:50,947 - trainer - INFO -     val_loss       : -1579.6711311340332
+2025-01-21 11:37:50,947 - trainer - INFO -     val_sim_loss   : 40.06618118286133
+2025-01-21 11:37:50,947 - trainer - INFO -     val_gen_loss   : -1619.7372932434082
+2025-01-21 11:37:50,947 - trainer - INFO -     val_perplexity : -98.45176696777344
+2025-01-21 11:37:50,947 - trainer - INFO -     val_embedding_sim: 0.10070370137691498
+2025-01-21 11:37:50,947 - trainer - INFO - ================================================================================
+2025-01-21 11:37:50,947 - trainer - INFO - Starting epoch 44 at 2025-01-21 11:37:50
+2025-01-21 11:37:54,792 - trainer - INFO - Epoch 44 completed at 2025-01-21 11:37:54
+2025-01-21 11:37:54,792 - trainer - INFO -     epoch          : 44
+2025-01-21 11:37:54,793 - trainer - INFO -     elapsed time   : 3.844726085662842
+2025-01-21 11:37:54,793 - trainer - INFO -     loss           : -2509.1872680664064
+2025-01-21 11:37:54,793 - trainer - INFO -     sim_loss       : 74.28163471221924
+2025-01-21 11:37:54,793 - trainer - INFO -     gen_loss       : -3616.3883422851563
+2025-01-21 11:37:54,793 - trainer - INFO -     val_loss       : -1606.2369995117188
+2025-01-21 11:37:54,793 - trainer - INFO -     val_sim_loss   : 39.384620666503906
+2025-01-21 11:37:54,793 - trainer - INFO -     val_gen_loss   : -1645.6216430664062
+2025-01-21 11:37:54,793 - trainer - INFO -     val_perplexity : -98.90141296386719
+2025-01-21 11:37:54,793 - trainer - INFO -     val_embedding_sim: 0.09731203317642212
+2025-01-21 11:37:54,793 - trainer - INFO - ================================================================================
+2025-01-21 11:37:54,793 - trainer - INFO - Starting epoch 45 at 2025-01-21 11:37:54
+2025-01-21 11:37:58,653 - trainer - INFO - Epoch 45 completed at 2025-01-21 11:37:58
+2025-01-21 11:37:58,653 - trainer - INFO -     epoch          : 45
+2025-01-21 11:37:58,653 - trainer - INFO -     elapsed time   : 3.8594396114349365
+2025-01-21 11:37:58,653 - trainer - INFO -     loss           : -2550.0631591796873
+2025-01-21 11:37:58,653 - trainer - INFO -     sim_loss       : 73.99302959442139
+2025-01-21 11:37:58,653 - trainer - INFO -     gen_loss       : -3674.658728027344
+2025-01-21 11:37:58,653 - trainer - INFO -     val_loss       : -1633.1077117919922
+2025-01-21 11:37:58,653 - trainer - INFO -     val_sim_loss   : 37.862892150878906
+2025-01-21 11:37:58,653 - trainer - INFO -     val_gen_loss   : -1670.9706268310547
+2025-01-21 11:37:58,653 - trainer - INFO -     val_perplexity : -101.30294799804688
+2025-01-21 11:37:58,653 - trainer - INFO -     val_embedding_sim: 0.09755571186542511
+2025-01-21 11:38:05,195 - trainer - INFO - Saving checkpoint: congress-save/models/checkpoint-epoch45.pth ...
+2025-01-21 11:38:11,798 - trainer - INFO - Saving current best: model_best.pth ...
+2025-01-21 11:38:11,798 - trainer - INFO - ================================================================================
+2025-01-21 11:38:11,798 - trainer - INFO - Starting epoch 46 at 2025-01-21 11:38:11
+2025-01-21 11:38:15,711 - trainer - INFO - Epoch 46 completed at 2025-01-21 11:38:15
+2025-01-21 11:38:15,711 - trainer - INFO -     epoch          : 46
+2025-01-21 11:38:15,711 - trainer - INFO -     elapsed time   : 3.912022590637207
+2025-01-21 11:38:15,711 - trainer - INFO -     loss           : -2591.267712402344
+2025-01-21 11:38:15,711 - trainer - INFO -     sim_loss       : 73.96552886962891
+2025-01-21 11:38:15,711 - trainer - INFO -     gen_loss       : -3733.510632324219
+2025-01-21 11:38:15,711 - trainer - INFO -     val_loss       : -1657.9219131469727
+2025-01-21 11:38:15,711 - trainer - INFO -     val_sim_loss   : 40.40351867675781
+2025-01-21 11:38:15,711 - trainer - INFO -     val_gen_loss   : -1698.3254776000977
+2025-01-21 11:38:15,711 - trainer - INFO -     val_perplexity : -103.3705062866211
+2025-01-21 11:38:15,711 - trainer - INFO -     val_embedding_sim: 0.09245061129331589
+2025-01-21 11:38:15,711 - trainer - INFO - ================================================================================
+2025-01-21 11:38:15,711 - trainer - INFO - Starting epoch 47 at 2025-01-21 11:38:15
+2025-01-21 11:38:19,563 - trainer - INFO - Epoch 47 completed at 2025-01-21 11:38:19
+2025-01-21 11:38:19,563 - trainer - INFO -     epoch          : 47
+2025-01-21 11:38:19,563 - trainer - INFO -     elapsed time   : 3.851414918899536
+2025-01-21 11:38:19,563 - trainer - INFO -     loss           : -2631.3988525390623
+2025-01-21 11:38:19,563 - trainer - INFO -     sim_loss       : 76.4115644454956
+2025-01-21 11:38:19,563 - trainer - INFO -     gen_loss       : -3791.8890869140623
+2025-01-21 11:38:19,563 - trainer - INFO -     val_loss       : -1687.8711853027344
+2025-01-21 11:38:19,563 - trainer - INFO -     val_sim_loss   : 36.902191162109375
+2025-01-21 11:38:19,563 - trainer - INFO -     val_gen_loss   : -1724.7734069824219
+2025-01-21 11:38:19,563 - trainer - INFO -     val_perplexity : -105.42739868164062
+2025-01-21 11:38:19,563 - trainer - INFO -     val_embedding_sim: 0.10027376562356949
+2025-01-21 11:38:19,563 - trainer - INFO - ================================================================================
+2025-01-21 11:38:19,563 - trainer - INFO - Starting epoch 48 at 2025-01-21 11:38:19
+2025-01-21 11:38:23,423 - trainer - INFO - Epoch 48 completed at 2025-01-21 11:38:23
+2025-01-21 11:38:23,423 - trainer - INFO -     epoch          : 48
+2025-01-21 11:38:23,423 - trainer - INFO -     elapsed time   : 3.8597142696380615
+2025-01-21 11:38:23,423 - trainer - INFO -     loss           : -2673.606640625
+2025-01-21 11:38:23,423 - trainer - INFO -     sim_loss       : 70.75715770721436
+2025-01-21 11:38:23,423 - trainer - INFO -     gen_loss       : -3849.7626098632813
+2025-01-21 11:38:23,424 - trainer - INFO -     val_loss       : -1714.1301803588867
+2025-01-21 11:38:23,424 - trainer - INFO -     val_sim_loss   : 37.34070587158203
+2025-01-21 11:38:23,424 - trainer - INFO -     val_gen_loss   : -1751.4708786010742
+2025-01-21 11:38:23,424 - trainer - INFO -     val_perplexity : -104.18269348144531
+2025-01-21 11:38:23,424 - trainer - INFO -     val_embedding_sim: 0.10375803709030151
+2025-01-21 11:38:23,424 - trainer - INFO - ================================================================================
+2025-01-21 11:38:23,424 - trainer - INFO - Starting epoch 49 at 2025-01-21 11:38:23
+2025-01-21 11:38:27,283 - trainer - INFO - Epoch 49 completed at 2025-01-21 11:38:27
+2025-01-21 11:38:27,283 - trainer - INFO -     epoch          : 49
+2025-01-21 11:38:27,283 - trainer - INFO -     elapsed time   : 3.858851432800293
+2025-01-21 11:38:27,283 - trainer - INFO -     loss           : -2711.926867675781
+2025-01-21 11:38:27,283 - trainer - INFO -     sim_loss       : 75.55915088653565
+2025-01-21 11:38:27,283 - trainer - INFO -     gen_loss       : -3906.563854980469
+2025-01-21 11:38:27,283 - trainer - INFO -     val_loss       : -1737.6555252075195
+2025-01-21 11:38:27,283 - trainer - INFO -     val_sim_loss   : 39.453426361083984
+2025-01-21 11:38:27,283 - trainer - INFO -     val_gen_loss   : -1777.1088943481445
+2025-01-21 11:38:27,283 - trainer - INFO -     val_perplexity : -105.70716857910156
+2025-01-21 11:38:27,283 - trainer - INFO -     val_embedding_sim: 0.1044783964753151
+2025-01-21 11:38:27,283 - trainer - INFO - ================================================================================
+2025-01-21 11:38:27,283 - trainer - INFO - Starting epoch 50 at 2025-01-21 11:38:27
+2025-01-21 11:38:31,142 - trainer - INFO - Epoch 50 completed at 2025-01-21 11:38:31
+2025-01-21 11:38:31,142 - trainer - INFO -     epoch          : 50
+2025-01-21 11:38:31,142 - trainer - INFO -     elapsed time   : 3.858666181564331
+2025-01-21 11:38:31,142 - trainer - INFO -     loss           : -2753.8928833007812
+2025-01-21 11:38:31,142 - trainer - INFO -     sim_loss       : 73.24702224731445
+2025-01-21 11:38:31,142 - trainer - INFO -     gen_loss       : -3965.5243286132813
+2025-01-21 11:38:31,143 - trainer - INFO -     val_loss       : -1765.5945892333984
+2025-01-21 11:38:31,143 - trainer - INFO -     val_sim_loss   : 38.9703369140625
+2025-01-21 11:38:31,143 - trainer - INFO -     val_gen_loss   : -1804.564926147461
+2025-01-21 11:38:31,143 - trainer - INFO -     val_perplexity : -109.9386978149414
+2025-01-21 11:38:31,143 - trainer - INFO -     val_embedding_sim: 0.09104909002780914
+2025-01-21 11:38:37,697 - trainer - INFO - Saving checkpoint: congress-save/models/checkpoint-epoch50.pth ...
+2025-01-21 11:38:44,297 - trainer - INFO - Saving current best: model_best.pth ...
+2025-01-21 11:38:44,297 - trainer - INFO - ================================================================================
+2025-01-21 11:38:44,298 - trainer - INFO - Starting epoch 51 at 2025-01-21 11:38:44
+2025-01-21 11:38:48,194 - trainer - INFO - Epoch 51 completed at 2025-01-21 11:38:48
+2025-01-21 11:38:48,195 - trainer - INFO -     epoch          : 51
+2025-01-21 11:38:48,195 - trainer - INFO -     elapsed time   : 3.8967435359954834
+2025-01-21 11:38:48,195 - trainer - INFO -     loss           : -2795.883203125
+2025-01-21 11:38:48,195 - trainer - INFO -     sim_loss       : 73.45217323303223
+2025-01-21 11:38:48,195 - trainer - INFO -     gen_loss       : -4025.5984375
+2025-01-21 11:38:48,195 - trainer - INFO -     val_loss       : -1793.0777893066406
+2025-01-21 11:38:48,195 - trainer - INFO -     val_sim_loss   : 37.98595428466797
+2025-01-21 11:38:48,195 - trainer - INFO -     val_gen_loss   : -1831.0637512207031
+2025-01-21 11:38:48,195 - trainer - INFO -     val_perplexity : -110.23809051513672
+2025-01-21 11:38:48,195 - trainer - INFO -     val_embedding_sim: 0.08676950633525848
+2025-01-21 11:38:48,195 - trainer - INFO - ================================================================================
+2025-01-21 11:38:48,195 - trainer - INFO - Starting epoch 52 at 2025-01-21 11:38:48
+2025-01-21 11:38:52,048 - trainer - INFO - Epoch 52 completed at 2025-01-21 11:38:52
+2025-01-21 11:38:52,049 - trainer - INFO -     epoch          : 52
+2025-01-21 11:38:52,049 - trainer - INFO -     elapsed time   : 3.8532040119171143
+2025-01-21 11:38:52,049 - trainer - INFO -     loss           : -2837.225927734375
+2025-01-21 11:38:52,049 - trainer - INFO -     sim_loss       : 71.69684066772462
+2025-01-21 11:38:52,049 - trainer - INFO -     gen_loss       : -4083.907189941406
+2025-01-21 11:38:52,049 - trainer - INFO -     val_loss       : -1815.1030464172363
+2025-01-21 11:38:52,049 - trainer - INFO -     val_sim_loss   : 41.84125900268555
+2025-01-21 11:38:52,049 - trainer - INFO -     val_gen_loss   : -1856.9443550109863
+2025-01-21 11:38:52,049 - trainer - INFO -     val_perplexity : -112.87704467773438
+2025-01-21 11:38:52,049 - trainer - INFO -     val_embedding_sim: 0.11805813759565353
+2025-01-21 11:38:52,049 - trainer - INFO - ================================================================================
+2025-01-21 11:38:52,049 - trainer - INFO - Starting epoch 53 at 2025-01-21 11:38:52
+2025-01-21 11:38:55,904 - trainer - INFO - Epoch 53 completed at 2025-01-21 11:38:55
+2025-01-21 11:38:55,904 - trainer - INFO -     epoch          : 53
+2025-01-21 11:38:55,904 - trainer - INFO -     elapsed time   : 3.8547964096069336
+2025-01-21 11:38:55,904 - trainer - INFO -     loss           : -2878.731787109375
+2025-01-21 11:38:55,904 - trainer - INFO -     sim_loss       : 70.25033912658691
+2025-01-21 11:38:55,904 - trainer - INFO -     gen_loss       : -4142.581262207032
+2025-01-21 11:38:55,904 - trainer - INFO -     val_loss       : -1845.7966384887695
+2025-01-21 11:38:55,904 - trainer - INFO -     val_sim_loss   : 38.65176773071289
+2025-01-21 11:38:55,904 - trainer - INFO -     val_gen_loss   : -1884.448371887207
+2025-01-21 11:38:55,904 - trainer - INFO -     val_perplexity : -115.58982849121094
+2025-01-21 11:38:55,904 - trainer - INFO -     val_embedding_sim: 0.09517958015203476
+2025-01-21 11:38:55,904 - trainer - INFO - ================================================================================
+2025-01-21 11:38:55,904 - trainer - INFO - Starting epoch 54 at 2025-01-21 11:38:55
+2025-01-21 11:38:59,758 - trainer - INFO - Epoch 54 completed at 2025-01-21 11:38:59
+2025-01-21 11:38:59,759 - trainer - INFO -     epoch          : 54
+2025-01-21 11:38:59,759 - trainer - INFO -     elapsed time   : 3.853804349899292
+2025-01-21 11:38:59,759 - trainer - INFO -     loss           : -2920.5029174804686
+2025-01-21 11:38:59,759 - trainer - INFO -     sim_loss       : 69.8355058670044
+2025-01-21 11:38:59,759 - trainer - INFO -     gen_loss       : -4202.076586914062
+2025-01-21 11:38:59,759 - trainer - INFO -     val_loss       : -1873.1986389160156
+2025-01-21 11:38:59,759 - trainer - INFO -     val_sim_loss   : 37.97411346435547
+2025-01-21 11:38:59,759 - trainer - INFO -     val_gen_loss   : -1911.1727600097656
+2025-01-21 11:38:59,759 - trainer - INFO -     val_perplexity : -115.0547866821289
+2025-01-21 11:38:59,759 - trainer - INFO -     val_embedding_sim: 0.09239823371171951
+2025-01-21 11:38:59,759 - trainer - INFO - ================================================================================
+2025-01-21 11:38:59,759 - trainer - INFO - Starting epoch 55 at 2025-01-21 11:38:59
+2025-01-21 11:39:03,613 - trainer - INFO - Epoch 55 completed at 2025-01-21 11:39:03
+2025-01-21 11:39:03,614 - trainer - INFO -     epoch          : 55
+2025-01-21 11:39:03,614 - trainer - INFO -     elapsed time   : 3.854220390319824
+2025-01-21 11:39:03,614 - trainer - INFO -     loss           : -2961.2542724609375
+2025-01-21 11:39:03,614 - trainer - INFO -     sim_loss       : 70.43880004882813
+2025-01-21 11:39:03,614 - trainer - INFO -     gen_loss       : -4260.551342773438
+2025-01-21 11:39:03,614 - trainer - INFO -     val_loss       : -1902.3735046386719
+2025-01-21 11:39:03,614 - trainer - INFO -     val_sim_loss   : 35.92854690551758
+2025-01-21 11:39:03,614 - trainer - INFO -     val_gen_loss   : -1938.3020935058594
+2025-01-21 11:39:03,614 - trainer - INFO -     val_perplexity : -117.36457824707031
+2025-01-21 11:39:03,614 - trainer - INFO -     val_embedding_sim: 0.11226416379213333
+2025-01-21 11:39:10,174 - trainer - INFO - Saving checkpoint: congress-save/models/checkpoint-epoch55.pth ...
+2025-01-21 11:39:16,798 - trainer - INFO - Saving current best: model_best.pth ...
+2025-01-21 11:39:16,799 - trainer - INFO - ================================================================================
+2025-01-21 11:39:16,799 - trainer - INFO - Starting epoch 56 at 2025-01-21 11:39:16
+2025-01-21 11:39:20,700 - trainer - INFO - Epoch 56 completed at 2025-01-21 11:39:20
+2025-01-21 11:39:20,701 - trainer - INFO -     epoch          : 56
+2025-01-21 11:39:20,701 - trainer - INFO -     elapsed time   : 3.901456117630005
+2025-01-21 11:39:20,701 - trainer - INFO -     loss           : -3003.9733764648436
+2025-01-21 11:39:20,701 - trainer - INFO -     sim_loss       : 69.51186714172363
+2025-01-21 11:39:20,701 - trainer - INFO -     gen_loss       : -4321.181420898438
+2025-01-21 11:39:20,701 - trainer - INFO -     val_loss       : -1926.7077865600586
+2025-01-21 11:39:20,701 - trainer - INFO -     val_sim_loss   : 39.23253631591797
+2025-01-21 11:39:20,701 - trainer - INFO -     val_gen_loss   : -1965.940330505371
+2025-01-21 11:39:20,701 - trainer - INFO -     val_perplexity : -119.08241271972656
+2025-01-21 11:39:20,701 - trainer - INFO -     val_embedding_sim: 0.09082214534282684
+2025-01-21 11:39:20,701 - trainer - INFO - ================================================================================
+2025-01-21 11:39:20,701 - trainer - INFO - Starting epoch 57 at 2025-01-21 11:39:20
+2025-01-21 11:39:24,555 - trainer - INFO - Epoch 57 completed at 2025-01-21 11:39:24
+2025-01-21 11:39:24,555 - trainer - INFO -     epoch          : 57
+2025-01-21 11:39:24,555 - trainer - INFO -     elapsed time   : 3.8541078567504883
+2025-01-21 11:39:24,555 - trainer - INFO -     loss           : -3047.860144042969
+2025-01-21 11:39:24,555 - trainer - INFO -     sim_loss       : 67.12817039489747
+2025-01-21 11:39:24,556 - trainer - INFO -     gen_loss       : -4382.855151367187
+2025-01-21 11:39:24,556 - trainer - INFO -     val_loss       : -1956.1656494140625
+2025-01-21 11:39:24,556 - trainer - INFO -     val_sim_loss   : 36.867820739746094
+2025-01-21 11:39:24,556 - trainer - INFO -     val_gen_loss   : -1993.033447265625
+2025-01-21 11:39:24,556 - trainer - INFO -     val_perplexity : -119.80303955078125
+2025-01-21 11:39:24,556 - trainer - INFO -     val_embedding_sim: 0.08787734806537628
+2025-01-21 11:39:24,556 - trainer - INFO - ================================================================================
+2025-01-21 11:39:24,556 - trainer - INFO - Starting epoch 58 at 2025-01-21 11:39:24
+2025-01-21 11:39:28,416 - trainer - INFO - Epoch 58 completed at 2025-01-21 11:39:28
+2025-01-21 11:39:28,417 - trainer - INFO -     epoch          : 58
+2025-01-21 11:39:28,417 - trainer - INFO -     elapsed time   : 3.860516309738159
+2025-01-21 11:39:28,417 - trainer - INFO -     loss           : -3087.99580078125
+2025-01-21 11:39:28,417 - trainer - INFO -     sim_loss       : 67.39743080139161
+2025-01-21 11:39:28,417 - trainer - INFO -     gen_loss       : -4440.307202148438
+2025-01-21 11:39:28,417 - trainer - INFO -     val_loss       : -1984.9580612182617
+2025-01-21 11:39:28,417 - trainer - INFO -     val_sim_loss   : 35.626670837402344
+2025-01-21 11:39:28,417 - trainer - INFO -     val_gen_loss   : -2020.5847702026367
+2025-01-21 11:39:28,417 - trainer - INFO -     val_perplexity : -120.18952941894531
+2025-01-21 11:39:28,417 - trainer - INFO -     val_embedding_sim: 0.1063355877995491
+2025-01-21 11:39:28,417 - trainer - INFO - ================================================================================
+2025-01-21 11:39:28,417 - trainer - INFO - Starting epoch 59 at 2025-01-21 11:39:28
+2025-01-21 11:39:32,269 - trainer - INFO - Epoch 59 completed at 2025-01-21 11:39:32
+2025-01-21 11:39:32,269 - trainer - INFO -     epoch          : 59
+2025-01-21 11:39:32,269 - trainer - INFO -     elapsed time   : 3.8519866466522217
+2025-01-21 11:39:32,269 - trainer - INFO -     loss           : -3129.365576171875
+2025-01-21 11:39:32,269 - trainer - INFO -     sim_loss       : 70.77721519470215
+2025-01-21 11:39:32,270 - trainer - INFO -     gen_loss       : -4500.855358886719
+2025-01-21 11:39:32,270 - trainer - INFO -     val_loss       : -2013.987205505371
+2025-01-21 11:39:32,270 - trainer - INFO -     val_sim_loss   : 33.510074615478516
+2025-01-21 11:39:32,270 - trainer - INFO -     val_gen_loss   : -2047.4973373413086
+2025-01-21 11:39:32,270 - trainer - INFO -     val_perplexity : -124.7423095703125
+2025-01-21 11:39:32,270 - trainer - INFO -     val_embedding_sim: 0.07616426050662994
+2025-01-21 11:39:32,270 - trainer - INFO - ================================================================================
+2025-01-21 11:39:32,270 - trainer - INFO - Starting epoch 60 at 2025-01-21 11:39:32
+2025-01-21 11:39:36,115 - trainer - INFO - Epoch 60 completed at 2025-01-21 11:39:36
+2025-01-21 11:39:36,115 - trainer - INFO -     epoch          : 60
+2025-01-21 11:39:36,115 - trainer - INFO -     elapsed time   : 3.845266819000244
+2025-01-21 11:39:36,115 - trainer - INFO -     loss           : -3172.0904052734377
+2025-01-21 11:39:36,116 - trainer - INFO -     sim_loss       : 69.09343318939209
+2025-01-21 11:39:36,116 - trainer - INFO -     gen_loss       : -4561.169360351562
+2025-01-21 11:39:36,116 - trainer - INFO -     val_loss       : -2039.872703552246
+2025-01-21 11:39:36,116 - trainer - INFO -     val_sim_loss   : 34.60113525390625
+2025-01-21 11:39:36,116 - trainer - INFO -     val_gen_loss   : -2074.4738998413086
+2025-01-21 11:39:36,116 - trainer - INFO -     val_perplexity : -126.38379669189453
+2025-01-21 11:39:36,116 - trainer - INFO -     val_embedding_sim: 0.10495314747095108
+2025-01-21 11:39:42,667 - trainer - INFO - Saving checkpoint: congress-save/models/checkpoint-epoch60.pth ...
+2025-01-21 11:39:49,255 - trainer - INFO - Saving current best: model_best.pth ...
+2025-01-21 11:39:49,255 - trainer - INFO - ================================================================================
+2025-01-21 11:39:49,255 - trainer - INFO - Starting epoch 61 at 2025-01-21 11:39:49
+2025-01-21 11:39:53,183 - trainer - INFO - Epoch 61 completed at 2025-01-21 11:39:53
+2025-01-21 11:39:53,183 - trainer - INFO -     epoch          : 61
+2025-01-21 11:39:53,183 - trainer - INFO -     elapsed time   : 3.9274678230285645
+2025-01-21 11:39:53,183 - trainer - INFO -     loss           : -3214.6062744140627
+2025-01-21 11:39:53,183 - trainer - INFO -     sim_loss       : 67.89113941192628
+2025-01-21 11:39:53,183 - trainer - INFO -     gen_loss       : -4621.39091796875
+2025-01-21 11:39:53,183 - trainer - INFO -     val_loss       : -2062.5592041015625
+2025-01-21 11:39:53,183 - trainer - INFO -     val_sim_loss   : 38.85088348388672
+2025-01-21 11:39:53,183 - trainer - INFO -     val_gen_loss   : -2101.4100341796875
+2025-01-21 11:39:53,183 - trainer - INFO -     val_perplexity : -124.9877700805664
+2025-01-21 11:39:53,183 - trainer - INFO -     val_embedding_sim: 0.08296334743499756
+2025-01-21 11:39:53,183 - trainer - INFO - ================================================================================
+2025-01-21 11:39:53,183 - trainer - INFO - Starting epoch 62 at 2025-01-21 11:39:53
+2025-01-21 11:39:57,029 - trainer - INFO - Epoch 62 completed at 2025-01-21 11:39:57
+2025-01-21 11:39:57,029 - trainer - INFO -     epoch          : 62
+2025-01-21 11:39:57,029 - trainer - INFO -     elapsed time   : 3.845672130584717
+2025-01-21 11:39:57,029 - trainer - INFO -     loss           : -3256.899938964844
+2025-01-21 11:39:57,029 - trainer - INFO -     sim_loss       : 67.32930412292481
+2025-01-21 11:39:57,029 - trainer - INFO -     gen_loss       : -4681.569738769531
+2025-01-21 11:39:57,029 - trainer - INFO -     val_loss       : -2094.203800201416
+2025-01-21 11:39:57,029 - trainer - INFO -     val_sim_loss   : 34.36250305175781
+2025-01-21 11:39:57,029 - trainer - INFO -     val_gen_loss   : -2128.566349029541
+2025-01-21 11:39:57,029 - trainer - INFO -     val_perplexity : -130.56100463867188
+2025-01-21 11:39:57,029 - trainer - INFO -     val_embedding_sim: 0.09941250085830688
+2025-01-21 11:39:57,029 - trainer - INFO - ================================================================================
+2025-01-21 11:39:57,030 - trainer - INFO - Starting epoch 63 at 2025-01-21 11:39:57
+2025-01-21 11:40:00,900 - trainer - INFO - Epoch 63 completed at 2025-01-21 11:40:00
+2025-01-21 11:40:00,900 - trainer - INFO -     epoch          : 63
+2025-01-21 11:40:00,900 - trainer - INFO -     elapsed time   : 3.8705294132232666
+2025-01-21 11:40:00,900 - trainer - INFO -     loss           : -3298.88134765625
+2025-01-21 11:40:00,901 - trainer - INFO -     sim_loss       : 66.12339134216309
+2025-01-21 11:40:00,901 - trainer - INFO -     gen_loss       : -4741.026318359375
+2025-01-21 11:40:00,901 - trainer - INFO -     val_loss       : -2117.917495727539
+2025-01-21 11:40:00,901 - trainer - INFO -     val_sim_loss   : 38.50506591796875
+2025-01-21 11:40:00,901 - trainer - INFO -     val_gen_loss   : -2156.422622680664
+2025-01-21 11:40:00,901 - trainer - INFO -     val_perplexity : -128.25857543945312
+2025-01-21 11:40:00,901 - trainer - INFO -     val_embedding_sim: 0.0908043161034584
+2025-01-21 11:40:00,901 - trainer - INFO - ================================================================================
+2025-01-21 11:40:00,901 - trainer - INFO - Starting epoch 64 at 2025-01-21 11:40:00
+2025-01-21 11:40:04,766 - trainer - INFO - Epoch 64 completed at 2025-01-21 11:40:04
+2025-01-21 11:40:04,766 - trainer - INFO -     epoch          : 64
+2025-01-21 11:40:04,766 - trainer - INFO -     elapsed time   : 3.8648557662963867
+2025-01-21 11:40:04,766 - trainer - INFO -     loss           : -3340.477746582031
+2025-01-21 11:40:04,766 - trainer - INFO -     sim_loss       : 68.29282913208007
+2025-01-21 11:40:04,766 - trainer - INFO -     gen_loss       : -4801.379443359375
+2025-01-21 11:40:04,766 - trainer - INFO -     val_loss       : -2150.5014114379883
+2025-01-21 11:40:04,766 - trainer - INFO -     val_sim_loss   : 33.39997863769531
+2025-01-21 11:40:04,766 - trainer - INFO -     val_gen_loss   : -2183.9013137817383
+2025-01-21 11:40:04,766 - trainer - INFO -     val_perplexity : -130.61631774902344
+2025-01-21 11:40:04,766 - trainer - INFO -     val_embedding_sim: 0.10759813338518143
+2025-01-21 11:40:04,766 - trainer - INFO - ================================================================================
+2025-01-21 11:40:04,766 - trainer - INFO - Starting epoch 65 at 2025-01-21 11:40:04
+2025-01-21 11:40:08,621 - trainer - INFO - Epoch 65 completed at 2025-01-21 11:40:08
+2025-01-21 11:40:08,621 - trainer - INFO -     epoch          : 65
+2025-01-21 11:40:08,621 - trainer - INFO -     elapsed time   : 3.8545684814453125
+2025-01-21 11:40:08,621 - trainer - INFO -     loss           : -3385.2120727539063
+2025-01-21 11:40:08,621 - trainer - INFO -     sim_loss       : 65.1438491821289
+2025-01-21 11:40:08,621 - trainer - INFO -     gen_loss       : -4863.936010742187
+2025-01-21 11:40:08,621 - trainer - INFO -     val_loss       : -2176.315528869629
+2025-01-21 11:40:08,622 - trainer - INFO -     val_sim_loss   : 35.625282287597656
+2025-01-21 11:40:08,622 - trainer - INFO -     val_gen_loss   : -2211.940773010254
+2025-01-21 11:40:08,622 - trainer - INFO -     val_perplexity : -135.69491577148438
+2025-01-21 11:40:08,622 - trainer - INFO -     val_embedding_sim: 0.07681941986083984
+2025-01-21 11:40:15,281 - trainer - INFO - Saving checkpoint: congress-save/models/checkpoint-epoch65.pth ...
+2025-01-21 11:40:21,873 - trainer - INFO - Saving current best: model_best.pth ...
+2025-01-21 11:40:21,874 - trainer - INFO - ================================================================================
+2025-01-21 11:40:21,874 - trainer - INFO - Starting epoch 66 at 2025-01-21 11:40:21
+2025-01-21 11:40:25,789 - trainer - INFO - Epoch 66 completed at 2025-01-21 11:40:25
+2025-01-21 11:40:25,789 - trainer - INFO -     epoch          : 66
+2025-01-21 11:40:25,789 - trainer - INFO -     elapsed time   : 3.9148364067077637
+2025-01-21 11:40:25,789 - trainer - INFO -     loss           : -3425.6460815429687
+2025-01-21 11:40:25,789 - trainer - INFO -     sim_loss       : 67.53076610565185
+2025-01-21 11:40:25,789 - trainer - INFO -     gen_loss       : -4922.721984863281
+2025-01-21 11:40:25,789 - trainer - INFO -     val_loss       : -2204.9837188720703
+2025-01-21 11:40:25,789 - trainer - INFO -     val_sim_loss   : 33.96293640136719
+2025-01-21 11:40:25,789 - trainer - INFO -     val_gen_loss   : -2238.9466094970703
+2025-01-21 11:40:25,789 - trainer - INFO -     val_perplexity : -134.07745361328125
+2025-01-21 11:40:25,789 - trainer - INFO -     val_embedding_sim: 0.10451582074165344
+2025-01-21 11:40:25,789 - trainer - INFO - ================================================================================
+2025-01-21 11:40:25,789 - trainer - INFO - Starting epoch 67 at 2025-01-21 11:40:25
+2025-01-21 11:40:29,647 - trainer - INFO - Epoch 67 completed at 2025-01-21 11:40:29
+2025-01-21 11:40:29,647 - trainer - INFO -     epoch          : 67
+2025-01-21 11:40:29,647 - trainer - INFO -     elapsed time   : 3.8577089309692383
+2025-01-21 11:40:29,647 - trainer - INFO -     loss           : -3469.8456298828123
+2025-01-21 11:40:29,647 - trainer - INFO -     sim_loss       : 65.20297765731812
+2025-01-21 11:40:29,647 - trainer - INFO -     gen_loss       : -4984.8665771484375
+2025-01-21 11:40:29,647 - trainer - INFO -     val_loss       : -2234.6198654174805
+2025-01-21 11:40:29,647 - trainer - INFO -     val_sim_loss   : 31.873641967773438
+2025-01-21 11:40:29,647 - trainer - INFO -     val_gen_loss   : -2266.4934005737305
+2025-01-21 11:40:29,648 - trainer - INFO -     val_perplexity : -137.24610900878906
+2025-01-21 11:40:29,648 - trainer - INFO -     val_embedding_sim: 0.10185625404119492
+2025-01-21 11:40:29,648 - trainer - INFO - ================================================================================
+2025-01-21 11:40:29,648 - trainer - INFO - Starting epoch 68 at 2025-01-21 11:40:29
+2025-01-21 11:40:33,499 - trainer - INFO - Epoch 68 completed at 2025-01-21 11:40:33
+2025-01-21 11:40:33,499 - trainer - INFO -     epoch          : 68
+2025-01-21 11:40:33,499 - trainer - INFO -     elapsed time   : 3.850823402404785
+2025-01-21 11:40:33,499 - trainer - INFO -     loss           : -3511.760217285156
+2025-01-21 11:40:33,499 - trainer - INFO -     sim_loss       : 62.902677631378175
+2025-01-21 11:40:33,499 - trainer - INFO -     gen_loss       : -5043.75869140625
+2025-01-21 11:40:33,499 - trainer - INFO -     val_loss       : -2261.3970336914062
+2025-01-21 11:40:33,499 - trainer - INFO -     val_sim_loss   : 32.59728240966797
+2025-01-21 11:40:33,499 - trainer - INFO -     val_gen_loss   : -2293.9942016601562
+2025-01-21 11:40:33,499 - trainer - INFO -     val_perplexity : -139.34759521484375
+2025-01-21 11:40:33,499 - trainer - INFO -     val_embedding_sim: 0.10231219232082367
+2025-01-21 11:40:33,499 - trainer - INFO - ================================================================================
+2025-01-21 11:40:33,499 - trainer - INFO - Starting epoch 69 at 2025-01-21 11:40:33
+2025-01-21 11:40:37,350 - trainer - INFO - Epoch 69 completed at 2025-01-21 11:40:37
+2025-01-21 11:40:37,350 - trainer - INFO -     epoch          : 69
+2025-01-21 11:40:37,350 - trainer - INFO -     elapsed time   : 3.850903272628784
+2025-01-21 11:40:37,351 - trainer - INFO -     loss           : -3554.969519042969
+2025-01-21 11:40:37,351 - trainer - INFO -     sim_loss       : 63.04167652130127
+2025-01-21 11:40:37,351 - trainer - INFO -     gen_loss       : -5105.545837402344
+2025-01-21 11:40:37,351 - trainer - INFO -     val_loss       : -2290.2427673339844
+2025-01-21 11:40:37,351 - trainer - INFO -     val_sim_loss   : 32.42544174194336
+2025-01-21 11:40:37,351 - trainer - INFO -     val_gen_loss   : -2322.6683044433594
+2025-01-21 11:40:37,351 - trainer - INFO -     val_perplexity : -140.94505310058594
+2025-01-21 11:40:37,351 - trainer - INFO -     val_embedding_sim: 0.10396154969930649
+2025-01-21 11:40:37,351 - trainer - INFO - ================================================================================
+2025-01-21 11:40:37,351 - trainer - INFO - Starting epoch 70 at 2025-01-21 11:40:37
+2025-01-21 11:40:41,204 - trainer - INFO - Epoch 70 completed at 2025-01-21 11:40:41
+2025-01-21 11:40:41,204 - trainer - INFO -     epoch          : 70
+2025-01-21 11:40:41,204 - trainer - INFO -     elapsed time   : 3.852869749069214
+2025-01-21 11:40:41,204 - trainer - INFO -     loss           : -3597.9919311523436
+2025-01-21 11:40:41,204 - trainer - INFO -     sim_loss       : 64.13758068084717
+2025-01-21 11:40:41,204 - trainer - INFO -     gen_loss       : -5167.476098632813
+2025-01-21 11:40:41,204 - trainer - INFO -     val_loss       : -2314.008499145508
+2025-01-21 11:40:41,204 - trainer - INFO -     val_sim_loss   : 37.4765625
+2025-01-21 11:40:41,204 - trainer - INFO -     val_gen_loss   : -2351.485061645508
+2025-01-21 11:40:41,204 - trainer - INFO -     val_perplexity : -142.64352416992188
+2025-01-21 11:40:41,204 - trainer - INFO -     val_embedding_sim: 0.07707889378070831
