@@ -252,7 +252,8 @@ class Trainer(BaseTrainer):
                             # Generate phrases for potential subtopics
                             generated_phrases = []
                             for _ in range(20):  # Generate multiple phrases to cluster
-                                phrase_embed = parent_embed.unsqueeze(0)  # Add batch dimension
+                                # Add sequence length dimension: [batch_size, seq_len, hidden_size]
+                                phrase_embed = parent_embed.unsqueeze(0).unsqueeze(1)  
                                 phrase_output = self.model.phrase_decoder.generate(phrase_embed)
                                 phrase = dataset.bert_tokenizer.decode(phrase_output[0], skip_special_tokens=True)
                                 if len(phrase.strip()) > 0:
