@@ -321,107 +321,87 @@ class TransformerPhraseDecoder(BaseModel):
         
         return output
 
-    def generate(self, context):
+    def generate(self, context, attention_mask):
+        """
+        Generate phrases using document attention
+        context: document embeddings [batch, seq, hidden]
+        attention_mask: document attention mask [batch, seq]
+        """
         batch_size = context.size(0)
-        # Always start with CLS token
-        current_token = torch.full((batch_size, 1), self.bos_token_id, dtype=torch.long, device=context.device)
+        
+        # Start with CLS token
+        current_token = torch.full((batch_size, 1), self.tokenizer.cls_token_id, 
+                                 dtype=torch.long, device=context.device)
         
         # Project and normalize context
-        context = self.context_norm(self.context_proj(context))
+        context_proj = self.context_proj(context)  # [batch, seq, hidden]
+        context_norm = self.context_norm(context_proj)
         
-        # Initialize sampling parameters
-        temperature = 0.7  # Lower temperature for more focused sampling
-        top_p = 0.9  # Nucleus sampling threshold
-        min_tokens = 3  # Minimum number of tokens to generate after CLS
-        max_tokens = 10  # Maximum tokens to generate including CLS and SEP
-        repetition_penalty = 2.0  # Increased penalty to prevent repetition
+        # Generation parameters
+        min_tokens = 3  # Minimum tokens after CLS
+        max_tokens = 10  # Maximum total tokens
+        repetition_penalty = 2.0
         
-        # Move valid_tokens to correct device and expand for batch
-        valid_tokens = self.valid_tokens.to(context.device)
-        valid_tokens = valid_tokens.unsqueeze(0).expand(batch_size, -1)
+        # Track generated n-grams for repetition penalty
+        generated_ngrams = [{} for _ in range(batch_size)]
         
-        # Track generated tokens for repetition penalty
-        generated_ngrams = [{} for _ in range(batch_size)]  # Track n-grams
-        
-        for step in range(max_tokens - 2):  # -2 to account for CLS and SEP
-            # Get logits from decoder
-            logits = self.forward(current_token, context)
-            next_token_logits = logits[:, -1, :] / temperature
+        for step in range(max_tokens - 2):  # -2 for CLS and SEP
+            # Get decoder output
+            decoder_output = self.forward(current_token, context_norm)  # [batch, seq, vocab]
+            next_token_logits = decoder_output[:, -1, :]  # [batch, vocab]
             
-            # Apply repetition penalty based on n-grams
+            # Calculate attention scores with document tokens
+            attn_scores = torch.matmul(next_token_logits, context_norm.transpose(-1, -2))  # [batch, seq]
+            attn_scores = attn_scores.masked_fill(~attention_mask.bool(), -float('inf'))
+            attn_probs = F.softmax(attn_scores, dim=-1)
+            
+            # Get document token probabilities
+            doc_token_ids = attention_mask.new_zeros(attention_mask.size(0), attention_mask.size(1), dtype=torch.long)
+            for i in range(attention_mask.size(0)):
+                doc_token_ids[i, :attention_mask[i].sum()] = torch.arange(attention_mask[i].sum(), device=attention_mask.device)
+            doc_token_probs = torch.zeros_like(next_token_logits)  # [batch, vocab]
+            doc_token_probs.scatter_add_(-1, doc_token_ids, attn_probs)
+            
+            # Apply repetition penalty
             for i in range(batch_size):
-                # Get last 3 tokens for trigram check
-                last_tokens = current_token[i, -3:].tolist() if current_token.size(1) >= 3 else []
-                if tuple(last_tokens) in generated_ngrams[i]:
-                    # Heavily penalize completing a seen trigram
-                    for token_id in range(next_token_logits.size(-1)):
-                        if tuple(last_tokens + [token_id]) in generated_ngrams[i]:
-                            next_token_logits[i, token_id] /= (repetition_penalty * 2)
-                
-                # Standard token repetition penalty
+                # Penalize seen tokens
                 for token_id in set(current_token[i].tolist()):
-                    next_token_logits[i, token_id] /= repetition_penalty
+                    doc_token_probs[i, token_id] /= repetition_penalty
+                
+                # Penalize completing seen trigrams
+                if current_token.size(1) >= 2:
+                    prev_tokens = current_token[i, -2:].tolist()
+                    for token_id in range(doc_token_probs.size(-1)):
+                        if tuple(prev_tokens + [token_id]) in generated_ngrams[i]:
+                            doc_token_probs[i, token_id] /= (repetition_penalty * 2)
             
-            # Mask out invalid tokens
-            next_token_logits = next_token_logits.masked_fill(~valid_tokens, -float('inf'))
-            next_token_logits = next_token_logits.masked_fill(torch.isnan(next_token_logits), -float('inf'))
+            # Mask invalid tokens
+            doc_token_probs = doc_token_probs.masked_fill(~self.valid_tokens, 0)
+            doc_token_probs = doc_token_probs.masked_fill(torch.isnan(doc_token_probs), 0)
             
-            # Mask out PAD, CLS tokens (prefer SEP for ending)
-            next_token_logits[:, self.pad_token_id] = -float('inf')
-            next_token_logits[:, self.bos_token_id] = -float('inf')
-            
-            # Keep at least min_tokens before allowing EOS
+            # Mask special tokens except SEP when appropriate
+            doc_token_probs[:, self.pad_token_id] = 0
+            doc_token_probs[:, self.bos_token_id] = 0
             if step < min_tokens:
-                next_token_logits[:, self.eos_token_id] = -float('inf')
+                doc_token_probs[:, self.eos_token_id] = 0
             
-            # Apply nucleus sampling
-            sorted_logits, sorted_indices = torch.sort(next_token_logits, descending=True)
-            cumulative_probs = torch.cumsum(F.softmax(sorted_logits, dim=-1), dim=-1)
-            sorted_indices_to_remove = cumulative_probs > top_p
-            sorted_indices_to_remove[..., 1:] = sorted_indices_to_remove[..., :-1].clone()
-            sorted_indices_to_remove[..., 0] = 0
-            
-            # Apply the mask
-            indices_to_remove = sorted_indices_to_remove.scatter(1, sorted_indices, sorted_indices_to_remove)
-            next_token_logits = next_token_logits.masked_fill(indices_to_remove, -float('inf'))
-            
-            # Convert to probabilities
-            next_token_probs = F.softmax(next_token_logits, dim=-1)
-            
-            # Sample next token
-            next_token = torch.multinomial(next_token_probs, num_samples=1)
+            # Sample next token from document tokens
+            next_token = torch.multinomial(doc_token_probs, num_samples=1)
             
             # Update n-gram tracking
             for i in range(batch_size):
-                # Add new trigrams to tracking
                 if current_token.size(1) >= 2:
                     prev_tokens = current_token[i, -2:].tolist()
                     new_token = next_token[i].item()
                     trigram = tuple(prev_tokens + [new_token])
                     generated_ngrams[i][trigram] = generated_ngrams[i].get(trigram, 0) + 1
             
+            # Append next token
             current_token = torch.cat([current_token, next_token], dim=1)
             
-            # Stop if SEP token is generated
-            if (next_token == self.eos_token_id).any():
+            # Stop if all sequences have generated SEP token
+            if (next_token == self.eos_token_id).all():
                 break
-        
-        # Post-process: ensure sequences end with SEP and handle padding
-        for b in range(batch_size):
-            # Find first SEP token
-            sep_pos = (current_token[b] == self.eos_token_id).nonzero()
-            if len(sep_pos) > 0:
-                # Keep only up to first SEP
-                current_token[b, sep_pos[0]+1:] = self.pad_token_id
-            else:
-                # If no SEP, append it and pad rest
-                if current_token.size(1) < max_tokens:
-                    current_token = torch.cat([
-                        current_token, 
-                        torch.full((batch_size, 1), self.eos_token_id, device=context.device),
-                        torch.full((batch_size, max_tokens - current_token.size(1) - 1), 
-                                 self.pad_token_id, device=context.device)
-                    ], dim=1)
         
         return current_token
 
@@ -456,26 +436,43 @@ class TopicExpansionModel(BaseModel):
         )
 
     def forward(self, encoder_input, decoder_input=None, topic_ids=None):
+        """
+        Forward pass for training
+        encoder_input: dict of BERT inputs for document
+        decoder_input: dict of BERT inputs for target phrase
+        topic_ids: tensor of topic IDs
+        """
         # Get document embeddings
-        encoder_output = self.bert(**encoder_input).last_hidden_state[:, 0]  # Use CLS token
+        doc_outputs = self.bert(**encoder_input)
+        doc_embeds = doc_outputs[0]  # [batch, seq, hidden]
+        doc_mask = encoder_input['attention_mask']
         
-        # Normalize topic embeddings
-        normalized_topics = self.topic_norm(self.topic_embeddings)
-        normalized_docs = F.normalize(encoder_output, dim=-1)
+        # Get normalized topic embeddings
+        topic_embeds = self.topic_norm(self.topic_embeddings)  # [num_topics, hidden]
         
-        # Calculate similarity scores with temperature
-        sim_scores = torch.matmul(normalized_docs, normalized_topics.t())
-        sim_scores = sim_scores / self.sim_temperature
-        
-        if decoder_input is not None and topic_ids is not None:
-            # Get topic embeddings for the target topics
-            topic_context = normalized_topics[topic_ids]
+        # Calculate similarity scores
+        if topic_ids is not None:
+            # For training, only compute similarity with target topics
+            batch_size = doc_embeds.size(0)
+            doc_mean = doc_embeds.mean(dim=1)  # [batch, hidden]
+            topic_embeds_selected = topic_embeds[topic_ids]  # [batch, hidden]
             
-            # Generate phrases
-            gen_scores = self.decoder(decoder_input, topic_context)
-            return sim_scores, gen_scores
+            # Calculate similarity scores with temperature
+            sim_scores = torch.matmul(doc_mean, topic_embeds.t()) / self.sim_temperature
+        else:
+            # For inference, compute similarity with all topics
+            doc_mean = doc_embeds.mean(dim=1)  # [batch, hidden]
+            sim_scores = torch.matmul(doc_mean, topic_embeds.t()) / self.sim_temperature
         
-        return sim_scores
+        # Generate or decode phrases
+        if decoder_input is not None:
+            # Training mode - use teacher forcing
+            gen_scores = self.decoder(decoder_input['input_ids'], doc_embeds)
+        else:
+            # Inference mode - generate new phrases
+            gen_scores = self.decoder.generate(doc_embeds, doc_mask)
+            
+        return sim_scores, gen_scores
 
     def gen(self, encoder_input, topic_ids):
         # Get normalized topic embeddings
@@ -483,4 +480,4 @@ class TopicExpansionModel(BaseModel):
         topic_context = normalized_topics[topic_ids]
         
         # Generate phrases
-        return self.decoder.generate(topic_context)
+        return self.decoder.generate(topic_context, encoder_input['attention_mask'])
