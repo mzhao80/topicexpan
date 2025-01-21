@@ -306,6 +306,12 @@ class TransformerPhraseDecoder(BaseModel):
         batch_size = context.size(0)
         current_token = torch.full((batch_size, 1), self.bos_token_id, dtype=torch.long, device=context.device)
         
+        # Debug print
+        print(f"\n[DEBUG] Generation start:")
+        print(f"Batch size: {batch_size}")
+        print(f"Context shape: {context.shape}")
+        print(f"Initial token shape: {current_token.shape}")
+        
         # Project and normalize context
         context = self.context_norm(self.context_proj(context))
         
@@ -314,6 +320,14 @@ class TransformerPhraseDecoder(BaseModel):
         top_p = 0.9
         min_tokens = 3  # Minimum number of tokens to generate
         
+        # Move valid_tokens to correct device and expand for batch
+        valid_tokens = self.valid_tokens.to(context.device)
+        valid_tokens = valid_tokens.unsqueeze(0).expand(batch_size, -1)
+        
+        # Debug print
+        print(f"Valid tokens shape: {valid_tokens.shape}")
+        print(f"Number of valid tokens: {valid_tokens.sum().item()}")
+        
         generated_tokens = []
         
         for step in range(self.max_length - 1):
@@ -321,11 +335,17 @@ class TransformerPhraseDecoder(BaseModel):
             logits = self.forward(current_token, context)
             next_token_logits = logits[:, -1, :] / temperature
             
+            # Debug shapes
+            if step == 0:
+                print(f"\nStep {step} shapes:")
+                print(f"Logits shape: {logits.shape}")
+                print(f"Next token logits shape: {next_token_logits.shape}")
+            
             # Mask out PAD token (prefer SEP for ending)
             next_token_logits[:, self.pad_token_id] = float('-inf')
             
             # Apply vocabulary filtering
-            next_token_logits[~self.valid_tokens] = float('-inf')
+            next_token_logits = next_token_logits.masked_fill(~valid_tokens, float('-inf'))
             
             # Apply nucleus sampling
             sorted_logits, sorted_indices = torch.sort(next_token_logits, descending=True)
@@ -345,6 +365,12 @@ class TransformerPhraseDecoder(BaseModel):
             next_token_probs = F.softmax(next_token_logits, dim=-1)
             next_token = torch.multinomial(next_token_probs, num_samples=1)
             
+            # Debug first token
+            if step == 0:
+                print(f"\nFirst token generation:")
+                print(f"Selected token IDs: {next_token.tolist()}")
+                print(f"Selected tokens: {[self.tokenizer.convert_ids_to_tokens(t.item()) for t in next_token]}")
+            
             current_token = torch.cat([current_token, next_token], dim=1)
             generated_tokens.append(next_token)
             
@@ -355,7 +381,7 @@ class TransformerPhraseDecoder(BaseModel):
                     if next_token[b] == self.eos_token_id:
                         current_token[b, -1] = self.eos_token_id
                 break
-        
+    
         # Post-process: ensure sequences start with CLS and end with SEP
         for b in range(batch_size):
             # Find first SEP token
@@ -366,6 +392,16 @@ class TransformerPhraseDecoder(BaseModel):
             else:
                 # If no SEP, append it
                 current_token[b, -1] = self.eos_token_id
+        
+            # Ensure starts with CLS
+            current_token[b, 0] = self.bos_token_id
+    
+        # Debug final output
+        print(f"\nFinal generation:")
+        print(f"Output shape: {current_token.shape}")
+        for b in range(min(2, batch_size)):  # Show first 2 examples
+            tokens = [self.tokenizer.convert_ids_to_tokens(t.item()) for t in current_token[b]]
+            print(f"Sample {b}: {' '.join(tokens)}")
     
         return current_token
 
