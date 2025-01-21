@@ -1,3 +1,136 @@
 {
-  "root -> politics": []
+  "politics": [
+    {
+      "name": "agriculture and food",
+      "quality_score": 1.0
+    },
+    {
+      "name": "animals",
+      "quality_score": 1.0
+    },
+    {
+      "name": "armed forces and national security",
+      "quality_score": 1.0
+    },
+    {
+      "name": "arts culture religion",
+      "quality_score": 1.0
+    },
+    {
+      "name": "civil rights and liberties minority issues",
+      "quality_score": 1.0
+    },
+    {
+      "name": "commerce",
+      "quality_score": 1.0
+    },
+    {
+      "name": "crime and law enforcement",
+      "quality_score": 1.0
+    },
+    {
+      "name": "economics and public finance",
+      "quality_score": 1.0
+    },
+    {
+      "name": "education",
+      "quality_score": 1.0
+    },
+    {
+      "name": "emergency management",
+      "quality_score": 1.0
+    },
+    {
+      "name": "energy",
+      "quality_score": 1.0
+    },
+    {
+      "name": "environmental protection",
+      "quality_score": 1.0
+    },
+    {
+      "name": "families",
+      "quality_score": 1.0
+    },
+    {
+      "name": "finance and financial sector",
+      "quality_score": 1.0
+    },
+    {
+      "name": "foreign trade and international finance",
+      "quality_score": 1.0
+    },
+    {
+      "name": "geographic areas entities and committees",
+      "quality_score": 1.0
+    },
+    {
+      "name": "government operations and politics",
+      "quality_score": 1.0
+    },
+    {
+      "name": "health",
+      "quality_score": 1.0
+    },
+    {
+      "name": "housing and community development",
+      "quality_score": 1.0
+    },
+    {
+      "name": "immigration",
+      "quality_score": 1.0
+    },
+    {
+      "name": "international affairs",
+      "quality_score": 1.0
+    },
+    {
+      "name": "labor and employment",
+      "quality_score": 1.0
+    },
+    {
+      "name": "law",
+      "quality_score": 1.0
+    },
+    {
+      "name": "native americans",
+      "quality_score": 1.0
+    },
+    {
+      "name": "private legislation",
+      "quality_score": 1.0
+    },
+    {
+      "name": "public lands and natural resources",
+      "quality_score": 1.0
+    },
+    {
+      "name": "science technology communications",
+      "quality_score": 1.0
+    },
+    {
+      "name": "social sciences and history",
+      "quality_score": 1.0
+    },
+    {
+      "name": "social welfare",
+      "quality_score": 1.0
+    },
+    {
+      "name": "sports and recreation",
+      "quality_score": 1.0
+    },
+    {
+      "name": "taxation",
+      "quality_score": 1.0
+    },
+    {
+      "name": "transportation and public works",
+      "quality_score": 1.0
+    },
+    {
+      "name": "water resources development",
+      "quality_score": 1.0
+    }
+  ]
 }

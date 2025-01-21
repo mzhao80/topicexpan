@@ -9,6 +9,7 @@ from gensim.models import KeyedVectors
 import os, pickle
 import time
 from sentence_transformers import SentenceTransformer
+import json
 
 class Trainer(BaseTrainer):
     """
