@@ -251,7 +251,7 @@ class TransformerPhraseDecoder(BaseModel):
         super().__init__()
         self.vocab_size, self.hidden_size = input_embeddings.word_embeddings.weight.shape
         self.input_embeddings = input_embeddings
-        self.output_embeddings = nn.Linear(self.hidden_size, self.vocab_size, bias=False)
+        self.output_layer = nn.Linear(self.hidden_size, self.vocab_size, bias=False)
         self.tokenizer = tokenizer
         
         # Add context projection and layer norm
@@ -280,21 +280,23 @@ class TransformerPhraseDecoder(BaseModel):
             self.valid_tokens[i] = is_special or is_ascii
 
     def _make_causal_mask(self, x):
-        # Create causal mask for decoder
         sz = x.size(1)
         mask = (torch.triu(torch.ones(sz, sz)) == 1).transpose(0, 1)
         mask = mask.float().masked_fill(mask == 0, float('-inf')).masked_fill(mask == 1, float(0.0))
-        return mask.to(x.device)
+        return mask
 
     def forward(self, input_ids, context):
         # Debug input shapes
         print(f"\n[DEBUG] TransformerPhraseDecoder forward:")
-        print(f"input_ids shape: {input_ids['input_ids'].shape}")
+        if isinstance(input_ids, dict):
+            print(f"input_ids shape: {input_ids['input_ids'].shape}")
+            x = self.input_embeddings(input_ids['input_ids'])  # [batch, seq_len, embed_dim]
+        else:
+            print(f"input_ids shape: {input_ids.shape}")
+            x = self.input_embeddings(input_ids)  # [batch, seq_len, embed_dim]
+        
         print(f"context shape: {context.shape}")
 
-        # Get embeddings
-        x = self.input_embeddings(input_ids['input_ids'])  # [batch, seq_len, embed_dim]
-        
         # Create attention mask
         tgt_mask = self._make_causal_mask(x).to(x.device)
         
@@ -316,7 +318,7 @@ class TransformerPhraseDecoder(BaseModel):
         )
         
         # Project to vocabulary
-        output = self.output_embeddings(output)
+        output = self.output_layer(output)
         
         print(f"Final output shape: {output.shape}")
         
