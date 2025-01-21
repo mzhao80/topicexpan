@@ -310,8 +310,13 @@ class Trainer(BaseTrainer):
             
             # If we have parent embedding, calculate relevance to parent
             if parent_embed is not None:
+                # Normalize parent embedding
+                parent_embed = F.normalize(parent_embed, p=2, dim=0)
+                # Calculate similarity scores [num_phrases]
                 parent_sim = torch.matmul(feats, parent_embed)
-                # Boost features based on parent similarity
+                # Reshape for broadcasting [num_phrases, 1]
+                parent_sim = parent_sim.unsqueeze(1)
+                # Apply sigmoid and broadcast across embedding dimension
                 feats = feats * F.sigmoid(parent_sim)
             
             feats = feats.cpu().numpy()
