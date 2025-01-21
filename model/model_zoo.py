@@ -244,56 +244,76 @@ class BilinearInteraction(nn.Module):
 """
     4. Topic-conditional Phrase Generator
 """
-class TransformerPhraseDecoder(BaseModel):
-    def __init__(self, input_embeddings, pad_token_id, bos_token_id, eos_token_id, num_layers, num_heads, max_length, use_flash_attention=False):
+class TransformerPhraseDecoder(nn.Module):
+    def __init__(self, input_embeddings, num_heads=8, num_layers=4, max_length=32,
+                 pad_token_id=0, bos_token_id=101, eos_token_id=102):
         super().__init__()
-        self.vocab_size, self.hidden_size = input_embeddings.word_embeddings.weight.shape
+        self.hidden_size = input_embeddings.word_embeddings.weight.shape[1]
+        self.vocab_size = input_embeddings.word_embeddings.weight.shape[0]
+        
+        # Embeddings and position encoding
         self.input_embeddings = input_embeddings
-        self.output_embeddings = nn.Linear(self.hidden_size, self.vocab_size, bias=False)
-        self.context_proj = nn.Linear(self.hidden_size, self.hidden_size, bias=False)
         self.pos_encoder = nn.Embedding(max_length, self.hidden_size)
-        self.layers = nn.ModuleList([TransformerDecoderLayer(d_model=self.hidden_size, nhead=num_heads, batch_first=True) for _ in range(num_layers)])
-        self.output_layer = nn.Linear(self.hidden_size, self.hidden_size, bias=False)
-
+        
+        # Context projection and attention
+        self.context_proj = nn.Linear(384, self.hidden_size)  # 384 is MiniLM hidden size
+        self.topic_attention = nn.MultiheadAttention(self.hidden_size, num_heads, batch_first=True)
+        
+        # Transformer layers
+        self.layers = nn.ModuleList([
+            TransformerDecoderLayer(
+                d_model=self.hidden_size,
+                nhead=num_heads,
+                dim_feedforward=4*self.hidden_size,
+                batch_first=True
+            ) for _ in range(num_layers)
+        ])
+        
+        # Output projection
+        self.output_layer = nn.Linear(self.hidden_size, self.vocab_size)
+        
+        # Special tokens
         self.max_length = max_length
         self.pad_token_id = pad_token_id
         self.bos_token_id = bos_token_id
         self.eos_token_id = eos_token_id
-
+        
     def forward(self, x, context):
-        # Project context into decoder dimension
-        context = self.context_proj(context).unsqueeze(1).expand(-1, x.size(1), -1)
+        # Project context to decoder dimension
+        context = self.context_proj(context)
         
-        # Add context as cross-attention key/value
+        # Get input embeddings and positions
         x = self.input_embeddings(x)
-        x = self.pos_encoder(torch.arange(x.size(1), device=x.device)).unsqueeze(0).expand(x.size(0), -1, -1) + x
+        positions = torch.arange(x.size(1), device=x.device)
+        x = x + self.pos_encoder(positions).unsqueeze(0)
         
-        # Combine input embeddings with context
-        x = x + context
+        # Apply topic attention
+        x, _ = self.topic_attention(x, context.unsqueeze(1), context.unsqueeze(1))
         
         # Pass through transformer layers
         for layer in self.layers:
             x = layer(x)
             
+        # Project to vocabulary
         x = self.output_layer(x)
-        x = self.output_embeddings(x)
         return x
 
-    def generate(self, context):
+    def generate(self, context, temperature=0.7, top_p=0.9, repetition_penalty=1.2):
         batch_size = context.size(0)
         current_token = torch.full((batch_size, 1), self.bos_token_id, dtype=torch.long, device=context.device)
         
-        # Initialize with nucleus sampling parameters
-        temperature = 0.8
-        top_p = 0.9
-        
-        generated_phrases = set()  # Track generated phrases to avoid duplicates
-        max_attempts = 30  # Maximum attempts to generate unique phrases
+        # Track generated tokens for repetition penalty
+        generated = [[] for _ in range(batch_size)]
         
         for _ in range(self.max_length - 1):
-            # Get logits from decoder
+            # Get logits
             logits = self.forward(current_token, context)
             next_token_logits = logits[:, -1, :] / temperature
+            
+            # Apply repetition penalty
+            for i in range(batch_size):
+                for token in generated[i]:
+                    next_token_logits[i, token] /= repetition_penalty
             
             # Apply nucleus sampling
             sorted_logits, sorted_indices = torch.sort(next_token_logits, descending=True)
@@ -301,12 +321,18 @@ class TransformerPhraseDecoder(BaseModel):
             sorted_indices_to_remove = cumulative_probs > top_p
             sorted_indices_to_remove[..., 1:] = sorted_indices_to_remove[..., :-1].clone()
             sorted_indices_to_remove[..., 0] = 0
+            
+            # Scatter sorted indices to original logits
             indices_to_remove = sorted_indices_to_remove.scatter(1, sorted_indices, sorted_indices_to_remove)
             next_token_logits[indices_to_remove] = float('-inf')
             
             # Sample from filtered distribution
-            next_token_probs = F.softmax(next_token_logits, dim=-1)
-            next_token = torch.multinomial(next_token_probs, num_samples=1)
+            probs = F.softmax(next_token_logits, dim=-1)
+            next_token = torch.multinomial(probs, num_samples=1)
+            
+            # Update generated tokens
+            for i in range(batch_size):
+                generated[i].append(next_token[i].item())
             
             current_token = torch.cat([current_token, next_token], dim=1)
             
