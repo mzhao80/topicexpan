@@ -286,41 +286,39 @@ class TransformerPhraseDecoder(BaseModel):
         mask = mask.float().masked_fill(mask == 0, float('-inf')).masked_fill(mask == 1, float(0.0))
         return mask.to(x.device)
 
-    def forward(self, x, decoder_context=None):
-        # Handle BERT-style dictionary input
-        if isinstance(x, dict):
-            input_ids = x['input_ids']
-            token_type_ids = x.get('token_type_ids', None)
-            x = self.input_embeddings(
-                input_ids=input_ids,
-                token_type_ids=token_type_ids
-            )
-        else:
-            x = self.input_embeddings(x)
+    def forward(self, input_ids, context):
+        # Debug input shapes
+        print(f"\n[DEBUG] TransformerPhraseDecoder forward:")
+        print(f"input_ids shape: {input_ids['input_ids'].shape}")
+        print(f"context shape: {context.shape}")
+
+        # Get embeddings
+        x = self.input_embeddings(input_ids['input_ids'])  # [batch, seq_len, embed_dim]
         
-        # Project and normalize context
-        if decoder_context is not None:
-            decoder_context = self.context_norm(self.context_proj(decoder_context))
+        # Create attention mask
+        tgt_mask = self._make_causal_mask(x).to(x.device)
         
-        # Create attention masks
-        attn_mask = self._make_causal_mask(x)
-        if isinstance(x, dict) and 'attention_mask' in x:
-            padding_mask = ~x['attention_mask'].bool()
-        else:
-            padding_mask = None
+        # Ensure context has sequence dimension
+        if context.dim() == 2:
+            context = context.unsqueeze(1)  # [batch, 1, hidden_size]
         
-        # Run through transformer decoder
+        print(f"After processing:")
+        print(f"x shape: {x.shape}")
+        print(f"context shape: {context.shape}")
+        print(f"tgt_mask shape: {tgt_mask.shape}")
+        
+        # Forward through transformer
         output = self.model(
             x,
-            decoder_context,
-            tgt_mask=attn_mask,
-            memory_mask=None,
-            tgt_key_padding_mask=padding_mask,
-            memory_key_padding_mask=None
+            context,
+            tgt_mask=tgt_mask,
+            tgt_is_causal=True
         )
         
         # Project to vocabulary
         output = self.output_embeddings(output)
+        
+        print(f"Final output shape: {output.shape}")
         
         return output
 

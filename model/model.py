@@ -51,17 +51,31 @@ class TopicExpan(BaseModel):
         return self
 
     def forward(self, encoder_input, decoder_input=None, topic_ids=None):
+        # Debug prints
+        print("\n[DEBUG] TopicExpan forward:")
+        print(f"encoder_input keys: {encoder_input.keys()}")
+        if decoder_input is not None:
+            print(f"decoder_input keys: {decoder_input.keys()}")
+        if topic_ids is not None:
+            print(f"topic_ids shape: {topic_ids.shape}")
+
         # Get document embeddings
         doc_embed = self.doc_encoder(encoder_input)[:, 0]  # Use CLS token
         doc_embed = F.normalize(doc_embed, p=2, dim=-1)  # L2 normalize
+        
+        print(f"doc_embed shape: {doc_embed.shape}")
         
         # Get topic embeddings from GCN
         topic_embed = self.topic_encoder.encode()
         topic_embed = F.normalize(topic_embed, p=2, dim=-1)  # L2 normalize
         
+        print(f"topic_embed shape: {topic_embed.shape}")
+        
         # Calculate similarity scores with temperature scaling
         sim_scores = self.interaction(doc_embed, topic_embed)
         sim_scores = sim_scores / torch.sqrt(torch.tensor(doc_embed.size(-1), dtype=torch.float32, device=sim_scores.device))
+        
+        print(f"sim_scores shape: {sim_scores.shape}")
         
         if decoder_input is not None and topic_ids is not None:
             # Get topic embeddings for selected topics
@@ -73,8 +87,11 @@ class TopicExpan(BaseModel):
                 topic_context
             ], dim=-1))
             
+            print(f"decoder_context shape: {decoder_context.shape}")
+            
             # Generate phrases
             gen_scores = self.phrase_decoder(decoder_input, decoder_context)
+            print(f"gen_scores shape: {gen_scores.shape}")
             return sim_scores, gen_scores
         
         return sim_scores
