@@ -87,11 +87,11 @@ class DatasetBase(Dataset):
                 line = line.strip()
                 if line:
                     segs = line.split("\t")
-                    parent, childs = segs[0], segs[1].split(",")
+                    parent, child = segs[0], segs[1]
                     if parent not in self.topic_fullhier:
-                        self.topic_fullhier[parent]  = [child for child in childs]
+                        self.topic_fullhier[parent] = [child]
                     else:
-                        self.topic_fullhier[parent] += [child for child in childs]
+                        self.topic_fullhier[parent].append(child)
 
         print("Loading topic node base features (topic name embeddings) ...")
         self.topic_feats = KeyedVectors.load_word2vec_format(topic_feat_path, binary=False)
