@@ -201,12 +201,20 @@ class Trainer(BaseTrainer):
                 # Calculate perplexity from generation loss
                 perplexity = torch.exp(gen_loss)
                 
-                # Calculate embedding similarity
-                with torch.no_grad():
-                    embedding_sim = F.cosine_similarity(
-                        gen_score.mean(dim=1), 
-                        decoder_target.float().mean(dim=1)
-                    ).mean()
+                # Calculate embedding similarity between predicted and target sequences
+                # First get the predicted token embeddings
+                pred_tokens = gen_score.argmax(dim=-1)  # [batch, seq]
+                pred_embeds = self.model.phrase_decoder.input_embeddings.word_embeddings(pred_tokens)  # [batch, seq, hidden]
+                
+                # Get target token embeddings
+                target_embeds = self.model.phrase_decoder.input_embeddings.word_embeddings(decoder_target)  # [batch, seq, hidden]
+                
+                # Calculate mean embeddings
+                pred_mean = pred_embeds.mean(dim=1)  # [batch, hidden]
+                target_mean = target_embeds.mean(dim=1)  # [batch, hidden]
+                
+                # Calculate cosine similarity
+                embedding_sim = F.cosine_similarity(pred_mean, target_mean, dim=1).mean()
 
                 batch_size = doc_ids.size(0)
                 total_val_loss += loss.item() * batch_size
