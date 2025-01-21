@@ -56,8 +56,8 @@
         "save_dir": "congress-save",
         "save_period": 5,
         "verbosity": 2,
-        "monitor": "min val_gen_loss",
-        "early_stop": 15,
+        "monitor": "min val_loss",
+        "early_stop": 20,
         "tensorboard": true
     },
     "expansion": {

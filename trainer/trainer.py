@@ -325,6 +325,7 @@ class Trainer(BaseTrainer):
                             # Cluster phrases into subtopics
                             if len(generated_phrases) >= 5:
                                 subtopics = self._cluster_phrases(generated_phrases, parent_embed)
+                                print(subtopics)
                                 print(f"Generated {len(subtopics)} subtopics")
                                 
                                 # Add child with its subtopics
