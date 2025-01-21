@@ -279,10 +279,6 @@ class TransformerPhraseDecoder(nn.Module):
         self.eos_token_id = eos_token_id
         
     def forward(self, x, context):
-        # Handle input dictionary if provided
-        if isinstance(x, dict):
-            x = x['input_ids']
-            
         # Project context to decoder dimension
         context = self.context_proj(context)
         
