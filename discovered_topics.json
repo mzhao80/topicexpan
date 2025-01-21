@@ -68,7 +68,82 @@
     {
       "name": "finance and financial sector",
       "quality_score": 1.0,
-      "subtopics": []
+      "subtopics": [
+        {
+          "name": "speaker of the house",
+          "phrases": [
+            [
+              "speaker of the house",
+              -0.6121368408203125
+            ],
+            [
+              "speaker of the house",
+              -0.6121368408203125
+            ],
+            [
+              "speaker of the house",
+              -0.6121368408203125
+            ],
+            [
+              "speaker of the house",
+              -0.6121368408203125
+            ],
+            [
+              "speaker of the house",
+              -0.6121368408203125
+            ],
+            [
+              "speaker of the house",
+              -0.6121368408203125
+            ],
+            [
+              "kevin mccarthy",
+              -0.8080991506576538
+            ],
+            [
+              "kevin mccarthy",
+              -0.8080991506576538
+            ],
+            [
+              "nominate kevin mccarthy",
+              -0.8146390914916992
+            ],
+            [
+              "- of the house",
+              -0.8219677805900574
+            ],
+            [
+              "hakeem jeffries",
+              -0.8677164316177368
+            ],
+            [
+              "hakeem jeffries",
+              -0.8677164316177368
+            ],
+            [
+              "first of byron donalds",
+              -0.8828231692314148
+            ],
+            [
+              "american and the donalds",
+              -0.9104390144348145
+            ],
+            [
+              "pledge of allegiance",
+              -0.919172465801239
+            ],
+            [
+              "public service",
+              -0.9399082660675049
+            ],
+            [
+              "votes cast",
+              -0.9570097923278809
+            ]
+          ],
+          "quality_score": 0.6176933614831221
+        }
+      ]
     },
     {
       "name": "foreign trade and international finance",

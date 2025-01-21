@@ -2043,3 +2043,333 @@ Trainable parameters: 57846016
 2025-01-21 09:38:10,838 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
 2025-01-21 09:38:11,880 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
 2025-01-21 09:38:11,880 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:41:48,347 - train - INFO - TopicExpan(
+  (doc_encoder): BertDocEncoder(
+    (model): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 384, padding_idx=0)
+        (position_embeddings): Embedding(512, 384)
+        (token_type_embeddings): Embedding(2, 384)
+        (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0-5): 6 x BertLayer(
+            (attention): BertAttention(
+              (self): BertSdpaSelfAttention(
+                (query): Linear(in_features=384, out_features=384, bias=True)
+                (key): Linear(in_features=384, out_features=384, bias=True)
+                (value): Linear(in_features=384, out_features=384, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=384, out_features=384, bias=True)
+                (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=384, out_features=1536, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=1536, out_features=384, bias=True)
+              (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=384, out_features=384, bias=True)
+        (activation): Tanh()
+      )
+    )
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 384, padding_idx=0)
+      (position_embeddings): Embedding(512, 384)
+      (token_type_embeddings): Embedding(2, 384)
+      (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+  )
+  (phrase_decoder): TransformerPhraseDecoder(
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 384, padding_idx=0)
+      (position_embeddings): Embedding(512, 384)
+      (token_type_embeddings): Embedding(2, 384)
+      (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (output_embeddings): Linear(in_features=384, out_features=30522, bias=False)
+    (model): TransformerDecoder(
+      (layers): ModuleList(
+        (0-7): 8 x TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=384, out_features=384, bias=True)
+          )
+          (multihead_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=384, out_features=384, bias=True)
+          )
+          (linear1): Linear(in_features=384, out_features=2048, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (linear2): Linear(in_features=2048, out_features=384, bias=True)
+          (norm1): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (norm3): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (dropout3): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+  )
+  (topic_encoder): GCNTopicEncoder(
+    (downward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (upward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (sideward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+  )
+  (interaction): BilinearInteraction()
+  (linear_combiner): Linear(in_features=768, out_features=384, bias=True)
+)
+Trainable parameters: 57846016
+2025-01-21 09:41:50,563 - trainer - INFO - Loading checkpoint: congress-save/models/checkpoint-epoch15.pth ...
+2025-01-21 09:41:50,911 - trainer - INFO - Checkpoint loaded. Resume training from epoch 16
+2025-01-21 09:41:51,794 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:41:51,794 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:41:52,942 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:41:52,942 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:41:54,053 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:41:54,053 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:41:55,370 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:41:55,370 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:41:56,530 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:41:56,530 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:41:57,526 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:41:57,526 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:41:58,490 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:41:58,490 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:41:59,449 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:41:59,449 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:00,491 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:00,491 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:01,528 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:01,528 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:03,313 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:03,313 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:04,319 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:04,319 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:05,396 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:05,396 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:06,445 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:06,445 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:07,521 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:07,521 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:08,717 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:08,717 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:09,873 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:09,873 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:10,866 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:10,866 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:11,876 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:11,876 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:13,039 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:13,039 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:14,112 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:14,112 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:15,189 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:15,189 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:16,191 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:16,191 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:17,210 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:17,210 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:18,240 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:18,240 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:19,350 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:19,350 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:20,328 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:20,328 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:21,309 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:21,309 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:22,285 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:22,285 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:23,258 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:23,258 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:24,289 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:24,290 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:25,297 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:25,298 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:42:26,419 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:42:26,419 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:00,311 - train - INFO - TopicExpan(
+  (doc_encoder): BertDocEncoder(
+    (model): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 384, padding_idx=0)
+        (position_embeddings): Embedding(512, 384)
+        (token_type_embeddings): Embedding(2, 384)
+        (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0-5): 6 x BertLayer(
+            (attention): BertAttention(
+              (self): BertSdpaSelfAttention(
+                (query): Linear(in_features=384, out_features=384, bias=True)
+                (key): Linear(in_features=384, out_features=384, bias=True)
+                (value): Linear(in_features=384, out_features=384, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=384, out_features=384, bias=True)
+                (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=384, out_features=1536, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=1536, out_features=384, bias=True)
+              (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=384, out_features=384, bias=True)
+        (activation): Tanh()
+      )
+    )
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 384, padding_idx=0)
+      (position_embeddings): Embedding(512, 384)
+      (token_type_embeddings): Embedding(2, 384)
+      (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+  )
+  (phrase_decoder): TransformerPhraseDecoder(
+    (input_embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 384, padding_idx=0)
+      (position_embeddings): Embedding(512, 384)
+      (token_type_embeddings): Embedding(2, 384)
+      (LayerNorm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (output_embeddings): Linear(in_features=384, out_features=30522, bias=False)
+    (model): TransformerDecoder(
+      (layers): ModuleList(
+        (0-7): 8 x TransformerDecoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=384, out_features=384, bias=True)
+          )
+          (multihead_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=384, out_features=384, bias=True)
+          )
+          (linear1): Linear(in_features=384, out_features=2048, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (linear2): Linear(in_features=2048, out_features=384, bias=True)
+          (norm1): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (norm3): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (dropout3): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+  )
+  (topic_encoder): GCNTopicEncoder(
+    (downward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (upward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+    (sideward_layers): ModuleList(
+      (0-1): 2 x GraphConv(in=384, out=384, normalization=right, activation=None)
+    )
+  )
+  (interaction): BilinearInteraction()
+  (linear_combiner): Linear(in_features=768, out_features=384, bias=True)
+)
+Trainable parameters: 57846016
+2025-01-21 09:44:02,528 - trainer - INFO - Loading checkpoint: congress-save/models/checkpoint-epoch15.pth ...
+2025-01-21 09:44:02,879 - trainer - INFO - Checkpoint loaded. Resume training from epoch 16
+2025-01-21 09:44:04,631 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:04,631 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:05,755 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:05,755 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:06,763 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:06,763 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:07,863 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:07,863 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:09,103 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:09,103 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:10,164 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:10,165 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:11,137 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:11,137 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:12,157 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:12,157 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:13,106 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:13,106 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:14,169 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:14,169 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:15,176 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:15,176 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:16,252 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:16,252 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:17,248 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:17,248 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:18,181 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:18,181 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:19,128 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:19,128 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:20,094 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:20,094 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:21,138 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:21,139 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:22,251 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:22,251 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:23,475 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:23,475 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:24,726 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:24,726 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:25,738 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:25,738 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:26,898 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:26,898 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:27,938 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:27,938 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:29,004 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:29,004 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:29,973 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:29,973 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:31,033 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:31,033 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:32,099 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:32,099 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:33,100 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:33,100 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:34,121 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:34,121 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:35,163 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:35,163 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:36,186 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:36,187 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:37,241 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:37,241 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-01-21 09:44:38,278 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-01-21 09:44:38,278 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
