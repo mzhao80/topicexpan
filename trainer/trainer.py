@@ -35,15 +35,6 @@ class Trainer(BaseTrainer):
         current_time = time.strftime("%Y%m%d-%H%M%S")
         self.log_file = os.path.join('logs', f'training_log_{current_time}.txt')
         self.log_info(f"Starting training at {current_time}")
-        
-        # Convert config to dict for logging
-        config_dict = {}
-        for section in config.sections():
-            config_dict[section] = {}
-            for key, value in config[section].items():
-                config_dict[section][key] = value
-        
-        self.log_info(f"Model configuration:\n{json.dumps(config_dict, indent=2)}")
 
     def log_info(self, message):
         """Log message to both console and file"""
