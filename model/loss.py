@@ -31,15 +31,18 @@ def nll_loss(output, target):
         output = output.reshape(-1, vocab_size)
         target = target.reshape(-1)
     
+    # Create mask for non-padding tokens
+    non_pad_mask = (target != 0)
+    
     # Apply log_softmax if not already applied
     if output.dim() == 2:
         output = F.log_softmax(output, dim=-1)
     
-    # Compute loss only on non-padding tokens
-    loss = F.nll_loss(output, target, ignore_index=0, reduction="none")
+    # Calculate loss only on non-padding tokens
+    loss = F.nll_loss(output, target, reduction='none')
+    loss = loss * non_pad_mask.float()
     
-    # Normalize by number of non-padding tokens
-    non_pad_mask = (target != 0)
+    # Average over non-padding tokens
     num_tokens = non_pad_mask.sum().item()
     if num_tokens > 0:
         return loss.sum() / num_tokens

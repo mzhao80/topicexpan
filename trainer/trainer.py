@@ -61,124 +61,70 @@ class Trainer(BaseTrainer):
         sim_weight = 0.3
         gen_weight = 0.7
         
-        # Gradient clipping norm
-        max_grad_norm = 1.0
-
         for batch_idx, batch_data in enumerate(self.data_loader):
             doc_ids, doc_infos, topic_ids, phrase_infos = batch_data
             
             encoder_input = {k: v.to(self.device) for k, v in doc_infos.items()}
-            # Keep CLS token in both input and target
             decoder_input = {k: v[:, :-1].to(self.device) for k, v in phrase_infos.items()}
-            gen_target = phrase_infos['input_ids'][:, :-1].to(self.device)  # Keep CLS, remove last token for target
+            decoder_target = phrase_infos['input_ids'][:, 1:].to(self.device)
+            topic_ids = topic_ids.to(self.device)
             
-            sim_target = topic_ids.to(self.device)
-
             self.optimizer.zero_grad()
             
             sim_score, gen_score = self.model(encoder_input, decoder_input, topic_ids)
             
-            # Debug: Check model outputs
-            if batch_idx == 0:  # Only print for first batch
-                debug_info = "\n[DEBUG] Model Outputs:"
-                debug_info += f"\nScore range: [{sim_score.min():.3f}, {sim_score.max():.3f}]"
-                debug_info += f"\nGeneration logits shape: {gen_score.shape}"
-                
-                # Print predicted vs actual topics
-                pred_topics = sim_score.argmax(dim=1)
-                debug_info += "\n\nTopic Prediction Sample:"
-                for i in range(min(3, len(pred_topics))):
-                    debug_info += f"\nPred: {pred_topics[i].item()} | True: {sim_target[i].item()}"
-                
-                # Print sample phrase
-                if hasattr(self.dataset, 'bert_tokenizer'):
-                    gen_tokens = gen_score[0].argmax(dim=1)
-                    generated = self.dataset.bert_tokenizer.decode(gen_tokens)
-                    target = self.dataset.bert_tokenizer.decode(gen_target[0])
-                    debug_info += "\n\nPhrase Generation Sample:"
-                    debug_info += f"\nGenerated: {generated}"
-                    debug_info += f"\nTarget: {target}"
-                self.log_info(debug_info)
+            sim_loss = self.criterions['sim'](sim_score, topic_ids)
+            gen_loss = self.criterions['gen'](gen_score.view(-1, gen_score.size(-1)), decoder_target.view(-1))
             
-            sim_loss = self.criterions['sim'](sim_score, sim_target)
-            gen_loss = self.criterions['gen'](gen_score.view(-1, gen_score.size(-1)), gen_target.view(-1))
-            
-            # Apply loss weights and ensure they're positive
+            # Calculate total loss with weights
             loss = sim_weight * sim_loss + gen_weight * gen_loss
             
-            # Debug: Check loss values and predictions
-            if batch_idx % 100 == 0:
-                debug_info = "\n[DEBUG] Loss Values:"
-                debug_info += f"\nSimilarity Loss (raw): {sim_loss.item():.4f}"
-                debug_info += f"\nGeneration Loss (raw): {gen_loss.item():.4f}"
-                debug_info += f"\nWeighted Sim Loss: {(sim_weight * sim_loss).item():.4f}"
-                debug_info += f"\nWeighted Gen Loss: {(gen_weight * gen_loss).item():.4f}"
-                debug_info += f"\nTotal Loss: {loss.item():.4f}"
-                
-                # Print sample predictions
-                with torch.no_grad():
-                    # Topic prediction accuracy
-                    pred_topics = sim_score.argmax(dim=1)
-                    topic_acc = (pred_topics == sim_target).float().mean()
-                    debug_info += f"\nTopic Prediction Accuracy: {topic_acc.item():.4f}"
-                    
-                    # Generation perplexity
-                    gen_perplexity = torch.exp(gen_loss)
-                    debug_info += f"\nGeneration Perplexity: {gen_perplexity.item():.4f}"
-                    
-                    # Print sample generations
-                    debug_info += "\n\nSample Generations:"
-                    for i in range(min(3, len(gen_score))):
-                        gen_tokens = gen_score[i].argmax(dim=1)
-                        generated = self.dataset.bert_tokenizer.decode(gen_tokens)
-                        target = self.dataset.bert_tokenizer.decode(gen_target[i])
-                        debug_info += f"\nGenerated {i}: {generated}"
-                        debug_info += f"\nTarget {i}:   {target}\n"
-                
-                self.log_info(debug_info)
-
             loss.backward()
-            
-            # Clip gradients
-            torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_grad_norm)
-            
+            torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
             self.optimizer.step()
-
+            
+            # Calculate embedding similarity
+            with torch.no_grad():
+                pred_tokens = gen_score.argmax(dim=-1)
+                pred_embeds = self.model.phrase_decoder.input_embeddings.word_embeddings(pred_tokens)
+                target_embeds = self.model.phrase_decoder.input_embeddings.word_embeddings(decoder_target)
+                pred_mean = pred_embeds.mean(dim=1)
+                target_mean = target_embeds.mean(dim=1)
+                embedding_sim = F.cosine_similarity(pred_mean, target_mean, dim=1).mean()
+            
             batch_size = doc_ids.size(0)
             total_loss += loss.item() * batch_size
             total_sim_loss += sim_loss.item() * batch_size
             total_gen_loss += gen_loss.item() * batch_size
+            total_embedding_sim += embedding_sim.item() * batch_size
             n_steps += batch_size
-
+            
             if batch_idx % self.log_step == 0:
                 self.log_info('Train Epoch: {} {} Loss: {:.6f}'.format(
                     epoch,
                     self._progress(batch_idx),
                     loss.item()))
-
-            if batch_idx == self.len_epoch:
-                break
-
+        
         # Calculate averages
         avg_loss = total_loss / n_steps
         avg_sim_loss = total_sim_loss / n_steps
         avg_gen_loss = total_gen_loss / n_steps
+        avg_embedding_sim = total_embedding_sim / n_steps
         
         # Calculate perplexity from average generation loss
-        perplexity = math.exp(avg_gen_loss)
-
+        perplexity = math.exp(min(avg_gen_loss, 20))  # Cap perplexity to avoid overflow
+        
         return {
             'loss': avg_loss,
             'sim_loss': avg_sim_loss,
             'gen_loss': avg_gen_loss,
-            'perplexity': perplexity
+            'perplexity': perplexity,
+            'embedding_sim': avg_embedding_sim
         }
 
     def _valid_epoch(self, epoch):
         """
         Validate after training an epoch
-
-        :param epoch: Integer, current training epoch.
         :return: A log that contains information about validation
         """
         self.model.eval()
@@ -186,7 +132,12 @@ class Trainer(BaseTrainer):
         total_val_sim_loss = 0
         total_val_gen_loss = 0
         total_val_embedding_sim = 0
+        total_topic_acc = 0
         n_val_steps = 0
+
+        # Loss weights - keep same as training
+        sim_weight = 0.3
+        gen_weight = 0.7
 
         with torch.no_grad():
             for batch_idx, batch_data in enumerate(self.valid_data_loader):
@@ -203,23 +154,18 @@ class Trainer(BaseTrainer):
                 gen_loss = self.criterions['gen'](gen_score.view(-1, gen_score.size(-1)), decoder_target.view(-1))
                 
                 # Calculate total loss with weights
-                sim_weight = 0.3
-                gen_weight = 0.7
                 loss = sim_weight * sim_loss + gen_weight * gen_loss
 
+                # Calculate topic prediction accuracy
+                pred_topics = sim_score.argmax(dim=1)
+                topic_acc = (pred_topics == topic_ids).float().mean()
+
                 # Calculate embedding similarity between predicted and target sequences
-                # First get the predicted token embeddings
                 pred_tokens = gen_score.argmax(dim=-1)  # [batch, seq]
                 pred_embeds = self.model.phrase_decoder.input_embeddings.word_embeddings(pred_tokens)  # [batch, seq, hidden]
-                
-                # Get target token embeddings
                 target_embeds = self.model.phrase_decoder.input_embeddings.word_embeddings(decoder_target)  # [batch, seq, hidden]
-                
-                # Calculate mean embeddings
                 pred_mean = pred_embeds.mean(dim=1)  # [batch, hidden]
                 target_mean = target_embeds.mean(dim=1)  # [batch, hidden]
-                
-                # Calculate cosine similarity
                 embedding_sim = F.cosine_similarity(pred_mean, target_mean, dim=1).mean()
 
                 batch_size = doc_ids.size(0)
@@ -227,27 +173,51 @@ class Trainer(BaseTrainer):
                 total_val_sim_loss += sim_loss.item() * batch_size
                 total_val_gen_loss += gen_loss.item() * batch_size
                 total_val_embedding_sim += embedding_sim.item() * batch_size
+                total_topic_acc += topic_acc.item() * batch_size
                 n_val_steps += batch_size
 
-                # Print validation samples
+                # Print debug info for first batch
                 if batch_idx == 0:
-                    self._print_validation_samples(topic_ids, gen_score, decoder_target)
+                    debug_info = "\n[DEBUG] Validation Metrics:"
+                    debug_info += f"\nLoss: {loss.item():.4f}"
+                    debug_info += f"\nSim Loss: {sim_loss.item():.4f}"
+                    debug_info += f"\nGen Loss: {gen_loss.item():.4f}"
+                    debug_info += f"\nTopic Accuracy: {topic_acc.item():.4f}"
+                    debug_info += f"\nEmbedding Similarity: {embedding_sim.item():.4f}"
+                    
+                    # Print topic predictions
+                    debug_info += "\n\nTopic Predictions:"
+                    for i in range(min(3, len(pred_topics))):
+                        debug_info += f"\nPred: {pred_topics[i].item()} | True: {topic_ids[i].item()}"
+                    
+                    # Print sample generations
+                    debug_info += "\n\nGeneration Samples:"
+                    for i in range(min(3, len(gen_score))):
+                        gen_tokens = gen_score[i].argmax(dim=-1)
+                        generated = self.dataset.bert_tokenizer.decode(gen_tokens)
+                        target = self.dataset.bert_tokenizer.decode(decoder_target[i])
+                        debug_info += f"\nGenerated {i}: {generated}"
+                        debug_info += f"\nTarget {i}:   {target}\n"
+                    
+                    self.log_info(debug_info)
 
         # Calculate averages
         val_loss = total_val_loss / n_val_steps
         val_sim_loss = total_val_sim_loss / n_val_steps
         val_gen_loss = total_val_gen_loss / n_val_steps
         val_embedding_sim = total_val_embedding_sim / n_val_steps
+        val_topic_acc = total_topic_acc / n_val_steps
         
         # Calculate perplexity from average generation loss
-        val_perplexity = math.exp(val_gen_loss)
+        val_perplexity = math.exp(min(val_gen_loss, 20))  # Cap perplexity to avoid overflow
 
         return {
-            'loss': val_loss,  # Remove val_ prefix
+            'loss': val_loss,
             'sim_loss': val_sim_loss,
             'gen_loss': val_gen_loss,
             'perplexity': val_perplexity,
-            'embedding_sim': val_embedding_sim
+            'embedding_sim': val_embedding_sim,
+            'topic_accuracy': val_topic_acc
         }
 
     def _print_validation_samples(self, topic_ids, gen_scores, targets):
