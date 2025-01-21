@@ -21,6 +21,7 @@ class BertDocEncoder(BaseModel):
         super().__init__()
         self.model_name = model_name
         self.model = AutoModel.from_pretrained(model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.input_embeddings = self.model.embeddings
         
     def forward(self, x):
@@ -224,11 +225,12 @@ class BilinearInteraction(nn.Module):
     4. Topic-conditional Phrase Generator
 """
 class TransformerPhraseDecoder(BaseModel):
-    def __init__(self, input_embeddings, pad_token_id, bos_token_id, eos_token_id, num_layers, num_heads, max_length, use_flash_attention=False):
+    def __init__(self, input_embeddings, tokenizer, pad_token_id, bos_token_id, eos_token_id, num_layers, num_heads, max_length, use_flash_attention=False):
         super().__init__()
         self.vocab_size, self.hidden_size = input_embeddings.word_embeddings.weight.shape
         self.input_embeddings = input_embeddings
         self.output_embeddings = nn.Linear(self.hidden_size, self.vocab_size, bias=False)
+        self.tokenizer = tokenizer
         
         # Add context projection and layer norm
         self.context_proj = nn.Linear(self.hidden_size, self.hidden_size)
@@ -248,9 +250,8 @@ class TransformerPhraseDecoder(BaseModel):
         
         # Create valid token mask (only allow ASCII characters and special tokens)
         self.valid_tokens = torch.zeros(self.vocab_size, dtype=torch.bool)
-        tokenizer = self.input_embeddings.tokenizer
         for i in range(self.vocab_size):
-            token = tokenizer.convert_ids_to_tokens(i)
+            token = self.tokenizer.convert_ids_to_tokens(i)
             # Allow token if it's ASCII or a special token
             is_special = token.startswith('[') and token.endswith(']')
             is_ascii = all(ord(c) < 128 for c in token)
@@ -388,6 +389,7 @@ class TopicExpansionModel(BaseModel):
         # Initialize decoder
         self.decoder = TransformerPhraseDecoder(
             input_embeddings=self.bert.embeddings,
+            tokenizer=self.tokenizer,
             pad_token_id=self.tokenizer.pad_token_id,
             bos_token_id=self.tokenizer.cls_token_id,
             eos_token_id=self.tokenizer.sep_token_id,

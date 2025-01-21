@@ -20,6 +20,7 @@ class TopicExpan(BaseModel):
 
         self.phrase_decoder = TransformerPhraseDecoder(
                                     self.doc_encoder.input_embeddings, 
+                                    self.doc_encoder.tokenizer,  
                                     pad_token_id, bos_token_id, eos_token_id,
                                     options["tfm_decoder_num_layers"], 
                                     options["tfm_decoder_num_heads"], 
