@@ -1,0 +1,29 @@
+Starting training at 20250121-131143
+Train Epoch: 1 [0/334 (0%)] Loss: 9.339973
+Train Epoch: 1 [64/334 (19%)] Loss: 9.870651
+Train Epoch: 1 [128/334 (38%)] Loss: 6.374649
+Train Epoch: 1 [192/334 (57%)] Loss: 5.892797
+Train Epoch: 1 [256/334 (77%)] Loss: 5.724433
+
+[DEBUG] Validation Metrics:
+Loss: 5.3936
+Sim Loss: 2.8260
+Gen Loss: 6.4940
+Topic Accuracy: 0.2812
+Embedding Similarity: 0.2685
+
+Topic Predictions:
+Pred: 65 | True: 52
+Pred: 36 | True: 36
+Pred: 65 | True: 52
+
+Generation Samples:
+Generated 0: [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   commitment to public service [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   public service [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+

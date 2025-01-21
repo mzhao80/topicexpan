@@ -1,0 +1,841 @@
+Starting training at 20250121-131402
+Train Epoch: 1 [0/334 (0%)] Loss: 9.339973
+Train Epoch: 1 [64/334 (19%)] Loss: 9.870651
+Train Epoch: 1 [128/334 (38%)] Loss: 6.374644
+Train Epoch: 1 [192/334 (57%)] Loss: 5.892828
+Train Epoch: 1 [256/334 (77%)] Loss: 5.724485
+
+[DEBUG] Validation Metrics:
+Loss: 5.3935
+Sim Loss: 2.8260
+Gen Loss: 6.4938
+Topic Accuracy: 0.2812
+Embedding Similarity: 0.2685
+
+Topic Predictions:
+Pred: 65 | True: 52
+Pred: 36 | True: 36
+Pred: 65 | True: 52
+
+Generation Samples:
+Generated 0: [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   commitment to public service [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   public service [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 2 [0/334 (0%)] Loss: 5.515554
+Train Epoch: 2 [64/334 (19%)] Loss: 5.211845
+Train Epoch: 2 [128/334 (38%)] Loss: 5.055449
+Train Epoch: 2 [192/334 (57%)] Loss: 4.801559
+Train Epoch: 2 [256/334 (77%)] Loss: 5.141387
+
+[DEBUG] Validation Metrics:
+Loss: 4.6493
+Sim Loss: 1.4916
+Gen Loss: 6.0026
+Topic Accuracy: 0.4688
+Embedding Similarity: 0.2736
+
+Topic Predictions:
+Pred: 40 | True: 40
+Pred: 36 | True: 41
+Pred: 70 | True: 73
+
+Generation Samples:
+Generated 0: of [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: of [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+Generated 2: of [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   criminalizes abortion [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 3 [0/334 (0%)] Loss: 4.694700
+Train Epoch: 3 [64/334 (19%)] Loss: 4.714808
+Train Epoch: 3 [128/334 (38%)] Loss: 4.515835
+Train Epoch: 3 [192/334 (57%)] Loss: 4.271382
+Train Epoch: 3 [256/334 (77%)] Loss: 4.444265
+
+[DEBUG] Validation Metrics:
+Loss: 4.1555
+Sim Loss: 0.6235
+Gen Loss: 5.6692
+Topic Accuracy: 0.8125
+Embedding Similarity: 0.2843
+
+Topic Predictions:
+Pred: 42 | True: 38
+Pred: 36 | True: 36
+Pred: 52 | True: 52
+
+Generation Samples:
+Generated 0: speaker donald [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: speaker [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   government that is accountable [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: speaker [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   public service [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 4 [0/334 (0%)] Loss: 4.222867
+Train Epoch: 4 [64/334 (19%)] Loss: 4.211895
+Train Epoch: 4 [128/334 (38%)] Loss: 3.626388
+Train Epoch: 4 [192/334 (57%)] Loss: 3.792151
+Train Epoch: 4 [256/334 (77%)] Loss: 3.715704
+
+[DEBUG] Validation Metrics:
+Loss: 4.2453
+Sim Loss: 1.3870
+Gen Loss: 5.4703
+Topic Accuracy: 0.5938
+Embedding Similarity: 0.2851
+
+Topic Predictions:
+Pred: 52 | True: 52
+Pred: 48 | True: 61
+Pred: 46 | True: 46
+
+Generation Samples:
+Generated 0: speaker of [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   compassionate congressional caseworkers [SEP] [PAD] [PAD] [PAD]
+
+Generated 1: speaker [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   officer training [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: speaker of [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   open rule process [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 5 [0/334 (0%)] Loss: 3.908344
+Train Epoch: 5 [64/334 (19%)] Loss: 3.474876
+Train Epoch: 5 [128/334 (38%)] Loss: 4.070886
+Train Epoch: 5 [192/334 (57%)] Loss: 3.431077
+Train Epoch: 5 [256/334 (77%)] Loss: 3.744169
+
+[DEBUG] Validation Metrics:
+Loss: 3.7305
+Sim Loss: 0.1157
+Gen Loss: 5.2797
+Topic Accuracy: 1.0000
+Embedding Similarity: 0.3027
+
+Topic Predictions:
+Pred: 36 | True: 36
+Pred: 45 | True: 45
+Pred: 41 | True: 41
+
+Generation Samples:
+Generated 0: voting [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   government that is accountable [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: voting kevin of of [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   diminish voices [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: voting of [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   talented [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 6 [0/334 (0%)] Loss: 3.285019
+Train Epoch: 6 [64/334 (19%)] Loss: 3.303999
+Train Epoch: 6 [128/334 (38%)] Loss: 3.491646
+Train Epoch: 6 [192/334 (57%)] Loss: 3.287488
+Train Epoch: 6 [256/334 (77%)] Loss: 3.067302
+
+[DEBUG] Validation Metrics:
+Loss: 3.7325
+Sim Loss: 0.4057
+Gen Loss: 5.1582
+Topic Accuracy: 0.9375
+Embedding Similarity: 0.2937
+
+Topic Predictions:
+Pred: 68 | True: 68
+Pred: 52 | True: 52
+Pred: 41 | True: 41
+
+Generation Samples:
+Generated 0: speaker [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   bodily autonomy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: speaker [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   compassionate congressional caseworkers [SEP] [PAD] [PAD] [PAD]
+
+Generated 2: speaker [SEP] [SEP] the [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+Train Epoch: 7 [0/334 (0%)] Loss: 3.141052
+Train Epoch: 7 [64/334 (19%)] Loss: 3.122009
+Train Epoch: 7 [128/334 (38%)] Loss: 3.256372
+Train Epoch: 7 [192/334 (57%)] Loss: 3.039860
+Train Epoch: 7 [256/334 (77%)] Loss: 2.743257
+
+[DEBUG] Validation Metrics:
+Loss: 3.5684
+Sim Loss: 0.3373
+Gen Loss: 4.9531
+Topic Accuracy: 0.9375
+Embedding Similarity: 0.3035
+
+Topic Predictions:
+Pred: 59 | True: 59
+Pred: 73 | True: 73
+Pred: 58 | True: 58
+
+Generation Samples:
+Generated 0: speaker of [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   spiritual guidance [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: speaker criminal republican rights [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   criminalizes abortion [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: speaker [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   political leaders [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 8 [0/334 (0%)] Loss: 2.822000
+Train Epoch: 8 [64/334 (19%)] Loss: 2.703419
+Train Epoch: 8 [128/334 (38%)] Loss: 2.753261
+Train Epoch: 8 [192/334 (57%)] Loss: 2.561570
+Train Epoch: 8 [256/334 (77%)] Loss: 2.892101
+
+[DEBUG] Validation Metrics:
+Loss: 3.6308
+Sim Loss: 0.1729
+Gen Loss: 5.1128
+Topic Accuracy: 0.9375
+Embedding Similarity: 0.2826
+
+Topic Predictions:
+Pred: 38 | True: 38
+Pred: 36 | True: 36
+Pred: 68 | True: 68
+
+Generation Samples:
+Generated 0: speaker donalds [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: speaker of speaker speaker [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: speaker rules [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   bodily autonomy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 9 [0/334 (0%)] Loss: 2.685469
+Train Epoch: 9 [64/334 (19%)] Loss: 2.461307
+Train Epoch: 9 [128/334 (38%)] Loss: 2.274337
+Train Epoch: 9 [192/334 (57%)] Loss: 2.365176
+Train Epoch: 9 [256/334 (77%)] Loss: 2.428598
+
+[DEBUG] Validation Metrics:
+Loss: 3.6760
+Sim Loss: 0.6117
+Gen Loss: 4.9894
+Topic Accuracy: 0.8750
+Embedding Similarity: 0.2947
+
+Topic Predictions:
+Pred: 41 | True: 41
+Pred: 52 | True: 52
+Pred: 45 | True: 45
+
+Generation Samples:
+Generated 0: speaker the [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   talented [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: speaker representation [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   compassionate congressional caseworkers [SEP] [PAD] [PAD] [PAD]
+
+Generated 2: speaker nominate of of [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   diminish voices [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 10 [0/334 (0%)] Loss: 2.250022
+Train Epoch: 10 [64/334 (19%)] Loss: 2.162312
+Train Epoch: 10 [128/334 (38%)] Loss: 2.259919
+Train Epoch: 10 [192/334 (57%)] Loss: 2.305050
+Train Epoch: 10 [256/334 (77%)] Loss: 2.182650
+
+[DEBUG] Validation Metrics:
+Loss: 3.5876
+Sim Loss: 0.9053
+Gen Loss: 4.7372
+Topic Accuracy: 0.6562
+Embedding Similarity: 0.3084
+
+Topic Predictions:
+Pred: 35 | True: 66
+Pred: 44 | True: 44
+Pred: 68 | True: 68
+
+Generation Samples:
+Generated 0: public of [SEP] [SEP] congress [SEP] [SEP] [SEP] [SEP]
+Target 0:   rules resolution [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: speaker kevin mccarthy [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: women responsibility [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   bodily autonomy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 11 [0/334 (0%)] Loss: 2.247895
+Train Epoch: 11 [64/334 (19%)] Loss: 2.339051
+Train Epoch: 11 [128/334 (38%)] Loss: 2.242522
+Train Epoch: 11 [192/334 (57%)] Loss: 2.069012
+Train Epoch: 11 [256/334 (77%)] Loss: 1.856338
+
+[DEBUG] Validation Metrics:
+Loss: 3.4906
+Sim Loss: 0.5720
+Gen Loss: 4.7414
+Topic Accuracy: 0.7812
+Embedding Similarity: 0.2934
+
+Topic Predictions:
+Pred: 43 | True: 43
+Pred: 36 | True: 36
+Pred: 41 | True: 41
+
+Generation Samples:
+Generated 0: speaker donalds [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: speaker of speaker rules [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: speaker the [SEP] republican the [SEP] [SEP] [SEP] [SEP]
+Target 2:   lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+Train Epoch: 12 [0/334 (0%)] Loss: 2.031966
+Train Epoch: 12 [64/334 (19%)] Loss: 1.865327
+Train Epoch: 12 [128/334 (38%)] Loss: 1.651911
+Train Epoch: 12 [192/334 (57%)] Loss: 1.822805
+Train Epoch: 12 [256/334 (77%)] Loss: 1.906065
+
+[DEBUG] Validation Metrics:
+Loss: 3.4584
+Sim Loss: 0.2968
+Gen Loss: 4.8134
+Topic Accuracy: 0.9375
+Embedding Similarity: 0.3000
+
+Topic Predictions:
+Pred: 36 | True: 40
+Pred: 65 | True: 65
+Pred: 38 | True: 73
+
+Generation Samples:
+Generated 0: speaker of the house [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: speaker and ' s health [SEP] [SEP] [SEP] [SEP]
+Target 1:   attack women ' s access to [SEP] [PAD] [PAD]
+
+Generated 2: speaker abortion abortion abortion [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   criminalizes abortion [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 13 [0/334 (0%)] Loss: 1.732465
+Train Epoch: 13 [64/334 (19%)] Loss: 1.716252
+Train Epoch: 13 [128/334 (38%)] Loss: 1.614141
+Train Epoch: 13 [192/334 (57%)] Loss: 1.591947
+Train Epoch: 13 [256/334 (77%)] Loss: 1.894841
+
+[DEBUG] Validation Metrics:
+Loss: 3.5157
+Sim Loss: 0.2723
+Gen Loss: 4.9057
+Topic Accuracy: 0.9688
+Embedding Similarity: 0.2889
+
+Topic Predictions:
+Pred: 65 | True: 65
+Pred: 59 | True: 59
+Pred: 64 | True: 64
+
+Generation Samples:
+Generated 0: nominate and ' s rights [SEP] [SEP] [SEP] [SEP]
+Target 0:   attack women ' s access to [SEP] [PAD] [PAD]
+
+Generated 1: nominate support [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   massive impact [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: nominate votes congress [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   written in rooms behind closed doors [SEP] [PAD] [PAD]
+
+Train Epoch: 14 [0/334 (0%)] Loss: 1.640427
+Train Epoch: 14 [64/334 (19%)] Loss: 1.610819
+Train Epoch: 14 [128/334 (38%)] Loss: 1.486584
+Train Epoch: 14 [192/334 (57%)] Loss: 1.464892
+Train Epoch: 14 [256/334 (77%)] Loss: 1.567816
+
+[DEBUG] Validation Metrics:
+Loss: 3.4836
+Sim Loss: 0.2595
+Gen Loss: 4.8653
+Topic Accuracy: 0.8438
+Embedding Similarity: 0.2932
+
+Topic Predictions:
+Pred: 47 | True: 47
+Pred: 46 | True: 46
+Pred: 46 | True: 46
+
+Generation Samples:
+Generated 0: speaker kevin kevin [SEP] kevin [SEP] [SEP] [SEP] [SEP]
+Target 0:   nominate the gentleman from oklahoma [SEP] [PAD] [PAD] [PAD]
+
+Generated 1: women of guidance [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   collaborate and craft legislation [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: women the [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   open rule process [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 15 [0/334 (0%)] Loss: 1.453666
+Train Epoch: 15 [64/334 (19%)] Loss: 1.309731
+Train Epoch: 15 [128/334 (38%)] Loss: 1.339476
+Train Epoch: 15 [192/334 (57%)] Loss: 1.607135
+Train Epoch: 15 [256/334 (77%)] Loss: 1.466864
+
+[DEBUG] Validation Metrics:
+Loss: 3.4060
+Sim Loss: 0.2245
+Gen Loss: 4.7695
+Topic Accuracy: 0.8750
+Embedding Similarity: 0.2935
+
+Topic Predictions:
+Pred: 73 | True: 73
+Pred: 41 | True: 41
+Pred: 44 | True: 44
+
+Generation Samples:
+Generated 0: women representation abortion care [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   criminalizes abortion [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: speaker people [SEP] party [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   talented [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: speaker of the house [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 16 [0/334 (0%)] Loss: 1.293830
+Train Epoch: 16 [64/334 (19%)] Loss: 1.221910
+Train Epoch: 16 [128/334 (38%)] Loss: 1.391825
+Train Epoch: 16 [192/334 (57%)] Loss: 1.354067
+Train Epoch: 16 [256/334 (77%)] Loss: 1.543886
+
+[DEBUG] Validation Metrics:
+Loss: 3.4649
+Sim Loss: 0.1235
+Gen Loss: 4.8969
+Topic Accuracy: 0.9375
+Embedding Similarity: 0.2969
+
+Topic Predictions:
+Pred: 66 | True: 66
+Pred: 36 | True: 36
+Pred: 59 | True: 59
+
+Generation Samples:
+Generated 0: women package [SEP] [SEP] congress congress [SEP] [SEP] [SEP]
+Target 0:   rules resolution [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: speaker and public decisions [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   government that is accountable [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: speaker legacy [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   spiritual guidance [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 17 [0/334 (0%)] Loss: 1.360035
+Train Epoch: 17 [64/334 (19%)] Loss: 1.331426
+Train Epoch: 17 [128/334 (38%)] Loss: 1.375877
+Train Epoch: 17 [192/334 (57%)] Loss: 1.221392
+Train Epoch: 17 [256/334 (77%)] Loss: 1.212062
+
+[DEBUG] Validation Metrics:
+Loss: 3.2929
+Sim Loss: 0.0170
+Gen Loss: 4.6969
+Topic Accuracy: 1.0000
+Embedding Similarity: 0.3007
+
+Topic Predictions:
+Pred: 65 | True: 65
+Pred: 38 | True: 38
+Pred: 40 | True: 40
+
+Generation Samples:
+Generated 0: nominate and ' s health [SEP] [SEP] [SEP] [SEP]
+Target 0:   attack women ' s access to [SEP] [PAD] [PAD]
+
+Generated 1: speaker donalds [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: speaker of the house [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 18 [0/334 (0%)] Loss: 1.284062
+Train Epoch: 18 [64/334 (19%)] Loss: 1.277557
+Train Epoch: 18 [128/334 (38%)] Loss: 1.081206
+Train Epoch: 18 [192/334 (57%)] Loss: 1.247052
+Train Epoch: 18 [256/334 (77%)] Loss: 1.252574
+
+[DEBUG] Validation Metrics:
+Loss: 3.6107
+Sim Loss: 0.2936
+Gen Loss: 5.0323
+Topic Accuracy: 0.8750
+Embedding Similarity: 0.2860
+
+Topic Predictions:
+Pred: 36 | True: 36
+Pred: 41 | True: 41
+Pred: 40 | True: 40
+
+Generation Samples:
+Generated 0: speaker under under rules [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: ha service [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   historic dysfunction [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: speaker of the house [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 19 [0/334 (0%)] Loss: 1.090846
+Train Epoch: 19 [64/334 (19%)] Loss: 1.210265
+Train Epoch: 19 [128/334 (38%)] Loss: 1.131910
+Train Epoch: 19 [192/334 (57%)] Loss: 1.414266
+Train Epoch: 19 [256/334 (77%)] Loss: 1.199951
+
+[DEBUG] Validation Metrics:
+Loss: 3.2994
+Sim Loss: 0.0693
+Gen Loss: 4.6838
+Topic Accuracy: 0.9688
+Embedding Similarity: 0.2927
+
+Topic Predictions:
+Pred: 38 | True: 38
+Pred: 73 | True: 73
+Pred: 44 | True: 44
+
+Generation Samples:
+Generated 0: speaker donalds [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: womenize abortion care [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   criminalizes abortion [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: speaker of the house [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 20 [0/334 (0%)] Loss: 0.882456
+Train Epoch: 20 [64/334 (19%)] Loss: 1.187405
+Train Epoch: 20 [128/334 (38%)] Loss: 1.011142
+Train Epoch: 20 [192/334 (57%)] Loss: 1.195992
+Train Epoch: 20 [256/334 (77%)] Loss: 1.052965
+
+[DEBUG] Validation Metrics:
+Loss: 3.6664
+Sim Loss: 0.4752
+Gen Loss: 5.0340
+Topic Accuracy: 0.8125
+Embedding Similarity: 0.2794
+
+Topic Predictions:
+Pred: 66 | True: 66
+Pred: 44 | True: 44
+Pred: 40 | True: 40
+
+Generation Samples:
+Generated 0: fiscal of of package business business [SEP] [SEP] [SEP]
+Target 0:   rules resolution [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: nominate of the house [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: nominate of the house [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 21 [0/334 (0%)] Loss: 0.991400
+Train Epoch: 21 [64/334 (19%)] Loss: 1.106629
+Train Epoch: 21 [128/334 (38%)] Loss: 1.130061
+Train Epoch: 21 [192/334 (57%)] Loss: 0.984109
+Train Epoch: 21 [256/334 (77%)] Loss: 0.995056
+
+[DEBUG] Validation Metrics:
+Loss: 3.5715
+Sim Loss: 0.2294
+Gen Loss: 5.0039
+Topic Accuracy: 0.9062
+Embedding Similarity: 0.2618
+
+Topic Predictions:
+Pred: 51 | True: 51
+Pred: 45 | True: 45
+Pred: 52 | True: 52
+
+Generation Samples:
+Generated 0: pledge and justice for all [SEP] [SEP] [SEP] [SEP]
+Target 0:   liberty and justice for all [SEP] [PAD] [PAD] [PAD]
+
+Generated 1: reduce rules of of of [SEP] [SEP] [SEP] [SEP]
+Target 1:   diminish voices [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: small voice ethics [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   compassionate congressional caseworkers [SEP] [PAD] [PAD] [PAD]
+
+Train Epoch: 22 [0/334 (0%)] Loss: 1.033836
+Train Epoch: 22 [64/334 (19%)] Loss: 0.993611
+Train Epoch: 22 [128/334 (38%)] Loss: 1.068828
+Train Epoch: 22 [192/334 (57%)] Loss: 1.076354
+Train Epoch: 22 [256/334 (77%)] Loss: 1.080136
+
+[DEBUG] Validation Metrics:
+Loss: 3.4184
+Sim Loss: 0.2558
+Gen Loss: 4.7738
+Topic Accuracy: 0.8438
+Embedding Similarity: 0.2809
+
+Topic Predictions:
+Pred: 44 | True: 44
+Pred: 39 | True: 43
+Pred: 52 | True: 52
+
+Generation Samples:
+Generated 0: nominate commitment [SEP] [SEP] voted [SEP] [SEP] [SEP] [SEP]
+Target 0:   republican majority [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: kevin donalds [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: public marketplace ethics [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   compassionate congressional caseworkers [SEP] [PAD] [PAD] [PAD]
+
+Train Epoch: 23 [0/334 (0%)] Loss: 0.993103
+Train Epoch: 23 [64/334 (19%)] Loss: 0.886358
+Train Epoch: 23 [128/334 (38%)] Loss: 0.960562
+Train Epoch: 23 [192/334 (57%)] Loss: 1.093583
+Train Epoch: 23 [256/334 (77%)] Loss: 1.041932
+
+[DEBUG] Validation Metrics:
+Loss: 3.4872
+Sim Loss: 0.1196
+Gen Loss: 4.9305
+Topic Accuracy: 0.9375
+Embedding Similarity: 0.2790
+
+Topic Predictions:
+Pred: 59 | True: 59
+Pred: 36 | True: 36
+Pred: 41 | True: 41
+
+Generation Samples:
+Generated 0: numerous legacy [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   spiritual guidance [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: speaker and under broken [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: speaker the the speaker the [SEP] [SEP] [SEP] [SEP]
+Target 2:   lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+Train Epoch: 24 [0/334 (0%)] Loss: 0.810128
+Train Epoch: 24 [64/334 (19%)] Loss: 0.908255
+Train Epoch: 24 [128/334 (38%)] Loss: 1.134662
+Train Epoch: 24 [192/334 (57%)] Loss: 0.882586
+Train Epoch: 24 [256/334 (77%)] Loss: 0.918241
+
+[DEBUG] Validation Metrics:
+Loss: 3.6616
+Sim Loss: 0.7595
+Gen Loss: 4.9054
+Topic Accuracy: 0.8125
+Embedding Similarity: 0.2782
+
+Topic Predictions:
+Pred: 51 | True: 51
+Pred: 59 | True: 59
+Pred: 41 | True: 41
+
+Generation Samples:
+Generated 0: pledge and justice for all [SEP] [SEP] [SEP] [SEP]
+Target 0:   liberty and justice for all [SEP] [PAD] [PAD] [PAD]
+
+Generated 1: additional number of [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   massive impact [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: ha has states [SEP] elected party [SEP] [SEP] [SEP]
+Target 2:   democrats united [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 25 [0/334 (0%)] Loss: 0.950084
+Train Epoch: 25 [64/334 (19%)] Loss: 1.188892
+Train Epoch: 25 [128/334 (38%)] Loss: 0.992546
+Train Epoch: 25 [192/334 (57%)] Loss: 1.008957
+Train Epoch: 25 [256/334 (77%)] Loss: 0.885114
+
+[DEBUG] Validation Metrics:
+Loss: 3.8221
+Sim Loss: 1.0923
+Gen Loss: 4.9920
+Topic Accuracy: 0.6250
+Embedding Similarity: 0.2601
+
+Topic Predictions:
+Pred: 37 | True: 44
+Pred: 47 | True: 50
+Pred: 37 | True: 40
+
+Generation Samples:
+Generated 0: equal commitment [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   republican majority [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: nominate and the speaker [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   position of the speaker [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: nominate of the house [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 26 [0/334 (0%)] Loss: 0.806847
+Train Epoch: 26 [64/334 (19%)] Loss: 0.875680
+Train Epoch: 26 [128/334 (38%)] Loss: 0.839224
+Train Epoch: 26 [192/334 (57%)] Loss: 0.889242
+Train Epoch: 26 [256/334 (77%)] Loss: 1.121692
+
+[DEBUG] Validation Metrics:
+Loss: 3.5843
+Sim Loss: 0.0554
+Gen Loss: 5.0966
+Topic Accuracy: 0.9688
+Embedding Similarity: 0.2723
+
+Topic Predictions:
+Pred: 51 | True: 51
+Pred: 41 | True: 41
+Pred: 66 | True: 66
+
+Generation Samples:
+Generated 0: pledge and justice for all [SEP] [SEP] [SEP] [SEP]
+Target 0:   liberty and justice for all [SEP] [PAD] [PAD] [PAD]
+
+Generated 1: ha the for speaker the [SEP] [SEP] [SEP] [SEP]
+Target 1:   lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+Generated 2: equal package [SEP] [SEP]um business [SEP] [SEP] [SEP]
+Target 2:   rules resolution [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 27 [0/334 (0%)] Loss: 0.745897
+Train Epoch: 27 [64/334 (19%)] Loss: 0.759403
+Train Epoch: 27 [128/334 (38%)] Loss: 0.842746
+Train Epoch: 27 [192/334 (57%)] Loss: 0.831010
+Train Epoch: 27 [256/334 (77%)] Loss: 0.801579
+
+[DEBUG] Validation Metrics:
+Loss: 3.6348
+Sim Loss: 0.2435
+Gen Loss: 5.0882
+Topic Accuracy: 0.9062
+Embedding Similarity: 0.2780
+
+Topic Predictions:
+Pred: 68 | True: 68
+Pred: 58 | True: 58
+Pred: 52 | True: 52
+
+Generation Samples:
+Generated 0: abortion autonomy [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   bodily autonomy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: public public [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   political leaders [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: public to democracy service [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   commitment to public service [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 28 [0/334 (0%)] Loss: 0.761478
+Train Epoch: 28 [64/334 (19%)] Loss: 0.886105
+Train Epoch: 28 [128/334 (38%)] Loss: 0.801939
+Train Epoch: 28 [192/334 (57%)] Loss: 1.021764
+Train Epoch: 28 [256/334 (77%)] Loss: 0.908386
+
+[DEBUG] Validation Metrics:
+Loss: 3.5432
+Sim Loss: 0.0614
+Gen Loss: 5.0354
+Topic Accuracy: 0.9688
+Embedding Similarity: 0.2757
+
+Topic Predictions:
+Pred: 46 | True: 46
+Pred: 41 | True: 41
+Pred: 66 | True: 66
+
+Generation Samples:
+Generated 0: equal the [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   open rule process [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: elects [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   talented [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: conduct package [SEP] [SEP] network bill [SEP] [SEP] [SEP]
+Target 2:   rules resolution [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 29 [0/334 (0%)] Loss: 0.849590
+Train Epoch: 29 [64/334 (19%)] Loss: 0.653722
+Train Epoch: 29 [128/334 (38%)] Loss: 0.757902
+Train Epoch: 29 [192/334 (57%)] Loss: 0.796946
+Train Epoch: 29 [256/334 (77%)] Loss: 1.005592
+
+[DEBUG] Validation Metrics:
+Loss: 3.6909
+Sim Loss: 0.6024
+Gen Loss: 5.0146
+Topic Accuracy: 0.8750
+Embedding Similarity: 0.2726
+
+Topic Predictions:
+Pred: 44 | True: 44
+Pred: 36 | True: 36
+Pred: 46 | True: 46
+
+Generation Samples:
+Generated 0: nominate of the house [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: nominate and speaker speaker [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   government that is accountable [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: equal the [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   open rule process [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 30 [0/334 (0%)] Loss: 0.990622
+Train Epoch: 30 [64/334 (19%)] Loss: 0.685865
+Train Epoch: 30 [128/334 (38%)] Loss: 0.709240
+Train Epoch: 30 [192/334 (57%)] Loss: 0.890597
+Train Epoch: 30 [256/334 (77%)] Loss: 0.762548
+
+[DEBUG] Validation Metrics:
+Loss: 3.5426
+Sim Loss: 0.3556
+Gen Loss: 4.9084
+Topic Accuracy: 0.8438
+Embedding Similarity: 0.2716
+
+Topic Predictions:
+Pred: 36 | True: 43
+Pred: 41 | True: 41
+Pred: 68 | True: 68
+
+Generation Samples:
+Generated 0: honorable cast [SEP] [SEP] bill bill [SEP] [SEP] [SEP]
+Target 0:   votes cast [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: ha will states [SEP] leader [SEP] [SEP] [SEP] [SEP]
+Target 1:   democrats united [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: women autonomy [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   bodily autonomy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+

@@ -68,78 +68,7 @@
     {
       "name": "finance and financial sector",
       "quality_score": 1.0,
-      "subtopics": [
-        {
-          "name": "speaker of the house",
-          "phrases": [
-            [
-              "nominate kevin mccarthy",
-              -0.7220037579536438
-            ],
-            [
-              "nominate kevin mccarthy",
-              -0.7220037579536438
-            ],
-            [
-              "nominate kevin mccarthy",
-              -0.7220037579536438
-            ],
-            [
-              "speaker of the house",
-              -0.7263968586921692
-            ],
-            [
-              "speaker of the house",
-              -0.7263968586921692
-            ],
-            [
-              "speaker of the house",
-              -0.7263968586921692
-            ],
-            [
-              "kevin mccarthy",
-              -0.7523404955863953
-            ],
-            [
-              "trump for the united states",
-              -0.7933658957481384
-            ],
-            [
-              "byron donalds",
-              -0.79807448387146
-            ],
-            [
-              "byron donalds",
-              -0.79807448387146
-            ],
-            [
-              "hakeem jeffries for",
-              -0.8433794379234314
-            ],
-            [
-              "hakeem jeffries for",
-              -0.8433794379234314
-            ],
-            [
-              "speaker has not been elected",
-              -0.8750091791152954
-            ],
-            [
-              "one nation under god",
-              -0.9454167485237122
-            ],
-            [
-              "economic",
-              -0.9789918065071106
-            ],
-            [
-              "women ' s health most american",
-              -1.0143041610717773
-            ]
-          ],
-          "quality_score": 0.5224783044112356
-        }
-      ]
+      "subtopics": []
     },
     {
       "name": "foreign trade and international finance",

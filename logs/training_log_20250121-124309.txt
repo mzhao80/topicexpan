@@ -1,0 +1,6 @@
+Starting training at 20250121-124309
+Train Epoch: 1 [0/334 (0%)] Loss: 9.339973
+Train Epoch: 1 [64/334 (19%)] Loss: 9.870651
+Train Epoch: 1 [128/334 (38%)] Loss: 6.374644
+Train Epoch: 1 [192/334 (57%)] Loss: 5.892828
+Train Epoch: 1 [256/334 (77%)] Loss: 5.724485

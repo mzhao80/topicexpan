@@ -1,0 +1,41 @@
+Starting training at 20250121-122225
+
+[DEBUG] Model Outputs:
+Similarity scores shape: torch.Size([32, 74])
+Score range: [-0.099, 0.962]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 40 | True: 36
+Pred: 60 | True: 42
+Pred: 40 | True: 44
+
+Phrase Generation Sample:
+Generated: nell nell nell nell ellis „osition nell „
+Target: [CLS] nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Loss Values:
+Similarity Loss (raw): 6.0955
+Generation Loss (raw): 8.2741
+Weighted Sim Loss: 1.8286
+Weighted Gen Loss: 5.7919
+Total Loss: 7.6205
+Topic Prediction Accuracy: 0.0000
+Generation Perplexity: 3921.0981
+
+Sample Generations:
+Generated 0: nell nell nell nell ellis „osition nell „
+Target 0:   [CLS] nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: tagged taggedpan fra isolation [SEP]connected approaching numbered
+Target 1:   [CLS] bring that under control [SEP] [PAD] [PAD] [PAD]
+
+Generated 2: basket defendingand ya finallyand fixedand lt
+Target 2:   [CLS] protect that speaker ' s gave [SEP] [PAD]
+
+Train Epoch: 1 [0/334 (0%)] Loss: 7.620530
+Train Epoch: 1 [64/334 (19%)] Loss: 7.836956
+Train Epoch: 1 [128/334 (38%)] Loss: 4.221684
+Train Epoch: 1 [192/334 (57%)] Loss: 3.453493
+Train Epoch: 1 [256/334 (77%)] Loss: 3.206149
+[2025-01-21 12:22:30] Starting validation for epoch: 1

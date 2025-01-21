@@ -1,0 +1,58 @@
+Starting training at 20250121-130631
+Train Epoch: 1 [0/334 (0%)] Loss: 9.339973
+Train Epoch: 1 [64/334 (19%)] Loss: 9.870651
+Train Epoch: 1 [128/334 (38%)] Loss: 6.374649
+Train Epoch: 1 [192/334 (57%)] Loss: 5.892800
+Train Epoch: 1 [256/334 (77%)] Loss: 5.724450
+
+[DEBUG] Validation Metrics:
+Loss: 5.3936
+Sim Loss: 2.8260
+Gen Loss: 6.4939
+Topic Accuracy: 0.2812
+Embedding Similarity: 0.2685
+
+Topic Predictions:
+Pred: 65 | True: 52
+Pred: 36 | True: 36
+Pred: 65 | True: 52
+
+Generation Samples:
+Generated 0: [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   commitment to public service [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   public service [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 2 [0/334 (0%)] Loss: 5.515593
+Train Epoch: 2 [64/334 (19%)] Loss: 5.212008
+Train Epoch: 2 [128/334 (38%)] Loss: 5.055587
+Train Epoch: 2 [192/334 (57%)] Loss: 4.801480
+Train Epoch: 2 [256/334 (77%)] Loss: 5.142041
+
+[DEBUG] Validation Metrics:
+Loss: 4.6496
+Sim Loss: 1.4916
+Gen Loss: 6.0030
+Topic Accuracy: 0.4688
+Embedding Similarity: 0.2736
+
+Topic Predictions:
+Pred: 40 | True: 40
+Pred: 36 | True: 41
+Pred: 70 | True: 73
+
+Generation Samples:
+Generated 0: of [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: of [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+Generated 2: of [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   criminalizes abortion [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 3 [0/334 (0%)] Loss: 4.695045

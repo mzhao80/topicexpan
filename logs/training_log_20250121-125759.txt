@@ -1,0 +1,1006 @@
+Starting training at 20250121-125759
+
+[DEBUG] Model Outputs:
+Score range: [-0.099, 0.962]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 40 | True: 36
+Pred: 60 | True: 42
+Pred: 40 | True: 44
+
+Phrase Generation Sample:
+Generated: nell nell nell nell ellis „osition nell „
+Target: [CLS] nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Loss Values:
+Similarity Loss (raw): 6.0955
+Generation Loss (raw): 8.2741
+Weighted Sim Loss: 1.8286
+Weighted Gen Loss: 5.7919
+Total Loss: 7.6205
+Topic Prediction Accuracy: 0.0000
+Generation Perplexity: 3921.0981
+
+Sample Generations:
+Generated 0: nell nell nell nell ellis „osition nell „
+Target 0:   [CLS] nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: tagged taggedpan fra isolation [SEP]connected approaching numbered
+Target 1:   [CLS] bring that under control [SEP] [PAD] [PAD] [PAD]
+
+Generated 2: basket defendingand ya finallyand fixedand lt
+Target 2:   [CLS] protect that speaker ' s gave [SEP] [PAD]
+
+Train Epoch: 1 [0/334 (0%)] Loss: 7.620530
+Train Epoch: 1 [64/334 (19%)] Loss: 7.836956
+Train Epoch: 1 [128/334 (38%)] Loss: 4.221684
+Train Epoch: 1 [192/334 (57%)] Loss: 3.453493
+Train Epoch: 1 [256/334 (77%)] Loss: 3.206149
+[2025-01-21 12:58:04] Starting validation for epoch: 1
+
+Generation Samples:
+Topic 52:
+Generated: [CLS] commitment to [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: commitment to public service [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS] nation [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 52:
+Generated: [CLS] public service [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: public service [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+
+Generation Samples:
+Topic 52:
+Generated: [CLS] [CLS] congressional casework [SEP] [SEP] [SEP] [SEP]
+Target: compassionate congressional caseworkers [SEP] [PAD] [PAD] [PAD]
+
+Topic 43:
+Generated: [CLS] [CLS] donalds [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 68:
+Generated: [CLS] [CLS] leader [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: bodily autonomy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+
+[DEBUG] Model Outputs:
+Score range: [-0.528, 2.053]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 40 | True: 65
+Pred: 41 | True: 41
+Pred: 40 | True: 64
+
+Phrase Generation Sample:
+Generated: [CLS] [CLS] oil company to political and [SEP] [SEP]
+Target: [CLS] big oil companies to pollute [SEP] [PAD]
+
+[DEBUG] Loss Values:
+Similarity Loss (raw): 2.3624
+Generation Loss (raw): 2.6674
+Weighted Sim Loss: 0.7087
+Weighted Gen Loss: 1.8672
+Total Loss: 2.5759
+Topic Prediction Accuracy: 0.4062
+Generation Perplexity: 14.4020
+
+Sample Generations:
+Generated 0: [CLS] [CLS] oil company to political and [SEP] [SEP]
+Target 0:   [CLS] big oil companies to pollute [SEP] [PAD]
+
+Generated 1: [CLS] congressional [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   [CLS] passionate [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: [CLS] [CLS] appear by the of [SEP] [SEP] [SEP]
+Target 2:   [CLS] bills appear by dark of night [SEP] [PAD]
+
+Train Epoch: 2 [0/334 (0%)] Loss: 2.575890
+Train Epoch: 2 [64/334 (19%)] Loss: 2.498658
+Train Epoch: 2 [128/334 (38%)] Loss: 2.043908
+Train Epoch: 2 [192/334 (57%)] Loss: 1.870513
+Train Epoch: 2 [256/334 (77%)] Loss: 1.360460
+[2025-01-21 12:58:08] Starting validation for epoch: 2
+
+Generation Samples:
+Topic 44:
+Generated: [CLS] nominate kevin mccarthy [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 45:
+Generated: [CLS] [CLS] [CLS]sh voices [SEP] [SEP] [SEP] [SEP]
+Target: diminish voices [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 58:
+Generated: [CLS] political leaders [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: political leaders [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+
+Generation Samples:
+Topic 36:
+Generated: [CLS] government and [SEP] accountable [SEP] [SEP] [SEP] [SEP]
+Target: government that is accountable [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 47:
+Generated: [CLS] nominate the american from american [SEP] [SEP] [SEP]
+Target: nominate the gentleman from oklahoma [SEP] [PAD] [PAD] [PAD]
+
+Topic 40:
+Generated: [CLS] speaker of the house [SEP] [SEP] [SEP] [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+
+[DEBUG] Model Outputs:
+Score range: [-0.686, 2.007]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 43 | True: 39
+Pred: 45 | True: 45
+Pred: 55 | True: 55
+
+Phrase Generation Sample:
+Generated: [CLS] donald j. trump [SEP] [SEP] [SEP] [SEP]
+Target: [CLS] donald j. trump [SEP] [PAD] [PAD] [PAD]
+
+[DEBUG] Loss Values:
+Similarity Loss (raw): 1.0481
+Generation Loss (raw): 1.5301
+Weighted Sim Loss: 0.3144
+Weighted Gen Loss: 1.0711
+Total Loss: 1.3855
+Topic Prediction Accuracy: 0.7500
+Generation Perplexity: 4.6188
+
+Sample Generations:
+Generated 0: [CLS] donald j. trump [SEP] [SEP] [SEP] [SEP]
+Target 0:   [CLS] donald j. trump [SEP] [PAD] [PAD] [PAD]
+
+Generated 1: [CLS] republican him of legislation of relationships [SEP] of
+Target 1:   [CLS] disintegration of relationships [SEP] [PAD]
+
+Generated 2: [CLS] planning and resources [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   [CLS] planning and resources [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 3 [0/334 (0%)] Loss: 1.385522
+Train Epoch: 3 [64/334 (19%)] Loss: 1.293080
+Train Epoch: 3 [128/334 (38%)] Loss: 0.898398
+Train Epoch: 3 [192/334 (57%)] Loss: 0.784719
+Train Epoch: 3 [256/334 (77%)] Loss: 1.195385
+[2025-01-21 12:58:12] Starting validation for epoch: 3
+
+Generation Samples:
+Topic 41:
+Generated: [CLS] talented [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: talented [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] lead vote - getter [SEP] [SEP] and
+Target: lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+Topic 40:
+Generated: [CLS] speaker of the house [SEP] [SEP] [SEP] [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+
+Generation Samples:
+Topic 41:
+Generated: [CLS] lead vote - getter [SEP] [SEP] and
+Target: lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+Topic 55:
+Generated: [CLS] local businesses [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: local businesses [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 44:
+Generated: [CLS] nominate kevin mccarthy [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+
+[DEBUG] Model Outputs:
+Score range: [-0.721, 2.233]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 41 | True: 41
+Pred: 56 | True: 56
+Pred: 36 | True: 36
+
+Phrase Generation Sample:
+Generated: [CLS] responsibility to serve our constituents [SEP] [SEP] [SEP]
+Target: [CLS] responsibility to serve our constituents [SEP] [PAD] [PAD]
+
+[DEBUG] Loss Values:
+Similarity Loss (raw): 0.4061
+Generation Loss (raw): 0.9689
+Weighted Sim Loss: 0.1218
+Weighted Gen Loss: 0.6782
+Total Loss: 0.8000
+Topic Prediction Accuracy: 0.9062
+Generation Perplexity: 2.6350
+
+Sample Generations:
+Generated 0: [CLS] responsibility to serve our constituents [SEP] [SEP] [SEP]
+Target 0:   [CLS] responsibility to serve our constituents [SEP] [PAD] [PAD]
+
+Generated 1: [CLS] mrs. thomas ' s 90 [SEP] [SEP]
+Target 1:   [CLS] mrs. thomas ' s 90 [SEP] [PAD]
+
+Generated 2: [CLS] speaker of the house [SEP] [SEP] [SEP] [SEP]
+Target 2:   [CLS] speaker of the house [SEP] [PAD] [PAD] [PAD]
+
+Train Epoch: 4 [0/334 (0%)] Loss: 0.800031
+Train Epoch: 4 [64/334 (19%)] Loss: 0.573014
+Train Epoch: 4 [128/334 (38%)] Loss: 0.888526
+Train Epoch: 4 [192/334 (57%)] Loss: 0.532784
+Train Epoch: 4 [256/334 (77%)] Loss: 0.631924
+[2025-01-21 12:58:16] Starting validation for epoch: 4
+
+Generation Samples:
+Topic 52:
+Generated: [CLS] commitment to public service [SEP] [SEP] [SEP] [SEP]
+Target: commitment to public service [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 45:
+Generated: [CLS] diminish voices [SEP] [SEP] [SEP] [SEP]
+Target: diminish voices [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] talented [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: talented [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+
+Generation Samples:
+Topic 64:
+Generated: [CLS] written in rooms behind closed doors [SEP] [SEP]
+Target: written in rooms behind closed doors [SEP] [PAD] [PAD]
+
+Topic 51:
+Generated: [CLS] liberty and justice for all [SEP] [SEP] [SEP]
+Target: liberty and justice for all [SEP] [PAD] [PAD] [PAD]
+
+Topic 52:
+Generated: [CLS] commitment to public service [SEP] [SEP] [SEP] [SEP]
+Target: commitment to public service [SEP] [PAD] [PAD] [PAD] [PAD]
+
+
+[DEBUG] Model Outputs:
+Score range: [-0.976, 2.136]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 38 | True: 38
+Pred: 45 | True: 45
+Pred: 40 | True: 40
+
+Phrase Generation Sample:
+Generated: [CLS] more byron donalds [SEP] [SEP] [SEP] [SEP]
+Target: [CLS] more byron donalds [SEP] [PAD] [PAD] [PAD]
+
+[DEBUG] Loss Values:
+Similarity Loss (raw): 0.7845
+Generation Loss (raw): 0.4414
+Weighted Sim Loss: 0.2354
+Weighted Gen Loss: 0.3090
+Total Loss: 0.5444
+Topic Prediction Accuracy: 0.8750
+Generation Perplexity: 1.5549
+
+Sample Generations:
+Generated 0: [CLS] more byron donalds [SEP] [SEP] [SEP] [SEP]
+Target 0:   [CLS] more byron donalds [SEP] [PAD] [PAD] [PAD]
+
+Generated 1: [CLS] equal representation [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   [CLS] equal representation [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: [CLS] right the wrongs [SEP] [SEP] [SEP] [SEP]
+Target 2:   [CLS] right the wrongs [SEP] [PAD] [PAD] [PAD]
+
+Train Epoch: 5 [0/334 (0%)] Loss: 0.544365
+Train Epoch: 5 [64/334 (19%)] Loss: 0.426800
+Train Epoch: 5 [128/334 (38%)] Loss: 0.437192
+Train Epoch: 5 [192/334 (57%)] Loss: 0.352609
+Train Epoch: 5 [256/334 (77%)] Loss: 0.209205
+[2025-01-21 12:58:20] Starting validation for epoch: 5
+
+Generation Samples:
+Topic 44:
+Generated: [CLS] speaker of the house [SEP] [SEP] [SEP] [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS] government that is accountable [SEP] [SEP] [SEP] [SEP]
+Target: government that is accountable [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 58:
+Generated: [CLS] political leaders [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: political leaders [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+
+Generation Samples:
+Topic 66:
+Generated: [CLS] rules resolution [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: rules resolution [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS] government that is accountable [SEP] [SEP] [SEP] [SEP]
+Target: government that is accountable [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] lead vote - getter [SEP] [SEP] [SEP]
+Target: lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+
+[DEBUG] Model Outputs:
+Score range: [-0.751, 2.355]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 56 | True: 58
+Pred: 69 | True: 69
+Pred: 56 | True: 58
+
+Phrase Generation Sample:
+Generated: [CLS] leadership development [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: [CLS] leadership development [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Loss Values:
+Similarity Loss (raw): 0.5373
+Generation Loss (raw): 0.2443
+Weighted Sim Loss: 0.1612
+Weighted Gen Loss: 0.1710
+Total Loss: 0.3322
+Topic Prediction Accuracy: 0.8438
+Generation Perplexity: 1.2768
+
+Sample Generations:
+Generated 0: [CLS] leadership development [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   [CLS] leadership development [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: [CLS] fiscal prosperity [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   [CLS] fiscal prosperity [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: [CLS] thoughtful dialogue [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 2:   [CLS] thoughtful dialogue [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 6 [0/334 (0%)] Loss: 0.332217
+Train Epoch: 6 [64/334 (19%)] Loss: 0.431590
+Train Epoch: 6 [128/334 (38%)] Loss: 0.433981
+Train Epoch: 6 [192/334 (57%)] Loss: 0.278306
+Train Epoch: 6 [256/334 (77%)] Loss: 0.251911
+[2025-01-21 12:58:29] Starting validation for epoch: 6
+
+Generation Samples:
+Topic 46:
+Generated: [CLS] collaborate and craft legislation [SEP] [SEP] [SEP] [SEP]
+Target: collaborate and craft legislation [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 61:
+Generated: [CLS] officer training [SEP] and and [SEP] [SEP] and
+Target: officer training [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS] government that is accountable [SEP] [SEP] [SEP] [SEP]
+Target: government that is accountable [SEP] [PAD] [PAD] [PAD] [PAD]
+
+
+Generation Samples:
+Topic 46:
+Generated: [CLS] open rule process [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: open rule process [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 52:
+Generated: [CLS] compassionate congressional caseworkers [SEP] [SEP] [SEP]
+Target: compassionate congressional caseworkers [SEP] [PAD] [PAD] [PAD]
+
+Topic 44:
+Generated: [CLS] speaker of the house [SEP] [SEP] [SEP] [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+
+[DEBUG] Model Outputs:
+Score range: [-0.655, 2.485]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 40 | True: 40
+Pred: 37 | True: 37
+Pred: 63 | True: 63
+
+Phrase Generation Sample:
+Generated: [CLS] nominate kevin mccarthy [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: [CLS] nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Loss Values:
+Similarity Loss (raw): 0.1219
+Generation Loss (raw): 0.1296
+Weighted Sim Loss: 0.0366
+Weighted Gen Loss: 0.0907
+Total Loss: 0.1273
+Topic Prediction Accuracy: 1.0000
+Generation Perplexity: 1.1384
+
+Sample Generations:
+Generated 0: [CLS] nominate kevin mccarthy [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 0:   [CLS] nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: [CLS] john lewis voting rights advancement act [SEP] [SEP]
+Target 1:   [CLS] john lewis voting rights advancement act [SEP] [PAD]
+
+Generated 2: [CLS] adoption of the rules [SEP] [SEP] [SEP] [SEP]
+Target 2:   [CLS] adoption of the rules [SEP] [PAD] [PAD] [PAD]
+
+Train Epoch: 7 [0/334 (0%)] Loss: 0.127298
+Train Epoch: 7 [64/334 (19%)] Loss: 0.240113
+Train Epoch: 7 [128/334 (38%)] Loss: 0.173209
+Train Epoch: 7 [192/334 (57%)] Loss: 0.216609
+Train Epoch: 7 [256/334 (77%)] Loss: 0.173691
+[2025-01-21 12:58:33] Starting validation for epoch: 7
+
+Generation Samples:
+Topic 58:
+Generated: [CLS] political leaders [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: political leaders [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 43:
+Generated: [CLS] byron donalds [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 73:
+Generated: [CLS] criminalizes abortion [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: criminalizes abortion [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+
+Generation Samples:
+Topic 41:
+Generated: [CLS] democrats united [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: democrats united [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 38:
+Generated: [CLS] byron donalds [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 44:
+Generated: [CLS] speaker of the house [SEP] [SEP] [SEP] [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+
+[DEBUG] Model Outputs:
+Score range: [-0.873, 2.381]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 70 | True: 70
+Pred: 39 | True: 39
+Pred: 65 | True: 65
+
+Phrase Generation Sample:
+Generated: [CLS] women ' s rights to reproductive [SEP] and
+Target: [CLS] women ' s rights to reproductive [SEP] [PAD]
+
+[DEBUG] Loss Values:
+Similarity Loss (raw): 0.3671
+Generation Loss (raw): 0.1180
+Weighted Sim Loss: 0.1101
+Weighted Gen Loss: 0.0826
+Total Loss: 0.1927
+Topic Prediction Accuracy: 0.8438
+Generation Perplexity: 1.1252
+
+Sample Generations:
+Generated 0: [CLS] women ' s rights to reproductive [SEP] and
+Target 0:   [CLS] women ' s rights to reproductive [SEP] [PAD]
+
+Generated 1: [CLS] hakeem jeffries [SEP] [SEP] [SEP]
+Target 1:   [CLS] hakeem jeffries [SEP] [PAD] [PAD]
+
+Generated 2: [CLS] not interested in governing [SEP] [SEP] [SEP] and
+Target 2:   [CLS] not interested in governing [SEP] [PAD] [PAD] [PAD]
+
+Train Epoch: 8 [0/334 (0%)] Loss: 0.192712
+Train Epoch: 8 [64/334 (19%)] Loss: 0.089490
+Train Epoch: 8 [128/334 (38%)] Loss: 0.198322
+Train Epoch: 8 [192/334 (57%)] Loss: 0.177608
+Train Epoch: 8 [256/334 (77%)] Loss: 0.213784
+[2025-01-21 12:58:37] Starting validation for epoch: 8
+
+Generation Samples:
+Topic 58:
+Generated: [CLS] political leaders [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: political leaders [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] historic dysfunction [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: historic dysfunction [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 44:
+Generated: [CLS] speaker of the house [SEP] [SEP] [SEP] [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+
+Generation Samples:
+Topic 41:
+Generated: [CLS] talented [SEP] [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: talented [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 52:
+Generated: [CLS] compassionate congressional caseworkers [SEP] [SEP] [SEP]
+Target: compassionate congressional caseworkers [SEP] [PAD] [PAD] [PAD]
+
+Topic 59:
+Generated: [CLS] massive impact [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: massive impact [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+
+[DEBUG] Model Outputs:
+Score range: [-0.932, 2.258]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 36 | True: 36
+Pred: 55 | True: 55
+Pred: 65 | True: 65
+
+Phrase Generation Sample:
+Generated: [CLS] leader mccarthy [SEP] and [SEP] [SEP] [SEP] and
+Target: [CLS] leader mccarthy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Loss Values:
+Similarity Loss (raw): 0.8473
+Generation Loss (raw): 0.0797
+Weighted Sim Loss: 0.2542
+Weighted Gen Loss: 0.0558
+Total Loss: 0.3100
+Topic Prediction Accuracy: 0.6875
+Generation Perplexity: 1.0830
+
+Sample Generations:
+Generated 0: [CLS] leader mccarthy [SEP] and [SEP] [SEP] [SEP] and
+Target 0:   [CLS] leader mccarthy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: [CLS] business friendly [SEP] [SEP] and [SEP] [SEP] [SEP]
+Target 1:   [CLS] business friendly [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: [CLS] avoid paying their taxes [SEP] [SEP] [SEP] [SEP]
+Target 2:   [CLS] avoid paying their taxes [SEP] [PAD] [PAD] [PAD]
+
+Train Epoch: 9 [0/334 (0%)] Loss: 0.310012
+Train Epoch: 9 [64/334 (19%)] Loss: 0.236242
+Train Epoch: 9 [128/334 (38%)] Loss: 0.164360
+Train Epoch: 9 [192/334 (57%)] Loss: 0.122867
+Train Epoch: 9 [256/334 (77%)] Loss: 0.159570
+[2025-01-21 12:58:41] Starting validation for epoch: 9
+
+Generation Samples:
+Topic 59:
+Generated: [CLS] spiritual guidance [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: spiritual guidance [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 43:
+Generated: [CLS] votes cast [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: votes cast [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] lead vote - getter [SEP] [SEP] [SEP]
+Target: lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+
+Generation Samples:
+Topic 65:
+Generated: [CLS] attack women ' s access to [SEP] [SEP]
+Target: attack women ' s access to [SEP] [PAD] [PAD]
+
+Topic 59:
+Generated: [CLS] massive impact [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: massive impact [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 47:
+Generated: [CLS] nominate the gentleman from oklahoma [SEP] [SEP] [SEP]
+Target: nominate the gentleman from oklahoma [SEP] [PAD] [PAD] [PAD]
+
+
+[DEBUG] Model Outputs:
+Score range: [-0.791, 2.595]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 40 | True: 40
+Pred: 43 | True: 43
+Pred: 39 | True: 39
+
+Phrase Generation Sample:
+Generated: [CLS] right the wrongs [SEP] [SEP] [SEP] [SEP]
+Target: [CLS] right the wrongs [SEP] [PAD] [PAD] [PAD]
+
+[DEBUG] Loss Values:
+Similarity Loss (raw): 0.2311
+Generation Loss (raw): 0.0367
+Weighted Sim Loss: 0.0693
+Weighted Gen Loss: 0.0257
+Total Loss: 0.0950
+Topic Prediction Accuracy: 0.9688
+Generation Perplexity: 1.0373
+
+Sample Generations:
+Generated 0: [CLS] right the wrongs [SEP] [SEP] [SEP] [SEP]
+Target 0:   [CLS] right the wrongs [SEP] [PAD] [PAD] [PAD]
+
+Generated 1: [CLS] majority of the votes cast [SEP] [SEP] [SEP]
+Target 1:   [CLS] majority of the votes cast [SEP] [PAD] [PAD]
+
+Generated 2: [CLS] donald j. trump [SEP] [SEP] [SEP] [SEP]
+Target 2:   [CLS] donald j. trump [SEP] [PAD] [PAD] [PAD]
+
+Train Epoch: 10 [0/334 (0%)] Loss: 0.094998
+Train Epoch: 10 [64/334 (19%)] Loss: 0.128637
+Train Epoch: 10 [128/334 (38%)] Loss: 0.297669
+Train Epoch: 10 [192/334 (57%)] Loss: 0.153656
+Train Epoch: 10 [256/334 (77%)] Loss: 0.258433
+[2025-01-21 12:58:44] Starting validation for epoch: 10
+
+Generation Samples:
+Topic 41:
+Generated: [CLS] historic dysfunction [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: historic dysfunction [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 59:
+Generated: [CLS] massive impact [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: massive impact [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS] government that is accountable [SEP] [SEP] [SEP] [SEP]
+Target: government that is accountable [SEP] [PAD] [PAD] [PAD] [PAD]
+
+
+Generation Samples:
+Topic 36:
+Generated: [CLS] government that is accountable [SEP] [SEP] [SEP] [SEP]
+Target: government that is accountable [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 50:
+Generated: [CLS] position of the speaker [SEP] [SEP] [SEP] [SEP]
+Target: position of the speaker [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 73:
+Generated: [CLS] criminalizes abortion [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: criminalizes abortion [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+
+[DEBUG] Model Outputs:
+Score range: [-0.947, 2.794]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 47 | True: 47
+Pred: 58 | True: 58
+Pred: 34 | True: 34
+
+Phrase Generation Sample:
+Generated: [CLS] speaker of the house [SEP] [SEP] [SEP] [SEP]
+Target: [CLS] speaker of the house [SEP] [PAD] [PAD] [PAD]
+
+[DEBUG] Loss Values:
+Similarity Loss (raw): 0.7030
+Generation Loss (raw): 0.0376
+Weighted Sim Loss: 0.2109
+Weighted Gen Loss: 0.0263
+Total Loss: 0.2372
+Topic Prediction Accuracy: 0.8125
+Generation Perplexity: 1.0383
+
+Sample Generations:
+Generated 0: [CLS] speaker of the house [SEP] [SEP] [SEP] [SEP]
+Target 0:   [CLS] speaker of the house [SEP] [PAD] [PAD] [PAD]
+
+Generated 1: [CLS] civic life [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   [CLS] civic life [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: [CLS] pledge of allegiance [SEP] and and [SEP] [SEP]
+Target 2:   [CLS] pledge of allegiance [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 11 [0/334 (0%)] Loss: 0.237238
+Train Epoch: 11 [64/334 (19%)] Loss: 0.093967
+Train Epoch: 11 [128/334 (38%)] Loss: 0.100759
+Train Epoch: 11 [192/334 (57%)] Loss: 0.033926
+Train Epoch: 11 [256/334 (77%)] Loss: 0.441974
+[2025-01-21 12:58:54] Starting validation for epoch: 11
+
+Generation Samples:
+Topic 58:
+Generated: [CLS] political leaders [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: political leaders [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 44:
+Generated: [CLS] speaker of the house [SEP] [SEP] [SEP] [SEP]
+Target: speaker of the house [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 52:
+Generated: [CLS] commitment to public service [SEP] [SEP] [SEP] [SEP]
+Target: commitment to public service [SEP] [PAD] [PAD] [PAD] [PAD]
+
+
+Generation Samples:
+Topic 44:
+Generated: [CLS] nominate kevin mccarthy [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS] government that is accountable [SEP] [SEP] [SEP] [SEP]
+Target: government that is accountable [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 61:
+Generated: [CLS] officer training [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: officer training [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+
+[DEBUG] Model Outputs:
+Score range: [-1.186, 2.331]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 38 | True: 38
+Pred: 39 | True: 41
+Pred: 38 | True: 38
+
+Phrase Generation Sample:
+Generated: [CLS] more byron donalds [SEP] [SEP] and [SEP]
+Target: [CLS] more byron donalds [SEP] [PAD] [PAD] [PAD]
+
+[DEBUG] Loss Values:
+Similarity Loss (raw): 0.4271
+Generation Loss (raw): 0.0387
+Weighted Sim Loss: 0.1281
+Weighted Gen Loss: 0.0271
+Total Loss: 0.1552
+Topic Prediction Accuracy: 0.7812
+Generation Perplexity: 1.0394
+
+Sample Generations:
+Generated 0: [CLS] more byron donalds [SEP] [SEP] and [SEP]
+Target 0:   [CLS] more byron donalds [SEP] [PAD] [PAD] [PAD]
+
+Generated 1: [CLS] democratic caucus [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   [CLS] democratic caucus [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: [CLS] man of personal conviction [SEP] [SEP] [SEP] [SEP]
+Target 2:   [CLS] man of personal conviction [SEP] [PAD] [PAD] [PAD]
+
+Train Epoch: 12 [0/334 (0%)] Loss: 0.155214
+Train Epoch: 12 [64/334 (19%)] Loss: 0.075946
+Train Epoch: 12 [128/334 (38%)] Loss: 0.101370
+Train Epoch: 12 [192/334 (57%)] Loss: 0.262368
+Train Epoch: 12 [256/334 (77%)] Loss: 0.157921
+[2025-01-21 12:58:58] Starting validation for epoch: 12
+
+Generation Samples:
+Topic 43:
+Generated: [CLS] byron donalds [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 52:
+Generated: [CLS] commitment to public service [SEP] [SEP] [SEP] [SEP]
+Target: commitment to public service [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] democrats united [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: democrats united [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+
+Generation Samples:
+Topic 46:
+Generated: [CLS] open rule process [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: open rule process [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 44:
+Generated: [CLS] nominate kevin mccarthy [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: nominate kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] democrats united [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: democrats united [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+
+[DEBUG] Model Outputs:
+Score range: [-1.093, 2.320]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 65 | True: 65
+Pred: 43 | True: 43
+Pred: 38 | True: 67
+
+Phrase Generation Sample:
+Generated: [CLS] billionaires and big corporations [SEP] [SEP] and
+Target: [CLS] billionaires and big corporations [SEP] [PAD] [PAD]
+
+[DEBUG] Loss Values:
+Similarity Loss (raw): 0.6913
+Generation Loss (raw): 0.0247
+Weighted Sim Loss: 0.2074
+Weighted Gen Loss: 0.0173
+Total Loss: 0.2247
+Topic Prediction Accuracy: 0.8125
+Generation Perplexity: 1.0250
+
+Sample Generations:
+Generated 0: [CLS] billionaires and big corporations [SEP] [SEP] and
+Target 0:   [CLS] billionaires and big corporations [SEP] [PAD] [PAD]
+
+Generated 1: [CLS] kevin mccarthy [SEP] and and name and and
+Target 1:   [CLS] kevin mccarthy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: [CLS] reduce the national debt [SEP] [SEP] [SEP] [SEP]
+Target 2:   [CLS] reduce the national debt [SEP] [PAD] [PAD] [PAD]
+
+Train Epoch: 13 [0/334 (0%)] Loss: 0.224693
+Train Epoch: 13 [64/334 (19%)] Loss: 0.112829
+Train Epoch: 13 [128/334 (38%)] Loss: 0.091045
+Train Epoch: 13 [192/334 (57%)] Loss: 0.320057
+Train Epoch: 13 [256/334 (77%)] Loss: 0.115780
+[2025-01-21 12:59:02] Starting validation for epoch: 13
+
+Generation Samples:
+Topic 46:
+Generated: [CLS] collaborate and craft legislation [SEP] [SEP] [SEP] [SEP]
+Target: collaborate and craft legislation [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 66:
+Generated: [CLS] rules resolution [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: rules resolution [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 64:
+Generated: [CLS] written in rooms behind closed doors [SEP] [SEP]
+Target: written in rooms behind closed doors [SEP] [PAD] [PAD]
+
+
+Generation Samples:
+Topic 52:
+Generated: [CLS] commitment to public service [SEP] [SEP] [SEP] [SEP]
+Target: commitment to public service [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 58:
+Generated: [CLS] civic engagement program [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: civic engagement program [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 55:
+Generated: [CLS] local businesses [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: local businesses [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+
+[DEBUG] Model Outputs:
+Score range: [-0.996, 2.642]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 51 | True: 35
+Pred: 47 | True: 47
+Pred: 46 | True: 46
+
+Phrase Generation Sample:
+Generated: [CLS] order and decorum [SEP] [SEP] [SEP] [SEP]
+Target: [CLS] order and decorum [SEP] [PAD] [PAD] [PAD]
+
+[DEBUG] Loss Values:
+Similarity Loss (raw): 0.5640
+Generation Loss (raw): 0.0131
+Weighted Sim Loss: 0.1692
+Weighted Gen Loss: 0.0091
+Total Loss: 0.1783
+Topic Prediction Accuracy: 0.8125
+Generation Perplexity: 1.0132
+
+Sample Generations:
+Generated 0: [CLS] order and decorum [SEP] [SEP] [SEP] [SEP]
+Target 0:   [CLS] order and decorum [SEP] [PAD] [PAD] [PAD]
+
+Generated 1: [CLS] small business owner [SEP] [SEP] [SEP] [SEP] [SEP]
+Target 1:   [CLS] small business owner [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Generated 2: [CLS] equal representation [SEP] [SEP] [SEP] [SEP] [SEP] and
+Target 2:   [CLS] equal representation [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 14 [0/334 (0%)] Loss: 0.178349
+Train Epoch: 14 [64/334 (19%)] Loss: 0.250455
+Train Epoch: 14 [128/334 (38%)] Loss: 0.313163
+Train Epoch: 14 [192/334 (57%)] Loss: 0.031604
+Train Epoch: 14 [256/334 (77%)] Loss: 0.421786
+[2025-01-21 12:59:06] Starting validation for epoch: 14
+
+Generation Samples:
+Topic 58:
+Generated: [CLS] civic engagement programs [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: civic engagement program [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 43:
+Generated: [CLS] byron donalds [SEP] and and and and
+Target: byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 64:
+Generated: [CLS] written in rooms behind closed doors [SEP] [SEP]
+Target: written in rooms behind closed doors [SEP] [PAD] [PAD]
+
+
+Generation Samples:
+Topic 41:
+Generated: [CLS] historic dysfunction [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: historic dysfunction [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 36:
+Generated: [CLS] nation that is safe [SEP] [SEP] [SEP] [SEP]
+Target: nation that is safe [SEP] [PAD] [PAD] [PAD] [PAD]
+
+Topic 51:
+Generated: [CLS] liberty and justice for all [SEP] [SEP] and
+Target: liberty and justice for all [SEP] [PAD] [PAD] [PAD]
+
+
+[DEBUG] Model Outputs:
+Score range: [-1.040, 2.494]
+Generation logits shape: torch.Size([32, 9, 30522])
+
+Topic Prediction Sample:
+Pred: 61 | True: 61
+Pred: 44 | True: 43
+Pred: 71 | True: 71
+
+Phrase Generation Sample:
+Generated: [CLS] public service [SEP] and and [SEP] [SEP] [SEP]
+Target: [CLS] public service [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+[DEBUG] Loss Values:
+Similarity Loss (raw): 0.7088
+Generation Loss (raw): 0.0174
+Weighted Sim Loss: 0.2126
+Weighted Gen Loss: 0.0122
+Total Loss: 0.2248
+Topic Prediction Accuracy: 0.7500
+Generation Perplexity: 1.0176
+
+Sample Generations:
+Generated 0: [CLS] public service [SEP] and and [SEP] [SEP] [SEP]
+Target 0:   [CLS] public service [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Generated 1: [CLS] speaker has not been elected [SEP] and and
+Target 1:   [CLS] speaker has not been elected [SEP] [PAD] [PAD]
+
+Generated 2: [CLS] proper oversight [SEP] and and [SEP] and [SEP]
+Target 2:   [CLS] proper oversight [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Train Epoch: 15 [0/334 (0%)] Loss: 0.224826
+Train Epoch: 15 [64/334 (19%)] Loss: 0.202867
+Train Epoch: 15 [128/334 (38%)] Loss: 0.335719
+Train Epoch: 15 [192/334 (57%)] Loss: 0.112176
+Train Epoch: 15 [256/334 (77%)] Loss: 0.067868
+[2025-01-21 12:59:09] Starting validation for epoch: 15
+
+Generation Samples:
+Topic 61:
+Generated: [CLS] officer training [SEP] and and and and and
+Target: officer training [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 59:
+Generated: [CLS] massive impact [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: massive impact [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 44:
+Generated: [CLS] republican majority [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: republican majority [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+
+Generation Samples:
+Topic 38:
+Generated: [CLS] byron donalds [SEP] and and [SEP] and
+Target: byron donalds [SEP] [PAD] [PAD] [PAD] [PAD] [PAD]
+
+Topic 41:
+Generated: [CLS] lead vote - getter [SEP] [SEP] [SEP]
+Target: lead vote - getter [SEP] [PAD] [PAD] [PAD]
+
+Topic 68:
+Generated: [CLS] bodily autonomy [SEP] [SEP] [SEP] [SEP] [SEP] [SEP]
+Target: bodily autonomy [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+
