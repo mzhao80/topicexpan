@@ -74,7 +74,7 @@ class BaseTrainer:
         for epoch in range(self.start_epoch, self.epochs + 1):
             start_time = time.time()
             result = self._train_epoch(epoch)
-            val_result = self._valid_epoch()
+            val_result = self._valid_epoch(epoch)
 
             # save logged informations into log dict
             log = {'epoch': epoch}
