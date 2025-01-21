@@ -212,97 +212,12 @@ class Trainer(BaseTrainer):
             # Get topic embeddings from GCN
             topic_embeddings = self.model.topic_encoder.inductive_encode()
             
-            # Step 1. Score collection with hierarchical context
-            total_docids, total_scores = [], []
-            for batch_idx, batch_data in enumerate(self.data_loader):
-                doc_ids = batch_data[0].to(self.device)
-                encoder_input = {k: v.to(self.device) for k, v in batch_data[1].items()}
-                
-                # Get document embeddings
-                doc_encoder_output = self.model.doc_encoder(encoder_input)
-                mask_sum = encoder_input['attention_mask'].sum(dim=1, keepdim=True).clamp(min=1e-9)
-                doc_tensor = (doc_encoder_output * encoder_input['attention_mask'][:, :, None]).sum(dim=1) / mask_sum
-                
-                # Stack embeddings for all topics we're expanding
-                topic_tensor = torch.stack([topic_embeddings[pid] for vid, pid in self.model.vid2pid.items()])
-                
-                # Calculate similarity scores
-                vsim_score = self.model.interaction(doc_tensor, topic_tensor)
-                
-                # If we have a parent, use GCN relationships to boost relevant scores
-                if parent_vid is not None:
-                    parent_embed = topic_embeddings[self.model.vid2pid[parent_vid]]
-                    parent_sim = torch.matmul(topic_tensor, parent_embed)
-                    # Boost scores for topics more similar to parent
-                    vsim_score = vsim_score * F.sigmoid(parent_sim.unsqueeze(0))
-                    
-                    # Use sibling relationships to encourage diversity
-                    if depth > 0:
-                        sibling_sim = torch.matmul(topic_tensor, topic_tensor.t())
-                        sibling_penalty = (1 - F.sigmoid(sibling_sim.mean(dim=1)))
-                        vsim_score = vsim_score * sibling_penalty.unsqueeze(0)
-                
-                total_docids.append(doc_ids)
-                total_scores.append(vsim_score)
-
-            total_docids = torch.cat(total_docids, dim=0)
-            total_scores = torch.cat(total_scores, dim=0)
-
-            # Score normalization and filtering
-            if config['filter_type'] == 'rank':
-                conf_scores, conf_indices = torch.topk(total_scores, k=min(config['topk'], total_scores.shape[0]), dim=0)
-                conf_docids = total_docids[conf_indices]
-            elif config['filter_type'] == 'nscore':
-                vmax_scores = total_scores.max(dim=0, keepdim=True)[0]
-                vmin_scores = total_scores.min(dim=0, keepdim=True)[0]
-                total_scores = (total_scores - vmin_scores) / (vmax_scores - vmin_scores + 1e-6)
-
-            # Step 2. Generate phrases with hierarchical context
-            vid2phrases = {vid: [] for vid in self.model.vid2pid}
-            for batch_idx, batch_data in enumerate(self.data_loader):
-                doc_ids = batch_data[0].to(self.device)
-
-                doc_indices, vtopic_ids = [], []
-                for doc_idx, doc_id in enumerate(doc_ids):
-                    if config['filter_type'] == 'rank':
-                        selection = (conf_docids == int(doc_id)).nonzero()
-                        vtopic_ids.append(selection[:, 1])
-                        doc_indices += [doc_idx] * selection.shape[0]
-                    elif config['filter_type'] == 'nscore':
-                        target_idx = int((total_docids == doc_id).nonzero())
-                        selection = (total_scores[target_idx, :] > config['tau']).nonzero()[:, 0]
-                        vtopic_ids.append(selection)
-                        doc_indices += [doc_idx] * selection.shape[0]
-
-                if len(doc_indices) == 0:
-                    continue
-                    
-                vtopic_ids = torch.cat(vtopic_ids)
-                encoder_input = {k: v[doc_indices, :].to(self.device) for k, v in batch_data[1].items()}
-                
-                # Generate phrases using topic embeddings from GCN
-                vgen_output = self.model.inductive_gen(encoder_input, vtopic_ids)
-                vgen_strings = dataset.bert_tokenizer.batch_decode(vgen_output, skip_special_tokens=True)
-
-                for idx, (doc_idx, vtopic_id) in enumerate(zip(doc_indices, vtopic_ids)):
-                    phrase = vgen_strings[idx].strip()
-                    if len(phrase) > 0:  # Skip empty phrases
-                        vid2phrases[int(vtopic_id)].append((int(doc_ids[doc_idx]), phrase))
-    
-            # Step 3. Cluster phrases with hierarchical context
-            vid2tnames, vid2tinfos = self._cluster_phrases(
-                vid2phrases, 
-                config['num_clusters'],
-                min_cluster_size=5,
-                parent_embedding=topic_embeddings[self.model.vid2pid[parent_vid]] if parent_vid is not None else None
-            )
-    
-            # Step 4. Build topic hierarchy
-            import json
-            output = {}
-            
-            # Load existing topics if file exists
-            if os.path.exists('discovered_topics.json'):
+            # Initialize hierarchy with root node if starting fresh
+            if not os.path.exists('discovered_topics.json'):
+                output = {}
+                root_name = dataset.topics["0"]  # "politics" is the root
+                output[root_name] = []
+            else:
                 with open('discovered_topics.json', 'r') as f:
                     output = json.load(f)
             
@@ -312,48 +227,29 @@ class Trainer(BaseTrainer):
                 for topic in existing_topics:
                     seen_topics.add(topic['name'])
             
-            for vid, pid in self.model.vid2pid.items():
-                # Build topic path
-                tid, path = str(pid), []
-                curr_name = dataset.topics[tid]
-                while True:
-                    path.append(dataset.topics[tid])
-                    if len(dataset.topic_invhier[tid]) == 0:
-                        break
-                    tid = dataset.topic_invhier[tid][0]
-                path.append('root')
-                path = ' -> '.join(path[::-1])
+            # Process each parent topic
+            for parent_id in dataset.topic_fullhier:
+                # Get parent name and children
+                parent_name = dataset.topics[parent_id]
+                children = dataset.topic_fullhier[parent_id]
                 
-                # Format discovered topics
-                topics = []
-                for topic_idx, topic_name, topic_phrases, topic_size, quality_score in vid2tinfos[vid]:
-                    # Skip if we've seen this topic before
-                    if topic_name in seen_topics:
-                        continue
-                    seen_topics.add(topic_name)
-                    
-                    # Sort phrases by relevance score
-                    sorted_phrases = sorted(topic_phrases, key=lambda x: x[2], reverse=True)
-                    phrases = [{"doc_id": doc_id, "text": phrase} for doc_id, phrase, _ in sorted_phrases]
-                    
-                    topics.append({
-                        "name": topic_name,
-                        "size": topic_size,
-                        "quality_score": quality_score,
-                        "phrases": phrases
-                    })
+                # Skip if we've already processed this parent's children
+                if parent_name in output and len(output[parent_name]) > 0:
+                    continue
                 
-                # Sort topics by quality score
-                topics.sort(key=lambda x: x['quality_score'], reverse=True)
-                output[path] = topics
+                # Initialize parent in output if not exists
+                if parent_name not in output:
+                    output[parent_name] = []
                 
-                # Recursively expand high-quality topics
-                if depth < max_depth and len(topics) > 0:
-                    for topic in topics:
-                        if topic['quality_score'] > 0.5:  # Only expand high-quality topics
-                            new_config = config.copy()
-                            new_config['topic_hierarchy'] = {vid: []}
-                            self.infer(new_config, parent_vid=vid, depth=depth+1, max_depth=max_depth)
+                # Add each child as a discovered topic
+                for child_id in children:
+                    child_name = dataset.topics[child_id]
+                    if child_name not in seen_topics:
+                        seen_topics.add(child_name)
+                        output[parent_name].append({
+                            "name": child_name,
+                            "quality_score": 1.0  # Prewritten topics get max quality score
+                        })
             
             # Write output
             with open('discovered_topics.json', 'w') as f:

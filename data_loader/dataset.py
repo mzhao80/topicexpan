@@ -167,8 +167,8 @@ class DocTopicPhraseDataset(DatasetBase):
                 self.topic_invhier[childID].append(topicID)
         
         # For experiments, a portion of leaf topic nodes are randomly deleted
-        leaf_topics = [topicRank \
-                     for topicID, topicRank in self.topicID2topicRank.items() \
+        leaf_topics = [self.topicID2topicRank[topicID] \
+                     for topicID in self.topics.keys() \
                      if topicID not in self.topic_fullhier and len(self.topic_invhier[topicID]) == 1]
         self.novel_topics = np.random.choice(leaf_topics, int(alpha*len(leaf_topics)), replace=False)
         
@@ -176,23 +176,13 @@ class DocTopicPhraseDataset(DatasetBase):
         self.topic_hier = {}
         for k, v in self.topic_fullhier.items():
             self.topic_hier[self.topicID2topicRank[k]] = [
-                self.topicID2topicRank[topicID] for topicID in v
-                if self.topicID2topicRank[topicID] not in self.novel_topics
+                self.topicID2topicRank[vid] for vid in v
             ]
 
-        # known parient topic node -> novel child topic nodes
+        # known parent topic node -> novel child topic nodes
         self.novel_topic_hier = {}
         for k, v in self.topic_fullhier.items():
-            self.novel_topic_hier[self.topicID2topicRank[k]] = [
-                self.topicID2topicRank[topicID] for topicID in v
-                if self.topicID2topicRank[topicID] in self.novel_topics
-            ]
-        
-        self.topic_triples = [
-            (doc_id, topic_id, phrase_idx) 
-            for doc_id, topic_id, phrase_idx in self.topic_triples
-            if topic_id not in self.novel_topics
-        ]
+            self.novel_topic_hier[self.topicID2topicRank[k]] = []  # No novel topics for now
 
         raw_text = []
         topic_freq_weight = np.array([0] * self.num_topics)
