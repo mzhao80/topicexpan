@@ -211,7 +211,7 @@ class Trainer(BaseTrainer):
         
         with torch.no_grad():
             # Get topic embeddings from GCN
-            topic_embeddings = self.model.topic_encoder.inductive_encode()
+            parent2virtualh = self.model.topic_encoder.inductive_encode()
             
             # Initialize hierarchy with root node if starting fresh
             if not os.path.exists('discovered_topics.json'):
@@ -244,38 +244,50 @@ class Trainer(BaseTrainer):
                     if child_name not in seen_topics:
                         seen_topics.add(child_name)
                         
-                        # Generate subtopics for this child using GCN embeddings
-                        child_rank = dataset.topicID2topicRank[child_id]
-                        child_embed = topic_embeddings[child_rank]
-                        
-                        # Generate phrases for potential subtopics
-                        generated_phrases = []
-                        for _ in range(20):  # Generate multiple phrases to cluster
-                            phrase_embed = child_embed.unsqueeze(0)  # Add batch dimension
-                            phrase_output = self.model.phrase_decoder.generate(phrase_embed)
-                            phrase = dataset.bert_tokenizer.decode(phrase_output[0], skip_special_tokens=True)
-                            if len(phrase.strip()) > 0:
-                                generated_phrases.append(phrase.strip())
-                        
-                        # Cluster phrases into subtopics
-                        if len(generated_phrases) >= 5:
-                            subtopics = self._cluster_phrases(generated_phrases, child_embed)
+                        # Get parent's embedding for context
+                        parent_rank = dataset.topicID2topicRank[parent_id]
+                        if parent_rank in parent2virtualh:
+                            parent_embed = parent2virtualh[parent_rank]
                             
-                            # Add child with its subtopics
-                            child_entry = {
-                                "name": child_name,
-                                "quality_score": 1.0,  # Prewritten topics get max quality score
-                                "subtopics": []
-                            }
+                            # Generate phrases for potential subtopics
+                            generated_phrases = []
+                            for _ in range(20):  # Generate multiple phrases to cluster
+                                phrase_embed = parent_embed.unsqueeze(0)  # Add batch dimension
+                                phrase_output = self.model.phrase_decoder.generate(
+                                    phrase_embed,
+                                    max_length=20,
+                                    num_beams=5,
+                                    no_repeat_ngram_size=2
+                                )
+                                phrase = dataset.bert_tokenizer.decode(phrase_output[0], skip_special_tokens=True)
+                                if len(phrase.strip()) > 0:
+                                    generated_phrases.append(phrase.strip())
                             
-                            # Add high quality subtopics
-                            for subtopic in subtopics:
-                                if subtopic["quality_score"] > 0.5:  # Only keep good subtopics
-                                    child_entry["subtopics"].append(subtopic)
-                            
-                            output[parent_name].append(child_entry)
+                            # Cluster phrases into subtopics
+                            if len(generated_phrases) >= 5:
+                                subtopics = self._cluster_phrases(generated_phrases, parent_embed)
+                                
+                                # Add child with its subtopics
+                                child_entry = {
+                                    "name": child_name,
+                                    "quality_score": 1.0,  # Prewritten topics get max quality score
+                                    "subtopics": []
+                                }
+                                
+                                # Add high quality subtopics
+                                for subtopic in subtopics:
+                                    if subtopic["quality_score"] > 0.5:  # Only keep good subtopics
+                                        child_entry["subtopics"].append(subtopic)
+                                
+                                output[parent_name].append(child_entry)
+                            else:
+                                # Add child without subtopics if we couldn't generate enough phrases
+                                output[parent_name].append({
+                                    "name": child_name,
+                                    "quality_score": 1.0
+                                })
                         else:
-                            # Add child without subtopics if we couldn't generate enough phrases
+                            # Add child without subtopics if no parent embedding
                             output[parent_name].append({
                                 "name": child_name,
                                 "quality_score": 1.0
